@@ -1,0 +1,749 @@
+{% load static %}
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+h1{
+    font-family: "Lato", sans-serif;
+  font-style: normal;
+}
+h2{
+    font-family: "Lato", sans-serif;
+  font-style: normal;
+}
+h3{
+    font-family: "Lato", sans-serif;
+  font-style: normal
+}
+h4{
+    font-family: "Lato", sans-serif;
+  font-style: normal
+}
+h5{
+    font-family: "Lato", sans-serif;
+  font-style: normal
+}
+p{
+    font-family: "Lato", sans-serif;
+  font-style: normal
+}
+span{
+    font-family: "Lato", sans-serif;
+  font-style: normal
+}
+a{
+    font-family: "Lato", sans-serif;
+  font-style: normal
+}
+ .navbar {
+            width: 100%;
+            height: 65px;
+            background: black;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .navbar-sub-1 {
+            width: 10%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .navbar-sub-2 {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        .navbar-logo {
+            width: 50px;
+            height: 50px;
+        }
+        .page-links {
+            text-decoration: none;
+            color: white;
+            font-size: 12px;
+        }
+        .page-links i{
+            margin-left:8px;
+        }
+        .page-links:hover {
+            color: #FAB206;
+        }
+        .active-page {
+            color: #FAB206 !important;
+        }
+        .navbar-sub-3{
+            width: 10%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .free-quote-btn-header{
+              background-color:#FAB206;
+    color: white;
+    border: hidden;
+    outline: none;
+    height: 35px;
+    font-weight: 600;
+    width: 100px;
+    font-size: 12px;
+    border-radius: 20px;
+        }
+        .free-quote-form input{
+    width: 100%;
+  height: 40px;
+  font-size: 14px;
+  transition: 0.6s;
+  border: none;
+  border-bottom: 2px solid #CCC;
+  background-color: transparent;
+}
+.free-quote-form input:focus{
+    outline: none;
+    border-bottom: 2px solid #FAB206;
+}
+.free-quote-form select{
+    width: 100%;
+  height: 40px;
+  font-size: 14px;
+  transition: 0.6s;
+  border: none;
+  border-bottom: 2px solid #CCC;
+  background-color: transparent;
+}
+.free-quote-form button{
+    width: 100px;
+    height: 40px;
+    background-color: #FAB206;
+    color: white;
+    border-radius: 20px;
+    border: hidden;
+    font-size: 12px;
+}
+.free-quote-form label{
+    font-weight: 600;
+    font-size: 14px;
+}
+        .navbar-sub-3 i {
+            font-size: 25px;
+            color: white;
+            margin-right: 10px;
+        }
+        .navbar-mobile{
+            display:none;
+        }
+            .dropdown{
+        position: relative;
+    }
+    .dropdown-content{
+        display: none;
+    position: absolute;
+    background-image: linear-gradient(to right, #fab206, #ecc100, #dad000, #c4de00, #a8eb12);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    height: 200px;
+    left:-300px;
+    right:0;
+    width: 700px;
+    }
+    .dropdown:hover .dropdown-content{
+        display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding:10px;
+    justify-content:space-evenly;
+    }
+    .dropdown-content a{
+        text-decoration: none;
+        color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color:white;
+        height: 50px;
+        width: 45%;
+        font-size: 13px;
+    }
+    .dropdown-content a i{
+        margin-right:10px;
+    }
+    .dropdown-content a:hover{
+        color:#FAB206;
+    }
+    @media(min-width:768px) and (max-width:1024px){
+          .navbar-sub-2{
+                display:none;
+            }
+            .navbar-sub-3{
+                display:none;
+            }
+                  .navbar{
+                width:100%;
+            }
+            .navbar-sub-1 {
+                width:20%;
+            }
+              .navbar-logo {
+            width: 30px;
+            height: 30px;
+            overflow-y:hidden;
+        }
+            .navbar-mobile{
+                width:20%;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                height:100%;
+            }
+            .offcanvas-body{
+                display:flex;
+                align-items:flex-start;
+                justify-content:flex-start;
+            }
+            .offcanvas-links{
+                height:auto;
+                display:flex;
+                align-items:flex-start;
+                justify-content:center;
+                flex-direction:column;
+
+            }
+            .offcanvas-links a{
+                color:white;
+                font-size:15px;
+                text-decoration:none;
+            }
+            .offcanvas-links a i{
+                margin-right:10px;
+            }
+            .canvas-btn{
+                border:hidden;
+                outline:none;
+            }
+            .close-button{
+                background:none;
+                border:hidden;
+                outline:none;
+            }
+            .close-button i{
+                color:white;
+                font-size:25px;
+            }
+            .sidebar {
+                position: fixed;
+                top: 0;
+                left: -65%;
+                width: 65%;
+                height: 100%;
+                background-color: white;
+                color: white;
+                /* padding: 20px; */
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                box-sizing: border-box;
+                transition: left 0.3s;
+                z-index: 999;
+            }
+            .sidebar.open {
+                left: 0;
+            }
+            .sidebar-links-one{
+                width: 100%;
+                height: auto;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+            }
+            .sidebar-links-one a{
+                text-decoration: none;
+                color: #fff;
+                width: 100%;
+                margin-bottom: 5px;
+                display: flex;
+                font-size: 18px;
+                padding-left: 10px;
+                padding-right: 10px;
+                align-items: center;
+                background-color: black;
+                justify-content: flex-start;
+                height: 40px;
+            }
+            .sidebar-links-one a img{
+                width: 20px;
+                height: 20px;
+                margin-right: 10px;
+            }
+            .sidebar-logo{
+                width: 100%;
+                height: 80px;
+                padding: 10px;
+            }
+            .sidebar-logo img{
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+            .sidebar-contact{
+                width: 100%;
+                height: 200px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                padding-left: 20px;
+            }
+            .sidebar-contact a{
+                text-decoration: none;
+                color: black;
+                margin-bottom: 10px;
+                font-size: 16px;
+            }
+            .sidebar-contact a i{
+                margin-right: 8px;
+            }
+             .burger {
+                position: relative;
+                width: 40px;
+                height: 30px;
+                background: transparent;
+                cursor: pointer;
+                display: block;
+              }
+
+              .burger input {
+                display: none;
+              }
+
+              .burger span {
+                display: block;
+                position: absolute;
+                height: 4px;
+                width: 100%;
+                background: #fff;
+                border-radius: 9px;
+                opacity: 1;
+                left: 0;
+                transform: rotate(0deg);
+                transition: .25s ease-in-out;
+              }
+
+              .burger span:nth-of-type(1) {
+                top: 0px;
+                transform-origin: left center;
+              }
+
+              .burger span:nth-of-type(2) {
+                top: 50%;
+                transform: translateY(-50%);
+                transform-origin: left center;
+              }
+
+              .burger span:nth-of-type(3) {
+                top: 100%;
+                transform-origin: left center;
+                transform: translateY(-100%);
+              }
+
+              .burger input:checked ~ span:nth-of-type(1) {
+                transform: rotate(45deg);
+                top: 0px;
+                left: 5px;
+              }
+
+              .burger input:checked ~ span:nth-of-type(2) {
+                width: 0%;
+                opacity: 0;
+              }
+
+              .burger input:checked ~ span:nth-of-type(3) {
+                transform: rotate(-45deg);
+                top: 28px;
+                left: 5px;
+              }
+    }
+        @media(min-width:320px) and (max-width:480px){
+            .navbar-sub-2{
+                display:none;
+            }
+            .navbar-sub-3{
+                display:none;
+            }
+            .navbar{
+                width:100%;
+            }
+            .navbar-sub-1 {
+                width:20%;
+            }
+              .navbar-logo {
+            width: 30px;
+            height: 30px;
+            overflow-y:hidden;
+        }
+            .navbar-mobile{
+                width:20%;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                height:100%;
+            }
+            .offcanvas-body{
+                display:flex;
+                align-items:flex-start;
+                justify-content:flex-start;
+            }
+            .offcanvas-links{
+                height:auto;
+                display:flex;
+                align-items:flex-start;
+                justify-content:center;
+                flex-direction:column;
+
+            }
+            .offcanvas-links a{
+                color:white;
+                font-size:15px;
+                text-decoration:none;
+            }
+            .offcanvas-links a i{
+                margin-right:10px;
+            }
+            .canvas-btn{
+                border:hidden;
+                outline:none;
+            }
+            .close-button{
+                background:none;
+                border:hidden;
+                outline:none;
+            }
+            .close-button i{
+                color:white;
+                font-size:25px;
+            }
+            .sidebar {
+                position: fixed;
+                top: 0;
+                left: -65%;
+                width: 65%;
+                height: 100%;
+                background-color: white;
+                color: white;
+                /* padding: 20px; */
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                box-sizing: border-box;
+                transition: left 0.3s;
+                z-index: 999;
+            }
+            .sidebar.open {
+                left: 0;
+            }
+            .sidebar-links-one{
+                width: 100%;
+                height: auto;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+            }
+            .sidebar-links-one a{
+                text-decoration: none;
+                color: #fff;
+                width: 100%;
+                margin-bottom: 5px;
+                display: flex;
+                font-size: 18px;
+                padding-left: 10px;
+                padding-right: 10px;
+                align-items: center;
+                background-color: black;
+                justify-content: flex-start;
+                height: 40px;
+            }
+            .sidebar-links-one a img{
+                width: 20px;
+                height: 20px;
+                margin-right: 10px;
+            }
+            .sidebar-logo{
+                width: 100%;
+                height: 80px;
+                padding: 10px;
+                background:#000;
+                margin-bottom:10px;
+            }
+            .sidebar-logo img{
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+            .sidebar-contact{
+                width: 100%;
+                height: 200px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                padding-left: 20px;
+            }
+            .sidebar-contact a{
+                text-decoration: none;
+                color: black;
+                margin-bottom: 10px;
+                font-size: 16px;
+                font-weight:600;
+            }
+            .sidebar-contact a i{
+                margin-right: 8px;
+                color:#000;
+            }
+             .burger {
+                position: relative;
+                width: 40px;
+                height: 30px;
+                background: transparent;
+                cursor: pointer;
+                display: block;
+              }
+
+              .burger input {
+                display: none;
+              }
+
+              .burger span {
+                display: block;
+                position: absolute;
+                height: 4px;
+                width: 100%;
+                background: #fff;
+                border-radius: 9px;
+                opacity: 1;
+                left: 0;
+                transform: rotate(0deg);
+                transition: .25s ease-in-out;
+              }
+
+              .burger span:nth-of-type(1) {
+                top: 0px;
+                transform-origin: left center;
+              }
+
+              .burger span:nth-of-type(2) {
+                top: 50%;
+                transform: translateY(-50%);
+                transform-origin: left center;
+              }
+
+              .burger span:nth-of-type(3) {
+                top: 100%;
+                transform-origin: left center;
+                transform: translateY(-100%);
+              }
+
+              .burger input:checked ~ span:nth-of-type(1) {
+                transform: rotate(45deg);
+                top: 0px;
+                left: 5px;
+              }
+
+              .burger input:checked ~ span:nth-of-type(2) {
+                width: 0%;
+                opacity: 0;
+              }
+
+              .burger input:checked ~ span:nth-of-type(3) {
+                transform: rotate(-45deg);
+                top: 28px;
+                left: 5px;
+              }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <div class="navbar-sub-1">
+            <a href="{% url 'home' %}">
+                <img src="{% static 'img/delemon-logo.png' %}" class="navbar-logo" alt="">
+            </a>
+        </div>
+        <div class="navbar-sub-2">
+            <a href="{% url 'home' %}" class="page-links {% if request.path == '/home/' %}active-page{% endif %}">HOME</a>
+            <a href="{% url 'about' %}" class="page-links {% if request.path == '/about/' %}active-page{% endif %}">ABOUT</a>
+            <div class="dropdown">
+            <a href="{% url 'services' %}" class="page-links {% if request.path == '/services/' %}active-page{% endif %}">SERVICES<i class="fa-solid fa-caret-down"></i></a>
+            <div class="dropdown-content">
+                <a href="{% url 'digital' %}"><i class="fa-solid fa-magnifying-glass-chart"></i>Digital Marketing</a>
+                <a href="{% url 'web' %}"><i class="fa-solid fa-code"></i>Web Development</a>
+                <a href="{% url 'mobile' %}"><i class="fa-brands fa-app-store-ios"></i>App Development</a>
+                <a href="{% url 'animation' %}"><i class="fa-solid fa-file-video"></i>Video Editing</a>
+                <a href="{% url 'ecommerce' %}"><i class="fa-solid fa-cart-shopping"></i>E-Commerce</a>
+                <a href="{% url 'uiux' %}"><i class="fa-solid fa-laptop-code"></i>UI/UX Design</a>
+            </div>
+            </div>
+            <a href="{% url 'projects' %}" class="page-links {% if request.path == '/projects/' %}active-page{% endif %}">PROJECTS</a>
+            <a href="{% url 'careers' %}" class="page-links {% if request.path == '/careers/' %}active-page{% endif %}">CAREERS</a>
+            <a href="{% url 'contact' %}" class="page-links {% if request.path == '/contact/' %}active-page{% endif %}">CONTACT US</a>
+        </div>
+        <div class="navbar-sub-3">
+            <button data-bs-toggle="modal" data-bs-target="#exampleModalmobile" class="free-quote-btn-header">FREE QUOTE</button>
+            <div class="modal fade" id="exampleModalmobile" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">GET A FREE QUOTE</h5>
+          <button type="button" style="background-color: #FAB206;color: white;" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-5">
+            <p class="mb-5 text-center">If you have any requirement please share with us at <span style="color: #FAB206;">info@delemontechnology.com</span> or simply send us your inquiry by filling out the form below.</p>
+          <form class="free-quote-form" id="contact-form-mobile" action="https://api.web3forms.com/submit" method="POST" onsubmit="return submitFormheader(event)">
+              <input type="hidden" name="access_key" value="1d581977-0167-4073-8d30-f8e754b508d4">
+                <input type="hidden" name="subject" id="" value="Free Quote Request From Delemon Website">
+       <div class="row mb-5">
+        <div class="col">
+            <div class="d-flex flex-column">
+            <label for="">Name</label>
+            <input type="text" id="fullname" name="name" placeholder="Enter Name" required>
+        </div>
+    </div>
+    <div class="col">
+        <div class="d-flex flex-column">
+        <label for="">Inquiring about</label>
+        <select name="Enquiry" id="enquiryid">
+            <option value="Digital Marketing">Digital Marketing</option>
+            <option value="Social Media Marketing">Social Media Marketing</option>
+            <option value="Web Design & Development">Web Design & Development</option>
+        </select>
+    </div>
+</div>
+       </div>
+       <div class="row mb-5">
+        <div class="col">
+            <div class="d-flex flex-column">
+            <label for="">Email</label>
+            <input type="text" id="emailid" name="email" placeholder="Enter Email" required>
+        </div>
+    </div>
+    <div class="col">
+        <div class="d-flex flex-column">
+        <label for="">Phone</label>
+        <input type="text" id="companyname" name="phone" placeholder="Enter Phone" required>
+    </div>
+</div>
+       </div>
+       <div class="row mb-4">
+        <div class="col">
+            <div class="d-flex flex-column">
+            <label for="">Company Name</label>
+            <input type="text" id="" name="company" placeholder="Enter company name">
+        </div>
+    </div>
+       </div>
+       <button type="submit">SUBMIT</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+        </div>
+        <div class="navbar-mobile">
+            <label class="burger" for="burger" >
+        <input type="checkbox" id="burger">
+        <span></span>
+        <span id="close-sidebar"></span>
+        <span ></span>
+      </label>
+          <div id="sidebar" class="sidebar">
+        <div class="sidebar-logo">
+            <a href=""><img src="{% static 'img/delemon-logo.png' %}" alt=""></a>
+        </div>
+        <div class="sidebar-links-one">
+<a href="{% url 'home' %}" class=" {% if request.path == '/home/' %}active-page{% endif %}"><img src="{% static 'img/home.png' %}" alt="">HOME</a>
+            <a href="{% url 'about' %}" class=" {% if request.path == '/about/' %}active-page{% endif %}"><img src="{% static 'img/about.png' %}" alt="">ABOUT</a>
+            <a href="{% url 'services' %}" class=" {% if request.path == '/services/' %}active-page{% endif %}"><img src="{% static 'img/blueprint.png' %}" alt="">SERVICES</a>
+            <a href="{% url 'projects' %}" class=" {% if request.path == '/projects/' %}active-page{% endif %}"><img src="{% static 'img/projects.png' %}" alt="">PROJECTS</a>
+            <a href="{% url 'careers' %}" class="page-links {% if request.path == '/careers/' %}active-page{% endif %}"><img src="{% static 'img/career.png' %}" alt="">CAREERS</a>
+            <a href="{% url 'contact' %}" class=" {% if request.path == '/contact/' %}active-page{% endif %}"><img src="{% static 'img/contact.png' %}" alt="">CONTACT US</a>
+        </div>
+        <div class="sidebar-contact">
+            <a href=""><i class="fa-solid fa-square-phone"></i>+971 50 348 2299</a>
+            <a href=""><i class="fa-brands fa-square-whatsapp"></i>+971 50 348 2299</a>
+            <a href=""><i class="fa-solid fa-envelope"></i>delemonjobs@gmail.com</a>
+        </div>
+    </div>
+        </div>
+    </nav>
+</header>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    $(document).ready(function () {
+        var path = window.location.pathname;
+        $('.page-links').each(function () {
+            if ($(this).attr('href') === path) {
+                $(this).addClass('active-page');
+            }
+        });
+    });
+</script>
+<script>
+    function submitFormheader(event) {
+        event.preventDefault();
+        // Get form data
+        const form = document.getElementById('contact-form-mobile');
+        const formData = new FormData(form);
+
+        // Send form data asynchronously
+        fetch(form.action, {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => {
+            if (response.ok) {
+                alert('Thank You for Contacting Us');
+                 $('#exampleModalmobile').modal('hide');
+                // Reset form fields
+            } else {
+                // Handle error
+                console.error('Form submission failed:', response.statusText);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    }
+</script>
+         <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const sidebarToggle = document.getElementById('burger');
+        const closesidebar = document.getElementById('close-sidebar');
+        const sidebar = document.getElementById('sidebar');
+
+        sidebarToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            sidebar.classList.toggle('open');
+        });
+
+        closesidebar.addEventListener('click', (e) => {
+            if (sidebar.classList.contains('open') && !sidebar.contains(e.target)) {
+                sidebar.classList.remove('open');
+            }
+        });
+
+        sidebar.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+    });
+
+
+        </script>

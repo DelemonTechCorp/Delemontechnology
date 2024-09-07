@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% load static %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>about</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/22.0.2/css/intlTelInput.css" integrity="sha512-OkSoWyaoScjXhOm87XO5hDz1E5buvm2aAkq+5zJmaYpylA0OKJ5no5qc4ZRrmApoaXEgXc3n0iyVS1q5FgiJjg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/22.0.2/js/intlTelInput.min.js" integrity="sha512-sbwOm2sd7b4Wnu0yHGKAnYnmSdJ6Sib1ZHPyyg3ITlxIbyocccgqCXLHJjEkJLXn+mfdezWGn2KWdGc1GIV64g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<style>
+
+    .contact{
+        height: 45vh;
+        width: 100%;
+        background-color: rgb(28, 25, 25);
+        display: flex;
+        align-items:center;
+        justify-content: space-evenly;
+        flex-direction: row;
+        color: white;
+    }
+    .contact-head{
+        width: 50%;
+        height: 70%;
+        display: flex;
+        align-items: flex-start;
+        justify-content:space-evenly;
+        flex-direction: column;
+    }
+    .contact-line{
+        width: 45%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .contact-line-1{
+        width: 30px;
+        height:2px;
+        background-color:white;
+    }
+    .contact-head h5{
+        font-size: 16px;
+        font-weight: 400;
+    }
+    .contact-head h1{
+        font-size: 50px;
+    }
+    .contact-sub{
+        width: 25%;
+        height: 50%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+    }
+    .contact-sub h4{
+        font-size: 16px;
+        line-height: 30px;
+        line-height: 1.2;
+        color: white;
+        font-weight: 400;
+    }
+    .contact-form{
+        width: 40%;
+        height: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background-color: white;
+        border-radius: 10px;
+        padding: 20px;
+        margin-top: 50px;
+    }
+    .contact-form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+#contact-form input{
+    outline:none;
+    width:100%;
+}
+    .address{
+        padding:30px;
+        margin-top:30px;
+        box-shadow: 0 5px 15px rgba(0,0,0,.1);
+        background-color: white;
+    }
+    .form-section{
+        padding:30px;
+        box-shadow: 0 5px 15px rgba(0,0,0,.1);
+        margin-top:30px;
+        background-color: white;
+        margin-bottom: 30px;
+
+    }
+    .form-section input{
+        width:100%;
+        height:40px;
+        margin-top: 30px;
+        padding-left: 20px;
+
+    }
+    .form-section .btn{
+        width:100px;
+        height:40px;
+        background-color: black;
+        color: white;
+        text-transform: uppercase;
+    }
+    .contact-address{
+        padding:30px;
+        background-color: white;
+        margin-top:30px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-evenly;
+        flex-direction: column;
+        box-shadow: 0 5px 15px rgba(0,0,0,.1);
+
+    }
+    .contact-address p i{
+        margin-right: 10px;
+    }
+    .services{
+        padding:30px;
+        background-color: white;
+        margin-top:30px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-evenly;
+        flex-direction: column;
+        box-shadow: 0 5px 15px rgba(0,0,0,.1);
+    }
+    .socials{
+        background-color: white;
+        padding: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,.1);
+        margin-top: 30px;height:100px;
+    }
+    .socials i{
+    width:40px;
+    height:40px;
+    border-radius:4px;
+    font-size:20px;display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.socials .icon{
+    display:flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+    width:100%;
+  }
+.socials .icon a{
+    color:black;
+    width:40px;
+        align-items: center;
+    justify-content: center;
+    height:40px;
+    display:flex;
+
+    text-decoration:none;
+}
+.socials i:hover{
+    background-color: black;
+    color:white;
+}
+    .social-media-section{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: auto;
+}
+.social-header{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+}
+.social-icons{
+    width: 200px;
+    display: flex;
+    height: 50px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.social-icons i{
+    font-size: 20px;
+    color:black;
+}
+.social-header h1{
+    font-size: 30px;
+}
+.social-header h5{
+    letter-spacing: 2px;
+}
+.social-contents{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.social-image{
+    height: 220px;
+    width: 220px;
+    position: relative;
+}
+.social-image img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.social-overlay{
+    position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.2) 100%);
+}
+.social-overlay i{
+    color: white;
+    font-size: 25px;
+}
+.error-message{
+    font-size:13px;
+    color:red;
+}
+@media(min-width:320px) and (max-width:480px){
+    .contact{
+        flex-direction:column;
+        height:35vh;
+        padding-bottom:10px;
+    }
+    .contact h1{
+        font-size:25px;
+    }
+    .contact-head{
+        width:90%;
+    }
+    .contact-sub{
+        width:90%;
+    }
+    .contact-line{
+        width:85%;
+    }
+     .social-media-section{
+        height:auto;
+        margin-bottom:10px;
+    }
+    .social-contents{
+    width:98%;
+    flex-wrap:wrap;
+    height:auto;
+    gap:10px;
+}
+.social-image{
+    width:48%;
+}
+.social-header h5{
+   overflow-y:hidden;
+}
+.social-header h1{
+    overflow-y:hidden;
+}
+.social-header{
+    height:auto;
+    margin-top:10px;
+}
+}
+</style>
+<body>
+<div class="contact">
+    <div class="contact-head">
+        <div class="contact-line">
+            <div class="contact-line-1">
+            </div>
+            <h5>Digital Marketing Agency In Dubai</h5>
+        </div>
+        <h1>Contact Us</h1>
+    </div>
+    <div class="contact-sub">
+        <h4>At Digital Gravity, we have leading industry professionals and state-of-the-art technology to ensure your business and brands lifts up on the digital front.</h4>
+    </div>
+</div>
+<div style="background-color: #f8f8f8;">
+<div class="container" >
+    <div class="row">
+        <div class="col-md-8">
+            <div class="address">
+            <h2>DELEMON TECHNOLOGY</h2>
+            <i class="fa-solid fa-location-dot"></i> <span>Office no 29, 31st Floor,API World Tower,Near World Trade Center Metro Station, Dubai</span><br><br>
+            <hr>
+            <p style="font-weight:500;">Phone: +971 54 414 3103</strong></p>
+            <p style="font-weight:500;">E-mail: info@delemontechnology.com</p>
+            <p class="">At Delemon Technology, we are your one-stop solution for all things digital, providing comprehensive digital marketing services UAE, encompassing web design and e-commerce solutions. Our expertise empowers businesses to thrive in the online world. With a team of passionate experts and a track record of delivering exceptional results, we're here to help you take your online presence to the next level. Choose Delemon Technology for unparalleled digital marketing services in UAE, ensuring your business stands out and succeeds in the competitive digital landscape.</p>
+                </div>
+
+            <div class="form-section">
+                <h5>Contact Us</h5>
+            <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" onsubmit="return validatecontact(event)">
+                <input type="hidden" name="access_key" value="1d581977-0167-4073-8d30-f8e754b508d4">
+                <input type="hidden" name="subject" value="Contact Request From Delemon Website">
+                            <input type="hidden" id="countryCode" name="Country Code">
+            <div>
+            <input type="text" class="form-control" id="name" name="Name" placeholder="Your Name">
+            <p class="error-message" id="name-error"></p>
+            </div>
+            <div>
+            <input type="email" class="form-control" id="email" name="Email" placeholder="Email">
+            <p class="error-message" id="email-error"></p>
+            </div>
+            <div class="" style="width:100%;">
+            <input type="tel" class="form-control" id="phone" name="phone Number" placeholder="Phone No">
+            <p class="error-message" id="phone-error"></p>
+            </div>
+            <div>
+            <input type="textarea" class="form-control" id="message" name="Message" placeholder="I want to know more">
+            </div>
+            <div class="mt-4">
+            <button type="submit" class="btn" value="">Submit</button>
+            </div>
+            </form>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="contact-address">
+                <h6><b>Contact</b></h6>
+                <p ><i class="fa-solid fa-building"></i> Office no 29, 31st Floor,API World<br> Tower,Near World Trade Center<br> Metro Station, Dubai</p>
+                <p ><i class="fa-solid fa-phone"></i> +971 50 348 2299</p><br>
+                <p ><i class="fa-regular fa-envelope"></i> info@delemontechnology.com</p>
+                </div>
+
+                <div class="socials">
+                    <h6><b>Social Links</b></h6>
+                    <div class="icon">
+                    <a href="https://www.facebook.com/profile.php?id=61554857870065&sfnsn=wiwspwa&mibextid=RUbZ1f" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://wa.me/+971503482299" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.linkedin.com/company/delemon-technology/mycompany/verification/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/delemon_technology/?igsh=emF2ajg3bm00cDUz" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                    </div>
+
+                    <div class="services">
+                        <h6><b>Services</b></h6>
+                        <p>- Web Development</p>
+                        <p>- Mobile App Development</p>
+                        <p>- Digital Marketing</p>
+                        <p>- Ecommerce Web Development</p>
+                        <p>- UI/UX Design</p>
+                        <p>- Content Marketing</p>
+                        <p>- Social Media Marketing</p>
+                        <p>- Real Estate Marketing</p>
+                        <p>- Video Animation</p>
+                    </div>
+            </div>
+
+    </div>
+
+ </div>
+</div>
+
+ <div class="social-media-section pt-5 pb-5" style="background-color:#E3E3E3" >
+        <div class="social-header mb-3">
+    <h5>GET SOCIAL</h5>
+    <h1>Join the conversation</h1>
+    <div class="social-icons">
+        <a href=""><i class="fa-brands fa-facebook"></i></a>
+        <a href=""><i class="fa-brands fa-x-twitter"></i></a>
+        <a href=""><i class="fa-brands fa-instagram"></i></a>
+        <a href=""><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href=""><i class="fa-brands fa-youtube"></i></a>
+    </div>
+        </div>
+        <div class="social-contents">
+            <div class="social-image">
+                <img src="{% static 'img/fb-5.jpg' %}" alt="">
+                <a href="https://www.facebook.com/photo/?fbid=122124037460161929&set=pcb.122124040514161929" target="_blank">
+                <div class="social-overlay">
+                    <i class="fa-brands fa-facebook"></i>
+                </div>
+            </a>
+                </div>
+    <div class="social-image">
+    <img src="{% static 'img/insta-first.jpg' %}" alt="">
+    <a href="https://www.instagram.com/p/C4u9Hv1SdXf/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank">
+    <div class="social-overlay">
+        <i class="fa-brands fa-instagram"></i>
+    </div>
+    </a>
+    </div>
+    <div class="social-image">
+        <img src="{% static 'img/insta-second.jpg' %}" alt="">
+        <a href="https://www.instagram.com/p/Cvb_Eprveg6/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank">
+        <div class="social-overlay">
+            <i class="fa-brands fa-instagram"></i>
+        </div>
+    </a>
+    </div>
+    <div class="social-image">
+        <img src="{% static 'img/fb-2.jpg' %}" alt="">
+        <a href="https://www.facebook.com/photo?fbid=122121145868161929&set=pb.61554857870065.-2207520000" target="_blank">
+        <div class="social-overlay">
+            <i class="fa-brands fa-facebook"></i>
+        </div>
+    </a>
+    </div>
+    <div class="social-image">
+        <img src="{% static 'img/li-first.jpg' %}" alt="">
+        <a href="https://www.linkedin.com/posts/delemon-technology_delemon-technology-activity-7080178092853346305-tMYO?utm_source=share&utm_medium=member_desktop" target="_blank">
+        <div class="social-overlay">
+            <i class="fa-brands fa-linkedin"></i>
+        </div>
+    </a>
+    </div>
+        </div>
+    </div>
+
+
+ <script>
+                         const input3 = document.querySelector("#phone");
+const iti3 = window.intlTelInput(input3, {
+  separateDialCode: true,
+  utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.3.5/js/utils.js",
+  initialCountry: "ae"
+});
+input3.addEventListener('input', function () {
+  const countryCodeInput = document.getElementById('countryCode');
+  const selectedCountryData = iti3.getSelectedCountryData();
+  countryCodeInput.value = '+' + selectedCountryData.dialCode;
+});
+                function validatecontact(event) {
+                    event.preventDefault();
+
+                    var name = document.getElementById("name").value;
+                    var email = document.getElementById("email").value;
+                    var phone = document.getElementById("phone").value;
+                    var message = document.getElementById("message").value;
+
+                    var nameError = document.getElementById("name-error");
+                    var emailError = document.getElementById("email-error");
+                    var phoneError = document.getElementById("phone-error");
+
+                    nameError.textContent = "";
+                    emailError.textContent = "";
+                    phoneError.textContent = "";
+
+                    var isValid = true;
+
+                    if (name === "") {
+                        nameError.textContent = "This field is required";
+                        isValid = false;
+                    }
+
+              var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(email)) {
+                        emailError.textContent = "This field is required";
+                        isValid = false;
+                    }
+
+
+                    if (phone === "") {
+                        phoneError.textContent = "This field is required";
+                        isValid = false;
+                    }
+                    if (isValid) {
+                        submitForm();
+                    }
+
+
+                    return false;
+                }
+                 function submitForm() {
+                    const form = document.getElementById('contact-form');
+                    const formData = new FormData(form);
+
+                    fetch(form.action, {
+                        method: 'POST',
+                        body: formData
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            alert('Thank You for Contacting Us, We Will Reach You Soon');
+                          document.getElementById('contact-form').reset();
+                            // Reset form fields
+                        } else {
+                            // Handle error
+                            console.error('Form submission failed:', response.statusText);
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+                    event.preventDefault();
+                }
+
+            </script>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+{% endblock %}
+</body>
+</html>

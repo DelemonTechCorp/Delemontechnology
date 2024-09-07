@@ -1,0 +1,292 @@
+{% load static %}
+<style>
+  .footer-container {
+    height: 80vh;
+    width: 100%;
+    background-image: linear-gradient(90deg, #FAB206 40%, rgb(0, 0, 0) 40%, rgb(0, 0, 0) 60%);
+    display: flex;
+    align-items: flex-start; /* Align items to the start */
+    justify-content: flex-start; /* Align content to the start */
+    flex-direction: column;
+  }
+  .footer-head {
+    margin-top: 5%;
+    width: 70%;
+    display: flex;
+    align-items: flex-start; /* Align items to the start */
+    justify-content: flex-start; /* Align content to the start */
+  }
+  .footer-head h1 {
+    -webkit-text-stroke: 1px white;
+    color: transparent;
+    font-size: 76px;
+  }
+  .footer-sub {
+    margin-top: 1%;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 10%;
+    color: white;
+  }
+  .footer-sub-1 {
+    color: white;
+    font-size: 24px;
+    font-weight: 400;
+  }
+  .footer-address{
+    width: 70%;
+  }
+  .footer-address h6{
+      font-size: 14px;
+      font-weight: 400;
+  }
+  .footer-sub-2{
+      font-size: 14px;
+      font-weight: 400;
+  }
+  .footer-line{
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-evenly;
+  }
+  .footer-line-1{
+      width: 20%;
+      height: 90%;
+      border-top: 2px solid white;
+      padding: 10px;
+  }
+  .footer-social{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      width: 60%;
+  }
+  .footer-social i{
+      color: white;
+      /* font-size: 24px; */
+  }
+  .footer-main{
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+  }
+  .footer-content{
+      width: 60%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-evenly;
+  }
+  .footer-content-sub{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-evenly;
+      color: white;
+      height: 100%;
+  }
+  .footer-content-sub a{
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+  }
+  .footer-content-sub h4{
+    font-size: 16px;
+  }
+  .footer-section-main{
+        width: 100%;
+        height: auto;
+        padding: 5%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        background-color: black;
+        justify-content: space-evenly;
+    }
+    .footer-content-mobile{
+        height: 160px;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    .footer-base-screen-view{
+        height: 60px;
+        width: 100%;
+        border-top: 1px solid grey;
+        display: flex;
+        align-items: center;
+        background-color: black;
+        justify-content: center;
+    }
+    .footer-content-mobile h5{
+        font-size: 16px;
+        font-weight: 700;
+        color: white;
+        letter-spacing: 1px;
+    }
+    .footer-content-mobile p{
+        font-size: 13px;
+        color: white;
+    }
+    .social-icons-footer{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+    .social-icons-footer i{
+        color: white;
+        font-size: 18px;
+        margin-right: 15px;
+    }
+    .social-icons-footer a{
+        text-decoration: none;
+        color: white;
+    }
+    .footer-base-screen-view span{
+        color: white;
+        font-size: 14px;
+    }
+    .footer-content-mobile h5 i{
+        color: #FAB206;
+        font-size: 16px;
+        margin-right: 8px;
+        overflow-y:hidden;
+    }
+    .footer-content-mobile a{
+        color: white;
+        font-size: 13px;
+        text-decoration: none;
+    }
+    .footer-base{
+        display:none;
+    }
+  @media(min-width:320px) and (max-width:480px){
+      h5{
+          overflow-y:hidden;
+      }
+      .footer-container{
+          display:none;
+      }
+    .footer-section-main{
+        width: 100%;
+        height: auto;
+        padding: 5%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: black;
+        justify-content: space-evenly;
+    }
+    .footer-content-mobile{
+        height: 160px;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    .footer-base{
+        height: 60px;
+        width: 100%;
+        border-top: 1px solid grey;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .footer-content-mobile h5{
+        font-size: 16px;
+        font-weight: 700;
+        color: white;
+        letter-spacing: 1px;
+    }
+    .footer-content-mobile p{
+        font-size: 13px;
+        color: white;
+    }
+    .social-icons-footer{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+    .social-icons-footer i{
+        color: white;
+        font-size: 18px;
+        margin-right: 15px;
+    }
+    .social-icons-footer a{
+        text-decoration: none;
+        color: white;
+    }
+    .footer-base span{
+        color: white;
+        font-size: 14px;
+    }
+    .footer-content-mobile h5 i{
+        color: #FAB206;
+        font-size: 16px;
+        margin-right: 8px;
+        overflow-y:hidden;
+    }
+    .footer-content-mobile a{
+        color: white;
+        font-size: 13px;
+        text-decoration: none;
+    }
+    .footer-base-screen-view{
+        display:none;
+    }
+  }
+</style>
+<footer>
+     <div class="footer-section-main">
+        <div class="footer-content-mobile">
+            <p>Office No 36 <br> 31st Floor <br> API World Tower <br> Near World Trade Center Metro Station <br> Dubai,United Arab Emirates</p>
+            <div class="social-icons-footer">
+                <a href=""><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=61554857870065&sfnsn=wiwspwa&mibextid=RUbZ1f"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/delemon_technology?igsh=emF2ajg3bm00cDUz"><i class="fa-brands fa-instagram"></i></a>
+                    <a href=""><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.linkedin.com/company/delemon-technology/"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </div>
+        <div class="footer-content-mobile">
+            <h5><i class="fa-solid fa-square-full"></i>OVERVIEW</h5>
+            <a href="{% url 'about' %}">About Us</a>
+            <a href="{% url 'services' %}">Services</a>
+            <a href="">Partners</a>
+            <a href="{% url 'terms' %}">Terms & Conditions</a>
+            <a href="{% url 'privacy' %}">Privacy Policy</a>
+        </div>
+        <div class="footer-content-mobile">
+            <h5><i class="fa-solid fa-square-full"></i>WEB SOLUTIONS</h5>
+            <a href="{% url 'web' %}">Web Development</a>
+            <a href="{% url 'uiux' %}">UI/UX Design</a>
+            <a href="{% url 'digital' %}">Digital Marketing Services</a>
+            <a href="{% url 'ecommerce' %}">Ecommerce Web Development</a>
+            <a href="{% url 'mobile' %}">Mobile App Development</a>
+        </div>
+        <div class="footer-content-mobile">
+            <h5><i class="fa-solid fa-square-full"></i>DIGITAL MARKETING SERVICES</h5>
+            <a href="{% url 'ppc' %}">PPC</a>
+            <a href="{% url 'seo' %}">SEO</a>
+            <a href="{% url 'content' %}">Content Marketing</a>
+            <a href="{% url 'social' %}">Social Media Marketing</a>
+            <a href="{% url 'realestate' %}">Real Estate Marketing</a>
+        </div>
+        <div class="footer-base">
+<span>Copyright © 2024 <a href="https://www.delemontechnology.com/" class="text-decoration-none text-light">www.delemontechnology.com</a></span>
+        </div>
+    </div>
+        <div class="footer-base-screen-view">
+        <span>Copyright © 2024 <a href="https://www.delemontechnology.com/" class="text-decoration-none text-light">www.delemontechnology.com</a></span>
+                </div>
+

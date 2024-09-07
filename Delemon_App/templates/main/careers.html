@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% load static %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers</title>
+        <link rel="shortcut icon" href="{% static 'img/delemon-logo.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.3.5/css/intlTelInput.css" integrity="sha512-VXxcTT278CJV0mFYrCVNcWp8BckqU31nWRqrvRYtw8OB82j3mZb6WkmrCanFeO5xRlyw0lGV+U3Kym4+kMvmSg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.3.5/js/intlTelInput.min.js" integrity="sha512-KcjcQ2KL6oVcezrL/m6NO1PW13QMnEN5BM4/u1JV9Pu0kBQgn/TmK1W6diupb4vMuGtFnO6Ojg3nzWutkow9Uw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+    *{
+        font-family: "Lato", sans-serif;
+    }
+    .bg-banner{
+        background-image: linear-gradient(to right, #009263, #4da14d, #83ac31, #bcb30e, #fab206);
+        width: 100%;
+        height: 60vh;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-evenly;
+    }
+    .banner-content{
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    .banner-content h1{
+        font-size: 40px;
+        font-weight: 600;
+        color: #fff;
+    }
+    .banner-content p{
+        color: #fff;
+    }
+    .banner-anim{
+        width: 40%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .banner-anim img{
+        width: 80%;
+        height: 100%;
+        object-fit: contain;
+        transform: rotate(-5deg);
+    }
+    .banner-content button{
+        background:none;
+        color: #fff;
+        width: auto;
+        height: 45px;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-right: 10px;
+        border: none;
+        border: 2px solid #fff;
+        border-radius: 25px;
+        font-weight: 500;
+    }
+    .banner-content a{
+        text-decoration: none;
+    }
+    .about-content h1{
+        font-size: 35px;
+        font-weight: 600;
+        color: #009263;
+    }
+    .about-image{
+        width: 100%;
+        height: 100%;
+    }
+    .about-image img{
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        object-fit: cover;
+    }
+    .section-3 h1{
+        font-size: 35px;
+        font-weight: 600;
+        color: #fff;
+    }
+    .section-3 p{
+        font-size: 18px;
+    }
+    .about-card{
+        width: 100%;
+        height: 150px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    }
+    .about-card img{
+        width: 60px;
+        height: 60px;
+    }
+    .about-card h3{
+        font-size: 18px;
+        font-weight: 600;
+        color: #000;
+    }
+    .section-3 h3{
+        color: #fab206;
+        font-size: 25px;
+        font-weight: 600;
+    }
+    .open-position{
+        width: 100%;
+        height: auto;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        border-radius: 10px;
+        align-items: flex-start;
+    }
+    .section-explore{
+        width: 100%;
+        height: auto;
+        background-color: #000;
+    }
+    .open-position p{
+        color: #ffffff;
+        list-style-type: circle;
+    }
+    .open-position p i{
+        color: #ffffff;
+        margin-right: 10px;
+    }
+    .open-position span{
+       color: #fff;
+       font-weight: 500;
+    }
+    .open-position span a{
+        font-weight: bold;
+        text-decoration: none;
+        color: #fab206;
+    }
+    .open-position span i{
+        margin-right: 10px;
+    }
+    .open-position button{
+        background:none;
+        width: 180px;
+        height: 40px;
+        border: none;
+        color: #fff;
+        border: 2px solid #fff;
+    }
+    .form-application button{
+        background-color: #000;
+        color: #fff;
+        border: hidden;
+        width: 100%;
+        height: 40px;
+    }
+    .form-application{
+        width: 100%;
+        height: auto;
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 20px;
+
+    }
+    .collapse{
+        width: 100%;
+    }
+    .form-application input{
+        width: 100%;
+    }
+    @media(min-width:320px) and (max-width:480px){
+        .form-application{
+            grid-template-columns: auto;
+        }
+        .bg-banner{
+            flex-direction: column;
+            height: auto;
+        }
+        .banner-content{
+            width: 90%;
+            height: 40vh;
+            margin: auto;
+        }
+        .banner-anim{
+            height: 30vh;
+            width: 90%;
+            margin: auto;
+        }
+        .banner-content button{
+            margin-bottom:10px;
+        }
+    }
+</style>
+<body>
+    <div class="bg-banner">
+        <div class="banner-content">
+            <h1>Join Our Team of Innovators!</h1>
+            <p class="mb-3">Empowering Digital Transformation with Passion, Creativity, and Expertise.</p>
+            <div class="two-buttons">
+                <a href="#openpositions"><button>Explore Open Positions</button></a>
+                <a href="#whydelemon"><button>Why Delemon?</button></a>
+            </div>
+        </div>
+        <div class="banner-anim">
+            <img src="{% static 'img/rag-doll-blue-word-career.png' %}" alt="">
+        </div>
+    </div>
+    <div class="container about-content pt-4 pb-5" id="whydelemon">
+        <div class="row gx-3 gy-3">
+            <div class="col-md-7">
+                <h1 class="mb-3">Why Work with Us?</h1>
+              <div class="row gy-3">
+                <div class="col-md-6">
+                    <div class="about-card">
+                        <img src="{% static 'img/work-environment.png' %}" alt="">
+                        <h3 class="mt-3">Dynamic Work Environment</h3>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="about-card">
+                        <img src="{% static 'img/target.png' %}" alt="">
+                        <h3 class="mt-3">Career Growth</h3>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="about-card">
+                        <img src="{% static 'img/value.png' %}" alt="">
+                        <h3 class="mt-3">Competitive Benefits</h3>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="about-card">
+                        <img src="{% static 'img/united.png' %}" alt="">
+                        <h3 class="mt-3">Inclusive Culture</h3>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-5">
+                <div class="about-image">
+                <img src="{% static 'img/business.jpg' %}" alt="">
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="section-explore mb-5" id="openpositions">
+    <div class="container section-3 pt-4 pb-3">
+        <h1 class="mb-3 text-center">Open Positions</h1>
+        <div class="open-position">
+        <h3 class="mb-3">Front-End Developer</h3>
+        <p><i class="fa-solid fa-circle"></i>Bachelor's degree in Computer Science, Web Development, or a related field.</p>
+        <p><i class="fa-solid fa-circle"></i>Relevant certifications in front-end development (optional but a plus).</p>
+        <p><i class="fa-solid fa-circle"></i>Proficiency in HTML, CSS, Bootstrap and JavaScript: Strong understanding of web markup and scripting.</p>
+        <p><i class="fa-solid fa-circle"></i>Experience with front-end frameworks/libraries: Such as React or Angular or Vue.js.</p>
+        <p><i class="fa-solid fa-circle"></i>Responsive Design: Experience in creating responsive and adaptive designs.</p>
+        <p><i class="fa-solid fa-circle"></i>Version Control Systems: Proficiency with Git and GitHub.</p>
+         <p><i class="fa-solid fa-circle"></i>Cross-Browser Compatibility: Ability to ensure consistent look and feel across different browsers.</p>
+          <p><i class="fa-solid fa-circle"></i>CSS Preprocessors: Experience with Sass or Less.</p>
+          <p><i class="fa-solid fa-circle"></i>0-1 years of experience in front-end development.</p>
+          <button class="mt-3" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">APPLY NOW</button>
+          <div class="collapse mt-3" id="collapseExample">
+            <div class="card card-body">
+                <form action="" id="myForm" class="form-application">
+                    <input type="text" id="name" class="form-control" name="name" placeholder="Full Name" required />
+                    <input type="text" id="phone" class="form-control phone-input" name="phone" placeholder="Phone Number" required />
+                    <input type="hidden" name="countrycode" id="countrycode" class="countrycode">
+                    <input type="email" id="email" class="form-control" name="email" placeholder="Email" required />
+                    <input type="text" class="form-control" name="file" id="file" required placeholder="Paste Google Drive URL of Resume"/>
+                    <button type="submit">SUBMIT APPLICATION</button>
+                </form>
+            </div>
+          </div>
+    </div>
+    <div class="open-position mb-2">
+        <h3 class="mb-3">Digital Marketing Specialist</h3>
+        <p><i class="fa-solid fa-circle"></i>Bachelor's degree in Marketing, Business, Communications, or a related field.</p>
+        <p><i class="fa-solid fa-circle"></i>Certifications in Digital Marketing, Google Analytics, Google Ads, or social media marketing (optional but a plus).</p>
+        <p><i class="fa-solid fa-circle"></i>SEO/SEM: Strong understanding of search engine optimization and search engine marketing.</p>
+        <p><i class="fa-solid fa-circle"></i>Content Marketing: Experience in creating and distributing valuable content to attract and engage a target audience.</p>
+        <p><i class="fa-solid fa-circle"></i>Social Media Management: Proficiency in managing social media platforms (e.g., Facebook, Instagram, Twitter, LinkedIn).</p>
+        <p><i class="fa-solid fa-circle"></i>Email Marketing: Experience with email marketing platforms (e.g., Mailchimp, HubSpot).</p>
+        <p><i class="fa-solid fa-circle"></i>Analytics Tools: Proficiency in using Google Analytics, Google Search Console, and other analytics tools to measure campaign success.</p>
+        <p><i class="fa-solid fa-circle"></i>1-2 years of experience in digital marketing.</p>
+        <button class="mt-3" data-bs-toggle="collapse" data-bs-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">APPLY NOW</button>
+        <div class="collapse mt-3" id="collapseExample2">
+          <div class="card card-body">
+              <form action="" id="myForm2" class="form-application">
+                  <input type="text" id="name2" class="form-control" name="name" placeholder="Full Name" required />
+                  <input type="text" id="phone2" class="form-control phone-input" name="phone" placeholder="Phone Number" required />
+                  <input type="hidden" name="countrycode" id="countrycode2" class="countrycode">
+                  <input type="email" id="email2" class="form-control" name="email" placeholder="Email" required />
+                  <input type="text" class="form-control" name="file" id="file2" required placeholder="Paste Google Drive URL of Resume"/>
+                  <button type="submit">SUBMIT APPLICATION</button>
+              </form>
+          </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script type="text/javascript">
+  emailjs.init('clfk8jMi_U3E3zCCQ')
+</script>
+<script>
+    document.getElementById('myForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+
+
+    var formData = new FormData();
+    formData.append('name', document.getElementById('name').value);
+    formData.append('phone', document.getElementById('phone').value);
+    formData.append('email', document.getElementById('email').value);
+    formData.append('file', document.getElementById('file').value);
+    formData.append('countrycode', document.getElementById('countrycode').value);
+
+    emailjs.sendForm('service_s04s9j8', 'template_ci93cei', '#myForm', 'clfk8jMi_U3E3zCCQ')
+    .then(function(response) {
+        console.log('SUCCESS!', response.status, response.text);
+        alert('Your application has been sent successfully. We will get back to you soon.');
+        document.getElementById('myForm').reset();
+    }, function(error) {
+        console.log('FAILED...', error);
+        alert('Failed to send email.');
+    });
+});
+
+</script>
+<script>
+    document.getElementById('myForm2').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+
+
+    var formData = new FormData();
+    formData.append('name', document.getElementById('name2').value);
+    formData.append('phone', document.getElementById('phone2').value);
+    formData.append('email', document.getElementById('email2').value);
+    formData.append('file', document.getElementById('file2').value);
+    formData.append('countrycode', document.getElementById('countrycode2').value);
+
+    emailjs.sendForm('service_s04s9j8', 'template_ci93cei', '#myForm2', 'clfk8jMi_U3E3zCCQ')
+    .then(function(response) {
+        console.log('SUCCESS!', response.status, response.text);
+        alert('Your application has been sent successfully. We will get back to you soon.');
+        document.getElementById('myForm2').reset();
+    }, function(error) {
+        console.log('FAILED...', error);
+        alert('Failed to send email.');
+    });
+});
+
+</script>
+<script>
+    document.querySelectorAll('.phone-input').forEach(function(input) {
+    const iti = window.intlTelInput(input, {
+        separateDialCode: true,
+        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.3.5/js/utils.js",
+        initialCountry: "ae"
+    });
+
+    input.addEventListener('input', function () {
+        const countryCodeInput = input.closest('form').querySelector('.countrycode');
+        const selectedCountryData = iti.getSelectedCountryData();
+        countryCodeInput.value = '+' + selectedCountryData.dialCode;
+    });
+});
+
+</script>
+
+{%  endblock %}
+</body>
+</html>

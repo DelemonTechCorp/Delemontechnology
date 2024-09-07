@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% load static %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>about</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<style>
+.web-page-bg{
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+    background-repeat: no-repeat;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('{% static 'img/web-bg-2.jpg' %}');
+}
+.web-page-bg-1{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items:flex-start;
+    justify-content:center;
+    flex-direction: column;
+}
+.web-page-bg-2{
+    width: 40%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.web-page-bg-icons{
+width: 10%;
+height: 45%;
+display: flex;
+align-items: center;
+justify-content: space-evenly;
+flex-direction: column;
+}
+.web-page-bg-1 h1{
+    color: white;
+    font-weight: 700;
+    font-size: 35px;
+}
+.web-page-bg-1-content p{
+    color: white;
+    font-weight: 300;
+    font-size: 14px;
+}
+.web-page-bg-1-content{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+}
+.icon-container{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border-radius: 50%;
+}
+.icon-container i{
+    color: white;
+    font-size: 13px;
+}
+.icon-container:hover{
+    background-color: white;
+    border: 2px solid #FAB206;
+    transition: 0.3s ease;
+}
+.icon-container:hover i{
+    color: black;
+}
+#web-page-form{
+    background-color: white;
+    width: 90%;
+    padding: 8%;
+    height: 80%;
+}
+#web-page-form h3{
+    font-size: 20px;
+    font-weight: 700;
+}
+#web-page-form label{
+    font-size: 12px;
+}
+.web-page-form-input{
+    border: hidden;
+    outline: none;
+    padding-left: 5px;
+    width: 100%;
+    font-size: 12px;
+    height: 30px;
+    background-color: #F1EFF0;
+}
+.web-page-form-button{
+    background-color: rgb(255, 255, 255);
+    color:#FAB206;
+    outline: none;
+    width: 100px;
+    height: 30px;
+    font-size: 12px;
+    border:2px solid #FAB206;
+
+}
+#form-bottom-p{
+    font-size: 12px;
+    color: rgb(170, 169, 169);
+    text-align: center;
+}
+#web-page-form p span{
+color: #FAB206;
+font-weight: 600;
+}
+.error-message{
+    color:red;
+    font-size:12px;
+}
+.web-page-container-2{
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.web-page-clients{
+    height: 70%;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+.web-page-clients-details{
+    width: 45%;
+}
+.web-page-clients h1{
+    font-size: 30px;
+    font-weight: 600;
+}
+.web-page-clients p{
+    font-size: 14px;
+}
+.web-page-clients-counts{
+    width: 100%;
+    height: 180px;
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #F6F6F6;
+}
+.web-page-clients-counts h5{
+    font-size: 18px;
+    font-weight: 600;
+}
+.clients-counts{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.counts-row{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 80px;
+    width: 30%;
+    border-right: 1px solid #dfdfdf;
+    justify-content: space-between;
+}
+.counts-row span{
+    font-size: 14px;
+    font-weight: 300;
+}
+.counts-row h1{
+    font-size: 35px;
+    font-weight: 800;
+    color: #FAB206;
+}
+.web-page-cards{
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content:center;
+    padding: 10px;
+    cursor: pointer;
+
+}
+.card-icon-div{
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #C1C1C1;
+}
+.card-icon-div i{
+    font-size: 20px;
+    color: white;
+
+}
+.web-page-cards h1{
+    font-size: 22px;
+}
+.web-page-cards span i{
+    margin-right: 8px;
+    color: #C1C1C1;
+    font-size: 20px;
+}
+.web-page-cards:hover{
+    background-color: #F6F6F6;
+    border-radius: 10px;
+}
+.web-page-cards:hover .card-icon-div{
+    background-color: #FAB206;
+}
+.web-page-cards:hover span i{
+    color: #FAB206;
+}
+.faq-section{
+    height: 90vh;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    display: flex;
+    background-color: #E3E3E3;
+}
+.faq-section-header{
+    width: 90%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.faq-section-header h1{
+    -webkit-text-stroke: 1px rgb(0, 0, 0);
+        color: transparent;
+        font-size: 70px;
+}
+.faq-cards{
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+}
+.faq-card{
+    position:relative;
+     overflow:hidden;
+     width: 220px;
+      height:300px;
+      display: flex;
+      cursor: pointer;
+      align-items: flex-start;
+      padding: 20px;
+      flex-direction: column;
+      background-color: white;
+      justify-content: space-evenly;
+
+}
+.card-overlay{padding:20px; position:absolute; background:rgba(0,0,0,.5);
+  left:0;
+  top: 100%;
+  width:100%;
+  height:100%;
+  z-index: 1;
+  transition:all 350ms cubic-bezier(0, 0, 0.2, 1);
+  display:flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items:flex-start;
+  background:rgb(0, 0, 0)
+}
+.faq-card:hover .card-overlay{
+  top: 0;
+}
+
+.card-overlay.left{  left:-100%;
+  top: 0;
+}
+.faq-card:hover .card-overlay.left {
+  left: 0;
+}
+
+.card-overlay.right{  left:100%;
+  top: 0;
+}
+.faq-card:hover .card-overlay.right {
+  left: 0;
+}
+.faq-card:hover .card-overlay.top{  left:0;
+  top: -100%;
+}
+.faq-card:hover .card-overlay.top {
+left: 0;
+  top: 0;
+}
+.faq-card h1{
+    -webkit-text-stroke: 1px #FAB206;
+        color: transparent;
+        font-size: 50px;
+        font-family: "Manrope", sans-serif;
+}
+.faq-question{
+    font-size: 14px;
+    font-weight: 700;
+    font-family: "Manrope", sans-serif;
+}
+.card-overlay p{
+    font-size: 10px;
+    color: white;
+    font-family: "Manrope", sans-serif;
+}
+.faq-card i{
+    height: 30px;
+    width: 30px;
+    border: 2px solid #FAB206;
+    background-color: white;
+    color:#FAB206;
+    font-size: 12px;
+    justify-content: center;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+}
+.mobile-happy{
+    display:none;
+}
+@media(min-width:320px) and (max-width:480px){
+    .mobile-happy-none{
+        display:none;
+    }
+    .mobile-happy{
+        display:block;
+    }
+    .web-page-bg{
+        flex-direction: column;
+        height:140vh;
+    }
+    .web-page-bg-icons{
+        flex-direction: row;
+        width: 90%;
+        height: 10%;
+    }
+    .web-page-bg-1{
+        width: 90%;
+        height: 20%;
+    }
+    #web-page-form{
+        width: 90%;
+        height: auto;
+    }
+    .web-page-bg-2{
+        width: 100%;
+    }
+    .web-page-container-2{
+        flex-direction: column;
+        height:100vh;
+    }
+    .web-page-clients{
+        width: 90%;
+        height: 40%;
+    }
+    .web-page-clients-details{
+        width: 90%;
+    }
+    .counts-row{
+        border: hidden;
+    }
+.faq-section{
+    height:auto;
+}
+.faq-cards{
+    height:340px;
+    overflow-x:auto;
+}
+.faq-card{
+    min-width:220px;
+    margin-right:10px;
+}
+.faq-section-header h1{
+    font-size:35px;
+    overflow-y:hidden;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+.faq-card p{
+    font-size:12px;
+}
+.card-overlay p{
+    font-size:10px;
+}
+}
+</style>
+<body>
+   <div class="web-page-bg">
+    <div class="web-page-bg-icons">
+            <div class="icon-container">
+            <a href="https://www.facebook.com/profile.php?id=61554857870065&sfnsn=wiwspwa&mibextid=RUbZ1f"><i class="fa-brands fa-facebook"></i></a>
+        </div>
+        <div class="icon-container">
+            <a href=""><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+            <div class="icon-container">
+                <a href="https://www.instagram.com/delemon_technology?igsh=emF2ajg3bm00cDUz"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+            <div class="icon-container">
+                <a href="https://www.linkedin.com/company/delemon-technology/"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+            <div class="icon-container">
+                <a href=""><i class="fa-brands fa-youtube"></i></a>
+        </div>
+    </div>
+<div class="web-page-bg-1">
+<h1>Web Development <br> Leaders In UAE</h1>
+<div class="web-page-bg-1-content">
+<p>Bring the digital vision of your brand to life with a fully-functional,<br> responsive website.</p>
+</div>
+</div>
+<div class="web-page-bg-2">
+           <form id="web-page-form" action="https://api.web3forms.com/submit" method="POST" onsubmit="return validatecontact(event)">
+                <h3>Have any questions?</h3>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                                <input type="hidden" name="access_key" value="1d581977-0167-4073-8d30-f8e754b508d4">
+                                <input type="hidden" name="subject" value="Form Submission From Delemon Website">
+                        <label for="">Your Name</label>
+        <input type="text" placeholder="Enter your name" id="name" name="name" class="web-page-form-input">
+        <p class="error-message" id="name-error"></p>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="">Your Email</label>
+        <input type="text" name="email" id="email" placeholder="Enter your email" class="web-page-form-input">
+        <p class="error-message" id="email-error"></p>
+                    </div>
+                    <div class="col-md-6 mb-3" >
+                        <label for="">Your Number</label>
+        <input type="text" name="phonenumber" id="phone" placeholder="Enter your Number" class="web-page-form-input">
+        <p class="error-message" id="phone-error"></p>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="">Your Message</label>
+        <input type="text" name="message" id="message" placeholder="Type here" class="web-page-form-input">
+                    </div>
+                </div>
+                <input type="submit" class="web-page-form-button" value="SUBMIT"/>
+                <p class="mt-4" id="form-bottom-p">if you have any RFP requirement please share with us at <span>@delemontechnology.ae</span> and if you are looking for a career related enquiry please check our Career section</p>
+            </form>
+</div>
+   </div>
+<div class="web-page-container-2">
+    <div class="web-page-clients">
+<h1>Elevate Your Web Experience With Our Seamless Process</h1>
+<p>Our process involves in-depth business analysis, documenting specifications, creating wireframes, and obtaining your approval before moving forward. Our seasoned web experts guide you through every step of the journey, right till the end, ensuring your website aligns with your brand’s objectives. Your vision deserves nothing less than perfection, and that's exactly what our process is designed to achieve.</p>
+    </div>
+    <div class="web-page-clients-details">
+<div class="web-page-clients-counts">
+<h5>Key Highlights Our Work In Numbers.</h5>
+<div class="clients-counts">
+    <div class="counts-row">
+        <span class="mobile-happy">Happy <br> Clients</span>
+<span class="mobile-happy-none">Happy Clients</span>
+<h1>145+</h1>
+    </div>
+    <div class="counts-row">
+        <span>Projects Completed</span>
+        <h1>212+</h1>
+    </div>
+    <div class="counts-row">
+        <span>Years of experience</span>
+        <h1>15+</h1>
+    </div>
+</div>
+</div>
+    </div>
+</div>
+<div class="container mb-5">
+    <div class="row ">
+        <div class="col-md-3 col-12">
+<div class="web-page-cards">
+    <div class="card-icon-div mb-3">
+        <i class="fa-solid fa-comments"></i>
+    </div>
+<h1 class="mb-3">Planning</h1>
+    <span><i class="fa-solid fa-caret-right"></i>Business analysis</span>
+    <span><i class="fa-solid fa-caret-right"></i>Document specifications</span>
+    <span><i class="fa-solid fa-caret-right"></i>Preparing wireframes</span>
+    <span><i class="fa-solid fa-caret-right"></i>Getting client approval</span>
+</div>
+        </div>
+        <div class="col-md-3 col-12">
+            <div class="web-page-cards">
+                <div class="card-icon-div mb-3">
+                    <i class="fa-solid fa-gear"></i>
+                </div>
+                <h1 class="mb-3">Development</h1>
+                <span><i class="fa-solid fa-caret-right"></i>Coding</span>
+                <span><i class="fa-solid fa-caret-right"></i>Mockup & page layout creation</span>
+                <span><i class="fa-solid fa-caret-right"></i>Review</span>
+                <span><i class="fa-solid fa-caret-right"></i>Approval cycle</span>
+            </div>
+        </div>
+        <div class="col-md-3 col-12">
+            <div class="web-page-cards">
+                <div class="card-icon-div mb-3">
+                    <i class="fa-solid fa-laptop-code"></i>
+                </div>
+                <h1 class="mb-3">Testing</h1>
+                <span><i class="fa-solid fa-caret-right"></i>Preparing test cases</span>
+                <span><i class="fa-solid fa-caret-right"></i>Testing</span>
+                <span><i class="fa-solid fa-caret-right"></i>Review by the QA team</span>
+                <span><i class="fa-solid fa-caret-right"></i>Approval cycle</span>
+            </div>
+        </div>
+        <div class="col-md-3 col-12">
+            <div class="web-page-cards">
+                <div class="card-icon-div mb-3">
+                    <i class="fa-solid fa-rocket"></i>
+                </div>
+                <h1 class="mb-3">Deployment</h1>
+                <span><i class="fa-solid fa-caret-right"></i>Launch</span>
+                <span><i class="fa-solid fa-caret-right"></i>Opinion monitoring</span>
+                <span><i class="fa-solid fa-caret-right"></i>Maintenance</span>
+                <span><i class="fa-solid fa-caret-right"></i>Post-deployment support</span>
+                </div>
+        </div>
+    </div>
+</div>
+
+<div class="faq-section">
+    <div class="faq-section-header">
+        <h1>FAQ</h1>
+    </div>
+    <div class="faq-cards">
+            <div class="faq-card">
+    <h1>1</h1>
+    <p class="faq-question"> I need a website for my business. Can your web development services create a professional and responsive site?</p>
+    <i class="fa-solid fa-arrow-right-long"></i>
+    <div class="card-overlay">
+        <h1>1</h1>
+    <p>"Certainly! Our web development team specializes in crafting professional and responsive websites tailored to your business needs. Check our portfolio for examples."</p>
+            </div>
+         </div>
+         <div class="faq-card">
+            <h1>2</h1>
+            <p class="faq-question">Our current website needs a redesign for a more modern look. Can you help update the design and improve functionality?</p>
+            <i class="fa-solid fa-arrow-right-long"></i>
+            <div class="card-overlay left">
+                <h1>2</h1>
+            <p>"Absolutely! We excel in modern web design and development, ensuring your website not only looks fresh but also functions seamlessly. View our redesign projects for proof."</p>
+                    </div>
+                 </div>
+                 <div class="faq-card">
+                    <h1>3</h1>
+                    <p class="faq-question">How do you ensure websites are optimized for search engines (SEO) to improve visibility and rankings?</p>
+                    <i class="fa-solid fa-arrow-right-long"></i>
+                    <div class="card-overlay right">
+                        <h1>3</h1>
+                    <p>" We implement SEO best practices in all our web development projects, ensuring your site is optimized for search engines, improving visibility and rankings. Explore our SEO-friendly websites."</p>
+                            </div>
+                         </div>
+                         <div class="faq-card">
+                            <h1>4</h1>
+                            <p class="faq-question">Can you integrate e-commerce functionality into our website for online sales?</p>
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                            <div class="card-overlay top">
+                                <h1>4</h1>
+                            <p>"Yes, we specialize in e-commerce solutions. Our team can seamlessly integrate e-commerce functionality into your website, providing a smooth online shopping experience. Check out our e-commerce projects."</p>
+                                    </div>
+                                 </div>
+                                 <div class="faq-card">
+                                    <h1>5</h1>
+                                    <p class="faq-question">What is your approach to ensuring websites are mobile-friendly and accessible on various devices?</p>
+                                    <i class="fa-solid fa-arrow-right-long"></i>
+                                    <div class="card-overlay left">
+                                        <h1>5</h1>
+                                    <p>"We prioritize mobile responsiveness and accessibility in our web development process. Your website will be optimized for various devices, providing an excellent user experience. View our mobile-friendly projects for examples."</p>
+                                            </div>
+                                         </div>
+    </div>
+    </div>
+
+            <script>
+// document.getElementById("contact-form").addEventListener("submit", function(event) {
+//         if (!validatecontact()) {
+//             event.preventDefault();
+//         }
+//          else {
+//         $('#staticBackdrop21').modal('hide');
+//     }
+//     });
+    function validatecontact(event) {
+        event.preventDefault();
+
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var phone = document.getElementById("phone").value;
+        var message = document.getElementById("message").value;
+
+        var nameError = document.getElementById("name-error");
+        var emailError = document.getElementById("email-error");
+        var phoneError = document.getElementById("phone-error");
+
+        nameError.textContent = "";
+        emailError.textContent = "";
+        phoneError.textContent = "";
+
+        var isValid = true;
+
+        if (name === "") {
+            nameError.textContent = "This field is required";
+            isValid = false;
+        }
+
+  var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            emailError.textContent = "This field is required";
+            isValid = false;
+        }
+
+
+        if (phone === "") {
+            phoneError.textContent = "This field is required";
+            isValid = false;
+        }
+        if (isValid) {
+            submitForm();
+        }
+
+
+        return false;
+    }
+     function submitForm() {
+        // Get form data
+        const form = document.getElementById('web-page-form');
+        const formData = new FormData(form);
+
+        // Send form data asynchronously
+        fetch(form.action, {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => {
+            if (response.ok) {
+alert('Thank You for Contacting Us');
+document.getElementById('web-page-form').reset();
+                // Reset form fields
+            } else {
+                // Handle error
+                console.error('Form submission failed:', response.statusText);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+        event.preventDefault();
+    }
+
+</script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+{% endblock %}
+</body>
+</html>

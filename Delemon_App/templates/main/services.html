@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html>
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% load static %}
+{% block content %}
+<head>
+    <meta charset="UTF-8" />
+    <title>Servics</title>
+    <link href="style1.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<style>
+.web-page-bg{
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+    background-repeat: no-repeat;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("{% static 'img/web-bg-2.jpg' %}");
+}
+.web-page-bg-1{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items:flex-start;
+    justify-content:center;
+    flex-direction: column;
+}
+.web-page-bg-2{
+    width: 40%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.web-page-bg-icons{
+width: 10%;
+height: 45%;
+display: flex;
+align-items: center;
+justify-content: space-evenly;
+flex-direction: column;
+}
+.web-page-bg-1 h1{
+    color: white;
+    font-weight: 700;
+    font-size: 35px;
+}
+.web-page-bg-1-content p{
+    color: white;
+    font-weight: 300;
+    font-size: 14px;
+}
+.web-page-bg-1-content{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+}
+.icon-container{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border-radius: 50%;
+}
+.icon-container i{
+    color: white;
+    font-size: 13px;
+}
+.icon-container:hover{
+    background-color: white;
+    border: 2px solid #FAB206;
+    transition: 0.3s ease;
+}
+.icon-container:hover i{
+    color: black;
+}
+#web-page-form{
+    background-color: white;
+    width: 90%;
+    padding: 8%;
+    height: 80%;
+}
+.web-page-form-input{
+    border: hidden;
+    outline: none;
+    padding-left: 5px;
+    width: 100%;
+    font-size: 12px;
+    height: 30px;
+    background-color: #F1EFF0;
+}
+#web-page-form h3{
+    font-size: 20px;
+    font-weight: 700;
+}
+#web-page-form label{
+    font-size: 12px;
+}
+.web-page-form-button{
+    background-color: rgb(255, 255, 255);
+    color:#FAB206;
+    outline: none;
+    width: 100px;
+    height: 30px;
+    font-size: 12px;
+    border:2px solid #FAB206;
+
+}
+#form-bottom-p{
+    font-size: 12px;
+    color: rgb(170, 169, 169);
+    text-align: center;
+}
+#web-page-form p span{
+color: #FAB206;
+font-weight: 600;
+}
+/* .web-page-container-2{
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.web-page-clients{
+    height: 70%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+.web-page-clients-details{
+    width: 45%;
+}
+.web-page-clients h1{
+    font-size: 30px;
+    font-weight: 600;
+}
+.web-page-clients p{
+    font-size: 14px;
+}
+.web-page-clients-counts{
+    width: 100%;
+    height: 180px;
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #F6F6F6;
+}
+.web-page-clients-counts h5{
+    font-size: 18px;
+    font-weight: 600;
+}
+.clients-counts{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.counts-row{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 80px;
+    width: 30%;
+    border-right: 1px solid #dfdfdf;
+    justify-content: space-between;
+}
+.counts-row span{
+    font-size: 14px;
+    font-weight: 300;
+}
+.counts-row h1{
+    font-size: 35px;
+    font-weight: 800;
+    color: #FAB206;
+}
+.web-page-cards{
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content:center;
+    padding: 10px;
+    cursor: pointer;
+
+}
+.card-icon-div{
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #C1C1C1;
+}
+.card-icon-div i{
+    font-size: 20px;
+    color: white;
+
+}
+.web-page-cards h1{
+    font-size: 22px;
+}
+.web-page-cards span i{
+    margin-right: 8px;
+    color: #C1C1C1;
+    font-size: 20px;
+}
+.web-page-cards:hover{
+    background-color: #F6F6F6;
+    border-radius: 10px;
+}
+.web-page-cards:hover .card-icon-div{
+    background-color: #FAB206;
+}
+.web-page-cards:hover span i{
+    color: #FAB206;
+}
+.social-media-stack{
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-image: linear-gradient(to bottom, #dddde3, #e6e5ea, #eeeef1, #f7f6f8, #ffffff);
+
+}
+.stack-header{
+width: 50%;
+display: flex;
+align-items: center;
+justify-content: space-evenly;
+flex-direction: column;
+}
+.stack-header h1{
+    font-size: 30px;
+}
+.stack-header p{
+    font-size: 14px;
+    font-weight: 300;
+}
+.stack-scroll{
+    width: 100%;
+    display: flex;
+    align-items: center;
+} */
+/* @keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.logos {
+  overflow: hidden;
+  padding: 60px 0;
+  white-space: nowrap;
+  position: relative;
+}
+
+.logos:before,
+.logos:after {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  content: "";
+  z-index: 2;
+}
+
+.logos:before {
+  left: 0;
+}
+
+.logos:after {
+  right: 0;
+}
+
+.logos:hover .logos-slide {
+  animation-play-state: paused;
+}
+
+.logos-slide {
+  display: inline-block;
+  animation: 35s slide infinite linear;
+}
+
+.logos-slide img {
+  height: 50px;
+  margin: 0 40px;
+} */
+
+.faq-section{
+    height: 90vh;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    display: flex;
+    background-color: #E3E3E3;
+}
+.faq-section-header{
+    width: 90%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.faq-section-header h1{
+    -webkit-text-stroke: 1px rgb(0, 0, 0);
+        color: transparent;
+        font-size: 70px;
+}
+.faq-cards{
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+}
+.faq-card{
+    position:relative;
+     overflow:hidden;
+     width: 220px;
+      height:300px;
+      display: flex;
+      cursor: pointer;
+      align-items: flex-start;
+      padding: 20px;
+      flex-direction: column;
+      background-color: white;
+      justify-content: space-evenly;
+
+}
+.card-overlay{padding:20px; position:absolute; background:rgba(0,0,0,.5);
+  left:0;
+  top: 100%;
+  width:100%;
+  height:100%;
+  z-index: 1;
+  transition:all 350ms cubic-bezier(0, 0, 0.2, 1);
+  display:flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items:flex-start;
+  background:rgb(0, 0, 0)
+}
+.faq-card:hover .card-overlay{
+  top: 0;
+}
+
+.card-overlay.left{  left:-100%;
+  top: 0;
+}
+.faq-card:hover .card-overlay.left {
+  left: 0;
+}
+
+.card-overlay.right{  left:100%;
+  top: 0;
+}
+.faq-card:hover .card-overlay.right {
+  left: 0;
+}
+.faq-card:hover .card-overlay.top{  left:0;
+  top: -100%;
+}
+.faq-card:hover .card-overlay.top {
+left: 0;
+  top: 0;
+}
+.faq-card h1{
+    -webkit-text-stroke: 1px #FAB206;
+        color: transparent;
+        font-size: 50px;
+        font-family: "Manrope", sans-serif;
+}
+.faq-question{
+    font-size: 14px;
+    font-weight: 700;
+    font-family: "Manrope", sans-serif;
+}
+.card-overlay p{
+    font-size: 10px;
+    color: white;
+    font-family: "Manrope", sans-serif;
+}
+.faq-card i{
+    height: 30px;
+    width: 30px;
+    border: 2px solid #FAB206;
+    background-color: white;
+    color:#FAB206;
+    font-size: 12px;
+    justify-content: center;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+}
+/* body{
+    margin:0;
+}
+.section-one{
+    height:750px;display:flex;
+}
+.section-one .form-section{
+    background-color:white;
+    height:600px;
+    position:relative;
+    width:500px;margin-left: 300px;
+    padding:50px;margin-top:80px;
+
+}
+.section-one .form-section form{
+   position:absolute;
+   padding:20px;
+}
+.section-one .form-section form button{
+    border-radius:100%;
+    margin-left:10px;background-color:#FAB206;
+    border:none;
+    height:40px;
+    width:40px;
+}
+
+.section-one .form-section form input{
+    border-style: none;
+    border-bottom:2px solid black;
+    margin-bottom:20px;outline:none;
+}
+.section-one .heading{
+    margin-left:50px;
+    margin-top:300px;
+    color:white;
+    width:550px;padding-left:40px;
+} */
+
+#first-head{
+    color: black;
+}
+#second-head{
+    color: #FAB206;
+}
+.cardicon img{
+    height:50px;
+    width:50px;
+}
+/*a{*/
+/*text-decoration: none;*/
+/*}*/
+/*.cards{*/
+/*    height:300px;*/
+/*    width:100%;*/
+/*}*/
+/*.cardicon{*/
+/*    border-radius:100%;*/
+/*    width:50px;*/
+/*    height:50px;background-color: white;*/
+
+/*}*/
+/*.cardicon img{*/
+/*    width:35px;*/
+/*    height:35px;*/
+/*    overflow:hidden;*/
+/*    margin:9px 9px;*/
+/*}*/
+.cards:hover{
+    box-shadow:0 4px 8px 0 rgba(0,0,0,0.2);
+}
+.cards a{
+    text-decoration:none;
+    color:black;
+}
+.cards h3{
+    font-size:20px;
+}
+/*.detailbox{*/
+/*    color:black;*/
+/*    text-decoration: none;*/
+/*    padding-top:20px;*/
+/*}*/
+/*.slideanim {visibility:hidden;}*/
+/*.slide {*/
+/*  animation-name: slide;*/
+/*  -webkit-animation-name: slide;*/
+/*  animation-duration: 1s;*/
+/*  -webkit-animation-duration: 1s;*/
+/*  visibility: visible;*/
+/*}*/
+@keyframes slide {
+  0% {
+    opacity: 0;
+    transform: translateY(70%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+.social-media-section{
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 80vh;
+}
+.social-header{
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+}
+.social-icons{
+    width: 200px;
+    display: flex;
+    height: 50px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.social-icons i{
+    font-size: 20px;
+    color:black;
+}
+.social-header h1{
+    font-size: 30px;
+}
+.social-header h5{
+    letter-spacing: 2px;
+}
+.social-contents{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.social-image{
+    height: 220px;
+    width: 220px;
+    position: relative;
+}
+.social-image img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.social-overlay{
+    position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.2) 100%);
+}
+.social-overlay i{
+    color: white;
+    font-size: 25px;
+}
+.error-message{
+    font-size:10px;
+    color:red;
+}
+@media(min-width:320px) and (max-width:480px){
+    .web-page-bg{
+        flex-direction: column;
+        height:120vh;
+    }
+    .web-page-bg-icons{
+        flex-direction: row;
+        width: 90%;
+        height: 10%;
+    }
+    .web-page-bg-1{
+        width: 90%;
+        height: 10%;
+    }
+    .web-page-bg-1 h1{
+        font-size:22px;
+    }
+    #web-page-form{
+        width: 90%;
+        height: auto;
+    }
+    .web-page-bg-2{
+        width: 100%;
+    }
+    .faq-section{
+    height:auto;
+}
+.faq-cards{
+    height:340px;
+    overflow-x:auto;
+}
+.faq-card{
+    min-width:220px;
+    margin-right:10px;
+}
+.faq-card p{
+    font-size:12px;
+}
+.faq-section-header h1{
+    font-size:35px;
+    overflow-y:hidden;
+}
+ .social-media-section{
+        height:auto;
+        margin-bottom:10px;
+    }
+    .social-contents{
+    width:98%;
+    flex-wrap:wrap;
+    height:auto;
+    gap:10px;
+}
+.social-image{
+    width:48%;
+    height:180px;
+}
+.social-header h5{
+   overflow-y:hidden;
+}
+.social-header h1{
+    overflow-y:hidden;
+}
+.social-header{
+    height:auto;
+    margin-top:10px;
+}
+.section-two{
+    padding:0;
+    display:flex;
+    flex-direction:column;
+}
+.section-two-heading{
+    width:100%;
+}
+}
+</style>
+<body>
+    <!-- <div class="section-one" style="background-color: #FAB206;">
+        <div class="heading">
+        <h1>Our Digital Services Create
+            Lovely Projects & Deliver
+            Memorable Experiences</h1>
+        </div>
+        <div class="form-section">
+            <div>
+            <h3><strong>Speak to an Expert</strong></h3>
+            <p>if you have any RFP requirement please share with us at
+                 discover@digitalgravity.ae and if you are looking for a
+                  career related enquiry please check our Career section.</p>
+                </div>
+            <div>
+            <form>
+               <label for="name"> Your Name*</label><br>  <input type="text" name="name"><br>
+              <label for="email">Your Email*</label><br> <input type="email" name="email"><br>
+              <label for="number">Phone Number*</label><br> <input type="number" name="number"><br>
+             <label for="message">Your Message </label><br> <input type="text" name="message"><br>
+
+            <label for="send"><b>Send</b></label> <button type="submit" name="send"><span><i class="fa-solid fa-arrow-right" style="color:white"></i></span></button>
+            </form>
+            </div>
+            </div>
+        </div> -->
+        <div class="web-page-bg">
+            <div class="web-page-bg-icons">
+                    <div class="icon-container">
+                    <a href="https://www.facebook.com/profile.php?id=61554857870065&sfnsn=wiwspwa&mibextid=RUbZ1f"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+                <div class="icon-container">
+                    <a href=""><i class="fa-brands fa-x-twitter"></i></a>
+                </div>
+                    <div class="icon-container">
+                        <a href="https://www.instagram.com/delemon_technology?igsh=emF2ajg3bm00cDUz"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+                    <div class="icon-container">
+                        <a href="https://www.linkedin.com/company/delemon-technology/"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                    <div class="icon-container">
+                        <a href=""><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        <div class="web-page-bg-1">
+        <h1>Our Digital Services Create Lovely Projects & Deliver Memorable Experiences</h1>
+        </div>
+        <div class="web-page-bg-2">
+            <form id="web-page-form" action="https://api.web3forms.com/submit" method="POST" onsubmit="return validatecontact(event)">
+                <h3>Have any questions?</h3>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                                <input type="hidden" name="access_key" value="1d581977-0167-4073-8d30-f8e754b508d4">
+                                <input type="hidden" name="subject" value="Form Submission From Delemon Website">
+                                <label for="">Your Name</label>
+        <input type="text" placeholder="Enter your name" id="name" name="name" class="web-page-form-input">
+        <p class="error-message" id="name-error"></p>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="">Your Email</label>
+        <input type="text" name="email" id="email" placeholder="Enter your email" class="web-page-form-input">
+        <p class="error-message" id="email-error"></p>
+                    </div>
+                    <div class="col-md-6 mb-3" >
+                        <label for="">Your Number</label>
+        <input type="text" name="phonenumber" id="phone" placeholder="Enter your Number" class="web-page-form-input">
+        <p class="error-message" id="phone-error"></p>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="">Your Message</label>
+        <input type="text" name="message" id="message" placeholder="Type here" class="web-page-form-input">
+                    </div>
+                </div>
+                <input type="submit" class="web-page-form-button" value="SUBMIT"/>
+                <p class="mt-4" id="form-bottom-p">if you have any RFP requirement please share with us at <span>@delemontechnology.ae</span> and if you are looking for a career related enquiry please check our Career section</p>
+            </form>
+        </div>
+           </div>
+
+            <div class="container mt-5 mb-5">
+                <div class="row gx-4 gy-4 p-2">
+                    <div class="col-md-3">
+                     <h1 id="first-head">A Full-Service</h1>
+                      <h1 id="second-head">Creative Digital Agency</h1>
+                      </div>
+                <div class="col-md-9">
+                    <div class="row">
+                    <div class="col-md-4 mb-3 p-3 cards">
+                        <a href="{% url 'web' %}">
+                        <div class="cardicon mb-3">
+                            <img src="{% static 'img/web.png' %}">
+                        </div>
+                        <div class="detailbox slide">
+                            <h3>Web development</h3>
+                            <p>Desktop & Mobile websites done right by professional web development experts</p>
+                        </div></a>
+                    </div>
+                    <div class="col-md-4 mb-3 p-3 cards">
+                        <a href="{% url 'mobile' %}">
+                        <div class="cardicon mb-3">
+                            <img src="{% static 'img/app.png' %}">
+                        </div>
+                        <div class="detailbox slide">
+                            <h3>Mobile Applications</h3>
+                            <p>High performance mobile apps for your business.</p>
+                        </div></a>
+                    </div>
+
+                    <div class="col-md-4 mb-3 p-3 cards">
+                        <a href="{% url 'digital' %}">
+                        <div class="cardicon mb-3">
+                            <img src="{% static 'img/digital.png' %}">
+                        </div>
+                        <div class="detailbox slide">
+                            <h3>Digital Marketing</h3>
+                            <p>Strategies to boost your conversions & ROI done by gurus.</p>
+                        </div></a>
+                    </div>
+
+                    <div class="col-md-4 mb-3 p-3 cards">
+                        <a href="{% url 'uiux' %}">
+                        <div class="cardicon mb-3">
+                            <img src="{% static 'img/design.png' %}">
+                        </div>
+                        <div class="detailbox slide">
+                            <h3>UI/UX Design</h3>
+                            <p>Great user experience, with responsive web design.</p>
+                        </div></a>
+                    </div>
+
+                    <div class="col-md-4 mb-3 p-3 cards">
+                        <a href="{% url 'ecommerce' %}">
+                        <div class="cardicon mb-3">
+                            <img src="{% static 'img/ecommerce.png' %}">
+                        </div>
+                        <div class="detailbox slide">
+                            <h3>E-Commerce Solution</h3>
+                            <p>Ecommerce: We create awesome online stores for simple, better and convenient shopping. Greater ecommerce experience, every time!</p>
+                        </div></a>
+                    </div>
+
+                    <div class="col-md-4 mb-3 p-3 cards">
+                        <a href="{% url 'animation' %}">
+                        <div class="cardicon mb-3">
+                            <img src="{% static 'img/animation.png' %}">
+                        </div>
+                        <div class="detailbox slide">
+                            <h3>Video Animation</h3>
+                            <p>Video Animation: Giving Your World a Better, More Inspirational Look. Tell Amazing Stories with Our Video Animation.</p>
+                        </div></a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+
+<div class="faq-section">
+    <div class="faq-section-header">
+        <h1>FAQ</h1>
+    </div>
+    <div class="faq-cards">
+            <div class="faq-card">
+    <h1>1</h1>
+    <p class="faq-question">I need to boost my online presence. How can your digital marketing services help?</p>
+    <i class="fa-solid fa-arrow-right-long"></i>
+    <div class="card-overlay">
+        <h1>1</h1>
+    <p>"Our strategic digital marketing approach enhances visibility, engages your target audience, and boosts conversions. Check our case studies for proven success."</p>
+            </div>
+         </div>
+         <div class="faq-card">
+            <h1>2</h1>
+            <p class="faq-question">Can you revamp my e-commerce platform for better user experience and increased sales?</p>
+            <i class="fa-solid fa-arrow-right-long"></i>
+            <div class="card-overlay left">
+                <h1>2</h1>
+            <p>"Absolutely! Our tailored e-commerce solutions improve user experience and drive higher conversions. Explore our e-commerce portfolio for results."</p>
+                    </div>
+                 </div>
+                 <div class="faq-card">
+                    <h1>3</h1>
+                    <p class="faq-question">Our website is outdated and not mobile-friendly. How can your web development services help?</p>
+                    <i class="fa-solid fa-arrow-right-long"></i>
+                    <div class="card-overlay right">
+                        <h1>3</h1>
+                    <p>"We specialize in modern web development, creating visually appealing, responsive websites. View our projects for examples of successful transformations."</p>
+                            </div>
+                         </div>
+                         <div class="faq-card">
+                            <h1>4</h1>
+                            <p class="faq-question">Interested in targeted advertising campaigns. How can your strategies help create and manage effective online ads?</p>
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                            <div class="card-overlay top">
+                                <h1>4</h1>
+                            <p>"Our team excels in crafting and managing targeted ad campaigns, maximizing ROI. Check our success stories for proven results."</p>
+                                    </div>
+                                 </div>
+                                 <div class="faq-card">
+                                    <h1>5</h1>
+                                    <p class="faq-question">We're a growing startup. Can you provide end-to-end digital solutions tailored to our needs?</p>
+                                    <i class="fa-solid fa-arrow-right-long"></i>
+                                    <div class="card-overlay left">
+                                        <h1>5</h1>
+                                    <p>"Absolutely! From website design to comprehensive digital marketing, we support startups with end-to-end solutions. Explore our startup success stories for insights."</p>
+                                            </div>
+                                         </div>
+    </div>
+    </div>
+
+
+ <div class="social-media-section" style="background-color:#E3E3E3" >
+        <div class="social-header">
+    <h5>GET SOCIAL</h5>
+    <h1>Join the conversation</h1>
+    <div class="social-icons">
+        <a href=""><i class="fa-brands fa-facebook"></i></a>
+        <a href=""><i class="fa-brands fa-x-twitter"></i></a>
+        <a href=""><i class="fa-brands fa-instagram"></i></a>
+        <a href=""><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href=""><i class="fa-brands fa-youtube"></i></a>
+    </div>
+        </div>
+        <div class="social-contents">
+            <div class="social-image">
+                <img src="{% static 'img/fb-5.jpg' %}" alt="">
+                <a href="https://www.facebook.com/photo/?fbid=122124037460161929&set=pcb.122124040514161929" target="_blank">
+                <div class="social-overlay">
+                    <i class="fa-brands fa-facebook"></i>
+                </div>
+            </a>
+                </div>
+    <div class="social-image">
+    <img src="{% static 'img/insta-first.jpg' %}" alt="">
+    <a href="https://www.instagram.com/p/C4u9Hv1SdXf/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank">
+    <div class="social-overlay">
+        <i class="fa-brands fa-instagram"></i>
+    </div>
+    </a>
+    </div>
+    <div class="social-image">
+        <img src="{% static 'img/insta-second.jpg' %}" alt="">
+        <a href="https://www.instagram.com/p/Cvb_Eprveg6/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank">
+        <div class="social-overlay">
+            <i class="fa-brands fa-instagram"></i>
+        </div>
+    </a>
+    </div>
+    <div class="social-image">
+        <img src="{% static 'img/fb-2.jpg' %}" alt="">
+        <a href="https://www.facebook.com/photo?fbid=122121145868161929&set=pb.61554857870065.-2207520000" target="_blank">
+        <div class="social-overlay">
+            <i class="fa-brands fa-facebook"></i>
+        </div>
+    </a>
+    </div>
+    <div class="social-image">
+        <img src="{% static 'img/li-first.jpg' %}" alt="">
+        <a href="https://www.linkedin.com/posts/delemon-technology_delemon-technology-activity-7080178092853346305-tMYO?utm_source=share&utm_medium=member_desktop" target="_blank">
+        <div class="social-overlay">
+            <i class="fa-brands fa-linkedin"></i>
+        </div>
+    </a>
+    </div>
+        </div>
+    </div>
+
+
+            <script>
+// document.getElementById("contact-form").addEventListener("submit", function(event) {
+//         if (!validatecontact()) {
+//             event.preventDefault();
+//         }
+//          else {
+//         $('#staticBackdrop21').modal('hide');
+//     }
+//     });
+    function validatecontact(event) {
+        event.preventDefault();
+
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var phone = document.getElementById("phone").value;
+        var message = document.getElementById("message").value;
+
+        var nameError = document.getElementById("name-error");
+        var emailError = document.getElementById("email-error");
+        var phoneError = document.getElementById("phone-error");
+
+        nameError.textContent = "";
+        emailError.textContent = "";
+        phoneError.textContent = "";
+
+        var isValid = true;
+
+        if (name === "") {
+            nameError.textContent = "This field is required";
+            isValid = false;
+        }
+
+  var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            emailError.textContent = "This field is required";
+            isValid = false;
+        }
+
+
+        if (phone === "") {
+            phoneError.textContent = "This field is required";
+            isValid = false;
+        }
+        if (isValid) {
+            submitForm();
+        }
+
+
+        return false;
+    }
+     function submitForm() {
+        // Get form data
+        const form = document.getElementById('web-page-form');
+        const formData = new FormData(form);
+
+        // Send form data asynchronously
+        fetch(form.action, {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => {
+            if (response.ok) {
+alert('Thank You for Contacting Us');
+document.getElementById('web-page-form').reset();
+                // Reset form fields
+            } else {
+                // Handle error
+                console.error('Form submission failed:', response.statusText);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+        event.preventDefault();
+    }
+
+</script>
+
+{% endblock %}
+</body>
+</html>
