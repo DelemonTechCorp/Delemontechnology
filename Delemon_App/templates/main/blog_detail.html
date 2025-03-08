@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% load static %}
+  {% block title %}
+        {{ blog.title }}
+    {% endblock %}
+{% block content %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <title>{{ blog.title }}</title>
+    <style>
+
+    .social-medias{
+    z-index:100;
+}
+.social-medias i{
+    overflow-y:hidden;
+}
+    .social-medias{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 180px;
+    width: 60px;
+    position: fixed;
+    left: 10px;
+    bottom: 10px;
+  }
+  .social-medias i{
+    color: white;
+    font-size:18px;
+  }
+  .social-medias-sub{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: #FAB206;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+        .blog-detail-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            font-family: 'Arial', sans-serif;
+            color: #333;
+
+
+        }
+
+
+
+
+        .created-date {
+            margin-top: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #FAB206;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .author-section {
+            margin-top: 20px;
+        }
+
+        .author-details {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .author-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .author-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .author-name {
+            font-size: 18px;
+            font-weight: bold;
+            color: #222;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .social-links a {
+            color: #555;
+            font-size: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #FAB206;
+        }
+
+
+
+        .blog-detail-content {
+            font-size: 18px;
+            line-height: 1.8;
+            text-align: justify;
+            margin-top: 20px;
+
+        }
+
+        .share-section {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .share-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .share-icons a {
+            font-size: 24px;
+            color: #555;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .share-icons a:hover {
+            color: #FAB206;
+        }
+
+        .hero-section {
+            background: rgb(48, 47, 47);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 36px;
+            font-weight: bold;
+            color: white;
+            text-transform: uppercase;
+            text-align: center;
+            line-height: 1.4;
+            margin: 0 auto;
+            max-width: 600px;
+            word-wrap: break-word;
+        }
+
+        .you-may-like {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #181717;
+            /* Matches the footer background */
+            color: white;
+            /* Text color */
+            width: 100%;
+        }
+
+        .you-may-like h2 {
+            text-align: left;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .you-may-like-container {
+            display: flex;
+            gap: 10px;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .related-blog-card {
+            background-color: 181717;
+            /* Transparent background */
+            border: 1px solid rgba(87, 87, 87, 0.2);
+            /* Subtle border for contrast */
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            width: 20%;
+            padding: 10px;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            color: white;
+        }
+
+        .related-blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+            /* Slightly darker shadow on hover */
+        }
+
+        .related-blog-image {
+            width: 100%;
+            border-radius: 10px;
+            height: 120px;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .related-blog-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 5px;
+        }
+
+        .related-blog-description {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.8);
+            /* Slightly faded text for description */
+            line-height: 1.4;
+            margin-bottom: 10px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            /* Limit to 2 lines */
+            -webkit-box-orient: vertical;
+        }
+
+        .read-more-btn {
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: bold;
+            color: #FAB206;
+            padding: 5px;
+            text-align: left;
+            display: inline-block;
+            transition: color 0.3s ease;
+        }
+
+        .read-more-btn:hover {
+            color: white;
+        }
+
+        .see-all-blogs {
+            text-align: right;
+            margin-top: 15px;
+            color: #FAB206;
+            font-size: 14px;
+            font-weight: bold;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .see-all-blogs i {
+            margin-left: 5px;
+            font-size: 14px;
+            transition: transform 0.3s ease;
+        }
+
+        .see-all-blogs:hover i {
+            transform: translateX(5px);
+        }
+
+        /* Responsive Styling */
+        @media screen and (max-width: 768px) {
+            .related-blog-card {
+                width: 48%;
+                /* Adjust card width for smaller screens */
+            }
+
+            .see-all-blogs {
+                justify-content: center;
+                /* Center-align on smaller screens */
+            }
+
+
+        }
+
+        @media (max-width: 480px) {
+            .related-blog-card {
+                width: 100%;
+                /* Stack cards on small screens */
+            }
+
+        }
+
+        /* Blog Content */
+        .blog-detail-content {
+            margin-top: 20px;
+            font-size: 18px;
+            text-align: justify;
+        }
+
+        /* Reference Section */
+        .reference-section {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .reference-section h3 {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .reference-links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .reference-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .reference-links ul li a {
+            font-size: 16px;
+            color: #007BFF;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .reference-links ul li a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+
+        .right-sec {
+            width: 30%;
+            padding-top: 50px;
+        }
+
+        .right-sec .contact-form-container {
+            background: linear-gradient(to right, #3e70ad, #1586bc, #009bc4);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .right-sec .contact-form-container h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .right-sec .contact-form-container p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        form input,
+        form select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            outline: none;
+        }
+
+        form input:focus,
+        form select:focus {
+            border: 1px solid #007d3d;
+        }
+
+        form button.submit-btn {
+            background-color: #FAB206;
+            border: none;
+            color: white;
+            font-weight: bold;
+            padding: 10px;
+            width: 100%;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        form button.submit-btn:hover {
+            background-color: #b98304;
+        }
+
+        .header-sec {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .header-sec .left-sec {
+            width: 70%;
+
+        }
+
+        .header-sec .img-sec {}
+
+        .blog-detail-image {
+            width: 90%;
+        }
+
+        @media screen and (max-width: 768px) {
+            .header-sec {
+                flex-direction: column;
+                /* Stack items vertically */
+            }
+
+            .header-sec .left-sec,
+            .header-sec .right-sec {
+                width: 100%;
+                /* Make both sections take full width */
+            }
+
+            .right-sec {
+                padding-top: 20px;
+                /* Adjust spacing for better appearance */
+            }
+        }
+
+        .blog-detail-content p {
+            font-size: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="social-medias">
+<div class="social-medias-sub" data-bs-toggle="tooltip" data-bs-placement="right" title="Chat with us">
+<a href="http://wa.me/+971503482299" class="text-decoration-none" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+</div>
+<div class="social-medias-sub" data-bs-toggle="tooltip" data-bs-placement="right" title="Mail to us">
+<a href="mailto:sales@delemontechnology.com" class="text-decoration-none" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+</div>
+<div class="social-medias-sub" data-bs-toggle="tooltip" data-bs-placement="right" title="Call us">
+<a href="tel:+971503482299" class="text-decoration-none" target="_blank"><i class="fa-solid fa-square-phone"></i></a>
+</div>
+</div>
+
+    <section class="hero-section">
+        <h1 class="hero-title">{{ blog.title }}</h1>
+    </section>
+    <div class="blog-detail-container">
+
+
+        <div class="header-sec">
+            <div class="left-sec">
+                <div class="created-date">
+                    PUBLISHED ON: {{ blog.created_at|date:"F j, Y" }}
+                </div>
+                <div class="img-sec">
+                    <img src="{{ blog.image.url }}" alt="{{ blog.title }}" class="blog-detail-image">
+                </div>
+                <div class="author-section">
+                    <div class="author-details">
+                        <img src="{{ blog.author_image.url }}" alt="{{ blog.author_name }}" class="author-image">
+                        <div class="author-info">
+                            <div class="author-name">AUTHOR: {{ blog.author_name }}</div>
+                            <div class="social-links">
+                                <a href="https://whatsapp.com" target="_blank" style="color:green;">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </a>
+                                <a href="https://facebook.com" target="_blank" style="color:blue;">
+                                    <i class="fa-brands fa-facebook"></i>
+                                </a>
+                                <a href="https://instagram.com" target="_blank" style="color:purple;">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </a>
+                                <a href="https://linkedin.com/shareArticle?url={{ request.build_absolute_uri }}"
+                                    target="_blank" style="color:blue;">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right-sec">
+                <div class="contact-form-container">
+                    <h2 style="margin-bottom:50px;">Let's Talk</h2>
+
+                    <form method="POST" action="{% url 'blog_detail' slug=blog.slug %}">
+                        {% csrf_token %}
+                        <input type="text" name="name" placeholder="Name" required>
+                        <input type="text" name="mobile" placeholder="Mobile Number" required>
+                        <input type="email" name="email" placeholder="Email" required>
+                        <input type="text" name="company" placeholder="Company Name" required>
+                        <select name="services" required>
+                            <option value="" disabled selected>Choose a Service</option>
+                            <option value="consultation">Consultation</option>
+                            <option value="accounting">Blog Enquiry</option>
+                            <option value="tax">Other</option>
+                        </select>
+                        <button type="submit" class="submit-btn">Request A Callback Now</button>
+                    </form>
+
+                    {% if messages %}
+                    <div>
+                        {% for message in messages %}
+                        <div class="alert alert-success">{{ message }}</div>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+
+        </div>
+
+        <!--Blog Content -->
+        <div class="blog-detail-content">
+            <div style="white-space: pre-line">
+                {{ blog.formatted_description|safe }}
+            </div>
+        </div>
+
+
+        <div class="reference-section">
+            <h3>References</h3>
+            {% if blog.references %}
+            <ul>
+                {% for reference in blog.references %}
+                <li><a href="{{ reference.url }}" target="_blank">{{ reference.title }}</a></li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <p>No references available for this blog.</p>
+            {% endif %}
+        </div>
+
+        <!-- Social Media Share Section -->
+        <div class="share-section">
+            <div class="share-icons">
+                <a href="https://facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}" target="_blank">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a href="https://twitter.com/intent/tweet?url={{ request.build_absolute_uri }}" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://linkedin.com/shareArticle?url={{ request.build_absolute_uri }}" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://instagram.com" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+
+
+
+
+    <!-- You May Also Like Section -->
+
+
+
+</body>
+<div class="you-may-like">
+    <h6>WORTH READ!</h6>
+    <h2>YOU MAY ALSO LIKE</h2>
+    <div class="you-may-like-container">
+        {% for related_blog in related_blogs %}
+        <div class="related-blog-card">
+            <img src="{{ related_blog.image.url }}" alt="{{ related_blog.title }}" class="related-blog-image">
+            <h3 class="related-blog-title">{{ related_blog.title }}</h3>
+            <p class="related-blog-description">{{ related_blog.content|truncatewords:15 }}</p>
+            <a href="{% url 'blog_detail' related_blog.slug %}" class="read-more-btn">Read More →</a>
+        </div>
+        {% endfor %}
+    </div>
+    <a href="{% url 'blog' %}" class="see-all-blogs">
+        See All Blogs →
+
+    </a>
+</div>
+{% endblock %}

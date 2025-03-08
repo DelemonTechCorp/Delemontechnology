@@ -1,672 +1,1328 @@
 <!DOCTYPE html>
 <html lang="en">
 {% extends 'base.html' %}
-{% block title %}Home{% endblock %}
+{% block title %}seo-optimization-and-services{% endblock %}
 {% load static %}
 {% block content %}
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>about</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+     <link rel="canonical" href="https://www.delemontechnology.com/seo-optimization-and-services"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <style>
-#form-bottom-p{
-    font-size: 12px;
-    color: rgb(170, 169, 169);
-    text-align: center;
-}
-#web-page-form p span{
-color: #FAB206;
-font-weight: 600;
-}
-.web-page-bg{
-    width: 100%;
-    height: 100vh;
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-direction: row;
-    background-repeat: no-repeat;
-    background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('{% static 'img/web-bg-2.jpg' %}');
-}
-.web-page-bg-1{
-    width: 50%;
-    height: 100%;
-    display: flex;
-    align-items:flex-start;
-    justify-content:center;
-    flex-direction: column;
-}
-.web-page-bg-2{
-    width: 40%;
-    height: 90%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.web-page-bg-icons{
-width: 10%;
-height: 45%;
-display: flex;
-align-items: center;
-justify-content: space-evenly;
-flex-direction: column;
-}
-.web-page-bg-1 h1{
-    color: white;
-    font-weight: 700;
-    font-size: 35px;
-}
-.web-page-bg-1-content p{
-    color: white;
-    font-weight: 300;
-    font-size: 14px;
-}
-.web-page-bg-1-content{
-    width: 100%;
-    display: flex;
-    align-items: flex-start;
-}
-.icon-container{
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: none;
-    border-radius: 50%;
-}
-.icon-container i{
-    color: white;
-    font-size: 13px;
-}
-.icon-container:hover{
-    background-color: white;
-    border: 2px solid #FAB206;
-    transition: 0.3s ease;
-}
-.icon-container:hover i{
-    color: black;
-}
-#web-page-form{
-    background-color: white;
-    width: 90%;
-    padding: 8%;
-    height: 80%;
-}
-#web-page-form h3{
-    font-size: 20px;
-    font-weight: 700;
-}
-#web-page-form label{
-    font-size: 12px;
-}
-.web-page-form-input{
-    border: hidden;
-    outline: none;
-    padding-left: 5px;
-    width: 100%;
-    font-size: 12px;
-    height: 30px;
-    background-color: #F1EFF0;
-}
-.web-page-form-button{
-    background-color: rgb(255, 255, 255);
-    color:#FAB206;
-    outline: none;
-    width: 100px;
-    height: 30px;
-    font-size: 12px;
-    border:2px solid #FAB206;
 
-}
-.web-page-container-2{
-    width: 100%;
-    height: 80vh;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-}
-.web-page-clients{
-    height: 70%;
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-}
-.web-page-clients-details{
-    width: 45%;
-}
-.web-page-clients h1{
+h2{
+    font-family: "Lato", sans-serif;
+    font-style: normal;
     font-size: 30px;
     font-weight: 600;
+    text-transform:capitalize;
+    text-align:center;
 }
-.web-page-clients p{
-    font-size: 14px;
-}
-.web-page-clients-counts{
-    width: 100%;
-    height: 180px;
-    display: flex;
-    padding: 20px;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    background-color: #F6F6F6;
-}
-.web-page-clients-counts h5{
-    font-size: 18px;
-    font-weight: 600;
-}
-.error-message{
-    color:red;
-    font-size:12px;
-}
-.clients-counts{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-}
-.counts-row{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 80px;
-    width: 30%;
-    border-right: 1px solid #dfdfdf;
-    justify-content: space-between;
-}
-.counts-row span{
-    font-size: 14px;
-    font-weight: 300;
-}
-.counts-row h1{
-    font-size: 35px;
-    font-weight: 800;
-    color: #FAB206;
-}
-.web-page-cards{
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content:center;
-    padding: 10px;
-    cursor: pointer;
+h3
+{
+    font-family: "Lato", sans-serif;
+    font-style: normal;
 
 }
-.card-icon-div{
-    width: 60px;
-    height: 60px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #C1C1C1;
-}
-.card-icon-div i{
-    font-size: 20px;
-    color: white;
 
+.services-card h3{
+   text-transform: uppercase;
+  font-weight: 600;
+  color: #fab206;
+  font-size: 22px;
+  margin-top: 20px;
 }
-.web-page-cards h1{
-    font-size: 22px;
-}
-.web-page-cards span i{
-    margin-right: 8px;
-    color: #C1C1C1;
-    font-size: 20px;
-}
-.web-page-cards:hover{
-    background-color: #F6F6F6;
-    border-radius: 10px;
-}
-.web-page-cards:hover .card-icon-div{
-    background-color: #FAB206;
-}
-.web-page-cards:hover span i{
-    color: #FAB206;
-}
-.faq-section{
-    height: 90vh;
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    display: flex;
-    background-color: #E3E3E3;
-}
-.faq-section-header{
-    width: 90%;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-}
-.faq-section-header h1{
-    -webkit-text-stroke: 1px rgb(0, 0, 0);
+    #form-bottom-p {
+        font-size: 12px;
+        color: rgb(170, 169, 169);
+        text-align: center;
+    }
+
+    #web-page-form p span {
+        color: #FAB206;
+        font-weight: 600;
+    }
+
+    .web-page-bg {
+        width: 100%;
+        height: 100vh;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: row;
+        background-repeat: no-repeat;
+        background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('{% static 'img/web-bg-2.jpg' %}');
+    }
+
+    .web-page-bg-1 {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .web-page-bg-2 {
+        width: 40%;
+        height: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .web-page-bg-icons {
+        width: 10%;
+        height: 45%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+    }
+
+    .web-page-bg-1 h1 {
+        color: white;
+        font-weight: 700;
+        font-size: 35px;
+    }
+
+    .web-page-bg-1-content p {
+        color: white;
+        font-weight: 300;
+        font-size: 14px;
+    }
+
+    .web-page-bg-1-content {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .icon-container {
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: none;
+        border-radius: 50%;
+    }
+
+    .icon-container i {
+        color: white;
+        font-size: 13px;
+    }
+
+    .icon-container:hover {
+        background-color: white;
+        border: 2px solid #FAB206;
+        transition: 0.3s ease;
+    }
+
+    .icon-container:hover i {
+        color: black;
+    }
+
+    #web-page-form {
+        background-color: white;
+        width: 90%;
+        padding: 8%;
+        height: 80%;
+    }
+
+    #web-page-form h3 {
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    #web-page-form label {
+        font-size: 12px;
+    }
+
+    .web-page-form-input {
+        border: hidden;
+        outline: none;
+        padding-left: 5px;
+        width: 100%;
+        font-size: 12px;
+        height: 30px;
+        background-color: #F1EFF0;
+    }
+
+    .web-page-form-button {
+        background-color: rgb(255, 255, 255);
+        color: #FAB206;
+        outline: none;
+        width: 100px;
+        height: 30px;
+        font-size: 12px;
+        border: 2px solid #FAB206;
+
+    }
+
+    .web-page-container-2 {
+        width: 100%;
+        /*height: 80vh;*/
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .web-page-clients {
+        /*height: 70%;*/
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    .web-page-clients-details {
+        width: 45%;
+    }
+
+    .web-page-clients h2 {
+        font-size: 30px;
+        font-weight: 600;
+    }
+
+    .web-page-clients p {
+        font-size: 14px;
+    }
+
+    .web-page-clients-counts {
+        width: 100%;
+        height: 180px;
+        display: flex;
+        padding: 20px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        background-color: #F6F6F6;
+    }
+
+    .web-page-clients-counts h5 {
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    .error-message {
+        color: red;
+        font-size: 12px;
+    }
+
+    .clients-counts {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .counts-row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 80px;
+        width: 30%;
+        border-right: 1px solid #dfdfdf;
+        justify-content: space-between;
+    }
+
+    .counts-row span {
+        font-size: 14px;
+        font-weight: 300;
+    }
+
+    .counts-row h2 {
+        font-size: 35px;
+        font-weight: 800;
+        color: #FAB206;
+    }
+
+    .web-page-cards {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 10px;
+        cursor: pointer;
+
+    }
+
+    .card-icon-div {
+        width: 60px;
+        height: 60px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #C1C1C1;
+    }
+
+    .card-icon-div i {
+        font-size: 20px;
+        color: white;
+
+    }
+
+    .web-page-cards h2 {
+        font-size: 22px;
+    }
+
+    .web-page-cards span i {
+        margin-right: 8px;
+        color: #C1C1C1;
+        font-size: 20px;
+    }
+
+    .web-page-cards:hover {
+        background-color: #F6F6F6;
+        border-radius: 10px;
+    }
+
+    .web-page-cards:hover .card-icon-div {
+        background-color: #FAB206;
+    }
+
+    .web-page-cards:hover span i {
+        color: #FAB206;
+    }
+
+    .faq-section {
+        height: 90vh;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        display: flex;
+        background-color: #E3E3E3;
+    }
+
+    .faq-section-header {
+        width: 90%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    .faq-section-header h2 {
+        -webkit-text-stroke: 1px rgb(0, 0, 0);
         color: transparent;
         font-size: 70px;
-}
-.faq-cards{
-    display: flex;
-    width: 90%;
-    justify-content: space-between;
-    flex-direction: row;
-    align-items: center;
-}
-.faq-card{
-    position:relative;
-     overflow:hidden;
-     width: 220px;
-      height:300px;
-      display: flex;
-      cursor: pointer;
-      align-items: flex-start;
-      padding: 20px;
-      flex-direction: column;
-      background-color: white;
-      justify-content: space-evenly;
+    }
 
-}
-.card-overlay{padding:20px; position:absolute; background:rgba(0,0,0,.5);
-  left:0;
-  top: 100%;
-  width:100%;
-  height:100%;
-  z-index: 1;
-  transition:all 350ms cubic-bezier(0, 0, 0.2, 1);
-  display:flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items:flex-start;
-  background:rgb(0, 0, 0)
-}
-.faq-card:hover .card-overlay{
-  top: 0;
-}
+    .faq-cards {
+        display: flex;
+        width: 80%;
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: center;
+    }
 
-.card-overlay.left{  left:-100%;
-  top: 0;
-}
-.faq-card:hover .card-overlay.left {
-  left: 0;
-}
+    .faq-card {
+        position: relative;
+        overflow: hidden;
+        width: 220px;
+        height: 300px;
+        display: flex;
+        cursor: pointer;
+        align-items: flex-start;
+        padding: 20px;
+        flex-direction: column;
+        background-color: white;
+        justify-content: space-evenly;
 
-.card-overlay.right{  left:100%;
-  top: 0;
-}
-.faq-card:hover .card-overlay.right {
-  left: 0;
-}
-.faq-card:hover .card-overlay.top{  left:0;
-  top: -100%;
-}
-.faq-card:hover .card-overlay.top {
-left: 0;
-  top: 0;
-}
-.faq-card h1{
-    -webkit-text-stroke: 1px #FAB206;
+    }
+
+    .card-overlay {
+        padding: 20px;
+        position: absolute;
+        background: rgba(0, 0, 0, .5);
+        left: 0;
+        top: 100%;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        transition: all 350ms cubic-bezier(0, 0, 0.2, 1);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        background: rgb(0, 0, 0)
+    }
+
+    .faq-card:hover .card-overlay {
+        top: 0;
+    }
+
+    .card-overlay.left {
+        left: -100%;
+        top: 0;
+    }
+
+    .faq-card:hover .card-overlay.left {
+        left: 0;
+    }
+
+    .card-overlay.right {
+        left: 100%;
+        top: 0;
+    }
+
+    .faq-card:hover .card-overlay.right {
+        left: 0;
+    }
+
+    .faq-card:hover .card-overlay.top {
+        left: 0;
+        top: -100%;
+    }
+
+    .faq-card:hover .card-overlay.top {
+        left: 0;
+        top: 0;
+    }
+
+    .faq-card h2 {
+        -webkit-text-stroke: 1px #FAB206;
         color: transparent;
         font-size: 50px;
         font-family: "Manrope", sans-serif;
-}
-.faq-question{
-    font-size: 14px;
-    font-weight: 700;
-    font-family: "Manrope", sans-serif;
-}
-.card-overlay p{
-    font-size: 10px;
-    color: white;
-    font-family: "Manrope", sans-serif;
-}
-.faq-card i{
-    height: 30px;
-    width: 30px;
-    border: 2px solid #FAB206;
-    background-color: white;
-    color:#FAB206;
-    font-size: 12px;
-    justify-content: center;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-}
-@media(min-width:320px) and (max-width:480px){
-    .web-page-bg{
-        flex-direction: column;
-        height:130vh;
     }
-    .web-page-bg-icons{
-        flex-direction: row;
-        width: 90%;
-        height: 10%;
+
+    .faq-question {
+        font-size: 14px;
+        font-weight: 700;
+        font-family: "Manrope", sans-serif;
     }
-    .web-page-bg-1{
-        width: 90%;
-        height: 30%;
+
+    .card-overlay p {
+        font-size: 10px;
+        color: white;
+        font-family: "Manrope", sans-serif;
     }
-    .web-page-bg-1 h1{
-        font-size:20px;
+    .faq-card i {
+      height: 30px;
+      width: 30px;
+      border: 2px solid #FAB206;
+      background-color: white;
+      color: #FAB206;
+      font-size: 12px;
+      justify-content: center;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
     }
-    #web-page-form{
-        width: 90%;
-        height: 80%;
-    }
-    .web-page-bg-2{
+
+
+
+    .web-page-clients-details img {
         width: 100%;
+
     }
-    .web-page-container-2{
-        flex-direction: column;
-        height:80vh;
+
+    .service-card-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 20px;
+        gap: 20px;
     }
-      .web-page-clients h1{
-        font-size:20px;
+
+    .services-card{
+    background-color: #fbfafae4;
+    box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.3);
+    width: 400px;
+    padding: 20px;
+    height: auto;
+
+
+
+}
+
+    .logo-img {
+        padding: 25px;
+        display: flex;
+        /* flex-direction: row; */
+        width: 100%;
+        height: 28vh;
+
+
+
     }
-    .web-page-clients{
-        width: 90%;
-        height: 30%;
+
+    .logo-img img {
+        width: 20%;
     }
-    .web-page-clients-details{
-        width: 90%;
+
+    :root {
+            --clr-primary: #fff;
+            --clr-secondary: #f39c12;
+        }
+
+        .testimonials {
+            --_trans-speed: 300ms;
+            --_avatar-size: 4rem;
+            --_quote-bg-clr: var(--clr-secondary);
+            --_dots-size: 1.5rem;
+            --_dots-bg-clr: var(--clr-secondary);
+            --_dots-border-clr: var(--clr-secondary);
+
+            /* width: min(calc(100% - 2rem), 600px); */
+            margin-inline: auto;
+            background-color: rgba(0, 0, 0, 0.878);
+            border: 1px solid var(--clr-secondary);
+            padding: 4rem;
+            position: relative;
+            color: var(--clr-primary);
+        }
+
+        .testimonials blockquote {
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .testimonials .user {
+            display: flex;
+            align-items: center;
+            margin-top: 1rem;
+        }
+
+
+
+        .testimonials .dots {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 8rem;
+
+        }
+
+        .testimonials .dots label {
+            width: var(--_dots-size);
+            height: var(--_dots-size);
+            background-color: var(--_dots-bg-clr);
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid var(--_dots-border-clr);
+            transition: background-color var(--_trans-speed);
+
+        }
+
+        .testimonials .dots label:hover {
+            background-color: var(--clr-primary);
+        }
+
+        .testimonials article {
+            display: none;
+        }
+
+        .testimonials input:checked + article {
+            display: block;
+        }
+        .services-img{
+            display: flex;
+            justify-content: center;
+
+        }
+        .services-img img{
+            width: 25%;
+            padding: 20px;
+            background-color: #fab206;
+            border-radius: 50%;
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.7),
+                5px 5px 10px rgba(0, 0, 0, 0.5),
+                inset 3px 3px 5px rgba(255, 255, 255, 0.2); /* Inner highlight */
+           margin-bottom: 10%;
+
+        }
+        .services-card h3{
+            text-align: center;
+        }
+        .services-card p{
+             text-align: justify;
+        }
+    @media(min-width:320px) and (max-width:480px) {
+        .web-page-bg {
+            flex-direction: column;
+            height: 130vh;
+        }
+
+        .web-page-bg-icons {
+            flex-direction: row;
+            width: 90%;
+            height: 10%;
+        }
+
+        .web-page-bg-1 {
+            width: 90%;
+            height: 30%;
+        }
+
+        .web-page-bg-1 h1 {
+            font-size: 20px;
+        }
+
+        #web-page-form {
+            width: 90%;
+            height: 80%;
+        }
+
+        .web-page-bg-2 {
+            width: 100%;
+        }
+
+        .web-page-container-2 {
+            flex-direction: column;
+            /*height: 80vh;*/
+        }
+
+        .web-page-clients h2 {
+            font-size: 20px;
+        }
+
+        .web-page-clients {
+            width: 90%;
+
+        }
+
+        /*.web-page-clients-details {*/
+        /*    width: 90%;*/
+        /*}*/
+
+        .counts-row {
+            border: hidden;
+        }
+
+        .faq-section {
+            height: auto;
+        }
+
+        .faq-cards {
+            height: 340px;
+            overflow-x: auto;
+        }
+
+        .faq-card {
+            min-width: 220px;
+            margin-right: 10px;
+        }
+
+        .faq-section-header h2 {
+            font-size: 35px;
+            overflow-y: hidden;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .faq-card p {
+            font-size: 12px;
+        }
+
+        .card-overlay p {
+            font-size: 10px;
+        }
+        .service-card-container{
+            display:flex;
+            flex-direction:column;
+        }
+   .web-page-container-2 {
+       display:flex;
+       flex-direction:column;
+   }
+   .services-card{
+       width:100%;
+   }
+
+        .logo-img{
+
+            width:90%;
+            height:20%;
+        }
+        .web-page-clients-details {
+            width:100%;
+
+        }
+
+
     }
-    .counts-row{
-        border: hidden;
-    }
-        .faq-section{
-    height:auto;
-}
-.faq-cards{
-    height:340px;
-    overflow-x:auto;
-}
-.faq-card{
-    min-width:220px;
-    margin-right:10px;
-}
-.faq-section-header h1{
-    font-size:35px;
-    overflow-y:hidden;
-    margin-top:10px;
-    margin-bottom:10px;
-}
-.faq-card p{
-    font-size:12px;
-}
-.card-overlay p{
-    font-size:10px;
-}
-}
 </style>
+
 <body>
-   <div class="web-page-bg">
-    <div class="web-page-bg-icons">
+    <div class="web-page-bg">
+        <div class="web-page-bg-icons">
             <div class="icon-container">
-            <a href="https://www.facebook.com/profile.php?id=61554857870065&sfnsn=wiwspwa&mibextid=RUbZ1f"><i class="fa-brands fa-facebook"></i></a>
-        </div>
-        <div class="icon-container">
-            <a href=""><i class="fa-brands fa-x-twitter"></i></a>
-        </div>
+                <a href="https://www.facebook.com/profile.php?id=61554857870065&sfnsn=wiwspwa&mibextid=RUbZ1f"><i
+                        class="fa-brands fa-facebook"></i></a>
+            </div>
             <div class="icon-container">
-                <a href="https://www.instagram.com/delemon_technology?igsh=emF2ajg3bm00cDUz"><i class="fa-brands fa-instagram"></i></a>
-        </div>
+                <a href=""><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
             <div class="icon-container">
-                <a href="https://www.linkedin.com/company/delemon-technology/"><i class="fa-brands fa-linkedin-in"></i></a>
-        </div>
+                <a href="https://www.instagram.com/delemon_technology?igsh=emF2ajg3bm00cDUz"><i
+                        class="fa-brands fa-instagram"></i></a>
+            </div>
+            <div class="icon-container">
+                <a href="https://www.linkedin.com/company/delemon-technology/"><i
+                        class="fa-brands fa-linkedin-in"></i></a>
+            </div>
             <div class="icon-container">
                 <a href=""><i class="fa-brands fa-youtube"></i></a>
+            </div>
         </div>
-    </div>
-<div class="web-page-bg-1">
-<h1>Award Winning SEO Agency Dubai – Pioneers In Crafting Unique Digital Journeys</h1>
-<div class="web-page-bg-1-content">
-<p>Boost your online presence and soar above the competition by partnering with the leading SEO company in Dubai.</p>
-</div>
-</div>
-<div class="web-page-bg-2">
-               <form id="web-page-form" action="https://api.web3forms.com/submit" method="POST" onsubmit="return validatecontact(event)">
+        <div class="web-page-bg-1">
+            <h1>SEO COMPANY IN DUBAI,UAE</h1>
+            <div class="web-page-bg-1-content">
+                <p>best SEO Company in Dubai, consistently providing exceptional SEO solutions that improve online
+                    visibility and produce significant outcomes for clients.</p>
+            </div>
+        </div>
+        <div class="web-page-bg-2">
+            <form id="web-page-form" action="https://api.web3forms.com/submit" method="POST"
+                onsubmit="return validatecontact(event)">
                 <h3>Have any questions?</h3>
                 <div class="row">
                     <div class="col-md-6 mb-3">
-                                <input type="hidden" name="access_key" value="1d581977-0167-4073-8d30-f8e754b508d4">
-                                <input type="hidden" name="subject" value="Form Submission From Delemon Website">
+                        <input type="hidden" name="access_key" value="1d581977-0167-4073-8d30-f8e754b508d4">
+                        <input type="hidden" name="subject" value="Form Submission From Delemon Website">
                         <label for="">Your Name</label>
-        <input type="text" placeholder="Enter your name" id="name" name="name" class="web-page-form-input">
-        <p class="error-message" id="name-error"></p>
+                        <input type="text" placeholder="Enter your name" id="name" name="name"
+                            class="web-page-form-input">
+                        <p class="error-message" id="name-error"></p>
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="">Your Email</label>
-        <input type="text" name="email" id="email" placeholder="Enter your email" class="web-page-form-input">
-        <p class="error-message" id="email-error"></p>
+                        <input type="text" name="email" id="email" placeholder="Enter your email"
+                            class="web-page-form-input">
+                        <p class="error-message" id="email-error"></p>
                     </div>
-                    <div class="col-md-6 mb-3" >
+                    <div class="col-md-6 mb-3">
                         <label for="">Your Number</label>
-        <input type="text" name="phonenumber" id="phone" placeholder="Enter your Number" class="web-page-form-input">
-        <p class="error-message" id="phone-error"></p>
+                        <input type="text" name="phonenumber" id="phone" placeholder="Enter your Number"
+                            class="web-page-form-input">
+                        <p class="error-message" id="phone-error"></p>
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="">Your Message</label>
-        <input type="text" name="message" id="message" placeholder="Type here" class="web-page-form-input">
+                        <input type="text" name="message" id="message" placeholder="Type here"
+                            class="web-page-form-input">
                     </div>
                 </div>
-                <input type="submit" class="web-page-form-button" value="SUBMIT"/>
-                <p class="mt-4" id="form-bottom-p">if you have any RFP requirement please share with us at <span>@delemontechnology.ae</span> and if you are looking for a career related enquiry please check our Career section</p>
+                <input type="submit" class="web-page-form-button" value="SUBMIT" />
+                <p class="mt-4" id="form-bottom-p">if you have any RFP requirement please share with us at
+                    <span>@delemontechnology.ae</span> and if you are looking for a career related enquiry please check
+                    our Career section
+                </p>
             </form>
-</div>
+        </div>
+    </div>
+
+    <div class="web-page-container-2">
+        <div class="web-page-clients">
+            <h2>Search Engine Optimization-Delemon Technology</h2>
+            <p>
+                The best SEO services in Dubai. As a premier SEO agency in Dubai, we provide expert search engine
+                optimization strategies to improve your website’s search rankings and increase visibility. Our team is
+                dedicated to driving organic traffic and elevating your brand’s digital presence. Trust the best SEO
+                agency in Dubai to help your website achieve outstanding results in the competitive digital market.
+                Delemon Technology is proud to be the No.1 Digital Marketing Agency for 100+ UAE industries.
+            </p>
+        </div>
+        <div class="web-page-clients-details">
+            <img
+                src="https://img.freepik.com/free-vector/seo-analytics-team-concept-illustration_114360-9255.jpg?t=st=1740111787~exp=1740115387~hmac=ee8f57d1951b29baad1eec5884e4c85159ff4aac6dffe8f0e49740d2f9a39885&w=996"alt="Search Engine Optimization">
+        </div>
+    </div>
+
+
+    <div class="container mb-5 mt-5">
+          <h2>Our Seo Services</h2>
+        <div class="service-card-container">
+
+            <div class="services-card">
+                <div class="services-img">
+                <img src="https://cdn-icons-png.flaticon.com/128/5979/5979258.png"alt="On-Page SEO">
+                </div>
+                <h3>On-Page SEO</h3>
+                <p>On-page SEO encompasses the optimization of various components within your website to improve its
+                    ranking in search engine results. This process includes enhancing the content, meta tags, headings,
+                    and images, while ensuring the website maintains a user-friendly structure. The primary objective is
+                    to increase the relevance and appeal of your web pages to both search engines and visitors. </p>
+
+            </div>
+            <div class="services-card">
+                <div class="services-img">
+                <img src="https://cdn-icons-png.flaticon.com/128/5979/5979168.png" alt="Off-Page SEO">
+                </div>
+                <h3>Off-Page SEO</h3>
+                <p>Off-page SEO focuses on increasing your website's reputation and authority on the internet. This is
+                    performed by creating high-quality backlinks from respected websites, engaging in social media
+                    marketing, and conducting online public relations. For businesses seeking assistance, an SEO company
+                    in Dubai can give skilled tactics to help search engines recognize your site as a relevant resource
+                    in your industry.</p>
+            </div>
+            <div class="services-card">
+                <div class="services-img">
+                <img src="https://cdn-icons-png.flaticon.com/128/9623/9623640.png"alt="Keyword research">
+                </div>
+                <h3>Keyword research</h3>
+                <p>Keyword research is the cornerstone of any effective SEO campaign. It entails determining the
+                    particular terms and phrases that your target audience uses to search for products, services, or
+                    information on the internet. By optimizing your content with these keywords, you can increase your
+                    website's visibility to potential buyers.</p>
+            </div>
+            <div class="services-card">
+                <div class="services-img">
+                 <img src="https://cdn-icons-png.flaticon.com/128/9841/9841629.png"alt="Link Building">
+                </div>
+                <h3>Link Building</h3>
+                <p>Link Building is a vital component of off-page SEO, concentrating on obtaining high-quality and
+                    relevant backlinks from other websites to your own. These backlinks act as endorsements, showcasing
+                    your website’s content and authority. By adopting effective link-building strategies, you can
+                    significantly improve your search engine rankings. As an SEO company in Dubai, we provide tailored
+                    link-building solutions designed to enhance your online visibility.</p>
+            </div>
+            <div class="services-card">
+                <div class="services-img">
+                <img src="https://cdn-icons-png.flaticon.com/128/10063/10063416.png" alt="Technical SEO">
+                </div>
+                <h3>Technical SEO</h3>
+                <p>Technical SEO focuses on optimizing the technical aspects of your website to enhance its performance
+                    and improve its search engine rankings. For industries like real estate SEO, this includes tasks
+                    such as optimizing website speed, enhancing mobile-friendliness, resolving crawl errors, applying
+                    structured data, and ensuring a proper website architecture. Technical SEO ensures that search
+                    engines can efficiently crawl and index your site</p>
+            </div>
+            <div class="services-card">
+                <div class="services-img">
+                <img src="https://cdn-icons-png.flaticon.com/128/12597/12597743.png" alt="Local SEO">
+                </div>
+                <h3>Local SEO</h3>
+                <p>Local SEO is essential for businesses with physical locations or those targeting specific geographic
+                    areas. It focuses on optimizing your internet presence to rank in local search results. This
+                    includes creating and optimizing GBP listings, managing reviews on the Internet, and ensuring your
+                    website is geographically relevant. You can connect with Delemon Technology, the leading SEO company
+                    in Dubai, UAE, for expert local SEO services. in dubai.</p>
+            </div>
+
+        </div>
+        </div>
+
+
+        <div class="web-page-container-2 mb-5 mt-5">
+            <div class="web-page-clients-details">
+                <img style=""
+                    src="https://img.freepik.com/free-vector/people-using-search-box-query-engine-giving-result_74855-11000.jpg?t=st=1740120666~exp=1740124266~hmac=65361850815ea491c97e4dbb0732305243ebd79a53ae03193e5cd964bf7fa4cd&w=900" alt="Top SEO Company in Dubai, UAE">
+            </div>
+            <div class="web-page-clients">
+                <h2>Top SEO Company in Dubai, UAE</h2>
+                <p>As the No.1 Digital Marketing Agency for 100+ UAE Industries, Delemon Technology has established
+                    itself as a trusted partner for businesses aiming to succeed in the competitive online landscape. As
+                    a top SEO company in Dubai, UAE, we understand that effective SEO requires a tailored and
+                    data-driven approach. Our search engine optimization experts start every project with a
+                    comprehensive analysis of your current online presence, identifying areas for improvement and
+                    crafting a customized strategy that aligns perfectly with your unique business goals. Whether you
+                    aim to rank higher for specific keywords, enhance your on-page and off-page optimization, or
+                    increase your website’s overall authority, our team is here to deliver measurable results.</p>
+                <p>
+
+                    Recognized as the No.1 SEO Agency in Dubai, we offer a comprehensive range of SEO services designed
+                    to boost your website’s performance. From advanced technical website optimization to effective
+                    link-building strategies, our search engine optimization specialists employ the latest techniques to
+                    ensure your website stays competitive and ahead in the ever-evolving digital landscape. At Delemon
+                    Technology, our commitment is to help businesses across the UAE thrive, making us the top choice for
+                    SEO and digital marketing services.
+                </p>
+            </div>
+        </div>
+
+
+
+
+<div class="logo container">
+    <h2 >Partners</h2>
+   <div class="logo-img mb-5 mb-5">
+     <img src="data:image/png;base64,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"
+        class=""alt="semrush-logo">
+    <img src="https://www.prosperohub.com/hubfs/diamond-badge-color.png"alt="hubspot-logo">
+
+    <img src="https://static.vecteezy.com/system/resources/previews/046/861/647/non_2x/google-logo-transparent-background-free-png.png"
+        class="" alt="google">
+    <img src="https://cdn-icons-png.flaticon.com/128/14777/14777069.png" class=""alt="snapchat-logo">
+
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdagcBXJzjmh3OdhIVIS_O6I7xQoNGRPAkFQ&s"
+        class="" alt="meta-logo">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzKUYhyGTBETsJENDhzAkwGfBdiOch8Kmud5jvwVRPUVVLqO_1U6qQUCiHBs8HJLRu8w&usqp=CAU" alt="tiktok-logo">
+
    </div>
-
-<div class="web-page-container-2">
-    <div class="web-page-clients">
-<h1>Boost Your Online Presence with Expert SEO Services</h1>
-<p>Elevate your website's visibility and drive organic traffic with our professional SEO services. Our team of experienced specialists will tailor a customized strategy to improve your search engine rankings and maximize your online potential. With our proven techniques and dedicated approach, watch your business soar to new heights in the digital landscape.</p>
-    </div>
-    <div class="web-page-clients-details">
-<div class="web-page-clients-counts">
-<h5>Key Highlights Our Work In Numbers.</h5>
-<div class="clients-counts">
-    <div class="counts-row">
-<span>Happy Clients</span>
-<h1>145+</h1>
-    </div>
-    <div class="counts-row">
-        <span>Projects Completed</span>
-        <h1>212+</h1>
-    </div>
-    <div class="counts-row">
-        <span>Years of experience</span>
-        <h1>15+</h1>
-    </div>
 </div>
-</div>
-    </div>
-</div>
-<div class="container mb-5">
-    <div class="row ">
-        <div class="col-md-3 col-12">
-<div class="web-page-cards">
-    <div class="card-icon-div mb-3">
-        <i class="fa-solid fa-comments"></i>
-    </div>
-    <h1 class="mb-3">Workshops</h1>
-    <span><i class="fa-solid fa-caret-right"></i>Business analysis</span>
-    <span><i class="fa-solid fa-caret-right"></i>Campaign objective</span>
-    <span><i class="fa-solid fa-caret-right"></i>Preparing proposal</span>
-    <span><i class="fa-solid fa-caret-right"></i>Deciding deliverables</span>
-</div>
-        </div>
-        <div class="col-md-3 col-12">
-            <div class="web-page-cards">
-                <div class="card-icon-div mb-3">
-                    <i class="fa-solid fa-gear"></i>
-                </div>
-                <h1 class="mb-3">Planning</h1>
-                <span><i class="fa-solid fa-caret-right"></i>Industry research</span>
-                <span><i class="fa-solid fa-caret-right"></i>Competitor research</span>
-                <span><i class="fa-solid fa-caret-right"></i>Selecting marketing channels</span>
-                <span><i class="fa-solid fa-caret-right"></i>Strategy development</span>
-            </div>
-        </div>
-        <div class="col-md-3 col-12">
-            <div class="web-page-cards">
-                <div class="card-icon-div mb-3">
-                    <i class="fa-solid fa-laptop-code"></i>
-                </div>
-                <h1 class="mb-3">A/B Testing</h1>
-                <span><i class="fa-solid fa-caret-right"></i>Experimenting with ads</span>
-                <span><i class="fa-solid fa-caret-right"></i>Experimenting with content</span>
-                <span><i class="fa-solid fa-caret-right"></i>Testing SEO techniques</span>
-                <span><i class="fa-solid fa-caret-right"></i>Analyzing audience behavior</span>
-            </div>
-        </div>
-        <div class="col-md-3 col-12">
-            <div class="web-page-cards">
-                <div class="card-icon-div mb-3">
-                    <i class="fa-solid fa-rocket"></i>
-                </div>
-                <h1 class="mb-3">Execution</h1>
-                <span><i class="fa-solid fa-caret-right"></i>Creating campaign</span>
-                <span><i class="fa-solid fa-caret-right"></i>Content production</span>
-                <span><i class="fa-solid fa-caret-right"></i>Strategy optimization</span>
-                <span><i class="fa-solid fa-caret-right"></i>Analysis</span>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="faq-section">
-    <div class="faq-section-header">
-        <h1>FAQ</h1>
-    </div>
-    <div class="faq-cards">
-            <div class="faq-card">
-    <h1>1</h1>
-    <p class="faq-question"> How can SEO digital marketing improve my website's visibility on search engines and drive organic traffic?</p>
-    <i class="fa-solid fa-arrow-right-long"></i>
-    <div class="card-overlay">
-        <h1>1</h1>
-    <p>"SEO enhances your website's visibility on search engines by optimizing content, keywords, and technical elements. This leads to higher rankings, increased organic traffic, and improved online presence. Explore our successful SEO campaigns for tangible results."</p>
-            </div>
-         </div>
-         <div class="faq-card">
-            <h1>2</h1>
-            <p class="faq-question">Can you explain the importance of keyword research in SEO, and how do you identify the most relevant keywords for my business?</p>
-            <i class="fa-solid fa-arrow-right-long"></i>
-            <div class="card-overlay left">
-                <h1>2</h1>
-            <p>"Keyword research is crucial for targeting terms your audience uses. We conduct thorough research, considering search volume, competition, and relevance to your business. Our tailored approach ensures we target the most impactful keywords. Check our keyword-driven SEO success stories."</p>
+        <!--
+        <div class="container mb-5">
+            <div class="row ">
+                <div class="col-md-3 col-12">
+                    <div class="web-page-cards">
+                        <div class="card-icon-div mb-3">
+                            <i class="fa-solid fa-comments"></i>
+                        </div>
+                        <h1 class="mb-3">Workshops</h1>
+                        <span><i class="fa-solid fa-caret-right"></i>Business analysis</span>
+                        <span><i class="fa-solid fa-caret-right"></i>Campaign objective</span>
+                        <span><i class="fa-solid fa-caret-right"></i>Preparing proposal</span>
+                        <span><i class="fa-solid fa-caret-right"></i>Deciding deliverables</span>
                     </div>
-                 </div>
-                 <div class="faq-card">
-                    <h1>3</h1>
-                    <p class="faq-question">How do you ensure on-page SEO optimization, and what factors contribute to a well-optimized webpage?</p>
+                </div>
+                <div class="col-md-3 col-12">
+                    <div class="web-page-cards">
+                        <div class="card-icon-div mb-3">
+                            <i class="fa-solid fa-gear"></i>
+                        </div>
+                        <h1 class="mb-3">Planning</h1>
+                        <span><i class="fa-solid fa-caret-right"></i>Industry research</span>
+                        <span><i class="fa-solid fa-caret-right"></i>Competitor research</span>
+                        <span><i class="fa-solid fa-caret-right"></i>Selecting marketing channels</span>
+                        <span><i class="fa-solid fa-caret-right"></i>Strategy development</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-12">
+                    <div class="web-page-cards">
+                        <div class="card-icon-div mb-3">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
+                        <h1 class="mb-3">A/B Testing</h1>
+                        <span><i class="fa-solid fa-caret-right"></i>Experimenting with ads</span>
+                        <span><i class="fa-solid fa-caret-right"></i>Experimenting with content</span>
+                        <span><i class="fa-solid fa-caret-right"></i>Testing SEO techniques</span>
+                        <span><i class="fa-solid fa-caret-right"></i>Analyzing audience behavior</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-12">
+                    <div class="web-page-cards">
+                        <div class="card-icon-div mb-3">
+                            <i class="fa-solid fa-rocket"></i>
+                        </div>
+                        <h1 class="mb-3">Execution</h1>
+                        <span><i class="fa-solid fa-caret-right"></i>Creating campaign</span>
+                        <span><i class="fa-solid fa-caret-right"></i>Content production</span>
+                        <span><i class="fa-solid fa-caret-right"></i>Strategy optimization</span>
+                        <span><i class="fa-solid fa-caret-right"></i>Analysis</span>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        <!--<div class="testimonials mb-5 mt-5">-->
+        <!--    <input type="radio" name="testimonial" id="toggle-1" checked hidden>-->
+        <!--    <article>-->
+
+        <!--        <blockquote>-->
+
+        <!--            <i class="fa-solid fa-quote-left" style="color: #fab206; font-size: 50px; padding: 15px;"></i>Young & Right has always aimed to stay ahead in the digital landscape, and partnering with Delemon Technology was the perfect decision. Their tailored SEO strategy significantly boosted our search engine rankings and brought in a steady stream of organic traffic. Their professionalism and commitment to delivering results have been instrumental in our growth'.-->
+
+
+
+        <!--        </blockquote>-->
+        <!--        <div class="user">-->
+
+        <!--            <span>  — Marketing Manager, Young & Right</span>-->
+        <!--        </div>-->
+        <!--    </article>-->
+
+        <!--    <input type="radio" name="testimonial" id="toggle-2" hidden>-->
+        <!--    <article>-->
+        <!--        <blockquote>-->
+        <!--            <i class="fa-solid fa-quote-left" style="color: #fab206; font-size: 50px; padding: 15px;"></i>Working with Delemon Technology has been a turning point for Positive Properties. Their SEO expertise helped us dominate key real estate search terms, increasing our website traffic and generating high-quality leads. The results speak for themselves, and their team’s dedication is unmatched!-->
+        <!--    </blockquote>-->
+        <!--        <div class="user">-->
+
+        <!--            <span>— Director of Marketing, Positive Properties</span>-->
+        <!--        </div>-->
+        <!--    </article>-->
+
+
+        <!--    <input type="radio" name="testimonial" id="toggle-3" hidden>-->
+        <!--    <article>-->
+        <!--        <blockquote>-->
+        <!--            <i class="fa-solid fa-quote-left" style="color: #fab206; font-size: 50px; padding: 15px;"></i>Vision Nexus partnered with Delemon Technology to strengthen our online presence, and the results were phenomenal. Their strategic approach to SEO and keyword optimization not only improved our Google rankings but also brought in more targeted traffic to our site. We couldn't have asked for a better digital partner!-->
+        <!--    </blockquote>-->
+        <!--        <div class="user">-->
+
+        <!--            <span>— CEO, Vision Nexus</span>-->
+        <!--        </div>-->
+        <!--    </article>-->
+
+
+        <!--    <input type="radio" name="testimonial" id="toggle-3" hidden>-->
+        <!--    <article>-->
+        <!--        <blockquote>-->
+        <!--            <i class="fa-solid fa-quote-left" style="color: #fab206; font-size: 50px; padding: 15px;"></i>Vision Nexus partnered with Delemon Technology to strengthen our online presence, and the results were phenomenal. Their strategic approach to SEO and keyword optimization not only improved our Google rankings but also brought in more targeted traffic to our site. We couldn't have asked for a better digital partner!-->
+        <!--    </blockquote>-->
+        <!--        <div class="user">-->
+
+        <!--            <span>— CEO, Vision Nexus</span>-->
+        <!--        </div>-->
+        <!--    </article>-->
+
+        <!--    <input type="radio" name="testimonial" id="toggle-4" hidden>-->
+        <!--    <article>-->
+        <!--        <blockquote>-->
+        <!--            <i class="fa-solid fa-quote-left" style="color: #fab206; font-size: 50px; padding: 15px;"></i>AnanasRE Burjazizi’s success online wouldn’t have been possible without the incredible team at Delemon Technology. Their in-depth SEO strategies positioned us as leaders in our niche. The rise in organic traffic and qualified leads has exceeded our expectations. Highly recommended!-->
+        <!--    </blockquote>-->
+        <!--        <div class="user">-->
+
+        <!--            <span>— Digital Marketing Head, AnanasRE Burjazizi</span>-->
+        <!--        </div>-->
+        <!--    </article>-->
+
+
+        <!--    <div class="dots">-->
+        <!--        <label for="toggle-1"></label>-->
+        <!--        <label for="toggle-2"></label>-->
+        <!--        <label for="toggle-3"></label>-->
+        <!--        <label for="toggle-4"></label>-->
+        <!--    </div>-->
+        <!--</div>-->
+<style>
+.testimonial-section {
+    padding: 40px ;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: bold;
+
+    margin-bottom: 30px;
+}
+
+.testimonial-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.testimonial-cards-wrapper {
+    display: flex;
+    gap: 30px; /* Space between cards */
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.testimonial-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    width: 280px; /* Fixed width for each card */
+    box-sizing: border-box;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 10px;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial-header {
+    display: flex;
+    align-items: center;/
+    margin-bottom: 15px;
+}
+
+.testimonial-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+.testimonial-header img{
+    position:relative;
+    /right:-30%;/
+}
+
+.testimonial-info {
+    text-align: left;
+    line-height:1;
+}
+
+.testimonial-name {
+    font-weight: bold;
+    color: #333;
+}
+
+.testimonial-rating {
+    display: flex;
+    gap: 5px;
+}
+
+.star {
+    color: gold;
+    font-size: 1.2rem;
+}
+
+.testimonial-text {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+
+
+ </style>
+
+<div class="testimonial-section">
+    <h2 class="section-title">What Our Clients Say</h2>
+    <div class="testimonial-container">
+        <div class="testimonial-cards-wrapper">
+
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <img src="https://cdn-icons-png.flaticon.com/128/300/300221.png" alt="User 1" class="testimonial-img">
+                    <div class="testimonial-info">
+                        <p class="testimonial-name"> Marketing Manager, Young & Right</p>
+                        <div class="testimonial-rating">
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                        </div>
+                    </div>
+
+                </div>
+                <p class="testimonial-text">
+             Young & Right has always aimed to stay ahead in the digital landscape, and partnering with Delemon Technology was the perfect decision. Their tailored SEO strategy significantly boosted our search engine rankings and brought in a steady stream of organic traffic. Their professionalism and commitment to delivering results have been instrumental in our growth!
+                </p>
+            </div>
+
+
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <img src="https://cdn-icons-png.flaticon.com/128/300/300221.png" alt="User 2" class="testimonial-img">
+                    <div class="testimonial-info">
+                        <p class="testimonial-name"> Director of Marketing, Positive Properties</p>
+                        <div class="testimonial-rating">
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                        </div>
+                    </div>
+
+                </div>
+                <p class="testimonial-text">
+                  Working with Delemon Technology has been a turning point for Positive Properties. Their SEO expertise helped us dominate key real estate search terms, increasing our website traffic and generating high-quality leads. The results speak for themselves, and their team’s dedication is unmatched!
+
+                    </p>
+            </div>
+
+
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <img src="https://cdn-icons-png.flaticon.com/128/300/300221.png" alt="User 1" class="testimonial-img">
+                    <div class="testimonial-info">
+                        <p class="testimonial-name"> CEO, Vision Nexus</p>
+                        <div class="testimonial-rating">
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                        </div>
+                    </div>
+
+                </div>
+                <p class="testimonial-text">
+                  Vision Nexus partnered with Delemon Technology to strengthen our online presence, and the results were phenomenal. Their strategic approach to SEO and keyword optimization not only improved our Google rankings but also brought in more targeted traffic to our site. We couldn't have asked for a better digital partner!
+                    </p>
+
+            </div>
+
+
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <img src="https://cdn-icons-png.flaticon.com/128/300/300221.png" alt="User 1" class="testimonial-img">
+                    <div class="testimonial-info">
+                        <p class="testimonial-name"> Digital Marketing Head, AnanasRE Burjazizi</p>
+                        <div class="testimonial-rating">
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                        </div>
+                    </div>
+
+                </div>
+                <p class="testimonial-text">
+                  AnanasRE Burjazizi’s success online wouldn’t have been possible without the incredible team at Delemon Technology. Their in-depth SEO strategies positioned us as leaders in our niche. The rise in organic traffic and qualified leads has exceeded our expectations. Highly recommended!
+                    </p>
+            </div>
+
+
+
+
+        </div>
+    </div>
+</div>
+
+
+        <div class="faq-section">
+            <div class="faq-section-header">
+                <h2>FAQ</h2>
+            </div>
+            <div class="faq-cards">
+                <div class="faq-card">
+                    <h2>1</h2>
+                    <p class="faq-question">What are SEO services?</p>
+                    <i class="fa-solid fa-arrow-right-long"></i>
+                    <div class="card-overlay">
+                        <h2>1</h2>
+                        <p>"SEO (Search Engine Optimization) services aim to enhance your website’s visibility on search
+                            engines like Google. our services include on-page optimization, keyword research, link
+                            building, technical SEO audits, and more, all designed to drive organic traffic and improve
+                            your online rankings."</p>
+                    </div>
+                </div>
+                <div class="faq-card">
+                    <h2>2</h2>
+                    <p class="faq-question">Why choose Delemon Technology as the best SEO company?</p>
+                    <i class="fa-solid fa-arrow-right-long"></i>
+                    <div class="card-overlay left">
+                        <h2>2</h2>
+                        <p>"Delemon Technology stands out as the best SEO company in Dubai, being recognized as the No.1
+                            Digital Marketing Agency for 100+ UAE Industries. Our custom strategies, proven success, and
+                            in-depth understanding of the UAE market make us the ideal choice for businesses seeking to
+                            improve their online presence and achieve higher search engine rankings."</p>
+                    </div>
+                </div>
+                <div class="faq-card">
+                    <h2>3</h2>
+                    <p class="faq-question">What industries does Delemon Technology serve in the UAE?</p>
                     <i class="fa-solid fa-arrow-right-long"></i>
                     <div class="card-overlay right">
-                        <h1>3</h1>
-                    <p>"We focus on on-page SEO by optimizing content, meta tags, headers, and improving overall page structure. Technical elements like page speed and mobile responsiveness are also crucial. Our comprehensive approach ensures each webpage is well-optimized for search engines. View our on-page SEO practices."</p>
-                            </div>
-                         </div>
-                         <div class="faq-card">
-                            <h1>4</h1>
-                            <p class="faq-question">Can you describe your approach to off-page SEO strategies, including link building and online reputation management?</p>
-                            <i class="fa-solid fa-arrow-right-long"></i>
-                            <div class="card-overlay top">
-                                <h1>4</h1>
-                            <p>"Off-page SEO involves building a strong online presence. We implement ethical link-building strategies and monitor online reviews and mentions to enhance your website's authority and reputation. Explore our successful off-page SEO and link-building initiatives."</p>
-                                    </div>
-                                 </div>
-                                 <div class="faq-card">
-                                    <h1>5</h1>
-                                    <p class="faq-question">How do you stay updated with search engine algorithms, and how does this impact your SEO strategy for long-term success?</p>
-                                    <i class="fa-solid fa-arrow-right-long"></i>
-                                    <div class="card-overlay left">
-                                        <h1>5</h1>
-                                    <p>"Staying current with search engine algorithms is crucial. We continually monitor updates and adapt our strategies accordingly. Our commitment to staying ahead of industry changes ensures your SEO strategy remains effective for long-term success. Check our adaptive SEO strategies for lasting results."</p>
-                                            </div>
-                                         </div>
-    </div>
-    </div>
+                        <h2>3</h2>
+                        <p>"We cater to over 100 industries in the UAE, including real estate, healthcare, e-commerce,
+                            hospitality, education, and more. Our expertise as the No.1 Digital Marketing Agency enables
+                            us to create industry-specific SEO strategies that deliver results."</p>
+                    </div>
+                </div>
+                <div class="faq-card">
+                    <h2>4</h2>
+                    <p class="faq-question">Which is the Best SEO Company in Dubai, UAE?</p>
+                    <i class="fa-solid fa-arrow-right-long"></i>
+                    <div class="card-overlay top">
+                        <h2>4</h2>
+                        <p>"Delemon Technology is the best SEO company in Dubai, UAE. With a proven track record of
+                            delivering exceptional results for businesses across various industries, Delemon Technology
+                            is your trusted partner in the world of Search Engine Optimization. We consistently deliver
+                            outstanding SEO results that significantly boost the online visibility of your website.
+                            Connect with the best SEO company in Dubai, UAE, and let us help you elevate your business's
+                            online presence to new heights."</p>
+                    </div>
+                </div>
 
-           <script>
-    function validatecontact(event) {
-        event.preventDefault();
-
-        var name = document.getElementById("name").value;
-        var email = document.getElementById("email").value;
-        var phone = document.getElementById("phone").value;
-        var message = document.getElementById("message").value;
-
-        var nameError = document.getElementById("name-error");
-        var emailError = document.getElementById("email-error");
-        var phoneError = document.getElementById("phone-error");
-
-        nameError.textContent = "";
-        emailError.textContent = "";
-        phoneError.textContent = "";
-
-        var isValid = true;
-
-        if (name === "") {
-            nameError.textContent = "This field is required";
-            isValid = false;
-        }
-
-  var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            emailError.textContent = "This field is required";
-            isValid = false;
-        }
+            </div>
+        </div>
 
 
-        if (phone === "") {
-            phoneError.textContent = "This field is required";
-            isValid = false;
-        }
-        if (isValid) {
-            submitForm();
-        }
+
+        <script>
+            function validatecontact(event) {
+                event.preventDefault();
+
+                var name = document.getElementById("name").value;
+                var email = document.getElementById("email").value;
+                var phone = document.getElementById("phone").value;
+                var message = document.getElementById("message").value;
+
+                var nameError = document.getElementById("name-error");
+                var emailError = document.getElementById("email-error");
+                var phoneError = document.getElementById("phone-error");
+
+                nameError.textContent = "";
+                emailError.textContent = "";
+                phoneError.textContent = "";
+
+                var isValid = true;
+
+                if (name === "") {
+                    nameError.textContent = "This field is required";
+                    isValid = false;
+                }
+
+                var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email)) {
+                    emailError.textContent = "This field is required";
+                    isValid = false;
+                }
 
 
-        return false;
-    }
-     function submitForm() {
-        // Get form data
-        const form = document.getElementById('web-page-form');
-        const formData = new FormData(form);
+                if (phone === "") {
+                    phoneError.textContent = "This field is required";
+                    isValid = false;
+                }
+                if (isValid) {
+                    submitForm();
+                }
 
-        // Send form data asynchronously
-        fetch(form.action, {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => {
-            if (response.ok) {
-alert('Thank You for Contacting Us');
-document.getElementById('web-page-form').reset();
-                // Reset form fields
-            } else {
-                // Handle error
-                console.error('Form submission failed:', response.statusText);
+
+                return false;
             }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
-        event.preventDefault();
-    }
+            function submitForm() {
+                // Get form data
+                const form = document.getElementById('web-page-form');
+                const formData = new FormData(form);
 
-</script>
+                // Send form data asynchronously
+                fetch(form.action, {
+                    method: 'POST',
+                    body: formData
+                })
+                    .then(response => {
+                        if (response.ok) {
+                            alert('Thank You for Contacting Us');
+                            document.getElementById('web-page-form').reset();
+                            // Reset form fields
+                        } else {
+                            // Handle error
+                            console.error('Form submission failed:', response.statusText);
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+                event.preventDefault();
+            }
+
+        </script>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-{% endblock %}
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+            integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+            integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+            crossorigin="anonymous"></script>
+        {% endblock %}
 </body>
+
 </html>

@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'base.html' %}
+{% block title %}pps-prodcast-production-services{% endblock %}
+{% load static %}
+{% block content %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>about</title>
+         <link rel="canonical" href="https://www.delemontechnology.com/pps-production-services"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<style>
+h2{
+     font-size:30px;
+    font-weight:600;
+
+
+}
+h3{
+
+    font-weight:600;
+}
+    .web-page-bg {
+        width: 100%;
+        height: 100vh;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: row;
+        background-repeat: no-repeat;
+        background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('{% static 'img/web-bg-2.jpg' %}');
+    }
+
+    .web-page-bg-1 {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .web-page-bg-2 {
+        width: 40%;
+        height: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .web-page-bg-icons {
+        width: 10%;
+        height: 45%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+    }
+
+    .web-page-bg-1 h1 {
+        color: white;
+        font-weight: 700;
+        font-size: 35px;
+    }
+
+    .web-page-bg-1-content p {
+        color: white;
+        font-weight: 300;
+        font-size: 14px;
+    }
+
+    .web-page-bg-1-content {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .icon-container {
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: none;
+        border-radius: 50%;
+    }
+
+    .icon-container i {
+        color: white;
+        font-size: 13px;
+    }
+
+    .icon-container:hover {
+        background-color: white;
+        border: 2px solid #FAB206;
+        transition: 0.3s ease;
+    }
+
+    .icon-container:hover i {
+        color: black;
+    }
+
+    #web-page-form {
+        background-color: white;
+        width: 90%;
+        padding: 8%;
+        height: 80%;
+    }
+
+    #web-page-form h3 {
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    #web-page-form label {
+        font-size: 12px;
+    }
+
+    .web-page-form-input {
+        border: hidden;
+        outline: none;
+        padding-left: 5px;
+        width: 100%;
+        font-size: 12px;
+        height: 30px;
+        background-color: #F1EFF0;
+    }
+
+    .web-page-form-button {
+        background-color: rgb(255, 255, 255);
+        color: #FAB206;
+        outline: none;
+        width: 100px;
+        height: 30px;
+        font-size: 12px;
+        border: 2px solid #FAB206;
+
+    }
+
+    #form-bottom-p {
+        font-size: 12px;
+        color: rgb(170, 169, 169);
+        text-align: center;
+    }
+
+    #web-page-form p span {
+        color: #FAB206;
+        font-weight: 600;
+    }
+
+    .error-message {
+        color: red;
+        font-size: 12px;
+    }
+    .web-page-container{
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        gap:60px;
+
+
+    }
+    .web-page-container p{
+        width: 80%;
+    }
+
+    .web-page-container-2 {
+        width: 100%;
+        height:60vh;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .web-page-clients-details img{
+        width: 100%;
+    }
+    .web-page-clients {
+
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    .web-page-clients-details {
+        width: 45%;
+    }
+
+    .web-page-clients h2{
+        font-size: 30px;
+        font-weight: 600;
+    }
+
+    .web-page-clients p {
+        font-size: 14px;
+        line-height:2;
+    }
+
+    .web-page-clients-counts {
+        width: 100%;
+        height: 180px;
+        display: flex;
+        padding: 20px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        background-color: #F6F6F6;
+    }
+
+    .web-page-clients-counts h5 {
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    .error-message {
+        color: red;
+        font-size: 12px;
+    }
+
+    .clients-counts {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .counts-row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 80px;
+        width: 30%;
+        border-right: 1px solid #dfdfdf;
+        justify-content: space-between;
+    }
+
+    .counts-row span {
+        font-size: 14px;
+        font-weight: 300;
+    }
+
+    .counts-row h2 {
+        font-size: 35px;
+        font-weight: 800;
+        color: #FAB206;
+    }
+
+    .web-page-cards {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 10px;
+        cursor: pointer;
+
+    }
+
+    .card-icon-div {
+        width: 60px;
+        height: 60px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #C1C1C1;
+    }
+
+    .card-icon-div i {
+        font-size: 20px;
+        color: white;
+
+    }
+
+    .web-page-cards h2 {
+        font-size: 22px;
+    }
+
+    .web-page-cards span i {
+        margin-right: 8px;
+        color: #C1C1C1;
+        font-size: 20px;
+    }
+
+    .web-page-cards:hover {
+        background-color: #F6F6F6;
+        border-radius: 10px;
+    }
+
+    .web-page-cards:hover .card-icon-div {
+        background-color: #FAB206;
+    }
+
+    .web-page-cards:hover span i {
+        color: #FAB206;
+    }
+
+    .faq-section {
+        height: 90vh;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        display: flex;
+        background-color: #E3E3E3;
+    }
+
+    .faq-section-header {
+        width: 90%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    .faq-section-header h2 {
+        -webkit-text-stroke: 1px rgb(0, 0, 0);
+        color: transparent;
+        font-size: 70px;
+    }
+
+    .faq-cards {
+        display: flex;
+        width: 90%;
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .faq-card {
+        position: relative;
+        overflow: hidden;
+        width: 220px;
+        height: 300px;
+        display: flex;
+        cursor: pointer;
+        align-items: flex-start;
+        padding: 20px;
+        flex-direction: column;
+        background-color: white;
+        justify-content: space-evenly;
+
+    }
+
+    .card-overlay {
+        padding: 20px;
+        position: absolute;
+        background: rgba(0, 0, 0, .5);
+        left: 0;
+        top: 100%;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        transition: all 350ms cubic-bezier(0, 0, 0.2, 1);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        background: rgb(0, 0, 0)
+    }
+
+    .faq-card:hover .card-overlay {
+        top: 0;
+    }
+
+    .card-overlay.left {
+        left: -100%;
+        top: 0;
+    }
+
+    .faq-card:hover .card-overlay.left {
+        left: 0;
+    }
+
+    .card-overlay.right {
+        left: 100%;
+        top: 0;
+    }
+
+    .faq-card:hover .card-overlay.right {
+        left: 0;
+    }
+
+    .faq-card:hover .card-overlay.top {
+        left: 0;
+        top: -100%;
+    }
+
+    .faq-card:hover .card-overlay.top {
+        left: 0;
+        top: 0;
+    }
+
+    .faq-card h2 {
+        -webkit-text-stroke: 1px #FAB206;
+        color: transparent;
+        font-size: 50px;
+        font-family: "Manrope", sans-serif;
+    }
+
+    .faq-question {
+        font-size: 14px;
+        font-weight: 700;
+        font-family: "Manrope", sans-serif;
+    }
+
+    .card-overlay p {
+        font-size: 10px;
+        color: white;
+        font-family: "Manrope", sans-serif;
+    }
+
+    .faq-card i {
+        height: 30px;
+        width: 30px;
+        border: 2px solid #FAB206;
+        background-color: white;
+        color: #FAB206;
+        font-size: 12px;
+        justify-content: center;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+    }
+    .production-card {
+        width: 100%;
+        box-shadow: 0 6px 16px;
+        padding: 20px;
+    }
+    .production-card img{
+        width: 100%;
+        padding: 20px;
+        border-radius: 30px;
+    }
+    .production-card p{
+        text-align: justify;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .web-page-container-ppa {
+        gap: 15px;
+
+    }
+    .web-page-clients-details-ppa {
+
+        height: 53vh;
+    }
+    .web-page-clients-details-ppa img{
+
+        height: 100%;
+        object-fit: cover;
+    }
+    .web-page-clients-ppa {
+        width: 50%;
+        text-align: justify;
+    }
+    .logo{
+        /* display: flex; */
+
+
+    }
+    .logo-img{
+        padding: 20px;
+        display: flex;
+        /* flex-direction: row; */
+        width: 100%;
+        height: 28vh;
+
+
+    }
+    .logo-img img{
+        width: 20%;
+    }
+    .logo h2{
+        text-align:center;
+    }
+    @media(min-width:320px) and (max-width:480px) {
+        .web-page-bg {
+            flex-direction: column;
+            height: 130vh;
+        }
+
+        .web-page-bg-icons {
+            flex-direction: row;
+            width: 90%;
+            height: 10%;
+        }
+
+        .web-page-bg-1 {
+            width: 90%;
+            height: 30%;
+        }
+
+        .web-page-bg-1 h1 {
+            font-size: 20px;
+        }
+
+        #web-page-form {
+            width: 90%;
+            height: 80%;
+        }
+
+        .web-page-bg-2 {
+            width: 100%;
+        }
+
+        .web-page-container-2 {
+            flex-direction: column;
+            height: 70vh;
+        }
+
+        .web-page-clients {
+            width: 90%;
+            height: 40%;
+        }
+
+        .web-page-clients h2 {
+            font-size: 20px;
+        }
+
+        .web-page-clients-details {
+            width: 90%;
+        }
+
+        .counts-row {
+            border: hidden;
+        }
+
+        .faq-section {
+            height: auto;
+        }
+
+        .faq-cards {
+            height: 340px;
+            overflow-x: auto;
+        }
+
+        .faq-card {
+            min-width: 220px;
+            margin-right: 10px;
+        }
+
+        .faq-section-header h2{
+            font-size: 35px;
+            overflow-y: hidden;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .faq-card p {
+            font-size: 12px;
+        }
+
+        .card-overlay p {
+            font-size: 10px;
+        }
+        .web-page-container-ppa {
+            display:flex;
+            flex-direction:column;
+        }
+         /*.web-page-container-ppa img{*/
+         /*    width:40%;*/
+         /*}*/
+        .web-page-container {
+            display:flex;
+            flex-direction:column;
+        }
+
+        .logo-img{
+            /*flex-direction:column;*/
+            width:90%;
+            height:20%;
+        }
+        .web-page-clients-ppa{
+            width:100%;
+        }
+         .web-page-clients-details-ppa img{
+    width:100%;
+        height: 50vh;
+        object-fit: cover;
+    }
+    .production-card{
+        margin:0;
+    }
+.web-page-container p{
+    width:100%;
+    margin:0;
+    padding:0;
+}
+.web-page-clients-details img{
+ width:100%;
+ margin:100;
+ padding:0;
+
+    }
+h3{
+        text-align:left;
+    }
+.production-card h3{
+    text-align:center;
+}
+.production-card p{
+    text-align:left;
+}
+}
+</style>
+
+<body>
+    <div class="web-page-bg">
+        <div class="web-page-bg-icons">
+            <div class="icon-container">
+                <a href="https://www.facebook.com/profile.php?id=61554857870065&sfnsn=wiwspwa&mibextid=RUbZ1f"><i
+                        class="fa-brands fa-facebook"></i></a>
+            </div>
+            <div class="icon-container">
+                <a href=""><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+            <div class="icon-container">
+                <a href="https://www.instagram.com/delemon_technology?igsh=emF2ajg3bm00cDUz"><i
+                        class="fa-brands fa-instagram"></i></a>
+            </div>
+            <div class="icon-container">
+                <a href="https://www.linkedin.com/company/delemon-technology/"><i
+                        class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+            <div class="icon-container">
+                <a href=""><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+        <div class="web-page-bg-1">
+            <h1>Podcast Production Service in Dubai, UAE</h1>
+            <div class="web-page-bg-1-content">
+                <p>At Delemon Technology, we offer premium podcast production services in Dubai, UAE, designed to turn
+                    your ideas into professional, engaging podcasts. From pre-production planning to post-production
+                    polishing, we handle it all. Our services include content creation, access to state-of-the-art
+                    studios, expert hosting, and seamless editing to ensure your podcast stands out in the market.</p>
+            </div>
+        </div>
+        <div class="web-page-bg-2">
+            <form id="web-page-form" action="https://api.web3forms.com/submit" method="POST"
+                onsubmit="return validatecontact(event)">
+                <h3>Have any questions?</h3>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <input type="hidden" name="access_key" value="1d581977-0167-4073-8d30-f8e754b508d4">
+                        <input type="hidden" name="subject" value="Form Submission From Delemon Website">
+                        <label for="">Your Name</label>
+                        <input type="text" placeholder="Enter your name" id="name" name="name"
+                            class="web-page-form-input">
+                        <p class="error-message" id="name-error"></p>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="">Your Email</label>
+                        <input type="text" name="email" id="email" placeholder="Enter your email"
+                            class="web-page-form-input">
+                        <p class="error-message" id="email-error"></p>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="">Your Number</label>
+                        <input type="text" name="phonenumber" id="phone" placeholder="Enter your Number"
+                            class="web-page-form-input">
+                        <p class="error-message" id="phone-error"></p>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="">Your Message</label>
+                        <input type="text" name="message" id="message" placeholder="Type here"
+                            class="web-page-form-input">
+                    </div>
+                </div>
+                <input type="submit" class="web-page-form-button" value="SUBMIT" />
+                <p class="mt-4" id="form-bottom-p">if you have any RFP requirement please share with us at
+                    <span>@delemontechnology.ae</span> and if you are looking for a career related enquiry please check
+                    our Career section
+                </p>
+            </form>
+        </div>
+    </div>
+
+
+
+
+
+
+    <div class="container mt-5 mb-5">
+        <h2 class="web-page-contaer2-h2">Our Podcast Production Services</h2>
+        <div class="web-page-container-2">
+        <div class="web-page-clients">
+
+            <h3>Pre-Production</h3>
+            <p>Great podcasts start with solid planning. Our pre-production services include brainstorming ideas,
+                scripting, storyboarding and creating a roadmap for your podcast. This ensures your content is
+                well-structured and aligned with your goals.</p>
+        </div>
+        <div class="web-page-clients-details">
+            <img src="https://img.freepik.com/free-vector/radio-broadcasting-concept_74855-7834.jpg?t=st=1740042116~exp=1740045716~hmac=441f0fe6398b81e7fabeeff729ea9d142f6989f714ef9dd27130cf1f92261ab9&w=900"alt="Pre-Production">
+        </div>
+    </div>
+    </div>
+
+    <div class="container">
+        <div class="production-card row">
+
+            <div class="col-md-6">
+                <h3>Production</h3>
+                <img src="https://www.coolest-gadgets.com/wp-content/uploads/2024/12/Podcast-Statistics.webp"alt="Production">
+                <p> With access to state-of-the-art studios and cutting-edge equipment, we take care of everything
+                    during production—recording, hosting, and ensuring high-quality sound. Our professional team ensures
+                    a smooth recording experience.</p>
+
+            </div>
+
+            <div class="col-md-6">
+                <h3>Post-Production</h3>
+                <img src="https://static.wixstatic.com/media/d7f5d6_96f2a517e3654782bbd3809cadc7af04~mv2.png/v1/fill/w_980,h_560,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/d7f5d6_96f2a517e3654782bbd3809cadc7af04~mv2.png" alt="Post-Production">
+                <p>The magic happens in post-production. From editing audio to adding music and sound effects, we refine
+                    every detail to deliver a polished final product. Your podcast will sound professional, engaging,
+                    and ready to captivate your audience.</p>
+
+            </div>
+        </div>
+    </div>
+    <div class="web-page-container  container mt-5">
+        <div class="web-page-clients-details">
+            <img src="https://img.freepik.com/premium-photo/modern-music-studio-with-computer-speakers-keyboard_14117-899989.jpg" alt="Content Creation">
+        </div>
+
+        <div class="web-page-clients">
+
+            <h3>Content Creation</h3>
+            <p>Beyond production, we focus on content creation strategies to make your podcast stand out. From crafting
+                compelling narratives to optimizing episodes for maximum engagement, we help you connect with your
+                listeners and build a loyal following.</p>
+        </div>
+
+    </div>
+<div class="container mb-5 mt-5">
+    <div class="web-page-container-ppa row">
+        <div class="web-page-clients-ppa col-md-7">
+            <h3>Podcast Production Agency in Dubai, UAE</h3>
+            <p>The No.1 Digital Marketing Agency for 100+ UAE Industries, we pride ourselves on offering top-tier
+                podcast production services designed to elevate your brand. As a trusted podcast production agency in
+                Dubai, we deliver comprehensive solutions that cover every phase of podcast creation, including
+                pre-production, production, and post-production.In the pre-production phase, we collaborate closely with
+                you to brainstorm ideas, develop engaging scripts, and plan the structure of your podcast to align with
+                your business goals. This ensures your podcast is not only well-organized but also impactful.</p>
+            <p>During the production phase, we utilize state-of-the-art studios, high-quality microphones, and
+                cutting-edge equipment to record crisp and professional audio. Our experienced team ensures that every
+                element, from voice recording to hosting, is handled with precision.In the final post-production stage,
+                we focus on refining your podcast by editing audio, incorporating sound effects, and optimizing sound
+                quality. This process ensures your content is polished and ready to engage listeners.As the No.1 Digital
+                Marketing Agency for 100+ UAE Industries, we go beyond traditional podcast production by leveraging our
+                expertise in digital marketing to help distribute and promote your podcast effectively. Whether you aim
+                to reach a local or global audience, we ensure your podcast captures attention and drives results.</p>
+        </div>
+        <div class="web-page-clients-details-ppa mt-5 col-md-5">
+            <img src="https://i-alt.wfolio.com/x/zfNWg0RActCaYvCdP8NS6h3QcKqIOO7I/oVCmpsR2A0_zCBuWQbm7dJYwNQ6ysoqE/BtO6y7RTgH6SC_8M_-VwrqviusnViRaL/9vR49PgyO3NPb7btV7D6z_RMg-yWHaz6/SQ3KYQuOrv_OYnkiVGsFyA.png" alt="Podcast Production Agency in Dubai">
+        </div>
+
+
+    </div>
+    </div>
+
+
+<div class="logo container">
+    <h2 >Partners</h2>
+   <div class="logo-img mb-5 mb-5">
+     <img src="data:image/png;base64,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"
+        class=""alt="semrush-logo">
+    <img src="https://www.prosperohub.com/hubfs/diamond-badge-color.png"alt="hubspot-logo">
+
+    <img src="https://static.vecteezy.com/system/resources/previews/046/861/647/non_2x/google-logo-transparent-background-free-png.png"
+        class="" alt="google">
+    <img src="https://cdn-icons-png.flaticon.com/128/14777/14777069.png" class=""alt="snapchat-logo">
+
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdagcBXJzjmh3OdhIVIS_O6I7xQoNGRPAkFQ&s"
+        class="" alt="meta-logo">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzKUYhyGTBETsJENDhzAkwGfBdiOch8Kmud5jvwVRPUVVLqO_1U6qQUCiHBs8HJLRu8w&usqp=CAU" alt="tiktok-logo">
+
+   </div>
+</div>
+
+    <div class="faq-section">
+        <div class="faq-section-header">
+            <h2>FAQ</h2>
+        </div>
+        <div class="faq-cards">
+            <div class="faq-card">
+                <h2>1</h2>
+                <p class="faq-question">1. What does your podcast production service include?</p>
+                <i class="fa-solid fa-arrow-right-long"></i>
+                <div class="card-overlay">
+                    <h2>1</h2>
+                    <p>" Our services cover the entire production journey, including pre-production (concept
+                        development, scripting), production (recording in advanced studios), and post-production
+                        (editing, adding music, and polishing the final product)."</p>
+                </div>
+            </div>
+            <div class="faq-card">
+                <h2>2</h2>
+                <p class="faq-question">Can you help create content for my podcast?</p>
+                <i class="fa-solid fa-arrow-right-long"></i>
+                <div class="card-overlay left">
+                    <h2>2</h2>
+                    <p>"Yes, we specialize in content creation, crafting engaging scripts, formats, and narratives
+                        tailored to your audience and brand. "</p>
+                </div>
+            </div>
+            <div class="faq-card">
+                <h2>3</h2>
+                <p class="faq-question">Do you provide studio rentals for podcast recording?
+                </p>
+                <i class="fa-solid fa-arrow-right-long"></i>
+                <div class="card-overlay right">
+                    <h2>3</h2>
+                    <p>"Absolutely! We offer fully-equipped studio rentals in Dubai with the latest recording
+                        equipment
+                        and a professional setup. "</p>
+                </div>
+            </div>
+            <div class="faq-card">
+                <h2>4</h2>
+                <p class="faq-question">How do you ensure the podcast quality is professional? </p>
+                <i class="fa-solid fa-arrow-right-long"></i>
+                <div class="card-overlay top">
+                    <h2>4</h2>
+                    <p>"We utilize state-of-the-art equipment, professional editing software, and experienced staff
+                        to
+                        deliver high-quality, polished podcasts that meet industry standards. "</p>
+                </div>
+            </div>
+            <div class="faq-card">
+                <h2>5</h2>
+                <p class="faq-question">Why should I choose Delemon Technology for podcast production? </p>
+                <i class="fa-solid fa-arrow-right-long"></i>
+                <div class="card-overlay left">
+                    <h2>5</h2>
+                    <p>"At Delemon Technology, we combine expertise, creativity, and a customer-focused approach to
+                        deliver end-to-end podcast production services that align with your vision and engage your
+                        audience effectively."</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function validatecontact(event) {
+            event.preventDefault();
+
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var phone = document.getElementById("phone").value;
+            var message = document.getElementById("message").value;
+
+            var nameError = document.getElementById("name-error");
+            var emailError = document.getElementById("email-error");
+            var phoneError = document.getElementById("phone-error");
+
+            nameError.textContent = "";
+            emailError.textContent = "";
+            phoneError.textContent = "";
+
+            var isValid = true;
+
+            if (name === "") {
+                nameError.textContent = "This field is required";
+                isValid = false;
+            }
+
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                emailError.textContent = "This field is required";
+                isValid = false;
+            }
+
+
+            if (phone === "") {
+                phoneError.textContent = "This field is required";
+                isValid = false;
+            }
+            if (isValid) {
+                submitForm();
+            }
+
+
+            return false;
+        }
+        function submitForm() {
+            // Get form data
+            const form = document.getElementById('web-page-form');
+            const formData = new FormData(form);
+
+            // Send form data asynchronously
+            fetch(form.action, {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => {
+                    if (response.ok) {
+                        alert('Thank You for Contacting Us');
+                        document.getElementById('web-page-form').reset();
+                        // Reset form fields
+                    } else {
+                        // Handle error
+                        console.error('Form submission failed:', response.statusText);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            event.preventDefault();
+        }
+
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+    {% endblock %}
+</body>
+
+</html>

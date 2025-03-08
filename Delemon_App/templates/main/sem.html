@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 {% extends 'base.html' %}
-{% block title %}ppc-advertising-management-services{% endblock %}
+{% block title %}content-marketing-strategy-services{% endblock %}
 {% load static %}
 {% block content %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>about</title>
-     <link rel="canonical" href="https://www.delemontechnology.com/ppc-advertising-management-services"/>
+     <link rel="canonical" href="https://www.delemontechnology.com/sem-marketing-and-services"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <style>
+h2{
+    font-size: 30px;
+    font-weight: 600;
+}
 .web-page-bg{
     width: 100%;
     height: 100vh;
@@ -129,23 +133,38 @@ font-weight: 600;
     font-size:12px;
 }
 .web-page-container-2{
-    width: 100%;
-    height: 80vh;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
+    /*width: 100%;*/
+    margin-left:50px;
+    margin-right:50px;
+    /*height: 80vh;*/
+    /*display: flex;*/
+    /*flex-direction: row;*/
+    /*align-items: center;*/
+    /*justify-content: space-evenly;*/
 }
 .web-page-clients{
-    height: 70%;
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
+    /*height: 70%;*/
+    /*width: 1100%;*/
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*align-items: flex-start;*/
+    /*justify-content: center;*/
 }
 .web-page-clients-details{
-    width: 45%;
+    /*width: 100%;*/
+    /*height:60vh;*/
+}
+.web-page-clients-details img{
+    width: 100%;
+   height: 100%
+   object-fit:cover;
+}
+.web-page-clients-detail{
+    /*height:80vh;*/
+}
+.web-page-clients-detail img{
+    width: 100%;
+   height: 100%;
 }
 .web-page-clients h2{
     font-size: 30px;
@@ -153,6 +172,8 @@ font-weight: 600;
 }
 .web-page-clients p{
     font-size: 14px;
+    text-align: justify;
+
 }
 .web-page-clients-counts{
     width: 100%;
@@ -167,10 +188,6 @@ font-weight: 600;
 .web-page-clients-counts h5{
     font-size: 18px;
     font-weight: 600;
-}
-.error-message{
-    color:red;
-    font-size:12px;
 }
 .clients-counts{
     width: 100%;
@@ -261,7 +278,7 @@ font-weight: 600;
 }
 .faq-cards{
     display: flex;
-    width: 90%;
+    width: 70%;
     justify-content: space-between;
     flex-direction: row;
     align-items: center;
@@ -344,44 +361,58 @@ left: 0;
     border-radius: 50%;
     display: flex;
     align-items: center;
+
 }
 @media(min-width:320px) and (max-width:480px){
+
     .web-page-bg{
         flex-direction: column;
-        height:130vh;
+        height:100vh;
     }
     .web-page-bg-icons{
         flex-direction: row;
         width: 90%;
         height: 10%;
     }
+    .web-page-bg-1-content {
+        /*margin-top:30px;*/
+        display:none;
+    }
     .web-page-bg-1{
         width: 90%;
-        height: 30%;
+        height: 20%;
     }
     .web-page-bg-1 h1{
         font-size:20px;
     }
     #web-page-form{
         width: 90%;
-        height: 80%;
+        height: auto;
     }
     .web-page-bg-2{
         width: 100%;
     }
     .web-page-container-2{
         flex-direction: column;
-        height:70vh;
+        /*height:200vh;*/
+    }
+      .web-page-clients h2{
+        font-size:20px;
     }
     .web-page-clients{
         width: 90%;
         height: 40%;
     }
-      .web-page-clients h2{
-        font-size:20px;
+    ..web-page-clients-details{
+        width:100%;
+        /*height:40vh;*/
     }
-    .web-page-clients-details{
-        width: 90%;
+    .web-page-clients-details img{
+        width: 100%;
+        /*height:auto;*/
+    }
+     .web-page-clients-detail img{
+        width: 100%;
     }
     .counts-row{
         border: hidden;
@@ -431,13 +462,18 @@ left: 0;
         </div>
     </div>
 <div class="web-page-bg-1">
-<h1>Pay Per Click (PPC) Advertising And Marketing Agency Services In Dubai</h1>
+<h1>SEARCH ENGINE MARKETING</h1>
 <div class="web-page-bg-1-content">
-<p>Multiply your daily leads and sales by hiring Dubai’s leading PPC marketing agency Digital Gravity. We promise you a solid return against your ad spend irrespective of the size of your business.</p>
+<p>Search Engine Marketing (SEM) is a powerful way to attract more customers to your website by targeting their
+    specific needs and interests. At Delemon Technology, we create personalized SEM strategies that fit your
+    business goals, help you stay ahead of your competitors, and make the most of your budget.
+    <br>Our PPC services in Dubai focus on delivering the highest return on investment (ROI) and return on ad spend
+        (ROAS) while keeping your cost-per-click (CPC) low. Using the latest tools and time-tested techniques, we ensure
+        real, impactful results that contribute to your business growth.</p>
 </div>
 </div>
 <div class="web-page-bg-2">
-              <form id="web-page-form" action="https://api.web3forms.com/submit" method="POST" onsubmit="return validatecontact(event)">
+             <form id="web-page-form" action="https://api.web3forms.com/submit" method="POST" onsubmit="return validatecontact(event)">
                 <h3>Have any questions?</h3>
                 <div class="row">
                     <div class="col-md-6 mb-3">
@@ -468,83 +504,55 @@ left: 0;
 </div>
    </div>
 
-<div class="web-page-container-2">
-    <div class="web-page-clients">
-<h2>Dominate Dubai's Market with Expert PPC Advertising by Digital Gravity</h2>
-<p>Supercharge your business growth with Dubai's premier PPC marketing agency, Digital Gravity. Our tailored strategies guarantee a remarkable return on your advertising investment, amplifying your leads and sales regardless of your business scale. Trust us to elevate your brand's presence and drive unparalleled success in the competitive digital landscape.</p>
+<div class="web-page-container-2  mt-5 mb-5 row">
+<div class="web-page-clients col-md-5">
+<h2>Best PPC Agency In Dubai, UAE</h2>
+<p>As the No.1 digital marketing agency for over 100 industries in the UAE, Delemon Technology specializes in providing comprehensive PPC management services to help
+    businesses connect with their target audience and achieve their marketing goals. Our team of Google Ads experts and Bing Ads specialists offers customized SEM
+    services in Dubai that are tailored to meet the unique needs of your business.
+    We provide a full suite of Google Ads services in the UAE, including Search Ads, Display Ads, YouTube Ads, and Remarketing Ads. Our SEM expertise ensures we
+    deliver results and maximize ROI for our clients.Our team of Google Ads specialists is highly skilled in creating effective campaigns that deliver measurable results.
+    Using a data-driven approach, we develop strategies designed to achieve your specific business objectives and drive meaningful engagement.</p>
+    <p>Our PPC company in Dubai offers Google and Bing advertising services designed to help you break into niche markets and achieve your business goals. With
+        experience and expertise in paid marketing services, Delemon Technology stands out as a leader in the industry.
+        We also offer SEM and PPC in digital marketing, along with Google Ads and Pay Per Click Advertising Services in the UAE. Our search engine services are crafted to
+        help businesses enhance their online visibility and connect with their audience effectively.
+        Whether you're looking for a Google Ads company or a full-service PPC agency, we have the skills and experience needed to help you achieve your marketing goals. By
+        using the latest techniques and strategies, our search engine advertising company ensures increased website traffic and delivers the best possible ROI. Delemon
+        Technology is committed to helping businesses generate quality leads and achieve their marketing visions with the best Pay Per Click management services in the UAE.</p>
     </div>
-    <div class="web-page-clients-details">
-<div class="web-page-clients-counts">
-<h5>Key Highlights Our Work In Numbers.</h5>
-<div class="clients-counts">
-    <div class="counts-row">
-<span>Happy Clients</span>
-<h2>145+</h2>
-    </div>
-    <div class="counts-row">
-        <span>Projects Completed</span>
-        <h2>212+</h2>
-    </div>
-    <div class="counts-row">
-        <span>Years of experience</span>
-        <h2>15+</h2>
-    </div>
-</div>
-</div>
+    <div class="web-page-clients-details col-md-7">
+      <img src="https://img.freepik.com/free-vector/team-specialists-with-magnifier-laptop-arrow-digital-marketing-ppc-campaign-customer-relationships-concept-white-background_335657-1699.jpg?t=st=1739961729~exp=1739965329~hmac=11d08184a5679a2f9f68070ad77ce3f533a369821e49497b99ac524ec2268f23&w=996" >
     </div>
 </div>
-<div class="container mb-5">
-    <div class="row ">
-        <div class="col-md-3 col-12">
-<div class="web-page-cards">
-    <div class="card-icon-div mb-3">
-        <i class="fa-solid fa-comments"></i>
+<div class="web-page-container-2  row  mb-5 mt-5">
+    <div class="web-page-clients-detail col-md-7">
+        <img src="https://img.freepik.com/free-vector/team-specialists-with-magnifier-laptop-arrow-digital-marketing-ppc-campaign-customer-relationships-concept_335657-169.jpg?t=st=1739962227~exp=1739965827~hmac=5d71a813da5862facc2d702b4f16dd54df7b073dcc5cefe38a7677d8f221dfd3&w=996" >
+      </div>
+    <div class="web-page-clients col-md-5">
+<h2>What Is Search Engine Marketing?</h2>
+  <p>A strong presence on the Search Engine Results Page (SERP) can make all the difference for a brand. It helps attract potential leads to your website, many of whom can
+    convert into loyal customers. However, achieving this is no easy feat. A successful SEM (Search Engine Marketing) strategy relies heavily on a team of dedicated experts.
+    Directing the wrong audience to your website won't lead to sales or business growth. This is why an effective PPC ad campaign and SEM strategy must identify the right
+    keywords, key phrases, and topics. By using well-crafted, relevant content, you can guide high-quality leads to your website.When it comes to SEM campaigns, you have
+    two main approaches: Organic Results or Paid PPC Campaigns.</p>
+    <p>Organic Results: Building organic reach requires careful topic selection and thoughtfully created content. Search engines like Google prioritize providing an exceptional
+        user experience (UX). This means only valuable, informative, and engaging content will make it to the top of the SERP. Spammy or low-quality content won't stand a
+        chance. Google's constantly evolving algorithms ensure that only the best content earns a place on the first page of results.
+        Paid SEM Campaigns: Paid search engine marketing campaigns, such as PPC (Pay Per Click) or PPE (Pay Per Engagement), can provide faster results. While these
+        campaigns may not demand perfect content or keyword optimization, your website must still offer meaningful content to engage visitors and encourage them to take
+        actions like purchasing, subscribing, or following. Combining well-structured campaigns with useful website content ensures maximum ROI.</p>
+        <p>
+            At Delemon Technology, our team of SEM and PPC experts in Dubai is here to help you navigate the complexities of search engine marketing. As the No.1 Digital Marketing
+        Agency for 100+ UAE Industries, we are also recognized as the Best PPC Agency in Dubai, UAE, offering top-tier Google PPC and Pay Per Click services. Whether you
+        want to grow organically or leverage the power of paid campaigns, our expertise in Google Pay Per Click advertising ensures that your marketing efforts deliver
+        exceptional results. Additionally, we'll craft strategies tailored to your business goals. Reach out to us today to learn more about how our expertise can take your brand to
+        the next level.
+        </p>
     </div>
-    <h2 class="mb-3">Workshops</h2>
-    <span><i class="fa-solid fa-caret-right"></i>Business analysis</span>
-    <span><i class="fa-solid fa-caret-right"></i>Campaign objective</span>
-    <span><i class="fa-solid fa-caret-right"></i>Preparing proposal</span>
-    <span><i class="fa-solid fa-caret-right"></i>Deciding deliverables</span>
+
 </div>
-        </div>
-        <div class="col-md-3 col-12">
-            <div class="web-page-cards">
-                <div class="card-icon-div mb-3">
-                    <i class="fa-solid fa-gear"></i>
-                </div>
-                <h2 class="mb-3">Planning</h2>
-                <span><i class="fa-solid fa-caret-right"></i>Industry research</span>
-                <span><i class="fa-solid fa-caret-right"></i>Competitor research</span>
-                <span><i class="fa-solid fa-caret-right"></i>Selecting marketing channels</span>
-                <span><i class="fa-solid fa-caret-right"></i>Strategy development</span>
-            </div>
-        </div>
-        <div class="col-md-3 col-12">
-            <div class="web-page-cards">
-                <div class="card-icon-div mb-3">
-                    <i class="fa-solid fa-laptop-code"></i>
-                </div>
-                <h2 class="mb-3">A/B Testing</h2>
-                <span><i class="fa-solid fa-caret-right"></i>Experimenting with ads</span>
-                <span><i class="fa-solid fa-caret-right"></i>Experimenting with content</span>
-                <span><i class="fa-solid fa-caret-right"></i>Testing SEO techniques</span>
-                <span><i class="fa-solid fa-caret-right"></i>Analyzing audience behavior</span>
-            </div>
-        </div>
-        <div class="col-md-3 col-12">
-            <div class="web-page-cards">
-                <div class="card-icon-div mb-3">
-                    <i class="fa-solid fa-rocket"></i>
-                </div>
-                <h2 class="mb-3">Execution</h2>
-                <span><i class="fa-solid fa-caret-right"></i>Creating campaign</span>
-                <span><i class="fa-solid fa-caret-right"></i>Content production</span>
-                <span><i class="fa-solid fa-caret-right"></i>Strategy optimization</span>
-                <span><i class="fa-solid fa-caret-right"></i>Analysis</span>
-            </div>
-        </div>
-    </div>
-</div>
+
 
 <div class="faq-section">
     <div class="faq-section-header">
@@ -553,53 +561,59 @@ left: 0;
     <div class="faq-cards">
             <div class="faq-card">
     <h2>1</h2>
-    <p class="faq-question">How can PPC digital marketing benefit my business in terms of generating leads and increasing sales?</p>
+    <p class="faq-question">What is Social Media Marketing, and Why is it Important?</p>
     <i class="fa-solid fa-arrow-right-long"></i>
     <div class="card-overlay">
         <h2>1</h2>
-    <p>" PPC(Pay-Per-Click) digital marketing is a powerful tool for generating leads and driving sales. By placing targeted ads in search engine results or on social media, we ensure your business is visible to users actively searching for your products or services. Check our success stories for proven lead generation and sales growth."</p>
+    <p>"As the No.1 Digital Marketing Agency for 100+ UAE Industries and the Best PPC Agency in Dubai, UAE, SEM is a digital marketing
+        strategy that uses paid ads to increase your website's visibility on search engine results pages (SERPs). It helps your business reach
+        the right audience, drive targeted traffic, and achieve measurable results like higher sales, leads, and ROI."</p>
             </div>
          </div>
          <div class="faq-card">
             <h2>2</h2>
-            <p class="faq-question">What platforms do you utilize for PPC advertising, and how do you determine the most effective channels for my business?</p>
+            <p class="faq-question">What types of SEM services does Delemon Technology provide?</p>
             <i class="fa-solid fa-arrow-right-long"></i>
             <div class="card-overlay left">
                 <h2>2</h2>
-            <p>"We leverage popular platforms like Google Ads, Bing Ads, and social media channels for PPC advertising. Our strategy involves thorough market analysis and audience targeting to identify the most effective channels for your specific business goals. Explore our diversified PPC campaigns."</p>
+                  <p>As the Best PPC Agency in Dubai, UAE, we offer a comprehensive range of SEM services, including Google Ads management,
+                    Bing Ads campaigns, PPC (Pay-Per-Click) advertising, Display Ads, YouTube Ads, and Remarketing Ads. Our strategies are tailored
+                    tomeet the unique needs of your business.</p>
                     </div>
                  </div>
                  <div class="faq-card">
                     <h2>3</h2>
-                    <p class="faq-question">How do you optimize PPC campaigns to ensure a high return on investment (ROI)?</p>
+                    <p class="faq-question">How does SEM differ from SEO, and should I use both?</p>
                     <i class="fa-solid fa-arrow-right-long"></i>
                     <div class="card-overlay right">
                         <h2>3</h2>
-                    <p>"Our PPC optimization strategy includes continuous monitoring, keyword refinement, A/B testing, and performance analysis. By staying vigilant and adapting to market trends, we maximize your ROI and ensure cost-effective campaigns. View our ROI-driven PPC success stories."</p>
+                    <p>"SEM focuses on paid strategies to appear at the top of search engine results, while SEO improves organic visibility through
+                        optimized content and website structure. Combining SEM and SEO can maximize your online presence and deliver both immediate
+                        and long-term results."</p>
                             </div>
                          </div>
                          <div class="faq-card">
                             <h2>4</h2>
-                            <p class="faq-question">Can you target specific demographics or geographical locations with PPC campaigns to reach our ideal audience?</p>
+                            <p class="faq-question">How does Delemon Technology ensure a high ROI for SEM campaigns?</p>
                             <i class="fa-solid fa-arrow-right-long"></i>
                             <div class="card-overlay top">
-                                <h2>4</h2>
-                            <p>"Absolutely! Our PPC campaigns are highly targeted, allowing us to reach specific demographics, locations, and even device types. By tailoring campaigns to your ideal audience, we optimize ad relevance and increase the likelihood of conversions. Check out our targeted PPC campaigns."</p>
+                                <h2>4</h2>"We use data driven strategies, targeted keyword research, engaging ad copy, and optimized landing pages to deliver maximum
+                                ROI. Our experts continuously monitor and refine campaigns to ensure every dollar spent drives meaningful results."</p>
                                     </div>
                                  </div>
-                                 <div class="faq-card">
-                                    <h2>5</h2>
-                                    <p class="faq-question">How do you track and measure the success of PPC campaigns, and what reporting insights do you provide?</p>
-                                    <i class="fa-solid fa-arrow-right-long"></i>
-                                    <div class="card-overlay left">
-                                        <h2>5</h2>
-                                    <p>" We use advanced analytics tools to track key metrics such as click-through rates, conversion rates, and cost-per-conversion. Our detailed reports provide insights into campaign performance, allowing us to make data-driven decisions for continuous improvement. Explore our transparent PPC reporting practices."</p>
-                                            </div>
-                                         </div>
-    </div>
+                                 </div>
+
     </div>
 
-           <script>
+            <script>
+// document.getElementById("contact-form").addEventListener("submit", function(event) {
+//         if (!validatecontact()) {
+//             event.preventDefault();
+//         }
+//          else {
+//         $('#staticBackdrop21').modal('hide');
+//     }
+//     });
     function validatecontact(event) {
         event.preventDefault();
 
@@ -668,7 +682,6 @@ document.getElementById('web-page-form').reset();
     }
 
 </script>
-
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>

@@ -1,4 +1,7 @@
 {% load static %}
+<head>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=groups" />
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 h1{
@@ -566,6 +569,10 @@ a{
                 left: 5px;
               }
         }
+        .sidebar-links-one a i{
+          margin-left:-2px;
+          margin-right:10px;
+        }
     </style>
 </head>
 <body>
@@ -589,10 +596,16 @@ a{
                 <a href="{% url 'animation' %}"><i class="fa-solid fa-file-video"></i>Video Editing</a>
                 <a href="{% url 'ecommerce' %}"><i class="fa-solid fa-cart-shopping"></i>E-Commerce</a>
                 <a href="{% url 'uiux' %}"><i class="fa-solid fa-laptop-code"></i>UI/UX Design</a>
+
+
+
             </div>
             </div>
             <a href="{% url 'projects' %}" class="page-links {% if request.path == '/projects/' %}active-page{% endif %}">PROJECTS</a>
             <a href="{% url 'careers' %}" class="page-links {% if request.path == '/careers/' %}active-page{% endif %}">CAREERS</a>
+            <a href="{% url 'team' %}" class="page-links {% if request.path == '/team/' %}active-page{% endif %}">TEAM</a>
+            <a href="{% url 'blog' %}" class="page-links {% if request.path == '/blog/' %}active-page{% endif %}">BLOG</a>
+             <a href="{% url 'news_list' %}" class="page-links {% if request.path == '/news/' %}active-page{% endif %}">NEWS</a>
             <a href="{% url 'contact' %}" class="page-links {% if request.path == '/contact/' %}active-page{% endif %}">CONTACT US</a>
         </div>
         <div class="navbar-sub-3">
@@ -668,11 +681,15 @@ a{
             <a href=""><img src="{% static 'img/delemon-logo.png' %}" alt=""></a>
         </div>
         <div class="sidebar-links-one">
-<a href="{% url 'home' %}" class=" {% if request.path == '/home/' %}active-page{% endif %}"><img src="{% static 'img/home.png' %}" alt="">HOME</a>
+            <a href="{% url 'home' %}" class=" {% if request.path == '/home/' %}active-page{% endif %}"><img src="{% static 'img/home.png' %}" alt="">HOME</a>
             <a href="{% url 'about' %}" class=" {% if request.path == '/about/' %}active-page{% endif %}"><img src="{% static 'img/about.png' %}" alt="">ABOUT</a>
             <a href="{% url 'services' %}" class=" {% if request.path == '/services/' %}active-page{% endif %}"><img src="{% static 'img/blueprint.png' %}" alt="">SERVICES</a>
             <a href="{% url 'projects' %}" class=" {% if request.path == '/projects/' %}active-page{% endif %}"><img src="{% static 'img/projects.png' %}" alt="">PROJECTS</a>
+            <a href="{% url 'team' %}" class="page-links {% if request.path == '/team/' %}active-page{% endif %}"><span class="material-symbols-outlined" style="margin-right:10px;">groups</span>TEAM</a>
             <a href="{% url 'careers' %}" class="page-links {% if request.path == '/careers/' %}active-page{% endif %}"><img src="{% static 'img/career.png' %}" alt="">CAREERS</a>
+            <a href="{% url 'blog' %}" class="page-links {% if request.path == '/blog/' %}active-page{% endif %}"><i class='bx bxl-blogger'></i>BLOG</a>
+             <a href="{% url 'news_list' %}" class="page-links {% if request.path == '/news/' %}active-page{% endif %}"><i class='bx bxs-news'></i>NEWS</a>
+
             <a href="{% url 'contact' %}" class=" {% if request.path == '/contact/' %}active-page{% endif %}"><img src="{% static 'img/contact.png' %}" alt="">CONTACT US</a>
         </div>
         <div class="sidebar-contact">
@@ -747,3 +764,4 @@ a{
 
 
         </script>
+
