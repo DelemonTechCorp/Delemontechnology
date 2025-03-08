@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 {% extends 'base.html' %}
-{% block title %}Home{% endblock %}
+{% block title %}mobile-app-development-services{% endblock %}
 {% load static %}
 {% block content %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>about</title>
+    <link rel="canonical" href="https://www.delemontechnology.com/mobile-app-development-services"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
@@ -129,7 +130,8 @@ font-weight: 600;
 }
 .web-page-container-2{
     width: 100%;
-    height: 80vh;
+    /*height: 80vh;*/
+    padding-top:60px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -146,10 +148,14 @@ font-weight: 600;
 .web-page-clients-details{
     width: 45%;
 }
-.web-page-clients h1{
+.web-page-clients h2{
     font-size: 30px;
     font-weight: 600;
+    text-transform:capitalize;
+    margin-bottom:30px;
+
 }
+
 .web-page-clients p{
     font-size: 14px;
 }
@@ -216,7 +222,7 @@ font-weight: 600;
     color: white;
 
 }
-.web-page-cards h1{
+.web-page-cards h3{
     font-size: 22px;
 }
 .web-page-cards span i{
@@ -249,7 +255,7 @@ font-weight: 600;
     align-items: flex-start;
     justify-content: flex-start;
 }
-.faq-section-header h1{
+.faq-section-header h2{
     -webkit-text-stroke: 1px rgb(0, 0, 0);
         color: transparent;
         font-size: 70px;
@@ -312,7 +318,7 @@ font-weight: 600;
 left: 0;
   top: 0;
 }
-.faq-card h1{
+.faq-card h2{
     -webkit-text-stroke: 1px #FAB206;
         color: transparent;
         font-size: 50px;
@@ -340,6 +346,15 @@ left: 0;
     display: flex;
     align-items: center;
 }
+.clients-counts{
+    width: 50%;
+}
+.clients-counts img{
+    width: 100%;
+}
+.web-page-clients  p{
+    text-align: justify;
+}
 @media(min-width:320px) and (max-width:480px){
     .web-page-bg{
         flex-direction: column;
@@ -357,7 +372,7 @@ left: 0;
     .web-page-bg-1 h1{
         font-size:20px;
     }
-      .web-page-clients h1{
+      .web-page-clients h2{
         font-size:20px;
     }
     #web-page-form{
@@ -392,7 +407,7 @@ left: 0;
     min-width:220px;
     margin-right:10px;
 }
-.faq-section-header h1{
+.faq-section-header h2{
     font-size:35px;
     overflow-y:hidden;
     margin-top:10px;
@@ -404,7 +419,28 @@ left: 0;
 .card-overlay p{
     font-size:10px;
 }
+.web-page-clients {
+    height:150vh;
 }
+}
+.detail-sec h1{
+    font-size: 30px;
+    font-weight: 600;
+}
+.detail-sec h2{
+    font-size: 28px;
+    font-weight: 600;
+}
+.detail-sec h3{
+    font-size: 25px;
+    font-weight: 600;
+}
+.detail-sec h4{
+    font-size: 22px;
+    font-weight: 600;
+}
+
+
 </style>
 <body>
    <div class="web-page-bg">
@@ -463,133 +499,86 @@ left: 0;
 </div>
    </div>
 
-<div class="web-page-container-2">
-    <div class="web-page-clients">
-<h1>A Mobile App Development Company In Dubai Chosen By Industry Leaders</h1>
-<p>Why prestigious companies like Injazat, Jino, and PicPax trusted Digital Gravity to build the face of their brand — their mobile app? Because taking businesses to new heights of success is our work and passion.
+<div class="web-page-container-2  container mt-5 mb-5">
+    <div class="web-page-clients ">
+<h2>App Development Company In Dubai</h2>
+<p>In today's fast moving digital world, having a strong mobile app can make your business stand out. At Delemon Technology,
+    recognized as the No.1 Digital Marketing Agency for 100+ UAE Industries, we create innovative mobile app development
+    Dubai solutions tailored to your unique needs. As one of the top app developers in Dubai, we focus on delivering apps that
+    help you achieve your business goals.</p>
+    <p>
+        A great app isn't just a tool; it's a digital extension of your brand. Our expert developers offer complete support, from the
+        initial idea to final deployment, ensuring every detail is handled with care. Whether it's Android, iOS, Flutter, or React Native,
+        we design apps that work seamlessly across all devices.
 
-We treat all our clients equally, from startups to SMBs and large organizations. Software development has always been our specialty. We create dynamic, stunning, and super-fast mobile applications for businesses.</p>
+    </p>
+    <p>
+        By choosing Delemon Technology, you're partnering with a trusted mobile app development Dubai company that prioritizes
+        user friendly designs, advanced features, scalability, and secure integration. We specialize in apps for industries like
+        e-commerce, healthcare, fintech, and education. Let us bring your ideas to life with solutions that engage users, drive
+        growth, and strengthen your brand in the digital marketplace.
+    </p>
     </div>
-    <div class="web-page-clients-details">
-<div class="web-page-clients-counts">
-<h5>Key Highlights Our Work In Numbers.</h5>
+
+
 <div class="clients-counts">
-    <div class="counts-row">
-<span>Happy Clients</span>
-<h1>145+</h1>
-    </div>
-    <div class="counts-row">
-        <span>Projects Completed</span>
-        <h1>212+</h1>
-    </div>
-    <div class="counts-row">
-        <span>Years of experience</span>
-        <h1>15+</h1>
-    </div>
+<img src="https://5.imimg.com/data5/JF/YD/MY-45794770/erp-mobile-app.jpg">
 </div>
 </div>
-    </div>
-</div>
-<div class="container mb-5">
-    <div class="row ">
-        <div class="col-md-3 col-12">
-<div class="web-page-cards">
-    <div class="card-icon-div mb-3">
-        <i class="fa-solid fa-comments"></i>
-    </div>
-    <h1 class="mb-3">Planning</h1>
-    <span><i class="fa-solid fa-caret-right"></i>Business analysis</span>
-    <span><i class="fa-solid fa-caret-right"></i>Document specifications</span>
-    <span><i class="fa-solid fa-caret-right"></i>Preparing wireframes</span>
-    <span><i class="fa-solid fa-caret-right"></i>Getting client approval</span>
-</div>
-        </div>
-        <div class="col-md-3 col-12">
-            <div class="web-page-cards">
-                <div class="card-icon-div mb-3">
-                    <i class="fa-solid fa-gear"></i>
-                </div>
-                <h1 class="mb-3">Development</h1>
-                <span><i class="fa-solid fa-caret-right"></i>Coding</span>
-                <span><i class="fa-solid fa-caret-right"></i>Mockup & page layout creation</span>
-                <span><i class="fa-solid fa-caret-right"></i>Review</span>
-                <span><i class="fa-solid fa-caret-right"></i>Approval cycle</span>
-            </div>
-        </div>
-        <div class="col-md-3 col-12">
-            <div class="web-page-cards">
-                <div class="card-icon-div mb-3">
-                    <i class="fa-solid fa-laptop-code"></i>
-                </div>
-                <h1 class="mb-3">Testing</h1>
-                <span><i class="fa-solid fa-caret-right"></i>Preparing test cases</span>
-                <span><i class="fa-solid fa-caret-right"></i>Testing</span>
-                <span><i class="fa-solid fa-caret-right"></i>Review by the QA team</span>
-                <span><i class="fa-solid fa-caret-right"></i>Approval cycle</span>
-            </div>
-        </div>
-        <div class="col-md-3 col-12">
-            <div class="web-page-cards">
-                <div class="card-icon-div mb-3">
-                    <i class="fa-solid fa-rocket"></i>
-                </div>
-                <h1 class="mb-3">Deployment</h1>
-                <span><i class="fa-solid fa-caret-right"></i>Launch</span>
-                <span><i class="fa-solid fa-caret-right"></i>Opinion monitoring</span>
-                <span><i class="fa-solid fa-caret-right"></i>Maintenance</span>
-                <span><i class="fa-solid fa-caret-right"></i>Post-deployment support</span>
-            </div>
-        </div>
-    </div>
-</div>
+
+
+
+
+
+
 
 <div class="faq-section">
     <div class="faq-section-header">
-        <h1>FAQ</h1>
+        <h2>FAQ</h2>
     </div>
     <div class="faq-cards">
             <div class="faq-card">
-    <h1>1</h1>
+    <h2>1</h2>
     <p class="faq-question"> We need a mobile app for our business. How can your mobile app development services cater to our specific requirements?</p>
     <i class="fa-solid fa-arrow-right-long"></i>
     <div class="card-overlay">
-        <h1>1</h1>
+        <h2>1</h2>
     <p>" Our mobile app development services are tailored to meet your business needs. We conduct a thorough analysis of your requirements, ensuring a customized solution that aligns with your goals. Explore our diverse mobile app portfolio."</p>
             </div>
          </div>
          <div class="faq-card">
-            <h1>2</h1>
+            <h2>2</h2>
             <p class="faq-question">Can you develop apps for both iOS and Android platforms to reach a broader audience?</p>
             <i class="fa-solid fa-arrow-right-long"></i>
             <div class="card-overlay left">
-                <h1>2</h1>
+                <h2>2</h2>
             <p>"Certainly! We specialize in cross-platform mobile app development, ensuring your app reaches both iOS and Android users. Our development process focuses on maintaining consistency and functionality across platforms. Check out our cross-platform app projects."</p>
                     </div>
                  </div>
                  <div class="faq-card">
-                    <h1>3</h1>
+                    <h2>3</h2>
                     <p class="faq-question">How do you ensure the security of user data within the mobile apps you develop?</p>
                     <i class="fa-solid fa-arrow-right-long"></i>
                     <div class="card-overlay right">
-                        <h1>3</h1>
+                        <h2>3</h2>
                     <p>"Security is a top priority. We implement robust encryption, secure authentication methods, and comply with industry standards to safeguard user data. Our mobile apps undergo thorough security testing to ensure a secure user experience. Explore our secure mobile app solutions."</p>
                             </div>
                          </div>
                          <div class="faq-card">
-                            <h1>4</h1>
+                            <h2>4</h2>
                             <p class="faq-question">Can you integrate third-party APIs and services into our mobile app for enhanced functionality?</p>
                             <i class="fa-solid fa-arrow-right-long"></i>
                             <div class="card-overlay top">
-                                <h1>4</h1>
+                                <h2>4</h2>
                             <p>"Absolutely! Our mobile app development includes seamless integration of third-party APIs and services to enhance functionality. Whether it's payment gateways, social media, or other tools, we ensure a smooth and efficient integration process. View our integrated mobile app solutions."</p>
                                     </div>
                                  </div>
                                  <div class="faq-card">
-                                    <h1>5</h1>
+                                    <h2>5</h2>
                                     <p class="faq-question">How do you approach the user interface (UI) and user experience (UX) design to create engaging and user-friendly mobile apps?</p>
                                     <i class="fa-solid fa-arrow-right-long"></i>
                                     <div class="card-overlay left">
-                                        <h1>5</h1>
+                                        <h2>5</h2>
                                     <p>"Our UI/UX design process focuses on creating engaging and user-friendly mobile apps. We conduct user research, implement intuitive navigation, and optimize the design for various devices. Check our user-centric mobile app designs for examples."</p>
                                             </div>
                                          </div>

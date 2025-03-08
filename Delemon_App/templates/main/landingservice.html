@@ -1,0 +1,1480 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block title %}landingservice{% endblock %}
+{% load static %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Marketing Agency in Dubai</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    /* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    color: #fff;
+    overflow-x:hidden;
+    background: linear-gradient(to right,  white, #E5E5E5);
+}
+
+/* For tablets (landscape and portrait) */
+@media (max-width: 768px) {
+    body {
+        font-size: 15px; /* Slightly smaller font size for tablets */
+        padding: 15px; /* Adjust padding for smaller screens */
+    }
+}
+
+/* For smartphones (large) */
+@media (max-width: 576px) {
+    body {
+        font-size: 14px; /* Smaller font size for large phones */
+        padding: 10px; /* Minimal padding for smaller screens */
+    }
+}
+
+/* For smaller smartphones (extra small) */
+@media (max-width: 400px) {
+    body {
+        font-size: 13px; /* Smallest readable font size */
+        padding: 5px; /* Minimal padding for extra small screens */
+    }
+}
+
+
+
+
+
+
+
+
+
+header {
+    background: #000;
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    color: #f0ad4e;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.quote-btn {
+    background-color: #f0ad4e;
+    border: none;
+    padding: 8px 15px;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+    background-color:#363636;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column; /* Stack items vertically */
+        padding: 30px; /* Reduce padding for smaller screens */
+    }
+}
+
+/* For smartphones (large) */
+@media (max-width: 576px) {
+    .hero {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items */
+        padding: 20px; /* Further reduce padding */
+    }
+}
+
+/* For smaller smartphones (extra small) */
+@media (max-width: 400px) {
+    .hero {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items */
+        padding: 10px; /* Minimal padding for very small screens */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+.content {
+    max-width: 50%;
+}
+
+.content h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.content p {
+    line-height: 1.5;
+    color: bisque;
+}
+
+.contact-form {
+    background: #fff;
+    color: #000;
+    padding: 20px;
+    border-radius: 5px;
+    width: 40%;
+    height: 400px;
+}
+
+
+/* For tablets (landscape and portrait) */
+@media (max-width: 768px) {
+    .contact-form {
+        width: 60%; /* Adjust width for tablets */
+        height: auto; /* Allow height to adapt */
+    }
+}
+
+/* For smartphones (large) */
+@media (max-width: 576px) {
+    .contact-form {
+        width: 80%; /* Adjust width for large phones */
+        height: auto; /* Allow height to adapt */
+    }
+}
+
+/* For smaller smartphones (extra small) */
+@media (max-width: 400px) {
+    .contact-form {
+        width: 90%; /* Almost full width for very small screens */
+        height: auto; /* Allow height to adapt */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+.contact-form h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+.submit-btn {
+    background-color: #FAB206;
+    color: #000;
+    border: none;
+    padding: 10px 30px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 40%;
+    margin-bottom: 0%;
+    margin-top: 8%;
+}
+
+.note {
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+.note a {
+    color: #f0ad4e;
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+body {
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+/* VAT Consultants Section */
+.vat-consultants {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile View Adjustments */
+@media (max-width: 768px) {
+    .vat-consultants {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center-align items */
+        justify-content: center; /* Center content for better readability */
+        max-width: 100%; /* Make it span the entire screen */
+        margin: 20px auto; /* Adjust margins for smaller screens */
+        padding: 15px; /* Reduce padding for compact layout */
+        border-radius: 5px; /* Slightly smaller corners on mobile */
+    }
+}
+
+
+
+
+
+
+.content {
+    flex: 1;
+    padding-right: 20px;
+}
+.content ul li{
+    list-style-type: none;
+}
+.content h2 {
+    color: rgb(62, 55, 153);
+    font-size: 28px;
+    margin-bottom: 65px;
+}
+
+.content p2 {
+    line-height: 1.5;
+    color: black;
+
+}
+.content p2 {
+    margin-bottom: 15px;
+    line-height: 1.8;
+    font-size: 16px;
+    color:black;
+}
+
+.content strong {
+    color: #007399;
+}
+
+.image-container {
+    flex: 1;
+    text-align: right;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* VAT Section */
+.vat-section {
+    display: flex;
+    max-width: 90%; /* Set width to 90% of the viewport */
+    margin: 50px auto;
+    background: #fff;
+    padding: 50px; /* Increase padding for a larger appearance */
+    border-radius: 12px; /* Optional: Make corners smoother */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15); /* Slightly larger shadow */
+    margin-top: 20%;
+
+}
+
+/* Social Media Icons */
+.social-icons {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+}
+
+.social-icons a {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.social-icons img {
+    width: 25px;
+    height: 25px;
+    filter: opacity(0.7);
+    transition: 0.3s;
+}
+
+.social-icons img:hover {
+    filter: opacity(1);
+}
+
+/* Content Section */
+.content1 {
+    flex: 1;
+    width: 100%;
+    padding: 5%;
+
+}
+
+.content1 h3 {
+    font-size: 40px;
+    color: #FAB206;
+    margin-bottom: 10px;
+    text-align:center; /* Center text horizontally */
+    margin: 0 auto; /* Removes unwanted margin and centers in block */
+    margin-bottom: 5%;
+    margin-top: -6%;
+}
+
+/* Mobile View Adjustments */
+@media (max-width: 768px) {
+    .content1 h3 {
+        font-size: 28px; /* Reduce font size for mobile screens */
+        margin-top: 0; /* Remove negative margin for better alignment */
+        margin-bottom: 10px; /* Adjust spacing below heading */
+    }
+}
+
+
+.content1 p {
+    margin-bottom: 20px;
+    color:#363636;
+    font-size: 16px;
+    margin: 0; /* Reset any auto margin */
+}
+
+
+/* Mobile View Adjustments */
+@media (max-width: 768px) {
+    .content1 p {
+        font-size: 14px; /* Reduce font size for better readability on mobile */
+        margin-bottom: 15px; /* Adjust spacing below paragraphs */
+        text-align: center; /* Center-align text for smaller screens */
+    }
+}
+
+
+.content ul {
+    list-style: none;
+}
+
+.content1 ul li {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #363636;
+    margin: 0 auto; /* Removes unwanted margin and centers in block */
+}
+
+.content ul li::before {
+    content: "➔ ";
+    color: #007399;
+    font-weight: bold;
+}
+
+
+.project-details1 ul li::before {
+    content: "➔ ";
+    color: #007399;
+    font-weight: bold;
+}
+
+
+/* Mobile View Adjustments */
+@media (max-width: 768px) {
+    .content ul {
+        padding: 0; /* Remove any unnecessary padding */
+        margin: 0; /* Adjust to fit mobile layout */
+    }
+
+    .content1 ul li {
+        font-size: 14px; /* Reduce font size for smaller screens */
+        margin-bottom: 8px; /* Adjust spacing */
+        text-align: center; /* Center-align text */
+    }
+
+    .content ul li::before {
+        content: "➔ "; /* Keep the arrow indicator */
+        color: #005580; /* Slightly darker shade for better readability */
+        font-size: 14px; /* Adjust size for mobile */
+    }
+
+    .project-details1 ul li::before {
+        content: "➔ "; /* Keep the arrow indicator */
+        color: #005580; /* Slightly darker shade for better readability */
+        font-size: 14px; /* Adjust size for mobile */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #fff;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Main VAT Section */
+.vat-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 50px auto;
+    gap: 20px;
+    padding: 20px;
+    margin-top: -3%;
+}
+
+/* Mobile View Adjustments */
+@media (max-width: 768px) {
+    .vat-section {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center-align items */
+        justify-content: center; /* Adjust alignment for centered content */
+        max-width: 100%; /* Make the section fit the viewport width */
+        margin: 20px auto; /* Adjust margins for smaller screens */
+        gap: 15px; /* Reduce gap between items */
+        padding: 15px; /* Adjust padding for smaller screens */
+        margin-top: 0; /* Remove negative margin to prevent overlap */
+    }
+}
+
+
+
+
+
+
+.image-container img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.content h2 {
+    font-size: 24px;
+    color: #FAB206;
+    margin-bottom: 15px;
+}
+
+.content ul {
+    list-style: none;
+}
+
+.content ul li {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.content ul li::before {
+    content: "➔ ";
+    color: #007399;
+    font-weight: bold;
+}
+
+/* VAT Rules Section */
+.vat-rules {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: left;
+}
+
+.vat-rules h3 {
+    font-size: 22px;
+    color: #FAB206;
+    margin-bottom: 10px;
+}
+
+.vat-rules p {
+    font-size: 20px;
+    color: black;
+    line-height: 1.8;
+}
+.vat-rules li {
+    font-size: 17px;
+    color: #000;
+    line-height: 1.8;
+}
+
+.project-details1 {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 40px 20px;
+    background: white;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-left: 10%;
+}
+
+/* Mobile View Adjustments */
+@media (max-width: 768px) {
+    .project-details1 {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center-align items */
+        padding: 20px 10px; /* Reduce padding for smaller screens */
+        margin-left: 0; /* Remove additional left margin */
+        gap: 10px; /* Reduce gap between items */
+    }
+}
+
+
+
+
+
+
+.details-text1 {
+    max-width: 60%;
+    color: #333;
+    line-height: 1.6;
+    margin-top: 10px;
+    position: relative;
+    left: 3%;
+}
+
+.details-text1 h2 {
+    color: #FAB206;
+}
+
+
+.project-details2 {
+    display: flex;
+    flex-direction: row; /* Arrange image and text in a row */
+    align-items: flex-start;
+    padding: 40px 20px;
+    background: white;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-left: 10%;
+}
+.project-details2 img{
+    max-width: 200%;
+    border-radius: 8px;
+    margin-left: 395px;
+
+}
+.details-text2 h3 {
+    color:FAB206;
+}
+
+/* Mobile View Adjustments */
+@media (max-width: 768px) {
+    .project-details2 {
+        flex-direction: column; /* Stack image and text vertically */
+        align-items: center; /* Center-align items */
+        padding: 20px; /* Reduce padding for smaller screens */
+        gap: 10px; /* Reduce gap between items */
+        margin-left: 0; /* Remove extra left margin */
+    }
+
+    .project-details2 img {
+
+        width: 170%; /* Scale the image to fit within the container */
+        height: auto; /* Maintain aspect ratio */
+        border-radius: 8px; /* Retain rounded corners */
+        margin-left: -40%;
+    }
+}
+
+
+
+.details-text2 {
+    max-width: 60%;
+    color: #333;
+    line-height: 1.6;
+    margin-top: 10px;
+    position: relative;
+    left: 3%;
+}
+ /* Mobile View Adjustments */
+@media (max-width: 768px) {
+    .details-text2 {
+        max-width: 90%; /* Adjust width to fit the screen */
+        margin-top: 15px; /* Add more top margin for better spacing */
+        left: 0; /* Remove the offset for proper alignment */
+        text-align: center; /* Center-align the text for better readability */
+        padding: 0 10px; /* Add padding for spacing inside the container */
+    }
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #FAB206;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+
+.details-item {
+  background: rgba(255, 255, 255, 0.1); /* Transparent box background */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+  padding: 20px;
+  border-radius: 10px; /* Rounded corners */
+  text-align: center;
+  color: white;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  text-align: center;
+}
+
+
+.section-description {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  margin-bottom: 30px;
+  text-align: center;
+  color: white;
+}
+
+
+
+/* Left Section Styling */
+.left-section {
+    background-color: #FAB206; /* Light blue background */
+    padding: 40px 20px; /* Top and bottom padding */
+    width: 100%;
+    max-width: 430px; /* Set maximum width for better alignment */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    border-radius: 10px; /* Rounded corners */
+    height: 1020px;
+}
+
+.info-stats-container {
+    text-align: center; /* Center align all content */
+    color: #333; /* Default dark text color */
+}
+
+.stat-highlight {
+    font-size: 32px; /* Highlighted number size */
+    font-weight: bold;
+    color:white; /* Light blue for emphasis */
+    display: block; /* Makes it stack above */
+    margin-bottom: 5px;
+}
+
+/* Mobile View Adjustments */
+@media (max-width: 768px) {
+    .stat-highlight {
+        font-size: 24px; /* Reduce font size for smaller screens */
+        margin-bottom: 10px; /* Slightly increase spacing */
+        text-align: center; /* Center-align the text */
+    }
+}
+
+
+.stat-description {
+    font-size: 16px;
+    color: #777; /* Subtle gray color for descriptions */
+    margin-bottom: 20px;
+}
+
+/* Mobile View Adjustments */
+@media (max-width: 768px) {
+    .stat-description {
+        font-size: 14px; /* Reduce font size for smaller screens */
+        margin-bottom: 15px; /* Adjust spacing for better alignment */
+        text-align: center; /* Center-align text for better aesthetics */
+    }
+}
+
+
+
+.info-text {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #777;
+    margin: 20px 0;
+}
+
+.info-button {
+    display: inline-block;
+    background-color: white; /* Light blue button background */
+    color: black; /* White text color */
+    text-decoration: none;
+    font-size: 14px;
+    padding: 8px 15px;
+    border-radius: 20px; /* Rounded button */
+    margin-top: 10px;
+    transition: background 0.3s ease;
+}
+
+.info-button:hover {
+    background-color: orange; /* Darker blue on hover */
+}
+.right-section {
+  width: 75%; /* Occupies the remaining width */
+  background-color: white;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  text-align: center;
+  position: relative; /* Add this */
+  margin-top: -40px; /* Adjust for overlap */
+  z-index: 2; /* Ensure it appears above the hero section */
+  border-radius: 0px 0px 0 0; /* Add rounded corners */
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1); /* Optional shadow */
+  margin-left: 28%;
+  margin-bottom: 40px;
+  margin-top: -1020px;
+  margin-right: -90px;
+  height: 1000px;
+
+}
+.right-section2 {
+  width: 72%; /* Occupies the remaining width */
+  background-color: white;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  text-align: center;
+  position: relative; /* Add this */
+  margin-top: -30px; /* Adjust for overlap */
+  z-index: 2; /* Ensure it appears above the hero section */
+  border-radius: 0px 0px 0 0; /* Add rounded corners */
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1); /* Optional shadow */
+  margin-left: -2%;
+  margin-bottom: 40px;
+  margin-top: -910px;
+  margin-right: -60px;
+  height: 911px;
+
+}
+/* Mobile View Adjustments */
+@media (max-width: 768px) {
+  .right-section2 {
+    width: 100%; /* Make it occupy the full width */
+    margin-left: 0; /* Remove negative margins */
+    margin-right: 0; /* Remove negative margins */
+    margin-top: 0; /* Adjust to prevent overlapping */
+    padding: 20px; /* Reduce padding for better spacing */
+    height: auto; /* Let the height adjust automatically */
+    border-radius: 0; /* Remove rounded corners for a cleaner look */
+  }
+}
+
+
+
+
+
+.info-container {
+  max-width: 800px; /* Limits the content width */
+  text-align: left; /* Aligns text to the left */
+  color: #164977; /* Text color */
+}
+/* Mobile View Adjustments */
+@media (max-width: 768px) {
+  .info-container {
+    max-width: 90%; /* Adjust width to fit the screen */
+    text-align: center; /* Center-align text for better readability */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 10px; /* Add padding for spacing */
+  }
+}
+
+
+
+
+
+
+.info-heading {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #FAB206;
+  margin-bottom: 20px;
+}
+
+.info-subheading {
+  font-size: 1.5rem;
+  color:#363636; /* Subheading color */
+  margin-bottom: 15px;
+}
+
+.info-paragraph {
+  font-size: 1rem;
+  line-height: 1.6; /* Line spacing for readability */
+  margin-bottom: 20px;
+  color: #555; /* Muted text color */
+}
+
+
+.right-section1 h2 {
+    font-size: 40px;
+    color: #FAB206;
+    margin-bottom: 10px;
+    text-align:center; /* Center text horizontally */
+    margin: 0 auto; /* Removes unwanted margin and centers in block */
+    margin-bottom: 5%;
+}
+
+/* Mobile View Adjustments */
+@media (max-width: 768px) {
+    .right-section1 h2 {
+        font-size: 28px; /* Reduce font size for smaller screens */
+        margin-bottom: 10%; /* Adjust spacing below heading */
+        text-align: center; /* Retain text alignment for mobile */
+    }
+}
+
+
+
+
+
+
+
+.right-section1 p {
+    font-size: 20px;
+    color: #363636;
+    margin-bottom: 10px;
+    text-align:center; /* Center text horizontally */
+    margin: 0 auto; /* Removes unwanted margin and centers in block */
+    margin-bottom: 5%;
+}
+
+/* Mobile View Adjustments */
+@media (max-width: 768px) {
+    .right-section1 p {
+        font-size: 16px; /* Reduce font size for smaller screens */
+        margin-bottom: 10%; /* Adjust spacing below the paragraph */
+        text-align: center; /* Retain center alignment for mobile */
+    }
+}
+
+
+.highlight-section {
+    background-color: #FAB206; /* Light blue background */
+    padding: 40px 20px; /* Top and bottom padding */
+    width: 100%;
+    max-width: 470px; /* Set maximum width for better alignment */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    /* border-radius: 10px; Rounded corners */
+    height: 910px;
+    margin-left: 70%;
+    margin-top: 0%;
+}
+.highinfo-stats-container {
+    text-align: center; /* Center align all content */
+    color: #333; /* Default dark text color */
+}
+
+.highstat-highlight {
+    font-size: 32px; /* Highlighted number size */
+    font-weight: bold;
+    color:#2b5b94; /* Light blue for emphasis */
+    display: block; /* Makes it stack above */
+    margin-bottom: 5px;
+}
+
+.project-details1 img {
+    width: 400px;
+        height: auto;
+
+}
+/* Mobile View Adjustments */
+@media (max-width: 768px) {
+    .project-details1 img {
+        width: 90%; /* Scale the image to fit the screen width */
+        height: auto; /* Maintain aspect ratio */
+        margin: 0 auto; /* Center the image */
+        display: block; /* Ensure proper centering */
+    }
+}
+
+
+
+
+/* For tablets and smaller (portrait orientation) */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .quote-btn {
+        margin-top: 10px;
+    }
+
+    .hero {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .content {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .content h1 {
+        font-size: 28px;
+    }
+
+    .contact-form {
+        width: 90%;
+        height: auto;
+        margin: 20px auto;
+    }
+}
+
+/* For large smartphones (576px and smaller) */
+@media (max-width: 576px) {
+    .hero {
+        padding: 15px;
+    }
+
+    .content h1 {
+        font-size: 24px;
+    }
+
+    .contact-form {
+        padding: 15px;
+    }
+
+    .contact-form h2 {
+        font-size: 18px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .submit-btn {
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+
+    .left-section {
+        max-width: 100%;
+        padding: 20px;
+        height: auto;
+    }
+
+    .right-section,
+    .highlight-section {
+        margin: 0 auto;
+        width: 90%;
+        padding: 20px;
+        height: auto;
+    }
+
+    .info-container h2 {
+        font-size: 22px;
+    }
+
+    .info-container p {
+        font-size: 14px;
+    }
+}
+
+/* For smaller smartphones (400px and smaller) */
+@media (max-width: 400px) {
+    body {
+        font-size: 12px;
+    }
+
+    .content h1 {
+        font-size: 20px;
+    }
+
+    .contact-form h2 {
+        font-size: 16px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    .submit-btn {
+        padding: 5px 15px;
+        font-size: 12px;
+    }
+
+    .vat-consultants {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .content h2 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .image-container img {
+        max-width: 100%;
+    }
+
+    .details-grid {
+        grid-template-columns: 1fr; /* Single column layout */
+        gap: 15px;
+    }
+
+    .details-item h2 {
+        font-size: 18px;
+    }
+
+    .details-item p {
+        font-size: 12px;
+    }
+}
+
+.details-section{
+   background-color:black;
+   margin-top: -2.6%;
+}
+
+.section-title{
+   color:#FAB206;
+}
+
+
+.details-subheading {
+    color:#FAB206;
+}
+
+.details-text2 h3 {
+    color:#FAB206;
+}
+
+
+</style>
+<body>
+    <!-- Header Section -->
+    <!-- <header>
+        <nav class="navbar">
+            <div class="logo">LOGO</div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Team</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+            <button class="quote-btn">Free Quote</button>
+        </nav>
+    </header> -->
+
+    <!-- Main Section -->
+    <section class="hero">
+        <div class="content">
+            <h1>Digital Marketing Agency In Dubai</h1>
+            <p>
+                Boost your online growth with Digital Gravity. As a leading digital marketing agency in the UAE,
+                we offer bespoke and multi-channel digital marketing services to a range of big and small businesses
+                from various industries.
+            </p>
+        </div>
+        <div class="contact-form">
+            <h2>Have any questions?</h2>
+            <form>
+                <div class="form-group">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="Your Number" required>
+                    <input type="text" placeholder="Your Message" rows="3"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+            <p class="note">
+                If you have any RFP requirement, please share with us at
+                <a href="mailto:delemonttechnology.ae">@delemonttechnology.ae</a>
+            </p>
+        </div>
+    </section>
+    <section class="left-section">
+        <section class="info-stats-section">
+        <div class="info-stats-container">
+        <div class="info-stat">
+          <span class="stat-highlight">Why Choose Us?</span>
+
+        </div>
+        <div class="info-stat">
+          <span class="stat-highlight">Tailored Digital Solutions</span>
+          <p class="stat-description">Our customized approaches are designed to meet diverse marketing needs, ensuring that every client receives personalized attention and strategies that align with their goals.
+            As a digital marketing agency, we specialize in creating solutions that drive business growth and enhance brand awarness.</p>
+        </div>
+        <span class="stat-highlight">United Arab Emirates Expertise</span>
+        <p class="info-text">
+            We continuously adapt to the latest With deep knowledge of regional digital channels and trends, we provide insights that help our clients succeed in the UAE’s competitive market.
+            Our understanding of local online marketing dynamics sets us apart from other digital marketing companies.marketing tactics and emerging technologies, ensuring our clients stay ahead in the ever-evolving digital landscape.
+             As a full-service digital agency, we combine creative solutions with proven methodologies to achieve optimal results.
+        </p>
+
+
+
+        <a href="{% url 'about' %}" class="info-button">About us →</a>
+      </div>
+    </div>
+        </section>
+    </section>
+
+    <div class="right-section">
+        <div class="info-container">
+          <h2 class="info-heading">A sustainable living community</h2>
+          <h3 class="info-subheading">A peninsula development aimed at creating a community by the sea</h3>
+          <p class="info-paragraph">
+            Dubai Maritime City is bringing the maritime industry to life with its cutting-edge mixed-use development.
+            The unique project is creating a vibrant environment, housing industrial facilities alongside commercial &
+            residential development spaces, leisure activities, a sustainable environment, and a community by the sea
+            on reclaimed land between Port Rashid and Dubai Dry Docks.
+          </p>
+          <p class="info-paragraph">
+            The commercial district of Dubai Maritime City is open for real estate developers to purchase land and
+            develop residential or commercial projects. As part of Phase 1, about 86% of land in this district is
+            already completed. A sales process and development on projects will begin soon.
+          </p>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+  <!-- Right Section -->
+  <div class="right-section1">
+    <h2>A sustainable living community</h2>
+    <p>
+        Dubai Maritime City is bringing the maritime industry to life with its cutting-edge mixed-use development. The unique project is creating a vibrant environment, housing industrial facilities alongside commercial & residential development spaces, leisure activities, a sustainable environment, and a community by the sea.
+    </p>
+  </div>
+
+
+
+
+
+
+
+
+  <!-- Container -->
+  <section class="vat-consultants">
+    <div class="content">
+        <h2>Best Digital Marketing Agency in Dubai - Delemon Technology</h2>
+        <p2>
+            Dubai's dynamic digital landscape requires cutting-edge solutions and carefully crafted strategies to ensure businesses can achieve sustainable growth and remain competitive.
+             Delemon Technology, a leading digital marketing agency based in Dubai, excels in delivering bespoke digital marketing services tailored to the unique needs of each client.
+            Our expertise spans across key areas such as SEO, social media management, web development, and comprehensive digital campaigns. As a full-service digital agency, we are committed to boosting brand visibility,
+             fostering engagement, and driving measurable results that align with our clients' business objectives. With a deep understanding of the ever-evolving digital ecosystem,
+              we deliver innovative strategies designed to unlock new growth opportunities and solidify a strong online presence.
+        </p2>
+
+    </div>
+    <div class="image-container">
+        <img src="{% static 'img/DM.jpg' %}" alt="VAT consultancy and financial analysis">
+    </div>
+</section>
+
+
+    <div class="content1">
+        <h3>Why SEO Services are Vital for Business Growth in the UAE</h3>
+        <p>
+            In today’s fast-paced digital age, search engine optimization (SEO) is an indispensable tool for businesses
+            aiming to establish a strong foothold in the competitive market of the United Arab Emirates. With an increasingly
+            online-savvy audience, ensuring your business ranks prominently on search browsers is no longer optional but a necessity.
+            Delemon Technology’s team of SEO specialists leverages cutting-edge tools and data-driven strategies to drive organic traffic,
+            improve search engine rankings, and maximize online visibility. Here’s a closer look at why SEO remains a cornerstone of digital
+            marketing strategies and its critical role in fostering business growth:
+        </p>
+        <ul>
+            <li>➔ Increased Visibility – In a digital realm saturated with competitors, appearing at the top of search engine results pages (SERPs) is paramount for standing out. SEO ensures your business is not only visible but positioned as a credible and authoritative brand in your industry. High rankings on platforms like Google can dramatically increase the likelihood of potential customers finding your services, thereby boosting website traffic and conversion rates.</li>
+            <li>➔ Targeted Traffic – your website. By identifying and targeting specific keywords that align with your business offerings, Delemon Technology ensures your digital content resonates with the needs and search intent of your potential customers. Tailored digital marketing services help connect you with audiences that are more likely to Effective SEO strategies go beyond generating traffic; they focus on attracting the right audience to convert, maximizing return on investment (ROI) from your online marketing efforts.</li>
+            <li>➔ Sustainable Growth – Unlike traditional marketing methods, which often yield short-lived results, SEO offers a sustainable approach to growth. Once optimized, your website can continue to draw organic traffic without the recurring costs associated with paid advertising. This long-term visibility allows businesses to build consistent brand recognition, foster customer trust, and maintain a steady flow of leads over time.</li>
+            <li>➔ Enhanced User Experience – SEO is not just about optimizing for web browsers; it’s also about creating an exceptional user experience. Web design and development improvements, such as faster loading times, mobile responsiveness, and intuitive navigation, are integral components of modern SEO strategies. These enhancements not only contribute to higher rankings on search engines but also ensure visitors stay longer on your website, explore your offerings, and are more likely to convert into loyal customers.</li>
+            <li>➔Building Credibility and Trust  – High-ranking websites are often perceived as more credible and trustworthy by users. SEO involves creating valuable, relevant, and engaging content, alongside securing backlinks from authoritative sources. These elements work together to establish your brand as a trusted leader in your industry, making customers more inclined to choose your services over competitors.</li>
+            <li>➔Cost-Effective Marketing – Compared to traditional advertising methods, SEO is a cost-effective way to reach your target audience. search traffic driven by SEO efforts reduces the dependency on paid campaigns while still delivering consistent results. Over time, this strategy allows businesses to allocate resources more efficiently while enjoying the benefits of increased visibility and engagement.</li>
+            <li>➔ Adapting to Evolving Consumer Behavior – With the UAE’s growing reliance on mobile devices and voice-activated searches, SEO strategies need to evolve continuously to keep up with consumer behavior. Delemon Technology incorporates advanced techniques, such as optimizing for voice search and local SEO, ensuring your business remains relevant and accessible to audiences across all digital channels.</li>
+            <li>➔ Staying Ahead of the Competition – In a competitive market like the UAE, where businesses across industries are vying for the same audience, investing in SEO gives you a critical edge. Delemon Technology’s SEO specialists perform in-depth competitor analyses to identify gaps and opportunities, ensuring your website consistently outranks others in your sector.
+                By partnering with Delemon Technology, businesses in the UAE can harness the full potential of SEO to achieve long-term success, improve their online presence, and drive measurable growth. Offering some of the best SEO services in Dubai, we integrate social media marketing with digital marketing strategies to ensure holistic growth for your brand. Let us help you transform your website into a powerful tool for connecting with your audience and achieving your business goals. As one of the leading digital marketing agencies in the UAE, we are committed to delivering exceptional results through our comprehensive digital marketing services.
+                </li>
+
+        </ul>
+    </div>
+
+
+ <!-- Main Section -->
+ <section class="vat-section">
+    <div class="image-container">
+        <img src="{% static 'img/CDMS.jpg' %}" alt="VAT Services">
+    </div>
+    <div class="content">
+        <h2>Comprehensive Digital Marketing Services</h2>
+        <p2>Delemon Technology offers a wide range of digital marketing services designed to align with your objectives in business and drive measurable success.
+            As one of the best digital marketing agencies in the United Arab Emirates, we are dedicated to helping businesses achieve their goals through innovative and results-driven strategies. Our expertise spans across multiple areas,
+            providing end-to-end solutions that address all aspects of your digital presence. Here’s a closer look at our services:</p2>
+        <ul>
+            <li> Social Media Marketing :  Social media marketing is a cornerstone of any successful online marketing strategy. At Delemon Technology, we help businesses engage with their audiences across leading platforms, ensuring maximum visibility and impact. Our comprehensive social media marketing services include:</li>
+            <li> Tailored Advertising Campaigns: Developing customized strategies for platforms like Instagram, Facebook, LinkedIn, and Twitter to reach specific target audiences.</li>
+            <li> Innovative Social Media Management: Utilizing advanced tools and techniques to streamline content scheduling, audience interaction, and performance monitoring.</li>
+            <li> Influencer Marketing: Partnering with relevant influencers to amplify brand messages and enhance brand identity in competitive markets.</li>
+            <li> Engagement and Analytics: Providing actionable insights through detailed analytics to refine campaigns and improve ROI.</li>
+            <p2>By leveraging social media marketing, we ensure your business stays relevant and builds meaningful connections with your audience.</p2>
+        </ul>
+    </div>
+</section>
+
+<!-- Free Zone VAT Rules -->
+<section class="vat-rules">
+    <h3> Content Marketing</h3>
+    <p>
+        Content marketing is integral to establishing authority and driving long-term engagement.
+        Delemon Technology’s digital marketing services include creating and distributing high-quality content that aligns with your brand’s voice and objectives.
+        Our approach to content marketing includes:
+    </p>
+    <li>SEO-Optimized Blogs and Articles: Crafting compelling content that ranks high on search engines and drives organic traffic.</li>
+    <li>Creative Campaign Content: Producing visually appealing and engaging materials for use in digital advertising campaigns.</li>
+    <li>Interactive Materials: Designing interactive content such as infographics, quizzes, and videos to enhance user engagement and brand loyalty.</li>
+    <li>Content Strategy Development: Identifying key topics and content formats that resonate with your target audience to achieve digital marketing goals.</li>
+    <p>With our expertise, we ensure your content becomes a valuable asset for building brand awareness and driving conversions.</p>
+</section>
+
+
+<section class="project-details1">
+    <img src="{% static 'img/ppc.jpg' %}" alt="Project Image">
+    <div class="details-text1">
+        <h2>Pay-Per-Click (PPC) and Performance Marketing</h2>
+
+
+        <h3>Delemon Technology specializes in data-driven pay-per-click (PPC) advertisement campaigns that deliver immediate and measurable results.
+            As a top digital marketing agency, our performance marketing services include:</h3>
+
+            <li> Engagement and Analytics: Providing actionable insights through detailed analytics to refine campaigns and improve ROI.</li>
+           <li>Comprehensive Media Planning: Developing targeted strategies to optimize advertising spend and ensure high ROI.</li>
+           <li>Real-Time Analytics: Monitoring campaign performance to make data-backed adjustments that enhance effectiveness.</li>
+           <li>Targeted Advertisement Campaigns: Creating ads that resonate with specific audience segments to boost visibility and engagement.</li>
+           <li>Cross-Channel Integration: Synchronizing PPC efforts with other digital marketing services to achieve cohesive branding and messaging.</li>
+           <p>Our PPC strategies are designed to help businesses maximize their digital marketing budgets while achieving superior outcomes.</p>
+
+        </div>
+
+        </section>
+
+    </section>
+    <section class="project-details2">
+        <div class="details-text2">
+
+
+       <h3> Web Development and Mobile Applications</h3>
+
+       <p3>A robust online presence starts with exceptional web development and mobile application solutions.
+         At Delemon Technology, we deliver cutting-edge services that cater to diverse business needs, including:
+        </p3>
+        <li>Responsive Web Designing: Creating websites that provide seamless user experiences across all devices, enhancing accessibility and engagement.</li>
+        <li>Bespoke Website Development: Tailoring web solutions to align with your brand identity and business goals, ensuring a unique and impactful digital presence.</li>
+        <li>Mobile App Development: Designing and developing intuitive mobile applications that offer enhanced functionality and customer engagement.</li>
+        <li>E-Commerce Solutions: Building secure and scalable platforms to support online sales and streamline the customer journey.</li>
+        <p3>Our web development expertise ensures your digital infrastructure supports your overall digital marketing strategy and contributes to sustained growth.</p3>
+
+
+
+              <img src="{% static 'img/Web Development.jpg' %}" alt="Project Image">
+
+
+    </section>
+</section>
+<section class="highlight-section">
+    <section class="info-stats-section">
+    <div class=".highinfo-stats-container ">
+    <div class=".highstat-highlight">
+      <span class="stat-highlight"></span>
+
+    </div>
+    <div class="info-stat">
+      <span class="stat-highlight">Why Delemon Technology?</span>
+      <p class="stat-description">Delemon Technology stands out among digital marketing companies due to its innovative approach and comprehensive service offerings.
+         As a leading digital marketing agency, we combine creativity, technology, and data-driven insights to deliver unparalleled results.
+         Whether you need expert social media marketing, targeted PPC campaigns, or state-of-the-art web development, our team has the skills and experience to elevate your brand’s digital presence.
+        Trust Delemon Technology to be your partner in navigating the dynamic network landscape and achieving your firm objectives.</p>
+    </div>
+    <span class="stat-highlight">Leading Digital Marketing Agency Based in Dubai</span>
+    <p class="info-text">
+        Delemon Technology’s reputation as one of the top digital marketing agencies stems from our extensive expertise and proven track record.
+         By focusing on innovative digital strategies that integrate data analytics and creative thinking, we ensure digital success for all our clients in the United Arab Emirates.
+    </p>
+
+
+<!--
+    <a href="#about" class="info-button">About us →</a> -->
+  </div>
+</div>
+    </section>
+</section>
+
+
+<div class="right-section2">
+    <div class="info-container">
+      <h2 class="info-heading">The Role of Content Marketing in a Digital Strategy</h2>
+
+      <p class="info-paragraph">
+        Content marketing is essential for driving search traffic and establishing authority in your industry. Delemon Technology incorporates content marketing into broader digital marketing services by:
+      </p>
+      <h3 class="info-subheading">Producing SEO-Friendly Articles and Blogs</h3>
+      <p class="info-paragraph">
+        Creating content optimized for search engine rankings to attract organic traffic.
+      </p>
+      <h4 class="info-subheading">Enhancing Digital Presence</h4>
+      <p class="info-paragraph">
+        Leveraging interactive and shareable content to boost engagement and visibility.
+      </p>
+      <h5 class="info-subheading">Supporting Lead Generation</h5>
+      <p class="info-paragraph">
+        <p class="info-paragraph">
+            Developing targeted content campaigns that drive conversions and align with your business growth objectives.
+          </p>
+      </p>
+
+    </div>
+</div>
+
+
+
+    <section class="details-section">
+        <div class="container">
+
+          <h1 class="section-title">Optimizing Digital Channels with Web Design and Development</h1>
+          <p class="section-description">
+            Delemon Technology excels in creating digital strategies that incorporate exceptional web design and development services. Key offerings include
+          </p>
+          <div class="details-grid">
+            <div class="details-item">
+              <h2 class="details-subheading">Mobile-Responsive Designs</h2>
+              <p>
+                Ensuring seamless user experiences across all devices to boost engagement.
+              </p>
+            </div>
+            <div class="details-item">
+              <h2 class="details-subheading">SEO Integration</h2>
+              <p>
+                Implementing search engine optimization techniques to improve rankings and visibility.
+              </p>
+            </div>
+            <div class="details-item">
+              <h2 class="details-subheading">Tailored Website Development</h2>
+              <p>
+                Designing unique solutions that reflect your brand identity and business objectives.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+{% endblock %}
+
+</body>
+</html>
+
+
+
+

@@ -1,6 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-    {% load static %}
+{% extends 'base.html' %}
+{% block title %}our-expert-digital-team{% endblock %}
+{% load static %}
+{% block content %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -64,7 +65,7 @@
     width: 100%;
     height: auto;
 }
-/* From Uiverse.io by aadium */ 
+/* From Uiverse.io by aadium */
 .card-team {
   width: 100%;
   height: auto;
@@ -79,7 +80,7 @@
   background-color: transparent;
   border: 2px solid #fff;
   margin-top: 20px;
-  border-radius: 5em;
+  border-radius: 6em;
   width: 120px;
   height: 120px;
   overflow: hidden;
@@ -175,7 +176,40 @@
         font-size:12px;
     }
 }
+.founder{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:auto;
+}
+.specialization {
+  color: white;
+  /*padding: 5px;*/
+  /*margin-top: 5px;*/
+}
+.specialization span{
+    font-size: 12px;
+    color: #FAB206;
+}
+.specialization p{
+    font-size: 12px;
+    text-transform: uppercase;
+}
+.note {
+  color: white;
+  /*padding: 5px;*/
+  /*margin-top: 5px;*/
+}
+.note span{
+    font-size: 10px;
+    color: #FAB206;
+}
+.note p{
+    font-size: 10px;
+    /*text-transform: uppercase;*/
+}
     </style>
+
 </head>
 <body>
 
@@ -194,83 +228,110 @@
         </div>
 
     </div>
-    <div class="section-team pt-4 pb-4">
-        <div class="container mt-4 mb-4">
-            <div class="row gx-4 gy-3">
-                <div class="col-md-3">
-                    <div class="card-team">
-                        <center>
-                        <div class="profileimage">
-                          <img src="https://media.istockphoto.com/id/1364917563/photo/businessman-smiling-with-arms-crossed-on-white-background.jpg?s=612x612&w=0&k=20&c=NtM9Wbs1DBiGaiowsxJY6wNCnLf0POa65rYEwnZymrM=" alt="">
-                        </div>
-                        <div class="Name">
-                          <h3>Alex Morgan</h3>
-                          <span class="text-center">Co Founder</span>
-                        </div>
-                        <div class="contact-link ">
-                            <a href=""><i class="fa-solid fa-phone"></i></a>
-                            <a href=""><i class="fa-solid fa-envelope"></i></a>
-                          </div>
-                       </center>
-                        </div>
-                </div>
-                <div class="col-md-3">
-<div class="card-team">
-  <center>
-  <div class="profileimage">
-    <img src="https://img.freepik.com/free-photo/close-up-confident-corporate-woman-professional-entrepreneur-smiling-cross-arms-chest-smiling-enthusiastic-standing-white-background_1258-85600.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1724803200&semt=ais_hybrid" alt="">
-  </div>
-  <div class="Name">
-    <h3>Sarah Nguyen</h3>
-    <span class="text-center">Project Manager</span>
-  </div>
-  <div class="contact-link">
-    <a href=""><i class="fa-solid fa-phone"></i></a>
-    <a href=""><i class="fa-solid fa-envelope"></i></a>
-  </div>
- </center>
-  </div>
+    <div class="founder mt-5">
+          <div class="card-team" style="width:400px;">
+                    <center>
 
-                </div>
-                <div class="col-md-3">
-                    <div class="card-team">
-                        <center>
-                        <div class="profileimage">
-                          <img src="https://t3.ftcdn.net/jpg/02/43/12/40/360_F_243124072_6XpPAWH0VM911MjRBfqp4QQ5PKsvD6T9.jpg" alt="">
+                        <div class="profileimage" style="width: 180px; height: 180px;">
+                            <img src="{% static 'img/founder.jpeg' %}">
                         </div>
+
                         <div class="Name">
-                          <h3>James Mitchell</h3>
-                          <span class="text-center">Creative Director</span>
+                            <h3>FARSHAD</h3>
+                            <span class="text-center">Founder & CEO</span>
                         </div>
+                        <div class="specialization">
+                            <p>Software engineer with having 8+ years of experience in area of development, digital marketing.</p>
+                        </div>
+                        <!-- <div class="note">-->
+                        <!--    <blockquote>-->
+                        <!--        <p>Software engineer with having 8+ years of experience in area of development, digital marketing.</p>-->
+                        <!--    </blockquote>-->
+                        <!--</div>-->
+                         <!--Contact Links-->
                         <div class="contact-link">
-                            <a href=""><i class="fa-solid fa-phone"></i></a>
-                            <a href=""><i class="fa-solid fa-envelope"></i></a>
-                          </div>
-                       </center>
+                            <a href="#"><i class="fa-solid fa-phone"></i></a>
+                            <a href="#">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </a>
+
+                            <a href="#">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </a>
+
+                            <a href="#">
+                                <i class="fa-solid fa-envelope"></i>
+                            </a>
                         </div>
+                    </center>
                 </div>
-                <div class="col-md-3">
-                    <div class="card-team">
-                        <center>
+    </div>
+    <div class="section-team pt-4 pb-4">
+    <div class="container mt-4 mb-4">
+        <div class="row gx-4 gy-3">
+            {% for member in teams %}
+            <div class="col-md-4">
+                <div class="card-team">
+                    <center>
+                        <!-- Profile Image -->
                         <div class="profileimage">
-                          <img src="https://www.shutterstock.com/image-photo/portrait-young-handsome-smiling-business-600nw-1811281987.jpg" alt="">
+                            <img src="{{ member.profileimage.url }}" alt="{{ member.name }}">
                         </div>
+                        <!-- Name and Designation -->
                         <div class="Name">
-                          <h3>Benjamin Carter</h3>
-                          <span class="text-center">Data Analyst</span>
+                            <h3>{{ member.name }}</h3>
+                            <span class="text-center">{{ member.post }}</span>
                         </div>
+                         {% if member.specalization %}
+                        <div class="specialization">
+                            <p>{{ member.specalization }}</p>
+                        </div>
+                        {% endif %}
+                        <!-- Notes as Quote -->
+                        {% if member.notes %}
+                        <div class="note">
+                            <blockquote>
+                                <p>{{ member.notes }}</p>
+                            </blockquote>
+                        </div>
+                        {% endif %}
+                        <!-- Contact Links -->
+                        <!--<div class="contact-link">-->
+                        <!--    <a href="#"><i class="fa-solid fa-phone"></i></a>-->
+                        <!--    <a href="#"><i class="fa-solid fa-envelope"></i></a>-->
+                        <!--</div>-->
                         <div class="contact-link">
-                            <a href=""><i class="fa-solid fa-phone"></i></a>
-                            <a href=""><i class="fa-solid fa-envelope"></i></a>
-                          </div>
-                       </center>
+                            <a href="tel:{{ member.phone|default:'1234567890' }}">
+                                <i class="fa-solid fa-phone"></i>
+                            </a>
+                            <a href="https://wa.me/{{ member.whatsapp|default:'1234567890' }}" target="_blank">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </a>
+                            <a href="https://instagram.com/{{ member.instagram|default:'company_instagram' }}" target="_blank">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                             <a href="{{ member.linkdln|default:'https://www.linkedin.com/company/delemon-technology' }}" target="_blank">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </a>
+                            <a href="mailto:{{ member.mail|default:'info@company.com' }}">
+                                <i class="fa-solid fa-envelope"></i>
+                            </a>
                         </div>
+                    </center>
                 </div>
             </div>
+            {% empty %}
+            <p class="text-center">No team members found.</p>
+            {% endfor %}
         </div>
     </div>
+</div>
+
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 </body>
-</html>
+{% endblock %}

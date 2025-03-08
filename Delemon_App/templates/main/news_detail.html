@@ -1,0 +1,397 @@
+{% extends 'base.html' %}
+{% block title %}{{ news.title }}{% endblock %}
+{% load static %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ news.title }}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<style>
+    .news-container {
+        width: 100%;
+        padding: 50px 0;
+    }
+
+    .news-header {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .news-header h1 {
+        font-size: 36px;
+        font-weight: 700;
+        color: #062f60;
+    }
+
+    .news-header p {
+        font-size: 16px;
+        color: gray;
+    }
+
+    .news-image img {
+        width: 100%;
+        height: 500px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+    }
+
+    .news-content {
+        font-size: 18px;
+        line-height: 1.8;
+        color: #333;
+        white-space: pre-line;
+    }
+
+    .contact-card {
+        background: linear-gradient(to right, #3e70ad, #1586bc, #009bc4);
+        color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-card h5 {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .contact-card input, .contact-card select {
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 8px;
+        border: none;
+        border-radius: 4px;
+    }
+
+    .contact-card button {
+        background-color: #FAB206;
+        border: none;
+        color: white;
+        font-weight: bold;
+        padding: 10px;
+        width: 100%;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .contact-card button:hover {
+        background-color: #b98304;
+    }
+    .blog-card {
+        background-color: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        transition: all 0.3s ease;
+        height: 100%; /* Adjust dynamically */
+    }
+
+    .blog-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .blog-image {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+    }
+
+    .blog-content {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+    }
+
+    .blog-title {
+        font-size: 20px;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 15px;
+        text-align: left; /* Align to left */
+    }
+
+    .blog-description {
+        font-size: 15px;
+        color: #555;
+        line-height: 1.6;
+        margin-bottom: 20px;
+        flex-grow: 1; /* Allows content to fill space */
+    }
+
+    .read-more {
+        align-self: flex-start; /* Align to the left */
+        font-size: 14px;
+        font-weight: bold;
+        color: #FAB206;
+        text-decoration: none;
+        padding: 8px 16px;
+        border: 2px solid #FAB206;
+        border-radius: 25px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .read-more:hover {
+        background-color: #FAB206;
+        color: #fff;
+    }
+
+        /* Responsive Styling */
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 32px;
+            }
+
+            .blogs-grid {
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .blogs-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+         .you-may-like {
+        margin-top: 50px;
+        padding: 20px;
+        background-color: #181717; /* Matches the footer background */
+        color: white; /* Text color */
+        width: 100%;
+    }
+
+    .you-may-like h2 {
+        text-align: left;
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+    }
+
+    .you-may-like-container {
+        display: flex;
+        gap: 10px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .related-blog-card {
+        background-color: 181717; /* Transparent background */
+        border: 1px solid rgba(87, 87, 87, 0.2); /* Subtle border for contrast */
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        width: 20%;
+        padding: 10px;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        color: white;
+    }
+
+    .related-blog-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3); /* Slightly darker shadow on hover */
+    }
+
+    .related-blog-image {
+        width: 100%;
+        border-radius: 10px;
+        height: 120px;
+        object-fit: cover;
+        margin-bottom: 10px;
+    }
+
+    .related-blog-title {
+        font-size: 16px;
+        font-weight: bold;
+        color: white;
+        margin-bottom: 5px;
+    }
+
+    .related-blog-description {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.8); /* Slightly faded text for description */
+        line-height: 1.4;
+        margin-bottom: 10px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2; /* Limit to 2 lines */
+        -webkit-box-orient: vertical;
+    }
+
+    .read-more-btn {
+        text-decoration: none;
+        font-size: 12px;
+        font-weight: bold;
+        color: #FAB206;
+        padding: 5px;
+        text-align: left;
+        display: inline-block;
+        transition: color 0.3s ease;
+    }
+
+    .read-more-btn:hover {
+        color: white;
+    }
+
+    .see-all-blogs {
+        text-align: right;
+        margin-top: 15px;
+        color: #FAB206;
+        font-size: 14px;
+        font-weight: bold;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    .see-all-blogs i {
+        margin-left: 5px;
+        font-size: 14px;
+        transition: transform 0.3s ease;
+    }
+
+    .see-all-blogs:hover i {
+        transform: translateX(5px);
+    }
+
+    /* Responsive Styling */
+    @media screen and (max-width: 768px) {
+        .related-blog-card {
+            width: 48%; /* Adjust card width for smaller screens */
+        }
+
+        .see-all-blogs {
+            justify-content: center; /* Center-align on smaller screens */
+        }
+
+
+        }
+
+    @media (max-width: 480px) {
+        .related-blog-card {
+            width: 100%; /* Stack cards on small screens */
+        }
+
+    }
+     /* Blog Content */
+     .blog-detail-content {
+            margin-top: 20px;
+            font-size: 18px;
+            text-align: justify;
+        }
+</style>
+<body>
+<div class="container news-container">
+    <div class="row">
+        <!-- Main Content -->
+        <div class="col-md-8">
+            <div class="news-header">
+                <h1>{{ news.title }}</h1>
+                <p>Published on {{ news.published_date|date:"F d, Y" }}</p>
+            </div>
+            <div class="news-image">
+                {% if news.image %}
+                    <img src="{{ news.image.url }}" alt="{{ news.title }}">
+                {% endif %}
+            </div>
+            <div class="news-content">
+                {{ news.formatted_content|safe }}
+            </div>
+        </div>
+
+        <!-- Sidebar Contact Section -->
+        <div class="col-md-4">
+            <div class="contact-card">
+    <h5>Have Questions?</h5>
+    <p>Contact us for more information or a free consultation.</p>
+    <form method="post" action="{% url 'news_detail' news.slug %}">
+    {% csrf_token %}
+    <input type="text" name="customername" placeholder="Your Name" required>
+    <input type="text" name="phone" placeholder="Phone Number" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="text" name="company" placeholder="Company Name"> <!-- Optional -->
+    <select name="service" required>
+        <option value="" disabled selected>Choose a Service</option>
+        <option value="news inquiry">News Enquiry</option>
+        <option value="consultation">Consultation</option>
+        <option value="other">Other</option>
+    </select>
+    <button type="submit">Request Callback</button>
+</form>
+
+    {% if messages %}
+        <div>
+            {% for message in messages %}
+                <div class="alert alert-success">{{ message }}</div>
+            {% endfor %}
+        </div>
+    {% endif %}
+</div>
+
+            <div class="contact-card">
+                {% for news in related_news_items %}
+                <div class="blog-card">
+                    <img src="{{ news.image.url }}"  class="blog-image" alt="{{ news.title }}">
+
+                        <div class="blog-content">
+                            <!-- <h6>{{ blog.created_at|date:"F j, Y" }}</h6> -->
+                            <h3 class="blog-title">{{ news.title }}</h3>
+                            <p class="blog-description">{{ news.content|truncatewords:20 }}</p>
+                            {% if news.slug %}
+                            <a href="{% url 'news_detail' news.slug %}" class="read-more">Read More</a>
+                            {% else %}
+                            <span>Details Unavailable</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% empty %}
+                    <p>No blogs available at the moment.</p>
+                    {% endfor %}
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+</body>
+
+<div class="you-may-like">
+    <h6>WORTH READ!</h6>
+    <h2>YOU MAY ALSO LIKE</h2>
+    <div class="you-may-like-container">
+        {% for related_blog in latest_blogs  %}
+        <div class="related-blog-card">
+            <img src="{{ related_blog.image.url }}" alt="{{ related_blog.title }}" class="related-blog-image">
+            <h3 class="related-blog-title">{{ related_blog.title }}</h3>
+            <p class="related-blog-description">{{ related_blog.content|truncatewords:15 }}</p>
+            <a href="{% url 'blog_detail' related_blog.slug %}" class="read-more-btn">Read More →</a>
+        </div>
+        {% endfor %}
+    </div>
+    <a href="{% url 'blog' %}" class="see-all-blogs">
+        See All Blogs →
+
+    </a>
+</div>
+{% endblock %}

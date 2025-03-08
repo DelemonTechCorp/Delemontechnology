@@ -3,10 +3,12 @@
 {% load static %}
 {% block content %}
 <head>
+    <meta name="facebook-domain-verification" content="aja7667ybaut6kobwhsegxwxvb6kwv" />
      <meta content="Digital marketing Dubai, web development Dubai, SEO services Dubai, social media marketing Dubai, web design Dubai, PPC Dubai, online advertising Dubai, e-commerce development Dubai, content marketing Dubai, branding Dubai, digital strategy Dubai." name="keywords">
     <meta content="Leading digital marketing and web development agency in Dubai offering top-notch SEO, social media marketing, web design, and e-commerce solutions. Drive your business growth with our expert strategies tailored for Dubai’s dynamic market." name="description">
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="canonical" href="https://www.delemontechnology.com/"/>
 </head>
 <style>
 /*.bg-video-container {*/
@@ -97,6 +99,12 @@
 /*    justify-content: center;*/
 /*    text-decoration: none;*/
 /*  }*/
+  .description{
+        display: none;
+        margin-top: 10px;
+        text-align:justify;
+        font-size:14px;
+    }
   .social-medias{
     display: flex;
     flex-direction: column;
@@ -431,6 +439,113 @@
         object-fit:contain;
     height: 100px; /* Adjusted width for better responsiveness */
 }
+   .testimonial {
+        width: 100%;
+        height: 100vh;
+
+
+    }
+
+    .testimonial-content {
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+        text-align: justify;
+
+
+
+
+    }
+
+    .test-cards {
+        position: relative;
+        list-style-type: none;
+        /* padding: 10px; */
+
+
+
+    }
+
+    .test-card p {
+        padding: 20px;
+        text-align: left;
+        font-size: 15px;
+        font-weight: 400;
+        color: #333;
+        font-family: "Dosis", serif;
+    }
+
+    .test-card {
+        position: absolute;
+        left: 0;
+        z-index: 2;
+        top: 200px;
+        /* height: auto; */
+        /* Move the card 20px higher */
+
+        background: #fff;
+
+        border-radius: 30px;
+        padding: 40px;
+        box-shadow: 0 0 40px #000;
+        transform: translateY(0) rotate(4deg) translateX(25px) scale(1);
+        transform-origin: 0 0;
+
+        transition: transform 0.6s cubic-bezier(.8, .2, .1, 0.8) 0.1s,
+            background 0.4s linear;
+
+        cursor: pointer;
+        user-select: none;
+        width: 35em;
+        height: 350px;
+
+    }
+
+
+    .card--next {
+        z-index: 5;
+        transform: translateY(-25px) rotate(4deg) translateX(25px) scale(1);
+    }
+
+    .card--out {
+        animation: card-out 0.6s cubic-bezier(.8, .2, .1, 0.8);
+        transform: translateY(-50px) rotate(8deg) translateX(55px) scale(0.95);
+        z-index: 1;
+        background: #bbb;
+    }
+
+    .card--current {
+        cursor: auto;
+        user-select: auto;
+        position: relative;
+        z-index: 10;
+        opacity: 1;
+        background: #fffefe;
+        /* background-image: linear-gradient(-225deg, #d7eae4 0%, #ffff 100%); */
+
+        transform: rotate(-1deg) translateX(0%) scale(1);
+    }
+
+    @keyframes card-out {
+        0% {
+            z-index: 20;
+            transform: translateY(0px) rotate(-4deg);
+        }
+
+        50% {
+            transform: translateY(-120%) rotate(-5deg) translateX(-40px);
+        }
+
+        80% {
+            z-index: 1;
+        }
+
+        100% {
+            transform: translateY(-50px) rotate(8deg) translateX(55px) scale(0.95);
+        }
+    }
+
 
 .prev-button,
 .next-button {
@@ -1678,50 +1793,60 @@ left: 0;
                     <div class="categories categories-view1">
                         <ul class="row">
                             <li class="col-lg-4 col-md-6">
-                                <div class="categories-view1-wrap">
-                                    <i class="fa-solid fa-magnifying-glass-chart"></i>
-                                    <a class="class-a" href="{% url 'digital' %}">Digital Marketing</a>
-                                    <small>Transform Your Reach</small>
+                                <div class="categories-view1-wrap" onclick="toggleDescription(this)">
+
+                                    <i class="fa-solid fa-file-video"></i>
+                                    <a class="class-a" href="{% url 'digital' %}">SocialMedia Marketing</a>
+                                    <small>Boost Engagement & Reach</small>
                                     <span>01</span>
+                                    <p class="description">As the No.1 Digital Marketing Agency for 100+ UAE Industries, and a leading Social Media Marketing Agency in Dubai, UAE, we specialize in creating innovative strategies that boost online presence, drive audience engagement, and deliver measurable results, ensuring success in today’s competitive digital landscape.</p>
                                 </div>
                             </li>
                             <li class="col-lg-4 col-md-6">
-                                <div class="categories-view1-wrap">
-                                    <i class="fa-solid fa-code"></i>
+                                <div class="categories-view1-wrap" onclick="toggleDescription(this)">
+
+                                     <i class="fa-solid fa-cart-shopping"></i>
                                     <a href="{% url 'web' %}" class="class-a">Web Development</a>
                                     <small>Elevate Online Presence</small>
+                                    <p class="description">
+                                        Delemon Technology, a leading web development company in Dubai, creates innovative, user-friendly websites that help businesses thrive online. Whether you're a startup or enterprise, we ensure your digital presence shines. As the No.1 digital marketing agency for 100+ UAE industries, we also offer expert marketing solutions to drive growth and success.
+                                    </p>
                                     <span>02</span>
                                 </div>
                             </li>
                             <li class="col-lg-4 col-md-6">
-                                <div class="categories-view1-wrap">
+                                <div class="categories-view1-wrap" onclick="toggleDescription(this)">
                                     <i class="fa-brands fa-app-store-ios"></i>
                                     <a class="class-a" href="{% url 'mobile' %}">App Development</a>
                                     <small>Innovate Mobile Solutions</small>
+                                    <p class="description">In today’s fast moving digital world, having a strong mobile app can make your business stand out. At Delemon Technology, recognized as the No.1 Digital Marketing Agency for 100+ UAE Industries, we create innovative mobile app development Dubai solutions tailored to your unique needs. As one of the top app developers in Dubai, we focus on delivering apps that help you achieve your business goals</p>
                                     <span>03</span>
                                 </div>
                             </li>
                             <li class="col-lg-4 col-md-6">
-                                <div class="categories-view1-wrap">
-                                    <i class="fa-solid fa-file-video"></i>
-                                    <a class="class-a" href="{% url 'animation' %}">Video Editing</a>
-                                    <small>Craft Visual Stories</small>
+                                <div class="categories-view1-wrap" onclick="toggleDescription(this)">
+                                      <i class="fa-solid fa-magnifying-glass-chart"></i>
+                                    <a class="class-a" href="{% url 'sem' %}">Search Engine Marketing</a>
+                                    <small>Enhance Reach & Drive Conversions</small>
+                                    <p class="description">Delemon Technology, the No.1 digital marketing agency for 100+ UAE industries, offers expert PPC management services. Our Google Ads and Bing Ads specialists deliver customized SEM strategies to connect you with your target audience. Boost your business with tailored digital marketing solutions. Achieve your marketing goals with us!</p>
                                     <span>04</span>
                                 </div>
                             </li>
                             <li class="col-lg-4 col-md-6">
-                                <div class="categories-view1-wrap">
-                                    <i class="fa-solid fa-cart-shopping"></i>
-                                    <a class="class-a" href="{% url 'ecommerce' %}">E-commerce</a>
+                                <div class="categories-view1-wrap"onclick="toggleDescription(this)">
+                                      <i class="fa-solid fa-code"></i>
+                                    <a class="class-a" href="{% url 'seo' %}">Search Engine Optimization</a>
                                     <small>Optimize Online Sales</small>
+                                    <p class="description">The best SEO services in Dubai. As a premier SEO agency in Dubai, we provide expert search engine optimization strategies to improve your website’s search rankings and increase visibility. Our team is dedicated to driving organic traffic and elevating your brand’s digital presence. Trust the best SEO agency in Dubai to help your website achieve outstanding results in the competitive digital market. Delemon Technology is proud to be the No.1 Digital Marketing Agency for 100+ UAE industries.</p>
                                     <span>05</span>
                                 </div>
                             </li>
                             <li class="col-lg-4 col-md-6">
-                                <div class="categories-view1-wrap">
+                                <div class="categories-view1-wrap" onclick="toggleDescription(this)">
                                     <i class="fa-solid fa-laptop-code"></i>
-                                    <a class="class-a" href="{% url 'uiux' %}">UI/UX Design</a>
-                                    <small>Enhance User Experience</small>
+                                    <a class="class-a" href="{% url 'pps' %}">Podcast Production</a>
+                                    <small>Broadcast Your Message with Clarity</small>
+                                    <p class="description">At Delemon Technology, we offer premium podcast production services in Dubai, UAE, designed to turn your ideas into professional, engaging podcasts. From pre-production planning to post-production polishing, we handle it all. Our services include content creation, access to state-of-the-art studios, expert hosting, and seamless editing to ensure your podcast stands out in the market.</p>
                                     <span>06</span>
                                 </div>
                             </li>
@@ -1737,6 +1862,12 @@ left: 0;
         </div>
     </div>
 
+<script>
+    function toggleDescription(categories) {
+    let desc = categories.querySelector(".description");
+    desc.style.display = desc.style.display === "none" || desc.style.display === "" ? "block" : "none";
+}
+</script>
 <!--<div class="message-box">-->
 <!--    <div class="message-box-sub">-->
 <!--    <i class="fa-solid fa-comment"></i>-->
@@ -1871,33 +2002,105 @@ left: 0;
 <!--    </div>-->
 <!--</div>-->
 
-<div class="brand">
-    <div class="brand-head">
-        <h2>We are ready to uplift your <br> <span>brand like many others in</span> <br> the past!</h2>
-    </div>
-        <div class="logos" id="">
-          <div class="logos-slide">
-            <img src="{% static 'img/luxuryacres.png' %}" alt="Logo 1">
-            <img src="{% static 'img/chronocorp.png' %}" alt="Logo 2">
-            <img src="{% static 'img/accounting.png' %}" alt="Logo 3">
-            <img src="{% static 'img/riserealtor.png' %}" alt="Logo 4">
-            <img src="{% static 'img/louis.png' %}" alt="Logo 5">
-            <img src="{% static 'img/vegas.png' %}" alt="Logo 6">
-            <img src="{% static 'img/tutorlyhub.png' %}" alt="Logo 7">
-            <img src="{% static 'img/kifrealty.png' %}" alt="Logo 20">
-            </div>
-         <div class="logos-slide">
-            <img src="{% static 'img/luxuryacres.png' %}" alt="Logo 1">
-            <img src="{% static 'img/chronocorp.png' %}" alt="Logo 2">
-            <img src="{% static 'img/accounting.png' %}" alt="Logo 3">
-            <img src="{% static 'img/riserealtor.png' %}" alt="Logo 4">
-            <img src="{% static 'img/louis.png' %}" alt="Logo 5">
-            <img src="{% static 'img/vegas.png' %}" alt="Logo 6">
-            <img src="{% static 'img/tutorlyhub.png' %}" alt="Logo 7">
-            <img src="{% static 'img/kifrealty.png' %}" alt="Logo 20">
-            </div>
-        </div>
-</div>
+<!--<div class="brand">-->
+<!--    <div class="brand-head">-->
+<!--        <h2>We are ready to uplift your <br> <span>brand like many others in</span> <br> the past!</h2>-->
+<!--    </div>-->
+<!--        <div class="logos" id="">-->
+<!--          <div class="logos-slide">-->
+<!--            <img src="{% static 'img/luxuryacres.png' %}" alt="Logo 1">-->
+<!--            <img src="{% static 'img/chronocorp.png' %}" alt="Logo 2">-->
+<!--            <img src="{% static 'img/accounting.png' %}" alt="Logo 3">-->
+<!--            <img src="{% static 'img/riserealtor.png' %}" alt="Logo 4">-->
+<!--            <img src="{% static 'img/louis.png' %}" alt="Logo 5">-->
+<!--            <img src="{% static 'img/vegas.png' %}" alt="Logo 6">-->
+<!--            <img src="{% static 'img/tutorlyhub.png' %}" alt="Logo 7">-->
+<!--            <img src="{% static 'img/kifrealty.png' %}" alt="Logo 20">-->
+<!--            </div>-->
+<!--         <div class="logos-slide">-->
+<!--            <img src="{% static 'img/luxuryacres.png' %}" alt="Logo 1">-->
+<!--            <img src="{% static 'img/chronocorp.png' %}" alt="Logo 2">-->
+<!--            <img src="{% static 'img/accounting.png' %}" alt="Logo 3">-->
+<!--            <img src="{% static 'img/riserealtor.png' %}" alt="Logo 4">-->
+<!--            <img src="{% static 'img/louis.png' %}" alt="Logo 5">-->
+<!--            <img src="{% static 'img/vegas.png' %}" alt="Logo 6">-->
+<!--            <img src="{% static 'img/tutorlyhub.png' %}" alt="Logo 7">-->
+<!--            <img src="{% static 'img/kifrealty.png' %}" alt="Logo 20">-->
+<!--            </div>-->
+<!--        </div>-->
+<!--</div>-->
+
+<!--<div class="testimonial container" id="large-header" class="large-header  " >-->
+
+<!--    <div class="testimonial-content " id="demo-canvas">-->
+<!--        <div class="text-test">-->
+<!--            <h2>TESTIMONIALS</h2>-->
+<!--            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam natus, quibusdam similique, fuga iure-->
+<!--                eligendi dolorum sequi non quasi, iusto voluptas rerum dicta beatae! Laudantium temporibus voluptate itaque-->
+<!--                nam aspernatur!</p>-->
+<!--        </div>-->
+
+
+<!--        <ul class="test-cards">-->
+
+
+<!--            <li class="test-card">-->
+<!--                <h3 class="test-sub-head">Happy Customers </h3>-->
+
+
+<!--                <p><i class="fa-solid fa-quote-left" style="color: #fab206;font-size:40px;padding:10px"></i>Working with Delemon-->
+<!--                    Technology-->
+<!--                    has been a game changer for our business. As a digital marketing agency in-->
+<!--                    Dubai, UAE, they crafted a custom strategy that significantly boosted our online presence. Their-->
+<!--                    expertise-->
+<!--                    in SEO and social media marketing helped us reach a wider audience and increase sales. We highly-->
+<!--                    recommend-->
+<!--                    them for any business looking to elevate their digital marketing efforts./p>-->
+<!--                <h4 style="text-align: right;">-Kif realty (Real eastate company)</h4>-->
+<!--            </li>-->
+<!--            <li class="test-card">-->
+<!--                <h3 class="test-sub-head">Happy Customers </h3>-->
+
+<!--                <p><i class="fa-solid fa-quote-left" style="color: #fab206;font-size:40px;padding:10px"></i>As a business in Dubai,-->
+<!--                    it was-->
+<!--                    crucial for us to partner with a SEO agency in Dubai that could boost our online visibility. Delemon-->
+<!--                    Technology did exactly that. Their comprehensive SEO strategy improved our rankings on Google,-->
+<!--                    driving more-->
+<!--                    organic traffic to our website. We saw tangible results in a short amount of time!></p>-->
+<!--                <h4 style="text-align: right;"> -X-opp (software company)</h4>-->
+<!--            </li>-->
+<!--            <li class="test-card">-->
+<!--                <h3 class="test-sub-head">Happy Customers </h3>-->
+
+
+
+<!--                <p><i class="fa-solid fa-quote-left" style="color: #fab206;font-size:40px;padding:10px"></i>A>Working with a top notch-->
+<!--                    digital marketing agency in Dubai was essential for our company’s growth, and we found exactly that.-->
+<!--                    The-->
+<!--                    team developed a tailored digital marketing strategy, including exceptional SEO and social media-->
+<!--                    management,-->
+<!--                    which significantly increased our online engagement and lead generation. The results exceeded our-->
+<!--                    expectations!</p>-->
+<!--                <h4 style="text-align: right;">-Positive properties (Real eastate company)</h4>-->
+<!--            </li>-->
+<!--            <li class="test-card">-->
+<!--                <h3 class="test-sub-head">Happy Customers </h3>-->
+
+<!--                <p><i class="fa-solid fa-quote-left" style="color: #fab206;font-size:40px;padding:10px"></i>APartnering with this-->
+<!--                    digital-->
+<!--                    marketing company in Dubai was the best decision we made. Their expert SEO services helped us-->
+<!--                    achieve-->
+<!--                    first-page rankings on Google for competitive keywords, driving consistent traffic and high-quality-->
+<!--                    leads.-->
+<!--                    Their professionalism and commitment to results truly set them apart.</p>-->
+<!--                <h5 style="text-align: right;">-Young & Right (Accounting & Tax consultant company)-->
+<!--                </h5>-->
+
+<!--            </li>-->
+<!--        </ul>-->
+<!--    </div>-->
+<!--</div>-->
+
 
 <div class="faq-section">
     <div class="faq-section-header">
@@ -2082,7 +2285,39 @@ left: 0;
     </div>
 
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $.fn.commentCards = function () {
+        return this.each(function () {
+            var $this = $(this),
+                $cards = $this.find('.test-card'),
+                $currentIndex = 0;
 
+            $cards.on('click', function () {
+                $cards.removeClass('card--current card--out card--next');
+                $cards.eq($currentIndex).addClass('card--out');  // Current card goes out
+
+                $currentIndex = ($currentIndex + 1) % $cards.length; // Move to the next card, loop back at the end
+
+                var $current = $cards.eq($currentIndex).addClass('card--current'),
+                    $next = $cards.eq(($currentIndex + 1) % $cards.length).addClass('card--next');
+            });
+
+            // Initialize the first card as current and the second one as next
+            $cards.first().addClass('card--current');
+            if ($cards.length > 1) {
+                $cards.eq(1).addClass('card--next');
+            }
+
+            $this.addClass('cards--active');
+        });
+    };
+
+    $('.test-cards').commentCards();
+
+
+
+</script>
 
     <script>
         function changeContent() {
