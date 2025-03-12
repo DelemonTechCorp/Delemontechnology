@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blogs</title>
+    <meta content="Leading digital marketing and web development agency in Dubai offering top-notch SEO, social media marketing, web design, and e-commerce solutions. Drive your business growth with our expert strategies tailored for Dubai’s dynamic market." name="description">
     <style>
         /* Hero Section */
         .hero-section {
@@ -208,7 +209,7 @@
             {% for news in page_obj %}
             <div class="blog-card">
             <img src="{{ news.image.url }}"  class="blog-image" alt="{{ news.title }}">
-           
+
                 <div class="blog-content">
                     <!-- <h6>{{ blog.created_at|date:"F j, Y" }}</h6> -->
                     <h3 class="blog-title">{{ news.title }}</h3>

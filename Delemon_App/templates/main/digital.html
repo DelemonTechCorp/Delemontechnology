@@ -1,984 +1,1406 @@
 <!DOCTYPE html>
 <html lang="en">
 {% extends 'base.html' %}
-{% block title %}digital-marketing-and-advertising-services{% endblock %}
+{% block title %}Digital Marketing Agency in Dubai | Best Advertising Company UAE{% endblock %}
 {% load static %}
 {% block content %}
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>about</title>
-    <link rel="canonical" href="https://www.delemontechnology.com/digital-marketing-and-advertising-services"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <meta content="Delemon Technology is Dubai’s leading digital marketing agency, offering expert SEO, SEM, SMM, branding, web design, video production, and more. Elevate your business with the best advertising company in the UAE." name="description">
+    <link rel="canonical" href="https://www.delemontechnology.com/digital-marketing-and-advertising-services" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <style>
-.web-page-bg{
-    width: 100%;
-    height: 100vh;
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-direction: row;
-    background-repeat: no-repeat;
-    background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('{% static 'img/marketing-bg.png' %}');
-}
-.web-page-bg-1{
-    width: 50%;
-    height: 100%;
-    display: flex;
-    align-items:flex-start;
-    justify-content:center;
-    flex-direction: column;
-}
-.web-page-bg-2{
-    width: 40%;
-    height: 90%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.web-page-bg-icons{
-width: 10%;
-height: 45%;
-display: flex;
-align-items: center;
-justify-content: space-evenly;
-flex-direction: column;
-}
-.web-page-bg-1 h1{
-    color: white;
-    font-weight: 700;
-    font-size: 35px;
-}
-.web-page-bg-1-content p{
-    color: white;
-    font-weight: 300;
-    font-size: 14px;
-}
-.web-page-bg-1-content{
-    width: 100%;
-    display: flex;
-    align-items: flex-start;
-}
-.icon-container{
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: none;
-    border-radius: 50%;
-}
-.icon-container i{
-    color: white;
-    font-size: 13px;
-}
-.icon-container:hover{
-    background-color: white;
-    border: 2px solid #FAB206;
-    transition: 0.3s ease;
-}
-.icon-container:hover i{
-    color: black;
-}
-#web-page-form{
-    background-color: white;
-    width: 90%;
-    padding: 8%;
-    height: auto;
-}
-#web-page-form h3{
-    font-size: 20px;
-    font-weight: 700;
-}
-#web-page-form label{
-    font-size: 12px;
-}
-.web-page-form-input{
-    border: hidden;
-    outline: none;
-    padding-left: 5px;
-    width: 100%;
-    font-size: 12px;
-    height: 30px;
-    background-color: #F1EFF0;
-}
-.web-page-form-button{
-    background-color: rgb(255, 255, 255);
-    color:#FAB206;
-    outline: none;
-    width: 100px;
-    height: 30px;
-    font-size: 12px;
-    border:2px solid #FAB206;
+    h2{
+        font-size: 28px;
+        font-weight: 600;
+        text-align: center;
+    }
+    .web-page-bg {
+        width: 100%;
+        height: 100vh;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: row;
+        background-repeat: no-repeat;
 
-}
-#form-bottom-p{
-    font-size: 12px;
-    color: rgb(170, 169, 169);
-    text-align: center;
-}
-#web-page-form p span{
-color: #FAB206;
-font-weight: 600;
-}
-.error-message{
-    color:red;
-    font-size:12px;
-}
-.web-page-container-2{
-    width: 100%;
-    /*height: 80vh;*/
-     padding-top:60px;
+          background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('{% static 'img/marketing-bg.png' %}');
+    }
 
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-}
-.web-page-clients{
-    height: 70%;
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-}
-.web-page-clients-details{
-    width: 45%;
-}
-.web-page-clients h1{
-    font-size: 30px;
-    font-weight: 600;
-}
-.web-page-clients p{
-    font-size: 14px;
-}
-.web-page-clients-counts{
-    width: 100%;
-    height: 180px;
-    display: flex;
-    padding: 20px;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    background-color: #F6F6F6;
-}
-.web-page-clients-counts h5{
-    font-size: 18px;
-    font-weight: 600;
-}
-.clients-counts{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-}
-.counts-row{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 80px;
-    width: 30%;
-    border-right: 1px solid #dfdfdf;
-    justify-content: space-between;
-}
-.counts-row span{
-    font-size: 14px;
-    font-weight: 300;
-}
-.counts-row h1{
-    font-size: 35px;
-    font-weight: 800;
-    color: #FAB206;
-}
-.web-page-cards{
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content:center;
-    padding: 10px;
-    cursor: pointer;
+    .web-page-bg-1 {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+    }
 
-}
-.card-icon-div{
-    width: 60px;
-    height: 60px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #C1C1C1;
-}
-.card-icon-div i{
-    font-size: 20px;
-    color: white;
+    .web-page-bg-2 {
+        width: 40%;
+        height: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-}
-.web-page-cards h3{
-    font-size: 22px;
-}
-.web-page-cards span i{
-    margin-right: 8px;
-    color: #C1C1C1;
-    font-size: 20px;
-}
-.web-page-cards:hover{
-    background-color: #F6F6F6;
-    border-radius: 10px;
-}
-.web-page-cards:hover .card-icon-div{
-    background-color: #FAB206;
-}
-.web-page-cards:hover span i{
-    color: #FAB206;
-}
-.social-media-stack{
-    width: 100%;
-    height: 60vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    background-image: linear-gradient(to bottom, #dddde3, #e6e5ea, #eeeef1, #f7f6f8, #ffffff);
+    .web-page-bg-icons {
+        width: 10%;
+        height: 45%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+    }
 
-}
-.stack-header{
-width: 50%;
-display: flex;
-align-items: center;
-justify-content: space-evenly;
-flex-direction: column;
-}
-.stack-header h1{
-    font-size: 30px;
-}
-.stack-header p{
-    font-size: 14px;
-    font-weight: 300;
-}
-.stack-scroll{
-    width: 100%;
-    display: flex;
-    align-items: center;
-}
-@keyframes slide {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-}
+    .web-page-bg-1 h1 {
+        color: white;
+        font-weight: 700;
+        font-size: 35px;
+    }
+    .card h3{
+        color: #FAB206;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 20px;
+    }
 
-.logos {
-  overflow: hidden;
-  padding: 60px 0;
-  white-space: nowrap;
-  position: relative;
-}
+    .web-page-bg-1-content p {
+        color: white;
+        font-weight: 300;
+        font-size: 14px;
+    }
 
-.logos:before,
-.logos:after {
-  position: absolute;
-  top: 0;
-  width: 250px;
-  height: 100%;
-  content: "";
-  z-index: 2;
-}
+    .web-page-bg-1-content {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+    }
 
-.logos:before {
-  left: 0;
-}
+    .icon-container {
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: none;
+        border-radius: 50%;
+    }
 
-.logos:after {
-  right: 0;
-}
+    .icon-container i {
+        color: white;
+        font-size: 13px;
+    }
 
-.logos:hover .logos-slide {
-  animation-play-state: paused;
-}
+    .icon-container:hover {
+        background-color: white;
+        border: 2px solid #FAB206;
+        transition: 0.3s ease;
+    }
 
-.logos-slide {
-  display: inline-block;
-  animation: 35s slide infinite linear;
-}
+    .icon-container:hover i {
+        color: black;
+    }
 
-.logos-slide img {
-  height: 50px;
-  margin: 0 40px;
-}
-.faq-section{
-    height: 90vh;
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    display: flex;
-    background-color: #E3E3E3;
-}
-.faq-section-header{
-    width: 90%;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-}
-.faq-section-header h1{
-    -webkit-text-stroke: 1px rgb(0, 0, 0);
+    #web-page-form {
+        background-color: white;
+        width: 90%;
+        padding: 8%;
+        height: auto;
+    }
+
+    #web-page-form h3 {
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    #web-page-form label {
+        font-size: 12px;
+    }
+
+    .web-page-form-input {
+        border: hidden;
+        outline: none;
+        padding-left: 5px;
+        width: 100%;
+        font-size: 12px;
+        height: 30px;
+        background-color: #F1EFF0;
+    }
+
+    .web-page-form-button {
+        background-color: rgb(255, 255, 255);
+        color: #FAB206;
+        outline: none;
+        width: 100px;
+        height: 30px;
+        font-size: 12px;
+        border: 2px solid #FAB206;
+
+    }
+
+    #form-bottom-p {
+        font-size: 12px;
+        color: rgb(170, 169, 169);
+        text-align: center;
+    }
+
+    #web-page-form p span {
+        color: #FAB206;
+        font-weight: 600;
+    }
+
+    .error-message {
+        color: red;
+        font-size: 12px;
+    }
+
+    .web-page-container-2 {
+        width: 100%;
+        /*height: 80vh;*/
+        padding-top: 30px;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .web-page-clients {
+        height: 70%;
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+
+    .web-page-clients h2 {
+        font-size: 30px;
+        font-weight: 600;
+    }
+
+    .web-page-clients p {
+        font-size: 14px;
+        line-height:2;
+        margin-top:10px;
+    }
+
+    .web-page-clients-counts {
+        width: 100%;
+        height: 180px;
+        display: flex;
+        padding: 20px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        background-color: #F6F6F6;
+    }
+
+    .web-page-clients-counts h5 {
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    .clients-counts {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .counts-row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 80px;
+        width: 30%;
+        border-right: 1px solid #dfdfdf;
+        justify-content: space-between;
+    }
+
+    .counts-row span {
+        font-size: 14px;
+        font-weight: 300;
+    }
+
+    .counts-row h2 {
+        font-size: 35px;
+        font-weight: 800;
+        color: #FAB206;
+    }
+
+    .web-page-cards {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 10px;
+        cursor: pointer;
+
+    }
+
+    .card-icon-div {
+        width: 60px;
+        height: 60px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #C1C1C1;
+    }
+
+    .card-icon-div i {
+        font-size: 20px;
+        color: white;
+
+    }
+
+    .web-page-cards h3 {
+        font-size: 22px;
+    }
+
+    .web-page-cards span i {
+        margin-right: 8px;
+        color: #C1C1C1;
+        font-size: 20px;
+    }
+
+    .web-page-cards:hover {
+        background-color: #F6F6F6;
+        border-radius: 10px;
+    }
+
+    .web-page-cards:hover .card-icon-div {
+        background-color: #FAB206;
+    }
+
+    .web-page-cards:hover span i {
+        color: #FAB206;
+    }
+
+    .social-media-stack {
+        width: 100%;
+        height: 60vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        background-image: linear-gradient(to bottom, #dddde3, #e6e5ea, #eeeef1, #f7f6f8, #ffffff);
+
+    }
+
+    .stack-header {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+    }
+
+    .stack-header h2 {
+        font-size: 30px;
+    }
+
+    .stack-header p {
+        font-size: 14px;
+        font-weight: 300;
+    }
+
+    .stack-scroll {
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    @keyframes slide {
+        from {
+            transform: translateX(0);
+        }
+
+        to {
+            transform: translateX(-100%);
+        }
+    }
+
+    .logos {
+        overflow: hidden;
+        padding: 60px 0;
+        white-space: nowrap;
+        position: relative;
+    }
+
+    .logos:before,
+    .logos:after {
+        position: absolute;
+        top: 0;
+        width: 250px;
+        height: 100%;
+        content: "";
+        z-index: 2;
+    }
+
+    .logos:before {
+        left: 0;
+    }
+
+    .logos:after {
+        right: 0;
+    }
+
+    .logos:hover .logos-slide {
+        animation-play-state: paused;
+    }
+
+    .logos-slide {
+        display: inline-block;
+        animation: 35s slide infinite linear;
+    }
+
+    .logos-slide img {
+        height: 50px;
+        margin: 0 40px;
+    }
+
+    .faq-section {
+        height: 90vh;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        display: flex;
+        background-color: #E3E3E3;
+    }
+
+    .faq-section-header {
+        width: 90%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    .faq-section-header h2 {
+        -webkit-text-stroke: 1px rgb(0, 0, 0);
         color: transparent;
         font-size: 70px;
-}
-.faq-cards{
-    display: flex;
-    width: 90%;
-    justify-content: space-between;
-    flex-direction: row;
-    align-items: center;
-}
-.faq-card{
-    position:relative;
-     overflow:hidden;
-     width: 220px;
-      height:300px;
-      display: flex;
-      cursor: pointer;
-      align-items: flex-start;
-      padding: 20px;
-      flex-direction: column;
-      background-color: white;
-      justify-content: space-evenly;
+    }
 
-}
-.card-overlay{padding:20px; position:absolute; background:rgba(0,0,0,.5);
-  left:0;
-  top: 100%;
-  width:100%;
-  height:100%;
-  z-index: 1;
-  transition:all 350ms cubic-bezier(0, 0, 0.2, 1);
-  display:flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items:flex-start;
-  background:rgb(0, 0, 0)
-}
-.faq-card:hover .card-overlay{
-  top: 0;
-}
+    .faq-cards {
+        display: flex;
+        width: 90%;
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: center;
+    }
 
-.card-overlay.left{  left:-100%;
-  top: 0;
-}
-.faq-card:hover .card-overlay.left {
-  left: 0;
-}
+    .faq-card {
+        position: relative;
+        overflow: hidden;
+        width: 220px;
+        height: 300px;
+        display: flex;
+        cursor: pointer;
+        align-items: flex-start;
+        padding: 20px;
+        flex-direction: column;
+        background-color: white;
+        justify-content: space-evenly;
 
-.card-overlay.right{  left:100%;
-  top: 0;
-}
-.faq-card:hover .card-overlay.right {
-  left: 0;
-}
-.faq-card:hover .card-overlay.top{  left:0;
-  top: -100%;
-}
-.faq-card:hover .card-overlay.top {
-left: 0;
-  top: 0;
-}
-.faq-card h1{
-    -webkit-text-stroke: 1px #FAB206;
+    }
+
+    .card-overlay {
+        padding: 20px;
+        position: absolute;
+        background: rgba(0, 0, 0, .5);
+        left: 0;
+        top: 100%;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        transition: all 350ms cubic-bezier(0, 0, 0.2, 1);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        background: rgb(0, 0, 0)
+    }
+
+    .faq-card:hover .card-overlay {
+        top: 0;
+    }
+
+    .card-overlay.left {
+        left: -100%;
+        top: 0;
+    }
+
+    .faq-card:hover .card-overlay.left {
+        left: 0;
+    }
+
+    .card-overlay.right {
+        left: 100%;
+        top: 0;
+    }
+
+    .faq-card:hover .card-overlay.right {
+        left: 0;
+    }
+
+    .faq-card:hover .card-overlay.top {
+        left: 0;
+        top: -100%;
+    }
+
+    .faq-card:hover .card-overlay.top {
+        left: 0;
+        top: 0;
+    }
+
+    .faq-card h2 {
+        -webkit-text-stroke: 1px #FAB206;
         color: transparent;
         font-size: 50px;
         font-family: "Manrope", sans-serif;
-}
-.faq-question{
-    font-size: 14px;
-    font-weight: 700;
-    font-family: "Manrope", sans-serif;
-}
-.card-overlay p{
-    font-size: 10px;
-    color: white;
-    font-family: "Manrope", sans-serif;
-}
-.faq-card i{
-    height: 30px;
-    width: 30px;
-    border: 2px solid #FAB206;
-    background-color: white;
-    color:#FAB206;
-    font-size: 12px;
-    justify-content: center;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-}
+    }
 
-@media(min-width:320px) and (max-width:480px){
-    .web-page-bg{
-        flex-direction: column;
-        height:140vh;
+    .faq-question {
+        font-size: 14px;
+        font-weight: 700;
+        font-family: "Manrope", sans-serif;
     }
-    .web-page-bg-icons{
-        flex-direction: row;
-        width: 90%;
-        height: 10%;
+
+    .card-overlay p {
+        font-size: 10px;
+        color: white;
+        font-family: "Manrope", sans-serif;
     }
-    .web-page-bg-1{
-        width: 90%;
-        height: 30%;
+
+    .faq-card i {
+        height: 30px;
+        width: 30px;
+        border: 2px solid #FAB206;
+        background-color: white;
+        color: #FAB206;
+        font-size: 12px;
+        justify-content: center;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
     }
-    .web-page-bg-1 h1{
-        font-size:25px;
+
+    @media(min-width:320px) and (max-width:480px) {
+        .web-page-bg {
+            flex-direction: column;
+            height: 140vh;
+        }
+
+        .web-page-bg-icons {
+            flex-direction: row;
+            width: 90%;
+            height: 10%;
+        }
+
+        .web-page-bg-1 {
+            width: 90%;
+            height: 30%;
+        }
+
+        .web-page-bg-1 h1 {
+            font-size: 25px;
+        }
+        .web-page-container-2 {
+            display:flex;
+
+            flex-direction:column;
+        }
+        .web-page-container-2{
+             padding-top:0;
+        }
+           .web-page-container-2 img{
+               width:100%;
+           }
+
+        #web-page-form {
+            width: 90%;
+            height: auto;
+        }
+
+        .web-page-bg-2 {
+            width: 100%;
+        }
+
+        .web-page-container-2 {
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .web-page-clients {
+            width: 90%;
+
+        }
+        .text-section{
+            display:flex;
+            flex-direction:column;
+            width:100%;
+        }
+         .text-section img {
+             width:80%;
+         }
+
+        .web-page-clients-details {
+            width: 90%;
+        }
+        .infographic{
+            display:flex;
+            flex-direction:column;
+        }
+
+         .infographic .card{
+            width:300px;
+        }
+
+        .counts-row {
+            border: hidden;
+        }
+
+        .stack-header {
+            width: 90%;
+        }
+
+        .stack-header h2 {
+            font-size: 20px;
+        }
+
+        .faq-section {
+            height: auto;
+        }
+
+        .faq-cards {
+            height: 340px;
+            overflow-x: auto;
+        }
+
+        .faq-card {
+            min-width: 220px;
+            margin-right: 10px;
+        }
+
+        .faq-section-header h2 {
+            font-size: 35px;
+            overflow-y: hidden;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .faq-card p {
+            font-size: 12px;
+        }
+
+        .card-overlay p {
+            font-size: 10px;
+        }
     }
-    #web-page-form{
-        width: 90%;
-        height: auto;
+
+    .detail-sec h2 {
+        font-size: 30px;
+        font-weight: 600;
     }
-    .web-page-bg-2{
-        width: 100%;
+
+    .detail-sec h2 {
+        font-size: 28px;
+        font-weight: 600;
+        text-align: center;
+     padding: 10px;
+     padding-bottom: 5%;
     }
-    .web-page-container-2{
-        flex-direction: column;
-        height:80vh;
+    .detail-sec p{
+        text-align: justify;
     }
-    .web-page-clients{
-        width: 90%;
-        height: 40%;
+
+    .detail-sec h3 {
+        font-size: 25px;
+        font-weight: 600;
     }
-    .web-page-clients-details{
-        width: 90%;
+
+    .detail-sec h4 {
+        font-size: 22px;
+        font-weight: 600;
     }
-    .counts-row{
-        border: hidden;
-    }
-    .stack-header{
-        width:90%;
-    }
-    .stack-header h1{
-        font-size:20px;
-    }
-    .faq-section{
-    height:auto;
-}
-.faq-cards{
-    height:340px;
-    overflow-x:auto;
-}
-.faq-card{
-    min-width:220px;
-    margin-right:10px;
-}
-.faq-section-header h1{
-    font-size:35px;
-    overflow-y:hidden;
-    margin-top:10px;
-    margin-bottom:10px;
-}
-.faq-card p{
-    font-size:12px;
-}
-.card-overlay p{
-    font-size:10px;
-}
-}
-.detail-sec h1{
-    font-size: 30px;
-    font-weight: 600;
-}
-.detail-sec h2{
-    font-size: 28px;
-    font-weight: 600;
-}
-.detail-sec h3{
-    font-size: 25px;
-    font-weight: 600;
-}
-.detail-sec h4{
-    font-size: 22px;
-    font-weight: 600;
-}
 </style>
+
 <body>
-   <div class="web-page-bg">
-    <div class="web-page-bg-icons">
+    <div class="web-page-bg">
+        <div class="web-page-bg-icons">
             <div class="icon-container">
-            <a href="https://www.facebook.com/profile.php?id=61554857870065&sfnsn=wiwspwa&mibextid=RUbZ1f"><i class="fa-brands fa-facebook"></i></a>
-        </div>
-        <div class="icon-container">
-            <a href=""><i class="fa-brands fa-x-twitter"></i></a>
-        </div>
+                <a href="https://www.facebook.com/profile.php?id=61554857870065&sfnsn=wiwspwa&mibextid=RUbZ1f"><i
+                        class="fa-brands fa-facebook"></i></a>
+            </div>
             <div class="icon-container">
-                <a href="https://www.instagram.com/delemon_technology?igsh=emF2ajg3bm00cDUz"><i class="fa-brands fa-instagram"></i></a>
-        </div>
+                <a href=""><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
             <div class="icon-container">
-                <a href="https://www.linkedin.com/company/delemon-technology/"><i class="fa-brands fa-linkedin-in"></i></a>
-        </div>
+                <a href="https://www.instagram.com/delemon_technology?igsh=emF2ajg3bm00cDUz"><i
+                        class="fa-brands fa-instagram"></i></a>
+            </div>
+            <div class="icon-container">
+                <a href="https://www.linkedin.com/company/delemon-technology/"><i
+                        class="fa-brands fa-linkedin-in"></i></a>
+            </div>
             <div class="icon-container">
                 <a href=""><i class="fa-brands fa-youtube"></i></a>
+            </div>
         </div>
-    </div>
-<div class="web-page-bg-1">
-<h1>Digital Marketing Agency <br> In Dubai</h1>
-<div class="web-page-bg-1-content">
-<p>Boost your online growth with Digital Gravity. As a leading digital <br> marketing agency in the UAE, we offer bespoke and multi-channel <br> digital marketing services to a range of big and small businesses <br> from various industries.</p>
-</div>
-</div>
-<div class="web-page-bg-2">
-           <form id="web-page-form" action="https://api.web3forms.com/submit" method="POST" onsubmit="return validatecontact(event)">
+        <div class="web-page-bg-1">
+            <h1>Digital Marketing Agency <br> In Dubai</h1>
+            <div class="web-page-bg-1-content">
+                <p>Boost your online growth with Digital Gravity. As a leading digital <br> marketing agency in the UAE,
+                    we offer bespoke and multi-channel <br> digital marketing services to a range of big and small
+                    businesses <br> from various industries.</p>
+            </div>
+        </div>
+        <div class="web-page-bg-2">
+            <form id="web-page-form" action="https://api.web3forms.com/submit" method="POST"
+                onsubmit="return validatecontact(event)">
                 <h3>Have any questions?</h3>
                 <div class="row">
                     <div class="col-md-6 mb-3">
-                                <input type="hidden" name="access_key" value="1d581977-0167-4073-8d30-f8e754b508d4">
-                                <input type="hidden" name="subject" value="Form Submission From Delemon Website">
+                        <input type="hidden" name="access_key" value="1d581977-0167-4073-8d30-f8e754b508d4">
+                        <input type="hidden" name="subject" value="Form Submission From Delemon Website">
                         <label for="">Your Name</label>
-        <input type="text" placeholder="Enter your name" id="name" name="name" class="web-page-form-input">
-        <p class="error-message" id="name-error"></p>
+                        <input type="text" placeholder="Enter your name" id="name" name="name"
+                            class="web-page-form-input">
+                        <p class="error-message" id="name-error"></p>
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="">Your Email</label>
-        <input type="text" name="email" id="email" placeholder="Enter your email" class="web-page-form-input">
-        <p class="error-message" id="email-error"></p>
+                        <input type="text" name="email" id="email" placeholder="Enter your email"
+                            class="web-page-form-input">
+                        <p class="error-message" id="email-error"></p>
                     </div>
-                    <div class="col-md-6 mb-3" >
+                    <div class="col-md-6 mb-3">
                         <label for="">Your Number</label>
-        <input type="text" name="phonenumber" id="phone" placeholder="Enter your Number" class="web-page-form-input">
-        <p class="error-message" id="phone-error"></p>
+                        <input type="text" name="phonenumber" id="phone" placeholder="Enter your Number"
+                            class="web-page-form-input">
+                        <p class="error-message" id="phone-error"></p>
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="">Your Message</label>
-        <input type="text" name="message" id="message" placeholder="Type here" class="web-page-form-input">
+                        <input type="text" name="message" id="message" placeholder="Type here"
+                            class="web-page-form-input">
                     </div>
                 </div>
-                <input type="submit" class="web-page-form-button" value="SUBMIT"/>
-                <p class="mt-4" id="form-bottom-p">if you have any RFP requirement please share with us at <span>@delemontechnology.ae</span> and if you are looking for a career related enquiry please check our Career section</p>
+                <input type="submit" class="web-page-form-button" value="SUBMIT" />
+                <p class="mt-4" id="form-bottom-p">if you have any RFP requirement please share with us at
+                    <span>@delemontechnology.ae</span> and if you are looking for a career related enquiry please check
+                    our Career section
+                </p>
             </form>
-</div>
-   </div>
-
-<div class="web-page-container-2">
-    <div class="web-page-clients">
-<h1>Our Digital Marketing Process</h1>
-<p>Instead of relying on the whims or myths, we create our strategy after studying the numbers of your industry and understanding the psychology of your target audience. Be it SMM, SEO, or PPC, we leverage our extensive experience to set your brand apart.</p>
-    </div>
-    <div class="web-page-clients-details">
-<div class="web-page-clients-counts">
-<h5>Key Highlights Our Work In Numbers.</h5>
-<div class="clients-counts">
-    <div class="counts-row">
-<span>Happy Clients</span>
-<h1>145+</h1>
-    </div>
-    <div class="counts-row">
-        <span>Projects Completed</span>
-        <h1>212+</h1>
-    </div>
-    <div class="counts-row">
-        <span>Years of experience</span>
-        <h1>15+</h1>
-    </div>
-</div>
-</div>
-    </div>
-</div>
-
-<div class="detail-sec" style="padding:0 5rem">
-<h1>The Truth About Digital Marketing Agencies in UAE: How to Choose the Right Partner</h1>
-
-<p>If I suddenly vanish after this post, you’ll know why—some shady, back-street digital marketing agencies might be plotting revenge! Maybe my story will become a Netflix documentary: “The Digital Marketing Whistleblower!” But until then, let’s focus on what really matters—helping you choose the right digital marketing partner to drive your business forward with an effective digital marketing campaign.</p>
-
-<h2>Understanding Digital Marketing</h2>
-
-<h3>Definition of Digital Marketing</h3>
-
-<p>Digital marketing is the art and science of promoting products, brands, or services through digital channels like search engines, social media platforms, email, and websites. Imagine using a toolbox filled with digital tools and techniques to reach, engage, and convert your target audience into loyal customers. This dynamic field encompasses a variety of activities, including search engine optimization (SEO), pay-per-click (PPC) advertising, content marketing, social media marketing, and email marketing. Each of these components plays a vital role in crafting a comprehensive digital marketing strategy that drives results.</p>
-
-<h3>Importance of Digital Marketing</h3>
-
-<p>In today’s digital age, digital marketing is not just an option—it’s a necessity. It allows businesses to reach a vast audience, build brand awareness, drive website traffic, and generate valuable leads and sales. One of the standout features of digital marketing is its ability to provide measurable results. This means you can track the effectiveness of your campaigns and make data-driven decisions to optimize your efforts. As more consumers turn to the internet to research and purchase products and services, staying competitive requires a robust digital marketing strategy. Embrace digital marketing to ensure your business thrives in this ever-evolving landscape.</p>
-
-<h2>Why Are Businesses Frustrated With Digital Marketing?</h2>
-
-<p>It’s a story I hear all the time:</p>
-
-
-
-
-<ul>
-<li>You hire a digital marketing agency.</li>
-
-
-
-<li>You invest thousands in SEO, Google Ads, paid advertising, or social media marketing.</li>
-
-
-
-<li>And then… nothing happens.</li>
-</ul>
-<p>The result? Frustration, wasted investment, and lost trust. Unfortunately, not all agencies are created equal. Some prioritize quick profits over results, damaging the reputation of the entire digital marketing industry in the UAE.</p>
-
-<p>To help you make smarter choices, here’s a step-by-step guide to identifying the right agency for your business.</p>
-
-<h2>1. Do Thorough Research Before Shortlisting Agencies</h2>
-
-<p>If you don’t have recommendations from trusted sources, invest time in research:</p>
-
-
-
-
-<ul>
-<li>Start with Google rankings but don’t stop there. High rankings don’t always mean quality.</li>
-
-
-
-<li>Check the agency’s LinkedIn profile:</li>
-</ul>
-<ul>
-    <li>Review the team structure and staff locations.</li>
-
-<li>
-Be cautious if only sales staff are listed in the UAE—your project might be outsourced.</li>
-</ul>
-<h3>Red Flag to Watch Out For: Lack of Search Engine Optimization Expertise</h3>
-
-<p>If an agency outsources your campaign to third-party companies overseas, you lose transparency and often end up with poor quality results.</p>
-
-
-
-<h2>2. Assess Their Interest in Your Business Goals</h2>
-
-<p>A reputable agency should start the conversation by asking:</p>
-
-
-
-<ul>
-<li>
-“What are your business goals?”</li>
-
-
-<li>
-“What results do you hope to achieve?”</li>
-</ul>
-<p>By understanding your needs, they can develop effective digital marketing strategies that align with your specific business goals, such as lead generation and brand awareness. If they immediately push a specific campaign—like SEO or Google Ads—without first understanding your needs, consider this a red flag.</p>
-<h3>
-Tip: Evaluate Their Social Media Marketing Skills</h3>
-
-<p>The right agency will focus on creating strategies aligned with your goals, rather than bragging about case studies or large clients that have no relevance to your business.</p>
-
-
-
-<h3>3. Verify Who Will Manage Your Campaign</h3>
-
-<p>Digital marketing is a service-based industry—you’re investing in the expertise of real people. To ensure accountability:</p>
-
-
-<ul>
-
-
-<li>Confirm who your Account Manager will be.</li>
-
-
-
-<li>Verify their experience, expertise, and location, and ensure they incorporate key performance indicators (KPIs) into your campaign.</li>
-
-
-
-<li>Use LinkedIn to check their role and qualifications.</li>
-</ul>
-<h3>Red Flag to Avoid:</h3>
-
-<p>Agencies that outsource their campaign management overseas often cause delays, miscommunication, and poor campaign performance.></p>
-
-
-
-<h2>4. Ask for a Clear Digital Marketing Strategy and Measurable Guarantees</h2>
-
-<p>Whether your campaign focuses on SEO, Google Ads, or social media marketing, the digital marketing strategies should be:</p>
-
-
-
-
-<ul>
-<li>Tailored to meet your specific goals.</li>
-
-
-
-<li>Based on driving relevant traffic and generating a positive ROI.</li>
-</ul>
-<p>For example:</p>
-
-
-
-<ul>
-
-<li>SEO isn’t about ranking 30 keywords—it’s about ranking for the right keywords that attract your ideal audience.</li>
-
-
-
-<li>Google Ads should focus on audience targeting to deliver qualified leads, not just clicks.</li>
-</ul>
-<h3>Pro Tip:</h3>
-
-<p>Ask the agency if they offer performance guarantees. This holds them accountable and provides peace of mind that your investment is protected.</p>
-
-
-
-<h2>Key Digital Marketing Agency Services</h2>
-
-<h3>Search Engine Optimization (SEO)</h3>
-
-<p>Search engine optimization (SEO) is the process of enhancing your website’s visibility and ranking on search engine results pages (SERPs). Think of it as making sure your site properly stands out in the crowded digital marketplace. SEO involves various techniques, including keyword research, on-page optimization, link building, and content creation. By implementing a well-planned SEO strategy, businesses can increase their online visibility, drive organic traffic to their website, and stay ahead of the competition. Effective SEO not only helps build brand awareness but also drives conversions and fuels business growth. In a world where consumers often make decisions in just a few seconds, having a strong SEO presence is crucial for success.</p>
-
-<h2>Final Thoughts: Results Matter More Than Promises</h2>
-
-<p>Choosing the right digital marketing agency can transform your business. At United SEO, we prioritize transparency, results, and long-term relationships. Are we perfect? No. But we continuously refine our strategies, including leveraging social media channels, to deliver measurable results tailored to your goals.</p>
-
-<!--<h3>Let’s Work Together</h3>-->
-
-<!--<p>If you’re ready to partner with an agency that puts your success first, get in touch today!</p>-->
-
-
-
-
-
-<!--Connect with me on LinkedIn: United SEO LinkedIn-->
-
-
-
-<!--Email me directly: Dean.thornton@useo.ae-->
-
-</div>
-
-<div class="container mb-5">
-    <div class="row ">
-        <div class="col-md-3 col-12">
-<div class="web-page-cards">
-    <div class="card-icon-div mb-3">
-        <i class="fa-solid fa-comments"></i>
-    </div>
-    <h3 class="mb-3">Planning</h3>
-    <span><i class="fa-solid fa-caret-right"></i>Business analysis</span>
-    <span><i class="fa-solid fa-caret-right"></i>Document specifications</span>
-    <span><i class="fa-solid fa-caret-right"></i>Preparing wireframes</span>
-    <span><i class="fa-solid fa-caret-right"></i>Getting client approval</span>
-</div>
-        </div>
-        <div class="col-md-3 col-12">
-            <div class="web-page-cards">
-                <div class="card-icon-div mb-3">
-                    <i class="fa-solid fa-gear"></i>
-                </div>
-                <h3 class="mb-3">Development</h3>
-                <span><i class="fa-solid fa-caret-right"></i>Coding</span>
-                <span><i class="fa-solid fa-caret-right"></i>Mockup & page layout creation</span>
-                <span><i class="fa-solid fa-caret-right"></i>Review</span>
-                <span><i class="fa-solid fa-caret-right"></i>Approval cycle</span>
-            </div>
-        </div>
-        <div class="col-md-3 col-12">
-            <div class="web-page-cards">
-                <div class="card-icon-div mb-3">
-                    <i class="fa-solid fa-laptop-code"></i>
-                </div>
-                <h3 class="mb-3">Testing</h3>
-                <span><i class="fa-solid fa-caret-right"></i>Preparing test cases</span>
-                <span><i class="fa-solid fa-caret-right"></i>Testing</span>
-                <span><i class="fa-solid fa-caret-right"></i>Review by the QA team</span>
-                <span><i class="fa-solid fa-caret-right"></i>Approval cycle</span>
-            </div>
-        </div>
-        <div class="col-md-3 col-12">
-            <div class="web-page-cards">
-                <div class="card-icon-div mb-3">
-                    <i class="fa-solid fa-rocket"></i>
-                </div>
-                <h3 class="mb-3">Deployment</h3>
-                <span><i class="fa-solid fa-caret-right"></i>Launch</span>
-                <span><i class="fa-solid fa-caret-right"></i>Opinion monitoring</span>
-                <span><i class="fa-solid fa-caret-right"></i>Maintenance</span>
-                <span><i class="fa-solid fa-caret-right"></i>Post-deployment support</span>
-            </div>
         </div>
     </div>
-</div>
 
-<div class="social-media-stack">
-    <div class="stack-header">
-<h1 class="text-center">Digital Marketing Technology Stack</h1>
-<p class="text-center">We are experts with highly innovative and cutting-edge digital technology, built exclusively around your business vision.</p>
-    </div>
-    <div class="stack-scroll">
-        <div class="logos">
-            <div class="logos-slide">
-              <img src="https://www.digitalgravity.ae/assets/svg/digital-marketing/technology-icon-13.svg" />
-              <img src="https://www.digitalgravity.ae/assets/svg/digital-marketing/technology-icon-14.svg" />
-              <img src="https://www.digitalgravity.ae/assets/svg/digital-marketing/technology-icon-15.svg" />
-              <img src="https://www.digitalgravity.ae/assets/svg/digital-marketing/technology-icon-16.svg" />
-              <img src="https://www.digitalgravity.ae/assets/svg/digital-marketing/technology-icon-17.svg" />
-              <img src="https://www.digitalgravity.ae/assets/svg/digital-marketing/technology-icon-18.svg" />
-              <img src="https://www.digitalgravity.ae/assets/svg/digital-marketing/technology-icon-19.svg" />
-              <img src="https://www.digitalgravity.ae/assets/svg/digital-marketing/technology-icon-20.svg" />
-              <img src="https://www.digitalgravity.ae/assets/svg/digital-marketing/technology-icon-11.svg" />
-              <img src="https://www.digitalgravity.ae/assets/svg/digital-marketing/technology-icon-23.svg" />
-              <img src="https://www.digitalgravity.ae/assets/svg/digital-marketing/technology-icon-10.svg" />
-            </div>
-
-            <div class="logos-slide">
-                <img src="https://www.digitalgravity.ae/assets/svg/digital-marketing/technology-icon-13.svg" />
-                <img src="https://www.digitalgravity.ae/assets/svg/digital-marketing/technology-icon-14.svg" />
-                <img src="https://www.digitalgravity.ae/assets/svg/digital-marketing/technology-icon-15.svg" />
-                <img src="https://www.digitalgravity.ae/assets/svg/digital-marketing/technology-icon-16.svg" />
-                <img src="https://www.digitalgravity.ae/assets/svg/digital-marketing/technology-icon-17.svg" />
-                <img src="https://www.digitalgravity.ae/assets/svg/digital-marketing/technology-icon-18.svg" />
-                <img src="https://www.digitalgravity.ae/assets/svg/digital-marketing/technology-icon-19.svg" />
-                <img src="https://www.digitalgravity.ae/assets/svg/digital-marketing/technology-icon-20.svg" />
-                <img src="https://www.digitalgravity.ae/assets/svg/digital-marketing/technology-icon-11.svg" />
-                <img src="https://www.digitalgravity.ae/assets/svg/digital-marketing/technology-icon-23.svg" />
-                <img src="https://www.digitalgravity.ae/assets/svg/digital-marketing/technology-icon-10.svg" />
-            </div>
-          </div>
-    </div>
-</div>
-
-<div class="faq-section">
-    <div class="faq-section-header">
-        <h1>FAQ</h1>
-    </div>
-    <div class="faq-cards">
-            <div class="faq-card">
-    <h1>1</h1>
-    <p class="faq-question">How can digital marketing benefit my business's online presence?</p>
-    <i class="fa-solid fa-arrow-right-long"></i>
-    <div class="card-overlay">
-        <h1>1</h1>
-    <p>"Digital marketing boosts online visibility through strategic approaches like SEO, social media, and content marketing. Our expertise ensures increased brand recognition and engagement. Explore our successful online presence campaigns."</p>
-            </div>
-         </div>
-         <div class="faq-card">
-            <h1>2</h1>
-            <p class="faq-question">Can you explain the role of social media marketing in promoting our brand and engaging with our audience?</p>
-            <i class="fa-solid fa-arrow-right-long"></i>
-            <div class="card-overlay left">
-                <h1>2</h1>
-            <p>"Social media marketing is crucial for brand promotion and audience engagement. Our strategies involve creating compelling content, running targeted campaigns, and analyzing metrics for optimal results. Check our social media success stories."</p>
+    <div class="web-page-container-2">
+        <div class="web-page-clients">
+            <h2>Our Digital Marketing Process</h2>
+            <p>Instead of relying on the whims or myths, we create our strategy after studying the numbers of your
+                industry and understanding the psychology of your target audience. Be it SMM, SEO, or PPC, we leverage
+                our extensive experience to set your brand apart.</p>
+        </div>
+        <div class="web-page-clients-details">
+            <div class="web-page-clients-counts">
+                <h5>Key Highlights Our Work In Numbers.</h5>
+                <div class="clients-counts">
+                    <div class="counts-row">
+                        <span>Happy Clients</span>
+                        <h2>145+</h2>
                     </div>
-                 </div>
-                 <div class="faq-card">
-                    <h1>3</h1>
-                    <p class="faq-question">What digital advertising options do you offer to drive traffic and conversions?</p>
-                    <i class="fa-solid fa-arrow-right-long"></i>
-                    <div class="card-overlay right">
-                        <h1>3</h1>
-                    <p>"We provide a range of digital advertising solutions, including pay-per-click (PPC), display ads, and social media ads. Our campaigns are tailored for maximum ROI, driving traffic and conversions. Explore our successful digital advertising campaigns."</p>
-                            </div>
-                         </div>
-                         <div class="faq-card">
-                            <h1>4</h1>
-                            <p class="faq-question"> How do you ensure our digital marketing strategy aligns with our business goals and target audience?</p>
-                            <i class="fa-solid fa-arrow-right-long"></i>
-                            <div class="card-overlay top">
-                                <h1>4</h1>
-                            <p>" Our approach begins with a thorough understanding of your business goals and target audience. We craft customized digital strategies that align with your objectives, ensuring measurable success. See our case studies for strategic alignment examples."</p>
-                                    </div>
-                                 </div>
-                                 <div class="faq-card">
-                                    <h1>5</h1>
-                                    <p class="faq-question">What analytics and reporting do you provide to measure the effectiveness of digital marketing campaigns?</p>
-                                    <i class="fa-solid fa-arrow-right-long"></i>
-                                    <div class="card-overlay left">
-                                        <h1>5</h1>
-                                    <p>" We provide detailed analytics and regular reports to measure the effectiveness of digital marketing campaigns. Metrics include website traffic, conversion rates, and engagement data, allowing for continuous optimization. Check our analytics-driven success stories."</p>
-                                            </div>
-                                         </div>
-    </div>
+                    <div class="counts-row">
+                        <span>Projects Completed</span>
+                        <h2>212+</h2>
+                    </div>
+                    <div class="counts-row">
+                        <span>Years of experience</span>
+                        <h2>15+</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-            <script>
-// document.getElementById("contact-form").addEventListener("submit", function(event) {
-//         if (!validatecontact()) {
-//             event.preventDefault();
-//         }
-//          else {
-//         $('#staticBackdrop21').modal('hide');
-//     }
-//     });
-    function validatecontact(event) {
-        event.preventDefault();
 
-        var name = document.getElementById("name").value;
-        var email = document.getElementById("email").value;
-        var phone = document.getElementById("phone").value;
-        var message = document.getElementById("message").value;
+    <div class="web-page-container-2">
+        <div class="web-page-clients-details">
+            <img
+                src="https://img.freepik.com/free-vector/female-multitasking-work_23-2148390868.jpg?ga=GA1.1.888183061.1701711285&semt=ais_hybrid" alt="The Truth About Digital Marketing Agencies in UAE">
+        </div>
+        <div class="web-page-clients">
+            <h2>The Truth About Digital Marketing Agencies in UAE: How to Choose the Right Partner</h2>
+            <p>If I suddenly vanish after this post, you’ll know why—some shady, back-street digital marketing agencies
+                might be plotting revenge! Maybe my story will become a Netflix documentary: “The Digital Marketing
+                Whistleblower!” But until then, let’s focus on what really matters—helping you choose the right digital
+                marketing partner to drive your business forward with an effective digital marketing campaign.</p>
+        </div>
 
-        var nameError = document.getElementById("name-error");
-        var emailError = document.getElementById("email-error");
-        var phoneError = document.getElementById("phone-error");
+    </div>
 
-        nameError.textContent = "";
-        emailError.textContent = "";
-        phoneError.textContent = "";
 
-        var isValid = true;
 
-        if (name === "") {
-            nameError.textContent = "This field is required";
-            isValid = false;
+    <style>
+        .infographic-container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
         }
-
-  var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            emailError.textContent = "This field is required";
-            isValid = false;
+        h2{
+            text-align: center;
         }
 
 
-        if (phone === "") {
-            phoneError.textContent = "This field is required";
-            isValid = false;
+        .infographic {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+
         }
-        if (isValid) {
-            submitForm();
+
+        .infographic p {
+            text-align: justify;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        .card {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s;
+            width: 600px;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .fa-solid {
+            padding-right: 18px;
         }
 
 
-        return false;
-    }
-     function submitForm() {
-        // Get form data
-        const form = document.getElementById('web-page-form');
-        const formData = new FormData(form);
-
-        // Send form data asynchronously
-        fetch(form.action, {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => {
-            if (response.ok) {
-alert('Thank You for Contacting Us');
-document.getElementById('web-page-form').reset();
-                // Reset form fields
-            } else {
-                // Handle error
-                console.error('Form submission failed:', response.statusText);
+        @media (max-width: 768px) {
+            .infographic {
+                flex-direction: column;
+                align-items: center;
             }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
-        event.preventDefault();
-    }
+            .detail-sec{
+                padding-right:10%;
+                padding-left:10%;
+            }
+            .text-section{
+                 padding-right:10%;
+                padding-left:10%;
+            }
 
-</script>
+        }
+    </style>
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-{% endblock %}
+    <div class="infographic-conatiner container">
+        <h2>Understanding Digital Marketing</h2>
+        <div class="infographic">
+            <div class="card">
+
+                <div class="icon">📢</div>
+
+                <h3>Definition of Digital Marketing</h3>
+                <p>Digital marketing is the art and science of promoting products, brands, or services through digital
+                    channels like search engines, social media platforms, email, and websites. Imagine using a toolbox
+                    filled with digital tools and techniques to reach, engage, and convert your target audience into
+                    loyal customers. This dynamic field encompasses a variety of activities, including search engine
+                    optimization (SEO), pay-per-click (PPC) advertising, content marketing, social media marketing, and
+                    email marketing. Each of these components plays a vital role in crafting a comprehensive digital
+                    marketing strategy that drives results.</p>
+            </div>
+            <div class="card">
+                <div class="icon">📈</div>
+                <h3>Importance of Digital Marketing</h3>
+                <p>In today’s digital age, digital marketing is not just an option—it’s a necessity. It allows
+                    businesses to reach a vast audience, build brand awareness, drive website traffic, and generate
+                    valuable leads and sales. One of the standout features of digital marketing is its ability to
+                    provide measurable results. This means you can track the effectiveness of your campaigns and make
+                    data-driven decisions to optimize your efforts. As more consumers turn to the internet to research
+                    and purchase products and services, staying competitive requires a robust digital marketing
+                    strategy. Embrace digital marketing to ensure your business thrives in this ever-evolving landscape.
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+     <div class="detail-sec container">
+
+        <h2>Why Are Businesses Frustrated With Digital Marketing?</h2>
+
+        <p>It’s a story I hear all the time:</p>
+
+
+
+
+        <p><i class="fa-solid fa-angle-right" style="color: #Fab206;"></i>You hire a digital marketing agency.</p>
+
+
+
+        <p><i class="fa-solid fa-angle-right" style="color: #Fab206;"></i>You invest thousands in SEO, Google Ads, paid advertising, or social media marketing.</p>
+
+
+
+        <p><i class="fa-solid fa-angle-right" style="color: #Fab206;"></i>And then… nothing happens.</p>
+
+        <p>The result? Frustration, wasted investment, and lost trust. Unfortunately, not all agencies are created
+            equal. Some prioritize quick profits over results, damaging the reputation of the entire digital marketing
+            industry in the UAE.</p>
+
+
+            <style>
+                .order-list h3 {
+                    color: black;
+                }
+
+                .ol-cards,
+                .ol-cards *,
+                .ol-cards *::before,
+                .ol-cards *::after {
+                    margin: 0;
+                    padding: 0;
+                    box-sizing: border-box;
+                }
+
+                .ol-cards {
+                    --ol-cards-color-bg: var(--color-bg);
+                    list-style-type: none;
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    padding: 2em;
+                    gap: 2em;
+                    counter-reset: ol-cards-counter;
+                }
+
+                .ol-cards li {
+                    display: grid;
+                    grid-template-areas:
+                        "step title"
+                        "step content";
+                    padding: 1em 2em 1em 0;
+                    row-gap: 0.5em;
+                    column-gap: 2em;
+                    box-shadow: 0.5em 0.5em 1em rgba(0, 0, 0, 0.4),
+                        inset 0.05em 0.05em rgba(255, 255, 255, 1);
+                    counter-increment: ol-cards-counter;
+                    text-align: left;
+                    background-color: var(--ol-cards-color-bg);
+                }
+
+                .ol-cards.alternate li:nth-child(even) {
+                    grid-template-areas:
+                        "title step"
+                        "content step";
+                    padding: 1em 0 1em 2em;
+                }
+
+                .ol-cards li .step {
+                    grid-area: step;
+                    display: flex;
+                    align-self: flex-start;
+                    background-color:#fab206;
+                    /* background-color: var(--ol-cards-color-accent); */
+                    border-radius: 0 50em 50em 0;
+                    padding: 10px;
+                    justify-content: flex-end;
+                    box-shadow: inset 0.25em 0.25em 0.5em rgba(0, 0, 0, 0.4),
+                        0em 0.05em rgba(255, 255, 255, 1);
+                    flex: 1;
+                    gap: 1em;
+                }
+
+                .ol-cards li .step::before {
+                    content: "0" counter(ol-cards-counter);
+                    flex: 1;
+                    align-self: center;
+                    color: #fff;
+                    /* color: var(--ol-cards-color-bg); */
+                    font-weight: bold;
+                    font-size: 2em;
+                    text-shadow: 0.025em 0.025em 0.125em rgba(0, 0, 0, 0.4);
+                }
+
+                .ol-cards.alternate li:nth-child(even) .step {
+                    border-radius: 50em 0 0 50em;
+                    flex-direction: row-reverse;
+                }
+
+                .ol-cards li .step i {
+                    color: var(--ol-cards-color-accent);
+                    width: 2em;
+                    height: 2em;
+                    font-size: 1.8em;
+                    border-radius: 50%;
+                    display: grid;
+                    place-items: center;
+                    background-color: var(--ol-cards-color-bg);
+                    box-shadow: 0.25em 0.25em 0.5em rgba(0, 0, 0, 0.4),
+                        inset 0.05em 0.05em rgba(255, 255, 255, 1);
+                }
+
+                .ol-cards li .title {
+                    grid-area: title;
+                    /* color: var(--ol-cards-color-accent); */
+                    color: #FAB206;
+                    font-weight: 600;
+                    font-size: 20px;
+                    text-transform: uppercase;
+                }
+                b{
+                    color: #313130;
+                }
+                .ol-cards li .content {
+                    grid-area: content;
+                    font-size: 0.9em;
+                }
+
+              @media only screen and (max-width: 500px) {
+            .ol-cards {
+                padding: 1em;
+            }
+
+            .ol-cards li {
+                column-gap: 0em;
+                grid-template-areas:
+                    'step title'
+                    'content content';
+                grid-template-columns: min-content auto;
+                padding: 1em 0em;
+            }
+
+            .ol-cards.alternate li:nth-child(even) {
+                column-gap: 0em;
+                grid-template-areas:
+                    'title step'
+                    'content content';
+                grid-template-columns: auto min-content;
+                padding: 1em 0em;
+            }
+
+            .ol-cards li .title {
+                padding: 0 1em;
+                align-self: center;
+                width: auto;
+
+            }
+
+            .ol-cards li .step {
+                font-size: .5em;
+            }
+
+            .ol-cards li .content {
+                padding: 0 1em;
+            }
+        }
+            </style>
+
+            <div class="container order-list">
+
+                <ol class="ol-cards alternate">
+                    <li style="--ol-cards-color-accent:#062f60">
+                        <div class="step"><i class=""></i></div>
+                        <div class="title"> Do Thorough Research Before Shortlisting Agencies</div>
+                        <div class="content">If you don’t have recommendations from trusted sources, invest time in research.
+                            Start with Google rankings, but don’t stop there—high rankings don’t always mean quality. Check the
+                            agency’s LinkedIn profile to review the team structure and staff locations. Be cautious if only
+                            sales staff are listed in the UAE, as your project might be outsourced.<br>
+                            <b>Red Flag to Watch Out For: Lack of Search Engine Optimization Expertise</b>
+                            <p>If an agency outsources your campaign to third-party companies overseas, you lose transparency
+                                and often end up with poor quality results.</p>
+                        </div>
+                    </li>
+                    <li style="--ol-cards-color-accent:#062f60">
+                        <div class="step"><i class=""></i></div>
+                        <div class="title">Assess Their Interest in Your Business Goals</div>
+                        <div class="content">A reputable agency should start the conversation by asking, “What are your business
+                            goals?” and “What results do you hope to achieve?” By understanding your needs, they can develop
+                            effective digital marketing strategies that align with your specific objectives, such as lead
+                            generation and brand awareness. If they immediately push a specific campaign—like SEO or Google
+                            Ads—without first understanding your needs, consider this a red flag.
+                            <br>
+                            <b>Tip: Evaluate Their Social Media Marketing Skills</b>
+                            <p>
+                                The right agency will focus on creating strategies aligned with your goals, rather than bragging
+                                about case studies or large clients that have no relevance to your business.
+                            </p>
+                        </div>
+                    </li>
+                    <li style="--ol-cards-color-accent:#062f60">
+                        <div class="step"><i class=""></i></div>
+                        <div class="title">Verify Who Will Manage Your Campaign</div>
+                        <div class="content">Digital marketing is a service-based industry where you’re investing in the
+                            expertise of real people, so ensuring accountability is crucial. Confirm who your Account Manager
+                            will be, verify their experience, expertise, and location, and ensure they incorporate key
+                            performance indicators (KPIs) into your campaign. Use LinkedIn to check their role and
+                            qualifications to make an informed decision.
+                            <br>
+                            <b>Red Flag to Avoid:</b>
+                            <p>Agencies that outsource their campaign management overseas often cause delays, miscommunication,
+                                and poor campaign performance.</p>
+                        </div>
+                    </li>
+                    <li style="--ol-cards-color-accent:#062f60">
+                        <div class="step"><i class=""></i></div>
+                        <div class="title">Ask for a Clear Digital Marketing Strategy and Measurable Guarantees</div>
+                        <div class="content">Whether your campaign focuses on SEO, Google Ads, or social media marketing,
+                            digital marketing strategies should be tailored to meet your specific goals and drive relevant
+                            traffic while generating a positive ROI. For example, SEO isn’t just about ranking for 30
+                            keywords—it’s about ranking for the right keywords that attract your ideal audience. Similarly,
+                            Google Ads should prioritize audience targeting to deliver qualified leads, not just clicks.
+                        <br>
+                    <b>Pro Tip: </b>
+                        <p>Ask the agency if they offer performance guarantees. This holds them accountable and provides peace of mind that your investment is protected.</p>
+                   </div>
+                    </li>
+
+            </div>
+  </div>
+       <style>
+        .text-section{
+            display: flex; align-items: center; gap: 20px;
+        }
+       </style>
+
+        <h2>Key Digital Marketing Agency Services</h2>
+        <div class="text-section container">
+            <div style="flex: 1;">
+                <h3>Search Engine Optimization (SEO)</h3>
+                <p>Search engine optimization (SEO) is the process of enhancing your website’s visibility and ranking on search
+                    engine results pages (SERPs). Think of it as making sure your site properly stands out in the crowded
+                    digital marketplace. SEO involves various techniques, including keyword research, on-page optimization, link
+                    building, and content creation. By implementing a well-planned SEO strategy, businesses can increase their
+                    online visibility, drive organic traffic to their website, and stay ahead of the competition. Effective SEO
+                    not only helps build brand awareness but also drives conversions and fuels business growth. In a world where
+                    consumers often make decisions in just a few seconds, having a strong SEO presence is crucial for success.
+                </p>
+
+                <h3>Final Thoughts: Results Matter More Than Promises</h3>
+                <p>Choosing the right digital marketing agency can transform your business. At United SEO, we prioritize
+                    transparency, results, and long-term relationships. Are we perfect? No. But we continuously refine our
+                    strategies, including leveraging social media channels, to deliver measurable results tailored to your
+                    goals.</p>
+            </div>
+            <div style="flex: 1;">
+                <!-- <img src="https://img.freepik.com/free-vector/mobile-marketing-concept-illustration_114360-2534.jpg?t=st=1741602812~exp=1741606412~hmac=7fb094ca83bf816e8ca162e31bc9476dcac289ed14a311b70a10f02361d3614d&w=900" alt="SEO Strategy" style="max-width: 100%; border-radius: 10px;"> -->
+                <img src="https://cips.org.in/wp-content/uploads/2022/06/e-Governance.png" alt="SEO Strategy" style="max-width: 100%; border-radius: 10px;">
+
+            </div>
+        </div>
+
+        <!-- <h3>Search Engine Optimization (SEO)</h3>
+
+        <p>Search engine optimization (SEO) is the process of enhancing your website’s visibility and ranking on search
+            engine results pages (SERPs). Think of it as making sure your site properly stands out in the crowded
+            digital marketplace. SEO involves various techniques, including keyword research, on-page optimization, link
+            building, and content creation. By implementing a well-planned SEO strategy, businesses can increase their
+            online visibility, drive organic traffic to their website, and stay ahead of the competition. Effective SEO
+            not only helps build brand awareness but also drives conversions and fuels business growth. In a world where
+            consumers often make decisions in just a few seconds, having a strong SEO presence is crucial for success.
+        </p>
+
+        <h2>Final Thoughts: Results Matter More Than Promises</h2>
+
+        <p>Choosing the right digital marketing agency can transform your business. At United SEO, we prioritize
+            transparency, results, and long-term relationships. Are we perfect? No. But we continuously refine our
+            strategies, including leveraging social media channels, to deliver measurable results tailored to your
+            goals.</p> -->
+
+        <!--<h3>Let’s Work Together</h3>-->
+
+        <!--<p>If you’re ready to partner with an agency that puts your success first, get in touch today!</p>-->
+
+
+
+
+
+        <!--Connect with me on LinkedIn: United SEO LinkedIn-->
+
+
+
+        <!--Email me directly: Dean.thornton@useo.ae-->
+
+    </div>
+
+    <div class="container mb-5">
+        <div class="row ">
+            <div class="col-md-3 col-12">
+                <div class="web-page-cards">
+                    <div class="card-icon-div mb-3">
+                        <i class="fa-solid fa-comments"></i>
+                    </div>
+                    <h3 class="mb-3">Planning</h3>
+                    <span><i class="fa-solid fa-caret-right"></i>Business analysis</span>
+                    <span><i class="fa-solid fa-caret-right"></i>Document specifications</span>
+                    <span><i class="fa-solid fa-caret-right"></i>Preparing wireframes</span>
+                    <span><i class="fa-solid fa-caret-right"></i>Getting client approval</span>
+                </div>
+            </div>
+            <div class="col-md-3 col-12">
+                <div class="web-page-cards">
+                    <div class="card-icon-div mb-3">
+                        <i class="fa-solid fa-gear"></i>
+                    </div>
+                    <h3 class="mb-3">Development</h3>
+                    <span><i class="fa-solid fa-caret-right"></i>Coding</span>
+                    <span><i class="fa-solid fa-caret-right"></i>Mockup & page layout creation</span>
+                    <span><i class="fa-solid fa-caret-right"></i>Review</span>
+                    <span><i class="fa-solid fa-caret-right"></i>Approval cycle</span>
+                </div>
+            </div>
+            <div class="col-md-3 col-12">
+                <div class="web-page-cards">
+                    <div class="card-icon-div mb-3">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <h3 class="mb-3">Testing</h3>
+                    <span><i class="fa-solid fa-caret-right"></i>Preparing test cases</span>
+                    <span><i class="fa-solid fa-caret-right"></i>Testing</span>
+                    <span><i class="fa-solid fa-caret-right"></i>Review by the QA team</span>
+                    <span><i class="fa-solid fa-caret-right"></i>Approval cycle</span>
+                </div>
+            </div>
+            <div class="col-md-3 col-12">
+                <div class="web-page-cards">
+                    <div class="card-icon-div mb-3">
+                        <i class="fa-solid fa-rocket"></i>
+                    </div>
+                    <h3 class="mb-3">Deployment</h3>
+                    <span><i class="fa-solid fa-caret-right"></i>Launch</span>
+                    <span><i class="fa-solid fa-caret-right"></i>Opinion monitoring</span>
+                    <span><i class="fa-solid fa-caret-right"></i>Maintenance</span>
+                    <span><i class="fa-solid fa-caret-right"></i>Post-deployment support</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="social-media-stack">
+        <div class="stack-header">
+            <h2 class="text-center">Digital Marketing Technology Stack</h2>
+            <p class="text-center">We are experts with highly innovative and cutting-edge digital technology, built
+                exclusively around your business vision.</p>
+        </div>
+        <div class="stack-scroll">
+            <div class="logos">
+                <div class="logos-slide">
+                    <img src="https://www.digitalgravity.ae/assets/svg/digital-marketing/technology-icon-13.svg" alt="logo1"/>
+                    <img src="https://www.digitalgravity.ae/assets/svg/digital-marketing/technology-icon-14.svg" alt="logo2"/>
+                    <img src="https://www.digitalgravity.ae/assets/svg/digital-marketing/technology-icon-15.svg" alt="logo3"/>
+                    <img src="https://www.digitalgravity.ae/assets/svg/digital-marketing/technology-icon-16.svg"alt="logo4" />
+                    <img src="https://www.digitalgravity.ae/assets/svg/digital-marketing/technology-icon-17.svg" alt="logo5"/>
+                    <img src="https://www.digitalgravity.ae/assets/svg/digital-marketing/technology-icon-18.svg" alt="logo6"/>
+                    <img src="https://www.digitalgravity.ae/assets/svg/digital-marketing/technology-icon-19.svg" alt="logo7"/>
+                    <img src="https://www.digitalgravity.ae/assets/svg/digital-marketing/technology-icon-20.svg"alt="logo8" />
+                    <img src="https://www.digitalgravity.ae/assets/svg/digital-marketing/technology-icon-11.svg" alt="logo9"/>
+                    <img src="https://www.digitalgravity.ae/assets/svg/digital-marketing/technology-icon-23.svg" alt="logo10"/>
+                    <img src="https://www.digitalgravity.ae/assets/svg/digital-marketing/technology-icon-10.svg"alt="logo12" />
+                </div>
+
+                <div class="logos-slide">
+                    <img src="https://www.digitalgravity.ae/assets/svg/digital-marketing/technology-icon-13.svg" alt="logo13"/>
+                    <img src="https://www.digitalgravity.ae/assets/svg/digital-marketing/technology-icon-14.svg" alt="logo14"/>
+                    <img src="https://www.digitalgravity.ae/assets/svg/digital-marketing/technology-icon-15.svg" alt="logo15"/>
+                    <img src="https://www.digitalgravity.ae/assets/svg/digital-marketing/technology-icon-16.svg" alt="logo16"/>
+                    <img src="https://www.digitalgravity.ae/assets/svg/digital-marketing/technology-icon-17.svg" alt="logo17"/>
+                    <img src="https://www.digitalgravity.ae/assets/svg/digital-marketing/technology-icon-18.svg"alt="logo18" />
+                    <img src="https://www.digitalgravity.ae/assets/svg/digital-marketing/technology-icon-19.svg" alt="logo19"/>
+                    <img src="https://www.digitalgravity.ae/assets/svg/digital-marketing/technology-icon-20.svg" alt="logo20"/>
+                    <img src="https://www.digitalgravity.ae/assets/svg/digital-marketing/technology-icon-11.svg" alt="logo21"/>
+                    <img src="https://www.digitalgravity.ae/assets/svg/digital-marketing/technology-icon-23.svg"alt="logo22" />
+                    <img src="https://www.digitalgravity.ae/assets/svg/digital-marketing/technology-icon-10.svg" alt="logo23"/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="faq-section">
+        <div class="faq-section-header">
+            <h2>FAQ</h2>
+        </div>
+        <div class="faq-cards">
+            <div class="faq-card">
+                <h2>1</h2>
+                <p class="faq-question">How can digital marketing benefit my business's online presence?</p>
+                <i class="fa-solid fa-arrow-right-long"></i>
+                <div class="card-overlay">
+                    <h2>1</h2>
+                    <p>"Digital marketing boosts online visibility through strategic approaches like SEO, social media,
+                        and content marketing. Our expertise ensures increased brand recognition and engagement. Explore
+                        our successful online presence campaigns."</p>
+                </div>
+            </div>
+            <div class="faq-card">
+                <h2>2</h2>
+                <p class="faq-question">Can you explain the role of social media marketing in promoting our brand and
+                    engaging with our audience?</p>
+                <i class="fa-solid fa-arrow-right-long"></i>
+                <div class="card-overlay left">
+                    <h2>2</h2>
+                    <p>"Social media marketing is crucial for brand promotion and audience engagement. Our strategies
+                        involve creating compelling content, running targeted campaigns, and analyzing metrics for
+                        optimal results. Check our social media success stories."</p>
+                </div>
+            </div>
+            <div class="faq-card">
+                <h2>3</h2>
+                <p class="faq-question">What digital advertising options do you offer to drive traffic and conversions?
+                </p>
+                <i class="fa-solid fa-arrow-right-long"></i>
+                <div class="card-overlay right">
+                    <h2>3</h2>
+                    <p>"We provide a range of digital advertising solutions, including pay-per-click (PPC), display ads,
+                        and social media ads. Our campaigns are tailored for maximum ROI, driving traffic and
+                        conversions. Explore our successful digital advertising campaigns."</p>
+                </div>
+            </div>
+            <div class="faq-card">
+                <h2>4</h2>
+                <p class="faq-question"> How do you ensure our digital marketing strategy aligns with our business goals
+                    and target audience?</p>
+                <i class="fa-solid fa-arrow-right-long"></i>
+                <div class="card-overlay top">
+                    <h2>4</h2>
+                    <p>" Our approach begins with a thorough understanding of your business goals and target audience.
+                        We craft customized digital strategies that align with your objectives, ensuring measurable
+                        success. See our case studies for strategic alignment examples."</p>
+                </div>
+            </div>
+            <div class="faq-card">
+                <h2>5</h2>
+                <p class="faq-question">What analytics and reporting do you provide to measure the effectiveness of
+                    digital marketing campaigns?</p>
+                <i class="fa-solid fa-arrow-right-long"></i>
+                <div class="card-overlay left">
+                    <h2>5</h2>
+                    <p>" We provide detailed analytics and regular reports to measure the effectiveness of digital
+                        marketing campaigns. Metrics include website traffic, conversion rates, and engagement data,
+                        allowing for continuous optimization. Check our analytics-driven success stories."</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // document.getElementById("contact-form").addEventListener("submit", function(event) {
+        //         if (!validatecontact()) {
+        //             event.preventDefault();
+        //         }
+        //          else {
+        //         $('#staticBackdrop21').modal('hide');
+        //     }
+        //     });
+        function validatecontact(event) {
+            event.preventDefault();
+
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var phone = document.getElementById("phone").value;
+            var message = document.getElementById("message").value;
+
+            var nameError = document.getElementById("name-error");
+            var emailError = document.getElementById("email-error");
+            var phoneError = document.getElementById("phone-error");
+
+            nameError.textContent = "";
+            emailError.textContent = "";
+            phoneError.textContent = "";
+
+            var isValid = true;
+
+            if (name === "") {
+                nameError.textContent = "This field is required";
+                isValid = false;
+            }
+
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                emailError.textContent = "This field is required";
+                isValid = false;
+            }
+
+
+            if (phone === "") {
+                phoneError.textContent = "This field is required";
+                isValid = false;
+            }
+            if (isValid) {
+                submitForm();
+            }
+
+
+            return false;
+        }
+        function submitForm() {
+            // Get form data
+            const form = document.getElementById('web-page-form');
+            const formData = new FormData(form);
+
+            // Send form data asynchronously
+            fetch(form.action, {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => {
+                    if (response.ok) {
+                        alert('Thank You for Contacting Us');
+                        document.getElementById('web-page-form').reset();
+                        // Reset form fields
+                    } else {
+                        // Handle error
+                        console.error('Form submission failed:', response.statusText);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            event.preventDefault();
+        }
+
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+    {% endblock %}
 </body>
+
 </html>

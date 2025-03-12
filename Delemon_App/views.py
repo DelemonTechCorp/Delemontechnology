@@ -12,6 +12,15 @@ def base(request):
 def home(request):
     return render(request, 'main/home.html')
 
+def robots_txt(request):
+    robots_content = """
+    User-agent: *
+    Disallow: /admin/
+    Allow: /
+    Sitemap: https://www.delemontechnology.com/sitemap.xml
+    """
+    return HttpResponse(robots_content, content_type="text/plain")
+
 def about(request):
     return render(request, 'main/about.html')
 
