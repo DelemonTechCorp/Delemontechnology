@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-45&z!*+v@&l%d&9l8kp@tf0(0q^wg4tmj!2(4nb^t^c6@7f$$7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['www.delemontechnology.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -130,9 +130,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # default static files settings for PythonAnywhere.
 # see https://help.pythonanywhere.com/pages/DjangoStaticFiles for more info
-MEDIA_ROOT = '/home/delemoninfo/mysite/media'
+MEDIA_ROOT = BASE_DIR / 'media'  # Correct
 MEDIA_URL = '/media/'
-STATIC_ROOT = '/home/delemoninfo/mysite/static'
+
+STATIC_ROOT = BASE_DIR / 'Delemon_App' / 'static'  # Corrected (Proper Path Join)
 STATIC_URL = '/static/'
 
 EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
