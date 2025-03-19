@@ -1,43 +1,7 @@
-# Ignore Python bytecode and cache
-*.py[cod]
-**/__pycache__/
-
 # Ignore environment files
 .env
 .venv/
 env/
 .env.dev
 
-# Ignore SQLite database and any other database files
-*.sqlite3
-*.db
-*.db.sqlite3
 
-# Ignore Django migrations
-**/migrations/
-**/__pycache__/
-
-# Ignore IDE/editor config files
-.vscode/
-.idea/
-
-# Ignore coverage reports
-htmlcov/
-.coverage
-
-# Ignore static and media files (if generated dynamically)
-# /staticfiles/
-# /media/
-
-# Ignore static files in Django's admin and custom directories
-/static/
-/media/
-
-# Ignore settings.py for changes but keep initially tracked
-# If settings.py is in a subdirectory, adjust the path accordingly
-mysite/settings.py
-
-# Exclude specific tracked files from future changes
-# Use if settings.py and db.sqlite3 should remain in the repository
-!/mysite/settings.py
-!/db.sqlite3
