@@ -26,10 +26,12 @@ class Blog(models.Model):
     content = models.TextField()
     author_name = models.CharField(max_length=100)
     author_social_links = models.JSONField(default=dict)
+    seo_Title = models.CharField(max_length=255,null=True)
+    seo_Description = models.TextField(null=True)
     references = models.JSONField(default=list, blank=True, help_text="List of references in the format [{'title': '...', 'url': '...'}]")
     created_at = models.DateTimeField(auto_now_add=True)
     modified_at = models.DateTimeField(auto_now=True)
-
+    
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.title)

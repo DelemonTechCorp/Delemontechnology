@@ -107,7 +107,7 @@ def blog(request):
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 
-    return render(request, 'main/blog.html', {'page_obj': page_obj})
+    return render(request, 'main/blog.html', {'page_obj': page_obj,'blogs':blogs})
 
 logger = logging.getLogger(__name__)
 
