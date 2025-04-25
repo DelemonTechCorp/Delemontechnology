@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 {% extends "base.html" %}
-<title>{{ blog.seo_Title }}</title>
+
 {% load static %}
-  {% block title %}
-    {% endblock %}
+{% block title %}{{ blog.seo_Title }}{% endblock %}
 {% block content %}
 
 <head>
