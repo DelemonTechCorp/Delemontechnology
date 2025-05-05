@@ -20,9 +20,11 @@
     </head>
 <style>
     h2{
-        font-size: 28px;
-        font-weight: 600;
         text-align: center;
+    text-transform: capitalize;
+    padding-bottom: 20px;
+    font-size: 30px;
+    font-weight: 600;
     }
     .web-page-bg {
         width: 100%;
@@ -168,7 +170,7 @@
     .web-page-container-2 {
         width: 100%;
         /*height: 80vh;*/
-        padding-top: 30px;
+        /* padding-top: 20px; */
 
         display: flex;
         flex-direction: row;
@@ -476,7 +478,12 @@
         font-size: 50px;
         font-family: "Manrope", sans-serif;
     }
-
+    p {
+    font-family: "Lato", sans-serif;
+    font-style: normal;
+ 
+  line-height: 2;
+}
     .faq-question {
         font-size: 14px;
         font-weight: 700;
@@ -625,7 +632,7 @@
         font-weight: 600;
         text-align: center;
      padding: 10px;
-     padding-bottom: 5%;
+   
     }
     .detail-sec p{
         text-align: justify;
@@ -712,7 +719,7 @@
         </div>
     </div>
 
-    <div class="web-page-container-2">
+    <div class="web-page-container-2 mt-5">
         <div class="web-page-clients">
             <h2>Our Digital Marketing Process</h2>
             <p>Instead of relying on the whims or myths, we create our strategy after studying the numbers of your
@@ -740,21 +747,6 @@
         </div>
     </div>
 
-
-    <div class="web-page-container-2">
-        <div class="web-page-clients-details">
-            <img
-                src="https://img.freepik.com/free-vector/female-multitasking-work_23-2148390868.jpg?ga=GA1.1.888183061.1701711285&semt=ais_hybrid" alt="The Truth About Digital Marketing Agencies in UAE">
-        </div>
-        <div class="web-page-clients">
-            <h2>The Truth About Digital Marketing Agencies in UAE: How to Choose the Right Partner</h2>
-            <p>If I suddenly vanish after this post, you’ll know why—some shady, back-street digital marketing agencies
-                might be plotting revenge! Maybe my story will become a Netflix documentary: “The Digital Marketing
-                Whistleblower!” But until then, let’s focus on what really matters—helping you choose the right digital
-                marketing partner to drive your business forward with an effective digital marketing campaign.</p>
-        </div>
-
-    </div>
 
 
 
@@ -807,7 +799,10 @@
             padding-right: 18px;
         }
 
-
+        .web-img img{
+            width:40%;
+            height: auto;
+        }
         @media (max-width: 768px) {
             .infographic {
                 flex-direction: column;
@@ -823,14 +818,70 @@
             }
 
         }
-    </style>
+        .web-section {
+      display: flex;
+      gap: 20px;
 
-    <div class="infographic-conatiner container">
-        <h2>Understanding Digital Marketing</h2>
+      width: 80%;
+
+    }
+
+
+    .web-img img {
+      width:100%;
+      height:auto;
+      object-fit: cover;
+      display: block;
+      border-radius: 10px;
+    }
+
+    .web-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 8px;
+      background-color: #f9f9f9;
+    }
+
+    @media (max-width: 768px) {
+      .web-section {
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 14px;
+        
+      }
+      h2{
+        text-align: center;
+        padding-left: 10px;
+        padding-right: 10px;
+        
+      }
+
+.infographic p{
+    text-align: left;
+}
+    }
+    </style>
+<div class="web-section container mt-5">
+    <div class="web-img">
+      <img src="https://img.freepik.com/free-photo/high-angle-people-working-with-laptop_23-2149636255.jpg?t=st=1746089037~exp=1746092637~hmac=446d136561c7b8fd4af29896ae85816553c1fb02b071eb8b39d09c3a1de205f8&w=1380" alt="People working with laptop">
+    </div>
+    <div class="web-content">
+      <h2>The Truth About Digital Marketing Agencies in UAE: How to Choose the Right Partner</h2>
+      <p>If I suddenly vanish after this post, you’ll know why—some shady, back-street digital marketing agencies might be plotting revenge! Maybe my story will become a Netflix documentary: “The Digital Marketing Whistleblower!” But until then, let’s focus on what really matters—helping you choose the right digital marketing partner to drive your business forward with an effective digital marketing campaign.</p>
+    </div>
+  </div>
+  
+
+    <div class="infographic-conatiner mt-5">
+        <h2 class="">Understanding Digital Marketing</h2>
         <div class="infographic">
             <div class="card">
 
-                <div class="icon">📢</div>
+          
 
                 <h3>Definition of Digital Marketing</h3>
                 <p>Digital marketing is the art and science of promoting products, brands, or services through digital
@@ -842,7 +893,7 @@
                     marketing strategy that drives results.</p>
             </div>
             <div class="card">
-                <div class="icon">📈</div>
+              
                 <h3>Importance of Digital Marketing</h3>
                 <p>In today’s digital age, digital marketing is not just an option—it’s a necessity. It allows
                     businesses to reach a vast audience, build brand awareness, drive website traffic, and generate
@@ -862,26 +913,7 @@
 
      <div class="detail-sec container">
 
-        <h2>Why Are Businesses Frustrated With Digital Marketing?</h2>
-
-        <p>It’s a story I hear all the time:</p>
-
-
-
-
-        <p><i class="fa-solid fa-angle-right" style="color: #Fab206;"></i>You hire a digital marketing agency.</p>
-
-
-
-        <p><i class="fa-solid fa-angle-right" style="color: #Fab206;"></i>You invest thousands in SEO, Google Ads, paid advertising, or social media marketing.</p>
-
-
-
-        <p><i class="fa-solid fa-angle-right" style="color: #Fab206;"></i>And then… nothing happens.</p>
-
-        <p>The result? Frustration, wasted investment, and lost trust. Unfortunately, not all agencies are created
-            equal. Some prioritize quick profits over results, damaging the reputation of the entire digital marketing
-            industry in the UAE.</p>
+        <h2 class="mt-5">Why Are Businesses Frustrated With Digital Marketing?</h2>
 
 
             <style>
@@ -904,7 +936,7 @@
                     display: flex;
                     flex-direction: column;
                     width: 100%;
-                    padding: 2em;
+             
                     gap: 2em;
                     counter-reset: ol-cards-counter;
                 }
@@ -988,12 +1020,17 @@
                 }
                 .ol-cards li .content {
                     grid-area: content;
-                    font-size: 0.9em;
+               
+                    font-family: "Lato", sans-serif;
+                    font-style: normal;
+                    font-size: 14px;
+                    line-height: 2;
+
                 }
 
               @media only screen and (max-width: 500px) {
             .ol-cards {
-                padding: 1em;
+                padding: 5px;
             }
 
             .ol-cards li {
@@ -1028,10 +1065,20 @@
             .ol-cards li .content {
                 padding: 0 1em;
             }
+            p{
+                text-align: left;
+                font-size: 14px;
+            }
+            .infographic p{
+                font-size: 14px;
+            }
+            .ol-cards li .content{
+                text-align: left;
+            }
         }
             </style>
 
-            <div class="container order-list">
+            <div class=" order-list">
 
                 <ol class="ol-cards alternate">
                     <li style="--ol-cards-color-accent:#062f60">
@@ -1096,9 +1143,15 @@
         .text-section{
             display: flex; align-items: center; gap: 20px;
         }
+        .text-section h3{
+            color: #FAB206;
+            font-weight: 600;
+            font-size: 20px;
+            text-transform: uppercase;
+        }
        </style>
 
-        <h2>Key Digital Marketing Agency Services</h2>
+        <h2 class="mt-5">Key Digital Marketing Agency Services</h2>
         <div class="text-section container">
             <div style="flex: 1;">
                 <h3>Search Engine Optimization (SEO)</h3>
