@@ -116,6 +116,7 @@ def news_detail(request, slug):
     latest_blogs = Blog.objects.order_by('-created_at')[:4]
     news_items = News.objects.filter(is_published=True).order_by('-published_date')
     related_news_items = news_items.exclude(id=news.id)[:3]
+    canonical_url = request.build_absolute_uri()
 
     if request.method == 'POST':
         # Collect form data
@@ -147,13 +148,14 @@ def news_detail(request, slug):
         'news': news,
         'related_news_items': related_news_items,
         'latest_blogs': latest_blogs,
+        ' canonical_url':canonical_url
     })
 
 
 def blog_detail(request, slug):
     blog = get_object_or_404(Blog, slug=slug)
     related_blogs = Blog.objects.exclude(id=blog.id)[:4]
-
+    canonical_url = request.build_absolute_uri()
     if request.method == 'POST':
         name = request.POST.get('name')
         mobile = request.POST.get('mobile')
@@ -188,7 +190,7 @@ def blog_detail(request, slug):
         messages.success(request, "Your contact request has been submitted successfully.")
         return redirect('blog_detail', slug=slug)
 
-    return render(request, 'main/blog_detail.html', {'blog': blog, 'related_blogs': related_blogs})
+    return render(request, 'main/blog_detail.html', {'blog': blog, 'related_blogs': related_blogs,'canonical_url':canonical_url})
 
 
 
