@@ -475,19 +475,30 @@
                         <div class="author-info">
                             <div class="author-name">AUTHOR: {{ blog.author_name }}</div>
                             <div class="social-links">
-                                <a href="https://whatsapp.com" target="_blank" style="color:green;">
+                                 <a href="https://whatsapp.com" target="_blank" style="color:green;">
                                     <i class="fa-brands fa-whatsapp"></i>
-                                </a>
-                                <a href="https://facebook.com" target="_blank" style="color:blue;">
+                                </a> 
+                                  
+                                {% if blog.author_social_links.facebook %}
+                                <a href="{{ blog.author_social_links.facebook }}" target="_blank" style="color:blue;">
                                     <i class="fa-brands fa-facebook"></i>
                                 </a>
-                                <a href="https://instagram.com" target="_blank" style="color:purple;">
+                                {% endif %}
+                                <!-- <a href="https://instagram.com"  target="_blank" style="color:purple;">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </a> -->
+                                {% if blog.author_social_links.instagram %}
+                                <a href="{{ blog.author_social_links.instagram }}" target="_blank" style="color:purple;">
                                     <i class="fa-brands fa-instagram"></i>
                                 </a>
+                                {% endif %}
                                 <a href="https://linkedin.com/shareArticle?url={{ request.build_absolute_uri }}"
                                     target="_blank" style="color:blue;">
                                     <i class="fab fa-linkedin"></i>
                                 </a>
+                                        
+                         
+                              
                             </div>
                         </div>
                     </div>
