@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'base.html' %}
+{% block title %}Branding Agency in Dubai | Brand Strategy, Identity & Guidelines{% endblock %}
+{% load static %}
+{% block content %}
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Branding</title>
+  <meta name="description" content="Delemon Technology is a branding agency in Dubai, UAE. We craft brand strategy, visual identity, messaging, and guidelines that scale across digital and print. Launch, refresh, or replatform your brand with confidence." />
+  <link rel="canonical" href="https://www.delemontechnology.com/branding-and-identity" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+</head>
+
+<style>
+  :root { --gold:#FAB206; --navy:#062f60; }
+
+  h2{
+    font-family: "Lato", sans-serif;
+    font-style: normal;
+    font-size: 30px;
+    font-weight: 600;
+    text-transform:capitalize;
+    text-align:center;
+  }
+  h3{ font-family: "Lato", sans-serif; font-style: normal; }
+
+  /* ===== HERO (same structure & styles as Advertising page) ===== */
+  .web-page-bg {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+    background-repeat: no-repeat;
+    background-image:linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)), url('{% static "img/web-bg-2.jpg" %}');
+  }
+  .web-page-bg-icons{
+    width:10%; height:45%;
+    display:flex; align-items:center; justify-content:space-evenly; flex-direction:column;
+  }
+  .web-page-bg-1{ width:50%; height:100%; display:flex; align-items:flex-start; justify-content:center; flex-direction:column; }
+  .web-page-bg-2{ width:40%; height:90%; display:flex; align-items:center; justify-content:center; }
+  .web-page-bg-1 h1{ color:#fff; font-weight:800; font-size:35px; }
+  .web-page-bg-1-content p{ color:#fff; font-weight:300; font-size:14px; }
+  .icon-container{ width:30px; height:30px; display:flex; align-items:center; justify-content:center; border-radius:50%; }
+  .icon-container i{ color:#fff; font-size:13px; }
+  .icon-container:hover{ background:#fff; border:2px solid var(--gold); transition:.3s ease; }
+  .icon-container:hover i{ color:#000; }
+
+  /* ===== FORM (same component) ===== */
+  #web-page-form{ background:#fff; width:90%; padding:8%; height:auto; border-radius:10px; box-shadow:0 10px 22px rgba(0,0,0,.15); }
+  #web-page-form h3{ font-size:20px; font-weight:700; }
+  #web-page-form label{ font-size:12px; }
+  .web-page-form-input{ border:none; outline:none; padding-left:8px; width:100%; font-size:12px; height:36px; background:#F1EFF0; border-radius:6px; }
+  .web-page-form-button{ background:#fff; color:var(--gold); outline:none; width:120px; height:34px; font-size:12px; border:2px solid var(--gold); border-radius:6px; }
+  #form-bottom-p{ font-size:12px; color:#aaa; text-align:center; }
+  #web-page-form p span{ color:var(--gold); font-weight:600; }
+
+  /* ===== VALUE SECTION (branding copy) ===== */
+  .web-page-container-2{ width:100%; display:flex; flex-direction:row; align-items:center; justify-content:space-evenly; gap:30px; }
+  .web-page-clients{ width:40%; display:flex; flex-direction:column; align-items:flex-start; justify-content:center; }
+  .web-page-clients h2{ font-size:30px; font-weight:700; color:var(--navy); text-align:left; }
+  .web-page-clients p{ font-size:15px; text-align:justify; }
+  .web-page-clients-details{ width:45%; }
+  .web-page-clients-details img{ width:100%; border-radius:10px; }
+
+  /* ===== SERVICES GRID (repurposed for branding) ===== */
+  .service-card-container{ display:grid; grid-template-columns:repeat(3,1fr); background:#f9f9f9; padding:20px; border-radius:20px; gap:20px; }
+  .services-card{ background:#fbfafae4; box-shadow:10px 10px 20px 5px rgba(0,0,0,.08); width:100%; padding:22px; border-radius:16px; }
+  .services-img{ display:flex; justify-content:center; }
+  .services-img img{ width:25%; min-width:72px; padding:18px; background-color:var(--gold); border-radius:50%;
+                     box-shadow:10px 10px 20px rgba(0,0,0,.2), 5px 5px 10px rgba(0,0,0,.1), inset 3px 3px 5px rgba(255,255,255,.2);
+                     margin-bottom:10%; }
+  .services-card h3{ text-transform:uppercase; font-weight:700; color:var(--gold); font-size:20px; margin-top:8px; text-align:center; }
+  .services-card p{ text-align:justify; font-size:14px; }
+
+  /* ===== PARTNERS (kept simple) ===== */
+  .logo.container h2{ margin-bottom:10px; }
+  .logo-img { padding:25px; display:flex; width:100%; height:auto; gap:18px; align-items:center; justify-content:center; flex-wrap:wrap; }
+  .logo-img img { height:38px; object-fit:contain; filter:grayscale(.1); }
+
+  /* ===== FAQ (same component & styles as Advertising page) ===== */
+  .faq-section{ min-height:60vh; width:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; background:#E3E3E3; padding:40px 0; }
+  .faq-section-header{ width:90%; display:flex; align-items:flex-start; }
+  .faq-section-header h2{ -webkit-text-stroke:1px #000; color:transparent; font-size:70px; }
+  .faq-cards{ display:flex; width:80%; justify-content:space-between; flex-direction:row; align-items:center; gap:16px; flex-wrap:wrap; }
+  .faq-card{ position:relative; overflow:hidden; width:220px; height:300px; display:flex; cursor:pointer; align-items:flex-start; padding:20px;
+             flex-direction:column; background:#fff; justify-content:space-evenly; border-radius:14px; }
+  .faq-card h2{ -webkit-text-stroke:1px var(--gold); color:transparent; font-size:50px; font-family:"Manrope", sans-serif; }
+  .faq-question{ font-size:14px; font-weight:700; font-family:"Manrope", sans-serif; }
+  .faq-card i{ height:30px; width:30px; border:2px solid var(--gold); background:#fff; color:var(--gold); font-size:12px; justify-content:center;
+               border-radius:50%; display:flex; align-items:center; }
+  .card-overlay{ padding:20px; position:absolute; background:rgba(0,0,0,.9); left:0; top:100%; width:100%; height:100%; z-index:1;
+                 transition:all 350ms cubic-bezier(0,0,.2,1); display:flex; flex-direction:column; justify-content:space-evenly; align-items:flex-start; color:#fff; }
+  .faq-card:hover .card-overlay{ top:0; }
+  .card-overlay p{ font-size:12px; color:#fff; }
+
+  /* ===== Responsive ===== */
+  @media (max-width: 480px){
+    .web-page-bg{ flex-direction:column; height:auto; padding:32px 0; }
+    .web-page-bg-icons{ flex-direction:row; width:90%; height:auto; gap:10px; margin-bottom:12px; }
+    .web-page-bg-1{ width:90%; height:auto; }
+    .web-page-bg-1 h1{ font-size:22px; }
+    #web-page-form{ width:90%; }
+    .web-page-bg-2{ width:100%; }
+    .web-page-container-2{ flex-direction:column; }
+    .web-page-clients{ width:90%; }
+    .web-page-clients-details{ width:100%; }
+    .faq-section{ padding:24px 0; }
+    .faq-cards{ width:92%; overflow-x:auto; }
+    .faq-section-header h2{ font-size:38px; margin:10px 0; }
+    .service-card-container{ display:flex; flex-direction:column; }
+  }
+</style>
+
+<body>
+  <!-- ========================= HERO (same section; branding copy only) ========================= -->
+  <div class="web-page-bg">
+    <div class="web-page-bg-icons">
+      <div class="icon-container"><a href="https://www.facebook.com/profile.php?id=61554857870065&sfnsn=wiwspwa&mibextid=RUbZ1f"><i class="fa-brands fa-facebook" aria-label="Facebook"></i></a></div>
+      <div class="icon-container"><a href="#"><i class="fa-brands fa-x-twitter" aria-label="X"></i></a></div>
+      <div class="icon-container"><a href="https://www.instagram.com/delemon_technology?igsh=emF2ajg3bm00cDUz"><i class="fa-brands fa-instagram" aria-label="Instagram"></i></a></div>
+      <div class="icon-container"><a href="https://www.linkedin.com/company/delemon-technology/"><i class="fa-brands fa-linkedin-in" aria-label="LinkedIn"></i></a></div>
+      <div class="icon-container"><a href="#"><i class="fa-brands fa-youtube" aria-label="YouTube"></i></a></div>
+    </div>
+
+    <div class="web-page-bg-1">
+      <h1>BRANDING AGENCY IN DUBAI, UAE</h1>
+      <div class="web-page-bg-1-content">
+        <p>We build brands people remember: strategy, visual identity, messaging, and systems that scale across web, social, print, packaging, and product.</p>
+      </div>
+    </div>
+
+    <div class="web-page-bg-2">
+      <form id="web-page-form" action="https://api.web3forms.com/submit" method="POST" onsubmit="return validatecontact(event)">
+        <h3>Get a Free Brand Audit</h3>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <input type="hidden" name="access_key" value="1d581977-0167-4073-8d30-f8e754b508d4">
+            <input type="hidden" name="subject" value="Branding Enquiry — Delemon Technology">
+            <label for="name">Your Name</label>
+            <input type="text" placeholder="Enter your name" id="name" name="name" class="web-page-form-input" />
+            <p class="error-message" id="name-error"></p>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="email">Your Email</label>
+            <input type="text" name="email" id="email" placeholder="Enter your email" class="web-page-form-input" />
+            <p class="error-message" id="email-error"></p>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="phone">Your Number</label>
+            <input type="text" name="phonenumber" id="phone" placeholder="Enter your number" class="web-page-form-input" />
+            <p class="error-message" id="phone-error"></p>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="budget">Branding Budget (AED)</label>
+            <input type="text" name="budget" id="budget" placeholder="e.g., 25,000" class="web-page-form-input" />
+          </div>
+          <div class="col-12 mb-3">
+            <label for="message">Your Need</label>
+            <input type="text" name="message" id="message" placeholder="Brand refresh, identity, guidelines, website, packaging…" class="web-page-form-input" />
+          </div>
+        </div>
+        <input type="submit" class="web-page-form-button" value="SUBMIT" />
+        <p class="mt-4" id="form-bottom-p">
+          For RFPs email <span>info@delemontechnology.ae</span>. For careers, please check our Careers section.
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <!-- ========================= ABOUT / VALUE (branding content) ========================= -->
+  <div class="web-page-container-2 py-5">
+    <div class="web-page-clients">
+      <h2>Branding & Identity — Delemon Technology</h2>
+      <p>
+        We help ambitious companies in the UAE move from “logo-first” to “brand-first.” Our team shapes <strong>brand strategy</strong>, <strong>visual identity</strong>, and <strong>verbal systems</strong> that align your product, marketing, and culture.
+      </p>
+      <p>
+        From naming to launch, we create flexible, scalable brand systems—color, typography, grids, components, and content rules—so your team can produce on-brand assets fast across web, social, and print.
+      </p>
+    </div>
+    <div class="web-page-clients-details">
+      <img src="https://img.freepik.com/free-vector/flat-design-marketing-data-concept_23-2149158695.jpg" alt="Branding & Identity in Dubai">
+    </div>
+  </div>
+
+  <!-- ========================= BRANDING SERVICES ========================= -->
+  <div class="container mb-5 mt-3">
+    <h2>Our Branding Services</h2>
+    <div class="service-card-container mt-3">
+
+      <div class="services-card">
+        <div class="services-img">
+          <img src="https://cdn-icons-png.flaticon.com/128/1250/1250670.png" alt="Brand Strategy">
+        </div>
+        <h3>Brand Strategy</h3>
+        <p>Positioning, audience personas, competitive landscape, value proposition, and brand architecture that make your story clear and defensible.</p>
+      </div>
+
+      <div class="services-card">
+        <div class="services-img">
+          <img src="https://cdn-icons-png.flaticon.com/128/1829/1829586.png" alt="Visual Identity & Logo">
+        </div>
+        <h3>Identity & Logo</h3>
+        <p>Distinctive logos, color systems, typography, and component libraries—built for legibility, motion, and dark/light modes.</p>
+      </div>
+
+      <div class="services-card">
+        <div class="services-img">
+          <img src="https://cdn-icons-png.flaticon.com/128/1829/1829439.png" alt="Messaging & Voice">
+        </div>
+        <h3>Messaging & Voice</h3>
+        <p>Taglines, brand voice, narrative pillars, and copy frameworks so every touchpoint sounds like you—consistently.</p>
+      </div>
+
+      <div class="services-card">
+        <div class="services-img">
+          <img src="https://cdn-icons-png.flaticon.com/128/2921/2921226.png" alt="Brand Guidelines">
+        </div>
+        <h3>Brand Guidelines</h3>
+        <p>Practical rules: usage, spacing, color ratios, imagery, iconography, motion, and accessibility standards your team can use daily.</p>
+      </div>
+
+      <div class="services-card">
+        <div class="services-img">
+          <img src="https://cdn-icons-png.flaticon.com/128/1829/1829436.png" alt="Digital Brand">
+        </div>
+        <h3>Digital Brand</h3>
+        <p>Website & product UI branding, component tokens, and pattern libraries for consistent, scalable digital experiences.</p>
+      </div>
+
+      <div class="services-card">
+        <div class="services-img">
+          <img src="https://cdn-icons-png.flaticon.com/128/3050/3050525.png" alt="Collateral & Templates">
+        </div>
+        <h3>Collateral & Kits</h3>
+        <p>Sales decks, stationery, social templates, email signatures, and pitch materials—in editable formats for your team.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========================= PARTNERS / TOOLS ========================= -->
+  {% comment %} <div class="logo container">
+    <h2>Tools & Platforms</h2>
+    <div class="logo-img mb-5">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg" alt="Figma">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Adobe_Creative_Cloud_rainbow_icon.svg" alt="Adobe CC">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2d/Notion-logo.svg" alt="Notion">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Google_Fonts_logo.svg" alt="Google Fonts">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Webflow_logo.svg" alt="Webflow">
+    </div>
+  </div> {% endcomment %}
+
+  <!-- ========================= FAQ (same component; branding questions) ========================= -->
+  <div class="faq-section">
+    <div class="faq-section-header">
+      <h2>FAQ</h2>
+    </div>
+
+    <div class="faq-cards">
+      <div class="faq-card">
+        <h2>1</h2>
+        <p class="faq-question">What’s included in a brand identity?</p>
+        <i class="fa-solid fa-arrow-right-long"></i>
+        <div class="card-overlay">
+          <h2>1</h2>
+          <p>Logo suite, color system, typography, iconography, grid, imagery style, and usage rules—delivered with practical templates your team can reuse.</p>
+        </div>
+      </div>
+
+      <div class="faq-card">
+        <h2>2</h2>
+        <p class="faq-question">How long does a branding project take?</p>
+        <i class="fa-solid fa-arrow-right-long"></i>
+        <div class="card-overlay">
+          <h2>2</h2>
+          <p>Typical timelines: 2–3 weeks for a refresh; 4–6 weeks for full strategy + identity + guidelines, depending on scope and feedback cycles.</p>
+        </div>
+      </div>
+
+      <div class="faq-card">
+        <h2>3</h2>
+        <p class="faq-question">Do you provide editable files?</p>
+        <i class="fa-solid fa-arrow-right-long"></i>
+        <div class="card-overlay">
+          <h2>3</h2>
+          <p>Yes—Figma or Adobe source files plus export presets for web/print. We also include a brand kit your team can use instantly.</p>
+        </div>
+      </div>
+
+      <div class="faq-card">
+        <h2>4</h2>
+        <p class="faq-question">Can you roll out the brand across channels?</p>
+        <i class="fa-solid fa-arrow-right-long"></i>
+        <div class="card-overlay">
+          <h2>4</h2>
+          <p>We extend identity to website UI, social kits, sales decks, packaging, signage, and brand launch campaigns—end-to-end.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================= SCRIPTS (same validation) ========================= -->
+  <script>
+    function validatecontact(event){
+      event.preventDefault();
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+
+      const nameError = document.getElementById("name-error");
+      const emailError = document.getElementById("email-error");
+      const phoneError = document.getElementById("phone-error");
+
+      nameError.textContent = ""; emailError.textContent = ""; phoneError.textContent = "";
+      let isValid = true;
+
+      if(!name){ nameError.textContent = "This field is required"; isValid = false; }
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if(!emailRegex.test(email)){ emailError.textContent = "Enter a valid email"; isValid = false; }
+      if(!phone){ phoneError.textContent = "This field is required"; isValid = false; }
+
+      if(isValid){ submitForm(); }
+      return false;
+    }
+    function submitForm(){
+      const form = document.getElementById('web-page-form');
+      const formData = new FormData(form);
+      fetch(form.action, { method:'POST', body:formData })
+        .then(res => {
+          if(res.ok){
+            alert('Thanks! We’ll share your brand audit soon.');
+            form.reset();
+          }else{
+            console.error('Form submission failed:', res.statusText);
+          }
+        })
+        .catch(err => console.error('Error:', err));
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+  {% endblock %}
+</body>
+</html>

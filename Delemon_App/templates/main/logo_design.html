@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'base.html' %}
+{% block title %}Logo Design Agency in Dubai | Custom Brand Identity | Delemon Technology{% endblock %}
+{% load static %}
+{% block content %}
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Logo Design</title>
+  <meta name="description" content="Build a distinctive brand identity with Delemon Technology’s professional logo design services in Dubai. Strategy-led concepts, multiple explorations, brand guidelines, and fast delivery." />
+  <link rel="canonical" href="https://www.delemontechnology.com/logo-design-services" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<style>
+/* ==================== THEME ==================== */
+:root{
+  --accent:#FAB206;
+  --ink:#111111;
+  --muted:#C1C1C1;
+  --bg:#F6F6F6;
+}
+*{box-sizing:border-box}
+
+/* ==================== HERO ==================== */
+.web-page-bg{
+  width:100%;
+  height:100vh;
+  background-size:cover;
+  display:flex;
+  align-items:center;
+  justify-content:space-evenly;
+  flex-direction:row;
+  background-repeat:no-repeat;
+  /* Use your existing hero image or replace with a logo-themed one */
+  background-image:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),url('{% static "img/web-bg-2.jpg" %}');
+}
+.web-page-bg-1{width:50%;height:100%;display:flex;align-items:flex-start;justify-content:center;flex-direction:column;}
+.web-page-bg-2{width:40%;height:90%;display:flex;align-items:center;justify-content:center;}
+.web-page-bg-icons{width:10%;height:45%;display:flex;align-items:center;justify-content:space-evenly;flex-direction:column;}
+.web-page-bg-1 h1{color:#fff;font-weight:800;font-size:36px;letter-spacing:.2px;margin-bottom:12px}
+.web-page-bg-1 h1 span{color:var(--accent)}
+.web-page-bg-1-content p{color:#fff;font-weight:300;font-size:14px;max-width:680px}
+.web-page-bg-1-badges{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+.badge-chip{border:1px solid rgba(255,255,255,.25);color:#fff;font-size:12px;padding:6px 10px;border-radius:999px;backdrop-filter:saturate(120%) blur(2px)}
+
+/* Social icons */
+.icon-container{width:32px;height:32px;display:flex;align-items:center;justify-content:center;background:none;border-radius:50%;border:1px solid rgba(255,255,255,.25)}
+.icon-container i{color:#fff;font-size:13px;}
+.icon-container:hover{background-color:#fff;border:2px solid var(--accent);transition:.3s ease;}
+.icon-container:hover i{color:#000;}
+
+/* ==================== FORM ==================== */
+#web-page-form{background:#fff;width:90%;padding:8%;height:auto;box-shadow:0 10px 30px rgba(0,0,0,.08);border-radius:12px}
+#web-page-form h3{font-size:20px;font-weight:800;margin-bottom:14px}
+#web-page-form label{font-size:12px;margin-bottom:6px}
+.web-page-form-input{border:hidden;outline:none;padding-left:10px;width:100%;font-size:12px;height:38px;background-color:#F1EFF0;border-radius:8px}
+.web-page-form-button{background:#fff;color:var(--accent);outline:none;width:120px;height:36px;font-size:12px;border:2px solid var(--accent);border-radius:8px;font-weight:700;letter-spacing:.4px}
+.web-page-form-button:hover{background:var(--accent);color:#000}
+#form-bottom-p{font-size:12px;color:#aaa;text-align:center;margin-bottom:0}
+#web-page-form p span{color:var(--accent);font-weight:700}
+.error-message{color:#d20000;font-size:12px;margin:4px 0 0}
+
+/* ==================== ABOUT / NUMBERS ==================== */
+.web-page-container-2{width:100%;min-height:80vh;display:flex;flex-direction:row;align-items:center;justify-content:space-evenly;gap:30px;padding:60px 0}
+.web-page-clients{min-height:70%;width:40%;display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
+.web-page-clients h2{font-size:30px;font-weight:700}
+.web-page-clients p{font-size:14px;color:#333}
+.web-page-clients-details{width:45%}
+.web-page-clients-counts{width:100%;min-height:180px;display:flex;padding:20px;flex-direction:column;align-items:center;justify-content:space-evenly;background-color:var(--bg);border-radius:12px;border:1px solid #eee}
+.web-page-clients-counts h5{font-size:18px;font-weight:700}
+.clients-counts{width:100%;display:flex;flex-direction:row;align-items:center;justify-content:space-evenly}
+.counts-row{display:flex;flex-direction:column;align-items:center;height:80px;width:30%;border-right:1px solid #dfdfdf;justify-content:space-between}
+.counts-row:last-child{border-right:none}
+.counts-row span{font-size:13px;font-weight:400;color:#666}
+.counts-row h2{font-size:34px;font-weight:900;color:var(--accent);margin:0}
+
+/* ==================== PROCESS CARDS ==================== */
+.web-page-cards{height:auto;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:14px;border-radius:12px;cursor:pointer;transition:.25s ease;border:1px solid transparent}
+.card-icon-div{width:60px;height:60px;border-radius:12px;display:flex;align-items:center;justify-content:center;background-color:var(--muted)}
+.card-icon-div i{font-size:20px;color:#fff}
+.web-page-cards h2{font-size:20px;margin:10px 0 8px}
+.web-page-cards span{display:flex;align-items:center;font-size:13px;color:#333;margin:3px 0}
+.web-page-cards span i{margin-right:8px;color:var(--muted);font-size:16px}
+.web-page-cards:hover{background-color:#fff;border:1px solid #eee;box-shadow:0 10px 18px rgba(0,0,0,.06)}
+.web-page-cards:hover .card-icon-div{background-color:var(--accent)}
+.web-page-cards:hover span i{color:var(--accent)}
+
+/* ==================== FAQ ==================== */
+.faq-section{min-height:90vh;width:100%;flex-direction:column;align-items:center;justify-content:space-evenly;display:flex;background-color:#E3E3E3;padding:50px 0}
+.faq-section-header{width:90%;display:flex;align-items:flex-start;justify-content:flex-start}
+.faq-section-header h2{-webkit-text-stroke:1px #000;color:transparent;font-size:70px;letter-spacing:2px;margin:0}
+.faq-cards{display:flex;width:90%;justify-content:space-between;flex-direction:row;align-items:center;gap:16px}
+.faq-card{position:relative;overflow:hidden;width:220px;height:300px;display:flex;cursor:pointer;align-items:flex-start;padding:20px;flex-direction:column;background-color:#fff;justify-content:space-evenly;border-radius:14px;border:1px solid #eee}
+.card-overlay{padding:20px;position:absolute;left:0;top:100%;width:100%;height:100%;z-index:1;transition:all 350ms cubic-bezier(0,0,0.2,1);display:flex;flex-direction:column;justify-content:space-evenly;align-items:flex-start;background:#000}
+.faq-card:hover .card-overlay{top:0}
+.card-overlay.left{left:-100%;top:0}
+.faq-card:hover .card-overlay.left{left:0}
+.card-overlay.right{left:100%;top:0}
+.faq-card:hover .card-overlay.right{left:0}
+.faq-card:hover .card-overlay.top{left:0;top:-100%}
+.faq-card:hover .card-overlay.top{left:0;top:0}
+.faq-card h2{-webkit-text-stroke:1px var(--accent);color:transparent;font-size:50px;font-family:"Manrope",sans-serif;margin:0}
+.faq-question{font-size:14px;font-weight:800;font-family:"Manrope",sans-serif;color:#111}
+.card-overlay p{font-size:11px;color:#fff;font-family:"Manrope",sans-serif;line-height:1.55}
+.faq-card i{height:30px;width:30px;border:2px solid var(--accent);background-color:#fff;color:var(--accent);font-size:12px;justify-content:center;border-radius:50%;display:flex;align-items:center}
+
+/* ==================== RESPONSIVE ==================== */
+@media(min-width:320px) and (max-width:480px){
+  .web-page-bg{flex-direction:column;height:auto;padding:40px 0}
+  .web-page-bg-icons{flex-direction:row;width:90%;height:10%;gap:10px;margin-bottom:10px}
+  .web-page-bg-1{width:90%;height:auto;margin-bottom:16px}
+  .web-page-bg-1 h1{font-size:22px}
+  #web-page-form{width:90%;height:auto}
+  .web-page-bg-2{width:100%}
+
+  .web-page-container-2{flex-direction:column;min-height:auto;padding:40px 0}
+  .web-page-clients{width:90%;min-height:auto}
+  .web-page-clients h2{font-size:22px}
+  .web-page-clients-details{width:90%}
+  .counts-row{border:none}
+
+  .faq-section{min-height:auto}
+  .faq-cards{height:340px;overflow-x:auto}
+  .faq-card{min-width:220px;margin-right:10px}
+  .faq-section-header h2{font-size:36px;overflow-y:hidden;margin-top:10px;margin-bottom:10px}
+  .card-overlay p{font-size:11px}
+}
+</style>
+
+<body>
+  <!-- ============== HERO ============== -->
+  <div class="web-page-bg">
+    <!-- Socials -->
+    <div class="web-page-bg-icons">
+      <div class="icon-container">
+        <a href="https://www.facebook.com/profile.php?id=61554857870065&sfnsn=wiwspwa&mibextid=RUbZ1f" aria-label="Facebook">
+          <i class="fa-brands fa-facebook"></i>
+        </a>
+      </div>
+      <div class="icon-container">
+        <a href="#" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+      </div>
+      <div class="icon-container">
+        <a href="https://www.instagram.com/delemon_technology?igsh=emF2ajg3bm00cDUz" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+      <div class="icon-container">
+        <a href="https://www.linkedin.com/company/delemon-technology/" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+      </div>
+      <div class="icon-container">
+        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </div>
+
+    <!-- Copy -->
+    <div class="web-page-bg-1">
+      <h1>Logo Design <span>Services</span> in Dubai</h1>
+      <div class="web-page-bg-1-content">
+        <p>
+          Launch a brand that looks premium and feels unmistakably yours. At Delemon Technology,
+          we fuse strategy, typography, and visual systems to deliver timeless logos, complete
+          identity kits, and brand guidelines—ready for web, print, and product.
+        </p>
+      </div>
+      <div class="web-page-bg-1-badges">
+        <span class="badge-chip">Strategy-led Concepts</span>
+        <span class="badge-chip">3–5 Initial Directions</span>
+        <span class="badge-chip">Unlimited Tweaks (Fair-Use)</span>
+        <span class="badge-chip">Brand Guidelines PDF</span>
+        <span class="badge-chip">Fast Turnarounds</span>
+      </div>
+    </div>
+
+    <!-- Lead Form -->
+    <div class="web-page-bg-2">
+      <form id="web-page-form" action="https://api.web3forms.com/submit" method="POST" onsubmit="return validatecontact(event)">
+        <h3>Have any questions?</h3>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <input type="hidden" name="access_key" value="1d581977-0167-4073-8d30-f8e754b508d4">
+            <input type="hidden" name="subject" value="Logo Design Enquiry – Delemon Technology">
+            <input type="hidden" name="service" value="Logo Design & Brand Identity">
+            <label>Your Name</label>
+            <input type="text" placeholder="Enter your name" id="name" name="name" class="web-page-form-input" />
+            <p class="error-message" id="name-error"></p>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label>Your Email</label>
+            <input type="text" name="email" id="email" placeholder="Enter your email" class="web-page-form-input" />
+            <p class="error-message" id="email-error"></p>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label>Your Number</label>
+            <input type="text" name="phonenumber" id="phone" placeholder="Enter your number" class="web-page-form-input" />
+            <p class="error-message" id="phone-error"></p>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label>Project Brief</label>
+            <input type="text" name="message" id="message" placeholder="e.g., New logo + brand kit for real estate brand" class="web-page-form-input" />
+          </div>
+        </div>
+        <input type="submit" class="web-page-form-button" value="SUBMIT" />
+        <p class="mt-4" id="form-bottom-p">
+          If you have an RFP, please share it at <span>@delemontechnology.ae</span>. For career enquiries, check our Careers section.
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <!-- ============== ABOUT / NUMBERS ============== -->
+  <div class="web-page-container-2">
+    <div class="web-page-clients">
+      <h2>Build a Brand Mark That Wins Trust & Attention</h2>
+      <p>
+        Your logo is the face of your company. We design marks that work beautifully in every
+        context—from tiny favicons to giant billboards. Get well-crafted symbol/wordmark options,
+        refined typography, color systems, and a practical guideline PDF so your team (and vendors)
+        stay perfectly on brand, always.
+      </p>
+      <p class="mt-2">
+        Add-ons include stationery suites, social profile kits, pitch templates, and website UI
+        starters—so you can launch with momentum.
+      </p>
+    </div>
+
+    <div class="web-page-clients-details">
+      <div class="web-page-clients-counts">
+        <h5>Key Highlights — Our Work in Numbers</h5>
+        <div class="clients-counts">
+          <div class="counts-row">
+            <span>Logos Delivered</span>
+            <h2>250+</h2>
+          </div>
+          <div class="counts-row">
+            <span>Industries Served</span>
+            <h2>30+</h2>
+          </div>
+          <div class="counts-row">
+            <span>Years of experience</span>
+            <h2>15+</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============== PROCESS ============== -->
+  <div class="container mb-5">
+    <div class="row">
+      <div class="col-md-3 col-12">
+        <div class="web-page-cards">
+          <div class="card-icon-div mb-3">
+            <i class="fa-solid fa-comments"></i>
+          </div>
+          <h2 class="mb-3">Discovery</h2>
+          <span><i class="fa-solid fa-caret-right"></i>Brand audit & goals</span>
+          <span><i class="fa-solid fa-caret-right"></i>Audience & use-cases</span>
+          <span><i class="fa-solid fa-caret-right"></i>Moodboard alignment</span>
+          <span><i class="fa-solid fa-caret-right"></i>Scope & timelines</span>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-12">
+        <div class="web-page-cards">
+          <div class="card-icon-div mb-3">
+            <i class="fa-solid fa-gear"></i>
+          </div>
+          <h2 class="mb-3">Concepting</h2>
+          <span><i class="fa-solid fa-caret-right"></i>3–5 logo directions</span>
+          <span><i class="fa-solid fa-caret-right"></i>Typography pairing</span>
+          <span><i class="fa-solid fa-caret-right"></i>Color explorations</span>
+          <span><i class="fa-solid fa-caret-right"></i>Use-case previews</span>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-12">
+        <div class="web-page-cards">
+          <div class="card-icon-div mb-3">
+            <i class="fa-solid fa-laptop-code"></i>
+          </div>
+          <h2 class="mb-3">Refinement</h2>
+          <span><i class="fa-solid fa-caret-right"></i>Precise vector crafting</span>
+          <span><i class="fa-solid fa-caret-right"></i>Grids & proportions</span>
+          <span><i class="fa-solid fa-caret-right"></i>Icon & wordmark variants</span>
+          <span><i class="fa-solid fa-caret-right"></i>Accessibility checks</span>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-12">
+        <div class="web-page-cards">
+          <div class="card-icon-div mb-3">
+            <i class="fa-solid fa-rocket"></i>
+          </div>
+          <h2 class="mb-3">Delivery</h2>
+          <span><i class="fa-solid fa-caret-right"></i>Logo pack (AI, SVG, PNG, PDF)</span>
+          <span><i class="fa-solid fa-caret-right"></i>Brand guideline PDF</span>
+          <span><i class="fa-solid fa-caret-right"></i>Social & print-ready files</span>
+          <span><i class="fa-solid fa-caret-right"></i>Onboarding support</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============== FAQ ============== -->
+  <div class="faq-section">
+    <div class="faq-section-header">
+      <h2>FAQ</h2>
+    </div>
+
+    <div class="faq-cards">
+      <div class="faq-card">
+        <h2>1</h2>
+        <p class="faq-question">How many logo concepts do I receive and how are rounds handled?</p>
+        <i class="fa-solid fa-arrow-right-long"></i>
+        <div class="card-overlay">
+          <h2>1</h2>
+          <p>
+            We usually present 3–5 strategic directions. You pick a favorite and we refine it
+            through focused rounds (fair-use unlimited tweaks). The outcome is a polished master
+            logo with variants for every medium.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-card">
+        <h2>2</h2>
+        <p class="faq-question">What file formats and guideline assets are included?</p>
+        <i class="fa-solid fa-arrow-right-long"></i>
+        <div class="card-overlay left">
+          <h2>2</h2>
+          <p>
+            You’ll receive scalable vectors (AI, SVG, PDF) and web-ready PNGs, plus a brand
+            guideline PDF covering logo usage, safe areas, colors, typography, and do’s/don’ts.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-card">
+        <h2>3</h2>
+        <p class="faq-question">How fast can we launch a new logo and identity kit?</p>
+        <i class="fa-solid fa-arrow-right-long"></i>
+        <div class="card-overlay right">
+          <h2>3</h2>
+          <p>
+            Typical timelines run 7–14 days depending on scope and feedback cadence. Need it
+            sooner? Ask about our accelerated sprints for time-sensitive launches.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-card">
+        <h2>4</h2>
+        <p class="faq-question">Can you adapt the logo across stationery and social profiles?</p>
+        <i class="fa-solid fa-arrow-right-long"></i>
+        <div class="card-overlay top">
+          <h2>4</h2>
+          <p>
+            Yes. We design business cards, letterheads, email signatures, social avatars, cover
+            banners, and presentation templates so you look consistent everywhere from day one.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-card">
+        <h2>5</h2>
+        <p class="faq-question">Do you offer naming, tagline writing, or brand voice support?</p>
+        <i class="fa-solid fa-arrow-right-long"></i>
+        <div class="card-overlay left">
+          <h2>5</h2>
+          <p>
+            Absolutely. Our strategy team can support naming frameworks, taglines, and tone-of-voice
+            guides to align your visuals with a compelling verbal identity.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============== SCRIPTS ============== -->
+  <script>
+    function validatecontact(event) {
+      event.preventDefault();
+
+      var name = document.getElementById("name").value.trim();
+      var email = document.getElementById("email").value.trim();
+      var phone = document.getElementById("phone").value.trim();
+
+      var nameError = document.getElementById("name-error");
+      var emailError = document.getElementById("email-error");
+      var phoneError = document.getElementById("phone-error");
+
+      nameError.textContent = "";
+      emailError.textContent = "";
+      phoneError.textContent = "";
+
+      var isValid = true;
+
+      if (name === "") {
+        nameError.textContent = "This field is required";
+        isValid = false;
+      }
+
+      var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        emailError.textContent = "Enter a valid email";
+        isValid = false;
+      }
+
+      if (phone === "") {
+        phoneError.textContent = "This field is required";
+        isValid = false;
+      }
+
+      if (isValid) {
+        submitForm();
+      }
+      return false;
+    }
+
+    function submitForm() {
+      const form = document.getElementById('web-page-form');
+      const formData = new FormData(form);
+
+      fetch(form.action, {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => {
+        if (response.ok) {
+          alert('Thank you! We will get back to you shortly.');
+          form.reset();
+        } else {
+          console.error('Form submission failed:', response.statusText);
+          alert('Something went wrong. Please try again.');
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('Network error. Please try again.');
+      });
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'base.html' %}
+{% block title %}Print Design Company in Dubai | Brochures, Flyers & OOH{% endblock %}
+{% load static %}
+{% block content %}
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Print Design</title>
+  <meta name="description" content="Delemon Technology delivers premium print design in Dubai—brochures, flyers, catalogs, stationery, packaging, signage & OOH. CMYK-ready files with bleed and vendor coordination." />
+  <link rel="canonical" href="https://www.delemontechnology.com/print-design" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+</head>
+
+<style>
+:root{ --accent:#FAB206; --ink:#111; --muted:#C1C1C1; --bg:#F6F6F6; }
+*{box-sizing:border-box}
+
+/* HERO */
+.hero{
+  width:100%; min-height:100vh; display:flex; align-items:center; justify-content:space-evenly;
+  background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)), url('{% static "img/print-bg.jpg" %}') center/cover no-repeat;
+}
+.hero-col{display:flex; flex-direction:column; justify-content:center}
+.hero-left{width:50%; min-height:480px}
+.hero-right{width:40%; display:flex; align-items:center; justify-content:center}
+.hero h1{color:#fff; font-weight:900; font-size:36px; margin-bottom:10px}
+.hero h1 span{color:var(--accent)}
+.hero p{color:#fff; font-weight:300; font-size:14px; max-width:760px}
+.hero-badges{display:flex; gap:10px; margin-top:14px; flex-wrap:wrap}
+.badge-chip{border:1px solid rgba(255,255,255,.25); color:#fff; font-size:12px; padding:6px 10px; border-radius:999px}
+.social-rail{width:10%; height:45%; display:flex; flex-direction:column; align-items:center; justify-content:space-evenly}
+.icon{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.25)}
+.icon i{color:#fff; font-size:13px}
+.icon:hover{background:#fff; border:2px solid var(--accent)} .icon:hover i{color:#000}
+
+/* FORM */
+.form-card{background:#fff; width:90%; padding:8%; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,.08)}
+.form-card h3{font-size:20px; font-weight:800; margin-bottom:12px}
+label{font-size:12px; margin-bottom:6px}
+.input{width:100%; height:38px; background:#F1EFF0; border:none; outline:none; border-radius:8px; font-size:12px; padding:0 10px}
+.submit-btn{background:#fff; color:var(--accent); border:2px solid var(--accent); border-radius:8px; height:36px; width:160px; font-size:12px; font-weight:700}
+.submit-btn:hover{background:var(--accent); color:#000}
+.small-muted{font-size:12px; color:#aaa; text-align:center}
+.small-muted span{color:var(--accent); font-weight:700}
+.error{color:#d20000; font-size:12px; margin-top:4px}
+
+/* COMMON SECTIONS */
+.section{padding:60px 0}
+
+/* KPI */
+.kpis{background:var(--bg); border:1px solid #eee; border-radius:12px; padding:22px}
+.kpi-grid{display:flex; gap:20px; justify-content:space-between}
+.kpi{flex:1; text-align:center; border-right:1px solid #e6e6e6}
+.kpi:last-child{border-right:none}
+.kpi h3{color:var(--accent); font-weight:900; margin:0}
+.kpi span{display:block; font-size:13px; color:#666}
+
+/* SERVICES GRID */
+.gd-card{border:1px solid #eee; border-radius:14px; padding:16px; background:#fff; height:100%; transition:.25s}
+.gd-card:hover{box-shadow:0 10px 18px rgba(0,0,0,.06)}
+.gd-icon{width:56px;height:56px;border-radius:12px;background:var(--accent);display:flex;align-items:center;justify-content:center;margin-bottom:10px;transition:.3s}
+.gd-icon i{color:#000; font-size:20px}
+.gd-card h6{font-weight:800; margin:4px 0 8px}
+.gd-card p{font-size:13px; color:#444; margin:0}
+.gd-card:hover .gd-icon{transform:scale(1.05)}
+
+/* SPECS BOXES */
+.spec-box{border:1px solid #eee; background:#fff; border-radius:12px; padding:16px; height:100%}
+.spec-box h6{font-weight:800; margin-bottom:6px}
+.spec-list{margin:0; padding-left:18px}
+.spec-list li{font-size:13px; margin:4px 0}
+
+/* PAPER & FINISHES */
+.finish-tag{display:inline-block; padding:8px 12px; border:1px solid #e6e6e6; border-radius:999px; margin:6px; background:#fff; font-size:13px}
+
+/* PROCESS */
+.step-card{border:1px solid transparent; border-radius:12px; padding:16px; cursor:pointer; transition:.25s; background:#fff}
+.step-card:hover{border-color:#eee; box-shadow:0 10px 18px rgba(0,0,0,.06)}
+.step-icon{width:60px;height:60px;border-radius:12px;background:var(--accent);display:flex;align-items:center;justify-content:center;margin-bottom:10px;transition:.3s}
+.step-icon i{color:#000; font-size:20px}
+.step-card:hover .step-icon{transform:translateY(-2px)}
+.step-card h5{font-size:18px; margin:6px 0}
+.step-card li{font-size:13px; margin:4px 0}
+
+/* FAQ — Hover Card */
+.faq-section{min-height:90vh;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:space-evenly;background:#E3E3E3}
+.faq-section-header{width:90%;display:flex;align-items:flex-start;justify-content:flex-start}
+.faq-section-header h2{-webkit-text-stroke:1px #000;color:transparent;font-size:70px;margin:0}
+.faq-cards{display:flex;width:90%;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.faq-card{position:relative;overflow:hidden;width:220px;height:300px;display:flex;cursor:pointer;align-items:flex-start;padding:20px;flex-direction:column;background:#fff;justify-content:space-evenly;border-radius:14px}
+.card-overlay{padding:20px;position:absolute;left:0;top:100%;width:100%;height:100%;z-index:1;transition:all 350ms cubic-bezier(0,0,0.2,1);display:flex;flex-direction:column;justify-content:space-evenly;align-items:flex-start;background:#000;color:#fff}
+.faq-card:hover .card-overlay{top:0}
+.card-overlay.left{left:-100%;top:0}
+.faq-card:hover .card-overlay.left{left:0}
+.card-overlay.right{left:100%;top:0}
+.faq-card:hover .card-overlay.right{left:0}
+.faq-card:hover .card-overlay.top{left:0;top:-100%}
+.faq-card:hover .card-overlay.top{left:0;top:0}
+.faq-card h2{-webkit-text-stroke:1px var(--accent);color:transparent;font-size:50px;font-family:"Manrope",sans-serif;margin:0}
+.faq-question{font-size:14px;font-weight:700;font-family:"Manrope",sans-serif;color:#111}
+.faq-card i{height:30px;width:30px;border:2px solid var(--accent);background:#fff;color:var(--accent);font-size:12px;justify-content:center;border-radius:50%;display:flex;align-items:center}
+
+/* RESPONSIVE */
+@media (max-width: 992px){
+  .hero{min-height:auto; padding:40px 0; flex-direction:column}
+  .social-rail{flex-direction:row; width:90%; height:auto; gap:10px; margin-bottom:12px}
+  .hero-left,.hero-right{width:90%}
+  .kpi-grid{flex-direction:column}
+  .kpi{border-right:none; border-bottom:1px solid #e6e6e6; padding:12px 0}
+  .kpi:last-child{border-bottom:none}
+  .faq-section{min-height:auto;padding:40px 0}
+  .faq-section-header h2{font-size:40px}
+}
+@media (max-width: 480px){
+  .faq-cards{width:92%;overflow-x:auto}
+  .faq-card{min-width:220px}
+}
+</style>
+
+<body>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="social-rail">
+      <a class="icon" href="https://www.facebook.com/profile.php?id=61554857870065" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+      <a class="icon" href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+      <a class="icon" href="https://www.instagram.com/delemon_technology" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a class="icon" href="https://www.linkedin.com/company/delemon-technology/" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+      <a class="icon" href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+
+    <div class="hero-col hero-left">
+      <h1>Premium <span>Print Design</span> in Dubai</h1>
+      <p>
+        Brochures, flyers, catalogs, stationery, packaging, signage & OOH—built with precise grids,
+        clean typography and production-ready files. We handle specs, finishes and vendor hand-offs,
+        so your print looks as good as it should.
+      </p>
+      <div class="hero-badges">
+        <span class="badge-chip">CMYK + Pantone</span>
+        <span class="badge-chip">Bleed & Dielines</span>
+        <span class="badge-chip">Foil & Emboss</span>
+        <span class="badge-chip">Large-Format OOH</span>
+      </div>
+    </div>
+
+    <div class="hero-col hero-right">
+      <form id="lead-form" class="form-card" action="https://api.web3forms.com/submit" method="POST" onsubmit="return validateLead(event)">
+        <h3>Request a print quote</h3>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <input type="hidden" name="access_key" value="1d581977-0167-4073-8d30-f8e754b508d4" />
+            <input type="hidden" name="subject" value="Print Design Enquiry – Delemon Technology" />
+            <input type="hidden" name="service" value="Print Design" />
+            <label>Your Name</label>
+            <input class="input" type="text" id="name" name="name" placeholder="Enter your name" />
+            <div class="error" id="err-name"></div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label>Your Email</label>
+            <input class="input" type="text" id="email" name="email" placeholder="Enter your email" />
+            <div class="error" id="err-email"></div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label>Your Number</label>
+            <input class="input" type="text" id="phone" name="phonenumber" placeholder="Enter your number" />
+            <div class="error" id="err-phone"></div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label>What do you need?</label>
+            <input class="input" type="text" id="message" name="message" placeholder="e.g., 8pp brochure + 2 roll-ups" />
+          </div>
+        </div>
+        <button class="submit-btn" type="submit">GET ESTIMATE</button>
+        <p class="small-muted mt-3">For RFPs, write to <span>info@delemontechnology.ae</span>. For careers, see our Careers page.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- INTRO / KPIs -->
+  <section class="section">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-6">
+          <h2 class="fw-bold">Sharp on paper. Flawless in production.</h2>
+          <p class="mb-2">
+            We design for press: exact trims, safe areas, bleeds, color management and finishing notes included.
+            Your vendors get clean, layered files and clear specs—no guesswork.
+          </p>
+          <p class="mb-0">
+            We collaborate with UAE printers for paper stocks, coatings and mockups, or hand off to your preferred vendor.
+          </p>
+        </div>
+        <div class="col-lg-6">
+          <div class="kpis">
+            <h6 class="fw-bold mb-3">Our work in numbers</h6>
+            <div class="kpi-grid">
+              <div class="kpi"><h3>1,200+</h3><span>Print Assets Delivered</span></div>
+              <div class="kpi"><h3>150+</h3><span>Brands Served</span></div>
+              <div class="kpi"><h3>10+</h3><span>Years in Production</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRINT DESIGN SERVICES -->
+  <section class="section" style="background:#fafafa">
+    <div class="container">
+      <h3 class="fw-bold mb-4">Print Design Services</h3>
+      <div class="row g-3">
+        <div class="col-md-6 col-lg-4">
+          <div class="gd-card">
+            <div class="gd-icon"><i class="fa-solid fa-file-lines"></i></div>
+            <h6>Brochures & Catalogs</h6>
+            <p>Multi-page layouts with strong hierarchy, grids and press-ready exports (with bleed and crop marks).</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="gd-card">
+            <div class="gd-icon"><i class="fa-solid fa-bullhorn"></i></div>
+            <h6>Flyers, Leaflets & Posters</h6>
+            <p>Clarity from a distance. Formats optimized for handouts, in-store and street placements.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="gd-card">
+            <div class="gd-icon"><i class="fa-solid fa-id-card"></i></div>
+            <h6>Stationery & Corporate</h6>
+            <p>Business cards, letterheads, envelopes and presentation folders using brand-consistent templates.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="gd-card">
+            <div class="gd-icon"><i class="fa-solid fa-box"></i></div>
+            <h6>Packaging & Labels</h6>
+            <p>Dielines, panels and barcodes with color-accurate files for cartons, sleeves, bottles and more.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="gd-card">
+            <div class="gd-icon"><i class="fa-solid fa-image"></i></div>
+            <h6>Signage & OOH</h6>
+            <p>Roll-ups, billboards, mall lightboxes and vehicle wraps—scaled correctly for large-format output.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="gd-card">
+            <div class="gd-icon"><i class="fa-solid fa-award"></i></div>
+            <h6>Event Collateral</h6>
+            <p>Badges, lanyards, invites, agendas and booth graphics designed as a cohesive visual system.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIZES & SPECS -->
+  <section class="section">
+    <div class="container">
+      <h3 class="fw-bold mb-4">Popular Sizes & Specs</h3>
+      <div class="row g-3">
+        <div class="col-md-4">
+          <div class="spec-box">
+            <h6>Standard Sizes</h6>
+            <ul class="spec-list">
+              <li>A6 (105×148mm), A5 (148×210mm), A4 (210×297mm)</li>
+              <li>DL (99×210mm) for tri-fold leaflets</li>
+              <li>Roll-up: 85×200cm, 100×200cm</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="spec-box">
+            <h6>Production Notes</h6>
+            <ul class="spec-list">
+              <li>Bleed: 3–5mm (as required)</li>
+              <li>Safe margins: 5–8mm</li>
+              <li>Color: CMYK or Pantone; 300dpi images</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="spec-box">
+            <h6>Deliverables</h6>
+            <ul class="spec-list">
+              <li>Press-ready PDFs with bleed & crops</li>
+              <li>Editable sources (AI/INDD/PSD)</li>
+              <li>Mockups & usage guidelines</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <h5 class="fw-bold mt-4 mb-2">Paper & Finishes</h5>
+      <div>
+        <span class="finish-tag">Matte / Gloss Lamination</span>
+        <span class="finish-tag">Spot UV</span>
+        <span class="finish-tag">Foil (Gold / Silver / Holographic)</span>
+        <span class="finish-tag">Emboss / Deboss</span>
+        <span class="finish-tag">Soft-Touch</span>
+        <span class="finish-tag">Textured & Recycled Stocks</span>
+        <span class="finish-tag">Perfect / Saddle Stitch / Wire-O</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="section" style="background:#fafafa">
+    <div class="container">
+      <h3 class="fw-bold mb-4">How we work</h3>
+      <div class="row g-3">
+        <div class="col-md-3">
+          <div class="step-card">
+            <div class="step-icon"><i class="fa-solid fa-comments"></i></div>
+            <h5>Discovery</h5>
+            <ul class="ps-3 mb-0">
+              <li>Goals & audience</li>
+              <li>Formats & quantities</li>
+              <li>Timeline & budget</li>
+              <li>Creative direction</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="step-card">
+            <div class="step-icon"><i class="fa-solid fa-layer-group"></i></div>
+            <h5>Design</h5>
+            <ul class="ps-3 mb-0">
+              <li>Layouts & typography</li>
+              <li>Imagery & grids</li>
+              <li>Proofs & revisions</li>
+              <li>Pre-press checks</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="step-card">
+            <div class="step-icon"><i class="fa-solid fa-industry"></i></div>
+            <h5>Production</h5>
+            <ul class="ps-3 mb-0">
+              <li>Bleed & dielines</li>
+              <li>Color management</li>
+              <li>Finishes & mockups</li>
+              <li>Vendor liaison</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="step-card">
+            <div class="step-icon"><i class="fa-solid fa-rocket"></i></div>
+            <h5>Delivery</h5>
+            <ul class="ps-3 mb-0">
+              <li>Press-ready files</li>
+              <li>Source packages</li>
+              <li>Guidelines PDF</li>
+              <li>Post-launch support</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="faq-section-header"><h2>FAQ</h2></div>
+    <div class="faq-cards">
+      <div class="faq-card">
+        <h2>1</h2>
+        <p class="faq-question">Do you manage printing?</p>
+        <i class="fa-solid fa-arrow-right-long"></i>
+        <div class="card-overlay">
+          <h2>1</h2>
+          <p>Yes—paper selection, finishes and proofs with trusted UAE printers. Or we’ll deliver perfect files to your vendor.</p>
+        </div>
+      </div>
+
+      <div class="faq-card">
+        <h2>2</h2>
+        <p class="faq-question">What files will we receive?</p>
+        <i class="fa-solid fa-arrow-right-long"></i>
+        <div class="card-overlay left">
+          <h2>2</h2>
+          <p>Press-ready PDFs (bleed & crops), editable sources (AI/INDD/PSD), and exports as needed (JPG/PNG/SVG).</p>
+        </div>
+      </div>
+
+      <div class="faq-card">
+        <h2>3</h2>
+        <p class="faq-question">How fast is the turnaround?</p>
+        <i class="fa-solid fa-arrow-right-long"></i>
+        <div class="card-overlay right">
+          <h2>3</h2>
+          <p>Simple flyers: 2–3 days. Brochures: 5–10 days. Catalogs & packaging vary by pages and approvals. Rush options available.</p>
+        </div>
+      </div>
+
+      <div class="faq-card">
+        <h2>4</h2>
+        <p class="faq-question">Can you match our brand colors?</p>
+        <i class="fa-solid fa-arrow-right-long"></i>
+        <div class="card-overlay top">
+          <h2>4</h2>
+          <p>Absolutely. We work with Pantone libraries and calibrated CMYK profiles to keep color consistent across runs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function validateLead(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const errName = document.getElementById('err-name');
+      const errEmail = document.getElementById('err-email');
+      const errPhone = document.getElementById('err-phone');
+      if(errName) errName.textContent = "";
+      if(errEmail) errEmail.textContent = "";
+      if(errPhone) errPhone.textContent = "";
+
+      let ok = true;
+      const re=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!name){ if(errName) errName.textContent="This field is required"; ok=false; }
+      if (!re.test(email)){ if(errEmail) errEmail.textContent="Enter a valid email"; ok=false; }
+      if (!phone){ if(errPhone) errPhone.textContent="This field is required"; ok=false; }
+
+      if (ok){ submitLead(); }
+      return false;
+    }
+
+    function submitLead(){
+      const form = document.getElementById('lead-form');
+      const formData = new FormData(form);
+      fetch(form.action,{ method:'POST', body:formData })
+        .then(r=>{
+          if(r.ok){ alert('Thank you! We will get back to you shortly.'); form.reset(); }
+          else { alert('Submission failed. Please try again.'); }
+        })
+        .catch(()=> alert('Network error. Please try again.'));
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+</body>
+{% endblock %}
+</html>

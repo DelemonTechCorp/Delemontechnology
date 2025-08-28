@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'base.html' %}
+{% block title %}Product Design Services in Dubai | UX, UI, Industrial & Prototyping | Delemon Technology{% endblock %}
+{% load static %}
+{% block content %}
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Product Design</title>
+  <meta name="description" content="End-to-end product design: research, UX/UI, industrial design, CAD, rapid prototyping, and design-for-manufacture. Launch products that users love with Delemon Technology."/>
+  <link rel="canonical" href="https://www.delemontechnology.com/product-design"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+</head>
+
+<style>
+:root{ --accent:#FAB206; --ink:#111; --muted:#C1C1C1; --bg:#F6F6F6; }
+*{box-sizing:border-box}
+
+/* HERO */
+.hero{
+  width:100%; height:100vh; display:flex; align-items:center; justify-content:space-evenly;
+  background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)), url('{% static "img/web-bg-2.jpg" %}') center/cover no-repeat;
+}
+.hero-col{display:flex; flex-direction:column; justify-content:center;}
+.hero-left{width:50%; height:100%}
+.hero-right{width:40%; height:auto; display:flex; align-items:center; justify-content:center}
+.hero h1{color:#fff; font-weight:800; font-size:36px; margin-bottom:10px}
+.hero h1 span{color:var(--accent)}
+.hero p{color:#fff; font-weight:300; font-size:14px; max-width:720px}
+.hero-badges{display:flex; gap:10px; margin-top:14px; flex-wrap:wrap}
+.badge-chip{border:1px solid rgba(255,255,255,.25); color:#fff; font-size:12px; padding:6px 10px; border-radius:999px}
+.social-rail{width:10%; height:45%; display:flex; flex-direction:column; align-items:center; justify-content:space-evenly}
+.icon{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.25)}
+.icon i{color:#fff; font-size:13px}
+.icon:hover{background:#fff; border:2px solid var(--accent)} .icon:hover i{color:#000}
+
+/* FORM */
+.form-card{background:#fff; width:90%; padding:8%; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,.08)}
+.form-card h3{font-size:20px; font-weight:800; margin-bottom:12px}
+label{font-size:12px; margin-bottom:6px}
+.input{width:100%; height:38px; background:#F1EFF0; border:none; outline:none; border-radius:8px; font-size:12px; padding:0 10px}
+.submit-btn{background:#fff; color:var(--accent); border:2px solid var(--accent); border-radius:8px; height:36px; width:140px; font-size:12px; font-weight:700}
+.submit-btn:hover{background:var(--accent); color:#000}
+.small-muted{font-size:12px; color:#aaa; text-align:center}
+.small-muted span{color:var(--accent); font-weight:700}
+.error{color:#d20000; font-size:12px; margin-top:4px}
+
+/* INTRO / NUMBERS */
+.section{padding:60px 0}
+.kpis{background:var(--bg); border:1px solid #eee; border-radius:12px; padding:22px}
+.kpi-grid{display:flex; gap:20px; justify-content:space-between}
+.kpi{flex:1; text-align:center; border-right:1px solid #e6e6e6}
+.kpi:last-child{border-right:none}
+.kpi h3{color:var(--accent); font-weight:900; margin:0}
+.kpi span{display:block; font-size:13px; color:#666}
+
+/* PROCESS CARDS */
+.card-step{border:1px solid transparent; border-radius:12px; padding:16px; transition:.25s; cursor:pointer}
+.card-step:hover{background:#fff; border-color:#eee; box-shadow:0 10px 18px rgba(0,0,0,.06)}
+.card-icon{width:60px;height:60px;border-radius:12px;background:var(--muted);display:flex;align-items:center;justify-content:center;margin-bottom:10px}
+.card-icon i{color:#fff; font-size:20px}
+.card-step:hover .card-icon{background:var(--accent)}
+.card-step h5{font-size:18px; margin:6px 0}
+.card-step li{font-size:13px; margin:4px 0}
+
+/* FEATURE GRID */
+.feature{display:flex; gap:14px; padding:14px; border-radius:12px; border:1px solid #eee; background:#fff}
+.feature i{color:var(--accent); font-size:18px; margin-top:3px}
+.feature h6{margin:0; font-weight:700}
+.feature p{margin:4px 0 0; font-size:13px; color:#444}
+
+/* INDUSTRIES */
+.pill{display:inline-block; padding:8px 12px; border:1px solid #e6e6e6; border-radius:999px; margin:6px; background:#fff; font-size:13px}
+
+/* FAQ — hover card style (matches your .NET page) */
+.faq-section{min-height:90vh;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:space-evenly;background:#E3E3E3}
+.faq-section-header{width:90%;display:flex;align-items:flex-start;justify-content:flex-start}
+.faq-section-header h2{-webkit-text-stroke:1px #000;color:transparent;font-size:70px;margin:0}
+.faq-cards{display:flex;width:90%;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.faq-card{position:relative;overflow:hidden;width:220px;height:300px;display:flex;cursor:pointer;align-items:flex-start;padding:20px;flex-direction:column;background:#fff;justify-content:space-evenly;border-radius:14px}
+.card-overlay{padding:20px;position:absolute;left:0;top:100%;width:100%;height:100%;z-index:1;transition:all 350ms cubic-bezier(0,0,0.2,1);display:flex;flex-direction:column;justify-content:space-evenly;align-items:flex-start;background:#000;color:#fff}
+.faq-card:hover .card-overlay{top:0}
+.card-overlay.left{left:-100%;top:0}
+.faq-card:hover .card-overlay.left{left:0}
+.card-overlay.right{left:100%;top:0}
+.faq-card:hover .card-overlay.right{left:0}
+.faq-card:hover .card-overlay.top{left:0;top:-100%}
+.faq-card:hover .card-overlay.top{left:0;top:0}
+.faq-card h2{-webkit-text-stroke:1px var(--accent);color:transparent;font-size:50px;font-family:"Manrope",sans-serif;margin:0}
+.faq-question{font-size:14px;font-weight:700;font-family:"Manrope",sans-serif;color:#111}
+.faq-card i{height:30px;width:30px;border:2px solid var(--accent);background:#fff;color:var(--accent);font-size:12px;justify-content:center;border-radius:50%;display:flex;align-items:center}
+
+/* RESPONSIVE */
+@media (max-width: 992px){
+  .hero{height:auto; padding:40px 0; flex-direction:column}
+  .social-rail{flex-direction:row; width:90%; height:auto; gap:10px; margin-bottom:12px}
+  .hero-left,.hero-right{width:90%}
+  .kpi-grid{flex-direction:column}
+  .kpi{border-right:none; border-bottom:1px solid #e6e6e6; padding:12px 0}
+  .kpi:last-child{border-bottom:none}
+  .faq-section{min-height:auto;padding:40px 0}
+  .faq-section-header h2{font-size:40px}
+}
+@media (max-width: 480px){
+  .faq-cards{width:92%;overflow-x:auto}
+  .faq-card{min-width:220px}
+}
+</style>
+
+<body>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="social-rail">
+      <a class="icon" href="https://www.facebook.com/profile.php?id=61554857870065" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+      <a class="icon" href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+      <a class="icon" href="https://www.instagram.com/delemon_technology" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a class="icon" href="https://www.linkedin.com/company/delemon-technology/" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+      <a class="icon" href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+
+    <div class="hero-col hero-left">
+      <h1>Product <span>Design</span> Services in Dubai</h1>
+      <p>
+        From insight to launch—Delemon Technology delivers research-driven product design that blends
+        desirability, feasibility, and viability. We cover user research, UX/UI, industrial design,
+        CAD, rapid prototyping, and design-for-manufacture so you can ship faster with confidence.
+      </p>
+      <div class="hero-badges">
+        <span class="badge-chip">UX & UI for Web/Mobile</span>
+        <span class="badge-chip">Industrial & CAD</span>
+        <span class="badge-chip">Rapid Prototyping</span>
+        <span class="badge-chip">Design Systems</span>
+        <span class="badge-chip">DFM & Handover</span>
+      </div>
+    </div>
+
+    <div class="hero-col hero-right">
+      <form id="lead-form" class="form-card" action="https://api.web3forms.com/submit" method="POST" onsubmit="return validateLead(event)">
+        <h3>Start your project</h3>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <input type="hidden" name="access_key" value="1d581977-0167-4073-8d30-f8e754b508d4">
+            <input type="hidden" name="subject" value="Product Design Enquiry – Delemon Technology">
+            <input type="hidden" name="service" value="Product Design">
+            <label>Your Name</label>
+            <input class="input" type="text" id="name" name="name" placeholder="Enter your name"/>
+            <div class="error" id="err-name"></div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label>Your Email</label>
+            <input class="input" type="text" id="email" name="email" placeholder="Enter your email"/>
+            <div class="error" id="err-email"></div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label>Your Number</label>
+            <input class="input" type="text" id="phone" name="phonenumber" placeholder="Enter your number"/>
+            <div class="error" id="err-phone"></div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label>Project Brief</label>
+            <input class="input" type="text" id="message" name="message" placeholder="e.g., MVP app + hardware prototype"/>
+          </div>
+        </div>
+        <button class="submit-btn" type="submit">SUBMIT</button>
+        <p class="small-muted mt-3">
+          For RFPs, write to <span>@delemontechnology.ae</span>. For careers, see our Careers page.
+        </p>
+      </form>
+    </div>
+  </section>
+
+  <!-- INTRO / KPIs -->
+  <section class="section">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-6">
+          <h2 class="fw-bold">Design products users love—without guesswork</h2>
+          <p class="mb-2">
+            We de-risk product builds through insight-led discovery, iterative prototyping, and
+            pragmatic engineering collaboration. Whether you’re validating an MVP or scaling a
+            production run, our team keeps you moving with clarity and creative rigor.
+          </p>
+          <p class="mb-0">
+            Deliverables can include research reports, journey maps, wireframes, high-fidelity UI,
+            3D models, renderings, prototype specs, and a manufacturer-ready package.
+          </p>
+        </div>
+        <div class="col-lg-6">
+          <div class="kpis">
+            <h6 class="fw-bold mb-3">Our work in numbers</h6>
+            <div class="kpi-grid">
+              <div class="kpi">
+                <h3>120+</h3>
+                <span>Products & MVPs</span>
+              </div>
+              <div class="kpi">
+                <h3>35+</h3>
+                <span>Industries</span>
+              </div>
+              <div class="kpi">
+                <h3>6–12w</h3>
+                <span>Typical Cycle</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="section">
+    <div class="container">
+      <h3 class="fw-bold mb-4">Our Product Design Process</h3>
+      <div class="row g-3">
+        <div class="col-md-4">
+          <div class="card-step">
+            <div class="card-icon"><i class="fa-solid fa-compass"></i></div>
+            <h5>Discovery & Research</h5>
+            <ul class="ps-3 mb-0">
+              <li>Stakeholder interviews</li>
+              <li>User jobs & pains</li>
+              <li>Competitive mapping</li>
+              <li>Requirements & KPIs</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card-step">
+            <div class="card-icon"><i class="fa-solid fa-sitemap"></i></div>
+            <h5>UX Architecture</h5>
+            <ul class="ps-3 mb-0">
+              <li>User flows & IA</li>
+              <li>Wireframes</li>
+              <li>Interaction models</li>
+              <li>Usability heuristics</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card-step">
+            <div class="card-icon"><i class="fa-solid fa-palette"></i></div>
+            <h5>UI & Design System</h5>
+            <ul class="ps-3 mb-0">
+              <li>Visual explorations</li>
+              <li>Components & tokens</li>
+              <li>Responsive patterns</li>
+              <li>Design specs</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card-step">
+            <div class="card-icon"><i class="fa-solid fa-cube"></i></div>
+            <h5>Industrial Design</h5>
+            <ul class="ps-3 mb-0">
+              <li>Form & ergonomics</li>
+              <li>CAD & assemblies</li>
+              <li>CMF strategy</li>
+              <li>DFM collaboration</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card-step">
+            <div class="card-icon"><i class="fa-solid fa-vial"></i></div>
+            <h5>Prototyping</h5>
+            <ul class="ps-3 mb-0">
+              <li>Lo-fi to hi-fi prototypes</li>
+              <li>3D prints & soft tooling</li>
+              <li>Interactive click-thrus</li>
+              <li>Usability testing</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card-step">
+            <div class="card-icon"><i class="fa-solid fa-rocket"></i></div>
+            <h5>Handover & Launch</h5>
+            <ul class="ps-3 mb-0">
+              <li>Spec packs & BOMs</li>
+              <li>Dev & vendor support</li>
+              <li>QA & pilot feedback</li>
+              <li>Post-launch iterations</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="section" style="background:#fafafa">
+    <div class="container">
+      <h3 class="fw-bold mb-4">Why Delemon for Product Design?</h3>
+      <div class="row g-3">
+        <div class="col-md-6">
+          <div class="feature">
+            <i class="fa-solid fa-layer-group"></i>
+            <div>
+              <h6>End-to-End Capability</h6>
+              <p>One team across UX, UI, industrial design, and prototyping—no handoff gaps, faster momentum.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="feature">
+            <i class="fa-solid fa-magnifying-glass-chart"></i>
+            <div>
+              <h6>Evidence-Backed Decisions</h6>
+              <p>We use research, tests, and analytics to cut bias and build what users actually want.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="feature">
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+            <div>
+              <h6>Manufacture-Ready</h6>
+              <p>DFM early on: materials, tolerances, and cost drivers aligned with vendor reality.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="feature">
+            <i class="fa-solid fa-clock"></i>
+            <div>
+              <h6>Speed with Quality</h6>
+              <p>Parallel tracks & crisp reviews keep quality high without slowing your roadmap.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h5 class="fw-bold mt-4 mb-2">Industries we serve</h5>
+      <div>
+        <span class="pill">Real Estate Tech</span>
+        <span class="pill">Healthtech</span>
+        <span class="pill">IoT & Smart Home</span>
+        <span class="pill">E-commerce</span>
+        <span class="pill">Hospitality</span>
+        <span class="pill">Fintech</span>
+        <span class="pill">EdTech</span>
+        <span class="pill">Automotive Accessories</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ — Hover Card (same as your .NET page) -->
+  <section class="faq-section">
+    <div class="faq-section-header"><h2>FAQ</h2></div>
+    <div class="faq-cards">
+      <div class="faq-card">
+        <h2>1</h2>
+        <p class="faq-question">What does a typical engagement include?</p>
+        <i class="fa-solid fa-arrow-right-long"></i>
+        <div class="card-overlay">
+          <h2>1</h2>
+          <p>Research, UX/UI or industrial design (or both), prototyping, and a handover pack with specs. We tailor scope for MVPs, redesigns, or production-ready builds.</p>
+        </div>
+      </div>
+
+      <div class="faq-card">
+        <h2>2</h2>
+        <p class="faq-question">How quickly can we get a prototype?</p>
+        <i class="fa-solid fa-arrow-right-long"></i>
+        <div class="card-overlay left">
+          <h2>2</h2>
+          <p>Clickable UI prototypes can be ready in 1–2 weeks. Physical proofs vary by complexity—3D prints often within days, functional rigs in 2–4 weeks.</p>
+        </div>
+      </div>
+
+      <div class="faq-card">
+        <h2>3</h2>
+        <p class="faq-question">Will you work with our engineers or vendor?</p>
+        <i class="fa-solid fa-arrow-right-long"></i>
+        <div class="card-overlay right">
+          <h2>3</h2>
+          <p>Yes—early and often. We collaborate with devs, EE/ME, and manufacturing partners to align constraints, timelines, and costs.</p>
+        </div>
+      </div>
+
+      <div class="faq-card">
+        <h2>4</h2>
+        <p class="faq-question">Do we own the source files?</p>
+        <i class="fa-solid fa-arrow-right-long"></i>
+        <div class="card-overlay top">
+          <h2>4</h2>
+          <p>Upon final payment, you receive usable assets: design files, vectors, CAD (as agreed), exports, and documentation for internal or vendor use.</p>
+        </div>
+      </div>
+
+      <div class="faq-card">
+        <h2>5</h2>
+        <p class="faq-question">Can you handle hardware and software together?</p>
+        <i class="fa-solid fa-arrow-right-long"></i>
+        <div class="card-overlay left">
+          <h2>5</h2>
+          <p>Absolutely. Our team spans UX/UI, industrial design, and prototyping, so we deliver cohesive experiences across physical and digital touchpoints.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function validateLead(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const errName = document.getElementById('err-name');
+      const errEmail = document.getElementById('err-email');
+      const errPhone = document.getElementById('err-phone');
+      errName.textContent = ""; errEmail.textContent=""; errPhone.textContent="";
+
+      let ok = true;
+      const re=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!name){ errName.textContent="This field is required"; ok=false; }
+      if (!re.test(email)){ errEmail.textContent="Enter a valid email"; ok=false; }
+      if (!phone){ errPhone.textContent="This field is required"; ok=false; }
+
+      if (ok){ submitLead(); }
+      return false;
+    }
+
+    function submitLead(){
+      const form = document.getElementById('lead-form');
+      const formData = new FormData(form);
+      fetch(form.action,{ method:'POST', body:formData })
+        .then(r=>{
+          if(r.ok){ alert('Thank you! We will get back to you shortly.'); form.reset(); }
+          else { alert('Submission failed. Please try again.'); }
+        })
+        .catch(()=> alert('Network error. Please try again.'));
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+{% endblock %}
+</body>
+</html>

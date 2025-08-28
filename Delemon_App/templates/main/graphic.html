@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'base.html' %}
+{% block title %}Graphic Design Agency in Dubai | Branding, Print & Social Design{% endblock %}
+{% load static %}
+{% block content %}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Graphic Design</title>
+  <meta name="description" content="Delemon Technology offers end-to-end graphic design in Dubai: brand identity, print design, packaging, social media creatives, pitch decks, and marketing collateral that stand out.">
+  <link rel="canonical" href="https://www.delemontechnology.com/graphic-design">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+</head>
+
+<style>
+:root{ --accent:#FAB206; --ink:#111; --muted:#C1C1C1; --bg:#F6F6F6; }
+*{box-sizing:border-box}
+
+/* HERO */
+.hero{
+  width:100%; height:100vh; display:flex; align-items:center; justify-content:space-evenly;
+  background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)), url('{% static "img/web-bg-2.jpg" %}') center/cover no-repeat;
+}
+.hero-col{display:flex; flex-direction:column; justify-content:center}
+.hero-left{width:50%; height:100%}
+.hero-right{width:40%; display:flex; align-items:center; justify-content:center}
+.hero h1{color:#fff; font-weight:800; font-size:36px; margin-bottom:10px}
+.hero h1 span{color:var(--accent)}
+.hero p{color:#fff; font-weight:300; font-size:14px; max-width:720px}
+.hero-badges{display:flex; gap:10px; margin-top:14px; flex-wrap:wrap}
+.badge-chip{border:1px solid rgba(255,255,255,.25); color:#fff; font-size:12px; padding:6px 10px; border-radius:999px}
+.social-rail{width:10%; height:45%; display:flex; flex-direction:column; align-items:center; justify-content:space-evenly}
+.icon{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.25)}
+.icon i{color:#fff; font-size:13px}
+.icon:hover{background:#fff; border:2px solid var(--accent)} .icon:hover i{color:#000}
+
+/* FORM */
+.form-card{background:#fff; width:90%; padding:8%; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,.08)}
+.form-card h3{font-size:20px; font-weight:800; margin-bottom:12px}
+label{font-size:12px; margin-bottom:6px}
+.input{width:100%; height:38px; background:#F1EFF0; border:none; outline:none; border-radius:8px; font-size:12px; padding:0 10px}
+.submit-btn{background:#fff; color:var(--accent); border:2px solid var(--accent); border-radius:8px; height:36px; width:140px; font-size:12px; font-weight:700}
+.submit-btn:hover{background:var(--accent); color:#000}
+.small-muted{font-size:12px; color:#aaa; text-align:center}
+.small-muted span{color:var(--accent); font-weight:700}
+.error{color:#d20000; font-size:12px; margin-top:4px}
+
+/* INTRO / NUMBERS */
+.section{padding:60px 0}
+.kpis{background:var(--bg); border:1px solid #eee; border-radius:12px; padding:22px}
+.kpi-grid{display:flex; gap:20px; justify-content:space-between}
+.kpi{flex:1; text-align:center; border-right:1px solid #e6e6e6}
+.kpi:last-child{border-right:none}
+.kpi h3{color:var(--accent); font-weight:900; margin:0}
+.kpi span{display:block; font-size:13px; color:#666}
+
+/* SERVICES GRID */
+.gd-card{border:1px solid #eee; border-radius:14px; padding:16px; background:#fff; height:100%; transition:.25s}
+.gd-card:hover{box-shadow:0 10px 18px rgba(0,0,0,.06)}
+.gd-card .gd-icon{width:56px;height:56px;border-radius:12px;background:var(--muted);display:flex;align-items:center;justify-content:center;margin-bottom:10px}
+.gd-card .gd-icon i{color:#fff; font-size:20px}
+.gd-card h6{font-weight:800; margin:4px 0 8px}
+.gd-card p{font-size:13px; color:#444; margin:0}
+.gd-card .gd-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  background: var(--accent); /* yellow by default */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.gd-card .gd-icon i {
+  color: #ffffffff; /* make icons black for better contrast */
+  font-size: 20px;
+}
+.gd-card:hover .gd-icon {
+  background: var(--accent);
+  transform: scale(1.05);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+/* SHOWCASE TAGS */
+.pill{display:inline-block; padding:8px 12px; border:1px solid #e6e6e6; border-radius:999px; margin:6px; background:#fff; font-size:13px}
+
+/* PROCESS */
+.step-card{border:1px solid transparent; border-radius:12px; padding:16px; cursor:pointer; transition:.25s}
+.step-card:hover{background:#fff; border-color:#eee; box-shadow:0 10px 18px rgba(0,0,0,.06)}
+.step-icon{width:60px;height:60px;border-radius:12px;background:var(--muted);display:flex;align-items:center;justify-content:center;margin-bottom:10px}
+.step-icon i{color:#fff; font-size:20px}
+.step-card:hover .step-icon{background:var(--accent)}
+.step-card h5{font-size:18px; margin:6px 0}
+.step-card li{font-size:13px; margin:4px 0}
+
+/* FAQ — Hover Card */
+.faq-section{min-height:90vh;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:space-evenly;background:#E3E3E3}
+.faq-section-header{width:90%;display:flex;align-items:flex-start;justify-content:flex-start}
+.faq-section-header h2{-webkit-text-stroke:1px #000;color:transparent;font-size:70px;margin:0}
+.faq-cards{display:flex;width:90%;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.faq-card{position:relative;overflow:hidden;width:220px;height:300px;display:flex;cursor:pointer;align-items:flex-start;padding:20px;flex-direction:column;background:#fff;justify-content:space-evenly;border-radius:14px}
+.card-overlay{padding:20px;position:absolute;left:0;top:100%;width:100%;height:100%;z-index:1;transition:all 350ms cubic-bezier(0,0,0.2,1);display:flex;flex-direction:column;justify-content:space-evenly;align-items:flex-start;background:#000;color:#fff}
+.faq-card:hover .card-overlay{top:0}
+.card-overlay.left{left:-100%;top:0}
+.faq-card:hover .card-overlay.left{left:0}
+.card-overlay.right{left:100%;top:0}
+.faq-card:hover .card-overlay.right{left:0}
+.faq-card:hover .card-overlay.top{left:0;top:-100%}
+.faq-card:hover .card-overlay.top{left:0;top:0}
+.faq-card h2{-webkit-text-stroke:1px var(--accent);color:transparent;font-size:50px;font-family:"Manrope",sans-serif;margin:0}
+.faq-question{font-size:14px;font-weight:700;font-family:"Manrope",sans-serif;color:#111}
+.faq-card i{height:30px;width:30px;border:2px solid var(--accent);background:#fff;color:var(--accent);font-size:12px;justify-content:center;border-radius:50%;display:flex;align-items:center}
+
+/* RESPONSIVE */
+@media (max-width: 992px){
+  .hero{height:auto; padding:40px 0; flex-direction:column}
+  .social-rail{flex-direction:row; width:90%; height:auto; gap:10px; margin-bottom:12px}
+  .hero-left,.hero-right{width:90%}
+  .kpi-grid{flex-direction:column}
+  .kpi{border-right:none; border-bottom:1px solid #e6e6e6; padding:12px 0}
+  .kpi:last-child{border-bottom:none}
+  .faq-section{min-height:auto;padding:40px 0}
+  .faq-section-header h2{font-size:40px}
+}
+@media (max-width: 480px){
+  .faq-cards{width:92%;overflow-x:auto}
+  .faq-card{min-width:220px}
+}
+</style>
+
+<body>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="social-rail">
+      <a class="icon" href="https://www.facebook.com/profile.php?id=61554857870065" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+      <a class="icon" href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+      <a class="icon" href="https://www.instagram.com/delemon_technology" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a class="icon" href="https://www.linkedin.com/company/delemon-technology/" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+      <a class="icon" href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+
+    <div class="hero-col hero-left">
+      <h1>Graphic <span>Design</span> Services in Dubai</h1>
+      <p>
+        From brand identity and packaging to print, social, and pitch decks—Delemon Technology crafts
+        visuals that look premium and work hard for your goals. Strategy-led concepts, on-brand execution,
+        and production-ready files every time.
+      </p>
+      <div class="hero-badges">
+        <span class="badge-chip">Logos & Brand Kits</span>
+        <span class="badge-chip">Print & OOH</span>
+        <span class="badge-chip">Packaging</span>
+        <span class="badge-chip">Social Creatives</span>
+        <span class="badge-chip">Pitch Decks</span>
+      </div>
+    </div>
+
+    <div class="hero-col hero-right">
+      <form id="lead-form" class="form-card" action="https://api.web3forms.com/submit" method="POST" onsubmit="return validateLead(event)">
+        <h3>Start your brief</h3>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <input type="hidden" name="access_key" value="1d581977-0167-4073-8d30-f8e754b508d4">
+            <input type="hidden" name="subject" value="Graphic Design Enquiry – Delemon Technology">
+            <input type="hidden" name="service" value="Graphic Design">
+            <label>Your Name</label>
+            <input class="input" type="text" id="name" name="name" placeholder="Enter your name">
+            <div class="error" id="err-name"></div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label>Your Email</label>
+            <input class="input" type="text" id="email" name="email" placeholder="Enter your email">
+            <div class="error" id="err-email"></div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label>Your Number</label>
+            <input class="input" type="text" id="phone" name="phonenumber" placeholder="Enter your number">
+            <div class="error" id="err-phone"></div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label>Project Brief</label>
+            <input class="input" type="text" id="message" name="message" placeholder="e.g., brand kit + packaging + social">
+          </div>
+        </div>
+        <button class="submit-btn" type="submit">SUBMIT</button>
+        <p class="small-muted mt-3">For RFPs, write to <span>info@delemontechnology.ae</span>. For careers, see our Careers page.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- INTRO / KPIs -->
+  <section class="section">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-6">
+          <h2 class="fw-bold">Design that wins attention—and trust</h2>
+          <p class="mb-2">
+            We create distinct visual systems that scale across print and digital. Expect strategy,
+            craft, and on-time delivery—plus tidy file handovers for your team and vendors.
+          </p>
+          <p class="mb-0">
+            Deliverables can include brand marks, typography systems, color palettes, stationery,
+            packaging dielines, social templates, and press-ready files.
+          </p>
+        </div>
+        <div class="col-lg-6">
+          <div class="kpis">
+            <h6 class="fw-bold mb-3">Our work in numbers</h6>
+            <div class="kpi-grid">
+              <div class="kpi"><h3>300+</h3><span>Brand Assets Delivered</span></div>
+              <div class="kpi"><h3>40+</h3><span>Industries Served</span></div>
+              <div class="kpi"><h3>15+</h3><span>Years of experience</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section" style="background:#fafafa">
+    <div class="container">
+      <h3 class="fw-bold mb-4">Graphic Design Services</h3>
+      <div class="row g-3">
+        <div class="col-md-6 col-lg-4">
+          <div class="gd-card">
+            <div class="gd-icon"><i class="fa-solid fa-signature"></i></div>
+            <h6>Brand Identity</h6>
+            <p>Logos, typography, color, and a clean guideline so your brand stays consistent everywhere.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="gd-card">
+            <div class="gd-icon"><i class="fa-solid fa-box-open"></i></div>
+            <h6>Packaging & Labels</h6>
+            <p>Dielines, material guidance, mockups, and press-ready files for retail-ready impact.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="gd-card">
+            <div class="gd-icon"><i class="fa-solid fa-print"></i></div>
+            <h6>Print & OOH</h6>
+            <p>Brochures, flyers, posters, roll-ups, outdoor ads—optimized for clarity and scale.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="gd-card">
+            <div class="gd-icon"><i class="fa-solid fa-photo-film"></i></div>
+            <h6>Social Creatives</h6>
+            <p>On-brand templates and campaigns for Instagram, LinkedIn, and paid ads.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="gd-card">
+            <div class="gd-icon"><i class="fa-solid fa-rectangle-list"></i></div>
+            <h6>Pitch Decks</h6>
+            <p>Investor and sales decks that tell a sharp story with crisp visual hierarchy.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="gd-card">
+            <div class="gd-icon"><i class="fa-solid fa-palette"></i></div>
+            <h6>Campaign Design</h6>
+            <p>Concept to rollout—key visuals adapted across touchpoints for unified impact.</p>
+          </div>
+        </div>
+      </div>
+
+      {% comment %} <h5 class="fw-bold mt-4 mb-2">Industries we serve</h5>
+      <div>
+        <span class="pill">FMCG</span>
+        <span class="pill">Real Estate</span>
+        <span class="pill">Hospitality</span>
+        <span class="pill">Healthcare</span>
+        <span class="pill">Fintech</span>
+        <span class="pill">Education</span>
+        <span class="pill">Retail</span>
+        <span class="pill">Automotive</span>
+      </div>
+    </div> {% endcomment %}
+  </section>
+
+  <!-- PROCESS -->
+  <section class="section">
+    <div class="container">
+      <h3 class="fw-bold mb-4">How we work</h3>
+      <div class="row g-3">
+        <div class="col-md-3">
+          <div class="step-card">
+            <div class="step-icon"><i class="fa-solid fa-comments"></i></div>
+            <h5>Discovery</h5>
+            <ul class="ps-3 mb-0">
+              <li>Brand audit & goals</li>
+              <li>Audience & use-cases</li>
+              <li>Moodboards</li>
+              <li>Scope & timelines</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="step-card">
+            <div class="step-icon"><i class="fa-solid fa-marker"></i></div>
+            <h5>Concepting</h5>
+            <ul class="ps-3 mb-0">
+              <li>3–5 directions</li>
+              <li>Typography & color</li>
+              <li>Layouts & KV</li>
+              <li>Mockups</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="step-card">
+            <div class="step-icon"><i class="fa-solid fa-layer-group"></i></div>
+            <h5>Refinement</h5>
+            <ul class="ps-3 mb-0">
+              <li>Polish & variants</li>
+              <li>Production checks</li>
+              <li>Accessibility</li>
+              <li>Final proofs</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="step-card">
+            <div class="step-icon"><i class="fa-solid fa-rocket"></i></div>
+            <h5>Delivery</h5>
+            <ul class="ps-3 mb-0">
+              <li>Press-ready files</li>
+              <li>Guidelines PDF</li>
+              <li>Vendor handover</li>
+              <li>Launch support</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ — Hover Card -->
+  <section class="faq-section">
+    <div class="faq-section-header"><h2>FAQ</h2></div>
+    <div class="faq-cards">
+      <div class="faq-card">
+        <h2>1</h2>
+        <p class="faq-question">What deliverables do we receive?</p>
+        <i class="fa-solid fa-arrow-right-long"></i>
+        <div class="card-overlay">
+          <h2>1</h2>
+          <p>Editable design files (AI/PSD/INDD as agreed), print-ready PDFs, export packs (PNG/JPG/SVG), and a concise guideline so your team and vendors stay on-brand.</p>
+        </div>
+      </div>
+
+      <div class="faq-card">
+        <h2>2</h2>
+        <p class="faq-question">How many concepts & revisions are included?</p>
+        <i class="fa-solid fa-arrow-right-long"></i>
+        <div class="card-overlay left">
+          <h2>2</h2>
+          <p>Typically 3–5 directions, then focused refinement rounds. We keep feedback cycles tight so you launch faster without compromising quality.</p>
+        </div>
+      </div>
+
+      <div class="faq-card">
+        <h2>3</h2>
+        <p class="faq-question">Can you work with our printer or vendor?</p>
+        <i class="fa-solid fa-arrow-right-long"></i>
+        <div class="card-overlay right">
+          <h2>3</h2>
+          <p>Yes. We prepare specs, color profiles, and dielines, then coordinate with vendors to ensure flawless production.</p>
+        </div>
+      </div>
+
+      <div class="faq-card">
+        <h2>4</h2>
+        <p class="faq-question">Do you create social & ad templates?</p>
+        <i class="fa-solid fa-arrow-right-long"></i>
+        <div class="card-overlay top">
+          <h2>4</h2>
+          <p>Absolutely—editable template kits for Instagram, LinkedIn, and ads so your team can scale creatives consistently.</p>
+        </div>
+      </div>
+
+      <div class="faq-card">
+        <h2>5</h2>
+        <p class="faq-question">What if we only need a quick brochure?</p>
+        <i class="fa-solid fa-arrow-right-long"></i>
+        <div class="card-overlay left">
+          <h2>5</h2>
+          <p>No problem. We offer fast-turn jobs for single collaterals—brochures, flyers, roll-ups—delivered press-ready.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function validateLead(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const errName = document.getElementById('err-name');
+      const errEmail = document.getElementById('err-email');
+      const errPhone = document.getElementById('err-phone');
+      errName.textContent = ""; errEmail.textContent=""; errPhone.textContent="";
+
+      let ok = true;
+      const re=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!name){ errName.textContent="This field is required"; ok=false; }
+      if (!re.test(email)){ errEmail.textContent="Enter a valid email"; ok=false; }
+      if (!phone){ errPhone.textContent="This field is required"; ok=false; }
+
+      if (ok){ submitLead(); }
+      return false;
+    }
+
+    function submitLead(){
+      const form = document.getElementById('lead-form');
+      const formData = new FormData(form);
+      fetch(form.action,{ method:'POST', body:formData })
+        .then(r=>{
+          if(r.ok){ alert('Thank you! We will get back to you shortly.'); form.reset(); }
+          else { alert('Submission failed. Please try again.'); }
+        })
+        .catch(()=> alert('Network error. Please try again.'));
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+{% endblock %}
+</body>
+</html>

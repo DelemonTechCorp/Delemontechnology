@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'base.html' %}
+{% block title %}Python (Django + DRF) Development Services in Dubai | Delemon Technology{% endblock %}
+{% load static %}
+{% block content %}
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Python Development</title>
+  <meta name="description" content="Delemon Technology builds secure, scalable Python solutions using Django & Django REST Framework (DRF). Web apps, REST APIs, dashboards and enterprise platforms—engineered for performance and growth."/>
+  <link rel="canonical" href="https://www.delemontechnology.com/python-development"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<style>
+/* ================= HERO ================= */
+.web-page-bg{
+  width:100%;
+  min-height:100vh;
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-image:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),url('{% static "img/web-bg-2.jpg" %}');
+  display:flex;align-items:center;justify-content:space-evenly;gap:20px;
+}
+.web-page-bg-icons{width:10%;height:45%;display:flex;flex-direction:column;align-items:center;justify-content:space-evenly}
+.icon-container{width:30px;height:30px;display:flex;align-items:center;justify-content:center;border-radius:50%}
+.icon-container i{color:#fff;font-size:13px}
+.icon-container:hover{background:#fff;border:2px solid #FAB206;transition:.25s}
+.icon-container:hover i{color:#000}
+
+.web-page-bg-1{width:50%;display:flex;flex-direction:column;justify-content:center}
+.web-page-bg-1 h1{color:#fff;font-weight:700;font-size:36px;margin-bottom:12px}
+.web-page-bg-1-content p{color:#fff;font-weight:300;font-size:15px;margin:0}
+
+.web-page-bg-2{width:40%;display:flex;align-items:center;justify-content:center}
+#web-page-form{
+  background:#fff;width:92%;border-radius:14px;padding:28px 24px;
+  box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+#web-page-form h3{font-size:20px;font-weight:800;margin-bottom:16px}
+#web-page-form label{font-size:12px;margin-bottom:6px}
+.web-page-form-input{
+  width:100%;height:38px;background:#F1EFF0;border:none;outline:none;border-radius:8px;padding:0 10px;font-size:13px;
+}
+.error-message{color:#d33;font-size:12px;margin:6px 0 0 0;min-height:16px}
+
+/* submit button + spinner */
+.btn-submit{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  background:#fff;color:#FAB206;border:2px solid #FAB206;border-radius:20px;
+  height:36px;padding:0 18px;font-size:12px;font-weight:700;
+}
+.btn-submit[disabled]{opacity:.6;cursor:not-allowed}
+.spinner{
+  width:16px;height:16px;border-radius:50%;
+  border:2px solid #d0d0d0;border-top-color:#FAB206;
+  animation:spin .8s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+#form-bottom-p{font-size:12px;color:#888;text-align:center;margin:14px 0 0}
+#form-bottom-p span{color:#FAB206;font-weight:700}
+
+/* ================= COUNTERS ================= */
+.web-page-container-2{
+  width:100%;padding:50px 0 0;display:flex;align-items:flex-start;justify-content:space-evenly;gap:30px;
+}
+.web-page-clients{width:40%}
+.web-page-clients h2{font-size:30px;font-weight:700;margin-bottom:10px}
+.web-page-clients p{font-size:14px}
+
+.web-page-clients-details{width:45%}
+.web-page-clients-counts{
+  width:100%;background:#F6F6F6;border-radius:12px;padding:20px;
+  display:flex;flex-direction:column;gap:18px
+}
+.web-page-clients-counts h5{font-size:18px;font-weight:700;margin:0}
+.clients-counts{display:flex;align-items:center;justify-content:space-evenly;gap:10px}
+.counts-row{
+  width:32%;display:flex;flex-direction:column;align-items:center;gap:6px;
+  border-right:1px solid #dfdfdf;padding:4px 0
+}
+.counts-row:last-child{border-right:none}
+.counts-row span{font-size:14px;color:#333}
+.counts-row h2{font-size:34px;font-weight:900;color:#FAB206;margin:0}
+
+/* ================= BODY SECTIONS (unchanged look) ================= */
+.py-intro{padding:60px 0;background:#0f172a;color:#e5e7eb}
+.py-intro .lead{font-size:1.05rem;opacity:.95}
+.py-badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.py-badges .badge{background:#111827;border:1px solid #374151;color:#e5e7eb;padding:8px 12px;border-radius:18px;font-size:.85rem}
+.py-badges .badge i{margin-right:6px;color:#FAB206}
+
+.py-panels{padding:60px 0;background:#fff}
+.py-panel{border:1px solid #eee;border-radius:14px;padding:24px;background:#fff;box-shadow:0 6px 18px rgba(0,0,0,.05);height:100%}
+.py-panel h3{font-size:22px;margin-bottom:10px}
+
+.py-stack{padding:60px 0;background:#f8fafc}
+.stack-tile{border:1px dashed #cbd5e1;border-radius:14px;padding:18px;background:#fff;height:100%}
+.stack-tile h4{font-size:18px;margin-bottom:8px}
+.stack-tile ul{padding-left:18px;margin:0}
+.stack-tile li{margin:6px 0}
+
+/* ================= FAQ (KEEP DESIGN) ================= */
+.faq-section{width:100%;background:#E3E3E3;padding:40px 0}
+.faq-section-header{width:90%;margin:0 auto}
+.faq-section-header h2{-webkit-text-stroke:1px #000;color:transparent;font-size:70px;margin:0 0 10px}
+.faq-cards{
+  width:90%;margin:0 auto;display:flex;align-items:center;gap:20px;
+  justify-content:flex-start;flex-wrap:wrap;
+}
+.faq-card{
+  position:relative;overflow:hidden;width:220px;height:300px;border-radius:10px;
+  display:flex;flex-direction:column;justify-content:space-evenly;align-items:flex-start;
+  padding:20px;background:#fff;cursor:pointer
+}
+.card-overlay{
+  position:absolute;left:0;top:100%;width:100%;height:100%;
+  background:#000;color:#fff;padding:20px;
+  transition:all 350ms cubic-bezier(0,0,0.2,1);
+  display:flex;flex-direction:column;justify-content:space-evenly
+}
+.faq-card:hover .card-overlay{top:0}
+.faq-card h2{-webkit-text-stroke:1px #FAB206;color:transparent;font-size:50px;margin:0}
+.faq-question{font-size:14px;font-weight:700;margin:0}
+.faq-card i{
+  height:30px;width:30px;border:2px solid #FAB206;background:#fff;color:#FAB206;
+  font-size:12px;border-radius:50%;display:flex;align-items:center;justify-content:center
+}
+
+/* ================== RESPONSIVE ================== */
+@media (max-width: 992px){
+  .web-page-bg{padding:24px 0;gap:14px}
+  .web-page-bg-1{width:55%}
+  .web-page-bg-2{width:45%}
+}
+@media (max-width: 768px){
+  /* HERO stacks */
+  .web-page-bg{flex-direction:column;align-items:center;justify-content:flex-start}
+  .web-page-bg-icons{order:3;flex-direction:row;width:92%;height:auto;gap:10px;margin-top:10px}
+  .web-page-bg-1,.web-page-bg-2{width:92%}
+  .web-page-bg-1 h1{font-size:28px}
+  .web-page-bg-1-content p{font-size:14px}
+  #web-page-form{width:100%}
+
+  /* counters stack & remove large gaps */
+  .web-page-container-2{flex-direction:column;gap:16px;padding:24px 0 0;margin:0}
+  .web-page-clients,.web-page-clients-details{width:92%}
+  .web-page-clients p{margin-bottom:8px}
+  .web-page-clients-details > *:first-child{margin-top:0}
+  .clients-counts{gap:0}
+  .counts-row span{font-size:13px}
+  .counts-row h2{font-size:30px}
+
+  /* FAQ horizontal scroll but same card design */
+  .faq-section-header h2{font-size:40px}
+  .faq-cards{flex-wrap:nowrap;overflow-x:auto;padding-bottom:8px}
+  .faq-card{flex:0 0 auto}
+}
+@media (max-width: 400px){
+  .web-page-bg-1 h1{font-size:24px}
+}
+</style>
+
+<body>
+  <!-- ============== HERO ============== -->
+  <div class="web-page-bg">
+    <div class="web-page-bg-icons">
+      <div class="icon-container"><a href="#"><i class="fa-brands fa-facebook"></i></a></div>
+      <div class="icon-container"><a href="#"><i class="fa-brands fa-x-twitter"></i></a></div>
+      <div class="icon-container"><a href="#"><i class="fa-brands fa-instagram"></i></a></div>
+      <div class="icon-container"><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></div>
+      <div class="icon-container"><a href="#"><i class="fa-brands fa-youtube"></i></a></div>
+    </div>
+
+    <div class="web-page-bg-1">
+      <h1>Python Development with Django + DRF<br> Company in Dubai, UAE</h1>
+      <div class="web-page-bg-1-content">
+        <p>We build reliable web applications and REST APIs using Django & Django REST Framework—secure, scalable, and performance-oriented for modern businesses.</p>
+      </div>
+    </div>
+
+    <div class="web-page-bg-2">
+      <!-- FORM -->
+      <form id="web-page-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+        <h3>Have a Python/DRF project?</h3>
+
+        <input type="hidden" name="access_key" value="1d581977-0167-4073-8d30-f8e754b508d4">
+        <input type="hidden" name="subject" value="Python (Django + DRF): Form Submission from Delemon Website">
+
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label>Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" class="web-page-form-input">
+            <p class="error-message" id="name-error"></p>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label>Your Email</label>
+            <input type="text" id="email" name="email" placeholder="Enter your email" class="web-page-form-input">
+            <p class="error-message" id="email-error"></p>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label>Your Number</label>
+            <input type="text" id="phone" name="phonenumber" placeholder="Enter your number" class="web-page-form-input">
+            <p class="error-message" id="phone-error"></p>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label>Your Message</label>
+            <input type="text" id="message" name="message" placeholder="Tell us about your project" class="web-page-form-input">
+            <p class="error-message"></p>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-submit" id="form-submit">
+          <span class="btn-text">SUBMIT</span>
+          <span class="spinner" id="btn-spinner" hidden></span>
+        </button>
+
+        <p id="form-bottom-p" class="mt-3">
+          If you have any RFP requirement please share with us at <span>@delemontechnology.ae</span>. For careers, please check our Careers section.
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <!-- ============== COUNTS ============== -->
+  <div class="web-page-container-2">
+    <div class="web-page-clients">
+      <h2>Python Development Services in Dubai</h2>
+      <p>We build tailor-made websites that align with your business objectives and target audience. Our team specializes in developing scalable and performance-oriented websites.</p>
+      <p>From MVPs to enterprise platforms, we deliver clean architecture, robust REST APIs, and secure admin tools—ready to scale.</p>
+    </div>
+    <div class="web-page-clients-details">
+      <div class="web-page-clients-counts">
+        <h5>Key Highlights — Our Work in Numbers</h5>
+        <div class="clients-counts">
+          <div class="counts-row"><span>Happy Clients</span><h2>145+</h2></div>
+          <div class="counts-row"><span>Python/DRF Projects</span><h2>120+</h2></div>
+          <div class="counts-row"><span>Years of Experience</span><h2>15+</h2></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============== VAL/STACK/FAQ (content unchanged) ============== -->
+  <section class="py-intro">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h2 class="mb-3">Why Django + DRF with Delemon Technology?</h2>
+          <p class="lead">Django gives you a secure, batteries-included framework; DRF adds a powerful toolkit for RESTful APIs. Together, we ship features faster, keep quality high, and make your platform easy to maintain and scale.</p>
+          <div class="py-badges">
+            <span class="badge"><i class="fa-solid fa-bolt"></i> Rapid MVP to scale</span>
+            <span class="badge"><i class="fa-solid fa-shield-halved"></i> Security by design (OWASP)</span>
+            <span class="badge"><i class="fa-solid fa-gauge-high"></i> Performance engineered</span>
+            <span class="badge"><i class="fa-solid fa-diagram-project"></i> Clean, modular architecture</span>
+            <span class="badge"><i class="fa-solid fa-database"></i> PostgreSQL-first</span>
+            <span class="badge"><i class="fa-solid fa-cloud-arrow-up"></i> CI/CD & Cloud-native</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-panels">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4"><div class="py-panel"><h3><i class="fa-solid fa-layer-group me-2 text-warning"></i> Django Web Platforms</h3><p>Admin portals, ERPs, CRMs, booking engines, and dashboards with role-based access and audit trails.</p><p class="mb-0"><strong>Stack:</strong> Django, Celery, Redis, PostgreSQL, Django Admin</p></div></div>
+        <div class="col-md-6 col-lg-4"><div class="py-panel"><h3><i class="fa-solid fa-link me-2 text-warning"></i> DRF REST APIs</h3><p>Versioned, well-documented REST APIs with throttling, rate limits, serializers, and robust permissions.</p><p class="mb-0"><strong>Toolkit:</strong> Django REST Framework, JWT/OAuth2, drf-yasg/OpenAPI</p></div></div>
+        <div class="col-md-6 col-lg-4"><div class="py-panel"><h3><i class="fa-solid fa-puzzle-piece me-2 text-warning"></i> Integrations</h3><p>Payments, CRM/ERP, logistics, 3rd-party APIs, webhooks, and background jobs for reliable automation.</p><p class="mb-0"><strong>Common:</strong> Stripe/PayTabs, Zoho/HUB, Twilio, SendGrid, GA4/Mixpanel</p></div></div>
+        <div class="col-md-6 col-lg-4"><div class="py-panel"><h3><i class="fa-solid fa-lock me-2 text-warning"></i> Security & Compliance</h3><p>OWASP practices, encryption in transit/at rest, RBAC/ABAC, SSO, and audit logs for regulated sectors.</p><p class="mb-0"><strong>Access:</strong> SSO/SAML/OAuth2, MFA, permissions & policies</p></div></div>
+        <div class="col-md-6 col-lg-4"><div class="py-panel"><h3><i class="fa-solid fa-gauge-high me-2 text-warning"></i> Performance & Scale</h3><p>Caching, async tasks, DB indexing, and load testing so your app stays fast as usage grows.</p><p class="mb-0"><strong>Infra:</strong> Nginx, Gunicorn/UWSGI, Redis, CDN</p></div></div>
+        <div class="col-md-6 col-lg-4"><div class="py-panel"><h3><i class="fa-solid fa-cloud me-2 text-warning"></i> DevOps & Reliability</h3><p>Dockerized apps, CI/CD pipelines, IaC, blue-green/Canary releases, and observability from day one.</p><p class="mb-0"><strong>Cloud:</strong> AWS/Azure/GCP, Terraform, GitHub Actions</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-stack">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3"><div class="stack-tile"><h4><i class="fa-solid fa-user-check me-2 text-warning"></i> Auth & Roles</h4><ul><li>Email/OTP login</li><li>JWT/OAuth2/SSO</li><li>RBAC/ABAC</li><li>Audit trails</li></ul></div></div>
+        <div class="col-md-6 col-lg-3"><div class="stack-tile"><h4><i class="fa-solid fa-credit-card me-2 text-warning"></i> Payments & Billing</h4><ul><li>Stripe/PayTabs/PayPal</li><li>Subscriptions</li><li>Invoices & refunds</li><li>Webhooks</li></ul></div></div>
+        <div class="col-md-6 col-lg-3"><div class="stack-tile"><h4><i class="fa-solid fa-chart-line me-2 text-warning"></i> Data & Analytics</h4><ul><li>Event tracking & funnels</li><li>GA4/Mixpanel</li><li>BI dashboards</li><li>ETL pipelines</li></ul></div></div>
+        <div class="col-md-6 col-lg-3"><div class="stack-tile"><h4><i class="fa-solid fa-sitemap me-2 text-warning"></i> Ops & Integrations</h4><ul><li>CRM/ERP sync</li><li>3rd-party APIs</li><li>Queues & workers</li><li>Observability</li></ul></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ (unchanged design; now responsive) -->
+  <div class="faq-section">
+    <div class="faq-section-header"><h2>FAQ</h2></div>
+    <div class="faq-cards">
+      <div class="faq-card">
+        <h2>1</h2>
+        <p class="faq-question">How long does a Django + DRF project take?</p>
+        <i class="fa-solid fa-arrow-right-long"></i>
+        <div class="card-overlay"><p>MVPs often launch in 6–10 weeks depending on scope; complex platforms ship in phased releases with a clear roadmap.</p></div>
+      </div>
+      <div class="faq-card">
+        <h2>2</h2>
+        <p class="faq-question">Can you integrate our existing systems?</p>
+        <i class="fa-solid fa-arrow-right-long"></i>
+        <div class="card-overlay"><p>Yes—payments, CRM/ERP, logistics, marketing, and analytics with secure REST endpoints and webhooks.</p></div>
+      </div>
+      <div class="faq-card">
+        <h2>3</h2>
+        <p class="faq-question">How do you handle security?</p>
+        <i class="fa-solid fa-arrow-right-long"></i>
+        <div class="card-overlay"><p>OWASP practices, secrets management, encryption, least-privilege access, and continuous security updates.</p></div>
+      </div>
+      <div class="faq-card">
+        <h2>4</h2>
+        <p class="faq-question">Do you provide SLAs & ongoing support?</p>
+        <i class="fa-solid fa-arrow-right-long"></i>
+        <div class="card-overlay"><p>Absolutely—tiered SLAs for maintenance, monitoring, performance tuning, and feature enhancements.</p></div>
+      </div>
+      <div class="faq-card">
+        <h2>5</h2>
+        <p class="faq-question">Can you modernize legacy Django apps?</p>
+        <i class="fa-solid fa-arrow-right-long"></i>
+        <div class="card-overlay"><p>We refactor modules, improve test coverage, add CI/CD, upgrade dependencies, and ship safely without downtime.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============== JS: validation + loading + re-submit guard ============== -->
+  <script>
+    const form = document.getElementById('web-page-form');
+    const submitBtn = document.getElementById('form-submit');
+    const spinner = document.getElementById('btn-spinner');
+    const btnText = submitBtn.querySelector('.btn-text');
+
+    function setErrors(n='', e='', p=''){
+      document.getElementById('name-error').textContent = n;
+      document.getElementById('email-error').textContent = e;
+      document.getElementById('phone-error').textContent = p;
+    }
+
+    form.addEventListener('submit', function(ev){
+      ev.preventDefault();
+
+      // reset errors
+      setErrors();
+
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+
+      let ok = true;
+      if(!name){ setErrors('Please enter your name.'); ok = false; }
+      const mailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      if(!mailOk){ setErrors('', 'Enter a valid email address.'); ok = false; }
+      if(!phone){ setErrors('', '', 'Please enter your phone number.'); ok = false; }
+
+      if(!ok) return;
+
+      // lock the button + show spinner
+      submitBtn.disabled = true;
+      spinner.hidden = false;
+      btnText.textContent = 'Sending…';
+
+      fetch(form.action, { method:'POST', body:new FormData(form) })
+        .then(r => {
+          if(r.ok){
+            alert('Thank you! We will get back to you shortly.');
+            form.reset();
+          }else{
+            alert('Submission failed. Please try again.');
+          }
+        })
+        .catch(() => alert('Network error. Please try again.'))
+        .finally(() => {
+          submitBtn.disabled = false;
+          spinner.hidden = true;
+          btnText.textContent = 'SUBMIT';
+        });
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+{% endblock %}
+</body>
+</html>

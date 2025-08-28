@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'base.html' %}
+{% block title %}Java (Spring Boot) Development Services in Dubai | Delemon Technology{% endblock %}
+{% load static %}
+{% block content %}
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Java Development</title>
+  <meta name="description" content="Delemon Technology delivers secure, scalable Java solutions using Spring Boot, Spring MVC, and Microservices. APIs, enterprise platforms, integrations, and event-driven systems—engineered for performance and growth."/>
+  <link rel="canonical" href="https://www.delemontechnology.com/java-development"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<style>
+/* ===== HERO & FORM (reuse site styles) ===== */
+.web-page-bg{
+  width:100%;height:100vh;background-size:cover;display:flex;align-items:center;justify-content:space-evenly;flex-direction:row;background-repeat:no-repeat;
+  background-image:linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)),url('{% static "img/web-bg-2.jpg" %}');
+}
+.web-page-bg-1{width:50%;height:100%;display:flex;align-items:flex-start;justify-content:center;flex-direction:column;}
+.web-page-bg-2{width:40%;height:90%;display:flex;align-items:center;justify-content:center;}
+.web-page-bg-icons{width:10%;height:45%;display:flex;align-items:center;justify-content:space-evenly;flex-direction:column;}
+.web-page-bg-1 h1{color:#fff;font-weight:700;font-size:35px;}
+.web-page-bg-1-content p{color:#fff;font-weight:300;font-size:14px;}
+.web-page-bg-1-content{width:100%;display:flex;align-items:flex-start;}
+.icon-container{width:30px;height:30px;display:flex;align-items:center;justify-content:center;background:none;border-radius:50%;}
+.icon-container i{color:#fff;font-size:13px;}
+.icon-container:hover{background:#fff;border:2px solid #FAB206;transition:.3s ease;}
+.icon-container:hover i{color:#000;}
+#web-page-form{background:#fff;width:90%;padding:8%;height:80%;}
+#web-page-form h3{font-size:20px;font-weight:700;}
+#web-page-form label{font-size:12px;}
+.web-page-form-input{border:hidden;outline:none;padding-left:5px;width:100%;font-size:12px;height:30px;background:#F1EFF0;}
+.web-page-form-button{background:#fff;color:#FAB206;outline:none;width:100px;height:30px;font-size:12px;border:2px solid #FAB206;}
+#form-bottom-p{font-size:12px;color:#aaa;text-align:center;}
+#web-page-form p span{color:#FAB206;font-weight:600;}
+.error-message{color:red;font-size:12px;}
+
+/* ===== COUNTERS (reuse) ===== */
+{% comment %} .web-page-container-2{width:100%;padding-top:60px;display:flex;flex-direction:row;align-items:center;justify-content:space-evenly;}
+.web-page-clients{width:40%;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;}
+.web-page-clients-details{width:45%;}
+.web-page-clients h2{font-size:30px;font-weight:600;}
+.web-page-clients p{font-size:14px;}
+.web-page-clients-counts{width:100%;height:180px;display:flex;padding:20px;flex-direction:column;align-items:center;justify-content:space-evenly;background:#F6F6F6;}
+.web-page-clients-counts h5{font-size:18px;font-weight:600;}
+.clients-counts{width:100%;display:flex;align-items:center;justify-content:space-evenly;}
+.counts-row{display:flex;flex-direction:column;align-items:center;height:80px;width:30%;border-right:1px solid #dfdfdf;justify-content:space-between;}
+.counts-row span{font-size:14px;font-weight:300;}
+.counts-row h2{font-size:35px;font-weight:800;color:#FAB206;} {% endcomment %}
+/* ===== COUNTERS (reuse) ===== */
+.web-page-container-2 {
+  width: 100%;
+  padding-top: 60px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap; /* important for smaller screens */
+}
+
+.web-page-clients {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.web-page-clients-details {
+  width: 45%;
+}
+
+.web-page-clients-counts {
+  width: 100%;
+  min-height: 180px;
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background: #F6F6F6;
+  border-radius: 10px;
+}
+
+.clients-counts {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap; /* allow wrapping */
+}
+
+.counts-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: auto;
+  min-height: 80px;
+  width: 30%;
+  border-right: 1px solid #dfdfdf;
+  padding: 10px 0;
+}
+
+.counts-row:last-child {
+  border-right: none;
+}
+
+.counts-row span {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.counts-row h2 {
+  font-size: 35px;
+  font-weight: 800;
+  color: #FAB206;
+}
+
+/* ===== MOBILE FIX ===== */
+@media(max-width: 992px) {
+  .web-page-container-2 {
+    flex-direction: column;
+    gap: 24px;
+    padding: 40px 0;
+  }
+
+  .web-page-clients,
+  .web-page-clients-details {
+    width: 100%;
+    text-align: center;
+  }
+
+  .clients-counts {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .counts-row {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #dfdfdf;
+    padding-bottom: 12px;
+  }
+
+  .counts-row:last-child {
+    border-bottom: none;
+  }
+}
+
+/* ===== BRAND TOKENS ===== */
+:root{
+  --brand-yellow:#FAB206;
+  --ink:#111111;
+  --paper:#ffffff;
+  --border:#e5e7eb;
+  --muted:#4b5563;
+}
+
+/* ===== JAVA BODY (white / yellow / black) ===== */
+.java-intro{padding:60px 0;background:#111;color:#fff;}
+.java-intro .lead{font-size:1.05rem;opacity:.96;}
+.java-pills{display:flex;flex-wrap:wrap;gap:12px;margin-top:16px}
+.java-pills .pill{
+  background:transparent;color:#fff;border:1.5px solid var(--brand-yellow);
+  border-radius:999px;padding:9px 14px;font-size:.92rem;display:inline-flex;align-items:center;gap:8px;transition:.18s ease-in-out;
+}
+.java-pills .pill i{color:var(--brand-yellow)}
+.java-pills .pill:hover{background:var(--brand-yellow);color:#111;}
+.java-pills .pill:hover i{color:#111}
+
+/* Productized panels */
+.java-panels{padding:60px 0;background:#fff;}
+.java-panel{border:1px solid #eee;border-radius:14px;padding:24px;background:#fff;box-shadow:0 6px 18px rgba(0,0,0,.05);height:100%}
+.java-panel h3{font-size:22px;margin-bottom:10px;display:flex;align-items:center;gap:10px}
+.java-panel h3 i{color:var(--brand-yellow)}
+.java-panel p{margin-bottom:8px;color:var(--muted)}
+
+/* Capability tiles */
+.java-stack{padding:60px 0;background:#f8fafc;}
+.stack-tile{border:1px dashed #cbd5e1;border-radius:14px;padding:18px;background:#fff;height:100%}
+.stack-tile h4{font-size:18px;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.stack-tile h4 i{color:var(--brand-yellow)}
+.stack-tile ul{padding-left:18px;margin:0}
+.stack-tile li{margin:6px 0}
+
+/* Delivery timeline */
+.java-timeline{position:relative;padding:60px 0;background:#fff}
+.java-timeline:before{content:"";position:absolute;left:50%;top:0;bottom:0;width:2px;background:#e5e7eb}
+.step{position:relative;width:50%;padding:20px 30px}
+.step-left{left:0;text-align:right}
+.step-right{left:50%}
+.step .dot{position:absolute;top:24px;width:12px;height:12px;background:var(--brand-yellow);border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 3px #f1f5f9}
+.step-left .dot{right:-6px}
+.step-right .dot{left:-6px}
+.step h5{font-size:18px;margin-bottom:6px}
+.step p{margin:0;color:#475569}
+
+/* ===== FAQ (reuse site) ===== */
+.faq-section{min-height:90vh;width:100%;flex-direction:column;align-items:center;justify-content:space-evenly;display:flex;background:#E3E3E3;}
+.faq-section-header{width:90%;display:flex;align-items:flex-start;justify-content:flex-start;}
+.faq-section-header h2{-webkit-text-stroke:1px #000;color:transparent;font-size:70px;}
+.faq-cards{display:flex;width:90%;justify-content:space-between;flex-direction:row;align-items:center;}
+.faq-card{position:relative;overflow:hidden;width:220px;height:300px;display:flex;cursor:pointer;align-items:flex-start;padding:20px;flex-direction:column;background:#fff;justify-content:space-evenly;}
+.card-overlay{padding:20px;position:absolute;left:0;top:100%;width:100%;height:100%;z-index:1;transition:all 350ms cubic-bezier(0,0,0.2,1);display:flex;flex-direction:column;justify-content:space-evenly;align-items:flex-start;background:#000;color:#fff;}
+.faq-card:hover .card-overlay{top:0;}
+.card-overlay.left{left:-100%;top:0;}
+.faq-card:hover .card-overlay.left{left:0;}
+.card-overlay.right{left:100%;top:0;}
+.faq-card:hover .card-overlay.right{left:0;}
+.faq-card:hover .card-overlay.top{left:0;top:-100%;}
+.faq-card:hover .card-overlay.top{left:0;top:0;}
+.faq-card h2{-webkit-text-stroke:1px #FAB206;color:transparent;font-size:50px;font-family:"Manrope",sans-serif;}
+.faq-question{font-size:14px;font-weight:700;font-family:"Manrope",sans-serif;}
+.faq-card i{height:30px;width:30px;border:2px solid #FAB206;background:#fff;color:#FAB206;font-size:12px;justify-content:center;border-radius:50%;display:flex;align-items:center;}
+
+/* ===== MOBILE ===== */
+@media(max-width: 992px){
+  .web-page-bg{flex-direction:column;height:140vh}
+  .web-page-bg-icons{flex-direction:row;width:90%;height:10%}
+  .web-page-bg-1{width:90%;height:30%}
+  #web-page-form{width:90%;height:80%}
+  .web-page-bg-2{width:100%}
+  .web-page-container-2{flex-direction:column;gap:24px;padding:40px 0}
+  .web-page-clients,.web-page-clients-details{width:90%}
+  .clients-counts{flex-direction:column;gap:12px}
+  .counts-row{width:100%;border-right:none;border-bottom:1px solid #dfdfdf;padding-bottom:12px}
+}
+@media(max-width: 768px){
+  .java-timeline:before{left:16px}
+  .step{width:100%;padding-left:44px;text-align:left}
+  .step .dot{left:10px}
+  .step-left,.step-right{left:0}
+}
+@media(min-width:320px) and (max-width:480px){
+  .faq-section{height:auto}
+  .faq-cards{height:340px;overflow-x:auto}
+  .faq-card{min-width:220px;margin-right:10px}
+  .faq-section-header h2{font-size:35px;margin:10px 0}
+}
+</style>
+
+<body>
+  <!-- ===== HERO ===== -->
+  <div class="web-page-bg">
+    <div class="web-page-bg-icons">
+      <div class="icon-container"><a href="https://www.facebook.com/profile.php?id=61554857870065&sfnsn=wiwspwa&mibextid=RUbZ1f"><i class="fa-brands fa-facebook"></i></a></div>
+      <div class="icon-container"><a href="#"><i class="fa-brands fa-x-twitter"></i></a></div>
+      <div class="icon-container"><a href="https://www.instagram.com/delemon_technology?igsh=emF2ajg3bm00cDUz"><i class="fa-brands fa-instagram"></i></a></div>
+      <div class="icon-container"><a href="https://www.linkedin.com/company/delemon-technology/"><i class="fa-brands fa-linkedin-in"></i></a></div>
+      <div class="icon-container"><a href="#"><i class="fa-brands fa-youtube"></i></a></div>
+    </div>
+
+    <div class="web-page-bg-1">
+      <h1>Java Development with Spring Boot<br> Company in Dubai, UAE</h1>
+      <div class="web-page-bg-1-content">
+        <p>We build enterprise-grade platforms and REST APIs with Spring Boot—secure, scalable, and performance-oriented for modern businesses.</p>
+      </div>
+    </div>
+
+    <div class="web-page-bg-2">
+      <form id="web-page-form" action="https://api.web3forms.com/submit" method="POST" onsubmit="return validatecontact(event)">
+        <h3>Have a Java/Spring project?</h3>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <input type="hidden" name="access_key" value="1d581977-0167-4073-8d30-f8e754b508d4">
+            <input type="hidden" name="subject" value="Java (Spring Boot): Form Submission from Delemon Website">
+            <label>Your Name</label>
+            <input type="text" placeholder="Enter your name" id="name" name="name" class="web-page-form-input">
+            <p class="error-message" id="name-error"></p>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label>Your Email</label>
+            <input type="text" name="email" id="email" placeholder="Enter your email" class="web-page-form-input">
+            <p class="error-message" id="email-error"></p>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label>Your Number</label>
+            <input type="text" name="phonenumber" id="phone" placeholder="Enter your number" class="web-page-form-input">
+            <p class="error-message" id="phone-error"></p>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label>Your Message</label>
+            <input type="text" name="message" id="message" placeholder="Tell us about your project" class="web-page-form-input">
+          </div>
+        </div>
+        <input type="submit" class="web-page-form-button" value="SUBMIT"/>
+        <p class="mt-4" id="form-bottom-p">
+          If you have any RFP requirement please share with us at <span>@delemontechnology.ae</span>. For careers, please check our Careers section.
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <!-- ===== COUNTS ===== -->
+  <div class="web-page-container-2" style="padding-bottom:0">
+    <div class="web-page-clients">
+      <h2>Java Development Services in Dubai</h2>
+      <p>
+        We build tailor-made Java applications that align with your business objectives and target audience.
+        Our engineers specialize in scalable, performance-oriented platforms using Spring Boot and microservices.
+        Delemon Technology offers comprehensive enterprise development services tailored to your needs.
+      </p>
+      <p>From MVPs to mission-critical systems, we deliver clean architecture, resilient APIs, and secure integrations—ready to scale.</p>
+    </div>
+    <div class="web-page-clients-details">
+      <div class="web-page-clients-counts">
+        <h5>Key Highlights — Our Work in Numbers</h5>
+        <div class="clients-counts">
+          <div class="counts-row">
+            <span>Happy Clients</span>
+            <h2>145+</h2>
+          </div>
+          <div class="counts-row">
+            <span>Java/Spring Projects</span>
+            <h2>140+</h2>
+          </div>
+          <div class="counts-row" style="border-right:none">
+            <span>Years of Experience</span>
+            <h2>15+</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== BODY (Java-focused) ===== -->
+
+  <!-- Black intro with yellow pills -->
+  <section class="java-intro">
+    <div class="container">
+      <h2 class="mb-3">Why Java + Spring Boot with Delemon Technology?</h2>
+      <p class="lead">
+        Proven enterprise stack, rich ecosystem, and first-class tooling—delivered with strong engineering practices for reliability, security, and scale.
+      </p>
+      <div class="java-pills">
+        <span class="pill"><i class="fa-solid fa-diagram-project"></i> Microservices & DDD</span>
+        <span class="pill"><i class="fa-solid fa-shield-halved"></i> Security & SSO</span>
+        <span class="pill"><i class="fa-solid fa-gauge-high"></i> High performance</span>
+        <span class="pill"><i class="fa-solid fa-database"></i> JPA/Hibernate</span>
+        <span class="pill"><i class="fa-solid fa-message"></i> Kafka & events</span>
+        <span class="pill"><i class="fa-solid fa-cloud-arrow-up"></i> CI/CD & Cloud</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Productized service panels -->
+  <section class="java-panels">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="java-panel">
+            <h3><i class="fa-solid fa-layer-group"></i> Spring Boot Platforms</h3>
+            <p>Modular enterprise apps with REST controllers, DTOs, and service layers that are easy to evolve.</p>
+            <p class="mb-0"><strong>Stack:</strong> Spring Boot, Spring MVC, JPA/Hibernate, PostgreSQL/MySQL</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="java-panel">
+            <h3><i class="fa-solid fa-plug-circle-bolt"></i> APIs & Integrations</h3>
+            <p>Versioned REST APIs, OpenAPI documentation, and robust integrations with ERP/CRM, payments, and third-party systems.</p>
+            <p class="mb-0"><strong>Toolkit:</strong> Springdoc OpenAPI, Feign, WebClient</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="java-panel">
+            <h3><i class="fa-solid fa-right-left"></i> Microservices & Messaging</h3>
+            <p>Event-driven services with Kafka/RabbitMQ, circuit breakers, retries, and observability baked in.</p>
+            <p class="mb-0"><strong>Patterns:</strong> Spring Cloud, Config, Gateway, Resilience4j</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="java-panel">
+            <h3><i class="fa-solid fa-lock"></i> Security & Compliance</h3>
+            <p>SSO, OAuth2/OIDC, JWT, RBAC/ABAC, and audit trails to satisfy enterprise and regulated environments.</p>
+            <p class="mb-0"><strong>Access:</strong> Spring Security, Keycloak/Okta, MFA</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="java-panel">
+            <h3><i class="fa-solid fa-gauge-simple-high"></i> Performance & Scale</h3>
+            <p>Caching, connection pooling, DB indexing, and load testing so your services stay fast under pressure.</p>
+            <p class="mb-0"><strong>Infra:</strong> Redis, HikariCP, JMeter, CDN</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="java-panel">
+            <h3><i class="fa-solid fa-cloud"></i> DevOps & Reliability</h3>
+            <p>Containerized builds, CI/CD pipelines, centralized logging, metrics, and blue-green or canary releases.</p>
+            <p class="mb-0"><strong>Cloud:</strong> Docker, Kubernetes, Helm, GitHub Actions, AWS/Azure/GCP</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Capability tiles -->
+  <section class="java-stack">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="stack-tile">
+            <h4><i class="fa-solid fa-user-shield"></i> Auth & SSO</h4>
+            <ul>
+              <li>OAuth2 / OIDC flows</li>
+              <li>Keycloak / Okta</li>
+              <li>RBAC / ABAC</li>
+              <li>Audit logging</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="stack-tile">
+            <h4><i class="fa-solid fa-credit-card"></i> Payments & Billing</h4>
+            <ul>
+              <li>Stripe/PayTabs/Adyen</li>
+              <li>Subscriptions</li>
+              <li>Invoices & refunds</li>
+              <li>Webhooks</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="stack-tile">
+            <h4><i class="fa-solid fa-chart-line"></i> Data & Analytics</h4>
+            <ul>
+              <li>Kafka streaming</li>
+              <li>Reporting & BI</li>
+              <li>ELK/Opensearch</li>
+              <li>ETL pipelines</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="stack-tile">
+            <h4><i class="fa-solid fa-gears"></i> Ops & Integrations</h4>
+            <ul>
+              <li>SAP/CRM connectors</li>
+              <li>3rd-party APIs</li>
+              <li>Queues & workers</li>
+              <li>Observability</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Delivery timeline -->
+  {% comment %} <section class="java-timeline">
+    <div class="container position-relative">
+      <div class="step step-left">
+        <span class="dot"></span>
+        <h5>1) Discovery & Architecture</h5>
+        <p>Domain modeling, non-functional requirements, and a pragmatic roadmap aligned with your KPIs.</p>
+      </div>
+      <div class="step step-right">
+        <span class="dot"></span>
+        <h5>2) Build in Sprints</h5>
+        <p>Incremental releases, automated testing, and CI checks with stakeholder demos.</p>
+      </div>
+      <div class="step step-left">
+        <span class="dot"></span>
+        <h5>3) Hardening & UAT</h5>
+        <p>Load testing, security reviews, and UAT sign-off before production.</p>
+      </div>
+      <div class="step step-right">
+        <span class="dot"></span>
+        <h5>4) Launch & Support</h5>
+        <p>Blue-green/canary deploys, monitoring, SLAs, and continuous improvement.</p>
+      </div>
+    </div>
+  </section> {% endcomment %}
+
+  <!-- ===== FAQ ===== -->
+  <div class="faq-section">
+    <div class="faq-section-header"><h2>FAQ</h2></div>
+    <div class="faq-cards">
+      <div class="faq-card">
+        <h2>1</h2>
+        <p class="faq-question">Monolith or microservices—what should we choose?</p>
+        <i class="fa-solid fa-arrow-right-long"></i>
+        <div class="card-overlay">
+          <h2>1</h2>
+          <p>Start modular monolith for speed and clarity; extract services when scale, autonomy, or throughput demands it.</p>
+        </div>
+      </div>
+      <div class="faq-card">
+        <h2>2</h2>
+        <p class="faq-question">How do you secure Java APIs?</p>
+        <i class="fa-solid fa-arrow-right-long"></i>
+        <div class="card-overlay left">
+          <h2>2</h2>
+          <p>Spring Security, OAuth2/OIDC, JWT rotation, input validation, rate limits, and centralized secrets management.</p>
+        </div>
+      </div>
+      <div class="faq-card">
+        <h2>3</h2>
+        <p class="faq-question">What databases do you support?</p>
+        <i class="fa-solid fa-arrow-right-long"></i>
+        <div class="card-overlay right">
+          <h2>3</h2>
+          <p>PostgreSQL/MySQL via JPA/Hibernate, plus Redis for caching and Kafka for streaming; NoSQL when workloads fit.</p>
+        </div>
+      </div>
+      <div class="faq-card">
+        <h2>4</h2>
+        <p class="faq-question">Do you provide maintenance and SLAs?</p>
+        <i class="fa-solid fa-arrow-right-long"></i>
+        <div class="card-overlay top">
+          <h2>4</h2>
+          <p>Yes—tiered SLAs, uptime monitoring, performance tuning, and roadmap-driven feature delivery.</p>
+        </div>
+      </div>
+      <div class="faq-card">
+        <h2>5</h2>
+        <p class="faq-question">Can you integrate with our existing systems?</p>
+        <i class="fa-solid fa-arrow-right-long"></i>
+        <div class="card-overlay left">
+          <h2>5</h2>
+          <p>We connect to ERP/CRM, payment gateways, identity providers, and legacy SOAP/REST services with proper mapping.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Scripts ===== -->
+  <script>
+    function validatecontact(event){
+      event.preventDefault();
+      var name = document.getElementById("name").value.trim();
+      var email = document.getElementById("email").value.trim();
+      var phone = document.getElementById("phone").value.trim();
+
+      var nameError = document.getElementById("name-error");
+      var emailError = document.getElementById("email-error");
+      var phoneError = document.getElementById("phone-error");
+
+      nameError.textContent = "";
+      emailError.textContent = "";
+      phoneError.textContent = "";
+
+      var isValid = true;
+      var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (!name){ nameError.textContent = "Please enter your name."; isValid = false; }
+      if (!emailRegex.test(email)){ emailError.textContent = "Enter a valid email address."; isValid = false; }
+      if (!phone){ phoneError.textContent = "Please enter your phone number."; isValid = false; }
+
+      if (isValid){ submitForm(); }
+      return false;
+    }
+
+    function submitForm(){
+      const form = document.getElementById('web-page-form');
+      const formData = new FormData(form);
+      fetch(form.action, { method:'POST', body:formData })
+        .then(res=>{
+          if(res.ok){
+            alert('Thank you! We will get back to you shortly.');
+            form.reset();
+          }else{
+            console.error('Form submission failed:', res.statusText);
+          }
+        })
+        .catch(err=>console.error('Error:', err));
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+{% endblock %}
+</body>
+</html>

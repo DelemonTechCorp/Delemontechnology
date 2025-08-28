@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'base.html' %}
+{% block title %}Digital Design Agency in Dubai | Branding, UI/UX, Motion Graphics{% endblock %}
+{% load static %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Design</title>
+    <meta name="description" content="Delemon Technology is a digital design agency in Dubai, UAE. We craft brand identities, UI/UX, motion graphics, social content kits, ad creatives, and presentation design—built for performance and polish.">
+    <link rel="canonical" href="https://www.delemontechnology.com/digital-design-services"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+</head>
+
+<style>
+  /* ===== Delemon Systems / Process / Impact ===== */
+.dss-subtitle { max-width: 860px; margin: 0 auto; color:#555; }
+
+.dss-card{
+  background:#fff; border-radius:14px; padding:22px;
+  box-shadow:0 10px 24px rgba(0,0,0,.08); border:1px solid rgba(0,0,0,.06);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.dss-card:hover{ transform:translateY(-4px); box-shadow:0 14px 30px rgba(0,0,0,.12); }
+
+.dss-card-head h3{ font-size:20px; font-weight:700; margin:6px 0 8px; }
+.dss-desc{ font-size:14px; color:#666; margin:0 0 10px; }
+
+.dss-chip{
+  display:inline-block; font-size:11px; text-transform:uppercase; letter-spacing:.5px;
+  background:#f1f1f1; color:#222; padding:4px 8px; border-radius:20px; font-weight:700;
+}
+.dss-chip.gold{ background:rgba(250,178,6,.18); color:#111; border:1px solid rgba(250,178,6,.45); }
+
+.dss-list{ list-style:none; padding:0; margin:12px 0 14px; }
+.dss-list li{ display:flex; gap:8px; font-size:14px; color:#333; margin-bottom:8px; }
+.dss-list i{ color:var(--gold); margin-top:3px; }
+
+.dss-card.featured{
+  border:1px solid rgba(250,178,6,.45);
+  box-shadow:0 14px 34px rgba(250,178,6,.15), 0 10px 22px rgba(0,0,0,.06);
+}
+
+.systems-grid .btn.btn-dark{ background:#111; border-color:#111; }
+.systems-grid .btn.btn-outline-dark{ border-color:#111; color:#111; }
+.systems-grid .btn.btn-outline-dark:hover{ background:#111; color:#fff; }
+
+/* Process timeline */
+.process-row{
+  display:grid; grid-template-columns:repeat(6,1fr); gap:16px; margin-top:10px;
+}
+.process-step{
+  background:#fff; border:1px solid rgba(0,0,0,.06); border-radius:12px; padding:16px;
+  box-shadow:0 6px 16px rgba(0,0,0,.06); position:relative;
+}
+.step-index{
+  position:absolute; top:10px; right:12px; font-weight:800; font-size:12px; opacity:.35;
+}
+.process-step h4{ font-size:15px; margin:0 0 6px; font-weight:700; }
+.process-step p{ font-size:13px; color:#555; margin:0; }
+
+/* Impact metrics */
+.impact-wrap{
+  display:grid; grid-template-columns:repeat(4,1fr); gap:16px;
+}
+.impact-card{
+  background:#f8f9fa; border:1px dashed rgba(0,0,0,.12); border-radius:12px; padding:16px;
+}
+.impact-card h5{ margin:0 0 6px; font-size:14px; text-transform:uppercase; letter-spacing:.4px; color:#333; }
+.impact-card p{ margin:0; font-size:14px; color:#444; }
+
+/* Responsive */
+@media (max-width: 992px){
+  .process-row{ grid-template-columns:repeat(3,1fr); }
+  .impact-wrap{ grid-template-columns:repeat(2,1fr); }
+}
+@media (max-width: 576px){
+  .process-row{ grid-template-columns:1fr; }
+  .impact-wrap{ grid-template-columns:1fr; }
+}
+
+/* ===== Shared theme/colors (same look & feel) ===== */
+:root { --gold:#FAB206; }
+
+/* ===== HERO (same design) ===== */
+.web-page-bg{
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+    background-repeat: no-repeat;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("{% static 'img/web-bg-2.jpg' %}");
+}
+.web-page-bg-1{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items:flex-start;
+    justify-content:center;
+    flex-direction: column;
+}
+.web-page-bg-2{
+    width: 40%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.web-page-bg-icons{
+  width: 10%;
+  height: 45%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+.web-page-bg-1 h1{
+    color: #fff;
+    font-weight: 700;
+    font-size: 35px;
+}
+.web-page-bg-1-content p{
+    color: #fff;
+    font-weight: 300;
+    font-size: 14px;
+}
+.icon-container{
+    width: 30px; height: 30px; display:flex; align-items:center; justify-content:center; border-radius:50%;
+}
+.icon-container i{ color:#fff; font-size:13px; }
+.icon-container:hover{ background:#fff; border:2px solid var(--gold); transition:.3s ease; }
+.icon-container:hover i{ color:#000; }
+
+/* ===== Form (same design/IDs/behavior) ===== */
+#web-page-form{
+    background:#fff; width:90%; padding:8%; height:80%;
+    box-shadow: 0 8px 24px rgba(0,0,0,.12);
+    border-radius:10px;
+}
+#web-page-form h3{ font-size:20px; font-weight:700; }
+#web-page-form label{ font-size:12px; }
+.web-page-form-input{
+    border: none; outline: none; padding-left: 5px; width: 100%; font-size: 12px; height: 30px; background:#F1EFF0;
+    border-radius:6px;
+}
+.web-page-form-button{
+    background:#fff; color:var(--gold); outline:none; width:100px; height:30px; font-size:12px; border:2px solid var(--gold);
+    border-radius:6px;
+}
+#form-bottom-p{ font-size:12px; color:#aaa; text-align:center; }
+#web-page-form p span{ color:var(--gold); font-weight:600; }
+.error-message{ color:#e53935; font-size:12px; }
+
+/* ===== Headings ===== */
+h2{
+  text-align:center; text-transform:capitalize; padding-bottom:20px;
+  font-size:30px; font-weight:600;
+}
+
+/* ===== Middle content (digital design copy) ===== */
+.web-page-container-2{ width:100%; display:flex; gap:50px; align-items:center; justify-content:center; }
+.web-page-container-2 p{ text-align:left; line-height:2; font-size:16px; }
+.web-page-clients{ width:50%; }
+.web-page-clients h2{ font-size:30px; font-weight:600; text-align:left; }
+.web-page-clients-details{ width:50%; }
+.web-page-clients-details img{ width:100%; }
+
+/* Service tiles (clean cards) */
+.reasons { display:grid; grid-template-columns:repeat(2,1fr); gap:30px; margin-bottom:40px; }
+.reason{
+  background:#fff; padding:30px; border-radius:10px;
+  box-shadow:0 8px 20px rgba(0,0,0,.08);
+  text-align:center;
+}
+.reason img{
+  width:80px; height:80px; border-radius:50%; padding:15px; background:#fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,.12), 0 6px 20px rgba(0,0,0,.08);
+}
+.reason h3{ text-transform:uppercase; font-weight:600; color:var(--gold); font-size:22px; margin-top:16px; }
+.reason p{ color:#252525; font-size:1rem; line-height:1.6; text-align:justify; }
+.reasons .reason:last-child{ grid-column: span 2; justify-self:center; }
+
+/* Mini feature cards */
+.web-design-card-section { background:#f8f9fa; padding:50px 0; }
+.web-design-card { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; }
+.card-class{
+  background:#fff; padding:20px; border-radius:10px;
+  box-shadow:0 4px 10px rgba(0,0,0,.08); width:calc(50% - 20px); min-width:280px; text-align:center;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.card-class:hover{ transform:translateY(-5px); box-shadow:0 6px 15px rgba(0,0,0,.15); }
+.card-class h2{ font-size:22px; text-transform:uppercase; color:var(--gold); font-weight:600; margin-bottom:10px; }
+.card-class p{ font-size:16px; color:#555; text-align:justify; }
+
+/* Partners row */
+.logo-img{ padding:25px; display:flex; width:100%; gap:18px; align-items:center; justify-content:center; flex-wrap:wrap; }
+.logo-img img{ height:34px; object-fit:contain; filter:grayscale(.1); }
+
+/* ===== FAQ (same design) ===== */
+.faq-section{
+    height: 90vh; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly; background:#E3E3E3;
+}
+.faq-section-header{ width:90%; display:flex; align-items:flex-start; justify-content:flex-start; }
+.faq-section-header h2{ -webkit-text-stroke:1px #000; color:transparent; font-size:70px; }
+.faq-cards{ display:flex; width:90%; justify-content:space-between; flex-direction:row; align-items:center; }
+.faq-card{
+  position:relative; overflow:hidden; width:220px; height:300px; display:flex; cursor:pointer; align-items:flex-start; padding:20px; flex-direction:column; background:#fff; justify-content:space-evenly;
+  border-radius:10px;
+}
+.faq-card h2{ -webkit-text-stroke:1px var(--gold); color:transparent; font-size:50px; font-family:"Manrope", sans-serif; }
+.faq-question{ font-size:14px; font-weight:700; font-family:"Manrope", sans-serif; }
+.faq-card i{
+  height:30px; width:30px; border:2px solid var(--gold); background:#fff; color:var(--gold); font-size:12px; justify-content:center; border-radius:50%; display:flex; align-items:center;
+}
+.card-overlay{
+  padding:20px; position:absolute; left:0; top:100%; width:100%; height:100%; z-index:1; transition:all 350ms cubic-bezier(0,0,.2,1);
+  display:flex; flex-direction:column; justify-content:space-evenly; align-items:flex-start; background:rgba(0,0,0,.9); color:#fff;
+}
+.faq-card:hover .card-overlay{ top:0; }
+.card-overlay p{ font-size:12px; color:#fff; }
+
+/* Testimonials (optional styling kept) */
+.testimonial-section{ padding:40px; background:#f9f9f9; text-align:center; }
+.section-title{ font-size:2rem; font-weight:700; margin-bottom:30px; }
+.testimonial-cards-wrapper{ display:flex; gap:30px; flex-wrap:wrap; justify-content:center; }
+.testimonial-card{
+  background:#fff; border:1px solid #ddd; border-radius:10px; padding:20px; width:280px; box-shadow:0 6px 12px rgba(0,0,0,.1);
+  transition: transform .3s ease, box-shadow .3s ease; margin:10px;
+}
+.testimonial-card:hover{ transform:translateY(-5px); box-shadow:0 12px 20px rgba(0,0,0,.2); }
+.testimonial-header{ display:flex; align-items:center; margin-bottom:15px; }
+.testimonial-img{ width:40px; height:40px; border-radius:50%; margin-right:15px; }
+.testimonial-name{ font-weight:700; color:#333; }
+.star{ color:gold; font-size:1.1rem; }
+.testimonial-text{ font-size:15px; color:#555; line-height:1.6; text-align:left; }
+
+/* ===== Responsive ===== */
+@media (max-width: 768px){
+  .card-class{ width:100%; }
+}
+@media (min-width:320px) and (max-width:480px){
+  .web-page-bg{ flex-direction:column; height:140vh; }
+  .web-page-bg-icons{ flex-direction:row; width:90%; height:10%; }
+  .web-page-bg-1{ width:90%; height:20%; }
+  .web-page-bg-2{ width:100%; }
+  #web-page-form{ width:90%; height:auto; }
+  .web-page-container-2{ flex-direction:column; }
+  .web-page-clients, .web-page-clients-details{ width:90%; }
+  .faq-section{ height:auto; padding:24px 0; }
+  .faq-cards{ height:340px; overflow-x:auto; gap:12px; }
+  .faq-card{ min-width:220px; margin-right:10px; }
+  .faq-section-header h2{ font-size:38px; margin:10px 0; }
+}
+/* Section Styling */
+.enhanced-section {
+  padding: 40px 0;
+}
+
+.section-tag {
+  display: inline-block;
+  background: rgba(250,178,6,0.15);
+  color: var(--gold);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 1px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.section-title {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.section-desc {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #555;
+}
+
+.btn-gold {
+  background: var(--gold);
+  color: #fff;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+.btn-gold:hover {
+  background: #d79c05;
+  color: #fff;
+}
+
+/* Image Frame & Animation */
+.image-frame {
+  position: relative;
+  display: inline-block;
+  padding: 10px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+.animated-float {
+  animation: floatImage 5s ease-in-out infinite;
+}
+
+@keyframes floatImage {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .section-title { font-size: 24px; }
+  .image-frame { padding: 6px; }
+}
+
+</style>
+
+<body>
+  <!-- ===== HERO (unchanged design; digital design copy) ===== -->
+  <div class="web-page-bg">
+    <div class="web-page-bg-icons">
+      <div class="icon-container"><a href="https://www.facebook.com/profile.php?id=61554857870065&sfnsn=wiwspwa&mibextid=RUbZ1f"><i class="fa-brands fa-facebook"></i></a></div>
+      <div class="icon-container"><a href="#"><i class="fa-brands fa-x-twitter"></i></a></div>
+      <div class="icon-container"><a href="https://www.instagram.com/delemon_technology?igsh=emF2ajg3bm00cDUz"><i class="fa-brands fa-instagram"></i></a></div>
+      <div class="icon-container"><a href="https://www.linkedin.com/company/delemon-technology/"><i class="fa-brands fa-linkedin-in"></i></a></div>
+      <div class="icon-container"><a href="#"><i class="fa-brands fa-youtube"></i></a></div>
+    </div>
+
+    <div class="web-page-bg-1">
+      <h1>DIGITAL DESIGN AGENCY IN DUBAI, UAE</h1>
+      <div class="web-page-bg-1-content">
+        <p>Brand identity, UI/UX, motion graphics, and high-performing ad creatives—crafted for clarity and conversion. We turn ideas into beautiful, on-brand assets that ship fast and scale across channels.</p>
+      </div>
+    </div>
+
+    <!-- Same form structure/IDs so validation & Web3Forms work -->
+    <div class="web-page-bg-2">
+      <form id="web-page-form" action="https://api.web3forms.com/submit" method="POST" onsubmit="return validatecontact(event)">
+        <h3>Have a design brief?</h3>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <input type="hidden" name="access_key" value="1d581977-0167-4073-8d30-f8e754b508d4">
+            <input type="hidden" name="subject" value="Digital Design Enquiry — Delemon Technology">
+            <label>Your Name</label>
+            <input type="text" placeholder="Enter your name" id="name" name="name" class="web-page-form-input">
+            <p class="error-message" id="name-error"></p>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label>Your Email</label>
+            <input type="text" name="email" id="email" placeholder="Enter your email" class="web-page-form-input">
+            <p class="error-message" id="email-error"></p>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label>Your Number</label>
+            <input type="text" name="phonenumber" id="phone" placeholder="Enter your number" class="web-page-form-input">
+            <p class="error-message" id="phone-error"></p>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label>Your Message</label>
+            <input type="text" name="message" id="message" placeholder="Branding, UI/UX, motion, ad creatives…" class="web-page-form-input">
+          </div>
+        </div>
+        <input type="submit" class="web-page-form-button" value="SUBMIT"/>
+        <p class="mt-4" id="form-bottom-p">For RFPs email <span>@delemontechnology.ae</span>. For careers, please check our Careers section.</p>
+      </form>
+    </div>
+  </div>
+
+  <!-- ===== Intro / Value ===== -->
+  {% comment %} <div class="web-page-container-2 container mt-5 mb-4">
+    <div class="web-page-clients">
+      <h2>Digital Design Services — Delemon Technology</h2>
+      <p>
+        Design that moves the needle. We combine strategy, storytelling, and systems to deliver consistent assets across your brand touchpoints—web, app, ads, and social. Expect clear processes, fast turnarounds, and on-brand excellence.
+      </p>
+      <p>
+        Our team builds scalable design systems and asset libraries so your marketing and product teams can move faster with less friction.
+      </p>
+    </div>
+    <div class="web-page-clients-details">
+      <img src="https://img.freepik.com/premium-vector/man-is-sitting-desk-working-graphic-design-project-using-computer-person-working-graphic-design-project-his-computer-simple-modern-illustration_538213-49296.jpg" alt="Digital Design in Dubai">
+    </div>
+  </div> {% endcomment %}
+  <div class="web-page-container-2 container mt-5 mb-4 enhanced-section">
+  <div class="row align-items-center g-4">
+    <!-- Left content -->
+    <div class="col-lg-6">
+      <div class="section-tag">Our Expertise</div>
+      <h2 class="section-title">Digital Design Services — Delemon Technology</h2>
+      <p class="section-desc">
+        Design that moves the needle. We combine strategy, storytelling, and systems to deliver consistent assets across your brand touchpoints—web, app, ads, and social. Expect clear processes, fast turnarounds, and on-brand excellence.
+      </p>
+      <p class="section-desc">
+        Our team builds scalable design systems and asset libraries so your marketing and product teams can move faster with less friction.
+      </p>
+      <a href="#web-page-form" class="btn btn-gold mt-3">Start Your Project</a>
+    </div>
+
+    <!-- Right image -->
+    <div class="col-lg-6 text-center">
+      <div class="image-frame">
+        <img src="https://img.freepik.com/premium-vector/man-is-sitting-desk-working-graphic-design-project-using-computer-person-working-graphic-design-project-his-computer-simple-modern-illustration_538213-49296.jpg" alt="Digital Design in Dubai" class="img-fluid animated-float">
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- ===== Capabilities (tile grid) ===== -->
+  <section class="why-choose-us mt-2 mb-5">
+    <div class="container">
+      <h2>Digital Design Capabilities</h2>
+      <div class="reasons">
+        <div class="reason">
+          {% comment %} <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Color_wheel_1908.png" alt="Branding"> {% endcomment %}
+          <h3>Brand Identity & Guidelines</h3>
+          <p>Logo suites, typography, color, grid, and usage rules. We create flexible systems and export-ready brand kits for teams and partners.</p>
+        </div>
+        <div class="reason">
+          {% comment %} <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg" alt="UI/UX"> {% endcomment %}
+          <h3>UI/UX & Web Design</h3>
+          <p>Wireframes, hi-fi screens, interactive prototypes, and design systems in Figma. Built for accessibility, speed, and conversion.</p>
+        </div>
+        <div class="reason">
+          {% comment %} <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Instagram_simple_icon.svg" alt="Social Content"> {% endcomment %}
+          <h3>Social Content Kits</h3>
+          <p>Reusable templates for Reels, Stories, carousels, and static posts. Consistent, on-brand content at scale for your channels.</p>
+        </div>
+        <div class="reason">
+          {% comment %} <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Adobe_After_Effects_CC_icon.svg" alt="Motion"> {% endcomment %}
+          <h3>Motion Graphics</h3>
+          <p>Explainervids, product loops, kinetic type, and ad animations. We ship AE files and exports optimized for web and social.</p>
+        </div>
+        <div class="reason">
+          {% comment %} <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/Microsoft_Office_PowerPoint_%282019-present%29.svg" alt="Presentations"> {% endcomment %}
+          <h3>Presentations & Sales Collateral</h3>
+          <p>Pitch decks, one-pagers, case studies, and proposal kits—polished layouts with master templates for rapid reuse.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Partners / Tools ===== -->
+  {% comment %} <div class="logo container">
+    <h2>Tools & Partners</h2>
+    <div class="logo-img mb-4">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg" alt="Figma">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Adobe_Illustrator_CC_icon.svg" alt="Illustrator">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_Photoshop_CC_icon.svg" alt="Photoshop">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Adobe_After_Effects_CC_icon.svg" alt="After Effects">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/31/Canva_logo.svg" alt="Canva">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Sketch_Logo.svg" alt="Sketch">
+    </div>
+  </div> {% endcomment %}
+
+  <!-- ===== Packages / What you get ===== -->
+  {% comment %} <div class="web-design-card-section mb-5">
+    <h2>Creative Production Packages</h2>
+    <div class="web-design-card container">
+      <p class="mb-2">Choose a flexible engagement: one-off projects or monthly subscriptions. Every package includes source files, usage rights, and fast turnarounds.</p>
+
+      <div class="card-class">
+        <h2>Starter</h2>
+        <p>Light monthly design for startups: social templates, landing page sections, and basic ad creatives. ~20 design hours/mo.</p>
+      </div>
+      <div class="card-class">
+        <h2>Growth</h2>
+        <p>Brand support + campaigns: new page designs, product visuals, and motion snippets for paid and organic. ~40 hours/mo.</p>
+      </div>
+      <div class="card-class">
+        <h2>Scale</h2>
+        <p>Dedicated design lane: multi-channel asset kits, deck systems, and iterative testing for ads and app screens. ~80 hours/mo.</p>
+      </div>
+      <div class="card-class">
+        <h2>Enterprise</h2>
+        <p>On-site/embedded designers, full design system ownership, and cross-team production workflows. SOW-based.</p>
+      </div>
+    </div>
+  </div> {% endcomment %}
+<!-- ===== Delemon Digital Design: Systems • Process • Impact ===== -->
+<section class="design-systems-section container mb-5">
+  <div class="text-center mb-4">
+    <h2 class="mb-2">What We Build at Delemon</h2>
+    <p class="dss-subtitle">
+      Brand, product, and content systems that keep every touchpoint on-brand and conversion-ready — from first scroll to final click.
+    </p>
+  </div>
+
+  <!-- Design Systems Grid -->
+  <div class="row g-4 systems-grid">
+    <div class="col-12 col-md-6 col-xl-3">
+      <div class="dss-card h-100">
+        <div class="dss-card-head">
+          <span class="dss-chip">Identity</span>
+          <h3>Brand System</h3>
+        </div>
+        <p class="dss-desc">Logo suite, tokens (type/color/spacing), grid rules, and usage governance for teams & partners.</p>
+        <ul class="dss-list">
+          <li><i class="fa-solid fa-circle-check"></i> Logo variants & lockups</li>
+          <li><i class="fa-solid fa-circle-check"></i> Color + typography tokens</li>
+          <li><i class="fa-solid fa-circle-check"></i> Social avatar & cover kit</li>
+          <li><i class="fa-solid fa-circle-check"></i> Brand sheet (PDF + Figma)</li>
+        </ul>
+        {% comment %} <a href="#web-page-form" class="btn btn-outline-dark btn-sm">Build My Brand System</a> {% endcomment %}
+      </div>
+    </div>
+
+    <div class="col-12 col-md-6 col-xl-3">
+      <div class="dss-card h-100 featured">
+        <div class="dss-card-head">
+          <span class="dss-chip gold">Product</span>
+          <h3>UI Design System</h3>
+        </div>
+        <p class="dss-desc">Tokenized components, responsive patterns, and dev-ready specs to ship faster with less QA.</p>
+        <ul class="dss-list">
+          <li><i class="fa-solid fa-circle-check"></i> Component library (buttons, inputs, nav)</li>
+          <li><i class="fa-solid fa-circle-check"></i> 8–12 core screens (web/app)</li>
+          <li><i class="fa-solid fa-circle-check"></i> Auto-layout & responsive rules</li>
+          <li><i class="fa-solid fa-circle-check"></i> Handoff with annotations</li>
+        </ul>
+        {% comment %} <a href="#web-page-form" class="btn btn-dark btn-sm">Start My UI System</a> {% endcomment %}
+      </div>
+    </div>
+
+    <div class="col-12 col-md-6 col-xl-3">
+      <div class="dss-card h-100">
+        <div class="dss-card-head">
+          <span class="dss-chip">Content</span>
+          <h3>Social & Ad Kit</h3>
+        </div>
+        <p class="dss-desc">Reusable templates and ad variations to scale performance across paid & organic channels.</p>
+        <ul class="dss-list">
+          <li><i class="fa-solid fa-circle-check"></i> Reels/Stories/carousel templates</li>
+          <li><i class="fa-solid fa-circle-check"></i> Ad creative variations </li>
+          <li><i class="fa-solid fa-circle-check"></i> Export packs by platform</li>
+          <li><i class="fa-solid fa-circle-check"></i> Brand-safe guardrails</li>
+        </ul>
+        {% comment %} <a href="#web-page-form" class="btn btn-outline-dark btn-sm">Set Up My Content Kit</a> {% endcomment %}
+      </div>
+    </div>
+
+    <div class="col-12 col-md-6 col-xl-3">
+      <div class="dss-card h-100">
+        <div class="dss-card-head">
+          <span class="dss-chip">Motion</span>
+          <h3>Motion Library</h3>
+        </div>
+        <p class="dss-desc">Kinetic type, product loops, and explainer snippets — editable AE files plus web-ready exports.</p>
+        <ul class="dss-list">
+          <li><i class="fa-solid fa-circle-check"></i> 3–5 motion snippets/month</li>
+          <li><i class="fa-solid fa-circle-check"></i> Typography/element animations</li>
+          <li><i class="fa-solid fa-circle-check"></i> Aspect-ratio variants</li>
+          <li><i class="fa-solid fa-circle-check"></i> AE + MP4/WEBM exports</li>
+        </ul>
+        {% comment %} <a href="#web-page-form" class="btn btn-outline-dark btn-sm">Create My Motion Set</a> {% endcomment %}
+      </div>
+    </div>
+  </div>
+
+  <!-- Process -->
+  <div class="text-center mt-5 mb-3">
+    <h2 class="mb-2">How We Work</h2>
+    <p class="dss-subtitle">Clear milestones, async reviews, and dev-ready handoff — built to reduce cycles and increase velocity.</p>
+  </div>
+
+  <div class="process-row">
+    <div class="process-step">
+      <span class="step-index">01</span>
+      <h4>Discovery & Goals</h4>
+      <p>Audit, inputs, and success metrics. We align on outcomes and constraints.</p>
+    </div>
+    <div class="process-step">
+      <span class="step-index">02</span>
+      <h4>System Foundations</h4>
+      <p>Tokens, grids, and base components to standardize look & feel.</p>
+    </div>
+    <div class="process-step">
+      <span class="step-index">03</span>
+      <h4>Design & Prototyping</h4>
+      <p>High-fidelity screens and interactions in Figma with comments on.</p>
+    </div>
+    <div class="process-step">
+      <span class="step-index">04</span>
+      <h4>Review & Iterate</h4>
+      <p>Structured feedback rounds; variants for A/B where relevant.</p>
+    </div>
+    <div class="process-step">
+      <span class="step-index">05</span>
+      <h4>Handoff</h4>
+      <p>Specs, annotations, and export packs — ready for dev & marketing.</p>
+    </div>
+    <div class="process-step">
+      <span class="step-index">06</span>
+      <h4>Governance</h4>
+      <p>Guidelines and updates to keep all teams shipping consistently.</p>
+    </div>
+  </div>
+
+  <!-- Impact Metrics -->
+  {% comment %} <div class="impact-wrap mt-4">
+    <div class="impact-card">
+      <h5>Time-to-Ship</h5>
+      <p><strong>↓ 35–50%</strong> with tokenized components</p>
+    </div>
+    <div class="impact-card">
+      <h5>Consistency</h5>
+      <p><strong>↑ 90%+</strong> adherence to brand & UI rules</p>
+    </div>
+    <div class="impact-card">
+      <h5>Ad Performance</h5>
+      <p><strong>↑ 20–40%</strong> CTR with systematic variants</p>
+    </div>
+    <div class="impact-card">
+      <h5>Handoff Issues</h5>
+      <p><strong>↓ 60%</strong> QA loops via annotated specs</p>
+    </div>
+  </div> {% endcomment %}
+</section>
+
+  <!-- ===== Testimonials (optional) ===== -->
+  {% comment %} <div class="testimonial-section">
+    <h2 class="section-title">What Our Clients Say</h2>
+    <div class="testimonial-cards-wrapper">
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <img src="https://cdn-icons-png.flaticon.com/128/300/300221.png" alt="Client" class="testimonial-img">
+          <div>
+            <p class="testimonial-name">Retail Brand</p>
+            <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span>
+          </div>
+        </div>
+        <p class="testimonial-text">Delemon refreshed our identity and shipped a Figma system we use daily. Social and ads now look consistent—and perform better.</p>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <img src="https://cdn-icons-png.flaticon.com/128/300/300221.png" alt="Client" class="testimonial-img">
+          <div>
+            <p class="testimonial-name">SaaS Startup</p>
+            <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span>
+          </div>
+        </div>
+        <p class="testimonial-text">From landing screens to motion demos, everything shipped fast and on-brand. Conversions went up after the redesign.</p>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-header">
+          <img src="https://cdn-icons-png.flaticon.com/128/300/300221.png" alt="Client" class="testimonial-img">
+          <div>
+            <p class="testimonial-name">Corporate Services</p>
+            <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span>
+          </div>
+        </div>
+        <p class="testimonial-text">Their presentation system leveled up our sales team. We can build stunning decks in minutes, not days.</p>
+      </div>
+    </div>
+  </div> {% endcomment %}
+
+  <!-- ===== FAQ (unchanged design; digital design questions/answers) ===== -->
+  <div class="faq-section">
+    <div class="faq-section-header">
+      <h2>FAQ</h2>
+    </div>
+
+    <div class="faq-cards">
+      <div class="faq-card">
+        <h2>1</h2>
+        <p class="faq-question">What deliverables do we receive?</p>
+        <i class="fa-solid fa-arrow-right-long"></i>
+        <div class="card-overlay">
+          <h2>1</h2>
+          <p>Editable source files (Figma, AI/PSD/AE as applicable), exports for web/social, brand or component guidelines, and usage notes. We tailor handoff to your stack.</p>
+        </div>
+      </div>
+
+      <div class="faq-card">
+        <h2>2</h2>
+        <p class="faq-question">How long does a project take?</p>
+        <i class="fa-solid fa-arrow-right-long"></i>
+        <div class="card-overlay">
+          <h2>2</h2>
+          <p>Brand kits: 1–2 weeks. Landing screens: 3–7 days. Motion snippets: 2–5 days. Timelines vary by scope, feedback rounds, and approvals.</p>
+        </div>
+      </div>
+
+      <div class="faq-card">
+        <h2>3</h2>
+        <p class="faq-question">How many revisions are included?</p>
+        <i class="fa-solid fa-arrow-right-long"></i>
+        <div class="card-overlay">
+          <h2>3</h2>
+          <p>We include structured rounds per milestone (usually 2–3), plus quick polish passes. Subscription plans allow continuous iteration.</p>
+        </div>
+      </div>
+
+      <div class="faq-card">
+        <h2>4</h2>
+        <p class="faq-question">Do we own the rights to the designs?</p>
+        <i class="fa-solid fa-arrow-right-long"></i>
+        <div class="card-overlay">
+          <h2>4</h2>
+          <p>Yes. Upon payment, you receive full usage rights outlined in the SOW. Stock/licensing (if used) is documented and transferred where permitted.</p>
+        </div>
+      </div>
+
+      <div class="faq-card">
+        <h2>5</h2>
+        <p class="faq-question">Can you work with our dev/marketing teams?</p>
+        <i class="fa-solid fa-arrow-right-long"></i>
+        <div class="card-overlay">
+          <h2>5</h2>
+          <p>Absolutely. We embed in Slack/Jira, provide dev-ready specs, and maintain component libraries so teams ship consistently and faster.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Scripts (same validation + async submit) ===== -->
+  <script>
+    function validatecontact(event){
+      event.preventDefault();
+      var name = document.getElementById("name").value.trim();
+      var email = document.getElementById("email").value.trim();
+      var phone = document.getElementById("phone").value.trim();
+      var nameError = document.getElementById("name-error");
+      var emailError = document.getElementById("email-error");
+      var phoneError = document.getElementById("phone-error");
+
+      nameError.textContent = ""; emailError.textContent = ""; phoneError.textContent = "";
+      var isValid = true;
+
+      if(!name){ nameError.textContent = "This field is required"; isValid = false; }
+      var emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+      if(!emailRegex.test(email)){ emailError.textContent = "Enter a valid email"; isValid = false; }
+      if(!phone){ phoneError.textContent = "This field is required"; isValid = false; }
+
+      if(isValid){ submitForm(); }
+      return false;
+    }
+    function submitForm(){
+      const form = document.getElementById('web-page-form');
+      const formData = new FormData(form);
+      fetch(form.action, { method:'POST', body:formData })
+        .then(res => {
+          if(res.ok){
+            alert('Thank you! We’ll get back to you shortly.');
+            form.reset();
+          }else{
+            console.error('Form submission failed:', res.statusText);
+          }
+        })
+        .catch(err => console.error('Error:', err));
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+  {% endblock %}
+</body>
+</html>

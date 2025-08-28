@@ -1,5 +1,6 @@
 {% load static %}
 <head>
+   
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=groups" />
 <style>
@@ -573,6 +574,292 @@ a{
           margin-left:-2px;
           margin-right:10px;
         }
+    /* ==== MULTI-LEVEL (dropdown-multiple) ==== */
+.dropdown-multiple {
+  position: relative;
+  border-radius:70px;
+}
+
+.dropdown-content-multiple{
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;              /* align under the SERVICES link */
+  background-image: linear-gradient(to right, #ffffffff, #ffffffff, #ffffffff, #ffffffff, #ffffffff);
+  box-shadow: 0 8px 16px rgba(0,0,0,.2);
+  z-index: 9999;
+  
+  padding: 6px;         /* inner gutter around the white list */
+  
+}
+
+/* the white vertical list */
+.dropdown-content-multiple > ul{
+  list-style: none;
+  margin: 0;
+  padding: 6px;
+  background: #fff;
+  min-width: 230px;     /* width of column */
+  border-radius: 12px;          /* adjust radius for more or less curve */
+  border: 2px solid #ffffffff;    /* your brand color for the border */
+  
+  /* Optional shadow for depth */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* each row */
+.dropdown-content-multiple li{
+  position: relative;   /* needed for dropend positioning */
+}
+
+/* links look like rows, no flex grid */
+.dropdown-content-multiple a{
+  display: block;
+  text-decoration: none;
+  color: #000;
+  font-size: 13px;
+  line-height: 1;
+  padding: 12px 14px;
+  white-space: nowrap;
+  
+}
+
+.dropdown-content-multiple a i{
+  margin-right: 10px;
+}
+
+.dropdown-content-multiple a:hover{
+  color: #FAB206;
+  background: #f6f6f6;
+}
+
+/* show first level on hover */
+.dropdown-multiple:hover .dropdown-content-multiple{
+  display: block;
+}
+
+/* ===== DROPPEND (submenu to the right) ===== */
+.dropend > a{
+  padding-right: 28px;  /* room for caret */
+}
+
+/* caret indicator */
+.dropend > a::after{
+  content: "›";
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: 700;
+  opacity: .7;
+}
+
+/* the flyout panel */
+.dropend .submenu{
+  display: none;
+  position: absolute;
+  top: 0;               /* aligns with parent row */
+  left: 100%;           /* fly out to the right */
+  background: #fff;
+  min-width: 230px;
+  box-shadow: 0 8px 16px rgba(0,0,0,.2);
+  padding: 6px 0;
+  z-index: 10000;
+    border-radius: 12px;          /* adjust radius for more or less curve */
+  border: 2px solid #ffffffff;    /* your brand color for the border */
+  
+  /* Optional shadow for depth */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.dropend:hover > .submenu{
+  display: block;
+}
+
+/* keep menus open when moving mouse between levels */
+.dropdown-content-multiple,
+.dropdown-content-multiple *{
+  pointer-events: auto;
+}
+
+/* optional: constrain tall menus */
+.dropdown-content-multiple > ul,
+.dropend .submenu{
+  max-height: 340px;
+  overflow-y: auto;
+}
+
+/* match your desktop hide-on-tablet/phone behavior */
+@media (max-width: 1024px){
+  .dropdown-multiple{ display: none; }
+}
+/* keep the flyout from being clipped */
+.dropdown-content-multiple{
+  position: absolute;
+  overflow: visible;                 /* important */
+  z-index: 9999;
+}
+
+/* the white list is also allowed to overflow */
+.dropdown-content-multiple > ul{
+  position: relative;
+  overflow: visible;                 /* important */
+  padding: 6px 0;                    /* tighter top/bottom so top: -6px lines up */
+  margin: 0;
+}
+
+/* each row owns its flyout positioning */
+.dropdown-content-multiple li{
+  position: relative;
+}
+
+/* ------- dropend (right flyout) ------- */
+.dropend > a{
+  padding-right: 28px;
+}
+
+/* caret indicator */
+.dropend > a::after{
+  content: "›";
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: 700;
+  opacity: .7;
+}
+
+/* the flyout */
+.dropend .submenu{
+  display: none;
+  position: absolute;
+  top: -6px;                          /* align with row; removes the vertical gap */
+  left: calc(100% - 2px);             /* overlap by 2px to avoid a hover gap */
+  min-width: 230px;
+  background: #fff;
+  box-shadow: 0 8px 16px rgba(0,0,0,.2);
+  padding: 6px 0;
+  z-index: 10000;                      /* above the first panel */
+}
+
+/* show submenu on hover or keyboard focus */
+.dropend:hover > .submenu,
+.dropend:focus-within > .submenu{
+  display: block;
+}
+
+/* (optional) highlight parent row while submenu is open */
+.dropend:hover > a,
+.dropend:focus-within > a{
+  background:#f6f6f6;
+  color:#FAB206;
+}
+/* === MOBILE SERVICES ACCORDION (sidebar) === */
+/* 1) Make the SERVICES icon the same size as the others */
+.m-acc-root-left img{
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+/* 2) Make the SERVICES button look/space like your list items */
+.m-acc-root-btn{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 10px 12px;
+  font-size: 18px;
+  height: 40px;                /* same height as your anchors */
+  margin-bottom: 5px;          /* same gap as .sidebar-links-one a */
+}
+
+/* 3) Ensure the white panel fills the sidebar nicely */
+.m-acc-root-panel{
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  margin: 0 0 12px 0;          /* remove left/right offset */
+  padding: 8px 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 4) Keep accordion items full-width and readable */
+.sidebar .m-acc-root-panel a,
+.sidebar .m-acc-panel a{
+  background: transparent !important;
+  color: #000 !important;
+  height: auto !important;
+  padding: 12px 16px !important;
+  display: flex !important;
+  align-items: center;
+  gap: 8px;
+}
+
+/* 5) Nice card spacing & rounded corners for category blocks */
+.m-accordion{
+  margin: 8px;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.m-acc-btn{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 12px 14px;
+  font-size: 16px;
+  text-align: left;
+  cursor: pointer;
+}
+.m-acc-panel{ background:#fafafa; border-top:1px solid #eee; }
+
+/* 6) Rotate carets when open */
+.m-acc-root-btn[aria-expanded="true"] .m-acc-caret,
+.m-acc-btn[aria-expanded="true"] .m-acc-caret { transform: rotate(180deg); }
+
+/* 7) Keep desktop mega menu hidden on mobile */
+@media (max-width:1024px){ .dropdown-multiple{ display:none; } }
+
+.sidebar { overflow-y: auto; }
+
+/* Make every direct child of the sidebar list fill the width */
+.sidebar-links-one {
+  align-items: stretch;           /* stretch items across the cross-axis (width) */
+}
+.sidebar-links-one > * {
+  width: 100%;
+}
+
+/* Ensure the SERVICES container + button span the full width */
+.m-accordion-root { width: 100%; }
+.m-acc-root-btn {
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;         /* include padding in width calc */
+  background: #000;
+  color: #fff;
+  padding: 10px 12px;
+  height: 40px;                   /* match other items */
+}
+
+/* Keep the SERVICES icon same size as others */
+.m-acc-root-left img{
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  display: inline-block;
+}
+
     </style>
 </head>
 <body>
@@ -587,7 +874,7 @@ a{
         <div class="navbar-sub-2">
             <a href="{% url 'home' %}" class="page-links {% if request.path == '/home/' %}active-page{% endif %}">HOME</a>
             <a href="{% url 'about' %}" class="page-links {% if request.path == '/about/' %}active-page{% endif %}">ABOUT</a>
-            <div class="dropdown">
+            {% comment %} <div class="dropdown">
             <a href="{% url 'services' %}" class="page-links {% if request.path == '/services/' %}active-page{% endif %}">SERVICES<i class="fa-solid fa-caret-down"></i></a>
             <div class="dropdown-content">
                 <a href="{% url 'digital' %}"><i class="fa-solid fa-magnifying-glass-chart"></i>Digital Marketing</a>
@@ -596,11 +883,104 @@ a{
                 <a href="{% url 'animation' %}"><i class="fa-solid fa-file-video"></i>Video Editing</a>
                 <a href="{% url 'ecommerce' %}"><i class="fa-solid fa-cart-shopping"></i>E-Commerce</a>
                 <a href="{% url 'uiux' %}"><i class="fa-solid fa-laptop-code"></i>UI/UX Design</a>
-
-
-
             </div>
-            </div>
+            </div> {% endcomment %}
+             
+<div class="dropdown-multiple">
+  <a href="{% url 'services' %}" class="page-links {% if request.path == '/services/' %}active-page{% endif %}">
+    SERVICES<i class="fa-solid fa-caret-down"></i>
+  </a>
+
+  <div class="dropdown-content-multiple">
+    <ul>
+      <!-- Plain link row -->
+      {% comment %} <li>
+        <a href="{% url 'digital' %}">
+          <i class="fa-solid fa-magnifying-glass-chart"></i>Digital Marketing
+        </a>
+      </li> {% endcomment %}
+       <li class="dropend">
+        <a href="{% url 'web' %}">
+          <i class="fa-solid fa-code"></i>Software Development
+        </a>
+        <ul class="submenu">
+          <li><a href="{% url 'customeweb' %}"><i class="fa-solid fa-angle-right"></i>Custom Software Developers</a></li>
+          <li><a href="{% url 'python' %}"><i class="fa-solid fa-angle-right"></i>Python Development</a></li>
+          <li><a href="{% url 'react' %}"><i class="fa-solid fa-angle-right"></i>React Development</a></li>
+          <li><a href="{% url 'blockchain' %}"><i class="fa-solid fa-angle-right"></i>Blockchain Development</a></li>
+          <li><a href="{% url 'java' %}"><i class="fa-solid fa-angle-right"></i>Java Development</a></li>
+          <li><a href="{% url 'php' %}"><i class="fa-solid fa-angle-right"></i>PHP Development</a></li>
+          <li><a href="{% url 'angular' %}"><i class="fa-solid fa-angle-right"></i>AngularJS Development</a></li>
+          <li><a href="{% url 'softwaretesting' %}"><i class="fa-solid fa-angle-right"></i>Software Testing</a></li>
+          <li><a href="{% url 'dotnet' %}?t=react"><i class="fa-solid fa-angle-right"></i>.Net Development</a></li>
+          <li><a href="{% url 'nodejs' %}"><i class="fa-solid fa-angle-right"></i>NodeJS Development</a></li>
+        </ul>
+      </li>
+      <!-- DROPPEND: Web Development -> submenu opens to the right -->
+      <li class="dropend">
+        <a href="{% url 'web' %}">
+          <i class="fa-solid fa-code"></i>Web & App Development
+        </a>
+        <ul class="submenu">
+          <li><a href="{% url 'mobile' %}"><i class="fa-solid fa-angle-right"></i>Mobile App Development</a></li>
+          <li><a href="{% url 'ios' %}"><i class="fa-solid fa-angle-right"></i>IOS App Development</a></li>
+          <li><a href="{% url 'android' %}"><i class="fa-solid fa-angle-right"></i>Android App Development</a></li>          
+          <li><a href="{% url 'flutter' %}"><i class="fa-solid fa-angle-right"></i>Flutter App Development</a></li>
+          <li><a href="{% url 'ecommerce' %}"><i class="fa-solid fa-angle-right"></i>E-Commerce Development</a></li>
+          <li><a href="{% url 'web' %}"><i class="fa-solid fa-angle-right"></i>Web Development</a></li>
+          <li><a href="{% url 'woocommerce' %}"><i class="fa-solid fa-angle-right"></i>WooCommerce Development</a></li>
+          <li><a href="{% url 'shopify' %}"><i class="fa-solid fa-angle-right"></i>Shopify Development</a></li>
+          <li><a href="{% url 'magento' %}"><i class="fa-solid fa-angle-right"></i>Magento Development</a></li>
+          <li><a href="{% url 'wordpress' %}"><i class="fa-solid fa-angle-right"></i>WordPress Development</a></li>
+        </ul>
+      </li>
+       <li class="dropend">
+        <a href="{% url 'web' %}">
+          <i class="fa-solid fa-code"></i>Marketing & Advertising
+        </a>
+        <ul class="submenu">
+          <li><a href="{% url 'digital' %}"><i class="fa-solid fa-angle-right"></i>Digital Marketing</a></li>
+          <li><a href="{% url 'seo' %}"><i class="fa-solid fa-angle-right"></i>SEO Agencies</a></li>
+          <li><a href="{% url 'advertising' %}"><i class="fa-solid fa-angle-right"></i>Advertising</a></li>
+          <li><a href="{% url 'social' %}?t=ecom"><i class="fa-solid fa-angle-right"></i>Social Media Marketing</a></li>
+          <li><a href="{% url 'content' %}"><i class="fa-solid fa-angle-right"></i>Content Marketing</a></li>
+          <li><a href="{% url 'ppc' %}"><i class="fa-solid fa-angle-right"></i>PPC Agencies</a></li>
+          <li><a href="{% url 'branding' %}"><i class="fa-solid fa-angle-right"></i>Branding</a></li>
+          <li><a href="{% url 'email' %}"><i class="fa-solid fa-angle-right"></i>Email Marketing</a></li>
+          <li><a href="{% url 'research' %}"><i class="fa-solid fa-angle-right"></i>Market Research</a></li>
+          <li><a href="{% url 'influencer' %}"><i class="fa-solid fa-angle-right"></i>Influencer Marketing</a></li>
+        </ul>
+      </li>
+      <li class="dropend">
+        <a href="{% url 'web' %}">
+          <i class="fa-solid fa-code"></i>Design
+        </a>
+        <ul class="submenu">           
+          <li><a href="{% url 'web' %}?t=ecom"><i class="fa-solid fa-angle-right"></i>Web Design</a></li>
+          <li><a href="{% url 'digital_design' %}"><i class="fa-solid fa-angle-right"></i>Digital Design</a></li>
+          <li><a href="{% url 'logo_design' %}"><i class="fa-solid fa-angle-right"></i>Logo Design</a></li>                   
+          <li><a href="{% url 'product_design' %}"><i class="fa-solid fa-angle-right"></i>Product Design</a></li>
+          <li><a href="{% url 'uiux' %}"><i class="fa-solid fa-angle-right"></i>UI&UX Design</a></li>
+          <li><a href="{% url 'graphic' %}"><i class="fa-solid fa-angle-right"></i>Graphic Design</a></li>
+          {% comment %} <li><a href="{% url 'web' %}?t=wordpress"><i class="fa-solid fa-angle-right"></i>Illustrators</a></li> {% endcomment %}
+          {% comment %} <li><a href="{% url 'web' %}?t=django"><i class="fa-solid fa-angle-right"></i>Packaging Design</a></li> {% endcomment %}
+          {% comment %} <li><a href="{% url 'print_design' %}"><i class="fa-solid fa-angle-right"></i>Print Design</a></li> {% endcomment %}
+          <li><a href="{% url 'animation' %}?t=ecom"><i class="fa-solid fa-angle-right"></i>Animation & Video Editing</a></li>
+        </ul>
+      </li>
+      <!-- DROPPEND: App Development -->
+      
+
+      <!-- Plain link rows -->
+      <li>
+        {% comment %} <a href="{% url 'animation' %}"><i class="fa-solid fa-file-video"></i>Video Editing</a> {% endcomment %}
+      </li>
+     
+    </ul>
+  </div>
+</div>
+
+
             <a href="{% url 'projects' %}" class="page-links {% if request.path == '/projects/' %}active-page{% endif %}">PROJECTS</a>
             <a href="{% url 'careers' %}" class="page-links {% if request.path == '/careers/' %}active-page{% endif %}">CAREERS</a>
             <a href="{% url 'team' %}" class="page-links {% if request.path == '/team/' %}active-page{% endif %}">TEAM</a>
@@ -683,7 +1063,100 @@ a{
         <div class="sidebar-links-one">
             <a href="{% url 'home' %}" class=" {% if request.path == '/home/' %}active-page{% endif %}"><img src="{% static 'img/home.png' %}" alt="">HOME</a>
             <a href="{% url 'about' %}" class=" {% if request.path == '/about/' %}active-page{% endif %}"><img src="{% static 'img/about.png' %}" alt="">ABOUT</a>
-            <a href="{% url 'services' %}" class=" {% if request.path == '/services/' %}active-page{% endif %}"><img src="{% static 'img/blueprint.png' %}" alt="">SERVICES</a>
+            {% comment %} <a href="{% url 'services' %}" class=" {% if request.path == '/services/' %}active-page{% endif %}"><img src="{% static 'img/blueprint.png' %}" alt="">SERVICES</a> {% endcomment %}
+           <!-- MOBILE SERVICES ACCORDION (two-level) -->
+<div class="m-accordion-root" role="tree" aria-label="Mobile Services">
+
+  <!-- Root toggle -->
+  <button class="m-acc-root-btn" aria-expanded="false" aria-controls="m-acc-root-panel" role="treeitem">
+    <span class="m-acc-root-left">
+      <img src="{% static 'img/blueprint.png' %}" alt="" />
+      SERVICES
+    </span>
+    <i class='bx bx-chevron-down m-acc-caret' aria-hidden="true"></i>
+  </button>
+
+  <div id="m-acc-root-panel" class="m-acc-root-panel" role="group" hidden>
+    <!-- Category: Software Development -->
+    <div class="m-accordion">
+      <button class="m-acc-btn" aria-expanded="false" aria-controls="m-acc-panel-software" role="treeitem">
+        <span><i class="fa-solid fa-code"></i> Software Development</span>
+        <i class='bx bx-chevron-down m-acc-caret' aria-hidden="true"></i>
+      </button>
+      <div id="m-acc-panel-software" class="m-acc-panel" role="group" hidden>
+        <a href="{% url 'customeweb' %}"><i class="fa-solid fa-angle-right"></i> Custom Software Developers</a>
+        <a href="{% url 'python' %}"><i class="fa-solid fa-angle-right"></i> Python Development</a>
+        <a href="{% url 'react' %}"><i class="fa-solid fa-angle-right"></i> React Development</a>
+        <a href="{% url 'blockchain' %}"><i class="fa-solid fa-angle-right"></i> Blockchain Development</a>
+        <a href="{% url 'java' %}"><i class="fa-solid fa-angle-right"></i> Java Development</a>
+        <a href="{% url 'php' %}"><i class="fa-solid fa-angle-right"></i> PHP Development</a>
+        <a href="{% url 'angular' %}"><i class="fa-solid fa-angle-right"></i> AngularJS Development</a>
+        <a href="{% url 'softwaretesting' %}"><i class="fa-solid fa-angle-right"></i> Software Testing</a>
+        <a href="{% url 'dotnet' %}?t=react"><i class="fa-solid fa-angle-right"></i> .Net Development</a>
+        <a href="{% url 'nodejs' %}"><i class="fa-solid fa-angle-right"></i> NodeJS Development</a>
+      </div>
+    </div>
+
+    <!-- Category: Web & App Development -->
+    <div class="m-accordion">
+      <button class="m-acc-btn" aria-expanded="false" aria-controls="m-acc-panel-webapp" role="treeitem">
+        <span><i class="fa-solid fa-code"></i> Web & App Development</span>
+        <i class='bx bx-chevron-down m-acc-caret' aria-hidden="true"></i>
+      </button>
+      <div id="m-acc-panel-webapp" class="m-acc-panel" role="group" hidden>
+        <a href="{% url 'mobile' %}"><i class="fa-solid fa-angle-right"></i> Mobile App Development</a>
+        <a href="{% url 'ios' %}"><i class="fa-solid fa-angle-right"></i> IOS App Development</a>
+        <a href="{% url 'android' %}"><i class="fa-solid fa-angle-right"></i> Android App Development</a>
+        <a href="{% url 'flutter' %}"><i class="fa-solid fa-angle-right"></i> Flutter App Development</a>
+        <a href="{% url 'ecommerce' %}"><i class="fa-solid fa-angle-right"></i> E-Commerce Development</a>
+        <a href="{% url 'web' %}"><i class="fa-solid fa-angle-right"></i> Web Development</a>
+        <a href="{% url 'woocommerce' %}"><i class="fa-solid fa-angle-right"></i> WooCommerce Development</a>
+        <a href="{% url 'shopify' %}"><i class="fa-solid fa-angle-right"></i> Shopify Development</a>
+        <a href="{% url 'magento' %}"><i class="fa-solid fa-angle-right"></i> Magento Development</a>
+        <a href="{% url 'wordpress' %}"><i class="fa-solid fa-angle-right"></i> WordPress Development</a>
+      </div>
+    </div>
+
+    <!-- Category: Marketing & Advertising -->
+    <div class="m-accordion">
+      <button class="m-acc-btn" aria-expanded="false" aria-controls="m-acc-panel-marketing" role="treeitem">
+        <span><i class="fa-solid fa-code"></i> Marketing & Advertising</span>
+        <i class='bx bx-chevron-down m-acc-caret' aria-hidden="true"></i>
+      </button>
+      <div id="m-acc-panel-marketing" class="m-acc-panel" role="group" hidden>
+        <a href="{% url 'digital' %}"><i class="fa-solid fa-angle-right"></i> Digital Marketing</a>
+        <a href="{% url 'seo' %}"><i class="fa-solid fa-angle-right"></i> SEO Agencies</a>
+        <a href="{% url 'advertising' %}"><i class="fa-solid fa-angle-right"></i> Advertising</a>
+        <a href="{% url 'social' %}?t=ecom"><i class="fa-solid fa-angle-right"></i> Social Media Marketing</a>
+        <a href="{% url 'content' %}"><i class="fa-solid fa-angle-right"></i> Content Marketing</a>
+        <a href="{% url 'ppc' %}"><i class="fa-solid fa-angle-right"></i> PPC Agencies</a>
+        <a href="{% url 'branding' %}"><i class="fa-solid fa-angle-right"></i> Branding</a>
+        <a href="{% url 'email' %}"><i class="fa-solid fa-angle-right"></i> Email Marketing</a>
+        <a href="{% url 'research' %}"><i class="fa-solid fa-angle-right"></i> Market Research</a>
+        <a href="{% url 'influencer' %}"><i class="fa-solid fa-angle-right"></i> Influencer Marketing</a>
+      </div>
+    </div>
+
+    <!-- Category: Design -->
+    <div class="m-accordion">
+      <button class="m-acc-btn" aria-expanded="false" aria-controls="m-acc-panel-design" role="treeitem">
+        <span><i class="fa-solid fa-code"></i> Design</span>
+        <i class='bx bx-chevron-down m-acc-caret' aria-hidden="true"></i>
+      </button>
+      <div id="m-acc-panel-design" class="m-acc-panel" role="group" hidden>
+        <a href="{% url 'web' %}?t=ecom"><i class="fa-solid fa-angle-right"></i> Web Design</a>
+        <a href="{% url 'digital_design' %}"><i class="fa-solid fa-angle-right"></i> Digital Design</a>
+        <a href="{% url 'logo_design' %}"><i class="fa-solid fa-angle-right"></i> Logo Design</a>
+        <a href="{% url 'product_design' %}"><i class="fa-solid fa-angle-right"></i> Product Design</a>
+        <a href="{% url 'uiux' %}"><i class="fa-solid fa-angle-right"></i> UI&UX Design</a>
+        <a href="{% url 'graphic' %}"><i class="fa-solid fa-angle-right"></i> Graphic Design</a>
+        <a href="{% url 'animation' %}?t=ecom"><i class="fa-solid fa-angle-right"></i> Animation & Video Editing</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /MOBILE SERVICES ACCORDION -->
+
             <a href="{% url 'projects' %}" class=" {% if request.path == '/projects/' %}active-page{% endif %}"><img src="{% static 'img/projects.png' %}" alt="">PROJECTS</a>
             <a href="{% url 'team' %}" class="page-links {% if request.path == '/team/' %}active-page{% endif %}"><span class="material-symbols-outlined" style="margin-right:10px;">groups</span>TEAM</a>
             <a href="{% url 'careers' %}" class="page-links {% if request.path == '/careers/' %}active-page{% endif %}"><img src="{% static 'img/career.png' %}" alt="">CAREERS</a>
@@ -692,6 +1165,106 @@ a{
 
             <a href="{% url 'contact' %}" class=" {% if request.path == '/contact/' %}active-page{% endif %}"><img src="{% static 'img/contact.png' %}" alt="">CONTACT US</a>
         </div>
+        {% comment %} <div class="sidebar-links-one">
+  <a href="{% url 'home' %}" class="{% if request.path == '/home/' %}active-page{% endif %}">
+    <img src="{% static 'img/home.png' %}" alt="">HOME
+  </a>
+  <a href="{% url 'about' %}" class="{% if request.path == '/about/' %}active-page{% endif %}">
+    <img src="{% static 'img/about.png' %}" alt="">ABOUT
+  </a>
+
+  <!-- MOBILE SERVICES ACCORDION -->
+  <div class="m-accordion" role="tree" aria-label="Mobile Services Menu">
+    <!-- Item: Software Development -->
+    <button class="m-acc-btn" aria-expanded="false" aria-controls="m-acc-panel-software" role="treeitem">
+      <i class="fa-solid fa-code"></i> Software Development
+      <i class='bx bx-chevron-down m-acc-caret' aria-hidden="true"></i>
+    </button>
+    <div id="m-acc-panel-software" class="m-acc-panel" role="group" hidden>
+      <a href="{% url 'customeweb' %}"><i class="fa-solid fa-angle-right"></i> Custom Software Developers</a>
+      <a href="{% url 'python' %}"><i class="fa-solid fa-angle-right"></i> Python Development</a>
+      <a href="{% url 'react' %}"><i class="fa-solid fa-angle-right"></i> React Development</a>
+      <a href="{% url 'blockchain' %}"><i class="fa-solid fa-angle-right"></i> Blockchain Development</a>
+      <a href="{% url 'java' %}"><i class="fa-solid fa-angle-right"></i> Java Development</a>
+      <a href="{% url 'php' %}"><i class="fa-solid fa-angle-right"></i> PHP Development</a>
+      <a href="{% url 'angular' %}"><i class="fa-solid fa-angle-right"></i> AngularJS Development</a>
+      <a href="{% url 'softwaretesting' %}"><i class="fa-solid fa-angle-right"></i> Software Testing</a>
+      <a href="{% url 'dotnet' %}?t=react"><i class="fa-solid fa-angle-right"></i> .Net Development</a>
+      <a href="{% url 'nodejs' %}"><i class="fa-solid fa-angle-right"></i> NodeJS Development</a>
+    </div>
+
+    <!-- Item: Web & App Development -->
+    <button class="m-acc-btn" aria-expanded="false" aria-controls="m-acc-panel-webapp" role="treeitem">
+      <i class="fa-solid fa-code"></i> Web & App Development
+      <i class='bx bx-chevron-down m-acc-caret' aria-hidden="true"></i>
+    </button>
+    <div id="m-acc-panel-webapp" class="m-acc-panel" role="group" hidden>
+      <a href="{% url 'mobile' %}"><i class="fa-solid fa-angle-right"></i> Mobile App Development</a>
+      <a href="{% url 'ios' %}"><i class="fa-solid fa-angle-right"></i> IOS App Development</a>
+      <a href="{% url 'android' %}"><i class="fa-solid fa-angle-right"></i> Android App Development</a>
+      <a href="{% url 'flutter' %}"><i class="fa-solid fa-angle-right"></i> Flutter App Development</a>
+      <a href="{% url 'ecommerce' %}"><i class="fa-solid fa-angle-right"></i> E-Commerce Development</a>
+      <a href="{% url 'web' %}"><i class="fa-solid fa-angle-right"></i> Web Development</a>
+      <a href="{% url 'woocommerce' %}"><i class="fa-solid fa-angle-right"></i> WooCommerce Development</a>
+      <a href="{% url 'shopify' %}"><i class="fa-solid fa-angle-right"></i> Shopify Development</a>
+      <a href="{% url 'magento' %}"><i class="fa-solid fa-angle-right"></i> Magento Development</a>
+      <a href="{% url 'wordpress' %}"><i class="fa-solid fa-angle-right"></i> WordPress Development</a>
+    </div>
+
+    <!-- Item: Marketing & Advertising -->
+    <button class="m-acc-btn" aria-expanded="false" aria-controls="m-acc-panel-marketing" role="treeitem">
+      <i class="fa-solid fa-code"></i> Marketing & Advertising
+      <i class='bx bx-chevron-down m-acc-caret' aria-hidden="true"></i>
+    </button>
+    <div id="m-acc-panel-marketing" class="m-acc-panel" role="group" hidden>
+      <a href="{% url 'digital' %}"><i class="fa-solid fa-angle-right"></i> Digital Marketing</a>
+      <a href="{% url 'seo' %}"><i class="fa-solid fa-angle-right"></i> SEO Agencies</a>
+      <a href="{% url 'advertising' %}"><i class="fa-solid fa-angle-right"></i> Advertising</a>
+      <a href="{% url 'social' %}?t=ecom"><i class="fa-solid fa-angle-right"></i> Social Media Marketing</a>
+      <a href="{% url 'content' %}"><i class="fa-solid fa-angle-right"></i> Content Marketing</a>
+      <a href="{% url 'ppc' %}"><i class="fa-solid fa-angle-right"></i> PPC Agencies</a>
+      <a href="{% url 'branding' %}"><i class="fa-solid fa-angle-right"></i> Branding</a>
+      <a href="{% url 'email' %}"><i class="fa-solid fa-angle-right"></i> Email Marketing</a>
+      <a href="{% url 'research' %}"><i class="fa-solid fa-angle-right"></i> Market Research</a>
+      <a href="{% url 'influencer' %}"><i class="fa-solid fa-angle-right"></i> Influencer Marketing</a>
+    </div>
+
+    <!-- Item: Design -->
+    <button class="m-acc-btn" aria-expanded="false" aria-controls="m-acc-panel-design" role="treeitem">
+      <i class="fa-solid fa-code"></i> Design
+      <i class='bx bx-chevron-down m-acc-caret' aria-hidden="true"></i>
+    </button>
+    <div id="m-acc-panel-design" class="m-acc-panel" role="group" hidden>
+      <a href="{% url 'web' %}?t=ecom"><i class="fa-solid fa-angle-right"></i> Web Design</a>
+      <a href="{% url 'digital_design' %}"><i class="fa-solid fa-angle-right"></i> Digital Design</a>
+      <a href="{% url 'logo_design' %}"><i class="fa-solid fa-angle-right"></i> Logo Design</a>
+      <a href="{% url 'product_design' %}"><i class="fa-solid fa-angle-right"></i> Product Design</a>
+      <a href="{% url 'uiux' %}"><i class="fa-solid fa-angle-right"></i> UI&UX Design</a>
+      <a href="{% url 'graphic' %}"><i class="fa-solid fa-angle-right"></i> Graphic Design</a>
+    </div>
+  </div>
+  <!-- /MOBILE SERVICES ACCORDION -->
+
+  <a href="{% url 'projects' %}" class="{% if request.path == '/projects/' %}active-page{% endif %}">
+    <img src="{% static 'img/projects.png' %}" alt="">PROJECTS
+  </a>
+  <a href="{% url 'careers' %}" class="{% if request.path == '/careers/' %}active-page{% endif %}">
+    <img src="{% static 'img/career.png' %}" alt="">CAREERS
+  </a>
+  <a href="{% url 'team' %}" class="page-links {% if request.path == '/team/' %}active-page{% endif %}">
+    <span class="material-symbols-outlined" style="margin-right:10px;">groups</span>TEAM
+  </a>
+  <a href="{% url 'blog' %}" class="page-links {% if request.path == '/blog/' %}active-page{% endif %}">
+    <i class='bx bxl-blogger'></i>BLOG
+  </a>
+  <a href="{% url 'news_list' %}" class="page-links {% if request.path == '/news/' %}active-page{% endif %}">
+    <i class='bx bxs-news'></i>NEWS
+  </a>
+  <a href="{% url 'contact' %}" class="{% if request.path == '/contact/' %}active-page{% endif %}">
+    <img src="{% static 'img/contact.png' %}" alt="">CONTACT US
+  </a>
+</div> {% endcomment %}
+
         <div class="sidebar-contact">
             <a href=""><i class="fa-solid fa-square-phone"></i>+971 50 348 2299</a>
             <a href=""><i class="fa-brands fa-square-whatsapp"></i>+971 50 348 2299</a>
@@ -764,4 +1337,98 @@ a{
 
 
         </script>
+        {% comment %} <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const accButtons = document.querySelectorAll('.m-acc-btn');
+
+    accButtons.forEach(btn => {
+      const panelId = btn.getAttribute('aria-controls');
+      const panel = document.getElementById(panelId);
+
+      // Toggle on click/Enter/Space
+      const toggle = () => {
+        const isOpen = btn.getAttribute('aria-expanded') === 'true';
+        // close all siblings for single-open behavior (optional)
+        accButtons.forEach(b => {
+          const pid = b.getAttribute('aria-controls');
+          const p = document.getElementById(pid);
+          b.setAttribute('aria-expanded', 'false');
+          if (p) p.hidden = true;
+        });
+        // open current if it was closed
+        if (!isOpen) {
+          btn.setAttribute('aria-expanded', 'true');
+          panel.hidden = false;
+        }
+      };
+
+      btn.addEventListener('click', toggle);
+      btn.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggle();
+        }
+      });
+    });
+
+    // Close accordion groups when clicking outside sidebar (optional)
+    const sidebar = document.getElementById('sidebar');
+    document.addEventListener('click', (e) => {
+      if (!sidebar.contains(e.target)) {
+        document.querySelectorAll('.m-acc-btn').forEach(b => {
+          const pid = b.getAttribute('aria-controls');
+          const p = document.getElementById(pid);
+          b.setAttribute('aria-expanded', 'false');
+          if (p) p.hidden = true;
+        });
+      }
+    });
+  });
+</script> {% endcomment %}
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Root Services open/close
+  const rootBtn = document.querySelector('.m-acc-root-btn');
+  const rootPanel = document.getElementById('m-acc-root-panel');
+
+  if (rootBtn && rootPanel) {
+    rootBtn.addEventListener('click', () => {
+      const open = rootBtn.getAttribute('aria-expanded') === 'true';
+      rootBtn.setAttribute('aria-expanded', String(!open));
+      rootPanel.hidden = open;
+    });
+  }
+
+  // Category accordions (single-open per root panel)
+  const catButtons = document.querySelectorAll('.m-acc-btn');
+
+  catButtons.forEach(btn => {
+    const panelId = btn.getAttribute('aria-controls');
+    const panel = document.getElementById(panelId);
+
+    const toggle = () => {
+      const isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+      // close siblings for clean UX
+      catButtons.forEach(b => {
+        const pid = b.getAttribute('aria-controls');
+        const p = document.getElementById(pid);
+        b.setAttribute('aria-expanded', 'false');
+        if (p) p.hidden = true;
+      });
+
+      if (!isOpen) {
+        btn.setAttribute('aria-expanded', 'true');
+        panel.hidden = false;
+      }
+    };
+
+    btn.addEventListener('click', toggle);
+    btn.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+    });
+  });
+});
+</script>
+
 

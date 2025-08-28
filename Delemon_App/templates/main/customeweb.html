@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'base.html' %}
+{% block title %}Custom Software Development Services in Dubai | Scalable, Secure, High-Performance{% endblock %}
+{% load static %}
+{% block content %}
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Delemon Technology builds secure, scalable, and performance-oriented custom software in Dubai. Web apps, mobile apps, SaaS, and enterprise systems tailored to your business needs.">
+  <link rel="canonical" href="https://www.delemontechnology.com/custom-software-development"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- If Bootstrap CSS isn't already in base.html, keep this line; otherwise you can remove it -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<style>
+:root{
+  --brand:#FAB206;
+  --ink:#0b0b0c;
+  --muted:#6b7280;
+}
+
+/* -------- HERO -------- */
+.hero {
+  position: relative;
+  color:#fff;
+  background:
+    linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
+    url("{% static 'img/web-bg-2.jpg' %}") center/cover no-repeat;
+}
+.hero__inner{
+  display:grid;
+  grid-template-columns: 1.1fr 420px; /* text | form */
+  gap: clamp(20px, 4vw, 48px);
+  align-items:center;
+  padding: clamp(32px, 6vw, 72px) clamp(16px, 5vw, 64px);
+  max-width: 1200px;
+  margin-inline:auto;
+}
+.hero__text h1{
+  font-weight:800;
+  line-height:1.15;
+  margin:0 0 12px 0;
+  font-size: clamp(28px, 4.2vw, 44px);
+}
+.hero__text p{
+  margin:0;
+  font-size: clamp(14px, 1.5vw, 18px);
+}
+.hero__social{
+  display:flex; gap:10px; margin-top:16px;
+}
+.hero__social a{
+  display:inline-grid; place-items:center;
+  width:32px; height:32px; border-radius:50%;
+  border:2px solid rgba(255,255,255,.4);
+  color:#fff; text-decoration:none; font-size:13px;
+}
+.hero__social a:hover{ background:#fff; color:#000; }
+
+.hero__form{
+  background:#fff; color:#000; border-radius:16px;
+  padding:24px; box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+.hero__form h3{ font-size:20px; font-weight:800; margin:0 0 12px; }
+.hero__form label{ font-size:13px; font-weight:600; margin-bottom:6px; }
+.hero__form .form-control{
+  height:42px; font-size:14px; background:#F1EFF0; border:none;
+}
+.hero__form .form-control:focus{ outline:none; box-shadow:none; background:#f6f6f6; }
+.hero__form .btn-submit{
+  display:inline-block; width:140px; height:40px; border-radius:20px;
+  background:#fff; color:var(--brand); border:2px solid var(--brand);
+  font-weight:700; font-size:13px;
+}
+.hero__form .hint{ font-size:12px; color:#9aa1a9; text-align:center; }
+.error-message{ color:#e11d48; font-size:12px; min-height:16px; }
+
+/* -------- INTRO + STATS -------- */
+.web-page-container-2{
+  width:100%;
+  padding: 48px 5vw 0;
+  display:grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 32px;
+  align-items:start;
+}
+.web-page-clients h2{ font-size: clamp(22px, 3.2vw, 32px); font-weight:700; }
+.web-page-clients p{ font-size: 15px; }
+.web-page-clients-counts{ background:#F6F6F6; padding:20px; border-radius:12px; }
+.clients-counts{ display:flex; gap:16px; }
+.counts-row{ flex:1 1 0; text-align:center; border-right:1px solid #dfdfdf; }
+.counts-row:last-child{ border-right:none; }
+.counts-row span{ font-size:14px; color:#222; }
+.counts-row h2{ color:var(--brand); font-size:32px; margin:4px 0 0; font-weight:800; }
+
+/* -------- PROCESS CARDS -------- */
+.web-page-cards{ height:auto; display:flex; flex-direction:column; padding:10px; border-radius:12px; transition:.2s; cursor:pointer; }
+.card-icon-div{ width:60px; height:60px; border-radius:10px; display:flex; align-items:center; justify-content:center; background:#C1C1C1; }
+.card-icon-div i{ font-size:20px; color:#fff; }
+.web-page-cards h2{ font-size:22px; }
+.web-page-cards span i{ margin-right:8px; color:#C1C1C1; font-size:20px; }
+.web-page-cards:hover{ background:#F6F6F6; }
+.web-page-cards:hover .card-icon-div{ background:var(--brand); }
+.web-page-cards:hover span i{ color:var(--brand); }
+
+/* -------- FAQ -------- */
+.faq-section{
+  background:#E3E3E3;
+  padding: 48px 5vw;
+}
+.faq-section-header h2{
+  -webkit-text-stroke:1px #000; color:transparent;
+  font-size: clamp(36px, 7vw, 70px); margin:0 0 12px 0;
+}
+.faq-grid{
+  display:grid;
+  grid-template-columns: repeat(4, minmax(0,1fr));
+  gap: 16px;
+}
+.faq-card{
+  position:relative; overflow:hidden; border-radius:12px;
+  background:#fff; padding:20px; min-height:240px;
+  display:flex; flex-direction:column; gap:10px;
+}
+.faq-card h2{ -webkit-text-stroke:1px var(--brand); color:transparent; font-size:42px; margin:0; }
+.faq-card .faq-question{ font-weight:700; font-size:15px; margin:0; }
+.faq-card i{ width:30px; height:30px; border-radius:50%; border:2px solid var(--brand); color:var(--brand); display:grid; place-items:center; }
+.faq-card .card-overlay{
+  position:absolute; inset:0; padding:20px; background:rgba(0,0,0,.85);
+  color:#fff; display:flex; flex-direction:column; gap:12px;
+  transform: translateY(100%); transition: transform .35s ease;
+}
+.faq-card:hover .card-overlay{ transform: translateY(0); }
+.faq-card.open .card-overlay{ transform: translateY(0); }
+
+/* -------- DETAIL SECTION TYPO -------- */
+.detail-sec{ padding:0 5vw; }
+.detail-sec h2{ font-size:30px; font-weight:700; }
+.detail-sec h3{ font-size:25px; font-weight:700; }
+.detail-sec h4{ font-size:22px; font-weight:700; }
+
+/* -------- RESPONSIVE -------- */
+@media (max-width: 992px){
+  .hero__inner{ grid-template-columns: 1fr; }
+  .hero__form{ order:2; }
+  .hero__text{ order:1; }
+  .web-page-container-2{ grid-template-columns: 1fr; }
+  .faq-grid{ grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 576px){
+  .hero__inner{ gap:20px; padding: 28px 16px 36px; }
+  .clients-counts{ flex-direction:column; }
+  .counts-row{ width:100%; border-right:none; border-bottom:1px solid #dfdfdf; padding:10px 0; }
+  .counts-row:last-child{ border-bottom:none; }
+  .faq-grid{ grid-template-columns: 1fr; }
+}
+.btn-submit[disabled]{
+  opacity:.6; cursor:not-allowed;
+}
+
+.spinner{
+  display:inline-block;
+  width:16px; height:16px;
+  border-radius:50%;
+  border:2px solid #ccc;
+  border-top-color: var(--brand);
+  margin-left:10px;
+  animation: spin .8s linear infinite;
+  vertical-align:-2px;
+}
+@keyframes spin{ to{ transform:rotate(360deg); } }
+
+</style>
+
+<body>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="hero__inner">
+    <div class="hero__text">
+      <h1>Custom Software Development<br>Company in Dubai, UAE</h1>
+      <p>
+        Build the exact product your business needs—secure, scalable, and fast. We design and develop
+        custom web apps, mobile apps, SaaS platforms, and enterprise systems that accelerate growth.
+      </p>
+      <div class="hero__social">
+        <a href="https://www.facebook.com/profile.php?id=61554857870065&sfnsn=wiwspwa&mibextid=RUbZ1f" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="https://www.instagram.com/delemon_technology?igsh=emF2ajg3bm00cDUz" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/company/delemon-technology/" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </div>
+
+    <!-- FORM -->
+    <form id="web-page-form" class="hero__form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+      <h3>Have a project in mind?</h3>
+
+      <input type="hidden" name="access_key" value="1d581977-0167-4073-8d30-f8e754b508d4">
+      <input type="hidden" name="subject" value="Custom Software: Form Submission from Delemon Website">
+
+      <div class="row g-3">
+        <div class="col-12 col-sm-6">
+          <label for="name" class="form-label">Your Name</label>
+          <input id="name" name="name" type="text" class="form-control" placeholder="Enter your name">
+          <div id="name-error" class="error-message"></div>
+        </div>
+        <div class="col-12 col-sm-6">
+          <label for="email" class="form-label">Your Email</label>
+          <input id="email" name="email" type="email" class="form-control" placeholder="Enter your email">
+          <div id="email-error" class="error-message"></div>
+        </div>
+        <div class="col-12 col-sm-6">
+          <label for="phone" class="form-label">Your Number</label>
+          <input id="phone" name="phonenumber" type="text" class="form-control" placeholder="Enter your number">
+          <div id="phone-error" class="error-message"></div>
+        </div>
+        <div class="col-12 col-sm-6">
+          <label for="message" class="form-label">Your Message</label>
+          <input id="message" name="message" type="text" class="form-control" placeholder="Tell us about your project">
+        </div>
+        <div class="col-12">
+         <!-- replace the old submit input with this button -->
+<button type="submit" class="btn-submit" id="form-submit">
+  <span class="btn-text">SUBMIT</span>
+  <span class="spinner" hidden aria-hidden="true"></span>
+</button>
+
+<!-- optional status area (screen-reader friendly) -->
+<p id="form-status" class="hint mt-2" role="status" aria-live="polite"></p>
+
+        </div>
+      </div>
+
+      <p class="hint mt-3">
+        If you have any RFP requirement please share with us at
+        <span style="color:var(--brand);font-weight:700">@delemontechnology.ae</span>.
+        For careers, please check our Careers section.
+      </p>
+    </form>
+  </div>
+</section>
+
+<!-- ================= INTRO + STATS ================= -->
+<section class="web-page-container-2" style="padding-bottom:0">
+  <div class="web-page-clients">
+    <h2>Custom Software Development Services in Dubai</h2>
+    <p>
+      We engineer robust digital products that solve real business problems—faster. From strategy and UX to
+      architecture, development, QA, and DevOps, our end-to-end services help startups and enterprises launch,
+      scale, and modernize software with confidence.
+    </p>
+    <p class="mb-0">
+      <strong>We build tailor-made websites that align with your business objectives and target audience. Our team specializes in developing scalable and performance-oriented websites. Delemon Technology offers comprehensive web development services tailored to business needs.</strong>
+    </p>
+  </div>
+  <div class="web-page-clients-details">
+    <div class="web-page-clients-counts">
+      <h5>Key Highlights — Our Work in Numbers</h5>
+      <div class="clients-counts">
+        <div class="counts-row">
+          <span>Happy Clients</span>
+          <h2>145+</h2>
+        </div>
+        <div class="counts-row">
+          <span>Projects Delivered</span>
+          <h2>220+</h2>
+        </div>
+        <div class="counts-row">
+          <span>Years of Experience</span>
+          <h2>15+</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DETAILED CONTENT ================= -->
+<section class="detail-sec">
+  <p>
+    As a leading custom software development company in Dubai, we create secure, scalable, and high-performance
+    applications that are easy to evolve. Whether you need a greenfield build, modernization of a legacy system,
+    or a cloud-native SaaS, our teams deliver clean architecture, great UX, and measurable outcomes.
+  </p>
+
+  <h2>What We Build</h2>
+  <ul>
+    <li><strong>Web Applications:</strong> B2B portals, client dashboards, booking engines, multi-tenant SaaS.</li>
+    <li><strong>Mobile Apps:</strong> Native iOS/Android and cross-platform apps with offline-first capabilities.</li>
+    <li><strong>Enterprise Software:</strong> ERPs, CRMs, HRMS, workflow automation, data platforms.</li>
+    <li><strong>APIs & Integrations:</strong> REST/GraphQL, payment gateways, logistics, CRM/ERP, analytics.</li>
+    <li><strong>eCommerce & Marketplaces:</strong> Custom storefronts, vendor portals, order/fulfilment systems.</li>
+    <li><strong>AI-Enabled Solutions:</strong> Recommendations, NLP chat, demand forecasting, anomaly detection.</li>
+  </ul>
+
+  <h2>Why Choose Delemon Technology</h2>
+  <p>
+    We blend product thinking with engineering excellence. Expect reliable delivery, transparent communication,
+    and software that’s easy to maintain. Our sprints are outcomes-driven and our QA gates ensure release confidence.
+  </p>
+
+  <h3>Key Capabilities</h3>
+  <p><strong>Product Discovery & UX:</strong> Research, user flows, wireframes, prototypes, usability testing.</p>
+  <p><strong>Solution Architecture:</strong> Domain-driven design, microservices, event-driven, API-first.</p>
+  <p><strong>Security by Design:</strong> OWASP, secure storage, encryption in transit/at rest, SSO/SAML/OAuth2.</p>
+  <p><strong>Performance Engineering:</strong> Caching, async queues, CDN, DB indexing, load & stress testing.</p>
+  <p><strong>Cloud & DevOps:</strong> CI/CD, IaC, autoscaling, blue-green/Canary, observability (logs, metrics, traces).</p>
+  <p><strong>Compliance:</strong> GDPR-ready processes, audit trails, role-based access, PII handling best practices.</p>
+
+  <h3>Core Features We Commonly Implement</h3>
+  <p><strong>Authentication & Roles:</strong> Email/OTP/social login, SSO, granular RBAC/ABAC.</p>
+  <p><strong>Payments & Billing:</strong> Stripe/Telr/PayTabs/PayPal, invoices, subscriptions, refunds, webhooks.</p>
+  <p><strong>Notifications:</strong> Email/SMS/Push, templating, preference center, real-time sockets.</p>
+  <p><strong>Content & Media:</strong> Rich editors, asset pipelines, image/video optimization, DRM options.</p>
+  <p><strong>Analytics:</strong> Event tracking, funnels, cohorts, Mixpanel/GA4/Looker integrations.</p>
+
+  <h2>Our Process</h2>
+
+  <h3>1) Discovery & Planning</h3>
+  <p>Stakeholder workshops, requirement mapping, value slicing, and a delivery roadmap. We define success metrics, acceptance criteria, and a pragmatic MVP.</p>
+
+  <h3>2) Design & Development</h3>
+  <p>Accessible, conversion-focused UX with a modern design system. Clean, testable code in iterative sprints with frequent demos and feedback loops.</p>
+
+  <h4>Front-End Experience</h4>
+  <p>Component-driven UI, responsive layouts, fast interactions, and state management patterns that scale. We prioritize accessibility and Lighthouse performance.</p>
+
+  <h3>3) QA, Security & UAT</h3>
+  <p>Functional, regression, API, and performance testing. Static code analysis, vulnerability scans, secrets management, and data protection checks before go-live.</p>
+
+  <h3>4) Launch, DevOps & Support</h3>
+  <p>CI/CD pipelines, automated rollbacks, infrastructure as code, and 24×7 monitoring. Post-launch SLAs for maintenance, enhancements, and security updates.</p>
+
+  <h2>Industries We Serve</h2>
+  <ul>
+    <li>Real Estate & PropTech</li>
+    <li>Healthcare & Clinics</li>
+    <li>Retail & eCommerce</li>
+    <li>Hospitality & Travel</li>
+    <li>Logistics & Supply Chain</li>
+    <li>FinTech & Professional Services</li>
+  </ul>
+
+  <h2>Benefits You Can Expect</h2>
+  <ul>
+    <li><strong>Faster Time-to-Value:</strong> Incremental releases deliver impact early.</li>
+    <li><strong>Resilient & Secure:</strong> Best practices baked into code and infra.</li>
+    <li><strong>Lower TCO:</strong> Maintainable code, automated deployments, cloud efficiency.</li>
+    <li><strong>Future-Ready:</strong> Modular architecture that’s easy to extend.</li>
+  </ul>
+
+  <h2>Technologies We Use</h2>
+  <ul>
+    <li><strong>Back-End:</strong> Python (Django/DRF/FastAPI), Node.js (Nest/Express), PHP (Laravel), .NET</li>
+    <li><strong>Front-End:</strong> React, Next.js, Vue, TypeScript</li>
+    <li><strong>Mobile:</strong> Flutter, React Native, Swift/Kotlin when needed</li>
+    <li><strong>Data & DB:</strong> Postgres, MySQL, MongoDB, Redis, Elasticsearch</li>
+    <li><strong>Cloud & DevOps:</strong> AWS, Azure, GCP, Docker, Kubernetes, Terraform, GitHub Actions</li>
+    <li><strong>Analytics/BI:</strong> GA4, Mixpanel, Metabase/Looker, custom dashboards</li>
+  </ul>
+
+  <h2>Partner with Delemon Technology</h2>
+  <p>Need a reliable team to plan, build, and support your software? We’ll align to your business goals, deliver on time, and stay with you post-launch to ensure continuous improvement.</p>
+
+  <h3>Ready to build?</h3>
+  <p>Contact us to discuss your requirements and get a roadmap for your custom software—from MVP to scale.</p>
+</section>
+
+<!-- ================= PROCESS CARDS ================= -->
+<div class="container mb-5">
+  <div class="row">
+    <div class="col-md-3 col-12">
+      <div class="web-page-cards">
+        <div class="card-icon-div mb-3"><i class="fa-solid fa-comments"></i></div>
+        <h2 class="mb-3">Planning</h2>
+        <span><i class="fa-solid fa-caret-right"></i> Business analysis</span>
+        <span><i class="fa-solid fa-caret-right"></i> Technical specifications</span>
+        <span><i class="fa-solid fa-caret-right"></i> Wireframes & user flows</span>
+        <span><i class="fa-solid fa-caret-right"></i> Scope & roadmap</span>
+      </div>
+    </div>
+    <div class="col-md-3 col-12">
+      <div class="web-page-cards">
+        <div class="card-icon-div mb-3"><i class="fa-solid fa-gear"></i></div>
+        <h2 class="mb-3">Development</h2>
+        <span><i class="fa-solid fa-caret-right"></i> Clean, testable code</span>
+        <span><i class="fa-solid fa-caret-right"></i> API-first approach</span>
+        <span><i class="fa-solid fa-caret-right"></i> Iterative sprints</span>
+        <span><i class="fa-solid fa-caret-right"></i> Regular demos</span>
+      </div>
+    </div>
+    <div class="col-md-3 col-12">
+      <div class="web-page-cards">
+        <div class="card-icon-div mb-3"><i class="fa-solid fa-laptop-code"></i></div>
+        <h2 class="mb-3">Testing</h2>
+        <span><i class="fa-solid fa-caret-right"></i> Automated & manual QA</span>
+        <span><i class="fa-solid fa-caret-right"></i> Security checks</span>
+        <span><i class="fa-solid fa-caret-right"></i> Performance tests</span>
+        <span><i class="fa-solid fa-caret-right"></i> UAT sign-off</span>
+      </div>
+    </div>
+    <div class="col-md-3 col-12">
+      <div class="web-page-cards">
+        <div class="card-icon-div mb-3"><i class="fa-solid fa-rocket"></i></div>
+        <h2 class="mb-3">Deployment</h2>
+        <span><i class="fa-solid fa-caret-right"></i> CI/CD pipelines</span>
+        <span><i class="fa-solid fa-caret-right"></i> Monitoring & alerts</span>
+        <span><i class="fa-solid fa-caret-right"></i> SLA support</span>
+        <span><i class="fa-solid fa-caret-right"></i> Continuous improvement</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= FAQ ================= -->
+<section class="faq-section">
+  <div class="faq-section-header"><h2>FAQ</h2></div>
+  <div class="faq-grid">
+     <article class="faq-card">
+      <h2>1</h2>
+      <p class="faq-question">What engagement models do you offer?</p>
+      <i class="fa-solid fa-arrow-right-long"></i>
+      <div class="card-overlay">
+        <h2>5</h2>
+        <p>Fixed-scope for well-defined builds, or agile team extensions for evolving products. We can start with a paid discovery to de-risk the project and refine budgets.</p>
+      </div>
+    </article>
+    <article class="faq-card">
+      <h2>2</h2>
+      <p class="faq-question">Can you integrate with our existing systems?</p>
+      <i class="fa-solid fa-arrow-right-long"></i>
+      <div class="card-overlay">
+        <h2>2</h2>
+        <p>Yes. We routinely integrate with ERPs, CRMs, payment providers, logistics, analytics, and identity systems using secure REST/GraphQL APIs and webhooks.</p>
+      </div>
+    </article>
+    <article class="faq-card">
+      <h2>3</h2>
+      <p class="faq-question">How do you ensure security and compliance?</p>
+      <i class="fa-solid fa-arrow-right-long"></i>
+      <div class="card-overlay">
+        <h2>3</h2>
+        <p>We apply OWASP, encrypt data in transit/at rest, follow least-privilege access, and implement auditing. We can align to GDPR-friendly practices where applicable.</p>
+      </div>
+    </article>
+    <article class="faq-card">
+      <h2>4</h2>
+      <p class="faq-question">Do you provide post-launch support?</p>
+      <i class="fa-solid fa-arrow-right-long"></i>
+      <div class="card-overlay">
+        <h2>4</h2>
+        <p>Absolutely. We offer SLAs for maintenance, monitoring, security patches, and feature enhancements, backed by CI/CD for safe updates.</p>
+      </div>
+    </article>
+   
+  </div>
+</section>
+
+<!-- ================= SCRIPTS ================= -->
+<script>
+/* Form validation + Web3Forms submit with loading lock */
+(function(){
+  const form       = document.getElementById('web-page-form');
+  const submitBtn  = document.getElementById('form-submit');
+  const btnText    = submitBtn?.querySelector('.btn-text');
+  const spinner    = submitBtn?.querySelector('.spinner');
+  const statusLine = document.getElementById('form-status');
+
+  let submitting = false;
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if (submitting) return;              // hard lock against double submit
+
+    // simple validation (keep yours or extend here)
+    const name  = document.getElementById('name');
+    const email = document.getElementById('email');
+    const phone = document.getElementById('phone');
+
+    const nameErr  = document.getElementById('name-error');
+    const emailErr = document.getElementById('email-error');
+    const phoneErr = document.getElementById('phone-error');
+
+    nameErr.textContent = emailErr.textContent = phoneErr.textContent = '';
+    statusLine.textContent = '';
+
+    let ok = true;
+    if (!name.value.trim()){ nameErr.textContent = 'Please enter your name.'; ok = false; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())){
+      emailErr.textContent = 'Enter a valid email address.'; ok = false;
+    }
+    if (!phone.value.trim()){ phoneErr.textContent = 'Please enter your phone number.'; ok = false; }
+    if (!ok) return;
+
+    // lock UI
+    submitting = true;
+    form.setAttribute('aria-busy','true');
+    submitBtn.disabled = true;
+    if (btnText) btnText.textContent = 'Sending…';
+    if (spinner) spinner.hidden = false;
+    [...form.elements].forEach(el => el.readOnly = true);
+
+    // send
+    fetch(form.action, { method:'POST', body:new FormData(form) })
+      .then(r => {
+        if (!r.ok) throw new Error(r.statusText);
+        statusLine.textContent = 'Thanks! Your message has been sent.';
+        form.reset();
+        // optionally collapse the form on success:
+        // form.style.display = 'none';
+      })
+      .catch(err => {
+        console.error('Form submission failed:', err);
+        statusLine.textContent = 'Sorry, something went wrong. Please try again.';
+      })
+      .finally(() => {
+        // unlock UI
+        submitting = false;
+        form.removeAttribute('aria-busy');
+        submitBtn.disabled = false;
+        if (btnText) btnText.textContent = 'SUBMIT';
+        if (spinner) spinner.hidden = true;
+        [...form.elements].forEach(el => el.readOnly = false);
+      });
+  });
+})();
+</script>
+
+<!-- If Bootstrap JS isn't in base.html, keep these -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+
+</body>
+{% endblock %}
+</html>

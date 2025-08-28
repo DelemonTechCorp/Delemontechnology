@@ -49,22 +49,70 @@ def web(request):
 #     team_members = TeamModel.objects.all()
 
 #     return render(request, 'main/team.html', {'team_members': team_members})
-
+def iphone(request):
+    return render(request, 'main/iphone.html')
+def android(request):
+    return render(request, 'main/android.html')
+def flutter(request):
+    return render(request, 'main/flutter.html')
 def mobile(request):
     return render(request, 'main/mobile.html')
-
+def wordpress(request):
+    return render(request,'main/wordpress.html')
 def ecommerce(request):
     return render(request, 'main/ecommerce.html')
-
+def woocommerce(request):
+    return render(request, 'main/woocommerce.html')
+def shopify(request):
+    return render(request,'main/shopify.html')
+def magento(request):
+    return render(request,'main/magento.html')
+def customeweb(request):
+    return render(request,'main/customeweb.html')
+def python(request):
+    return render(request,'main/python.html')
+def react(request):
+    return render(request,'main/react.html')
+def blockchain(request):
+    return render(request,'main/blockchain.html')
+def java(request):
+    return render(request,'main/java.html')
+def php(request):
+    return render(request,'main/php.html')
+def angular(request):
+    return render(request,'main/angular.html')
+def softwaretesting(request):
+    return render(request,'main/softwaretesting.html')
+def nodejs(request):
+    return render(request,'main/nodejs.html')
+def dotnet(request):
+    return render(request,'main/dotnet.html')
 def uiux(request):
     return render(request, 'main/uiux.html')
-
+def advertising(request):
+    return render(request, 'main/advertising.html')
 def animation(request):
     return render(request, 'main/animation.html')
-
+def branding(request):
+    return render(request,'main/branding.html')
+def email(request):
+    return render(request,'main/email.html')
+def research(request):
+    return render(request,'main/research.html')
+def influencer(request):
+    return render(request,'main/influencer.html')
+def digital_design(request):
+    return render(request,'main/digital_design.html')
+def logo_design(request):
+    return render(request,'main/logo_design.html')
+def product_design(request):
+    return render(request,'main/product_design.html')
+def graphic_design(request):
+    return render(request,'main/graphic.html')
+def print_design(request):
+    return render(request,'main/print_design.html')
 def projects(request):
     return render(request, 'main/projects.html')
-
 def luxuryacres(request):
     return render(request, 'main/luxuryacres.html')
 

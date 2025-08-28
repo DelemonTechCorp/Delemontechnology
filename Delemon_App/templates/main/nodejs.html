@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'base.html' %}
+{% block title %}Node.js (Express + NestJS) Development Services in Dubai | Delemon Technology{% endblock %}
+{% load static %}
+{% block content %}
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Node.js Development</title>
+  <meta name="description" content="Delemon Technology builds secure, scalable Node.js solutions with Express & NestJS: real‑time apps, APIs & microservices, dashboards, and enterprise platforms—engineered for performance and growth."/>
+  <link rel="canonical" href="https://www.delemontechnology.com/nodejs-development"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<style>
+/* ===== Hero & form (same as your site) ===== */
+.web-page-bg{
+  width:100%;height:100vh;background-size:cover;display:flex;align-items:center;justify-content:space-evenly;flex-direction:row;background-repeat:no-repeat;
+  background-image:linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)),url('{% static "img/web-bg-2.jpg" %}');
+}
+.web-page-bg-1{width:50%;height:100%;display:flex;align-items:flex-start;justify-content:center;flex-direction:column;}
+.web-page-bg-2{width:40%;height:90%;display:flex;align-items:center;justify-content:center;}
+.web-page-bg-icons{width:10%;height:45%;display:flex;align-items:center;justify-content:space-evenly;flex-direction:column;}
+.web-page-bg-1 h1{color:#fff;font-weight:700;font-size:35px;}
+.web-page-bg-1-content p{color:#fff;font-weight:300;font-size:14px;}
+.web-page-bg-1-content{width:100%;display:flex;align-items:flex-start;}
+.icon-container{width:30px;height:30px;display:flex;align-items:center;justify-content:center;background:none;border-radius:50%;}
+.icon-container i{color:#fff;font-size:13px;}
+.icon-container:hover{background:#fff;border:2px solid #FAB206;transition:.3s ease;}
+.icon-container:hover i{color:#000;}
+#web-page-form{background:#fff;width:90%;padding:8%;height:80%;}
+#web-page-form h3{font-size:20px;font-weight:700;}
+#web-page-form label{font-size:12px;}
+.web-page-form-input{border:hidden;outline:none;padding-left:5px;width:100%;font-size:12px;height:30px;background:#F1EFF0;}
+.web-page-form-button{background:#fff;color:#FAB206;outline:none;width:100px;height:30px;font-size:12px;border:2px solid #FAB206;}
+#form-bottom-p{font-size:12px;color:#aaa;text-align:center;}
+#web-page-form p span{color:#FAB206;font-weight:600;}
+.error-message{color:red;font-size:12px;}
+
+/* ===== Reused counters ===== */
+{% comment %} .web-page-container-2{width:100%;padding-top:60px;display:flex;flex-direction:row;align-items:center;justify-content:space-evenly;}
+.web-page-clients{width:40%;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;}
+.web-page-clients-details{width:45%;}
+.web-page-clients h2{font-size:30px;font-weight:600;}
+.web-page-clients p{font-size:14px;}
+.web-page-clients-counts{width:100%;height:180px;display:flex;padding:20px;flex-direction:column;align-items:center;justify-content:space-evenly;background:#F6F6F6;}
+.web-page-clients-counts h5{font-size:18px;font-weight:600;}
+.clients-counts{width:100%;display:flex;align-items:center;justify-content:space-evenly;}
+.counts-row{display:flex;flex-direction:column;align-items:center;height:80px;width:30%;border-right:1px solid #dfdfdf;justify-content:space-between;}
+.counts-row span{font-size:14px;font-weight:300;}
+.counts-row h2{font-size:35px;font-weight:800;color:#FAB206;} {% endcomment %}
+.web-page-container-2 {
+  width: 100%;
+  padding-top: 60px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap; /* important for smaller screens */
+}
+
+.web-page-clients {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.web-page-clients-details {
+  width: 45%;
+}
+
+.web-page-clients-counts {
+  width: 100%;
+  min-height: 180px;
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background: #F6F6F6;
+  border-radius: 10px;
+}
+
+.clients-counts {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap; /* allow wrapping */
+}
+
+.counts-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: auto;
+  min-height: 80px;
+  width: 30%;
+  border-right: 1px solid #dfdfdf;
+  padding: 10px 0;
+}
+
+.counts-row:last-child {
+  border-right: none;
+}
+
+.counts-row span {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.counts-row h2 {
+  font-size: 35px;
+  font-weight: 800;
+  color: #FAB206;
+}
+
+/* ===== MOBILE FIX ===== */
+@media(max-width: 992px) {
+  .web-page-container-2 {
+    flex-direction: column;
+    gap: 24px;
+    padding: 40px 0;
+  }
+
+  .web-page-clients,
+  .web-page-clients-details {
+    width: 100%;
+    text-align: center;
+  }
+
+  .clients-counts {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .counts-row {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #dfdfdf;
+    padding-bottom: 12px;
+  }
+
+  .counts-row:last-child {
+    border-bottom: none;
+  }
+}
+
+/* ===== Node.js body (value + badges) ===== */
+.py-intro{padding:60px 0;background:#0f172a;color:#e5e7eb;}
+.py-intro .lead{font-size:1.05rem;opacity:.95;}
+.py-badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.py-badges .badge{background:#111827;border:1px solid #374151;color:#e5e7eb;padding:8px 12px;border-radius:18px;font-size:.85rem}
+.py-badges .badge i{margin-right:6px;color:#FAB206}
+
+/* productized panels */
+.py-panels{padding:60px 0;background:#ffffff;}
+.py-panel{border:1px solid #eee;border-radius:14px;padding:24px;background:#fff;box-shadow:0 6px 18px rgba(0,0,0,.05);height:100%}
+.py-panel h3{font-size:22px;margin-bottom:10px}
+.py-panel p{margin-bottom:8px}
+
+/* capability tiles */
+.py-stack{padding:60px 0;background:#f8fafc;}
+.stack-tile{border:1px dashed #cbd5e1;border-radius:14px;padding:18px;background:#fff;height:100%}
+.stack-tile h4{font-size:18px;margin-bottom:8px}
+.stack-tile ul{padding-left:18px;margin:0}
+.stack-tile li{margin:6px 0}
+
+/* delivery timeline */
+.py-timeline{position:relative;padding:60px 0;background:#fff}
+.py-timeline:before{content:"";position:absolute;left:50%;top:0;bottom:0;width:2px;background:#e5e7eb}
+.step{position:relative;width:50%;padding:20px 30px}
+.step-left{left:0;text-align:right}
+.step-right{left:50%}
+.step .dot{position:absolute;top:24px;width:12px;height:12px;background:#FAB206;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 3px #f1f5f9}
+.step-left .dot{right:-6px}
+.step-right .dot{left:-6px}
+.step h5{font-size:18px;margin-bottom:6px}
+.step p{margin:0;color:#475569}
+
+/* ===== FAQ ===== */
+.faq-section{min-height:90vh;width:100%;flex-direction:column;align-items:center;justify-content:space-evenly;display:flex;background:#E3E3E3;}
+.faq-section-header{width:90%;display:flex;align-items:flex-start;justify-content:flex-start;}
+.faq-section-header h2{-webkit-text-stroke:1px #000;color:transparent;font-size:70px;}
+.faq-cards{display:flex;width:90%;justify-content:space-between;flex-direction:row;align-items:center;}
+.faq-card{position:relative;overflow:hidden;width:220px;height:300px;display:flex;cursor:pointer;align-items:flex-start;padding:20px;flex-direction:column;background:#fff;justify-content:space-evenly;}
+.card-overlay{padding:20px;position:absolute;left:0;top:100%;width:100%;height:100%;z-index:1;transition:all 350ms cubic-bezier(0,0,0.2,1);display:flex;flex-direction:column;justify-content:space-evenly;align-items:flex-start;background:#000;color:#fff;}
+.faq-card:hover .card-overlay{top:0;}
+.card-overlay.left{left:-100%;top:0;}
+.faq-card:hover .card-overlay.left{left:0;}
+.card-overlay.right{left:100%;top:0;}
+.faq-card:hover .card-overlay.right{left:0;}
+.faq-card:hover .card-overlay.top{left:0;top:-100%;}
+.faq-card:hover .card-overlay.top{left:0;top:0;}
+.faq-card h2{-webkit-text-stroke:1px #FAB206;color:transparent;font-size:50px;font-family:"Manrope",sans-serif;}
+.faq-question{font-size:14px;font-weight:700;font-family:"Manrope",sans-serif;}
+.faq-card i{height:30px;width:30px;border:2px solid #FAB206;background:#fff;color:#FAB206;font-size:12px;justify-content:center;border-radius:50%;display:flex;align-items:center;}
+
+/* ===== Mobile tweaks ===== */
+@media(max-width: 768px){
+  .py-timeline:before{left:16px}
+  .step{width:100%;padding-left:44px;text-align:left}
+  .step .dot{left:10px}
+  .step-left,.step-right{left:0}
+}
+@media(min-width:320px) and (max-width:480px){
+  .web-page-bg{flex-direction:column;height:140vh}
+  .web-page-bg-icons{flex-direction:row;width:90%;height:10%}
+  .web-page-bg-1{width:90%;height:30%}
+  #web-page-form{width:90%;height:80%}
+  .web-page-bg-2{width:100%}
+  .faq-section{height:auto}
+  .faq-cards{height:340px;overflow-x:auto}
+  .faq-card{min-width:220px;margin-right:10px}
+  .faq-section-header h2{font-size:35px;margin:10px 0}
+}
+</style>
+
+<body>
+  <!-- ===== HERO ===== -->
+  <div class="web-page-bg">
+    <div class="web-page-bg-icons">
+      <div class="icon-container"><a href="https://www.facebook.com/profile.php?id=61554857870065&sfnsn=wiwspwa&mibextid=RUbZ1f"><i class="fa-brands fa-facebook"></i></a></div>
+      <div class="icon-container"><a href="#"><i class="fa-brands fa-x-twitter"></i></a></div>
+      <div class="icon-container"><a href="https://www.instagram.com/delemon_technology?igsh=emF2ajg3bm00cDUz"><i class="fa-brands fa-instagram"></i></a></div>
+      <div class="icon-container"><a href="https://www.linkedin.com/company/delemon-technology/"><i class="fa-brands fa-linkedin-in"></i></a></div>
+      <div class="icon-container"><a href="#"><i class="fa-brands fa-youtube"></i></a></div>
+    </div>
+
+    <div class="web-page-bg-1">
+      <h1>Node.js Development with Express + NestJS<br> Company in Dubai, UAE</h1>
+      <div class="web-page-bg-1-content">
+        <p>We build robust APIs, real‑time apps, and microservices on Node.js—secure, scalable, and performance‑oriented for modern businesses.</p>
+      </div>
+    </div>
+
+    <div class="web-page-bg-2">
+      <form id="web-page-form" action="https://api.web3forms.com/submit" method="POST" onsubmit="return validatecontact(event)">
+        <h3>Have a Node.js project?</h3>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <input type="hidden" name="access_key" value="1d581977-0167-4073-8d30-f8e754b508d4">
+            <input type="hidden" name="subject" value="Node.js (Express + NestJS): Form Submission from Delemon Website">
+            <label>Your Name</label>
+            <input type="text" placeholder="Enter your name" id="name" name="name" class="web-page-form-input">
+            <p class="error-message" id="name-error"></p>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label>Your Email</label>
+            <input type="text" name="email" id="email" placeholder="Enter your email" class="web-page-form-input">
+            <p class="error-message" id="email-error"></p>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label>Your Number</label>
+            <input type="text" name="phonenumber" id="phone" placeholder="Enter your number" class="web-page-form-input">
+            <p class="error-message" id="phone-error"></p>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label>Your Message</label>
+            <input type="text" name="message" id="message" placeholder="Tell us about your project" class="web-page-form-input">
+          </div>
+        </div>
+        <input type="submit" class="web-page-form-button" value="SUBMIT"/>
+        <p class="mt-4" id="form-bottom-p">
+          If you have any RFP requirement please share with us at <span>@delemontechnology.ae</span>. For careers, please check our Careers section.
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <!-- ===== COUNTS ===== -->
+  <div class="web-page-container-2" style="padding-bottom:0">
+    <div class="web-page-clients">
+      <h2>Node.js Development Services in Dubai</h2>
+      <p>
+        We design and deliver event‑driven platforms aligned with your business goals. From API‑first backends to real‑time experiences, our Node.js engineers ship scalable services with clean architecture and CI/CD.
+      </p>
+      <p>From MVPs to enterprise systems, we build modular microservices, resilient messaging, and secure admin tools—ready to scale.</p>
+    </div>
+    <div class="web-page-clients-details">
+      <div class="web-page-clients-counts">
+        <h5>Key Highlights — Our Work in Numbers</h5>
+        <div class="clients-counts">
+          <div class="counts-row">
+            <span>Happy Clients</span>
+            <h2>145+</h2>
+          </div>
+          <div class="counts-row">
+            <span>Node.js Projects</span>
+            <h2>130+</h2>
+          </div>
+          <div class="counts-row" style="border-right:none">
+            <span>Years of Experience</span>
+            <h2>15+</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Dark intro with value badges ===== -->
+  <section class="py-intro">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-12">
+          <h2 class="mb-3">Why Node.js with Delemon Technology?</h2>
+          <p class="lead">
+            Non‑blocking I/O, TypeScript‑first patterns, and a mature ecosystem. We architect Node.js apps with clean modules, automated tests, and observability for long‑term maintainability.
+          </p>
+          <div class="py-badges">
+            <span class="badge"><i class="fa-solid fa-bolt"></i> Real‑time & WebSockets</span>
+            <span class="badge"><i class="fa-solid fa-shield-halved"></i> Security by design (Helmet, OWASP)</span>
+            <span class="badge"><i class="fa-solid fa-gauge-high"></i> Performance engineered (PM2/cluster)</span>
+            <span class="badge"><i class="fa-solid fa-diagram-project"></i> Microservices & message queues</span>
+            <span class="badge"><i class="fa-solid fa-database"></i> SQL/NoSQL + caching</span>
+            <span class="badge"><i class="fa-solid fa-cloud-arrow-up"></i> CI/CD & Cloud‑native</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Productized service panels ===== -->
+  <section class="py-panels">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="py-panel">
+            <h3><i class="fa-solid fa-link me-2 text-warning"></i> APIs & Microservices</h3>
+            <p>API‑first services with validation, versioning, throttling, and zero‑downtime deploys.</p>
+            <p class="mb-0"><strong>Stack:</strong> Express, NestJS, Fastify, tRPC, OpenAPI/Swagger</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="py-panel">
+            <h3><i class="fa-solid fa-signal me-2 text-warning"></i> Real‑time Apps</h3>
+            <p>Live dashboards, chat, tracking, and collaboration with resilient connections.</p>
+            <p class="mb-0"><strong>Toolkit:</strong> WebSockets/Socket.IO, SSE, WebRTC</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="py-panel">
+            <h3><i class="fa-solid fa-puzzle-piece me-2 text-warning"></i> Integrations</h3>
+            <p>Payments, CRM/ERP, logistics, 3rd‑party APIs, webhooks, and background jobs.</p>
+            <p class="mb-0"><strong>Common:</strong> Stripe/PayTabs, Salesforce/Zoho, Twilio, SendGrid</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="py-panel">
+            <h3><i class="fa-solid fa-lock me-2 text-warning"></i> Security & Compliance</h3>
+            <p>OWASP practices, rate‑limits, JWT/OAuth2, secrets management, and audit trails.</p>
+            <p class="mb-0"><strong>Access:</strong> OAuth2/OIDC, SSO/SAML, MFA, roles & policies</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="py-panel">
+            <h3><i class="fa-solid fa-gauge-high me-2 text-warning"></i> Performance & Scale</h3>
+            <p>Clustering, horizontal scaling, caching, DB indexing, and load testing.</p>
+            <p class="mb-0"><strong>Infra:</strong> Nginx, PM2, Redis, CDN</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="py-panel">
+            <h3><i class="fa-solid fa-cloud me-2 text-warning"></i> DevOps & Reliability</h3>
+            <p>Dockerized services, CI/CD pipelines, IaC, and full observability from day one.</p>
+            <p class="mb-0"><strong>Cloud:</strong> AWS/Azure/GCP, Terraform, GitHub Actions, OpenTelemetry</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Capability tiles ===== -->
+  <section class="py-stack">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="stack-tile">
+            <h4><i class="fa-solid fa-user-check me-2 text-warning"></i> Auth & Roles</h4>
+            <ul>
+              <li>JWT/OAuth2/OIDC</li>
+              <li>SSO/SAML</li>
+              <li>RBAC/ABAC</li>
+              <li>Audit logs</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="stack-tile">
+            <h4><i class="fa-solid fa-credit-card me-2 text-warning"></i> Payments & Billing</h4>
+            <ul>
+              <li>Stripe/PayTabs/PayPal</li>
+              <li>Subscriptions</li>
+              <li>Invoices & refunds</li>
+              <li>Webhooks</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="stack-tile">
+            <h4><i class="fa-solid fa-database me-2 text-warning"></i> Data & Analytics</h4>
+            <ul>
+              <li>PostgreSQL/MySQL/MongoDB</li>
+              <li>Redis & Elasticsearch</li>
+              <li>Prisma/TypeORM/Mongoose</li>
+              <li>ETL & BI feeds</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="stack-tile">
+            <h4><i class="fa-solid fa-sitemap me-2 text-warning"></i> Ops & Integrations</h4>
+            <ul>
+              <li>BullMQ/RabbitMQ/Kafka</li>
+              <li>3rd‑party APIs</li>
+              <li>Queues & schedulers</li>
+              <li>Observability</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <div class="faq-section">
+    <div class="faq-section-header"><h2>FAQ</h2></div>
+    <div class="faq-cards">
+      <div class="faq-card">
+        <h2>1</h2>
+        <p class="faq-question">How long does a Node.js project take?</p>
+        <i class="fa-solid fa-arrow-right-long"></i>
+        <div class="card-overlay">
+          <h2>1</h2>
+          <p>MVPs often launch in 6–10 weeks depending on scope; complex platforms ship in phased releases with a clear roadmap.</p>
+        </div>
+      </div>
+      <div class="faq-card">
+        <h2>2</h2>
+        <p class="faq-question">Can you integrate our existing systems?</p>
+        <i class="fa-solid fa-arrow-right-long"></i>
+        <div class="card-overlay left">
+          <h2>2</h2>
+          <p>Yes—payments, CRM/ERP, logistics, marketing, and analytics with secure REST/GraphQL endpoints and webhooks.</p>
+        </div>
+      </div>
+      <div class="faq-card">
+        <h2>3</h2>
+        <p class="faq-question">How do you handle security?</p>
+        <i class="fa-solid fa-arrow-right-long"></i>
+        <div class="card-overlay right">
+          <h2>3</h2>
+          <p>Helmet, rate limiting, input validation, secrets management, encryption, least‑privilege access, and continuous security updates.</p>
+        </div>
+      </div>
+      <div class="faq-card">
+        <h2>4</h2>
+        <p class="faq-question">Do you provide SLAs & ongoing support?</p>
+        <i class="fa-solid fa-arrow-right-long"></i>
+        <div class="card-overlay top">
+          <h2>4</h2>
+          <p>Absolutely—tiered SLAs for maintenance, monitoring, performance tuning, and feature enhancements.</p>
+        </div>
+      </div>
+      <div class="faq-card">
+        <h2>5</h2>
+        <p class="faq-question">Can you modernize legacy Node apps?</p>
+        <i class="fa-solid fa-arrow-right-long"></i>
+        <div class="card-overlay left">
+          <h2>5</h2>
+          <p>We refactor modules, add tests, introduce CI/CD, upgrade dependencies, and migrate to modern frameworks with zero‑downtime strategies.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Scripts (same validation) ===== -->
+  <script>
+    function validatecontact(event){
+      event.preventDefault();
+      var name = document.getElementById("name").value.trim();
+      var email = document.getElementById("email").value.trim();
+      var phone = document.getElementById("phone").value.trim();
+
+      var nameError = document.getElementById("name-error");
+      var emailError = document.getElementById("email-error");
+      var phoneError = document.getElementById("phone-error");
+
+      nameError.textContent = "";
+      emailError.textContent = "";
+      phoneError.textContent = "";
+
+      var isValid = true;
+      if (!name){ nameError.textContent = "Please enter your name."; isValid = false; }
+      var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)){ emailError.textContent = "Enter a valid email address."; isValid = false; }
+      if (!phone){ phoneError.textContent = "Please enter your phone number."; isValid = false; }
+
+      if (isValid){ submitForm(); }
+      return false;
+    }
+
+    function submitForm(){
+      const form = document.getElementById('web-page-form');
+      const formData = new FormData(form);
+      fetch(form.action, { method:'POST', body:formData })
+        .then(res=>{
+          if(res.ok){
+            alert('Thank you! We will get back to you shortly.');
+            form.reset();
+          }else{
+            console.error('Form submission failed:', res.statusText);
+          }
+        })
+        .catch(err=>console.error('Error:', err));
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+{% endblock %}
+</body>
+</html>

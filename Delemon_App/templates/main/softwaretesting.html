@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'base.html' %}
+{% block title %}Software Testing & QA Services in Dubai | Delemon Technology{% endblock %}
+{% load static %}
+{% block content %}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Software Testing & QA</title>
+  <meta name="description" content="Delemon Technology provides end‑to‑end Software Testing & QA in Dubai—manual & automated testing, API, performance, security, mobile, and CI/CD‑driven quality engineering for reliable releases.">
+  <link rel="canonical" href="https://www.delemontechnology.com/software-testing-qa"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<style>
+.web-page-bg{
+  width:100%;height:100vh;background-size:cover;display:flex;align-items:center;justify-content:space-evenly;flex-direction:row;background-repeat:no-repeat;
+  background-image:linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),url('{% static "img/web-bg-2.jpg" %}');
+}
+.web-page-bg-1{width:50%;height:100%;display:flex;align-items:flex-start;justify-content:center;flex-direction:column;}
+.web-page-bg-2{width:40%;height:90%;display:flex;align-items:center;justify-content:center;}
+.web-page-bg-icons{width:10%;height:45%;display:flex;align-items:center;justify-content:space-evenly;flex-direction:column;}
+.web-page-bg-1 h1{color:#fff;font-weight:700;font-size:35px;}
+.web-page-bg-1-content p{color:#fff;font-weight:300;font-size:14px;}
+.web-page-bg-1-content{width:100%;display:flex;align-items:flex-start;}
+.icon-container{width:30px;height:30px;display:flex;align-items:center;justify-content:center;background:none;border-radius:50%;}
+.icon-container i{color:#fff;font-size:13px;}
+.icon-container:hover{background:#fff;border:2px solid #FAB206;transition:.3s ease;}
+.icon-container:hover i{color:#000;}
+#web-page-form{background:#fff;width:90%;padding:8%;height:80%;}
+#web-page-form h3{font-size:20px;font-weight:700;}
+#web-page-form label{font-size:12px;}
+.web-page-form-input{border:hidden;outline:none;padding-left:5px;width:100%;font-size:12px;height:30px;background:#F1EFF0;}
+.web-page-form-button{background:#fff;color:#FAB206;outline:none;width:100px;height:30px;font-size:12px;border:2px solid #FAB206;}
+#form-bottom-p{font-size:12px;color:#aaa;text-align:center;}
+#web-page-form p span{color:#FAB206;font-weight:600;}
+.error-message{color:red;font-size:12px;}
+
+.web-page-container-2{width:100%;padding-top:60px;display:flex;flex-direction:row;align-items:center;justify-content:space-evenly;}
+.web-page-clients{height:70%;width:40%;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;}
+.web-page-clients-details{width:45%;}
+.web-page-clients h2{font-size:30px;font-weight:600;}
+.web-page-clients p{font-size:14px;}
+.web-page-clients-counts{width:100%;height:180px;display:flex;padding:20px;flex-direction:column;align-items:center;justify-content:space-evenly;background:#F6F6F6;}
+.web-page-clients-counts h5{font-size:18px;font-weight:600;}
+.clients-counts{width:100%;display:flex;flex-direction:row;align-items:center;justify-content:space-evenly;}
+.counts-row{display:flex;flex-direction:column;align-items:center;height:80px;width:30%;border-right:1px solid #dfdfdf;justify-content:space-between;}
+.counts-row span{font-size:14px;font-weight:300;}
+.counts-row h2{font-size:35px;font-weight:800;color:#FAB206;}
+
+.web-page-cards{height:auto;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:10px;cursor:pointer;}
+.card-icon-div{width:60px;height:60px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:#C1C1C1;}
+.card-icon-div i{font-size:20px;color:#fff;}
+.web-page-cards h2{font-size:22px;}
+.web-page-cards span i{margin-right:8px;color:#C1C1C1;font-size:20px;}
+.web-page-cards:hover{background:#F6F6F6;border-radius:10px;}
+.web-page-cards:hover .card-icon-div{background:#FAB206;}
+.web-page-cards:hover span i{color:#FAB206;}
+
+.faq-section{min-height:90vh;width:100%;flex-direction:column;align-items:center;justify-content:space-evenly;display:flex;background:#E3E3E3;}
+.faq-section-header{width:90%;display:flex;align-items:flex-start;justify-content:flex-start;}
+.faq-section-header h2{-webkit-text-stroke:1px #000;color:transparent;font-size:70px;}
+.faq-cards{display:flex;width:90%;justify-content:space-between;flex-direction:row;align-items:center;}
+.faq-card{position:relative;overflow:hidden;width:220px;height:300px;display:flex;cursor:pointer;align-items:flex-start;padding:20px;flex-direction:column;background:#fff;justify-content:space-evenly;}
+.card-overlay{padding:20px;position:absolute;background:rgba(0,0,0,.5);left:0;top:100%;width:100%;height:100%;z-index:1;transition:all 350ms cubic-bezier(0,0,0.2,1);display:flex;flex-direction:column;justify-content:space-evenly;align-items:flex-start;background:#000;}
+.faq-card:hover .card-overlay{top:0;}
+.card-overlay.left{left:-100%;top:0;}
+.faq-card:hover .card-overlay.left{left:0;}
+.card-overlay.right{left:100%;top:0;}
+.faq-card:hover .card-overlay.right{left:0;}
+.faq-card:hover .card-overlay.top{left:0;top:-100%;}
+.faq-card:hover .card-overlay.top{left:0;top:0;}
+.faq-card h2{-webkit-text-stroke:1px #FAB206;color:transparent;font-size:50px;font-family:"Manrope",sans-serif;}
+.faq-question{font-size:14px;font-weight:700;font-family:"Manrope",sans-serif;}
+.card-overlay p{font-size:10px;color:#fff;font-family:"Manrope",sans-serif;}
+.faq-card i{height:30px;width:30px;border:2px solid #FAB206;background:#fff;color:#FAB206;font-size:12px;justify-content:center;border-radius:50%;display:flex;align-items:center;}
+
+@media(min-width:320px) and (max-width:480px){
+  .web-page-bg{flex-direction:column;height:140vh;}
+  .web-page-bg-icons{flex-direction:row;width:90%;height:10%;}
+  .web-page-bg-1{width:90%;height:30%;}
+  .web-page-bg-1 h2{font-size:25px;}
+  #web-page-form{width:90%;height:80%;}
+  .web-page-bg-2{width:100%;}
+  .web-page-container-2{flex-direction:column;}
+  .web-page-clients{width:90%;height:auto;}
+  .web-page-clients h2{font-size:20px;}
+  .web-page-clients-details{width:90%;}
+  .counts-row{border:hidden;}
+  .faq-section{height:auto;}
+  .faq-cards{height:340px;overflow-x:auto;}
+  .faq-card{min-width:220px;margin-right:10px;}
+  .faq-section-header h2{font-size:35px;overflow-y:hidden;margin:10px 0;}
+  .faq-card p{font-size:12px;}
+  .card-overlay p{font-size:10px;}
+}
+.detail-sec h2{font-size:30px;font-weight:600;}
+.detail-sec h3{font-size:25px;font-weight:600;}
+.detail-sec h4{font-size:22px;font-weight:600;}
+</style>
+
+<body>
+  <!-- ===== Hero ===== -->
+  <div class="web-page-bg">
+    <div class="web-page-bg-icons">
+      <div class="icon-container"><a href="https://www.facebook.com/profile.php?id=61554857870065&sfnsn=wiwspwa&mibextid=RUbZ1f"><i class="fa-brands fa-facebook"></i></a></div>
+      <div class="icon-container"><a href="#"><i class="fa-brands fa-x-twitter"></i></a></div>
+      <div class="icon-container"><a href="https://www.instagram.com/delemon_technology?igsh=emF2ajg3bm00cDUz"><i class="fa-brands fa-instagram"></i></a></div>
+      <div class="icon-container"><a href="https://www.linkedin.com/company/delemon-technology/"><i class="fa-brands fa-linkedin-in"></i></a></div>
+      <div class="icon-container"><a href="#"><i class="fa-brands fa-youtube"></i></a></div>
+    </div>
+
+    <div class="web-page-bg-1">
+      <h1>Software Testing & QA
+        <br>Company in Dubai, UAE</h1>
+      <div class="web-page-bg-1-content">
+        <p>
+          Ship with confidence. We provide manual & automated testing, API & performance testing, security checks,
+          mobile testing, and CI/CD‑driven quality engineering to keep every release reliable.
+        </p>
+      </div>
+    </div>
+
+    <div class="web-page-bg-2">
+      <!-- ===== Contact Form ===== -->
+      <form id="web-page-form" action="https://api.web3forms.com/submit" method="POST" onsubmit="return validatecontact(event)">
+        <h3>Need QA for your product?</h3>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <input type="hidden" name="access_key" value="1d581977-0167-4073-8d30-f8e754b508d4">
+            <input type="hidden" name="subject" value="Software Testing & QA: Form Submission from Delemon Website">
+            <label>Your Name</label>
+            <input type="text" placeholder="Enter your name" id="name" name="name" class="web-page-form-input">
+            <p class="error-message" id="name-error"></p>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label>Your Email</label>
+            <input type="text" name="email" id="email" placeholder="Enter your email" class="web-page-form-input">
+            <p class="error-message" id="email-error"></p>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label>Your Number</label>
+            <input type="text" name="phonenumber" id="phone" placeholder="Enter your number" class="web-page-form-input">
+            <p class="error-message" id="phone-error"></p>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label>Your Message</label>
+            <input type="text" name="message" id="message" placeholder="Tell us about your app & goals" class="web-page-form-input">
+          </div>
+        </div>
+        <input type="submit" class="web-page-form-button" value="SUBMIT"/>
+        <p class="mt-4" id="form-bottom-p">
+          If you have any RFP requirement please share with us at <span>@delemontechnology.ae</span>. For careers, please check our Careers section.
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <!-- ===== Intro + Stats ===== -->
+  <div class="web-page-container-2" style="padding-bottom:0">
+    <div class="web-page-clients">
+      <h2>Quality Engineering, Not Just Testing</h2>
+      <p>
+        We embed QA across the lifecycle—shift‑left test strategy, risk‑based planning, automation where it pays off,
+        and actionable reporting. The result: faster releases, fewer regressions, and higher customer satisfaction.
+      </p>
+      <p class="mb-0"><strong>From web and mobile to APIs and data platforms, our test suites cover functionality, performance, security, accessibility, and compatibility.</strong></p>
+    </div>
+    <div class="web-page-clients-details">
+      <div class="web-page-clients-counts">
+        <h5>Key Highlights — Our Work in Numbers</h5>
+        <div class="clients-counts">
+          <div class="counts-row">
+            <span>Test Suites Executed</span>
+            <h2>50K+</h2>
+          </div>
+          <div class="counts-row">
+            <span>Automation Coverage</span>
+            <h2>70%+</h2>
+          </div>
+          <div class="counts-row" style="border-right:none">
+            <span>Defects Caught Pre‑Prod</span>
+            <h2>10K+</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Detailed Content ===== -->
+  <div class="detail-sec" style="padding:0 5rem">
+    <p>
+      As a dedicated QA partner in Dubai, we provide comprehensive testing for greenfield builds and legacy systems.
+      Our engineers design pragmatic test strategies, maximize automation ROI, and integrate seamlessly with your
+      pipelines and product teams.
+    </p>
+
+    <h2>What We Test</h2>
+    <ul>
+      <li><strong>Functional Testing:</strong> End‑to‑end, regression, smoke, sanity, and UAT support.</li>
+      <li><strong>API Testing:</strong> REST/GraphQL validation, contract tests, schema & payload checks.</li>
+      <li><strong>Automation:</strong> UI & API automation with stable selectors, fixtures, and parallelization.</li>
+      <li><strong>Performance:</strong> Load, stress, soak, and capacity planning with realistic datasets.</li>
+      <li><strong>Security:</strong> OWASP checks, dependency scans, headers/CSP, and basic DAST.</li>
+      <li><strong>Mobile:</strong> iOS/Android on real devices/emulators, network throttling, orientation.</li>
+      <li><strong>Accessibility:</strong> WCAG‑aligned audits (labels, focus, contrast, keyboard nav).</li>
+      <li><strong>Compatibility:</strong> Cross‑browser, cross‑device, responsive behavior.</li>
+      <li><strong>Data Quality:</strong> Migrations, ETL validation, and reporting accuracy.</li>
+    </ul>
+
+    <h2>Why Choose Delemon Technology</h2>
+    <p>
+      We combine product thinking with engineering discipline. Expect clear test plans, reliable automation,
+      and reports that business and engineering can act on immediately.
+    </p>
+
+    <h3>Key Capabilities</h3>
+    <p><strong>Test Strategy:</strong> Risk‑based planning, coverage mapping, and KPI definition.</p>
+    <p><strong>Automation Frameworks:</strong> Modular, maintainable setups with reporting and retries.</p>
+    <p><strong>Performance Engineering:</strong> Bottleneck analysis, tuning, and baseline monitoring.</p>
+    <p><strong>Security Hygiene:</strong> OWASP‑focused checks, secrets handling, and dependency health.</p>
+    <p><strong>CI/CD Quality Gates:</strong> Pre‑merge checks, test shards, flaky‑test quarantine, and artifacts.</p>
+
+    <h3>Common Tooling</h3>
+    <p><strong>UI Automation:</strong> Playwright, Cypress, Selenium, Appium</p>
+    <p><strong>API/Contract:</strong> Postman/Newman, REST Assured, Pact</p>
+    <p><strong>Performance:</strong> JMeter, k6</p>
+    <p><strong>Security & Code:</strong> OWASP ZAP (basic DAST), SonarQube, Snyk/Dependabot</p>
+    <p><strong>Device & Browser Cloud:</strong> BrowserStack, Sauce Labs</p>
+    <p><strong>Management:</strong> Jira, TestRail/Xray, Allure/HTML reports</p>
+
+    <h2>Our QA Process</h2>
+
+    <h3>1) QA Discovery & Strategy</h3>
+    <p>
+      Requirements review, risk areas, test data & environments, and a right‑sized plan including automation scope and KPIs.
+    </p>
+
+    <h3>2) Test Design & Automation</h3>
+    <p>
+      Reusable test cases, page‑object/fixture patterns, mock/stub setup, and CI‑ready pipelines.
+    </p>
+
+    <h4>Environments & Data</h4>
+    <p>
+      Stable test environments, seed scripts, synthetic data, and masking for privacy.
+    </p>
+
+    <h3>3) Execution & Defect Management</h3>
+    <p>
+      Parallel test runs, dashboards, severity/priority triage, and quick feedback to devs.
+    </p>
+
+    <h3>4) Release Readiness & Improvement</h3>
+    <p>
+      Go/No‑Go criteria, coverage & risk reports, retrospectives, and continuous improvement of suites.
+    </p>
+
+    <h2>Industries We Support</h2>
+    <ul>
+      <li>Real Estate & PropTech</li>
+      <li>Healthcare & Clinics</li>
+      <li>Retail & eCommerce</li>
+      <li>Logistics & Supply Chain</li>
+      <li>FinTech & Professional Services</li>
+    </ul>
+
+    <h2>Benefits You Can Expect</h2>
+    <ul>
+      <li><strong>Faster Releases:</strong> Stable automation and clear quality gates.</li>
+      <li><strong>Lower Defects:</strong> Risk‑based coverage and early detection.</li>
+      <li><strong>Better Visibility:</strong> Actionable reports and KPIs stakeholders understand.</li>
+      <li><strong>Future‑Ready:</strong> Maintainable frameworks and scalable pipelines.</li>
+    </ul>
+
+    <h2>Partner with Delemon Technology</h2>
+    <p>
+      Looking for a QA team that fits your culture and release cadence? We align to your roadmap and help ship
+      dependable software—every sprint.
+    </p>
+
+    <h3>Ready to raise your quality bar?</h3>
+    <p>
+      Tell us about your stack and timelines. We’ll propose a test strategy and a quick win plan to get results fast.
+    </p>
+  </div>
+
+  <!-- ===== Process Cards ===== -->
+  <div class="container mb-5">
+    <div class="row">
+      <div class="col-md-3 col-12">
+        <div class="web-page-cards">
+          <div class="card-icon-div mb-3"><i class="fa-solid fa-clipboard-check"></i></div>
+          <h2 class="mb-3">Planning</h2>
+          <span><i class="fa-solid fa-caret-right"></i> Risk & coverage map</span>
+          <span><i class="fa-solid fa-caret-right"></i> Environments & data</span>
+          <span><i class="fa-solid fa-caret-right"></i> KPI definition</span>
+          <span><i class="fa-solid fa-caret-right"></i> Roadmap & scope</span>
+        </div>
+      </div>
+      <div class="col-md-3 col-12">
+        <div class="web-page-cards">
+          <div class="card-icon-div mb-3"><i class="fa-solid fa-gears"></i></div>
+          <h2 class="mb-3">Design & Automation</h2>
+          <span><i class="fa-solid fa-caret-right"></i> Modular frameworks</span>
+          <span><i class="fa-solid fa-caret-right"></i> Stable selectors</span>
+          <span><i class="fa-solid fa-caret-right"></i> Fixtures & mocks</span>
+          <span><i class="fa-solid fa-caret-right"></i> CI‑ready suites</span>
+        </div>
+      </div>
+      <div class="col-md-3 col-12">
+        <div class="web-page-cards">
+          <div class="card-icon-div mb-3"><i class="fa-solid fa-vial"></i></div>
+          <h2 class="mb-3">Execution</h2>
+          <span><i class="fa-solid fa-caret-right"></i> Parallel runs</span>
+          <span><i class="fa-solid fa-caret-right"></i> Dashboards & logs</span>
+          <span><i class="fa-solid fa-caret-right"></i> Severity triage</span>
+          <span><i class="fa-solid fa-caret-right"></i> Fast feedback</span>
+        </div>
+      </div>
+      <div class="col-md-3 col-12">
+        <div class="web-page-cards">
+          <div class="card-icon-div mb-3"><i class="fa-solid fa-rocket"></i></div>
+          <h2 class="mb-3">Release</h2>
+          <span><i class="fa-solid fa-caret-right"></i> Go/No‑Go gates</span>
+          <span><i class="fa-solid fa-caret-right"></i> Coverage reports</span>
+          <span><i class="fa-solid fa-caret-right"></i> Post‑release SLA</span>
+          <span><i class="fa-solid fa-caret-right"></i> Continuous improvement</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== FAQs ===== -->
+  <div class="faq-section">
+    <div class="faq-section-header"><h2>FAQ</h2></div>
+    <div class="faq-cards">
+      <div class="faq-card">
+        <h2>1</h2>
+        <p class="faq-question">How long to establish QA & automation?</p>
+        <i class="fa-solid fa-arrow-right-long"></i>
+        <div class="card-overlay">
+          <h2>1</h2>
+          <p>Initial test strategy and a pilot automation suite are typically ready in 2–4 weeks; broader coverage follows in sprints.</p>
+        </div>
+      </div>
+      <div class="faq-card">
+        <h2>2</h2>
+        <p class="faq-question">Can you integrate with our CI/CD?</p>
+        <i class="fa-solid fa-arrow-right-long"></i>
+        <div class="card-overlay left">
+          <h2>2</h2>
+          <p>Yes—GitHub Actions, GitLab CI, Azure DevOps, Jenkins. We add quality gates, artifacts, and flaky‑test handling.</p>
+        </div>
+      </div>
+      <div class="faq-card">
+        <h2>3</h2>
+        <p class="faq-question">Do you provide detailed reports?</p>
+        <i class="fa-solid fa-arrow-right-long"></i>
+        <div class="card-overlay right">
+          <h2>3</h2>
+          <p>You get dashboards and exports with pass/fail trends, coverage, defect heatmaps, and release readiness status.</p>
+        </div>
+      </div>
+      <div class="faq-card">
+        <h2>4</h2>
+        <p class="faq-question">Is automation always the answer?</p>
+        <i class="fa-solid fa-arrow-right-long"></i>
+        <div class="card-overlay top">
+          <h2>4</h2>
+          <p>We automate where ROI is clear—stable flows, repeatable checks, and regression. High‑change areas stay manual until stable.</p>
+        </div>
+      </div>
+      <div class="faq-card">
+        <h2>5</h2>
+        <p class="faq-question">Can you test legacy systems?</p>
+        <i class="fa-solid fa-arrow-right-long"></i>
+        <div class="card-overlay left">
+          <h2>5</h2>
+          <p>Yes—strangler patterns, contract tests around existing APIs, and incremental coverage without disrupting delivery.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Scripts ===== -->
+  <script>
+    function validatecontact(event) {
+      event.preventDefault();
+      var name = document.getElementById("name").value.trim();
+      var email = document.getElementById("email").value.trim();
+      var phone = document.getElementById("phone").value.trim();
+
+      var nameError = document.getElementById("name-error");
+      var emailError = document.getElementById("email-error");
+      var phoneError = document.getElementById("phone-error");
+
+      nameError.textContent = "";
+      emailError.textContent = "";
+      phoneError.textContent = "";
+
+      var isValid = true;
+      if (name === "") { nameError.textContent = "Please enter your name."; isValid = false; }
+      var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) { emailError.textContent = "Enter a valid email address."; isValid = false; }
+      if (phone === "") { phoneError.textContent = "Please enter your phone number."; isValid = false; }
+
+      if (isValid) { submitForm(); }
+      return false;
+    }
+
+    function submitForm() {
+      const form = document.getElementById('web-page-form');
+      const formData = new FormData(form);
+      fetch(form.action, { method: 'POST', body: formData })
+        .then(response => {
+          if (response.ok) {
+            alert('Thank you! We will get back to you shortly.');
+            form.reset();
+          } else {
+            console.error('Form submission failed:', response.statusText);
+          }
+        })
+        .catch(error => { console.error('Error:', error); });
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+{% endblock %}
+</body>
+</html>

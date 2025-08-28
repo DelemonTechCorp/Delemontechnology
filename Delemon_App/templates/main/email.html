@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'base.html' %}
+{% block title %}Email Marketing in Dubai | Lifecycle, Automation & Deliverability{% endblock %}
+{% load static %}
+{% block content %}
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Email Marketing</title>
+  <meta name="description" content="Delemon Technology runs high-performing email & SMS programs in Dubai—lifecycle strategy, automations, segmentation, templates, and deliverability with measurable revenue lift." />
+  <link rel="canonical" href="https://www.delemontechnology.com/email-marketing" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        crossorigin="anonymous">
+</head>
+
+<style>
+  :root { --gold:#FAB206; --navy:#062f60; }
+
+  h2{
+    font-family: "Lato", sans-serif;
+    font-style: normal;
+    font-size: 30px;
+    font-weight: 600;
+    text-transform:capitalize;
+    text-align:center;
+  }
+  h3{ font-family: "Lato", sans-serif; font-style: normal; }
+
+  /* ===== HERO (UNCHANGED from Advertising page) ===== */
+  .web-page-bg {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+    background-repeat: no-repeat;
+    background-image:linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)), url('{% static "img/web-bg-2.jpg" %}');
+  }
+  .web-page-bg-icons{
+    width:10%; height:45%;
+    display:flex; align-items:center; justify-content:space-evenly; flex-direction:column;
+  }
+  .web-page-bg-1{ width:50%; height:100%; display:flex; align-items:flex-start; justify-content:center; flex-direction:column; }
+  .web-page-bg-2{ width:40%; height:90%; display:flex; align-items:center; justify-content:center; }
+  .web-page-bg-1 h1{ color:#fff; font-weight:800; font-size:35px; }
+  .web-page-bg-1-content p{ color:#fff; font-weight:300; font-size:14px; }
+  .icon-container{ width:30px; height:30px; display:flex; align-items:center; justify-content:center; border-radius:50%; }
+  .icon-container i{ color:#fff; font-size:13px; }
+  .icon-container:hover{ background:#fff; border:2px solid var(--gold); transition:.3s ease; }
+  .icon-container:hover i{ color:#000; }
+
+  /* ===== FORM (UNCHANGED) ===== */
+  #web-page-form{ background:#fff; width:90%; padding:8%; height:auto; border-radius:10px; box-shadow:0 10px 22px rgba(0,0,0,.15); }
+  #web-page-form h3{ font-size:20px; font-weight:700; }
+  #web-page-form label{ font-size:12px; }
+  .web-page-form-input{ border:none; outline:none; padding-left:8px; width:100%; font-size:12px; height:36px; background:#F1EFF0; border-radius:6px; }
+  .web-page-form-button{ background:#fff; color:var(--gold); outline:none; width:120px; height:34px; font-size:12px; border:2px solid var(--gold); border-radius:6px; }
+  #form-bottom-p{ font-size:12px; color:#aaa; text-align:center; }
+  #web-page-form p span{ color:var(--gold); font-weight:600; }
+
+  /* ===== VALUE / SERVICES / PARTNERS (EMAIL CONTENT) ===== */
+  .web-page-container-2{ width:100%; display:flex; flex-direction:row; align-items:center; justify-content:space-evenly; gap:30px; }
+  .web-page-clients{ width:40%; display:flex; flex-direction:column; align-items:flex-start; justify-content:center; }
+  .web-page-clients h2{ font-size:30px; font-weight:700; color:var(--navy); text-align:left; }
+  .web-page-clients p{ font-size:15px; text-align:justify; }
+  .web-page-clients-details{ width:45%; }
+  .web-page-clients-details img{ width:100%; border-radius:10px; }
+
+  .service-card-container{ display:grid; grid-template-columns:repeat(3,1fr); background:#f9f9f9; padding:20px; border-radius:20px; gap:20px; }
+  .services-card{ background:#fbfafae4; box-shadow:10px 10px 20px 5px rgba(0,0,0,.08); width:100%; padding:22px; border-radius:16px; }
+  .services-img{ display:flex; justify-content:center; }
+  .services-img img{ width:25%; min-width:72px; padding:18px; background-color:var(--gold); border-radius:50%;
+                     box-shadow:10px 10px 20px rgba(0,0,0,.2), 5px 5px 10px rgba(0,0,0,.1), inset 3px 3px 5px rgba(255,255,255,.2);
+                     margin-bottom:10%; }
+  .services-card h3{ text-transform:uppercase; font-weight:700; color:var(--gold); font-size:20px; margin-top:8px; text-align:center; }
+  .services-card p{ text-align:justify; font-size:14px; }
+
+  .logo.container h2{ margin-bottom:10px; }
+  .logo-img { padding:25px; display:flex; width:100%; height:auto; gap:18px; align-items:center; justify-content:center; flex-wrap:wrap; }
+  .logo-img img { height:34px; object-fit:contain; filter:grayscale(.1); }
+
+  /* ===== FAQ (UNCHANGED from Advertising page) ===== */
+  .faq-section{ min-height:60vh; width:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; background:#E3E3E3; padding:40px 0; }
+  .faq-section-header{ width:90%; display:flex; align-items:flex-start; }
+  .faq-section-header h2{ -webkit-text-stroke:1px #000; color:transparent; font-size:70px; }
+  .faq-cards{ display:flex; width:80%; justify-content:space-between; flex-direction:row; align-items:center; gap:16px; flex-wrap:wrap; }
+  .faq-card{ position:relative; overflow:hidden; width:220px; height:300px; display:flex; cursor:pointer; align-items:flex-start; padding:20px;
+             flex-direction:column; background:#fff; justify-content:space-evenly; border-radius:14px; }
+  .faq-card h2{ -webkit-text-stroke:1px var(--gold); color:transparent; font-size:50px; font-family:"Manrope", sans-serif; }
+  .faq-question{ font-size:14px; font-weight:700; font-family:"Manrope", sans-serif; }
+  .faq-card i{ height:30px; width:30px; border:2px solid var(--gold); background:#fff; color:var(--gold); font-size:12px; justify-content:center;
+               border-radius:50%; display:flex; align-items:center; }
+  .card-overlay{ padding:20px; position:absolute; background:rgba(0,0,0,.9); left:0; top:100%; width:100%; height:100%; z-index:1;
+                 transition:all 350ms cubic-bezier(0,0,.2,1); display:flex; flex-direction:column; justify-content:space-evenly; align-items:flex-start; color:#fff; }
+  .faq-card:hover .card-overlay{ top:0; }
+  .card-overlay p{ font-size:12px; color:#fff; }
+
+  /* ===== Responsive ===== */
+  @media (max-width: 480px){
+    .web-page-bg{ flex-direction:column; height:auto; padding:32px 0; }
+    .web-page-bg-icons{ flex-direction:row; width:90%; height:auto; gap:10px; margin-bottom:12px; }
+    .web-page-bg-1{ width:90%; height:auto; }
+    .web-page-bg-1 h1{ font-size:22px; }
+    #web-page-form{ width:90%; }
+    .web-page-bg-2{ width:100%; }
+    .web-page-container-2{ flex-direction:column; }
+    .web-page-clients{ width:90%; }
+    .web-page-clients-details{ width:100%; }
+    .faq-section{ padding:24px 0; }
+    .faq-cards{ width:92%; overflow-x:auto; }
+    .faq-section-header h2{ font-size:38px; margin:10px 0; }
+    .service-card-container{ display:flex; flex-direction:column; }
+  }
+</style>
+
+<body>
+  <!-- ========================= HERO (UNCHANGED) ========================= -->
+  <div class="web-page-bg">
+    <div class="web-page-bg-icons">
+      <div class="icon-container"><a href="https://www.facebook.com/profile.php?id=61554857870065&sfnsn=wiwspwa&mibextid=RUbZ1f"><i class="fa-brands fa-facebook" aria-label="Facebook"></i></a></div>
+      <div class="icon-container"><a href="#"><i class="fa-brands fa-x-twitter" aria-label="X"></i></a></div>
+      <div class="icon-container"><a href="https://www.instagram.com/delemon_technology?igsh=emF2ajg3bm00cDUz"><i class="fa-brands fa-instagram" aria-label="Instagram"></i></a></div>
+      <div class="icon-container"><a href="https://www.linkedin.com/company/delemon-technology/"><i class="fa-brands fa-linkedin-in" aria-label="LinkedIn"></i></a></div>
+      <div class="icon-container"><a href="#"><i class="fa-brands fa-youtube" aria-label="YouTube"></i></a></div>
+    </div>
+
+    <!-- Keep hero headline and paragraph EXACTLY as Advertising page -->
+      <div class="web-page-bg-1">
+      <h1>EMAIL MARKETING AGENCY IN DUBAI, UAE</h1>
+      <div class="web-page-bg-1-content">
+        <p>Lifecycle email & SMS that compound revenue—strategy, segmentation, automations, newsletters, and deliverability. Clean data, compliant sending, and creative that converts.</p>
+      </div>
+    </div>
+
+    <!-- Keep the SAME form markup/IDs/JS hook so it works as before -->
+    <div class="web-page-bg-2">
+      <form id="web-page-form" action="https://api.web3forms.com/submit" method="POST" onsubmit="return validatecontact(event)">
+        <h3>Get a Free Email Audit</h3>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <input type="hidden" name="access_key" value="1d581977-0167-4073-8d30-f8e754b508d4">
+            <input type="hidden" name="subject" value="Advertising Enquiry — Delemon Technology">
+            <label for="name">Your Name</label>
+            <input type="text" placeholder="Enter your name" id="name" name="name" class="web-page-form-input" />
+            <p class="error-message" id="name-error"></p>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="email">Your Email</label>
+            <input type="text" name="email" id="email" placeholder="Enter your email" class="web-page-form-input" />
+            <p class="error-message" id="email-error"></p>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="phone">Your Number</label>
+            <input type="text" name="phonenumber" id="phone" placeholder="Enter your number" class="web-page-form-input" />
+            <p class="error-message" id="phone-error"></p>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="budget">Monthly Ad Budget (AED)</label>
+            <input type="text" name="budget" id="budget" placeholder="e.g., 10,000" class="web-page-form-input" />
+          </div>
+          <div class="col-12 mb-3">
+            <label for="message">Your Goal</label>
+            <input type="text" name="message" id="message" placeholder="Leads, sales, app installs, awareness…" class="web-page-form-input" />
+          </div>
+        </div>
+        <input type="submit" class="web-page-form-button" value="SUBMIT" />
+        <p class="mt-4" id="form-bottom-p">
+          For RFPs email <span>@delemontechnology.ae</span>. For careers, please check our Careers section.
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <!-- ========================= ABOUT / VALUE (EMAIL CONTENT ONLY) ========================= -->
+  <div class="web-page-container-2 py-5">
+    <div class="web-page-clients">
+      <h2>Email Marketing Services at <br>Delemon Technology</h2>
+      <p>
+        We build lifecycle programs that compound revenue across the customer journey: <strong>welcome & onboarding</strong>, <strong>browse/cart abandonment</strong>,
+        <strong>post-purchase & cross-sell</strong>, and <strong>winback & reactivation</strong>. Every decision is tied to OR, CTR, placed-order rate, and attributed revenue.
+      </p>
+      <p>
+        From list growth and preference centers to <strong>segmentation</strong>, <strong>personalization</strong>, and <strong>template systems</strong>, we design sustainable programs that respect inboxes,
+        comply with sender policies (SPF/DKIM/DMARC), and support long-term inbox placement.
+      </p>
+    </div>
+    <div class="web-page-clients-details">
+      <img
+       src="https://www.sender.net/wp-content/uploads/2022/02/Email-Campaigns-smaller.png"
+       alt="Email Marketing & Lifecycle in Dubai">
+    </div>
+  </div>
+
+  <!-- ========================= SERVICES (EMAIL) ========================= -->
+  <div class="container mb-5 mt-3">
+    <h2>Our Email Marketing Services</h2>
+    <div class="service-card-container mt-3">
+
+      <div class="services-card">
+        <div class="services-img">
+          <img src="https://cdn-icons-png.flaticon.com/128/561/561127.png" alt="Lifecycle Strategy">
+        </div>
+        <h3>Lifecycle Strategy</h3>
+        <p>Prioritized roadmap for flows & campaigns: welcome, onboarding, abandonment, post-purchase, winback, and re-engagement.</p>
+      </div>
+
+      <div class="services-card">
+        <div class="services-img">
+          <img src="https://cdn-icons-png.flaticon.com/128/561/561188.png" alt="Automation & Journeys">
+        </div>
+        <h3>Automation & Journeys</h3>
+        <p>Event-driven journeys with triggers, delays, splits, and conditional content. ESP best practices baked in from day one.</p>
+      </div>
+
+      <div class="services-card">
+        <div class="services-img">
+          <img src="https://cdn-icons-png.flaticon.com/128/1828/1828961.png" alt="Segmentation & Personalization">
+        </div>
+        <h3>Segmentation & Personalization</h3>
+        <p>RFM, engagement tiers, product/category affinity, predictive segments, and dynamic blocks tailored to each cohort.</p>
+      </div>
+
+      <div class="services-card">
+        <div class="services-img">
+          <img src="https://cdn-icons-png.flaticon.com/128/1828/1828665.png" alt="Design & Templates">
+        </div>
+        <h3>Design & Templates</h3>
+        <p>Modular, brand-safe templates for newsletters and automations—mobile-first, dark-mode aware, and accessible.</p>
+      </div>
+
+      <div class="services-card">
+        <div class="services-img">
+          <img src="https://cdn-icons-png.flaticon.com/128/992/992700.png" alt="Deliverability">
+        </div>
+        <h3>Deliverability</h3>
+        <p>SPF/DKIM/DMARC, dedicated IP/domain warmup, list hygiene, bounce/spam monitoring, and sending-domain reputation management.</p>
+      </div>
+
+      <div class="services-card">
+        <div class="services-img">
+          <img src="https://cdn-icons-png.flaticon.com/128/709/709592.png" alt="Analytics & Testing">
+        </div>
+        <h3>Analytics & Testing</h3>
+        <p>A/B & multivariate tests, holdouts, GA4/UTM standards, and dashboards with OR/CTR/EPC/ROI for clear decisions.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========================= ESPs / PLATFORMS ========================= -->
+  {% comment %} <div class="logo container">
+    <h2>Platforms We Work With</h2>
+    <div class="logo-img mb-5">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Mailchimp_Logo.svg" alt="Mailchimp">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Klaviyo_logo.svg" alt="Klaviyo">
+      <img src="https://www.prosperohub.com/hubfs/diamond-badge-color.png" alt="HubSpot">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/SendGrid_Logo_2016.svg" alt="SendGrid">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Amazon_Web_Services_Logo.svg" alt="Amazon SES">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Brevo_logo.svg" alt="Brevo (Sendinblue)">
+    </div>
+  </div> {% endcomment %}
+
+  <!-- ========================= FAQ (UNCHANGED) ========================= -->
+  <div class="faq-section">
+    <div class="faq-section-header">
+      <h2>FAQ</h2>
+    </div>
+
+    <div class="faq-cards">
+      <div class="faq-card">
+        <h2>1</h2>
+        <p class="faq-question">Which channels do you manage?</p>
+        <i class="fa-solid fa-arrow-right-long"></i>
+        <div class="card-overlay">
+          <h2>1</h2>
+          <p>Google (Search, PMax, Display, YouTube), Meta (FB/IG), TikTok, Snapchat, and Microsoft Ads. We pick channels based on audience and intent.</p>
+        </div>
+      </div>
+
+      <div class="faq-card">
+        <h2>2</h2>
+        <p class="faq-question">How quickly can we launch a campaign?</p>
+        <i class="fa-solid fa-arrow-right-long"></i>
+        <div class="card-overlay">
+          <h2>2</h2>
+          <p>We can typically launch a campaign within one working day after onboarding. This includes strategy planning, creative production, tracking setup, and platform approvals to ensure everything is optimized before going live.</p>
+        </div>
+      </div>
+
+      <div class="faq-card">
+        <h2>3</h2>
+        <p class="faq-question">How do you report results?</p>
+        <i class="fa-solid fa-arrow-right-long"></i>
+        <div class="card-overlay">
+          <h2>3</h2>
+          <p>Weekly dashboards with CPL/CPA/ROAS, creative winners, audience insights, and next actions. GA4 and ad platform data are reconciled.</p>
+        </div>
+      </div>
+
+      <div class="faq-card">
+        <h2>4</h2>
+        <p class="faq-question">Do you create ad creatives & pages?</p>
+        <i class="fa-solid fa-arrow-right-long"></i>
+        <div class="card-overlay">
+          <h2>4</h2>
+          <p>Yes—static, video, UGC-style assets, and conversion-focused landing pages. Continuous A/B testing improves performance over time.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================= SCRIPTS (UNCHANGED) ========================= -->
+  <script>
+    function validatecontact(event){
+      event.preventDefault();
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+
+      const nameError = document.getElementById("name-error");
+      const emailError = document.getElementById("email-error");
+      const phoneError = document.getElementById("phone-error");
+
+      nameError.textContent = ""; emailError.textContent = ""; phoneError.textContent = "";
+      let isValid = true;
+
+      if(!name){ nameError.textContent = "This field is required"; isValid = false; }
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if(!emailRegex.test(email)){ emailError.textContent = "Enter a valid email"; isValid = false; }
+      if(!phone){ phoneError.textContent = "This field is required"; isValid = false; }
+
+      if(isValid){ submitForm(); }
+      return false;
+    }
+    function submitForm(){
+      const form = document.getElementById('web-page-form');
+      const formData = new FormData(form);
+      fetch(form.action, { method:'POST', body:formData })
+        .then(res => {
+          if(res.ok){
+            alert('Thank you! We’ll share your email audit soon.');
+            form.reset();
+          }else{
+            console.error('Form submission failed:', res.statusText);
+          }
+        })
+        .catch(err => console.error('Error:', err));
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+          crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+          crossorigin="anonymous"></script>
+  {% endblock %}
+</body>
+</html>
