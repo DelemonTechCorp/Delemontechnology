@@ -140,6 +140,6 @@ EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST='smtp.gmail.com'
 EMAIL_PORT=587
 EMAIL_HOST_USER='delemonjobs@gmail.com'
-EMAIL_HOST_PASSWORD='ixbs wabm hgyc erie'
+EMAIL_HOST_PASSWORD='dkob lkhs qitp raem'
 EMAIL_USE_TLS=True
 EMAIL_USE_SSL=False
