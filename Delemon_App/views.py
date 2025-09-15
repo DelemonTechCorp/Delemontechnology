@@ -24,6 +24,9 @@ def robots_txt(request):
 def about(request):
     return render(request, 'main/about.html')
 
+def index(request):
+    return render(request, 'main/index.html')
+
 def privacy(request):
     return render(request, 'main/privacy.html')
 

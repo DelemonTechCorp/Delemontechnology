@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>X-Opp Clinical Costing — DOH Compliance Platform</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <meta name="theme-color" content="#0b2a4a" />
+  <style>
+    :root{
+      --bg:#0b1220;
+      --bg-soft:#0f1830;
+      --card:#0f1c34;
+      --muted:#9fb1cf;
+      --text:#e9f0ff;
+      --brand:#5dd9ff;
+      --brand-2:#7b7bff;
+      --ring:0 0 0 .2rem rgba(93,217,255,.25);
+      --r-lg:18px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+
+    /* Base */
+    html{scroll-behavior:smooth}
+    body{
+      background: radial-gradient(1200px 600px at 10% -5%, #0e1e3f 0%, transparent 60%),
+                  radial-gradient(1000px 500px at 100% 10%, #122650 0%, transparent 60%),
+                  var(--bg);
+      color:var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+      line-height:1.6;
+    }
+    .container{max-width:1120px}
+
+    /* ---------- Topbar / Nav ---------- */
+    .navwrap{
+      position:sticky; top:0; z-index:1000;
+      backdrop-filter:saturate(180%) blur(10px);
+      background:linear-gradient(180deg, rgba(10,16,31,.75), rgba(10,16,31,.35));
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .brand{
+      display:flex;align-items:center;gap:.6rem;font-weight:800;letter-spacing:.2px;
+    }
+    .brand-badge{
+      width:36px;height:36px;border-radius:10px;display:grid;place-items:center;color:#00131f;font-weight:900;
+      background: conic-gradient(from 210deg, var(--brand), var(--brand-2));
+      box-shadow: 0 6px 16px rgba(93,217,255,.35);
+    }
+    .nav-cta{
+      border:1px solid rgba(93,217,255,.35);
+      color:#cfe9ff;background:linear-gradient(180deg, rgba(93,217,255,.14), rgba(123,123,255,.14));
+      border-radius:12px;padding:.55rem .9rem;
+      transition:transform .18s ease, border-color .18s ease, background .18s ease;
+    }
+    .nav-cta:hover{transform:translateY(-1px); border-color:rgba(93,217,255,.58);}
+
+    /* ---------- Hero ---------- */
+    .hero{
+      position:relative; overflow:hidden;
+      padding-block: clamp(48px, 10vh, 120px);
+    }
+    .mesh{
+      position:absolute; inset:-20% -10% auto auto; width:900px; height:900px; z-index:0; pointer-events:none;
+      background:
+        radial-gradient(closest-side, rgba(123,123,255,.18), transparent 70%),
+        radial-gradient(closest-side, rgba(93,217,255,.18), transparent 70%);
+      filter: blur(20px);
+      transform: translate3d(0,0,0);
+    }
+    .hero h1{
+      font-size: clamp(1.8rem, 2.8vw + 1rem, 3.4rem);
+      line-height:1.12; font-weight:900; letter-spacing:.2px;
+    }
+    .hero p{ color:var(--muted); font-size:clamp(.98rem, .7vw + .85rem, 1.25rem); }
+    .cta-row .btn{
+      border-radius:14px; padding:.9rem 1.2rem; font-weight:700;
+    }
+    .btn-brand{
+      background:linear-gradient(90deg, var(--brand), var(--brand-2));
+      border:0; color:#041622; box-shadow:0 12px 30px rgba(93,217,255,.25);
+    }
+    .btn-ghost{
+      border:1px solid rgba(255,255,255,.25);
+      background:transparent; color:#e6f7ff;
+    }
+    .btn-ghost:hover{ border-color:#fff; }
+
+    /* ---------- Section shells ---------- */
+    .section{ padding-block: clamp(36px, 6vw, 80px); }
+    .section .lead{ color:var(--muted); }
+
+    /* ---------- Stats (glass cards) ---------- */
+    .glass{
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:var(--r-lg);
+      box-shadow: var(--shadow);
+    }
+    .stat{
+      text-align:center; padding:18px 14px; height:100%;
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+    .stat:hover{ transform:translateY(-3px); box-shadow:0 16px 40px rgba(0,0,0,.4); border-color:rgba(255,255,255,.14); }
+    .stat .ico{
+      width:56px;height:56px;border-radius:14px;margin:0 auto 10px;display:grid;place-items:center;color:#00131f;font-weight:900;
+      background:linear-gradient(135deg, var(--brand), var(--brand-2));
+      box-shadow:0 8px 20px rgba(93,217,255,.32);
+      font-size:20px;
+    }
+    .stat .num{
+      font-size: clamp(1.4rem, 2vw + .8rem, 2.2rem);
+      font-weight:900; color:#bfe8ff; letter-spacing:.3px;
+    }
+    .stat .lbl{ font-weight:800 }
+    .stat .desc{ color:var(--muted) }
+
+    /* ---------- Features (cards with left border accent) ---------- */
+    .f-card{
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid rgba(255,255,255,.08); border-left:3px solid transparent;
+      border-radius:16px; padding:18px; height:100%;
+      transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+    }
+    .f-card:hover{ transform:translateY(-3px); border-left-color:var(--brand); box-shadow:0 16px 40px rgba(0,0,0,.4); }
+    .f-icon{
+      width:52px;height:52px;border-radius:12px;display:grid;place-items:center;color:#041622;
+      background:conic-gradient(from 160deg, var(--brand), var(--brand-2));
+      box-shadow:0 8px 18px rgba(93,217,255,.3); font-size:18px; margin-bottom:8px;
+    }
+    .f-title{ font-weight:900; letter-spacing:.2px; }
+    .f-desc{ color:var(--muted); }
+    .f-list{ list-style:none; padding:0; margin:0; display:grid; gap:8px; }
+    .f-list li{ display:flex; align-items:center; gap:8px; color:#cfe2ff }
+    .f-list i{ color:#93dfff }
+
+    /* ---------- Progress & Benefits ---------- */
+    .p-card{ padding:22px }
+    .bar{
+      --track:#162947; --fill1:#5dd9ff; --fill2:#7b7bff;
+      height:12px; border-radius:999px; background:var(--track); overflow:hidden; position:relative;
+    }
+    .bar > .fill{
+      height:100%; width:0%; border-radius:inherit;
+      background: linear-gradient(90deg, var(--fill1), var(--fill2)); transition: width .9s ease;
+      position:relative;
+    }
+    .bar > .fill::after{
+      content:""; position:absolute; inset:0;
+      background-image:linear-gradient(90deg, rgba(255,255,255,.25) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.25) 50%, rgba(255,255,255,.25) 75%, transparent 75%, transparent);
+      background-size:28px 100%;
+      transform:translateX(-100%); animation:stripe 1.4s linear infinite; opacity:.35;
+    }
+    @keyframes stripe{ to{ transform:translateX(0); } }
+
+    .benefit{
+      display:flex; gap:12px; padding:14px; border-radius:14px; border:1px solid rgba(255,255,255,.08);
+      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+    .benefit:hover{ transform:translateY(-2px); border-color:rgba(255,255,255,.14); box-shadow:0 12px 26px rgba(0,0,0,.4); }
+    .benefit .bico{
+      width:42px;height:42px;border-radius:11px;display:grid;place-items:center;color:#041622;
+      background:linear-gradient(135deg, var(--brand), var(--brand-2));
+      box-shadow:0 8px 18px rgba(93,217,255,.3);
+    }
+
+    /* ---------- Testimonial (edge-to-edge card) ---------- */
+    .t-card{
+      position:relative; overflow:hidden; border-radius:20px; padding:24px;
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow: var(--shadow);
+    }
+    .t-card::before{
+      content:""; position:absolute; inset:-40% -10% auto auto; width:380px; height:380px; z-index:0;
+      background: radial-gradient(closest-side, rgba(93,217,255,.22), transparent 70%);
+      filter: blur(12px);
+    }
+    .quote{
+      position:absolute; top:12px; right:12px; z-index:1; width:40px; height:40px;
+      display:grid; place-items:center; border-radius:12px; color:#06162b;
+      background:linear-gradient(135deg, var(--brand), var(--brand-2));
+    }
+    .t-text{ position:relative; z-index:1; font-size:1.05rem; color:#e3f1ff }
+    .t-rating{ display:flex; align-items:center; gap:6px; color:#ffd86a; margin:.35rem 0 .6rem }
+    .t-author{ display:flex; align-items:center; gap:12px; }
+    .t-avatar{
+      width:52px; height:52px; border-radius:14px; display:grid; place-items:center; color:#06162b;
+      background:linear-gradient(135deg, var(--brand), var(--brand-2));
+    }
+    .t-role{ color:var(--muted); margin:0 }
+
+    /* ---------- Forms ---------- */
+    .form-card{
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:16px; box-shadow:var(--shadow); padding:18px;
+    }
+    .form-control{
+      background:#0b1730; color:#e8f4ff;
+      border:2px solid #132449; border-radius:12px; padding:.85rem .95rem;
+    }
+    .form-control::placeholder{ color:#7fa4cf }
+    .form-control:focus{ border-color:#69ddff; box-shadow: var(--ring); }
+
+    /* ---------- Footer ---------- */
+    .footer{
+      background: linear-gradient(180deg, #0b1220, #0a101f);
+      border-top:1px solid rgba(255,255,255,.06);
+    }
+    .f-input{
+      background:#0b1730; color:#e8f4ff; border:1px solid #28406f; border-radius:10px;
+    }
+    .f-input:focus{ border-color:#69ddff; box-shadow: var(--ring); }
+    .social a{
+      width:40px;height:40px;border-radius:50%;display:grid;place-items:center;
+      background:#0b1730;border:1px solid #28406f;color:#cfe7ff; transition: transform .18s ease, background .18s ease, border-color .18s ease;
+    }
+    .social a:hover{ transform:translateY(-2px); background:#0f1f3d; border-color:#69ddff; }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce){
+      html{ scroll-behavior:auto }
+      .stat,.f-card,.benefit,.bar>.fill{ transition:none }
+      .bar>.fill::after{ animation:none }
+    }
+
+    .eyebrow{
+  padding:.35rem .65rem;
+  border-radius:999px;
+  font-weight:700;
+  font-size:.85rem;
+  letter-spacing:.2px;
+  background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.18);
+  color:#e6f7ff;
+}
+.hero-headline{
+  font-weight:900;
+  line-height:1.12;
+  letter-spacing:.2px;
+  /* fluid type: mobile -> desktop */
+  font-size: clamp(1.75rem, 2.6vw + 1rem, 3.2rem);
+}
+.hero-subhead{
+  color: var(--muted, rgba(230,247,255,.85));
+  font-size: clamp(.98rem, .6vw + .9rem, 1.2rem);
+  margin-left:auto; margin-right:auto;
+  max-width: 46ch;
+}
+.hero-cta .btn{
+  border-radius:14px;
+  padding:.9rem 1.15rem;
+  font-weight:700;
+  min-width: 180px; /* bigger, tap-friendly on mobile */
+}
+
+/* Optional: tighter hero vertical rhythm on very small screens */
+@media (max-width: 380px){
+  .hero-headline{ font-size: clamp(1.6rem, 5vw + .8rem, 2.6rem); }
+  .hero-cta .btn{ min-width: 160px; }
+}
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <div class="navwrap">
+    <nav class="container py-2">
+      <div class="d-flex align-items-center justify-content-between">
+        <a class="brand text-decoration-none text-white" href="#">
+          <span class="brand-badge">X</span>
+          <span>X-Opp Clinical Costing</span>
+        </a>
+        <!-- <div class="d-flex align-items-center gap-2">
+          <a class="text-white-50 small text-decoration-none d-none d-md-inline" href="#features">Features</a>
+          <a class="text-white-50 small text-decoration-none d-none d-md-inline" href="#compliance">Compliance</a>
+          <a href="#contact" class="nav-cta">Contact Sales</a>
+        </div> -->
+      </div>
+    </nav>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="mesh" aria-hidden="true"></div>
+    <div class="container position-relative">
+        <div class="row justify-content-center">
+        <div class="col-12 col-lg-10 col-xl-8 text-center">
+            
+            <!-- Eyebrow / badge -->
+            <span class="eyebrow mb-3 d-inline-flex align-items-center gap-2">
+            <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+            DOH-compliant clinical costing
+            </span>
+
+            <!-- Headline -->
+            <h1 class="hero-headline mb-3">
+            Smart Clinical Costing for Smarter Healthcare Decisions
+            </h1>
+
+            <!-- Subhead -->
+            <p id="hero-desc" class="hero-subhead mb-4">
+            Streamline DOH submissions, validate data, and generate XML in minutes with X-Opp Clinical Costing.
+            </p>
+
+            <!-- CTAs -->
+            <div class="hero-cta d-flex flex-wrap justify-content-center gap-3">
+            <a href="#demo" class="btn btn-brand" aria-describedby="hero-desc">Get a Demo</a>
+            <a href="#contact" class="btn btn-ghost" aria-describedby="hero-desc">Contact Sales</a>
+            </div>
+
+            <!-- Social proof (optional) -->
+            <div class="hero-proof text-white-50 small mt-4">
+            Trusted by hospitals & clinics across the UAE
+            </div>
+        </div>
+        </div>
+    </div>
+    </header>
+
+  <!-- STATS -->
+  <section class="section pt-3" aria-labelledby="stats-title">
+    <div class="container">
+      <div class="text-center mb-3">
+        <h2 id="stats-title" class="fw-bold">Trusted by Healthcare Providers</h2>
+        <p class="lead mb-0">Join healthcare professionals who trust X-Opp for DOH compliance.</p>
+      </div>
+
+      <div class="row g-3 g-md-4">
+        <div class="col-6 col-md-3">
+          <div class="glass stat">
+            <div class="ico"><i class="fa-solid fa-file-arrow-up"></i></div>
+            <div class="num" data-target="1247" data-suffix="+">0</div>
+            <div class="lbl">Files Uploaded</div>
+            <div class="desc">Secure data processing</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="glass stat">
+            <div class="ico"><i class="fa-solid fa-circle-check"></i></div>
+            <div class="num" data-target="1156">0</div>
+            <div class="lbl">Validated Records</div>
+            <div class="desc">Compliance assured</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="glass stat">
+            <div class="ico"><i class="fa-solid fa-file-code"></i></div>
+            <div class="num" data-target="1089">0</div>
+            <div class="lbl">XML Files Generated</div>
+            <div class="desc">Ready for submission</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="glass stat">
+            <div class="ico"><i class="fa-solid fa-bullseye"></i></div>
+            <div class="num" data-target="92" data-suffix="%">0</div>
+            <div class="lbl">Validation Accuracy</div>
+            <div class="desc">Industry-leading precision</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="section" id="features">
+    <div class="container">
+      <div class="text-center mb-3 mb-md-4">
+        <h2 class="fw-bold mb-2">Everything You Need for DOH Compliance</h2>
+        <p class="lead">Streamline your entire clinical costing workflow with a platform built for UAE healthcare providers.</p>
+      </div>
+
+      <div class="row g-3 g-md-4">
+        <div class="col-12 col-md-6 col-lg-4">
+          <article class="f-card">
+            <div class="f-icon"><i class="fa-solid fa-upload"></i></div>
+            <h3 class="f-title h5">Upload New Data</h3>
+            <p class="f-desc">CSV/Excel support with enterprise-grade security and automatic validation.</p>
+            <ul class="f-list">
+              <li><i class="fa-solid fa-check"></i> Multi-format support</li>
+              <li><i class="fa-solid fa-lock"></i> Encrypted at rest & in transit</li>
+              <li><i class="fa-solid fa-bolt"></i> Real-time validation</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <article class="f-card">
+            <div class="f-icon"><i class="fa-solid fa-shield"></i></div>
+            <h3 class="f-title h5">Validate Records</h3>
+            <p class="f-desc">Automated rules mapped to DOH clinical costing standards for clean submissions.</p>
+            <ul class="f-list">
+              <li><i class="fa-regular fa-circle-check"></i> DOH compliance</li>
+              <li><i class="fa-solid fa-robot"></i> Automated checks</li>
+              <li><i class="fa-solid fa-triangle-exclamation"></i> Error prevention</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <article class="f-card">
+            <div class="f-icon"><i class="fa-solid fa-file-code"></i></div>
+            <h3 class="f-title h5">Generate XML</h3>
+            <p class="f-desc">One-click XML that matches DOH specs—no manual formatting needed.</p>
+            <ul class="f-list">
+              <li><i class="fa-solid fa-computer-mouse"></i> One-click export</li>
+              <li><i class="fa-solid fa-check-double"></i> Error-free output</li>
+              <li><i class="fa-solid fa-file-export"></i> DOH-ready format</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRESS + BENEFITS -->
+  <section class="section" id="compliance">
+    <div class="container">
+      <div class="row g-4 align-items-stretch">
+        <div class="col-12 col-lg-6">
+          <div class="glass p-card h-100">
+            <h3 class="fw-bold mb-2"><i class="fa-solid fa-calendar-check text-info me-2"></i>Stay Compliant, Never Miss a Deadline</h3>
+            <p class="text-white-50">Track submission progress in real time and meet every DOH requirement with automated monitoring.</p>
+
+            <div class="mt-3">
+              <div class="d-flex justify-content-between small text-white-50 mb-1"><span>Data Uploads</span><span id="bl1">0%</span></div>
+              <div class="bar"><div class="fill" id="b1"></div></div>
+            </div>
+            <div class="mt-3">
+              <div class="d-flex justify-content-between small text-white-50 mb-1"><span>Record Validation</span><span id="bl2">0%</span></div>
+              <div class="bar"><div class="fill" id="b2"></div></div>
+            </div>
+            <div class="mt-3">
+              <div class="d-flex justify-content-between small text-white-50 mb-1"><span>XML Generation</span><span id="bl3">0%</span></div>
+              <div class="bar"><div class="fill" id="b3"></div></div>
+            </div>
+
+            <small class="text-white-50 d-block mt-3">Live metrics update as your team uploads, validates, and submits data.</small>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-6">
+          <div class="h-100">
+            <h3 class="fw-bold mb-3">Why Choose X-Opp?</h3>
+            <div class="benefit">
+              <div class="bico"><i class="fa-solid fa-check"></i></div>
+              <div><h5 class="fw-bold mb-1">100% DOH Compliant</h5><p class="text-white-50 mb-0">Built to meet all Department of Health requirements.</p></div>
+            </div>
+            <div class="benefit">
+              <div class="bico"><i class="fa-regular fa-clock"></i></div>
+              <div><h5 class="fw-bold mb-1">Save 70% Manual Effort</h5><p class="text-white-50 mb-0">Automate tedious processes and focus on patient care.</p></div>
+            </div>
+            <div class="benefit">
+              <div class="bico"><i class="fa-solid fa-location-dot"></i></div>
+              <div><h5 class="fw-bold mb-1">Built for UAE Healthcare</h5><p class="text-white-50 mb-0">Purpose-built for providers across the UAE.</p></div>
+            </div>
+            <div class="benefit">
+              <div class="bico"><i class="fa-solid fa-users"></i></div>
+              <div><h5 class="fw-bold mb-1">Trusted by Hospitals & Clinics</h5><p class="text-white-50 mb-0">Join a growing network of providers using X-Opp.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL -->
+  <!-- <section class="section">
+    <div class="container">
+      <div class="row justify-content-center g-4">
+        <div class="col-12 col-lg-8">
+          <figure class="t-card m-0">
+            <div class="quote" aria-hidden="true"><i class="fa-solid fa-quote-right"></i></div>
+            <blockquote class="t-text">
+              “With X-Opp, our DOH submissions are faster, easier, and fully compliant. The platform transformed how we handle clinical costing data.”
+            </blockquote>
+            <div class="t-rating" aria-label="Rated 5 out of 5">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <span class="small text-white-50">5.0</span>
+            </div>
+            <figcaption class="t-author">
+              <div class="t-avatar"><i class="fa-solid fa-user-doctor"></i></div>
+              <div>
+                <div class="fw-bold">Dr. Sarah Ahmed <span class="text-success"><i class="fa-solid fa-circle-check" title="Verified"></i></span></div>
+                <p class="t-role">CFO, Al Noor Hospital</p>
+              </div>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="text-center mb-3">
+        <h2 class="fw-bold">Let’s Get You Started</h2>
+        <p class="lead">Ready to transform your clinical costing process? Talk to our experts.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-12 col-lg-6">
+          <div class="form-card" id="demo">
+            <h3 class="fw-bold mb-2">Request a Demo</h3>
+            <form id="demoForm" action="https://api.web3forms.com/submit" method="POST" novalidate>
+                 <input type="hidden" name="access_key" value="1d581977-0167-4073-8d30-f8e754b508d4">
+              
+
+              <div class="row g-3">
+                <div class="col-12 col-md-6">
+                  <label for="name" class="form-label visually-hidden">Full name</label>
+                  <input id="name" name="name" type="text" class="form-control" placeholder="Your full name" required />
+                </div>
+                <div class="col-12 col-md-6">
+                  <label for="email" class="form-label visually-hidden">Email</label>
+                  <input id="email" name="email" type="email" class="form-control" placeholder="your@email.com" required />
+                </div>
+                <div class="col-12 col-md-6">
+                  <label for="phone" class="form-label visually-hidden">Phone</label>
+                  <input id="phone" name="phone" type="tel" class="form-control" placeholder="+971 50 123 4567" required />
+                </div>
+                <div class="col-12 col-md-6">
+                  <label for="facility" class="form-label visually-hidden">Healthcare facility</label>
+                  <input id="facility" name="facility" type="text" class="form-control" placeholder="Your healthcare facility" required />
+                </div>
+              </div>
+              <label for="needs" class="form-label visually-hidden">Message</label>
+              <textarea id="needs" name="message" rows="4" class="form-control mt-3" placeholder="Tell us about your clinical costing needs..."></textarea>
+              <button type="submit" class="btn btn-brand w-100 mt-3">Request a Demo</button>
+              <div id="demoMsg" class="small mt-2 text-white-50" role="status" aria-live="polite"></div>
+            </form>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-6">
+          <div class="glass p-3 p-md-4 h-100">
+            <h3 class="fw-bold mb-2">Get in Touch</h3>
+            <p class="text-white-50">Our team is ready to help you streamline DOH compliance and improve costing efficiency.</p>
+
+            <div class="d-grid gap-3 mt-3">
+              <div class="d-flex align-items-center gap-3">
+                <div class="ico" style="width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,#5dd9ff,#7b7bff); display:grid;place-items:center;color:#06162b"><i class="fa-brands fa-whatsapp"></i></div>
+                <div><h6 class="fw-bold m-0">WhatsApp</h6><p class="text-white-50 m-0">+971 50 348 2299 (Chat Now)</p></div>
+              </div>
+              <div class="d-flex align-items-center gap-3">
+                <div class="ico" style="width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,#5dd9ff,#7b7bff); display:grid;place-items:center;color:#06162b"><i class="fa-solid fa-envelope"></i></div>
+                <div><h6 class="fw-bold m-0">Email</h6><p class="text-white-50 m-0"> info@delemontechnology.com</p></div>
+              </div>
+              <div class="d-flex align-items-center gap-3">
+                <div class="ico" style="width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,#5dd9ff,#7b7bff); display:grid;place-items:center;color:#06162b"><i class="fa-solid fa-location-dot"></i></div>
+                <div><h6 class="fw-bold m-0">Address</h6><p class="text-white-50 m-0">Office no 32, 31st Floor,API World
+Tower,Near World Trade Center
+Metro Station,<br>Dubai, UAE</p></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer section pt-4">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <span class="brand-badge">X</span>
+            <h4 class="fw-bold m-0">X-Opp Clinical Costing</h4>
+          </div>
+          <p class="text-white-50">Streamlining DOH compliance for healthcare providers across the UAE with intelligent clinical costing solutions.</p>
+          <div class="d-flex gap-2 social">
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Twitter/X"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Chat"><i class="fas fa-comments"></i></a>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-2">
+          <h6 class="fw-bold mb-2">Quick Links</h6>
+          <ul class="list-unstyled m-0">
+            <li class="mb-2"><a class="text-decoration-none text-white-50" href="#features">Features</a></li>
+            <li class="mb-2"><a class="text-decoration-none text-white-50" href="#compliance">Compliance</a></li>
+            <li class="mb-2"><a class="text-decoration-none text-white-50" href="#contact">Contact</a></li>
+            <li><a class="text-decoration-none text-white-50" href="#demo">Demo</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-2">
+          <h6 class="fw-bold mb-2">Legal</h6>
+          <ul class="list-unstyled m-0">
+            <li class="mb-2"><a href="#privacy" class="text-decoration-none text-white-50">Privacy Policy</a></li>
+            <li class="mb-2"><a href="#terms" class="text-decoration-none text-white-50">Terms of Service</a></li>
+            <li><a href="#support" class="text-decoration-none text-white-50">Support</a></li>
+          </ul>
+        </div>
+
+        <div class="col-12 col-lg-4">
+          <h6 class="fw-bold mb-2">Stay Updated</h6>
+          <p class="text-white-50">Get the latest on DOH compliance & healthtech.</p>
+          <form id="newsForm" class="row g-2" novalidate>
+            <div class="col-12 col-sm">
+              <label class="visually-hidden" for="newsEmail">Email</label>
+              <input id="newsEmail" type="email" class="form-control f-input" placeholder="Enter your email" required />
+            </div>
+            <div class="col-12 col-sm-auto">
+              <button class="btn btn-brand w-100" type="submit">Subscribe</button>
+            </div>
+            <div class="col-12"><small class="text-white-50" id="newsMsg" aria-live="polite"></small></div>
+          </form>
+        </div>
+      </div>
+
+      <hr class="border-secondary opacity-25 my-4" />
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+        <small class="text-white-50">© <span id="year">2025</span> X-Opp Healthcare Solutions. All rights reserved.</small>
+        <div class="d-flex gap-3 small">
+          <a href="#privacy" class="text-white-50 text-decoration-none">Privacy</a>
+          <a href="#terms" class="text-white-50 text-decoration-none">Terms</a>
+          <a href="#contact" class="text-white-50 text-decoration-none">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Smooth scroll with reduced-motion respect
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const id=a.getAttribute('href'); if(!id||id==='#') return;
+        const el=document.querySelector(id); if(!el) return;
+        e.preventDefault();
+        const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        el.scrollIntoView({behavior: reduce?'auto':'smooth', block:'start'});
+      });
+    });
+
+    // Stat number animation (supports suffix like % or +)
+    const fmt=new Intl.NumberFormat();
+    function animateNums(scope=document){
+      scope.querySelectorAll('.num[data-target]').forEach(n=>{
+        if(n.dataset.done) return;
+        const target=Number(n.dataset.target||'0');
+        const suf=n.dataset.suffix||'';
+        let cur=0, steps=34, inc=target/steps;
+        const timer=setInterval(()=>{
+          cur+=inc;
+          if(cur>=target){ n.textContent=fmt.format(target)+suf; clearInterval(timer); n.dataset.done='1'; }
+          else{ n.textContent=fmt.format(Math.floor(cur))+suf; }
+        },24);
+      });
+    }
+    const statSec=document.querySelector('#stats-title')?.closest('section');
+    if('IntersectionObserver' in window && statSec){
+      const io=new IntersectionObserver(es=>{
+        es.forEach(en=>{ if(en.isIntersecting){ animateNums(statSec); io.disconnect(); }});
+      },{threshold:.25});
+      io.observe(statSec);
+    } else { animateNums(); }
+
+    // Progress bars once visible
+    function runBars(){
+      const bars=[
+        {el:'#b1', label:'#bl1', val:86},
+        {el:'#b2', label:'#bl2', val:73},
+        {el:'#b3', label:'#bl3', val:64}
+      ];
+      bars.forEach(b=>{
+        const el=document.querySelector(b.el), lab=document.querySelector(b.label);
+        if(!el) return;
+        requestAnimationFrame(()=>{ el.style.width=b.val+'%'; if(lab) lab.textContent=b.val+'%'; });
+      });
+    }
+    const comp=document.getElementById('compliance');
+    if('IntersectionObserver' in window && comp){
+      const io2=new IntersectionObserver(es=>{
+        es.forEach(en=>{ if(en.isIntersecting){ runBars(); io2.disconnect(); }});
+      },{threshold:.25});
+      io2.observe(comp);
+    } else { runBars(); }
+
+    // Demo form
+    const demoForm=document.getElementById('demoForm');
+    const demoMsg=document.getElementById('demoMsg');
+    if(demoForm){
+      demoForm.addEventListener('submit', e=>{
+        e.preventDefault();
+        if(!demoForm.checkValidity()){
+          demoMsg.textContent='Please fill all required fields correctly.'; demoMsg.classList.remove('text-success'); demoMsg.classList.add('text-danger');
+          return;
+        }
+        demoMsg.textContent='Thank you! Our team will contact you shortly.'; demoMsg.classList.remove('text-danger'); demoMsg.classList.add('text-success');
+        demoForm.reset();
+      });
+    }
+
+    // Newsletter
+    const newsForm=document.getElementById('newsForm');
+    const newsMsg=document.getElementById('newsMsg');
+    if(newsForm){
+      newsForm.addEventListener('submit', e=>{
+        e.preventDefault();
+        const email=document.getElementById('newsEmail');
+        if(email && email.checkValidity()){ newsMsg.textContent='Thanks! You’re subscribed.'; }
+        else{ newsMsg.textContent='Please enter a valid email address.'; }
+      });
+    }
+
+    // Dynamic year
+    const y=document.getElementById('year'); if(y) y.textContent=new Date().getFullYear();
+  </script>
+</body>
+</html>

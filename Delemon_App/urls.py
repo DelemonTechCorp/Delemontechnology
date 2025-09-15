@@ -41,6 +41,7 @@ urlpatterns = [
     path('branding-for-better-experience', views.branding, name='branding'),
     path('animation-design-and-services', views.animation, name='animation'),
     path('email-marketing-services', views.email, name='email'),
+    path('index', views.index, name='index'),
     path('research-marketing-services', views.research, name='research'),
     path('influencer-marketing-services',views.influencer,name='influencer'),    
     path('digital-design',views.digital_design,name='digital_design'),
