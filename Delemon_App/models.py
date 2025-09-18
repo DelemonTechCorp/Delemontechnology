@@ -84,6 +84,30 @@ class Blog(models.Model):
 
     # def get_absolute_url(self):
     #     return reverse('blogview', kwargs={'id': self.id})
+
+    
+    def formatted_description(self):
+        """
+        Convert the description with hyperlinks and markdown-style headers for rendering.
+        """
+        text = self.content
+
+        # Replace markdown-style headers with HTML headers
+        text = re.sub(r'^##### (.+)$', r'<h5>\1</h5>', text, flags=re.MULTILINE)
+        text = re.sub(r'^#### (.+)$', r'<h4>\1</h4>', text, flags=re.MULTILINE)
+        text = re.sub(r'^### (.+)$', r'<h3>\1</h3>', text, flags=re.MULTILINE)
+        text = re.sub(r'^## (.+)$', r'<h2>\1</h2>', text, flags=re.MULTILINE)
+        text = re.sub(r'^# (.+)$', r'<h1>\1</h1>', text, flags=re.MULTILINE)
+
+        # Replace bullet points
+
+        # Replace keywords with links
+        # text = self.replace_keywords_with_links(text)
+
+        # Mark the ffeninal text as safe HTML for rendering
+        return mark_safe(text)
+
+    formatted_description.short_description = 'Description (with links)'
     def get_absolute_url(self):
         return reverse('blog_detail', kwargs={'slug': self.slug})
 

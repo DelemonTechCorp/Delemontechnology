@@ -139,8 +139,8 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 CKEDITOR_UPLOAD_PATH = "uploads/"
 
-STATIC_ROOT = '/home/delemoninfo/mysite/static'
-STATIC_URL = '/static/'
+# STATIC_ROOT = '/home/delemoninfo/mysite/static'
+# STATIC_URL = '/static/'
 
 EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST='smtp.gmail.com'
