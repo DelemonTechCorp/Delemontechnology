@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Delemon_App',
+    'ckeditor',
+    'ckeditor_uploader',   # for image/file uploads (optional)
 ]
 
 MIDDLEWARE = [
@@ -133,6 +135,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # MEDIA_ROOT = '/home/delemoninfo/mysite/media'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+
+CKEDITOR_UPLOAD_PATH = "uploads/"
+
 STATIC_ROOT = '/home/delemoninfo/mysite/static'
 STATIC_URL = '/static/'
 

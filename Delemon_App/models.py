@@ -4,6 +4,8 @@ from django.utils.safestring import mark_safe
 from django.utils import timezone
 from django.urls import reverse
 import re
+from ckeditor.fields import RichTextField   # simple CKEditor
+
 
 
 class Keyword(models.Model):
@@ -23,7 +25,7 @@ class Blog(models.Model):
     slug = models.SlugField(unique=True, blank=True,max_length=500)
     image = models.ImageField(upload_to='blogs/')
     author_image = models.ImageField(upload_to='authors/')
-    content = models.TextField()
+    content = RichTextField()
     author_name = models.CharField(max_length=100)
     author_social_links = models.JSONField(default=dict)
     seo_Title = models.CharField(max_length=255,null=True)
@@ -40,48 +42,45 @@ class Blog(models.Model):
     def __str__(self):
         return self.title
 
-    def replace_keywords_with_links(self, description):
-        """
-        Replace keywords in the description with hyperlinks to their respective URLs.
-        """
-        keywords = Keyword.objects.all()
-        for keyword in keywords:
-            # Use regex to ensure whole word matching, case-insensitive
-            pattern = rf'(?<!>)\b{re.escape(keyword.word)}\b'  # Avoid replacing inside existing HTML tags
-            description = re.sub(
-                pattern,
-                f'<a href="{keyword.url}" target="_blank">{keyword.word}</a>',
-                description,
-                flags=re.IGNORECASE  # Case-insensitive replacement
-            )
-        return description
+    # def replace_keywords_with_links(self, description):
+    #     """
+    #     Replace keywords in the description with hyperlinks to their respective URLs.
+    #     """
+    #     keywords = Keyword.objects.all()
+    #     for keyword in keywords:
+           
+    #         pattern = rf'(?<!>)\b{re.escape(keyword.word)}\b'  
+    #         description = re.sub(
+    #             pattern,
+    #             f'<a href="{keyword.url}" target="_blank">{keyword.word}</a>',
+    #             description,
+    #             flags=re.IGNORECASE 
+    #         )
+    #     return description
 
-    def formatted_description(self):
-        """
-        Convert the description with hyperlinks and markdown-style headers for rendering.
-        """
-        text = self.content
+    # def formatted_description(self):
+    #     """
+    #     Convert the description with hyperlinks and markdown-style headers for rendering.
+    #     """
+    #     text = self.content
 
-        # Replace markdown-style headers with HTML headers
-        text = re.sub(r'^#### (.+)$', r'<h4>\1</h4>', text, flags=re.MULTILINE)
-        text = re.sub(r'^### (.+)$', r'<h3>\1</h3>', text, flags=re.MULTILINE)
-        text = re.sub(r'^## (.+)$', r'<h2>\1</h2>', text, flags=re.MULTILINE)
-        text = re.sub(r'^# (.+)$', r'<h1>\1</h1>', text, flags=re.MULTILINE)
+ 
+    #     text = re.sub(r'^#### (.+)$', r'<h4>\1</h4>', text, flags=re.MULTILINE)
+    #     text = re.sub(r'^### (.+)$', r'<h3>\1</h3>', text, flags=re.MULTILINE)
+    #     text = re.sub(r'^## (.+)$', r'<h2>\1</h2>', text, flags=re.MULTILINE)
+    #     text = re.sub(r'^# (.+)$', r'<h1>\1</h1>', text, flags=re.MULTILINE)
 
-        # Replace bullet points
-        text = re.sub(r'^\* (.+)$', r'<li>\1</li>', text, flags=re.MULTILINE)
+    #     text = re.sub(r'^\* (.+)$', r'<li>\1</li>', text, flags=re.MULTILINE)
 
-        # Wrap list items in <ul> if they exist
-        if '<li>' in text:
-            text = f"<ul>{text}</ul>"
+    #     if '<li>' in text:
+    #         text = f"<ul>{text}</ul>"
 
-        # Replace keywords with links
-        text = self.replace_keywords_with_links(text)
+    #     text = self.replace_keywords_with_links(text)
 
-        # Mark the final text as safe HTML for rendering
-        return mark_safe(text)
+   
+    #     return mark_safe(text)
 
-    formatted_description.short_description = 'Description (with links)'
+    # formatted_description.short_description = 'Description (with links)'
 
     # def get_absolute_url(self):
     #     return reverse('blogview', kwargs={'id': self.id})
