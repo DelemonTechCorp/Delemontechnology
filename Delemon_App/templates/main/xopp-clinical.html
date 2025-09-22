@@ -665,8 +665,551 @@
         </div>
     </section>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <style>
+      .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: linear-gradient(to bottom right, #f9fafb, #f9fafb, rgba(59,130,246,0.1));
+      padding: 10px 10px;
+    }
+
+    /* Background decoration */
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 80px;
+      right: -120px;
+      width: 300px;
+      height: 300px;
+      background: rgba(59, 130, 246, 0.1);
+      border-radius: 50%;
+      filter: blur(100px);
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      bottom: 80px;
+      left: -120px;
+      width: 300px;
+      height: 300px;
+      background: rgba(37, 99, 235, 0.1);
+      border-radius: 50%;
+      filter: blur(100px);
+    }
+
+    .hero-container {
+      max-width: 1200px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .badge1 {
+      display: inline-block;
+      padding: 8px 16px;
+      background: rgba(59,130,246,0.1);
+      border: 1px solid rgba(59,130,246,0.2);
+      border-radius: 9999px;
+      font-size: 14px;
+      color: #2563eb;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      line-height: 1.2;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    .hero h1 span {
+      background: linear-gradient(to right, #2563eb, #60a5fa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #6b7280;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+ 
+    .hero-tags {
+      display: flex;
+      gap: 20px;
+      font-size: 14px;
+      color: #6b7280;
+    }
+    .hero-tags div {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .hero-tags div::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #2563eb;
+    }
+
+    .hero-image {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
+    .hero-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .hero-image::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top right, rgba(37,99,235,0.1), transparent, rgba(96,165,250,0.1));
+    }
+
+    /* Floating cards */
+/* Floating cards */
+.card-1 {
+  position: absolute;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  width: 160px;
+  z-index: 3; /* ensure cards are above gradient overlay */
+}
+
+.card-1 h4 {
+  font-size: 14px;
+  margin: 0;
+  color: #111827;
+  font-weight: 500;
+}
+.card-1 .value {
+  font-size: 24px;
+  font-weight: bold;
+  color: #2563eb;
+  margin-top: 5px;
+}
+
+/* Fixed positions */
+.card-top {
+  top: 20px;
+  left: 20px;
+}
+
+.card-bottom {
+  bottom: 20px;
+  right: 20px;
+}
+
+    @media(max-width: 900px) {
+      .hero-container {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media(max-width: 900px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .badge1 {
+    margin: 0 auto 20px;
+    font-size: 13px;
+    padding: 6px 14px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+    line-height: 1.3;
+  }
+
+  .hero p {
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+
+  .hero-tags {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+  }
+
+  .hero-image {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  /* Floating cards resize + reposition */
+  .card-1 {
+    width: 130px;
+    padding: 12px;
+  }
+
+  .card-1 h4 {
+    font-size: 12px;
+  }
+  .card-1 .value {
+    font-size: 18px;
+  }
+
+  .card-top {
+    top: 10px;
+    left: 10px;
+  }
+
+  .card-bottom {
+    bottom: 10px;
+    right: 10px;
+  }
+}
+
+@media(max-width: 600px) {
+  .hero h1 {
+    font-size: 26px;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  .hero-image {
+    max-width: 100%;
+  }
+
+  /* Optionally hide floating cards on very small screens */
+  .card-1 {
+    display: none;
+  }
+}
+
+</style>
+
+    <section class="hero">
+    <div class="hero-container">
+      
+      <div class="hero-content">
+        <div class="badge1">DoH Compliant • Abu Dhabi Healthcare</div>
+        <h1>Clinical Costing Software for 
+          <span>Healthcare Providers</span>
+        </h1>
+        <p>Clinical costing is the discipline of calculating the true cost of delivering patient care by tracing people, time, consumables, equipment, rooms, and overheads. Done well, it produces trustworthy insights that support pricing, budgeting, service redesign, and value-based care.</p>
+        <p>This guide explains the essentials, clarifies DoH clinical costing expectations in Abu Dhabi, and shows how X-Opp Clinical Costing helps you build a program that clinicians trust and finance can reconcile.</p>
+        
+     
+        
+      
+      </div>
+      
+      <div class="hero-image">
+        <img src="static/img/clinical-costimg.jpg" alt="Clinical Costing Dashboard">
+        
+        <div class="card-1 card-top">
+          <h4>Cost Accuracy</h4>
+          <div class="value">98.7%</div>
+        </div>
+        
+        <div class="card-1 card-bottom">
+          <h4>Processing Speed</h4>
+          <div class="value">Real-time</div>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+
+
+
+<style>
+  /* Section Styling */
+.why-matters {
+  padding: 80px 20px;
+  background: linear-gradient(to bottom, #f9fafb, #ffffff);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Heading */
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+.section-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 20px;
+}
+.section-header p {
+  font-size: 1.125rem;
+  color: #6b7280;
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Grid */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+}
+
+/* Card */
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 32px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  transition: box-shadow 0.3s ease;
+}
+.card:hover {
+  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+}
+.card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 16px;
+}
+.card p {
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+/* Icon Box */
+.icon-box {
+  width: 48px;
+  height: 48px;
+  background: rgba(37, 99, 235, 0.1);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.icon-1 {
+  width: 24px;
+  height: 24px;
+  color: #1F6CCB;
+}
+
+/* Highlight Box */
+.highlight-box {
+  margin-top: 64px;
+  padding: 32px;
+  border-radius: 20px;
+  background: rgba(37, 99, 235, 0.05);
+  border: 1px solid rgba(37, 99, 235, 0.1);
+  text-align: center;
+}
+.highlight-box h3 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 16px;
+}
+.highlight-box p {
+  font-size: 1.125rem;
+  color: #6b7280;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .why-matters {
+    padding: 60px 16px;
+  }
+
+  .section-header h2 {
+    font-size: 2rem;
+  }
+
+  .section-header p {
+    font-size: 1rem;
+    line-height: 1.6;
+    padding: 0 10px;
+  }
+
+  .card {
+    padding: 24px;
+  }
+  .card h3 {
+    font-size: 1.125rem;
+  }
+  .card p {
+    font-size: 0.95rem;
+  }
+
+  .highlight-box {
+    padding: 24px;
+    margin-top: 40px;
+  }
+  .highlight-box h3 {
+    font-size: 1.5rem;
+  }
+  .highlight-box p {
+    font-size: 1rem;
+    line-height: 1.6;
+    padding: 0 10px;
+  }
+  .cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+}
+
+}
+
+@media (max-width: 480px) {
+  .why-matters {
+    padding: 40px 12px;
+  }
+
+  .section-header h2 {
+    font-size: 1.75rem;
+  }
+
+  .section-header p {
+    font-size: 0.95rem;
+  }
+
+  .icon-box {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 16px;
+  }
+  .icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .card {
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  .highlight-box {
+    padding: 20px;
+    border-radius: 16px;
+  }
+}
+
+</style>
+
+  <section class="why-matters">
+  <div class="container">
+    <!-- Heading -->
+    <div class="section-header">
+      <h2>Why Clinical Costing Matters for Healthcare Providers</h2>
+      <p>
+        Clinical costing gives leaders and care teams a shared, defensible view of cost so decisions improve at every level. 
+        With a reconciled model, you can see where money is actually spent—by service line, specialty, pathway, and patient—rather than relying on averages.
+      </p>
+    </div>
+
+    <!-- Grid Cards -->
+    <div class="cards-grid">
+      <div class="card">
+        <div class="icon-box">
+          <svg class="icon-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+              d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 
+              0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 
+              0 002-2m0 0V5a2 2 0 012-2h2a2 2 
+              0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+          </svg>
+        </div>
+        <h3>Evidence-Based Decisions</h3>
+        <p>
+          That evidence strengthens tariff setting and payer negotiations, sharpens performance improvement, 
+          and grounds strategic choices about what to scale, redesign, outsource, or consolidate.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon-box">
+          <svg class="icon-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+              d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+          </svg>
+        </div>
+        <h3>Value-Based Healthcare</h3>
+        <p>
+          Most importantly, linking costs with outcomes enables value-based healthcare: teams compare results 
+          achieved per currency unit and focus on improvements that matter for both patients and margins.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon-box">
+          <svg class="icon-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+              d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 
+              11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 
+              5.591 3.824 10.29 9 11.622 5.176-1.332 
+              9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+          </svg>
+        </div>
+        <h3>DoH Compliance</h3>
+        <p>
+          In Abu Dhabi's healthcare ecosystem, this is directly aligned with the value-based funding framework 
+          and the clinical costing standards and guidelines issued by the Abu Dhabi Department of Health (DoH).
+        </p>
+      </div>
+    </div>
+
+    <!-- Highlight Box -->
+    <div class="highlight-box">
+      <h3>Aligned with Abu Dhabi's Healthcare Vision</h3>
+      <p>
+        Our clinical costing solution is specifically designed to meet the value-based funding framework 
+        and clinical costing standards established by the Abu Dhabi Department of Health, 
+        ensuring full compliance and optimal outcomes.
+      </p>
+    </div>
+  </div>
+</section>
+
     <!-- Features Section -->
-    <section class="features-section py-5">
+    <!-- <section class="features-section py-5">
   <div class="container">
     <div class="text-center mb-4 mb-md-5">
       <h2 class="h2 fw-bold mb-2">Everything You Need for DOH Compliance</h2>
@@ -676,7 +1219,7 @@
     </div>
 
     <div class="row g-3 g-md-4">
-      <!-- Upload -->
+
       <div class="col-12 col-md-6 col-lg-4">
         <article class="feature-card h-100" role="article" aria-labelledby="feature-upload-title">
           <div class="feature-icon" aria-hidden="true">
@@ -694,7 +1237,6 @@
         </article>
       </div>
 
-      <!-- Validate -->
       <div class="col-12 col-md-6 col-lg-4">
         <article class="feature-card h-100" role="article" aria-labelledby="feature-validate-title">
           <div class="feature-icon" aria-hidden="true">
@@ -712,7 +1254,6 @@
         </article>
       </div>
 
-      <!-- Generate -->
       <div class="col-12 col-md-6 col-lg-4">
         <article class="feature-card h-100" role="article" aria-labelledby="feature-xml-title">
           <div class="feature-icon" aria-hidden="true">
@@ -731,9 +1272,2224 @@
       </div>
     </div>
   </div>
+</section> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+  .building-blocks {
+  padding: 80px 20px;
+  background: #f9fafb;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Section Header */
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+.section-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 20px;
+}
+.section-header p {
+  font-size: 1.125rem;
+  color: #6b7280;
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Features Grid */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+  gap: 48px;
+  margin-bottom: 64px;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.feature-card {
+  background: rgba(229, 231, 235, 0.4);
+  border: 1px solid #e5e7eb;
+  padding: 24px;
+  border-radius: 16px;
+}
+.feature-card h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #111827;
+}
+.feature-card p {
+  color: #6b7280;
+  line-height: 1.6;
+}
+.feature-card.highlight {
+  background: rgba(37, 99, 235, 0.1);
+  border: 1px solid rgba(37, 99, 235, 0.2);
+}
+.feature-card.highlight h3 {
+  color: #1F6CCB;
+}
+.feature-card.highlight p {
+  color: #111827;
+}
+
+/* Essential Data Section */
+.essential-box {
+  background: linear-gradient(to right, rgba(37, 99, 235, 0.05), rgba(96, 165, 250, 0.05));
+  border: 1px solid rgba(37, 99, 235, 0.1);
+  border-radius: 20px;
+  padding: 40px;
+}
+.essential-box h3 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #111827;
+  text-align: center;
+  margin-bottom: 32px;
+}
+.data-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+}
+.data-column h4 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #1F6CCB;
+  margin-bottom: 16px;
+}
+.data-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #6b7280;
+  line-height: 1.6;
+}
+.note {
+  margin-top: 32px;
+  text-align: center;
+}
+.note p {
+  font-size: 1rem;
+  color: #111827;
+  font-weight: 500;
+}
+/* 📱 Responsive Styling */
+@media (max-width: 768px) {
+  .building-blocks {
+    padding: 60px 16px;
+  }
+
+  .section-header h2 {
+    font-size: 2rem;
+  }
+
+  .section-header p {
+    font-size: 1rem;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr; /* stack cards */
+    gap: 32px;
+  }
+
+  .feature-card {
+    padding: 20px;
+  }
+
+  .essential-box {
+    padding: 24px;
+  }
+
+  .essential-box h3 {
+    font-size: 1.5rem;
+    margin-bottom: 24px;
+  }
+
+  .data-grid {
+    gap: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .building-blocks {
+    padding: 40px 12px;
+  }
+
+  .section-header h2 {
+    font-size: 1.75rem;
+  }
+
+  .section-header p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .feature-card h3 {
+    font-size: 1rem;
+  }
+
+  .feature-card p {
+    font-size: 0.9rem;
+  }
+
+  .essential-box h3 {
+    font-size: 1.25rem;
+  }
+
+  .data-column h4 {
+    font-size: 1rem;
+  }
+
+  .note p {
+    font-size: 0.9rem;
+  }
+}
+
+</style>
+
+
+
+
+
+
+
+
+
+<section id="features" class="building-blocks">
+  <div class="container">
+    <!-- Section Heading -->
+    <div class="section-header">
+      <h2>Building Blocks of DoH Clinical Costing Standards in UAE</h2>
+      <p>
+        Before tooling and dashboards, align on fundamentals. These principles and processes are the foundation of clinical costing standards across Abu Dhabi and the UAE.
+      </p>
+    </div>
+
+    <!-- Features Grid -->
+    <div class="features-grid">
+      <div class="column">
+        <div class="feature-card">
+          <h3>Cost Objects</h3>
+          <p>What you're costing (patient, encounter, procedure, pathway, service line)</p>
+        </div>
+
+        <div class="feature-card">
+          <h3>Cost Centers</h3>
+          <p>Where costs are incurred (ICU, OR, radiology, pharmacy, clinics, admin)</p>
+        </div>
+
+        <div class="feature-card">
+          <h3>Direct vs Indirect Costs</h3>
+          <p>
+            Direct costs are cleanly traceable to a patient (implants, contrast media, logged clinician time);
+            indirect costs are shared overheads (housekeeping, IT, HR) that require allocation
+          </p>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="feature-card">
+          <h3>Cost Drivers</h3>
+          <p>Measurable factors that explain consumption (OR minutes, scans, bed-days)</p>
+        </div>
+
+        <div class="feature-card">
+          <h3>Encounters & Activities</h3>
+          <p>
+            Describe the work performed, and the unit cost is the cost per activity unit (per nursing minute,
+            per scan, per OR minute)
+          </p>
+        </div>
+
+        <div class="feature-card highlight">
+          <h3>PLICS Integration</h3>
+          <p>
+            A PLICS (Patient-Level Information & Costing System) traces these activities and drivers to produce
+            costs per patient
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Essential Data Section -->
+    <div class="essential-box">
+      <h3>Essential Data for Clinical Costing Services in Abu Dhabi</h3>
+
+      <div class="data-grid">
+        <div class="data-column">
+          <h4>Clinical & Operational Data</h4>
+          <ul>
+            <li>• EHR/EMR encounters</li>
+            <li>• Orders and procedure codes</li>
+            <li>• Diagnosis codes</li>
+            <li>• Timestamps and nursing notes</li>
+            <li>• Theatre logs</li>
+            <li>• Device usage records</li>
+          </ul>
+        </div>
+
+        <div class="data-column">
+          <h4>Ancillary Systems</h4>
+          <ul>
+            <li>• Imaging systems</li>
+            <li>• Laboratory data</li>
+            <li>• Pharmacy records</li>
+            <li>• General ledger</li>
+            <li>• Payroll/rostering</li>
+            <li>• Fixed assets</li>
+          </ul>
+        </div>
+
+        <div class="data-column">
+          <h4>Reference Masters</h4>
+          <ul>
+            <li>• Cost-center hierarchies</li>
+            <li>• Activity dictionaries</li>
+            <li>• RVUs/time standards</li>
+            <li>• Allocation rules</li>
+            <li>• Mapping tables</li>
+            <li>• Governance controls</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="note">
+        <p>
+          In Abu Dhabi, providers should plan upstream mapping for clinical cost data collection so that
+          costing results against financial statements reconcile and the cost data to the Department can be
+          submitted accurately.
+        </p>
+      </div>
+    </div>
+  </div>
 </section>
 
-    <!-- Progress Section -->
+
+
+
+
+
+
+
+
+<style>
+
+
+
+    section {
+      padding: 5rem 1rem;
+      background: linear-gradient(to bottom right, #fafafa, #f0f0f5);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 1rem;
+      padding: 2rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .highlight {
+      background: rgba(59,130,246,0.1);
+      border: 1px solid rgba(59,130,246,0.2);
+    }
+
+    .flex {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .num {
+      width: 2rem;
+      height: 2rem;
+      border-radius: .5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      flex-shrink: 0;
+      margin-top: .25rem;
+    }
+
+    .num-primary {
+      background: rgba(59,130,246,0.1);
+      color: #57A3F5;
+    }
+
+    .num-solid {
+  background: linear-gradient(135deg, var(--primary-blue), var(--gradient-end));
+      color: #fff;
+    }
+
+    .card h3 {
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      font-size: .875rem;
+    }
+
+    .badge {
+      padding: .25rem .5rem;
+      border-radius: .25rem;
+    }
+
+    .badge.green { background: #dcfce7; color: #166534; }
+    .badge.blue { background: #dbeafe; color: #1e40af; }
+    .badge.orange { background: #ffedd5; color: #9a3412; }
+    .badge.primary { background: rgba(59,130,246,0.2); color: #2563eb; }
+
+    /* Framework block */
+ .framework-section {
+  padding: 40px;
+
+}
+
+.framework-container {
+  background: #f9fafb;
+  /* border: 1px solid #e5e7eb; */
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.framework-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 32px;
+  color: #111827;
+}
+
+.framework-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.framework-item {
+  text-align: center;
+}
+
+.framework-icon {
+  width: 64px;
+  height: 64px;
+ background: linear-gradient(135deg, var(--primary-blue), var(--gradient-end));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+  stroke: #fff; /* primary */
+}
+
+.framework-subtitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #111827;
+}
+
+.framework-text {
+  font-size: 0.9rem;
+  color: #6b7280; /* muted */
+  line-height: 1.4;
+}
+ @media (max-width: 768px) {
+    section {
+      padding: 3rem 1rem;
+    }
+
+    h2 {
+      font-size: 1.75rem;
+    }
+
+    .grid-2 {
+      grid-template-columns: 1fr; /* Stack cards */
+      gap: 1.5rem;
+    }
+
+    .card {
+      padding: 1.5rem;
+    }
+
+    .framework-title {
+      font-size: 1.5rem;
+      margin-bottom: 24px;
+    }
+
+    .framework-grid {
+      grid-template-columns: 1fr 1fr; /* 2 items per row */
+      gap: 16px;
+    }
+
+    .framework-text {
+      font-size: 0.85rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    section {
+      padding: 2rem 1rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+    }
+
+    .framework-grid {
+      grid-template-columns: 1fr; /* Single column */
+    }
+
+    .framework-title {
+      font-size: 1.3rem;
+    }
+
+    .framework-icon {
+      width: 50px;
+      height: 50px;
+    }
+
+    .icon {
+      width: 24px;
+      height: 24px;
+    }
+  }
+  </style>
+
+
+
+
+
+
+
+<section id="implementation">
+  <div class="container">
+    <h2>Implementation Strategies for DOH Clinical Costing Standards in Abu Dhabi</h2>
+
+    <!-- Strategy Cards -->
+    <div class="grid-2">
+      <div class="card">
+        <div class="flex">
+          <div class="num num-primary">1</div>
+          <div>
+            <h3>Step-down (top-down) allocation</h3>
+            <p>Start from cost-center totals and allocate overheads to clinical areas, then to patients using volume drivers.</p>
+            <div class="badges">
+              <span class="badge green">Fast</span>
+              <span class="badge blue">Finance-friendly</span>
+              <span class="badge orange">Less variability</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="flex">
+          <div class="num num-primary">2</div>
+          <div>
+            <h3>Activity-Based Costing (ABC)</h3>
+            <p>Define activities, measure volumes/resource use, compute unit costs, and multiply by each patient's activity counts.</p>
+            <div class="badges">
+              <span class="badge green">Clinically intuitive</span>
+              <span class="badge blue">Transparent</span>
+              <span class="badge orange">Needs robust capture</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="flex">
+          <div class="num num-primary">3</div>
+          <div>
+            <h3>Time-Driven ABC (TDABC)</h3>
+            <p>Estimate capacity cost rates (cost/minute) and apply time equations that reflect complexity.</p>
+            <div class="badges">
+              <span class="badge green">Scalable</span>
+              <span class="badge blue">Nuanced</span>
+              <span class="badge orange">Time dependent</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card highlight">
+        <div class="flex">
+          <div class="num num-solid">4</div>
+          <div>
+            <h3>Hybrid/PLICS (Recommended)</h3>
+            <p>Directly trace what you can (implants, drugs, confirmed OR minutes) and use drivers for the rest.</p>
+            <div class="badges">
+              <span class="badge primary">Pragmatic balance</span>
+              <span class="badge primary">Modern hospitals</span>
+              <span class="badge primary">DoH aligned</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Framework -->
+   <section class="framework-section">
+  <div class="framework-container">
+    <h3 class="framework-title">Clinical Costing Framework: Step-by-Step</h3>
+    
+    <div class="framework-grid">
+      <!-- Step 1 -->
+      <div class="framework-item">
+        <div class="framework-icon">
+          <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+              d="M9 5H7a2 2 0 00-2 2v6a2 2 0 002 2h2m0-8v8m0-8V5a2 2 0 012-2h2m-4 8V9a2 2 0 012-2h2" />
+          </svg>
+        </div>
+        <h4 class="framework-subtitle">Scope &amp; Design</h4>
+        <p class="framework-text">Choose cost objects, define period, service lines, and accuracy targets</p>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="framework-item">
+        <div class="framework-icon">
+          <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+              d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+          </svg>
+        </div>
+        <h4 class="framework-subtitle">Map the Model</h4>
+        <p class="framework-text">Build cost-center hierarchy, activity dictionary, overhead step-down order</p>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="framework-item">
+        <div class="framework-icon">
+          <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+              d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4" />
+          </svg>
+        </div>
+        <h4 class="framework-subtitle">Data Ingestion</h4>
+        <p class="framework-text">Load GL, payroll, materials, extract encounters, fix coding gaps</p>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="framework-item">
+        <div class="framework-icon">
+          <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+              d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+          </svg>
+        </div>
+        <h4 class="framework-subtitle">PLICS Outputs</h4>
+        <p class="framework-text">Produce per-patient, per-encounter cost breakdowns by component</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  </div>
+</section>
+<style>
+.defensible-section {
+  padding: 80px 20px;
+  background: #fafafa;
+}
+
+.defensible-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+.defensible-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.defensible-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.defensible-subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Grid */
+.defensible-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+/* Drivers */
+.drivers-box {
+  background: linear-gradient(135deg, #f9f9ff, #f1f8ff);
+  border: 1px solid #cce0ff;
+  border-radius: 16px;
+  padding: 30px;
+}
+
+.drivers-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #222;
+}
+
+.driver-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.driver-dot {
+  width: 8px;
+  height: 8px;
+  background: #57A3F5;
+  border-radius: 50%;
+  margin-right: 15px;
+  margin-top: 12px;
+  flex-shrink: 0;
+}
+
+.driver-heading {
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: #222;
+  font-size: 20px;
+}
+
+.driver-text {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+/* Levels */
+.levels-box {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.level-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.level-card.advanced {
+  background: #f0f7ff;
+  border: 1px solid #99caff;
+}
+
+.level-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.level-icon.green { background: #a8e6a1; color: #1b5e20; }
+.level-icon.blue { background: #a1c4fd; color: #0d47a1; }
+.level-icon.primary {background: linear-gradient(135deg, var(--primary-blue), var(--gradient-end)); color: #fff; }
+
+.level-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.level-title.advanced-title { color: #007bff; }
+
+.level-text {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.advanced-text { color: #222; }
+
+/* Bottom Highlight */
+.defensible-highlight {
+  background: linear-gradient(90deg, #f9f9f9, #eef7ff);
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  padding: 40px;
+  text-align: center;
+}
+
+.highlight-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.highlight-text {
+  font-size: 1.05rem;
+  color: #555;
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* 📱 Responsive Styling */
+@media (max-width: 992px) {
+  .defensible-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+  }
+  .defensible-title {
+    font-size: 2rem;
+  }
+  .defensible-subtitle {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .defensible-section {
+    padding: 50px 15px;
+  }
+  .defensible-grid {
+    grid-template-columns: 1fr; /* Stack cards */
+    gap: 20px;
+  }
+  .drivers-box,
+  .level-card,
+  .defensible-highlight {
+    padding: 20px;
+  }
+  .defensible-title {
+    font-size: 1.6rem;
+  }
+  .drivers-title {
+    font-size: 1.25rem;
+  }
+  .level-title {
+    font-size: 1rem;
+  }
+  .highlight-title {
+    font-size: 1.3rem;
+  }
+  .highlight-text {
+    font-size: 0.95rem;
+  }
+}
+</style>
+
+<!-- Defensible Drivers Section -->
+<section class="defensible-section">
+  <div class="defensible-container">
+    <!-- Header -->
+    <div class="defensible-header">
+      <h2 class="defensible-title">
+        Defensible Allocation Drivers and Levels of Clinical Costing Maturity
+      </h2>
+      <p class="defensible-subtitle">
+        Building a robust clinical costing framework requires both defensible allocation drivers and a staged maturity model that aligns with clinical costing standards and value-based healthcare principles.
+      </p>
+    </div>
+
+    <!-- Grid -->
+    <div class="defensible-grid">
+      <!-- Left: Allocation Drivers -->
+      <div class="drivers-box">
+        <h3 class="drivers-title">Defensible Allocation Drivers</h3>
+
+        <div class="drivers-list">
+          <div class="driver-item">
+            <span class="driver-dot"></span>
+            <div>
+              <h4 class="driver-heading">Theatres</h4>
+              <p class="driver-text">Confirmed OR minutes (not scheduled), with complexity adders</p>
+            </div>
+          </div>
+
+          <div class="driver-item">
+            <span class="driver-dot"></span>
+            <div>
+              <h4 class="driver-heading">Wards</h4>
+              <p class="driver-text">Patient-days by level (ICU/HDU/general)</p>
+            </div>
+          </div>
+
+          <div class="driver-item">
+            <span class="driver-dot"></span>
+            <div>
+              <h4 class="driver-heading">Imaging/Labs</h4>
+              <p class="driver-text">Modality-specific units (CT scans, MRI scans, test counts)</p>
+            </div>
+          </div>
+
+          <div class="driver-item">
+            <span class="driver-dot"></span>
+            <div>
+              <h4 class="driver-heading">Clinician Time</h4>
+              <p class="driver-text">E-rostering punches, time logs, or RVUs/time standards</p>
+            </div>
+          </div>
+
+          <div class="driver-item">
+            <span class="driver-dot"></span>
+            <div>
+              <h4 class="driver-heading">Pharmacy</h4>
+              <p class="driver-text">Dispensed items at patient level; otherwise charge codes</p>
+            </div>
+          </div>
+
+          <div class="driver-item">
+            <span class="driver-dot"></span>
+            <div>
+              <h4 class="driver-heading">Overheads</h4>
+              <p class="driver-text">Sq. meters (facilities), headcount (HR), tickets/incidents (IT), utility consumption</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Levels -->
+      <div class="levels-box">
+        <div class="level-card">
+          <div class="level-icon green">L1</div>
+          <h3 class="level-title">Level 1 (Good Enough)</h3>
+          <p class="level-text">
+            Step-down overheads plus patient-level tracing for big-ticket items such as OR minutes, implants, and high-cost drugs.
+          </p>
+        </div>
+
+        <div class="level-card">
+          <div class="level-icon blue">L2</div>
+          <h3 class="level-title">Level 2 (Better)</h3>
+          <p class="level-text">
+            Incorporates activity dictionaries and capacity rates for nursing, imaging, and labs to improve allocation accuracy.
+          </p>
+        </div>
+
+        <div class="level-card advanced">
+          <div class="level-icon primary">L3</div>
+          <h3 class="level-title advanced-title">Level 3 (Advanced)</h3>
+          <p class="level-text advanced-text">
+            Leverages TDABC time equations, predictive fill for missing timestamps, benchmarking by surgeon/diagnosis, and linking to outcomes/PROMS—ideal when aligning to costing standards and value-based funding models.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Highlight -->
+    <div class="defensible-highlight">
+      <h3 class="highlight-title">Progressive Maturity for Sustainable Value</h3>
+      <p class="highlight-text">
+        By combining allocation drivers with progressive maturity levels, healthcare providers create defensible, scalable, and value-based costing systems. This approach ensures that patient-level data is accurate, benchmarking is meaningful, and clinical costing evolves in step with healthcare reforms and value-based funding requirements.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<style>
+  /* Section background */
+.governance-section {
+  padding: 80px 20px;
+  background: linear-gradient(to right, #f9fafb, #f3f4f6);
+}
+
+/* Container */
+.governance-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+.governance-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+.governance-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #111827;
+  margin-bottom: 20px;
+}
+.governance-subtitle {
+  font-size: 1.25rem;
+  color: #6b7280;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Highlighted box */
+.governance-highlight {
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 16px;
+  padding: 40px;
+  margin-bottom: 60px;
+  text-align: center;
+}
+.highlight-title {
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #1F6CCB;
+  margin-bottom: 20px;
+}
+.highlight-text {
+  color: #111827;
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Governance grid */
+.governance-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
+}
+.governance-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+.icon-box {
+  width: 48px;
+  height: 48px;
+  background: rgba(59, 130, 246, 0.1);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+.card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #111827;
+  margin-bottom: 12px;
+}
+.card-text {
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+/* Summary */
+.governance-summary {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 50px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+}
+.summary-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.summary-title {
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #111827;
+  margin-bottom: 16px;
+}
+.summary-text {
+  font-size: 1.1rem;
+  color: #6b7280;
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Stats */
+.summary-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+.stat-box {
+  background: rgba(59, 130, 246, 0.05);
+  border: 1px solid rgba(59, 130, 246, 0.1);
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+}
+.stat-value {
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #1F6CCB;
+  margin-bottom: 10px;
+}
+.stat-label {
+  color: #6b7280;
+}
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="governance" class="governance-section">
+  <div class="governance-container">
+    <div class="governance-header">
+      <h2 class="governance-title">
+        Governance Framework for DoH Clinical Costing Services
+      </h2>
+      <p class="governance-subtitle">
+        A strong governance framework is what transforms DoH clinical costing
+        services from a one-off compliance exercise into a sustainable,
+        value-driven capability.
+      </p>
+    </div>
+
+    <div class="governance-highlight">
+      <h3 class="highlight-title">
+        Abu Dhabi Clinical Costing Requirements
+      </h3>
+      <p class="highlight-text">
+        Under the Abu Dhabi clinical costing guidelines, healthcare providers
+        must ensure that every patient-level cost total reconciles to the
+        general ledger (GL), with clearly documented exclusions and adjustments
+        to guarantee transparency of healthcare costs.
+      </p>
+    </div>
+
+    <div class="governance-grid">
+      <div class="governance-card">
+        <div class="icon-box">🔹</div>
+        <h3 class="card-title">Reconciliation & Transparency</h3>
+        <p class="card-text">
+          Patient-level cost data must reconcile with the GL, including
+          exclusions and adjustments.
+        </p>
+      </div>
+
+      <div class="governance-card">
+        <div class="icon-box">🔹</div>
+        <h3 class="card-title">Version Control</h3>
+        <p class="card-text">
+          Models, drivers, and dictionaries require version control to prevent
+          drift and ensure consistent application.
+        </p>
+      </div>
+
+      <div class="governance-card">
+        <div class="icon-box">🔹</div>
+        <h3 class="card-title">Clinical Validation</h3>
+        <p class="card-text">
+          Time assumptions and activity flows must be clinically validated to
+          reflect real healthcare processes.
+        </p>
+      </div>
+
+      <div class="governance-card">
+        <div class="icon-box">🔹</div>
+        <h3 class="card-title">Audit Trails</h3>
+        <p class="card-text">
+          Every allocation rule, adjustment, and edit must be documented to
+          maintain accountability.
+        </p>
+      </div>
+
+      <div class="governance-card">
+        <div class="icon-box">🔹</div>
+        <h3 class="card-title">PHI Security</h3>
+        <p class="card-text">
+          Protected Health Information (PHI) should be managed with role-based
+          access and minimum necessary fields.
+        </p>
+      </div>
+
+      <div class="governance-card">
+        <div class="icon-box">🔹</div>
+        <h3 class="card-title">Data Exchange Security</h3>
+        <p class="card-text">
+          Health information exchange interfaces must be secured to protect
+          sensitive clinical data.
+        </p>
+      </div>
+    </div>
+
+    <div class="governance-summary">
+      <div class="summary-header">
+        <h3 class="summary-title">
+          Complete Clinical Costing Services Beyond Compliance
+        </h3>
+        <p class="summary-text">
+          By embedding these practices, healthcare providers in Abu Dhabi can
+          achieve complete clinical costing services that go beyond compliance.
+          With the guidance of health costing experts, organizations strengthen
+          governance while aligning with DoH clinical costing standards and
+          value-based frameworks.
+        </p>
+      </div>
+
+      <div class="summary-stats">
+        <div class="stat-box">
+          <div class="stat-value">100%</div>
+          <div class="stat-label">GL Reconciliation</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-value">Real-time</div>
+          <div class="stat-label">Cost Insights</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-value">Audit-ready</div>
+          <div class="stat-label">Documentation</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<style>
+  /* Section */
+.doh-section {
+  padding: 80px 20px;
+  background-color: #f9fafb;
+}
+
+/* Container */
+.doh-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+.doh-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+.doh-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #111827;
+  margin-bottom: 20px;
+}
+.doh-subtitle {
+  font-size: 1.25rem;
+  color: #6b7280;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Grid layout */
+.doh-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+.doh-left,
+.doh-right {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Provider Requirements */
+.provider-requirements {
+  background-color: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 12px;
+  padding: 30px;
+}
+.provider-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #1F6CCB;
+  margin-bottom: 16px;
+}
+.provider-list {
+  list-style: none;
+  padding-left: 0;
+}
+.provider-list li {
+  position: relative;
+  padding-left: 16px;
+  margin-bottom: 12px;
+  color: #111827;
+}
+.provider-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 6px;
+  height: 6px;
+  background-color: #2563eb;
+  border-radius: 50%;
+}
+
+/* Services Scope */
+.services-scope {
+  background-color: rgba(107, 114, 128, 0.1);
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  padding: 30px;
+}
+.services-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #111827;
+  margin-bottom: 12px;
+}
+.services-text {
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+/* Submission Process */
+.submission-process {
+  background: linear-gradient(to bottom right, rgba(59,130,246,0.05), rgba(191,219,254,0.1));
+  border-radius: 12px;
+  border: 1px solid rgba(59,130,246,0.1);
+  padding: 30px;
+}
+.submission-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #111827;
+  margin-bottom: 20px;
+}
+.submission-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.step {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.step-number {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(59,130,246,0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #1F6CCB;
+}
+.step-number-primary {
+background: linear-gradient(135deg, var(--primary-blue), var(--gradient-end));
+  color: #ffffff;
+}
+.step-info {
+  display: flex;
+  flex-direction: column;
+}
+.step-title {
+  font-weight: bold;
+  color: #111827;
+  margin-top: 20px;
+}
+.step-title-primary {
+  color: #1F6CCB;
+}
+.step-text {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+.step-text-primary {
+  color: #111827;
+}
+
+/* Provider Coverage */
+.provider-coverage {
+  background-color: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  padding: 30px;
+}
+.coverage-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #111827;
+  margin-bottom: 12px;
+}
+.coverage-text {
+  color: #6b7280;
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+.coverage-tags span {
+  display: inline-block;
+  background-color: rgba(59,130,246,0.1);
+  color: #2563eb;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.875rem;
+  margin-right: 6px;
+  margin-top: 4px;
+}
+
+/* Costing Support */
+.costing-support {
+  background: linear-gradient(to bottom right, rgba(59,130,246,0.05), rgba(191,219,254,0.1));
+  border-radius: 16px;
+  border: 1px solid rgba(59,130,246,0.1);
+  padding: 40px;
+  text-align: center;
+}
+.support-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #111827;
+  margin-bottom: 20px;
+}
+.support-text {
+  font-size: 1.125rem;
+  color: #6b7280;
+  max-width: 900px;
+  margin: 0 auto 30px auto;
+  line-height: 1.6;
+}
+.support-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+}
+.stat {
+  text-align: center;
+}
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1F6CCB;
+  margin-bottom: 6px;
+}
+.stat-label {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+/* Tablets & below */
+@media (max-width: 992px) {
+  .doh-section {
+    padding: 60px 16px;
+  }
+
+  .doh-title {
+    font-size: 2rem;
+  }
+
+  .doh-subtitle {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    padding: 0 10px;
+  }
+
+  .doh-grid {
+    grid-template-columns: 1fr; /* stack left & right */
+    gap: 30px;
+  }
+
+  .provider-requirements,
+  .services-scope,
+  .submission-process,
+  .provider-coverage {
+    padding: 24px;
+  }
+
+  .submission-steps {
+    gap: 16px;
+  }
+
+  .step-number {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 600px) {
+  .doh-section {
+    padding: 40px 12px;
+  }
+
+  .doh-title {
+    font-size: 1.75rem;
+  }
+
+  .doh-subtitle {
+    font-size: 1rem;
+  }
+
+  .provider-title,
+  .services-title,
+  .submission-title,
+  .coverage-title,
+  .support-title {
+    font-size: 1.125rem;
+  }
+
+  .support-text {
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 0 8px;
+  }
+
+  .costing-support {
+    padding: 24px;
+    border-radius: 12px;
+  }
+
+  .support-stats {
+    grid-template-columns: 1fr 1fr; /* 2 per row */
+    gap: 12px;
+  }
+
+  .stat-value {
+    font-size: 1.25rem;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+  }
+
+  .coverage-tags span {
+    font-size: 0.75rem;
+    padding: 3px 10px;
+  }
+}
+
+
+</style>
+
+
+
+
+
+
+<section class="doh-section">
+  <div class="doh-container">
+    <div class="doh-header">
+      <h2 class="doh-title">
+        DoH Clinical Costing Standards and Submission Requirements
+      </h2>
+      <p class="doh-subtitle">
+        Abu Dhabi's clinical costing standards are built to ensure meaningful
+        cost data informs planning, procurement, and the value-based funding
+        framework.
+      </p>
+    </div>
+
+    <div class="doh-grid">
+      <div class="doh-left">
+        <div class="provider-requirements">
+          <h3 class="provider-title">Abu Dhabi Provider Requirements</h3>
+          <ul class="provider-list">
+            <li>The clinical costing road map for staged maturity</li>
+            <li>A standardized clinical costing framework that defines cost objects, drivers, and reconciliation rules</li>
+            <li>Clinical cost data collection technical specifications for extract formats, field definitions, and mapping</li>
+            <li>Controls for clinical and financial data governance</li>
+          </ul>
+        </div>
+
+        <div class="services-scope">
+          <h3 class="services-title">Clinical Costing Services Scope</h3>
+          <p class="services-text">
+            Clinical costing services provide the structure that makes patient-level costing possible. Patient-level costing involves tracing real resource use—staff time, consumables, and equipment—to each episode of care. This allows healthcare services to understand the true cost of treatment and link it with outcomes.
+          </p>
+        </div>
+      </div>
+
+      <div class="doh-right">
+        <div class="submission-process">
+          <h3 class="submission-title">Submission Process</h3>
+          <div class="submission-steps">
+            <div class="step">
+              <div class="step-number">1</div>
+              <div class="step-info">
+                <h4 class="step-title">Data Collection</h4>
+                <p class="step-text">Implement DoH clinical cost data collection process</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-number">2</div>
+              <div class="step-info">
+                <h4 class="step-title">Framework Alignment</h4>
+                <p class="step-text">Align with DoH clinical costing framework</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-number">3</div>
+              <div class="step-info">
+                <h4 class="step-title">Technical Compliance</h4>
+                <p class="step-text">Meet DoH technical requirements for costing and compliance</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-number step-number-primary">4</div>
+              <div class="step-info">
+                <h4 class="step-title step-title-primary">Platform Submission</h4>
+                <p class="step-text step-text-primary">Submit accurate data via designated platform</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="provider-coverage">
+          <h3 class="coverage-title">Provider Coverage</h3>
+          <p class="coverage-text">
+            Whether you are a hospital or a network of healthcare facilities providing direct patient care across the UAE, these costing services provide the framework to meet compliance with DoH standards and to deliver accurate clinical costs at patient level.
+          </p>
+          <div class="coverage-tags">
+            <span>Hospitals</span>
+            <span>Healthcare Networks</span>
+            <span>UAE Facilities</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="costing-support">
+      <h3 class="support-title">Dedicated Costing Lead & Expert Support</h3>
+      <p class="support-text">
+        A dedicated costing lead often guides the submission of cost data, helping providers align clinical and financial information. By doing so, healthcare providers strengthen healthcare finance, improve decision-making, and ensure that providers meet DoH standards.
+      </p>
+
+      <div class="support-stats">
+        <div class="stat">
+          <div class="stat-value">Reliable</div>
+          <div class="stat-label">Patient-level data</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">Sustainable</div>
+          <div class="stat-label">Reporting framework</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">DoH</div>
+          <div class="stat-label">Standards compliance</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<style>
+  .xopp-section {
+  padding: 80px 20px;
+  background: linear-gradient(to bottom right, #f9fafb, #f3f4f6);
+}
+
+.xopp-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+.xopp-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+.xopp-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #111827;
+  margin-bottom: 20px;
+}
+.xopp-subtitle {
+  font-size: 1.25rem;
+  color: #6b7280;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Grid */
+.xopp-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+/* Cards */
+.xopp-card {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+.xopp-card-header {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+.xopp-number {
+  width: 48px;
+  height: 48px;
+  background-color: rgba(59,130,246,0.1);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #2563eb;
+  flex-shrink: 0;
+  font-size: 1.125rem;
+}
+.xopp-card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #111827;
+  margin-bottom: 8px;
+}
+.xopp-card-text {
+  color: #6b7280;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+.xopp-card-footer {
+  background-color: rgba(59,130,246,0.05);
+  border-radius: 8px;
+  padding: 12px;
+  border: 1px solid rgba(59,130,246,0.1);
+  margin-top: 12px;
+  font-size: 0.875rem;
+  color: #111827;
+}
+
+/* Highlight Card */
+.xopp-card-highlight {
+  background-color: rgba(59,130,246,0.1);
+  border-radius: 16px;
+  border: 1px solid rgba(59,130,246,0.2);
+  padding: 30px;
+  margin-bottom: 40px;
+}
+.xopp-number-highlight {
+  width: 80px;
+  height: 45px;
+ background: linear-gradient(135deg, var(--primary-blue), var(--gradient-end));
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #ffffff;
+  font-size: 1.125rem;
+}
+.xopp-card-title-highlight {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1F6CCB;
+  margin-bottom: 16px;
+}
+
+/* Summary Section */
+.xopp-summary {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 30px;
+  text-align: center;
+  border: 1px solid #e5e7eb;
+}
+.xopp-summary-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #111827;
+  margin-bottom: 24px;
+}
+.xopp-summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+.xopp-summary-grid p {
+  color: #6b7280;
+  line-height: 1.6;
+  text-align: left;
+}
+
+/* Buttons */
+.xopp-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.btn-hero, .btn-premium {
+  font-size: 1rem;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+}
+.btn-hero {
+   background: linear-gradient(135deg, var(--primary-blue), var(--gradient-end));
+  color: #ffffff;
+}
+.btn-premium {
+  background-color: #111827;
+  color: #ffffff;
+}
+.xopp-buttons a {
+  text-decoration: none;
+  color: #fff;
+}
+/* Responsive */
+@media(max-width: 1024px) {
+  .xopp-grid {
+    grid-template-columns: 1fr;
+  }
+  .xopp-summary-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+</style>
+
+
+
+
+
+
+
+<section class="xopp-section">
+  <div class="xopp-container">
+    <div class="xopp-header">
+      <h2 class="xopp-title">How X-Opp Clinical Costing Helps</h2>
+      <p class="xopp-subtitle">
+        X-Opp Clinical Costing turns your costing design into operational reality through unified data integration, hybrid costing engines, and comprehensive governance frameworks.
+      </p>
+    </div>
+
+    <div class="xopp-grid">
+      <div class="xopp-card">
+        <div class="xopp-card-header">
+          <div class="xopp-number">1</div>
+          <div>
+            <h3 class="xopp-card-title">Unified Data Connectors</h3>
+            <p class="xopp-card-text">
+              X-Opp Clinical Costing turns your costing design into operational reality by ingesting clinical, operational, and financial data through prebuilt connectors. It links EHR/EMR encounters, RIS/PACS and LIS results, pharmacy dispensations, and theatre logs with the general ledger, payroll/rostering, fixed-asset registers, and materials management.
+            </p>
+          </div>
+        </div>
+        <div class="xopp-card-footer">
+          <p>
+            This unified pipeline maps everything to a clean activity dictionary so costs can be traced consistently from resource to activity to patient—ideal for end-to-end clinical costing and costing standards compliance.
+          </p>
+        </div>
+      </div>
+
+      <div class="xopp-card">
+        <div class="xopp-card-header">
+          <div class="xopp-number">2</div>
+          <div>
+            <h3 class="xopp-card-title">Hybrid Costing Engine</h3>
+            <p class="xopp-card-text">
+              At the core is a hybrid engine that blends direct tracing with Activity-Based Costing and Time-Driven ABC. High-value items—like implants, high-cost drugs, and confirmed OR minutes—are traced directly to patients.
+            </p>
+          </div>
+        </div>
+        <div class="xopp-card-footer">
+          <p>
+            Configurable drivers and time equations then allocate shared resources fairly across activities and encounters. The result is a transparent, clinically credible model that captures variability without becoming brittle.
+          </p>
+        </div>
+      </div>
+
+      <div class="xopp-card">
+        <div class="xopp-card-header">
+          <div class="xopp-number">3</div>
+          <div>
+            <h3 class="xopp-card-title">Reconciliation & Auditability</h3>
+            <p class="xopp-card-text">
+              Reconciliation guardrails ensure patient-level totals tie back to the GL, with explicit variance logs for any exclusions or timing differences. Every allocation rule, driver change, or dictionary update is versioned.
+            </p>
+          </div>
+        </div>
+        <div class="xopp-card-footer">
+          <p>
+            This discipline sustains trust in the numbers and supports repeatable monthly or quarterly runs, including DoH submission readiness for providers in Abu Dhabi.
+          </p>
+        </div>
+      </div>
+
+      <div class="xopp-card">
+        <div class="xopp-card-header">
+          <div class="xopp-number">4</div>
+          <div>
+            <h3 class="xopp-card-title">Clinician Validation & Security</h3>
+            <p class="xopp-card-text">
+              Clinician-friendly validation screens surface the assumptions that matter—nursing time, pathway steps, and activity flows—so care teams can confirm reality on the ground.
+            </p>
+          </div>
+        </div>
+        <div class="xopp-card-footer">
+          <p>
+            Role-based access, minimum-necessary PHI handling, and full change history protect sensitive data while enabling collaboration between clinical, finance, and operations users.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="xopp-card-highlight">
+      <div class="xopp-card-header">
+        <div class="xopp-number-highlight">5</div>
+        <div>
+          <h3 class="xopp-card-title-highlight">Insights & Reporting</h3>
+          <p class="xopp-card-text mb-4">
+            Out of the box, dashboards show service-line profitability, DRG/HRG cost-to-tariff variance, and pathway cost segmentation. Teams can drill to staff, drugs, devices, labs, imaging, theatres, wards, and overhead components to pinpoint improvement opportunities.
+          </p>
+          <p class="xopp-card-text">
+            Exports feed enterprise BI tools and payer negotiations, while cost-to-outcome views illuminate value hotspots and outliers—supporting a costing framework that advances the purpose of clinical costing in value-based care.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="xopp-summary">
+      <h3 class="xopp-summary-title">Clinical Costing Systems vs Services: Building Sustainable Compliance</h3>
+      <div class="xopp-summary-grid">
+        <p>
+          Implementing clinical costing systems without expert support often leads to black-box outputs and weak adoption. A combined approach—specialized clinical costing services plus configurable costing software—helps healthcare providers across the UAE and across Abu Dhabi build internal capability while meeting compliance with Abu Dhabi's submission requirements.
+        </p>
+        <p>
+          From appointing a clinical costing contact person to defining the platform to be used, a disciplined operating model keeps the costing process timely, reconcilable, and audit-ready.
+        </p>
+      </div>
+      <div class="xopp-buttons">
+        <button class="btn-hero" ><a href="#request">Request Demo</a></button>
+        <button class="btn-premium"><a href="{% url 'contact' %}">Contact Expert</a></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+  .final-thoughts {
+  /* padding: 40px 40px; */
+  background: linear-gradient(to bottom right, rgba(59,130,246,0.1), rgba(59,130,246,0.05), rgba(96,165,250,0.1));
+}
+
+
+
+.final-card {
+  background: linear-gradient(to bottom right, rgba(59,130,246,0.1), rgba(59,130,246,0.05), rgba(96,165,250,0.1));
+  border-radius: 10px;
+  padding: 48px 32px;
+  /* border: 1px solid rgba(59,130,246,0.2); */
+}
+
+/* Header */
+.final-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.final-header h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #111;
+  margin-bottom: 16px;
+}
+.final-header p {
+  font-size: 1.25rem;
+  color: #6b7280;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Grid Items */
+.final-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+}
+.final-item {
+  background-color: rgba(255,255,255,0.8);
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 24px;
+  text-align: center;
+}
+.final-item .icon {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, var(--primary-blue), var(--gradient-end));
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+
+.final-item .icon svg {
+  width: 24px;
+  height: 24px;
+  color: #fff; /* ensures white stroke/fill */
+  stroke: currentColor; 
+  fill: none;
+}
+
+.final-item h3 {
+  font-weight: 500;
+  font-size: 20px;
+
+    color: #1F6CCB;
+  margin-bottom: 8px;
+}
+.final-item p {
+  font-size: 0.9rem;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+/* Summary */
+.final-summary {
+  text-align: center;
+  margin-bottom: 32px;
+}
+.final-summary h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #111827;
+  margin-bottom: 16px;
+}
+.final-summary p {
+  color: #6b7280;
+  line-height: 1.7;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Buttons */
+.final-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.btn-hero, .btn-premium {
+  font-size: 1rem;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+}
+.btn-hero {
+  background-color: #2563eb;
+  color: #fff;
+}
+.btn-premium {
+  background-color: #111827;
+  color: #fff;
+}
+
+/* Responsive */
+@media(max-width: 1024px) {
+  .final-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media(max-width: 640px) {
+  .final-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+</style>
+
+
+<section class="final-thoughts">
+  <div class="container">
+    <div class="final-card">
+      <div class="final-header">
+        <h2>Final Thoughts</h2>
+        <p>
+          Whether you are just beginning your costing journey or upgrading to the new Abu Dhabi clinical costing standard, the path is clear.
+        </p>
+      </div>
+
+      <div class="final-grid">
+        <div class="final-item">
+          <div class="icon">
+            <!-- Check Icon -->
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h3>Align to Standards</h3>
+          <p>DoH clinical costing standards compliance</p>
+        </div>
+
+        <div class="final-item">
+          <div class="icon">
+            <!-- Pipeline Icon -->
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/>
+            </svg>
+          </div>
+          <h3>Build Pipelines</h3>
+          <p>Reliable clinical cost data pipelines</p>
+        </div>
+
+        <div class="final-item">
+          <div class="icon">
+            <!-- Methods Icon -->
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+          </div>
+          <h3>Choose Methods</h3>
+          <p>Fit-for-purpose hybrid/TDABC</p>
+        </div>
+
+        <div class="final-item">
+          <div class="icon">
+            <!-- Validation Icon -->
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+            </svg>
+          </div>
+          <h3>Embed Validation</h3>
+          <p>Reconcile rigorously and validate clinically</p>
+        </div>
+      </div>
+
+      <div class="final-summary">
+        <h3>Operationalize Clinical Costing with X-Opp</h3>
+        <p>
+          With X-Opp's unified connectors, hybrid engine, and submission-ready outputs, providers can operationalize dedicated clinical costing that meets DoH compliance, generates meaningful cost data, and advances patient care—today and as Abu Dhabi's healthcare ecosystem moves deeper into a value-based funding framework.
+        </p>
+      </div>
+
+      <div class="final-buttons">
+        <button class="btn-hero">Schedule Implementation Consultation</button>
+        <button class="btn-premium">Download Complete Guide</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Progress Section -->
     <section class="progress-section py-5">
   <div class="container">
     <div class="row align-items-center g-4">
@@ -819,7 +3575,7 @@
                 <div class="col-lg-6 mb-4">
                     <div class="contact-form" id="demo">
                         <h3 class="fw-bold mb-4">Request a Demo</h3>
-                        <form action="https://api.web3forms.com/submit" method="POST" >
+                        <form action="https://api.web3forms.com/submit" method="POST"  id="request">
                               <input type="hidden" name="access_key" value="1d581977-0167-4073-8d30-f8e754b508d4">
                             <div class="row">
                                 <div class="col-md-6">
