@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'Delemon_App',
     'ckeditor',
     'ckeditor_uploader',   # for image/file uploads (optional)
+    
+   
 ]
 
 MIDDLEWARE = [
@@ -145,7 +147,7 @@ CKEDITOR_UPLOAD_PATH = "uploads/"
 EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST='smtp.gmail.com'
 EMAIL_PORT=587
-EMAIL_HOST_USER='delemontech@gmail.com'
-EMAIL_HOST_PASSWORD='dgrg wppl zapz twvs'
+EMAIL_HOST_USER=''
+EMAIL_HOST_PASSWORD=''
 EMAIL_USE_TLS=True
 EMAIL_USE_SSL=False

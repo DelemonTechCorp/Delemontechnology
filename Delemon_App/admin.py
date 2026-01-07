@@ -12,7 +12,7 @@ class BlogResource(resources.ModelResource):
 
 # Blog admin with import/export and inline FAQ
 @admin.register(Blog)
-class BlogAdmin(ImportExportModelAdmin):
+class BlogAdmin(admin.ModelAdmin):
     resource_class = BlogResource
     inlines = [FAQInline]
 
