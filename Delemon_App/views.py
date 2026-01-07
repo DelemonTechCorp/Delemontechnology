@@ -225,17 +225,28 @@ def blog_detail(request, slug):
 
         # Send a thank-you email
         send_mail(
-            subject='Thank You for Contacting Us',
+            subject='New Contact Request from Blog Page',
             message=(
-                f"Hi {name},\n\n"
-                "Thank you for reaching out to us. We have received your contact request and "
-                "will get back to you shortly.\n\n"
-                "Best regards,\nDelemon Technology"
+                f"Hello,\n\n"
+                f"You have received a new contact request from the blog detail page.\n\n"
+                f"Contact Details:\n"
+                f"-----------------\n"
+                f"Name    : {name}\n"
+                f"Mobile  : {mobile}\n"
+                f"Email   : {email}\n"
+                f"Company : {company}\n"
+                f"Service : {service}\n\n"
+                f"Blog Slug : {slug}\n"
+                f"Page URL  : {canonical_url}\n\n"
+                f"Please follow up with the user as soon as possible.\n\n"
+                f"Best regards,\n"
+                f"Website System"
             ),
-            from_email='sales@delemontechnology.com',  # Replace with your email
-            recipient_list=[email],
-            fail_silently=False,  # Set to True to suppress errors during email sending
+            from_email='delemontech@gmail.com',
+            recipient_list=['sales@delemontechnology.com'],
+            fail_silently=False,
         )
+
 
         # Display success message and redirect
         messages.success(request, "Your contact request has been submitted successfully.")
@@ -416,8 +427,8 @@ def news_detail(request, slug):
                         "will get back to you shortly.\n\n"
                         "Best regards,\nDelemon Technology"
                     ),
-                    from_email='sales@delemontechnology.com',  # Replace with your email
-                    recipient_list=[email],
+                    from_email='delemontech@gmail.com',  # Replace with your email
+                    recipient_list=['sales@delemontechnology.com'],
                     fail_silently=False,  # Set to True to suppress errors during email sending
         )
                 messages.success(request, "Your contact request has been submitted successfully.")

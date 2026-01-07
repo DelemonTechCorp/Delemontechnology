@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-{% extends "base.html" %}
-
+{% extends 'base.html' %}
 {% load static %}
 {% block title %}{{ blog.seo_Title }}{% endblock %}
 {% block content %}
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,177 +11,1668 @@
 
     <meta name="description" content="{{blog.seo_Description|default:''}}">
     <link rel="canonical" href="https://www.delemontechnology.com/blog/{{blog.slug}}">
-    <style>
-        .social-medias {
-            z-index: 100;
-        }
-
-        .social-medias i {
-            overflow-y: hidden;
-        }
-
-        .social-medias {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-evenly;
-            height: 180px;
-            width: 60px;
-            position: fixed;
-            left: 10px;
-            bottom: 10px;
-        }
-
-        .social-medias i {
-            color: white;
-            font-size: 18px;
-        }
-
-        .social-medias-sub {
-            height: 40px;
-            width: 40px;
-            border-radius: 50%;
-            background-color: #FAB206;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .blog-detail-container {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 20px;
-            font-family: 'Arial', sans-serif;
-            color: #333;
-
-
-        }
-
-
-
-
-        .created-date {
-            margin-top: 10px;
-            font-size: 16px;
-            font-weight: bold;
-            color: #FAB206;
-            text-align: left;
-            margin-bottom: 20px;
-        }
-
-        .author-section {
-            margin-top: 20px;
-        }
-
-        .author-details {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-
-        .author-image {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        .author-info {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .author-name {
-            font-size: 18px;
-            font-weight: bold;
-            color: #222;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 10px;
-        }
-
-        .social-links a {
-            color: #555;
-            font-size: 20px;
-            transition: color 0.3s ease;
-        }
-
-        .social-links a:hover {
-            color: #FAB206;
-        }
-
-
-
-        .blog-detail-content {
-            font-size: 18px;
-            line-height: 1.8;
-            text-align: justify;
-            margin-top: 20px;
-
-        }
-
-        .share-section {
-            text-align: center;
-            margin-top: 30px;
-        }
-
-        .share-icons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .share-icons a {
-            font-size: 24px;
-            color: #555;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .share-icons a:hover {
-            color: #FAB206;
-        }
-.hero-section {
-    background: linear-gradient(rgba(12, 12, 12, 0.6), rgba(21, 21, 21, 0.85)),
-                url("{% static 'img/blogdetail-img.webp' %}") no-repeat center center; 
-    background-size: cover;
-    width: 100%;
-    min-height: 60vh; /* smaller than full screen, more like a blog banner */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 20px;
-    color: white;
-    text-align: center;
-}
-
-.hero-content {
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.hero-title {
-    font-size: 40px;
-    font-weight: 700;
-    line-height: 1.3;
-    text-transform: uppercase;
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+/* ==============================
+   BLOG HERO – UNIQUE STYLES
+================================ */
+*{
+    padding: 0;
     margin: 0;
-    color: #fff;
+}
+.blog-hero {
+  position: relative;
+  min-height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+/* Background Image */
+.blog-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url("{% static 'img/blog-hero.jpg' %}"); /* update path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.blog-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.5),
+    #000
+  );
+}
+
+/* Content Wrapper */
+.blog-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  padding: 64px 20px;
+  text-align: center;
+  color: #ffffff;
+}
+
+/* Category Badge */
+.blog-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(250, 178, 6, 0.2);
+  border: 1px solid rgba(250, 178, 6, 0.35);
+  margin-bottom: 24px;
+  color: #FBB714;
+}
+
+.blog-hero-badge span {
+  font-size: 14px;
+  font-weight: 500;
+ 
+}
+
+/* Title */
+.blog-hero-title {
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 24px;
+  max-width: 900px;
+  margin-left: auto;
+  /* color: #fab206; */
+  margin-right: auto;
 }
 
 
-        .you-may-like {
-            margin-top: 50px;
+/* Meta Info */
+.blog-hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+
+  font-size: 14px;
+}
+
+.blog-hero-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 0.5px solid rgb(84, 84, 84);
+  padding: 8px 10px;
+  border-radius: 8px ;
+ 
+}
+.blog-hero-meta-item span{
+  text-transform: capitalize;
+}
+
+.blog-hero-meta-tag {
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: #1f1f1f;
+  font-size: 14px;
+  color: #ffffff;
+}
+/* ================= MOBILE VIEW ================= */
+@media (max-width: 768px) {
+  .blog-hero-meta {
+    flex-direction: column;     /* stack vertically */
+    align-items: flex-start;    /* left align items */
+    gap: 16px;                  /* smaller spacing */
+    font-size: 13px;
+    padding: 0 16px;            /* side padding */
+  }
+
+  .blog-hero-meta-item {
+    width: 100%;                /* take full width */
+    justify-content: space-between;
+    padding: 10px 14px;         /* slightly bigger touch area */
+  }
+
+  .blog-hero-meta-tag {
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+}
+
+/* Bottom Gradient */
+.blog-hero-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 96px;
+  background: linear-gradient(to top, #000, transparent);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .blog-hero-title {
+    font-size: 32px;
+  }
+}
+</style>
+
+
+<body>
+
+<section class="blog-hero">
+  <!-- Background -->
+  <div class="blog-hero-bg">
+    <div class="blog-hero-overlay"></div>
+  </div>
+
+  <!-- Content -->
+  <div class="blog-hero-content">
+
+    <!-- Category -->
+    <div class="blog-hero-badge">
+      <!-- Icon Placeholder -->
+      <span>Insights & Strategy</span>
+    </div>
+
+    <!-- Title -->
+    <h1 class="blog-hero-title">
+      {{blog.title}}
+      <!-- <span>Lead Generation</span> -->
+    </h1>
+
+    <!-- Meta -->
+    <div class="blog-hero-meta">
+      <div class="blog-hero-meta-item">
+        ⏱ <span>8 min read</span>
+      </div>
+      <div class="blog-hero-meta-item">
+       <i class="fa-regular fa-calendar"></i> <span>{{ blog.created_at|date:"F j, Y" }}</span>
+      </div>
+
+      <div class="blog-hero-meta-item">
+     <i class="fa-solid fa-user-pen"></i><span>{{ blog.author_name }} </span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom Fade -->
+  <div class="blog-hero-bottom"></div>
+</section>
+
+
+
+<style>
+/* ================================
+   BLOG CONTENT – UNIQUE STYLES
+================================ */
+.sticky-form .contact-glass-card {
+  padding: 40px;
+  border-radius: 20px;
+  background: rgba(18,18,18,0.85);
+  border: 1px solid rgba(250,178,6,0.35);
+  box-shadow: 0 20px 40px rgba(250,178,6,0.2);
+}
+.blog-content-wrapper {
+  background-color: #0b0b0b;
+  padding: 60px 0;
+  color: #e5e5e5;
+  font-family: "Inter", sans-serif;
+}
+
+.blog-content {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* Paragraphs */
+.blog-paragraph {
+  color: #b5b5b5;
+  font-size: 16.5px;
+  line-height: 1.75;
+  margin-bottom: 24px;
+}
+
+.blog-intro {
+  font-size: 18px;
+  color: #e0e0e0;
+}
+
+/* Headings */
+.blog-heading {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-top: 48px;
+  margin-bottom: 16px;
+  font-family: "Playfair Display", serif;
+}
+
+/* Investment Highlight Card */
+.investment-card {
+  background: #121212;
+  border-radius: 16px;
+  padding: 28px;
+  margin: 40px 0;
+  border: 1px solid rgba(250, 178, 6, 0.25);
+}
+
+.investment-card-title {
+  font-size: 20px;
+  font-weight: 700;
+
+  margin-bottom: 18px;
+  font-family: "Playfair Display", serif;
+}
+
+/* List */
+.investment-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.investment-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 14px;
+  font-size: 15.5px;
+  color: #cfcfcf;
+  line-height: 1.6;
+}
+
+/* Bullet Dot */
+.bullet-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #fab206;
+  margin-top: 8px;
+  flex-shrink: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .blog-heading {
+    font-size: 21px;
+  }
+
+  .blog-intro {
+    font-size: 16.5px;
+  }
+}
+</style>
+
+
+
+<style>
+/* ================================
+   FAQ SECTION – DARK LUXURY THEME
+   Colors: Black / White / Gold
+================================ */
+
+.iq-faq-wrapper {
+
+
+  padding: 80px 20px;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  background: #0b0b0b;
+}
+
+/* Header */
+.iq-faq-header {
+  margin-bottom: 50px;
+}
+
+.iq-faq-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #FAB206;
+}
+
+.iq-faq-title {
+  font-size: 34px;
+  font-weight: 700;
+  margin-top: 10px;
+  color: #ffffff;
+}
+
+.iq-faq-divider {
+  width: 70px;
+  height: 3px;
+  background: linear-gradient(90deg, #FAB206, #ffd66b);
+  border-radius: 999px;
+  margin-top: 18px;
+}
+
+/* FAQ Cards */
+.iq-faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.iq-faq-card {
+  padding: 28px;
+  border-radius: 18px;
+  background: linear-gradient(
+    180deg,
+    #111111 0%,
+    #0d0d0d 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.35s ease;
+}
+
+.iq-faq-card:hover {
+  border-color: rgba(250, 178, 6, 0.6);
+  box-shadow: 0 12px 40px rgba(250, 178, 6, 0.08);
+  transform: translateY(-3px);
+}
+
+/* Question */
+.iq-faq-question {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 14px;
+}
+
+/* Number Badge */
+.iq-faq-number {
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FAB206, #ffd66b);
+  color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+/* Answer */
+.iq-faq-answer {
+  font-size: 15.5px;
+  line-height: 1.75;
+  color: #cfcfcf;
+  padding-left: 48px;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .iq-faq-title {
+    font-size: 28px;
+  }
+
+  .iq-faq-card {
+    padding: 22px;
+  }
+}
+</style>
+
+
+<style>
+/* ================================
+   CONTACT FORM – PREMIUM STYLES
+================================ */
+
+.contact-form-section {
+  padding: 40px 0;
+  font-family: "Inter", sans-serif;
+}
+
+/* Glass Card */
+.contact-glass-card {
+  max-width: 420px;
+  background: rgba(18, 18, 18, 0.75);
+  backdrop-filter: blur(14px);
+  border-radius: 20px;
+  padding: 32px;
+  border: 1px solid rgba(250, 178, 6, 0.25);
+  box-shadow:
+    0 0 0 1px rgba(250, 178, 6, 0.08),
+    0 20px 40px rgba(0, 0, 0, 0.6);
+  position: relative;
+}
+
+/* Gold Glow Effect */
+.contact-glass-card::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(250, 178, 6, 0.35),
+    transparent 70%
+  );
+  z-index: -1;
+}
+
+/* Header */
+.contact-header {
+  margin-bottom: 24px;
+}
+
+.contact-tag {
+  font-size: 12px;
+  font-weight: 600;
+  color: #fab206;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.contact-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-top: 6px;
+  font-family: "Playfair Display", serif;
+}
+
+.contact-subtitle {
+  font-size: 13.5px;
+  color: #b5b5b5;
+  margin-top: 6px;
+}
+
+/* Form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 14px;
+  color: #ffffff;
+  outline: none;
+  transition: border 0.3s ease, background 0.3s ease;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: #9b9b9b;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  border-color: #fab206;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* Submit Button */
+.form-submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 6px;
+  padding: 14px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #fab206, #ffcc4d);
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  color: #000000;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.form-submit-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 25px rgba(250, 178, 6, 0.35);
+}
+
+.send-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Disclaimer */
+.contact-disclaimer {
+  font-size: 11.5px;
+  color: #9a9a9a;
+  text-align: center;
+  margin-top: 18px;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .contact-glass-card {
+    padding: 24px;
+  }
+}
+</style>
+<style>
+/* ================================
+   AUTHOR SECTION – LUXURY THEME
+================================ */
+
+.iq-author-section {
+  padding: 40px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  background: #0b0b0b;
+}
+
+/* Layout */
+.iq-author-wrapper {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+
+
+/* Avatar */
+.iq-author-avatar {
+  flex-shrink: 0;
+}
+
+.iq-avatar-ring {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FAB206, #ffd66b);
+  padding: 4px;
+}
+
+.iq-avatar-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iq-avatar-initials {
+  font-size: 30px;
+  font-weight: 800;
+  color: #FAB206;
+  letter-spacing: 0.05em;
+}
+
+/* Content */
+.iq-author-content {
+  flex: 1;
+}
+
+/* Name + Role */
+.iq-author-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.iq-author-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.iq-author-role {
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 999px;
+  background: rgba(250, 178, 6, 0.12);
+  color: #FAB206;
+}
+
+/* Bio */
+.iq-author-bio {
+  font-size: 15.5px;
+  line-height: 1.75;
+  color: #cfcfcf;
+  margin-bottom: 16px;
+  max-width: 720px;
+}
+
+/* Social Icons */
+.iq-author-socials {
+  display: flex;
+  gap: 16px;
+}
+
+.iq-author-socials a {
+  color: #9ca3af;
+  transition: color 0.3s ease;
+}
+
+.iq-author-socials a:hover {
+  color: #FAB206;
+}
+.contact-action-buttons a:hover{
+    color: #FAB206;
+}
+.iq-author-socials svg {
+  width: 20px;
+  height: 20px;
+}
+/* Mobile View */
+@media (max-width: 768px) {
+  .iq-author-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px; /* smaller gap on mobile */
+    text-align: center; /* center text on mobile */
+  }
+
+  .iq-author-avatar {
+    flex-shrink: 0;
+  }
+
+  .iq-avatar-ring {
+    width: 72px;
+    height: 72px;
+    padding: 3px;
+  }
+
+  .iq-avatar-inner {
+    width: 100%;
+    height: 100%;
+  }
+
+  .iq-avatar-initials {
+    font-size: 24px;
+  }
+
+  .iq-author-content {
+    flex: unset;
+  }
+
+  .iq-author-header {
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 8px;
+  }
+
+  .iq-author-name {
+    font-size: 18px;
+  }
+
+  .iq-author-role {
+    font-size: 11px;
+    padding: 3px 10px;
+  }
+
+  .iq-author-bio {
+    font-size: 14px;
+    max-width: 100%;
+    margin-bottom: 12px;
+  }
+
+  .iq-author-socials {
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .iq-author-socials svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+</style>
+
+
+<style>
+/* ================================
+   SOCIAL SHARE – LUXURY THEME
+================================ */
+
+.iq-social-section {
+  padding:15px 0;
+
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  background: #0b0b0b;
+
+}
+
+.iq-social-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+}
+
+@media (max-width: 640px) {
+  .iq-social-wrapper {
+    flex-direction: column;
+  }
+}
+
+/* Left label */
+.iq-social-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #9ca3af;
+  font-weight: 500;
+}
+
+.iq-social-label svg {
+  width: 20px;
+  height: 20px;
+  color: #FAB206;
+}
+
+/* Icons */
+.iq-social-icons {
+  display: flex;
+  gap: 12px;
+}
+
+.iq-social-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+      background: #333232;
+  border: 1px solid rgba(215, 210, 210, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9ca3af;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.iq-social-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Hover colors */
+.iq-facebook:hover {
+  background: #1877f2;
+  color: #fff;
+}
+
+.iq-twitter:hover {
+  background: #0ea5e9;
+  color: #fff;
+}
+
+.iq-linkedin:hover {
+  background: #0a66c2;
+  color: #fff;
+}
+
+.iq-instagram:hover {
+  background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+  color: #fff;
+}
+
+.iq-copy:hover {
+  background: #FAB206;
+  color: #000;
+}
+</style>
+
+
+<style>
+/* ================================
+   COMMENT FORM – LUXURY THEME
+================================ */
+
+.iq-comment-section {
+  padding: 80px 0;
+  background: #0b0b0b;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+/* Glass Card */
+.iq-comment-card {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 48px;
+  border-radius: 24px;
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.06),
+    rgba(255,255,255,0.02)
+  );
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+
+/* ================================
+   COMMENT FORM – MOBILE VIEW
+================================ */
+
+@media (max-width: 768px) {
+  .iq-comment-section {
+    padding: 40px 16px; /* smaller padding on mobile */
+  }
+
+  .iq-comment-card {
+    padding: 24px 16px; /* reduce card padding */
+    border-radius: 16px;
+  }
+
+  .iq-comment-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .iq-comment-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .iq-comment-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .iq-comment-title {
+    font-size: 22px;
+  }
+
+  .iq-comment-subtitle {
+    font-size: 13px;
+  }
+
+  .iq-comment-form {
+    grid-template-columns: 1fr; /* single column */
+    gap: 16px;
+  }
+
+  .iq-input,
+  .iq-textarea {
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+
+  .iq-textarea {
+    min-height: 120px;
+  }
+
+  .iq-submit-wrap {
+    grid-column: span 1;
+    text-align: center;
+  }
+    .iq-submit-btn {
+    width: 150%;           /* increase width full */
+    padding: 10px 20px;    /* decrease height (less vertical padding) */
+    font-size: 14px;       /* optional smaller font */
+    justify-content: center;
+  }
+
+}
+
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .blog-layout-grid {
+    grid-template-columns: 1fr; /* single column on smaller screens */
+  }
+  .sticky-form {
+    position: static;
+    top: auto;
+  }
+}
+/* Header */
+.iq-comment-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.iq-comment-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(250,178,6,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iq-comment-icon svg {
+  width: 24px;
+  height: 24px;
+  color: #FAB206;
+}
+
+.iq-comment-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.iq-comment-subtitle {
+  font-size: 14px;
+  color: #9ca3af;
+}
+
+/* Form Layout */
+.iq-comment-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .iq-comment-form {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Inputs */
+.iq-input,
+.iq-textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: #0f0f0f;
+  border: 1px solid rgba(255,255,255,0.12);
+  color: #ffffff;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.iq-input::placeholder,
+.iq-textarea::placeholder {
+  color: #6b7280;
+}
+
+.iq-input:focus,
+.iq-textarea:focus {
+  outline: none;
+  border-color: #FAB206;
+  box-shadow: 0 0 0 2px rgba(250,178,6,0.15);
+}
+
+.iq-textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+/* Button */
+.iq-submit-wrap {
+  grid-column: span 2;
+}
+
+@media (max-width: 768px) {
+  .iq-submit-wrap {
+    grid-column: span 1;
+  }
+}
+
+.iq-submit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #FAB206, #ffd66b);
+  color: #000;
+  font-weight: 700;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.iq-submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(250,178,6,0.35);
+}
+
+.iq-submit-btn svg {
+  width: 16px;
+  height: 16px;
+}
+</style>
+<style>
+/* ================================
+   Contact Action Buttons
+================================ */
+
+.contact-action-buttons {
+  display: flex;
+    margin-top: 12px;
+  justify-content: center;
+  border-top: 1px solid #5f4404;
+  gap: 10px;
+}
+
+.contact-action-buttons a {
+  flex: 1;
+  text-align: center;
+  padding: 12px 0;
+
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border: 1px solid #725f03;
+}
+
+.call-btn {
+  background: #000;
+  color: #fff;
+}
+
+.whatsapp-btn {
+  
+  color: #fff;
+}
+
+.contact-action-buttons a:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .contact-action-buttons {
+    flex-direction: column;
+  }
+}
+</style>
+
+<style>
+/* ================================
+   BLOG CONTENT – UNIQUE STYLES
+================================ */
+
+.blog-content-wrapper {
+  background-color: #0b0b0b;
+  padding: 60px 0;
+  color: #e5e5e5;
+  font-family: "Inter", sans-serif;
+}
+
+.blog-content {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Paragraphs */
+.blog-paragraph {
+  color: #b5b5b5;
+  font-size: 16.5px;
+  line-height: 1.75;
+  margin-bottom: 24px;
+}
+
+.blog-intro {
+  font-size: 18px;
+  color: #e0e0e0;
+}
+
+/* Headings */
+.blog-heading {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-top: 48px;
+  margin-bottom: 16px;
+  font-family: "Playfair Display", serif;
+}
+
+/* Investment Highlight Card */
+.investment-card {
+  background: #121212;
+  border-radius: 16px;
+  padding: 28px;
+  margin: 40px 0;
+  border: 1px solid rgba(250, 178, 6, 0.25);
+}
+
+.investment-card-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fab206;
+  margin-bottom: 18px;
+
+}
+
+/* List */
+.investment-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.investment-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 14px;
+  font-size: 15.5px;
+  color: #cfcfcf;
+  line-height: 1.6;
+}
+
+/* Bullet Dot */
+.bullet-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #fab206;
+  margin-top: 8px;
+  flex-shrink: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .blog-heading {
+    font-size: 21px;
+  }
+
+  .blog-intro {
+    font-size: 16.5px;
+  }
+}
+/* Right Column Sticky Form */
+
+.blog-content {
+ 
+  color: #d1d1d1;
+  line-height: 1.75;
+  font-size: 16.5px;
+}
+
+/* Paragraphs */
+.blog-content p {
+  margin-bottom: 20px;
+  color: #bfbfbf;
+}
+
+/* Headings */
+.blog-content h1,
+.blog-content h2,
+.blog-content h3,
+.blog-content h4 {
+  color: #e0dede;
+  font-weight: 700;
+  margin: 25px 0 18px;
+
+}
+.blog-content h2{
+  color: #FBB714;
+}
+.blog-content h1 { font-size: 32px; }
+.blog-content h2 { font-size: 26px; }
+.blog-content h3 { font-size: 22px; }
+.blog-content h4 { font-size: 18px; }
+
+/* Links */
+.blog-content a {
+ color: #FBB714;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.blog-content a:hover {
+  color: #ffd66b;
+}
+
+/* Lists */
+.blog-content ul,
+.blog-content ol {
+  margin: 24px 0 32px;
+  padding-left: 24px;
+}
+
+.blog-content li {
+  margin-bottom: 12px;
+  color: #cfcfcf;
+}
+
+/* Blockquote */
+.blog-content blockquote {
+  margin: 20px 0;
+  /* padding: px 28px; */
+  border-left: 4px solid #fab206;
+  background: rgba(250, 178, 6, 0.08);
+  font-style: italic;
+  color: #e5e5e5;
+}
+.author-image{
+  width: 75px;
+  height: 75px;
+  border-radius: 50px;
+}
+/* ====================== BLOG TOP IMAGE SECTION ====================== */
+
+.blog-top-image-wrapper {
+  margin-top: 50px; /* space above image */
+
+  display: flex;
+  justify-content: center; /* center the image */
+}
+
+.blog-top-image-box {
+  width: 95%; /* reduced width — adjust as needed (70–85%) */
+    height: 400px;
+  border-radius: 5px;
+  overflow: hidden;
+ 
+}
+
+.blog-top-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+.iq-author-socials .fa-brands{
+  font-size:20px;
+}
+.iq-author-socials .fab{
+  font-size:20px;
+}
+
+select option{
+  color: #2c2a2a;
+}
+</style>
+
+<section class="blog-main-layout">
+  <div class="blog-layout-grid">
+    
+    <!-- LEFT COLUMN -->
+    <div class="blog-left-column">
+
+
+
+        <!-- Blog Image Section (added above description) -->
+      <section class="blog-top-image-wrapper">
+        <div class="blog-top-image-box">
+          <img src="{{ blog.image.url }}" alt="{{ blog.title }}" class="blog-top-image">
+        </div>
+      </section>
+
+      <!-- Blog Content -->
+      <section class="blog-content-wrapper">
+        <div class="blog-content">
+            {{ blog.formatted_description|safe }}
+        </div>
+      </section>
+      <!-- =========================== FAQ SECTION =========================== -->
+
+<section class="faq-wrapper">
+  <div class="faq-header">
+    <span class="faq-subtitle">FAQ</span>
+    <h2 class="faq-title">Frequently Asked Questions</h2>
+    <div class="faq-divider"></div>
+  </div>
+
+  <div class="faq-list">
+
+ 
+    <div class="faq-item">
+      <h3 class="faq-question">
+        <span class="faq-number">1</span>
+        What is the Binghatti Mercedes-Benz project?
+      </h3>
+      <p class="faq-answer">
+        The Binghatti Mercedes-Benz project is a groundbreaking collaboration between Binghatti Properties and Mercedes-Benz...
+      </p>
+    </div>
+
+
+  </div>
+</section>
+
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <aside class="blog-right-column">
+      <div class="sticky-form">
+        <section class="contact-form-section">
+          <div class="contact-glass-card">
+            <div class="contact-header">
+              <span class="contact-tag">Get Started</span>
+              <h3 class="contact-title">Request Consultation</h3>
+              <p class="contact-subtitle">Connect with our investment experts for personalized guidance.</p>
+            </div>
+        <form class="contact-form" method="POST" action="{% url 'blog_detail' slug=blog.slug %}">
+          {% csrf_token %}
+          
+          <input type="text" name="name" class="form-input" placeholder="Full Name" required>
+          <input type="email" name="email" class="form-input" placeholder="Email Address" required>
+          <input type="tel" name="mobile" class="form-input" placeholder="Phone Number" required>
+          <input type="text" name="company" class="form-input" placeholder="Company Name" required>
+
+          <select name="services" class="form-input" required>
+            <option value="" disabled selected>Choose a Service</option>
+            <option value="consultation">Consultation</option>
+            <option value="blog enquiry">Blog Enquiry</option>
+            <option value="other">Other</option>
+          </select>
+
+          <button type="submit" class="form-submit-btn">Send Inquiry</button>
+
+          <div class="contact-action-buttons">
+            <a href="https://wa.me/971503482299" class="whatsapp-btn" target="_blank">
+              <i class="fa-brands fa-whatsapp"></i> WhatsApp
+            </a>
+            <a href="tel:+971503482299" class="call-btn">
+              <i class="fa-solid fa-phone"></i> Call Us
+            </a>
+          </div>
+        </form>
+          </div>
+            {% if messages %}
+            <div>
+              {% for message in messages %}
+              <div class="alert alert-success">{{ message }}</div>
+              {% endfor %}
+            </div>
+            {% endif %}
+        </section>
+      </div>
+    </aside>
+
+  </div>
+</section>
+
+<!-- SOCIAL MEDIA -->
+<section class="iq-social-section">
+    <div class="iq-container">
+  <div class="iq-social-wrapper">
+
+    <!-- Left -->
+  <div class="iq-social-label" onclick="openShareMenu()">
+  <i class="fa-solid fa-share-nodes"></i>
+  <span>Share this article</span>
+</div>
+
+    <!-- Icons -->
+<div class="iq-social-icons">
+
+  <!-- Facebook Share -->
+  <button class="iq-social-btn iq-facebook" aria-label="Share on Facebook"
+    onclick="window.open('https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}', '_blank');">
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+    </svg>
+  </button>
+
+  <!-- Twitter Share -->
+  <button class="iq-social-btn iq-twitter" aria-label="Share on Twitter"
+    onclick="window.open('https://twitter.com/intent/tweet?url={{ request.build_absolute_uri }}&text=Check this out!', '_blank');">
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M23 3a10.9 10.9 0 01-3.14 1.53A4.48 4.48 0 0016 3a4.48 4.48 0 00-4.47 4.47c0 .35.04.7.11 1.03A12.94 12.94 0 013 4s-4 9 5 13a13.07 13.07 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
+    </svg>
+  </button>
+
+  <!-- LinkedIn Share -->
+  <button class="iq-social-btn iq-linkedin" aria-label="Share on LinkedIn"
+    onclick="window.open('https://www.linkedin.com/sharing/share-offsite/?url={{ request.build_absolute_uri }}', '_blank');">
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M4.98 3.5a2.5 2.5 0 110 5 2.5 2.5 0 010-5zM3 9h4v12H3zM9 9h3.8v1.7h.1a4.2 4.2 0 013.8-2.1c4.1 0 4.9 2.7 4.9 6.2V21h-4v-5.5c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V21H9z"/>
+    </svg>
+  </button>
+
+  <!-- Instagram Profile -->
+  <button class="iq-social-btn iq-instagram" aria-label="Instagram"
+    onclick="window.open('https://www.instagram.com/delemon_technology?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==', '_blank');">
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 5a5 5 0 100 10 5 5 0 000-10zm6.5-.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/>
+    </svg>
+  </button>
+
+</div>
+
+  </div>
+  </div>
+</section>
+
+<section class="iq-author-section">
+  <div class="author-container">
+    <div class="iq-author-wrapper">
+
+      <!-- Avatar -->
+      <div class="iq-author-avatar">
+        <div class="iq-avatar-ring">
+          <div class="iq-avatar-inner">
+            <span class="iq-avatar-initials">
+              <img src="{{ blog.author_image.url }}" alt="{{ blog.author_name }}" class="author-image">
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="iq-author-content">
+
+        <div class="iq-author-header">
+          <h3 class="iq-author-name">{{ blog.author_name }}</h3>
+          <span class="iq-author-role">Delemon Technology</span>
+        </div>
+
+        <!-- Dynamic Author Social Links -->
+        <div class="iq-author-socials">
+
+          {% if blog.author_social_links.facebook %}
+          <a href="{{ blog.author_social_links.facebook }}" aria-label="Facebook" target="_blank">
+            <i class="fa-brands fa-facebook"></i>
+          </a>
+          {% endif %}
+
+          {% if blog.author_social_links.instagram %}
+          <a href="{{ blog.author_social_links.instagram }}" aria-label="Instagram" target="_blank">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          {% endif %}
+
+          <!-- Blog Share on LinkedIn (always visible or wrap in condition if needed) -->
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ request.build_absolute_uri }}"
+            aria-label="LinkedIn" target="_blank">
+            <i class="fab fa-linkedin"></i>
+          </a>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="iq-comment-section">
+  <div class="iq-comment-card">
+
+    <!-- Header -->
+    <div class="iq-comment-header">
+      <div class="iq-comment-icon">
+        <!-- Message Icon -->
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+        </svg>
+      </div>
+      <div>
+        <h2 class="iq-comment-title">Leave a Comment</h2>
+        <p class="iq-comment-subtitle">Share your thoughts on this article</p>
+      </div>
+    </div>
+
+    <!-- Form -->
+    <form class="iq-comment-form" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="f3d20d03-31c8-4fbd-bd0c-4292f1ac06c2">
+                <input type="hidden" name="subject" id="" value="comments form blogdetail page">
+      <div>
+        <input type="text" class="iq-input" placeholder="Your Name" required>
+      </div>
+
+      <div>
+        <input type="email" class="iq-input" placeholder="Your Email" required>
+      </div>
+
+      <div style="grid-column: span 2;">
+        <textarea class="iq-textarea" placeholder="Write your comment here..." required></textarea>
+      </div>
+
+      <div class="iq-submit-wrap">
+        <button type="submit" class="iq-submit-btn">
+          <!-- Send Icon -->
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/>
+          </svg>
+          Submit Comment
+        </button>
+      </div>
+    </form>
+
+  </div>
+</section>
+<section class="relatedblog">
+<div class="you-may-like ">
+    <h6>WORTH READ!</h6>
+    <h2>YOU MAY ALSO LIKE</h2>
+    <div class="you-may-like-container">
+        {% for related_blog in related_blogs %}
+        <div class="related-blog-card">
+            <img src="{{ related_blog.image.url }}" alt="{{ related_blog.title }}" class="related-blog-image">
+            <h3 class="related-blog-title">{{ related_blog.title }}</h3>
+            <p class="related-blog-description">{{ related_blog.content|truncatewords:15 }}</p>
+            <a href="{% url 'blog_detail' related_blog.slug %}" class="read-more-btn">Read More →</a>
+        </div>
+        {% endfor %}
+    </div>
+    <a href="{% url 'blog' %}" class="see-all-blogs">
+        See All Blogs →
+
+    </a>
+</div>
+</section>
+<style>
+  /* =========================== FAQ SECTION =========================== */
+
+.faq-wrapper {
+  max-width: 810px;
+  margin: 0 auto;
+  padding: 30px 2px;
+  font-family: "Inter", sans-serif;
+}
+
+.faq-header {
+  margin-bottom: 30px;
+}
+
+.faq-subtitle {
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff; /* primary color */
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.faq-title {
+  font-size: 32px;
+  font-weight: 700;
+    color: #FBB714;
+  margin-top: 5px;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.faq-item {
+     padding: 20px;
+    /* background: #fff; */
+    border-radius: 14px;
+    border: 1px solid #454545;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.faq-item:hover {
+  border-color: rgba(10, 102, 194, 0.4);
+  box-shadow: 0 0 10px rgba(10, 102, 194, 0.1);
+}
+
+.faq-question {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.faq-number {
+  width: 34px;
+  height: 34px;
+    background: rgb(237 246 255 / 13%);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.faq-answer {
+  margin-left: 46px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #555;
+}
+
+  .relatedblog{
+   background-color: #0B0B0B;
+
+  }
+    .you-may-like {
+        
             padding: 20px;
-            background-color: #181717;
+            background-color: #0B0B0B;
             /* Matches the footer background */
             color: white;
             /* Text color */
             width: 100%;
+            max-width: 1400px;
+            margin: auto;
         }
 
         .you-may-like h2 {
@@ -206,7 +1694,7 @@
         .related-blog-card {
             background-color: 181717;
             /* Transparent background */
-            border: 1px solid rgba(87, 87, 87, 0.2);
+                border: 1px solid rgb(177 172 172 / 20%);
             /* Subtle border for contrast */
             border-radius: 10px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -314,329 +1802,94 @@
             }
 
         }
+      </style>
 
-        /* Blog Content */
-        .blog-detail-content {
-            margin-top: 20px;
-            font-size: 18px;
-            text-align: justify;
-        }
-
-        /* Reference Section */
-        .reference-section {
-            margin-top: 40px;
-            padding: 20px;
-            background-color: #f9f9f9;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .reference-section h3 {
-            font-size: 20px;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 15px;
-        }
-
-        .reference-links ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .reference-links ul li {
-            margin-bottom: 10px;
-        }
-
-        .reference-links ul li a {
-            font-size: 16px;
-            color: #007BFF;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .reference-links ul li a:hover {
-            color: #0056b3;
-            text-decoration: underline;
-        }
-
-        .right-sec {
-            width: 30%;
-            padding-top: 50px;
-        }
-
-        .right-sec .contact-form-container {
-            background: linear-gradient(to right, #3e70ad, #1586bc, #009bc4);
-            color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .right-sec .contact-form-container h2 {
-            font-size: 28px;
-            margin-bottom: 10px;
-        }
-
-        .right-sec .contact-form-container p {
-            font-size: 16px;
-            margin-bottom: 20px;
-        }
-
-        form input,
-        form select {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: none;
-            border-radius: 4px;
-            font-size: 14px;
-            outline: none;
-        }
-
-        form input:focus,
-        form select:focus {
-            border: 1px solid #007d3d;
-        }
-
-        form button.submit-btn {
-            background-color: #FAB206;
-            border: none;
-            color: white;
-            font-weight: bold;
-            padding: 10px;
-            width: 100%;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        form button.submit-btn:hover {
-            background-color: #b98304;
-        }
-
-        .header-sec {
-            display: flex;
-            flex-direction: row;
-        }
-
-        .header-sec .left-sec {
-            width: 70%;
-
-        }
-
-        .header-sec .img-sec {}
-
-        .blog-detail-image {
-            width: 90%;
-        }
-        .blog-detail-content p{
-            font-size: 16px;
-        }
-
-        @media screen and (max-width: 768px) {
-            .header-sec {
-                flex-direction: column;
-                /* Stack items vertically */
-            }
-               .blog-detail-content{
-                text-align: left;
-               }
-
-            .header-sec .left-sec,
-            .header-sec .right-sec {
-                width: 100%;
-                /* Make both sections take full width */
-            }
-
-            .right-sec {
-                padding-top: 20px;
-                /* Adjust spacing for better appearance */
-            }
-        }
-
-        .blog-detail-content p {
-            font-size: 10px;
-        }
-        .call-btn{
-            background:#181717;
-        }
-    </style>
-</head>
-
-<body>
-
-    <div class="social-medias">
-        <div class="social-medias-sub" data-bs-toggle="tooltip" data-bs-placement="right" title="Chat with us">
-            <a href="http://wa.me/971503482299" class="text-decoration-none" target="_blank"><i
-                    class="fa-brands fa-whatsapp"></i></a>
-        </div>
-        <div class="social-medias-sub" data-bs-toggle="tooltip" data-bs-placement="right" title="Mail to us">
-            <a href="mailto:sales@delemontechnology.com" class="text-decoration-none" target="_blank"><i
-                    class="fa-solid fa-envelope"></i></a>
-        </div>
-        <div class="social-medias-sub" data-bs-toggle="tooltip" data-bs-placement="right" title="Call us">
-            <a href="tel:+971503482299" class="text-decoration-none" target="_blank"><i
-                    class="fa-solid fa-square-phone"></i></a>
-        </div>
-    </div>
-<section class="hero-section">
-  <div class="hero-content">
-    <h1 class="hero-title">{{ blog.title }}</h1>
-  </div>
-</section>
-    <div class="blog-detail-container">
+<style>
+/* ================================
+   BLOG MAIN 2-COLUMN LAYOUT
+================================ */
+/* ================================
+   BLOG MAIN 2-COLUMN LAYOUT (FIXED)
+================================ */
 
 
-        <div class="header-sec">
-            <div class="left-sec">
-                <div class="created-date">
-                    PUBLISHED ON: {{ blog.created_at|date:"F j, Y" }}
-                </div>
-                <div class="img-sec">
-                    <img src="{{ blog.image.url }}" alt="{{ blog.title }}" class="blog-detail-image">
-                </div>
-                <div class="author-section">
-                    <div class="author-details">
-                        <img src="{{ blog.author_image.url }}" alt="{{ blog.author_name }}" class="author-image">
-                        <div class="author-info">
-                            <div class="author-name">AUTHOR: {{ blog.author_name }}</div>
-                            <div class="social-links">
-                                <a href="https://whatsapp.com" target="_blank" style="color:green;">
-                                    <i class="fa-brands fa-whatsapp"></i>
-                                </a>
+.blog-main-layout {
+  background: #0b0b0b;
+}
 
-                                {% if blog.author_social_links.facebook %}
-                                <a href="{{ blog.author_social_links.facebook }}" target="_blank" style="color:blue;">
-                                    <i class="fa-brands fa-facebook"></i>
-                                </a>
-                                {% endif %}
-                                <!-- <a href="https://instagram.com"  target="_blank" style="color:purple;">
-                                    <i class="fa-brands fa-instagram"></i>
-                                </a> -->
-                                {% if blog.author_social_links.instagram %}
-                                <a href="{{ blog.author_social_links.instagram }}" target="_blank"
-                                    style="color:purple;">
-                                    <i class="fa-brands fa-instagram"></i>
-                                </a>
-                                {% endif %}
-                                <a href="https://linkedin.com/shareArticle?url={{ request.build_absolute_uri }}"
-                                    target="_blank" style="color:blue;">
-                                    <i class="fab fa-linkedin"></i>
-                                </a>
+/* GRID CONTROLS WIDTH + PADDING */
+.blog-layout-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 48px;
+  max-width: 1300px;
+  margin: 0 auto;
+
+}
 
 
+.blog-right-column {
+  position: relative; /* parent for sticky */
+}
 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="right-sec">
-                <div class="contact-form-container">
-                    <h2 style="margin-bottom:50px;">Let's Talk</h2>
-
-                    <form method="POST" action="{% url 'blog_detail' slug=blog.slug %}">
-                        {% csrf_token %}
-                        <input type="text" name="name" placeholder="Name" required>
-                        <input type="text" name="mobile" placeholder="Mobile Number" required>
-                        <input type="email" name="email" placeholder="Email" required>
-                        <input type="text" name="company" placeholder="Company Name" required>
-                        <select name="services" required>
-                            <option value="" disabled selected>Choose a Service</option>
-                            <option value="consultation">Consultation</option>
-                            <option value="accounting">Blog Enquiry</option>
-                            <option value="tax">Other</option>
-                        </select>
-                        <button type="submit" class="submit-btn">Request A Callback Now</button>
-                    </form>
-
-                    <div class="contact-action-buttons" style="display: flex; gap: 10px; margin-top: 20px;">
-                    <a href="https://wa.me/971503482299" target="_blank" class="whatsapp-btn" style="flex: 1; text-align:center; padding:12px; background-color:#25D366; color:#fff; border-radius:5px; text-decoration:none; font-weight: bold;">
-                        <i class="fab fa-whatsapp" style="margin-right: 8px;"></i>WhatsApp
-                    </a>
-                    <a href="tel:+971503482299" class="call-btn" style="flex: 1; text-align:center; padding:12px; background-color:#026bda; color:#fff; border-radius:5px; text-decoration:none; font-weight: bold;">
-                        <i class="fas fa-phone-alt" style="margin-right: 8px;"></i>Call Now
-                    </a>
-                </div>
-                    {% if messages %}
-                    <div>
-                        {% for message in messages %}
-                        <div class="alert alert-success">{{ message }}</div>
-                        {% endfor %}
-                    </div>
-                    {% endif %}
-                </div>
-            </div>
-
-        </div>
-
-        <!--Blog Content -->
-        <div class="blog-detail-content">
-            <div>
-                {{ blog.formatted_description|safe }}
-            </div>
-        </div>
-
-
-        <div class="reference-section">
-            <h3>References</h3>
-            {% if blog.references %}
-            <ul>
-                {% for reference in blog.references %}
-                <li><a href="{{ reference.url }}" target="_blank">{{ reference.title }}</a></li>
-                {% endfor %}
-            </ul>
-            {% else %}
-            <p>No references available for this blog.</p>
-            {% endif %}
-        </div>
-
-        <!-- Social Media Share Section -->
-        <div class="share-section">
-            <div class="share-icons">
-                <a href="https://facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}" target="_blank">
-                    <i class="fa-brands fa-facebook"></i>
-                </a>
-                <a href="https://twitter.com/intent/tweet?url={{ request.build_absolute_uri }}" target="_blank">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="https://linkedin.com/shareArticle?url={{ request.build_absolute_uri }}" target="_blank">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="https://instagram.com" target="_blank">
-                    <i class="fab fa-instagram"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    </div>
+.sticky-form {
+  position: sticky;
+  top: 20px; /* adjust distance from top */
+}
 
 
 
 
 
-    <!-- You May Also Like Section -->
+/* Responsive */
+
+@media (max-width: 768px) {
+  .blog-layout-grid {
+    grid-template-columns: 1fr; /* full width single column */
+    gap: 24px;                  /* reduce spacing on mobile */
+    padding: 0 16px;            /* add side padding if needed */
+  }
+
+  .sticky-form {
+    position: static; /* remove sticky on mobile */
+    top: auto;
+  }
+}
+/* ================================
+   GLOBAL CONTENT CONTAINER
+================================ */
+
+.iq-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.author-container{
+    max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+</style>
 
 
 
+<script>
+function openShareMenu() {
+  const pageUrl = encodeURIComponent(window.location.href);
+  const pageTitle = encodeURIComponent(document.title);
+
+  const shareWindow = window.open(
+    "https://www.addtoany.com/share?linkurl=" + pageUrl + "&linkname=" + pageTitle,
+    "Share",
+    "width=600,height=500"
+  );
+
+  if (!shareWindow) {
+    alert("Popup blocked! Please allow popups to share.");
+  }
+}
+</script>
 </body>
-<div class="you-may-like">
-    <h6>WORTH READ!</h6>
-    <h2>YOU MAY ALSO LIKE</h2>
-    <div class="you-may-like-container">
-        {% for related_blog in related_blogs %}
-        <div class="related-blog-card">
-            <img src="{{ related_blog.image.url }}" alt="{{ related_blog.title }}" class="related-blog-image">
-            <h3 class="related-blog-title">{{ related_blog.title }}</h3>
-            <p class="related-blog-description">{{ related_blog.content|truncatewords:15 }}</p>
-            <a href="{% url 'blog_detail' related_blog.slug %}" class="read-more-btn">Read More →</a>
-        </div>
-        {% endfor %}
-    </div>
-    <a href="{% url 'blog' %}" class="see-all-blogs">
-        See All Blogs →
-
-    </a>
-</div>
+</html>
 {% endblock %}

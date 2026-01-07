@@ -1,11 +1,23 @@
 from django.contrib import admin
 from .models import *
+from import_export.admin import ExportMixin, ImportExportModelAdmin
+from import_export import resources
 
-class BlogAdmin(admin.ModelAdmin):
-    list_display = ('title', 'author_name', 'created_at')
-    prepopulated_fields = {'slug': ('title',)}
+class FAQInline(admin.TabularInline):
+    model = FAQ
+    extra = 1
+class BlogResource(resources.ModelResource):
+    class Meta:
+        model = Blog
 
-admin.site.register(Blog, BlogAdmin)
+# Blog admin with import/export and inline FAQ
+@admin.register(Blog)
+class BlogAdmin(ImportExportModelAdmin):
+    resource_class = BlogResource
+    inlines = [FAQInline]
+
+
+
 class TeamModelAdmin(admin.ModelAdmin):
     list_display = ('name', 'designation','post', 'profileimage_display')
     list_filter = ('designation',)

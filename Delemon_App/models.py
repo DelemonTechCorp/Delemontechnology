@@ -22,7 +22,7 @@ class Keyword(models.Model):
 
 class Blog(models.Model):
     title = models.CharField(max_length=255)
-    slug = models.SlugField(unique=True, blank=True,max_length=500)
+    slug = models.SlugField(unique=True, blank=True)
     image = models.ImageField(upload_to='blogs/')
     author_image = models.ImageField(upload_to='authors/')
     content = RichTextField()
@@ -33,6 +33,8 @@ class Blog(models.Model):
     references = models.JSONField(default=list, blank=True, help_text="List of references in the format [{'title': '...', 'url': '...'}]")
     created_at = models.DateTimeField(auto_now_add=True)
     modified_at = models.DateTimeField(auto_now=True)
+
+
     
     def save(self, *args, **kwargs):
         if not self.slug:
@@ -86,6 +88,7 @@ class Blog(models.Model):
     #     return reverse('blogview', kwargs={'id': self.id})
 
     
+
     def formatted_description(self):
         """
         Convert the description with hyperlinks and markdown-style headers for rendering.
@@ -112,7 +115,13 @@ class Blog(models.Model):
         return reverse('blog_detail', kwargs={'slug': self.slug})
 
 
+class FAQ(models.Model):
+    blog = models.ForeignKey(Blog, related_name='faqs', on_delete=models.CASCADE)
+    question = models.CharField(max_length=255)
+    answer = models.TextField()
 
+    def __str__(self):
+        return self.question
 
 class TeamModel(models.Model):
     name=models.CharField(max_length=200)
