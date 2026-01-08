@@ -4,6 +4,7 @@ from django.core.paginator import Paginator
 import logging
 from django.contrib import messages
 from django.core.mail import send_mail
+from django.conf import settings
 # Create your views here.
 
 def base(request):
@@ -242,7 +243,7 @@ def blog_detail(request, slug):
                 f"Best regards,\n"
                 f"Website System"
             ),
-            from_email='delemontech@gmail.com',
+            from_email=settings.EMAIL_HOST_USER,
             recipient_list=['sales@delemontechnology.com'],
             fail_silently=False,
         )
@@ -322,6 +323,7 @@ def team(request):
         'Admin',
         'Sales Executive'
     ]
+    
 
     # Ordering logic using Case and When to enforce custom ordering
     ordering = Case(
@@ -427,7 +429,7 @@ def news_detail(request, slug):
                         "will get back to you shortly.\n\n"
                         "Best regards,\nDelemon Technology"
                     ),
-                    from_email='delemontech@gmail.com',  # Replace with your email
+                    from_email=settings.EMAIL_HOST_USER,  # Replace with your email
                     recipient_list=['sales@delemontechnology.com'],
                     fail_silently=False,  # Set to True to suppress errors during email sending
         )
