@@ -208,6 +208,7 @@ def blog_detail(request, slug):
     blog = get_object_or_404(Blog, slug=slug)
     related_blogs = Blog.objects.exclude(id=blog.id)[:4]
     canonical_url = request.build_absolute_uri()
+    faqs = blog.faqs.all()   # 👈 fetch related FAQs
     if request.method == 'POST':
         name = request.POST.get('name')
         mobile = request.POST.get('mobile')
@@ -253,7 +254,7 @@ def blog_detail(request, slug):
         messages.success(request, "Your contact request has been submitted successfully.")
         return redirect('blog_detail', slug=slug)
 
-    return render(request, 'main/blog_detail.html', {'blog': blog, 'related_blogs': related_blogs,'canonical_url':canonical_url})
+    return render(request, 'main/blog_detail.html', {'blog': blog, 'related_blogs': related_blogs,'faqs': faqs ,'canonical_url':canonical_url})
 
 
 
