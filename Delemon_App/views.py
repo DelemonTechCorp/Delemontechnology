@@ -8,6 +8,7 @@ from django.conf import settings
 # Create your views here.
 
 def base(request):
+    
     return render(request, 'base.html')
 
 def home(request):
