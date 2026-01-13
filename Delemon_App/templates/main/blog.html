@@ -258,7 +258,8 @@
                 <div class="blog-content">
                     <!-- <h6>{{ blog.created_at|date:"F j, Y" }}</h6> -->
                     <h3 class="blog-title">{{ blog.title }}</h3>
-                    <p class="blog-description">{{ blog.content|truncatewords:20 }}</p>
+                    
+                    <p class="blog-description">{{ blog.content|striptags|truncatewords:20 }}</p>
                     {% if blog.slug %}
                     <a href="{% url 'blog_detail' blog.slug %}" class="read-more">Read More</a>
                     {% else %}
