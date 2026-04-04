@@ -23,94 +23,9 @@
     <link rel="canonical" href="https://www.delemontechnology.com/"/>
 </head>
 <style>
-/*.bg-video-container {*/
-/*    position: relative;*/
-/*    width: 100%;*/
-/*    margin: auto;*/
-/*  }*/
 
-  /* Video */
-/*  .bg-video-home {*/
-/*    width: 100%;*/
-/*    height: auto;*/
-/*    object-fit: contain;*/
-/*  }*/
+.main-section { margin-top: 0 !important; }
 
-/*  .overlay-background {*/
-/*    position: absolute;*/
-/*    top: 0;*/
-/*    left: 0;*/
-/*    width: 100%;*/
-/*    height: 100%;*/
-/*    background: rgba(0, 0, 0, 0.5);*/
-/*    display: flex;*/
-/*    padding: 30px;*/
-/*    align-items: flex-start;*/
-/*    flex-direction: row;*/
-/*    justify-content: space-between;*/
-/*  }*/
-/*  .overlay-background-1{*/
-/*    width: 5%;*/
-/*    height: 80%;*/
-/*    flex-direction: column;*/
-/*    align-items: flex-end;*/
-/*    display: flex;*/
-/*    justify-content: space-evenly;*/
-/*  }*/
-/*  .overlay-background-2{*/
-/*    width: 60%;*/
-/*    height: 40%;*/
-/*    display: flex;*/
-/*    align-items: center;*/
-/*    justify-content: center;*/
-/*    flex-direction: column;*/
-/*  }*/
-/*  .overlay-background-2 h2{*/
-/*    font-size: 62px;*/
-/*    font-weight: 700;*/
-/*    background: -webkit-linear-gradient(#FAB206, #030303);*/
-/*    -webkit-background-clip: text;*/
-/*    -webkit-text-fill-color: transparent;*/
-/*  }*/
-/*  .overlay-background-2 h3{*/
-/*    color: white;*/
-/*    font-size: 62px;*/
-/*    font-weight: 700;*/
-/*  }*/
-/*  .icon-container{*/
-/*    height: 30px;*/
-/*    width: 30px;*/
-/*    display: flex;*/
-/*    align-items: center;*/
-/*    border-radius: 50%;*/
-/*    justify-content: center;*/
-/*    border: 2px solid white;*/
-/*  }*/
-/*  .icon-container i{*/
-/*    color: white;*/
-/*    font-size: 12px;*/
-/*  }*/
-/*  .icon-container:hover{*/
-/*    background-color: #FAB206;*/
-/*    border: 2px solid #FAB206;*/
-/*    transition: 0.5s;*/
-/*  }*/
-/*  .icon-container:hover i{*/
-/*    color: rgb(255, 255, 255);*/
-/*  }*/
-/*  .icon-container-main{*/
-/*    height: 40%;*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*    align-items: center;*/
-/*    justify-content: space-evenly;*/
-/*  }*/
-/*  .icon-container a{*/
-/*    display: flex;*/
-/*    align-items: center;*/
-/*    justify-content: center;*/
-/*    text-decoration: none;*/
-/*  }*/
   .description{
         display: none;
         margin-top: 10px;
@@ -125,8 +40,10 @@
     height: 180px;
     width: 60px;
     position: fixed;
-    left: 10px;
+     left: unset;   /* remove left */
+    right: 10px;   /* add right */
     bottom: 10px;
+    z-index:9999;
   }
   .social-medias i{
     color: white;
@@ -144,14 +61,17 @@
 .bg-video-container {
   position: relative;
   width: 100%;
-  margin-top:auto;
+ height: 100vh;
+   margin:0;
 }
 
 /* Video */
 .bg-video {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
+ position: absolute;
+top: 0; left: 0; 
+width: 100%; 
+height: 100%; 
+object-fit: cover;
 }
 
 .overlay-bg-video {
@@ -166,8 +86,10 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  overflow-y: auto;
 }
 
+.bg-video-mobile { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; display: none; }
 
 .overlay-bg-video h1 {
   font-size: 40px;
@@ -175,6 +97,7 @@
   line-height: 1.5;
   font-weight: 700;
   text-align: center;
+  /*margin-top: -50px;*/
 }
 .overlay-bg-video h1 span{
     color: #FAB206;
@@ -719,6 +642,7 @@ left: 0;
     align-items: center;
     justify-content: center;
     flex-direction:row;
+    /*gap: 12px;*/
 }
 .social-image{
     height: 220px;
@@ -753,85 +677,7 @@ left: 0;
 #description-1{
     font-size:14px;
 }
-  .section-works{
-        height: 100vh;
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-evenly;
-        background-image: url("{% static 'img/frame-188-5.jpg' %}");
-        background-size: cover;
-        background-color: black;
-    }
-    .section-works-text{
-        width: 45%;
-        display: flex;
-        flex-direction: column;
-        height: auto;
-        align-items: flex-start;
-        justify-content: space-evenly;
-    }
-    .section-works-image{
-        width: 45%;
-        display: flex;
-        position: relative;
-        align-items: center;
-        justify-content: center;
-        height: auto;
 
-    }
-    .changale-content{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-    }
-    .section-works-text h5{
-        font-size: 18px;
-        font-weight: 600;
-        color: #B5B5B5;
-    }
-    .section-works-text h2{
-        font-size: 30px;
-        font-weight: 700;
-        letter-spacing:3px;
-        color: white;
-
-    }
-    .section-works-text p{
-        font-size: 14px;
-        color: white;
-    }
-    .changale-content h2 i{
-        color: white;
-        margin-right: 10px;
-    }
-    .section-works-image img{
-        width: 400px;
-        height: 300px;
-        object-fit: cover;
-        border-radius: 10px;
-    }
-    .overlay-div{
-        position: absolute;
-        width:400px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        border-radius:10px;
-        justify-content: flex-end;
-        height: 300px;
-        background-image: linear-gradient(rgb(0,0,0,0.4),rgb(0,0,0,0.4));
-    }
-    .overlay-div h3{
-        color: white;
-        font-size: 20px;
-    }
-    .overlay-div span{
-        color: white;
-        font-size: 14px;
-    }
     .bg-video-mobile{
         display:none;
     }
@@ -844,8 +690,7 @@ left: 0;
         line-height:1.2;
     }
     .bg-video-container{
-        height: 80vh;
-        overflow:hidden;
+         height: 100svh; 
     }
     .bg-video-mobile{
         display:block;
@@ -854,9 +699,7 @@ left: 0;
         display:none;
     }
     .overlay-bg-video{
-        width:100%;
-        height:80vh;
-        background: rgba(0, 0, 0, 0.5);
+         width: 100%; height: 100%;
     }
     .overlay-bg-video-first-p{
         font-size:12px;
@@ -869,35 +712,7 @@ left: 0;
     #description-1{
         display:none;
     }
-    /*.overlay-background-2 h2{*/
-    /*    font-size:18px;*/
-    /*    overflow-y:hidden;*/
-    /*}*/
-    /*.overlay-background-2 h3{*/
-    /*    font-size:18px;*/
-    /*    overflow-y:hidden;*/
-    /*}*/
-    /*.bg-video-container{*/
-    /*    width:100%;*/
-    /*}*/
-    /*.bg-video-home{*/
-    /*    width:100%;*/
-    /*}*/
-    /*.overlay-background{*/
-    /*    width:100%;*/
-    /*}*/
-    /*.overlay-background-2{*/
-    /*    height:50%;*/
-    /*    width:80%;*/
-    /*}*/
-    /*.overlay-background-1{*/
-    /*    width:10%;*/
-    /*    height:100%;*/
-    /*}*/
-    /*.icon-container-main{*/
-    /*    height:100%;*/
-    /*    justify-content:space-between;*/
-    /*}*/
+
     .services-links{
         height:70%;
     }
@@ -997,7 +812,7 @@ left: 0;
     margin-top:10px;
 }
 .social-medias{
-    z-index:100;
+   z-index:9999;
 }
 .social-medias i{
     overflow-y:hidden;
@@ -1008,24 +823,7 @@ left: 0;
 .card-overlay p{
     font-size:10px;
 }
-        .section-works{
-            flex-direction: column;
-            height: 100vh;
-        }
-        .section-works-text{
-            width: 90%;
-        }
-        .section-works-image{
-            width: 90%;
-        }
-        .section-works-image img{
-            width: 300px;
-            height: 250px;
-        }
-        .overlay-div{
-            width: 300px;
-            height: 250px;
-        }
+        
 }
 .services-listing-cards{
     width: 90%;
@@ -1355,6 +1153,7 @@ left: 0;
     background-size: cover;
     /*position: relative;*/
     min-height: 100vh;
+    
 }
 .categories,.categories-view1-wrap {
     float: left;
@@ -1568,16 +1367,7 @@ left: 0;
     .overlay-bg-video-last-p{
         display:none;
     }
-    .section-works{
-        flex-direction:column;
-        height:80vh;
-    }
-    .section-works-text{
-        width:80%;
-    }
-    .section-works-image{
-        width:80%;
-    }
+   
 }
 </style>
 <div class="bg-video-container">
@@ -1737,48 +1527,11 @@ left: 0;
              <img src="{% static 'img/svg5.svg' %}">
          </div>
          </div>
-         <!--<div class="social-media-video">-->
-         <!--   <a href="https://www.facebook.com/profile.php?id=61554857870065&sfnsn=wiwspwa&mibextid=RUbZ1f" target="_blank"><i class="fa-brands fa-facebook"></i></a>-->
-         <!--   <a href=""><i class="fa-brands fa-x-twitter"></i></a>-->
-         <!--   <a href="https://www.instagram.com/delemon_technology?igsh=emF2ajg3bm00cDUz" target="_blank"><i class="fa-brands fa-instagram"></i></a>-->
-         <!--   <a href="https://www.linkedin.com/company/delemon-technology/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>-->
-         <!--   <a href=""><i class="fa-brands fa-youtube"></i></a>-->
-         <!--</div>-->
+
          <p class="overlay-bg-video-last-p mt-2">Drawing from a decade of expertise, Delemon Presents an expansive suite of digital marketing solutions, spanning <b> Search Engine Optimization (SEO), Tailored Web Design, Branding Expertise, Social Media Marketing, and Strategic Management.</b></p>
      </div>
     </div>
-    <!--<div class="bg-video-container">-->
-    <!--    <video class="bg-video-home" autoplay muted loop>-->
-    <!--    <source src="{% static 'img/marketingnew.mp4' %}"/>-->
-    <!--    </video>-->
-    <!--    <div class="overlay-background">-->
-    <!--        <div class="overlay-background-1">-->
-    <!--            <div class="icon-container-main">-->
-    <!--            <div class="icon-container">-->
-    <!--            <a href="https://www.facebook.com/profile.php?id=61554857870065&sfnsn=wiwspwa&mibextid=RUbZ1f" target="_blank"><i class="fa-brands fa-facebook"></i></a>-->
-    <!--        </div>-->
-    <!--        <div class="icon-container">-->
-    <!--            <a href=""><i class="fa-brands fa-x-twitter"></i></a>-->
-    <!--        </div>-->
-    <!--            <div class="icon-container">-->
-    <!--                <a href="https://www.instagram.com/delemon_technology?igsh=emF2ajg3bm00cDUz" target="_blank"><i class="fa-brands fa-instagram"></i></a>-->
-    <!--        </div>-->
-    <!--            <div class="icon-container">-->
-    <!--                <a href="https://www.linkedin.com/company/delemon-technology/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>-->
-    <!--        </div>-->
-    <!--            <div class="icon-container">-->
-    <!--                <a href=""><i class="fa-brands fa-youtube"></i></a>-->
-    <!--        </div>-->
-    <!--    </div>-->
 
-    <!--        </div>-->
-    <!--        <div class="overlay-background-2">-->
-    <!--            <h2>CONNECTING BRANDS</h2>-->
-    <!--            <h3>GLOBAL AUDIENCE</h3>-->
-    <!--        </div>-->
-
-    <!--     </div>-->
-    <!--    </div>-->
 
 <div class="social-medias">
 <div class="social-medias-sub" data-bs-toggle="tooltip" data-bs-placement="right" title="Chat with us">
@@ -1882,48 +1635,167 @@ left: 0;
     desc.style.display = desc.style.display === "none" || desc.style.display === "" ? "block" : "none";
 }
 </script>
-<!--<div class="message-box">-->
-<!--    <div class="message-box-sub">-->
-<!--    <i class="fa-solid fa-comment"></i>-->
-<!--    </div>-->
-<!--</div>-->
 
-<!--<div class="services">-->
-<!--    <div class="services-content">-->
-<!--        <div class="services-head">-->
-<!--            <h1>Services</h1>-->
-<!--        </div>-->
-<!--        <div class="services-links">-->
-<!--        <a href="{% url 'web' %}" onmouseover="changeanimation1()">Web Development</a>-->
-<!--        <a href="{% url 'mobile' %}" onmouseover="changeanimation2()">Mobile App Development</a>-->
-<!--        <a href="{% url 'digital' %}" onmouseover="changeanimation3()">Digital Marketing</a>-->
-<!--        <a href="{% url 'ecommerce' %}" onmouseover="changeanimation6()">Ecommerce Web Development</a>-->
-<!--        <a href="{% url 'uiux' %}" onmouseover="changeanimation4()">UI/UX Design</a>-->
-<!--        <a href="{% url 'animation' %}" onmouseover="changeanimation5()">Video Animation</Video></a>-->
-<!--    </div>-->
-<!--    </div>-->
-<!--    <div class="services-content-changing">-->
-<!--        <lottie-player id="lottie-animation" src="{% static 'animations/web.json' %}" background="transparent"  speed="1" loop autoplay></lottie-player>-->
-<!--        <p style="" class="mb-3" id="description-1">Experience seamless web development with our expert services. Our team is dedicated to crafting tailored solutions that elevate your online presence and drive success. From dynamic websites to intuitive web applications, we bring your vision to life with precision and creativity. With a focus on user experience and cutting-edge technology, we ensure that your digital footprint leaves a lasting impression. </p>-->
-<!--    </div>-->
-<!--</div>-->
+<!-- ------------------------------------------------- OUR CLIENTS SECTION ---------------------------------------------- -->
+<style>
+.cls-wrap {
+    width: 100%;
+    padding: 60px 20px 40px;
+    background-color: #fbfaf9;
+    background: url("{% static 'img/map.png' %}");
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+    position: relative;
+}
+.cls-wrap::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.8);
+    pointer-events: none;
+    z-index: 0;
+}
 
-  <div class="section-works">
-<div class="section-works-text">
-    <h5 class="mb-5">WE HAVE A PROVEN SUCCESS RECORD</h5>
-    <div class="changale-content">
-    <h2 id="dynamicHeading"></h2>
-<p id="dynamicText"></p>
-</div>
-</div>
-<div class="section-works-image">
-<img id="dynamicImage" src="" alt="">
-<div class="overlay-div">
-<h3 id="dynamicTextclient"></h3>
-<span>Website  | Branding</span>
-</div>
-</div>
+.cls-wrap > * {
+    position: relative;
+    z-index: 1;
+}
+.cls-header {
+    text-align: center;
+    margin-bottom: 52px;
+}
+.cls-header h2 {
+    font-size: 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #1a1a1a;
+    margin: 0 0 12px;
+    letter-spacing: -0.5px;
+}
+.cls-divider {
+    width: 44px;
+    height: 3px;
+    background: #FAB206;
+    margin: 0 auto 18px;
+    border-radius: 2px;
+}
+.cls-header p {
+    font-size: 16px;
+    color: #444;
+    max-width: 560px;
+    margin: 0 auto;
+    line-height: 1.75;
+}
+.cls-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+.cls-cell {
+    width: 14.28%;
+    min-width: 130px;
+    height: 105px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 16px;
+    box-sizing: border-box;
+    transition: background 0.2s ease;
+}
+.cls-cell:hover {
+    background: rgba(255,255,255,0.6);
+}
+.cls-cell img {
+    width: 100px;
+    height: 50px;
+    object-fit: contain;
+    /*filter: grayscale(100%) opacity(0.99);*/
+    filter: grayscale(100%) brightness(0.15);  /* Makes all logos very dark */
+    transition: filter 0.3s ease;
+}
+.cls-cell:hover img {
+    filter: grayscale(0%) brightness(1);  /* Full color on hover */
+}
+@media(max-width: 768px) {
+   .cls-cell { 
+        width: 36.33%; 
+        min-width: unset;   /* remove min-width on mobile */
+        height: 85px; 
+        padding: 8px 10px;
+    }
+    .cls-cell img {
+        width: 85px;
+        height: 42px;
+    }
+    .cls-header h2 { font-size: 28px; }
+}
+@media(max-width: 480px) {
+    .cls-cell { width: 50%; }
+}
+
+
+
+</style>
+
+<div class="cls-wrap">
+    <div class="cls-header">
+        <h2>Brands That Trust Us</h2>
+        <div class="cls-divider"></div>
+        <p>We are proud to have partnered with 35+ businesses across the UAE and beyond.</p>
     </div>
+    <div class="cls-grid">
+        <div class="cls-cell"><img src="{% static 'img/client_fibs.png' %}" style="width:160px;height:160px;" alt="FIBS Consultancy"></div>
+        <div class="cls-cell"><img src="{% static 'img/client_xopp.png' %}" style="width:160px;height:160px;" alt="X-OPP"></div>
+        <div class="cls-cell"><img src="{% static 'img/client_positive.png' %}" style="width:90px;height:90px;" alt="Positive Properties"></div>
+        <div class="cls-cell"><img src="{% static 'img/client_legacy.png' %}" style="width:110px;height:110px;" alt="Legacy Elite Real Estae"></div>
+        <div class="cls-cell"><img src="{% static 'img/client_buy_offplan.png' %}" style="width:160px;height:160px;" alt="BUY Offplan UAE"></div>
+        <div class="cls-cell"><img src="{% static 'img/client_cash_buyer.png' %}" style="width:160px;height:160px;" alt="Cash Buyer Property"></div>
+        <div class="cls-cell"><img src="{% static 'img/client_aijustoffplan.png' %}" style="width:160px;height:160px;" alt="Ai Justoffplan"></div>
+        <div class="cls-cell"><img src="{% static 'img/client_distress_deal.png' %}" style="width:120px;height:120px;" alt="Distress Deal"></div>
+        <div class="cls-cell"><img src="{% static 'img/client_offplan_market.png' %}" style="width:130px;height:130px;" alt="Offplan Market"></div>
+        <div class="cls-cell"><img src="{% static 'img/client_leadersfort.png' %}" style="width:170px;height:170px;" alt="Leaders Fort"></div>
+        <div class="cls-cell"><img src="{% static 'img/client_livington.png' %}" style="width:120px;height:120px;" alt="Livington Properties"></div>
+        <div class="cls-cell"><img src="{% static 'img/client_rada.png' %}" style="width:150px;height:150px;" alt="Rada Infinity"></div>
+        <div class="cls-cell"><img src="{% static 'img/client_five_luxury.png' %}" style="width:60px;height:60px;"  alt="Five Luxury"></div>
+        <div class="cls-cell"><img src="{% static 'img/client_rose_island.png' %}" style="width:130px;height:130px;"  alt="Rose Island"></div>
+        <div class="cls-cell"><img src="{% static 'img/client_lumena.png' %}" style="width:120px;height:120px;" alt="Lumena"></div>
+        <div class="cls-cell"><img src="{% static 'img/client_nborn.png' %}" style="width:120px;height:120px;" alt="NBorn"></div>
+        <div class="cls-cell"><img src="{% static 'img/client_noor.png' %}" style="width:120px;height:120px;" alt="Noor Ishraq"></div>
+        <div class="cls-cell"><img src="{% static 'img/client_newport.png' %}" style="width:70px;height:70px;" alt="NewPort Homes"></div>
+        <div class="cls-cell"><img src="{% static 'img/client_omega.png' %}" alt="Omega Real estate"></div>
+        <div class="cls-cell"><img src="{% static 'img/client_darryl_davy.png' %}" style="width:120px;height:120px;" alt="Justoffplan.ae"></div>
+        <div class="cls-cell"><img src="{% static 'img/client_aile.png' %}" style="width:160px;height:160px;" alt="Aile Properties"></div>     
+        <div class="cls-cell"><img src="{% static 'img/client_stride_homes.png' %}" style="width:70px;height:70px;" alt="Stride Homes"></div>
+        <div class="cls-cell"><img src="{% static 'img/client_topten.png' %}" style="width:100px;height:100px;" alt="Topten Properties"></div>
+        <div class="cls-cell"><img src="{% static 'img/client_kif_consultancy.png' %}" style="width:100px;height:100px;" alt="KIF Consultancy"></div>
+        <div class="cls-cell"><img src="{% static 'img/client_hanland.png' %}" style="width:100px;height:100px;" alt="Hanland"></div>
+        <div class="cls-cell"><img src="{% static 'img/client_utopia.png' %}" style="width:80px;height:80px;" alt="Utopia"></div>
+        <div class="cls-cell"><img src="{% static 'img/client_acadia.png' %}" style="width:70px;height:70px;" alt="Acadia"></div>
+        <div class="cls-cell"><img src="{% static 'img/client_young&right.png' %}" style="width:150px;height:150px;" alt="Young and Right"></div>
+        <div class="cls-cell"><img src="{% static 'img/client_lohana.png' %}" style="width:120px;height:120px;" alt="Lohana"></div>
+        <div class="cls-cell"><img src="{% static 'img/client_royal.png' %}" style="width:110px;height:110px;" alt="Royal Ideal"></div>
+        <div class="cls-cell"><img src="{% static 'img/client_he_properties.png' %}" style="width:120px;height:120px;" alt="HE Properties"></div>
+        <div class="cls-cell"><img src="{% static 'img/client_neos.png' %}" style="width:140px;height:140px;" alt="NEOS"></div>
+        <div class="cls-cell"><img src="{% static 'img/client_kif_realty.png' %}" style="width:70px;height:70px;" alt="KIF Realty"></div>
+        <div class="cls-cell"><img src="{% static 'img/client_kismet.png' %}" style="width:150px;height:150px;" alt="Kismet Homes"></div>
+        <div class="cls-cell"><img src="{% static 'img/client_rich_brokers.png' %}" style="width:70px;height:70px;" alt="Rich Brokers"></div>
+        <div class="cls-cell"><img src="{% static 'img/client_whiterock.png' %}" style="width:110px;height:110px;" alt="WhiteRock Properties"></div>
+        <div class="cls-cell"><img src="{% static 'img/client_quantis.png' %}" style="width:120px;height:120px;" alt="Quantis"></div>
+        <div class="cls-cell"><img src="{% static 'img/client_parva.png' %}" style="width:120px;height:120px;" alt="Parva Realty"></div>
+
+        <!-- To add more: copy any cls-cell line and increment the number -->
+    </div>
+
+</div>
+
+<!-- --------------------------------------------END CLIENTS SECTION-------------------------------------------->
+
+
 
 <div class="container-fluid mt-3 mb-3" style="background-color: #F4F4F4;">
     <div class="row gx-4 gy-4">
@@ -1960,160 +1832,6 @@ left: 0;
     </div>
 </div>
 
-<!--<div class="our-work">-->
-<!--    <div class="our-work-header">-->
-<!--        <h1>Our Work</h1>-->
-<!--    </div>-->
-<!--         <div class="wrapper">-->
-         <!--<i id="left" class="fa-solid  fas fa-angle-left"></i>-->
-<!--        <ul class="carousel">-->
-<!--            <li class="card">-->
-<!--                <div class="img"><img src=-->
-<!--"https://www.digitalgravity.ae/assets/images/home/our-work/our-work-1.webp"-->
-<!--                                      alt="" draggable="false"> </div>-->
-<!--                <h2>-->
-<!--                      OUR WORKS-->
-<!--                  </h2>-->
-<!--                <span>Delemon Technology</span>-->
-<!--            </li>-->
-<!--            <li class="card">-->
-<!--                <div class="img"><img src=-->
-<!--"https://www.digitalgravity.ae/assets/images/home/our-work/our-work-2.webp"-->
-<!--                                      alt="" draggable="false"> </div>-->
-<!--                <h2>OUR WORKS</h2>-->
-<!--                <span>Delemon Technology</span>-->
-<!--            </li>-->
-<!--            <li class="card">-->
-<!--                <div class="img"><img src=-->
-<!--"https://www.digitalgravity.ae/assets/images/home/our-work/our-work-3.webp"-->
-<!--                                      alt="" draggable="false"> </div>-->
-<!--                                      <h2>OUR WORKS</h2>-->
-<!--                                      <span>Delemon Technology</span>-->
-<!--            </li>-->
-<!--            <li class="card">-->
-<!--                <div class="img"><img src=-->
-<!--"https://www.digitalgravity.ae/assets/images/home/our-work/our-work-4.webp"-->
-<!--                                      alt="" draggable="false"> </div>-->
-<!--                                      <h2>OUR WORKS</h2>-->
-<!--                                      <span>Delemon Technology</span>-->
-<!--            </li>-->
-<!--            <li class="card">-->
-<!--                <div class="img"><img src=-->
-<!--"https://www.digitalgravity.ae/assets/images/home/our-work/our-work-5.webp"-->
-<!--                                      alt="" draggable="false"> </div>-->
-<!--                                      <h2>OUR WORKS</h2>-->
-<!--                                      <span>Delemon Technology</span>-->
-<!--            </li>-->
-<!--            <li class="card">-->
-<!--                <div class="img"><img src=-->
-<!--"https://www.digitalgravity.ae/assets/images/home/our-work/our-work-6.webp"-->
-<!--                                      alt="" draggable="false"> </div>-->
-<!--                                      <h2>OUR WORKS</h2>-->
-<!--                                      <span>Delemon Technology</span>-->
-<!--            </li>-->
-<!--        </ul>-->
-         <!--<i id="right" class="fa-solid fas fa-angle-right"></i>-->
-<!--    </div>-->
-<!--</div>-->
-
-<!--<div class="brand">-->
-<!--    <div class="brand-head">-->
-<!--        <h2>We are ready to uplift your <br> <span>brand like many others in</span> <br> the past!</h2>-->
-<!--    </div>-->
-<!--        <div class="logos" id="">-->
-<!--          <div class="logos-slide">-->
-<!--            <img src="{% static 'img/luxuryacres.png' %}" alt="Logo 1">-->
-<!--            <img src="{% static 'img/chronocorp.png' %}" alt="Logo 2">-->
-<!--            <img src="{% static 'img/accounting.png' %}" alt="Logo 3">-->
-<!--            <img src="{% static 'img/riserealtor.png' %}" alt="Logo 4">-->
-<!--            <img src="{% static 'img/louis.png' %}" alt="Logo 5">-->
-<!--            <img src="{% static 'img/vegas.png' %}" alt="Logo 6">-->
-<!--            <img src="{% static 'img/tutorlyhub.png' %}" alt="Logo 7">-->
-<!--            <img src="{% static 'img/kifrealty.png' %}" alt="Logo 20">-->
-<!--            </div>-->
-<!--         <div class="logos-slide">-->
-<!--            <img src="{% static 'img/luxuryacres.png' %}" alt="Logo 1">-->
-<!--            <img src="{% static 'img/chronocorp.png' %}" alt="Logo 2">-->
-<!--            <img src="{% static 'img/accounting.png' %}" alt="Logo 3">-->
-<!--            <img src="{% static 'img/riserealtor.png' %}" alt="Logo 4">-->
-<!--            <img src="{% static 'img/louis.png' %}" alt="Logo 5">-->
-<!--            <img src="{% static 'img/vegas.png' %}" alt="Logo 6">-->
-<!--            <img src="{% static 'img/tutorlyhub.png' %}" alt="Logo 7">-->
-<!--            <img src="{% static 'img/kifrealty.png' %}" alt="Logo 20">-->
-<!--            </div>-->
-<!--        </div>-->
-<!--</div>-->
-
-<!--<div class="testimonial container" id="large-header" class="large-header  " >-->
-
-<!--    <div class="testimonial-content " id="demo-canvas">-->
-<!--        <div class="text-test">-->
-<!--            <h2>TESTIMONIALS</h2>-->
-<!--            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam natus, quibusdam similique, fuga iure-->
-<!--                eligendi dolorum sequi non quasi, iusto voluptas rerum dicta beatae! Laudantium temporibus voluptate itaque-->
-<!--                nam aspernatur!</p>-->
-<!--        </div>-->
-
-
-<!--        <ul class="test-cards">-->
-
-
-<!--            <li class="test-card">-->
-<!--                <h3 class="test-sub-head">Happy Customers </h3>-->
-
-
-<!--                <p><i class="fa-solid fa-quote-left" style="color: #fab206;font-size:40px;padding:10px"></i>Working with Delemon-->
-<!--                    Technology-->
-<!--                    has been a game changer for our business. As a digital marketing agency in-->
-<!--                    Dubai, UAE, they crafted a custom strategy that significantly boosted our online presence. Their-->
-<!--                    expertise-->
-<!--                    in SEO and social media marketing helped us reach a wider audience and increase sales. We highly-->
-<!--                    recommend-->
-<!--                    them for any business looking to elevate their digital marketing efforts./p>-->
-<!--                <h4 style="text-align: right;">-Kif realty (Real eastate company)</h4>-->
-<!--            </li>-->
-<!--            <li class="test-card">-->
-<!--                <h3 class="test-sub-head">Happy Customers </h3>-->
-
-<!--                <p><i class="fa-solid fa-quote-left" style="color: #fab206;font-size:40px;padding:10px"></i>As a business in Dubai,-->
-<!--                    it was-->
-<!--                    crucial for us to partner with a SEO agency in Dubai that could boost our online visibility. Delemon-->
-<!--                    Technology did exactly that. Their comprehensive SEO strategy improved our rankings on Google,-->
-<!--                    driving more-->
-<!--                    organic traffic to our website. We saw tangible results in a short amount of time!></p>-->
-<!--                <h4 style="text-align: right;"> -X-opp (software company)</h4>-->
-<!--            </li>-->
-<!--            <li class="test-card">-->
-<!--                <h3 class="test-sub-head">Happy Customers </h3>-->
-
-
-
-<!--                <p><i class="fa-solid fa-quote-left" style="color: #fab206;font-size:40px;padding:10px"></i>A>Working with a top notch-->
-<!--                    digital marketing agency in Dubai was essential for our company’s growth, and we found exactly that.-->
-<!--                    The-->
-<!--                    team developed a tailored digital marketing strategy, including exceptional SEO and social media-->
-<!--                    management,-->
-<!--                    which significantly increased our online engagement and lead generation. The results exceeded our-->
-<!--                    expectations!</p>-->
-<!--                <h4 style="text-align: right;">-Positive properties (Real eastate company)</h4>-->
-<!--            </li>-->
-<!--            <li class="test-card">-->
-<!--                <h3 class="test-sub-head">Happy Customers </h3>-->
-
-<!--                <p><i class="fa-solid fa-quote-left" style="color: #fab206;font-size:40px;padding:10px"></i>APartnering with this-->
-<!--                    digital-->
-<!--                    marketing company in Dubai was the best decision we made. Their expert SEO services helped us-->
-<!--                    achieve-->
-<!--                    first-page rankings on Google for competitive keywords, driving consistent traffic and high-quality-->
-<!--                    leads.-->
-<!--                    Their professionalism and commitment to results truly set them apart.</p>-->
-<!--                <h5 style="text-align: right;">-Young & Right (Accounting & Tax consultant company)-->
-<!--                </h5>-->
-
-<!--            </li>-->
-<!--        </ul>-->
-<!--    </div>-->
-<!--</div>-->
 
 
 <div class="faq-section">
@@ -2333,53 +2051,6 @@ left: 0;
 
 </script>
 
-    <script>
-        function changeContent() {
-            var contentList = [
-                {
-                    heading: "LUXURY ACRES",
-                    text: "We are thrilled to announce the successful completion of our latest project: the launch of our new real estate website! After months of meticulous planning, designing, and development, we're proud to unveil a user-friendly platform tailored to meet all your real estate needs. Our website offers a seamless experience, empowering you to explore properties, access detailed listings, and connect with our team of expert agents effortlessly",
-                    imageUrl: "{% static 'img/laanim.webp' %}",
-                    textClient: "LUXURY ACRES"
-
-                },
-                {
-                    heading: "CHRONO CORP",
-                    text: "We are delighted to announce the launch of our newest endeavor: a luxury watch website that sets a new standard in elegance and sophistication. After meticulous attention to detail and an unwavering commitment to excellence, we are proud to present a digital sanctuary for horology enthusiasts and aficionados alike. Our website is a testament to the timeless allure of luxury timepieces, offering a curated collection from the world's most renowned watchmakers",
-                    imageUrl: "{% static 'img/ccanim.jpg' %}",
-                    textClient: "CHRONOCORP"
-                },
-                {
-                    heading: "KIF REALTY",
-                    text: "With meticulous planning and innovative design, we've crafted a platform that seamlessly connects buyers, sellers, and renters with their dream properties. Our website offers an immersive journey into the world of real estate, featuring intuitive search functionalities, comprehensive property listings, and dynamic visualization tools. Whether you're in search of a cozy urban apartment, a sprawling countryside estate, or a lucrative investment opportunity, our website caters to every need and aspiration.",
-                    imageUrl: "{% static 'img/kifanim.webp' %}",
-                    textClient: "KIF REALTY"
-                },
-                {
-                    heading: "YOUNG & RIGHT",
-                    text: "Through careful planning and creative design, we've developed a platform that effortlessly links buyers, sellers, and renters with their ideal properties. Our website provides an immersive experience into the realm of real estate, offering user-friendly search options, extensive property listings, and interactive visualization tools. Whether you seek a snug city apartment, a vast rural estate, or a promising investment venture, our platform caters to all desires and ambitions.",
-                    imageUrl: "{% static 'img/yranim.webp' %}",
-                    textClient: "YOUNG & RIGHT"
-                }
-            ];
-
-            var currentIndex = 0;
-
-            function updateContent() {
-                document.getElementById("dynamicHeading").textContent = contentList[currentIndex].heading;
-                document.getElementById("dynamicText").textContent = contentList[currentIndex].text;
-                document.getElementById("dynamicTextclient").textContent = contentList[currentIndex].textClient;
-                document.getElementById("dynamicImage").src = contentList[currentIndex].imageUrl;
-                currentIndex = (currentIndex + 1) % contentList.length; // Loop through the contentList
-            }
-
-            updateContent();
-
-            setInterval(updateContent, 3000); // Change content every 5 seconds
-        }
-
-        window.onload = changeContent;
-    </script>
 <script>
     function submitFormmobile(event) {
         event.preventDefault();

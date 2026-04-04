@@ -133,6 +133,7 @@ class TeamModel(models.Model):
         ('Content Writer', 'Content Writer'),
         ('Sales Executive', 'Sales Executive'),
         ('Admin', 'Admin'),
+        ('Manager', 'Manager'),  # New addition
     ]
     designation=models.CharField(max_length=200,choices=POST_CHOICES)
     profileimage=models.ImageField(upload_to='images')
