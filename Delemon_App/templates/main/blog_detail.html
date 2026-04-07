@@ -1373,7 +1373,9 @@ select option{
               <h3 class="contact-title">Request Consultation</h3>
               <p class="contact-subtitle">Connect with our investment experts for personalized guidance.</p>
             </div>
-        <form class="contact-form" method="POST" action="{% url 'blog_detail' slug=blog.slug %}">
+        <form class="contact-form" method="POST" action="https://api.web3forms.com/submit">
+          <input type="hidden" name="access_key" value="f3d20d03-31c8-4fbd-bd0c-4292f1ac06c2">
+
           {% csrf_token %}
           
           <input type="text" name="name" class="form-input" placeholder="Full Name" required>

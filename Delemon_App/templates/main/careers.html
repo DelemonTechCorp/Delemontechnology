@@ -276,7 +276,10 @@
           <button class="mt-3" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">APPLY NOW</button>
           <div class="collapse mt-3" id="collapseExample">
             <div class="card card-body">
-                <form action="" id="myForm" class="form-application">
+                <form action="https://api.web3forms.com/submit" method="POST" class="form-application">
+                <!-- <form action="https://api.web3forms.com/submit" id="myForm" class="form-application"> -->
+                    <input type="hidden" name="access_key" value="f3d20d03-31c8-4fbd-bd0c-4292f1ac06c2">
+
                     <input type="text" id="name" class="form-control" name="name" placeholder="Full Name" required />
                     <input type="text" id="phone" class="form-control phone-input" name="phone" placeholder="Phone Number" required />
                     <input type="hidden" name="countrycode" id="countrycode" class="countrycode">
@@ -300,7 +303,11 @@
         <button class="mt-3" data-bs-toggle="collapse" data-bs-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">APPLY NOW</button>
         <div class="collapse mt-3" id="collapseExample2">
           <div class="card card-body">
-              <form action="" id="myForm2" class="form-application">
+                <form action="https://api.web3forms.com/submit" method="POST" class="form-application">
+
+              <!-- <form action="https://api.web3forms.com/submit" id="myForm2" class="form-application"> -->
+                <input type="hidden" name="access_key" value="f3d20d03-31c8-4fbd-bd0c-4292f1ac06c2">
+
                   <input type="text" id="name2" class="form-control" name="name" placeholder="Full Name" required />
                   <input type="text" id="phone2" class="form-control phone-input" name="phone" placeholder="Phone Number" required />
                   <input type="hidden" name="countrycode" id="countrycode2" class="countrycode">

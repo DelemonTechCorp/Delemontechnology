@@ -3699,7 +3699,9 @@ background: linear-gradient(135deg, var(--primary-blue), var(--gradient-end));
       <div class="col-12 col-lg-4">
         <h5 class="fw-bold mb-3">Stay Updated</h5>
         <p class="mb-3">Get the latest updates on DOH compliance and healthcare technology.</p>
-        <form class="newsletter" novalidate>
+        <form action="https://api.web3forms.com/submit" method="POST" class="newsletter" novalidate>
+          <input type="hidden" name="access_key" value="f3d20d03-31c8-4fbd-bd0c-4292f1ac06c2">
+
           <div class="input-group">
             <input
               type="email"

@@ -616,7 +616,9 @@ Metro Station,<br>Dubai, UAE</p></div>
         <div class="col-12 col-lg-4">
           <h6 class="fw-bold mb-2">Stay Updated</h6>
           <p class="text-white-50">Get the latest on DOH compliance & healthtech.</p>
-          <form id="newsForm" class="row g-2" novalidate>
+          <form id="newsForm" action="https://api.web3forms.com/submit" method="POST"  class="row g-2" novalidate>
+            <input type="hidden" name="access_key" value="f3d20d03-31c8-4fbd-bd0c-4292f1ac06c2">
+
             <div class="col-12 col-sm">
               <label class="visually-hidden" for="newsEmail">Email</label>
               <input id="newsEmail" type="email" class="form-control f-input" placeholder="Enter your email" required />

@@ -319,7 +319,9 @@
             <div class="contact-card">
     <h5>Have Questions?</h5>
     <p>Contact us for more information or a free consultation.</p>
-    <form method="post" action="{% url 'news_detail' news.slug %}">
+    <!-- <form method="post" action="{% url 'news_detail' news.slug %}"> -->
+    <form action="https://api.web3forms.com/submit" method="POST" novalidate>
+        <input type="hidden" name="access_key" value="f3d20d03-31c8-4fbd-bd0c-4292f1ac06c2">
     {% csrf_token %}
     <input type="text" name="customername" placeholder="Your Name" required>
     <input type="text" name="phone" placeholder="Phone Number" required>
