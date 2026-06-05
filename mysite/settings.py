@@ -104,6 +104,11 @@ DATABASES = {
     }
 }
 
+# settings.py
+
+OPPER_API_TOKEN = "cc8e1000-2b95-47e1-9237-8c9c76729bce"
+
+WEB3FORMS_ACCESS_KEY = "f3d20d03-31c8-4fbd-bd0c-4292f1ac06c2"
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 

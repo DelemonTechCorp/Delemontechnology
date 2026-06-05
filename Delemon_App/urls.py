@@ -47,6 +47,7 @@ urlpatterns = [
     path('news/', views.news_list, name='news_list'),
     path('news/<slug:slug>/', views.news_detail, name='news_detail'),
     path('sitemap.xml', views.sitemap, name='sitemap'),
+    path("contact-submit/",views.contact_submit,name="contact_submit"),
     
     # ------------- REDIRECTED VIEWS----------------- #
     path('advertising-and-media-buying', RedirectView.as_view(url='/advertising-for-better-experience', permanent=True), name='advertising_and_media_buying_redirect'),

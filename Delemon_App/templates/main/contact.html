@@ -325,28 +325,51 @@
 
             <div class="form-section">
                 <h5>Contact Us</h5>
-            <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" onsubmit="return validatecontact(event)">
-                <input type="hidden" name="access_key" value="f3d20d03-31c8-4fbd-bd0c-4292f1ac06c2">
-                <input type="hidden" name="subject" value="Contact Request From Delemon Website">
+            <form id="contact-form" method="POST" action="/contact-submit/">
+                {% csrf_token %}
+
                 <input type="hidden" id="countryCode" name="CountryCode">
 
                 <div>
-                    <input type="text" class="form-control" id="name" name="Name" placeholder="Your Name">
-                    <p class="error-message" id="name-error"></p>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="name"
+                        name="Name"
+                        placeholder="Your Name"
+                        required
+                    >
                 </div>
 
                 <div>
-                    <input type="email" class="form-control" id="email" name="Email" placeholder="Email">
-                    <p class="error-message" id="email-error"></p>
-                </div>
-
-                <div style="width:100%;">
-                    <input type="tel" class="form-control" id="phone" name="PhoneNumber" placeholder="Phone No">
-                    <p class="error-message" id="phone-error"></p>
+                    <input
+                        type="email"
+                        class="form-control"
+                        id="email"
+                        name="Email"
+                        placeholder="Email"
+                        required
+                    >
                 </div>
 
                 <div>
-                    <textarea class="form-control" id="message" name="Message" placeholder="I want to know more"></textarea>
+                    <input
+                        type="tel"
+                        class="form-control"
+                        id="phone"
+                        name="PhoneNumber"
+                        placeholder="Phone No"
+                        required
+                    >
+                </div>
+
+                <div>
+                    <textarea
+                        class="form-control"
+                        id="message"
+                        name="Message"
+                        placeholder="I want to know more"
+                    ></textarea>
                 </div>
 
                 <div class="mt-4">

@@ -1001,51 +1001,84 @@ a{
         </div>
         <div class="modal-body p-5">
             <p class="mb-5 text-center">If you have any requirement please share with us at <span style="color: #FAB206;">sales@delemontechnology.com</span> or simply send us your inquiry by filling out the form below.</p>
-          <form class="free-quote-form" id="contact-form-mobile" action="https://api.web3forms.com/submit" method="POST" onsubmit="return submitFormheader(event)">
-              <input type="hidden" name="access_key" value="f3d20d03-31c8-4fbd-bd0c-4292f1ac06c2">
-                <input type="hidden" name="subject" id="" value="Free Quote Request From Delemon Website">
-       <div class="row mb-5">
-        <div class="col">
-            <div class="d-flex flex-column">
-            <label for="">Name</label>
-            <input type="text" id="fullname" name="name" placeholder="Enter Name" required>
-        </div>
-    </div>
-    <div class="col">
-        <div class="d-flex flex-column">
-        <label for="">Inquiring about</label>
-        <select name="Enquiry" id="enquiryid">
-            <option value="Digital Marketing">Digital Marketing</option>
-            <option value="Social Media Marketing">Social Media Marketing</option>
-            <option value="Web Design & Development">Web Design & Development</option>
-        </select>
-    </div>
-</div>
-       </div>
-       <div class="row mb-5">
-        <div class="col">
-            <div class="d-flex flex-column">
-            <label for="">Email</label>
-            <input type="text" id="emailid" name="email" placeholder="Enter Email" required>
-        </div>
-    </div>
-    <div class="col">
-        <div class="d-flex flex-column">
-        <label for="">Phone</label>
-        <input type="text" id="companyname" name="phone" placeholder="Enter Phone" required>
-    </div>
-</div>
-       </div>
-       <div class="row mb-4">
-        <div class="col">
-            <div class="d-flex flex-column">
-            <label for="">Company Name</label>
-            <input type="text" id="" name="company" placeholder="Enter company name">
-        </div>
-    </div>
-       </div>
-       <button type="submit">SUBMIT</button>
-          </form>
+         <form
+            class="free-quote-form"
+            id="contact-form-mobile"
+            action="/contact-submit/"
+            method="POST"
+            onsubmit="return submitFormheader(event)"
+        >
+            {% csrf_token %}
+
+            <div class="row mb-5">
+                <div class="col">
+                    <div class="d-flex flex-column">
+                        <label>Name</label>
+                        <input
+                            type="text"
+                            id="fullname"
+                            name="name"
+                            placeholder="Enter Name"
+                            required
+                        >
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="d-flex flex-column">
+                        <label>Inquiring about</label>
+                        <select name="service" id="enquiryid">
+                            <option value="Digital Marketing">Digital Marketing</option>
+                            <option value="Social Media Marketing">Social Media Marketing</option>
+                            <option value="Web Design & Development">Web Design & Development</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-5">
+                <div class="col">
+                    <div class="d-flex flex-column">
+                        <label>Email</label>
+                        <input
+                            type="email"
+                            id="emailid"
+                            name="email"
+                            placeholder="Enter Email"
+                            required
+                        >
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="d-flex flex-column">
+                        <label>Phone</label>
+                        <input
+                            type="text"
+                            id="companyname"
+                            name="phone"
+                            placeholder="Enter Phone"
+                            required
+                        >
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-4">
+                <div class="col">
+                    <div class="d-flex flex-column">
+                        <label>Company Name</label>
+                        <input
+                            type="text"
+                            name="company"
+                            placeholder="Enter company name"
+                        >
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit">SUBMIT</button>
+        </form>
         </div>
       </div>
     </div>

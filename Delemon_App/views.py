@@ -5,6 +5,9 @@ import logging
 from django.contrib import messages
 from django.core.mail import send_mail
 from django.conf import settings
+import requests
+from django.http import JsonResponse
+from django.views.decorators.http import require_POST
 # Create your views here.
 
 def base(request):
@@ -526,3 +529,79 @@ def sitemap(request):
 
 
 
+@require_POST
+def contact_submit(request):
+
+    name = request.POST.get("Name") or request.POST.get("name")
+    email = request.POST.get("Email") or request.POST.get("email")
+    phone = request.POST.get("PhoneNumber") or request.POST.get("phone")
+    company = request.POST.get("company")
+    service = request.POST.get("service") or request.POST.get("Enquiry")
+
+    try:
+
+        # ------------------------
+        # Save to Database
+        # ------------------------
+        contact = ContactRequest.objects.create(
+            name=name,
+            email=email,
+            mobile=phone,
+            company=company,
+            service=service,
+        )
+        full_name = name.strip().split(" ", 1)
+
+        first_name = full_name[0]
+        last_name = full_name[1] if len(full_name) > 1 else ""
+        # ------------------------
+        # Send to Opper API
+        # ------------------------
+        opper_payload = {
+            "api_token": "cc8e1000-2b95-47e1-9237-8c9c76729bce",
+            "first_name": first_name,
+            "last_name": last_name,
+            "email": email,
+            "phone": phone,
+            "message": f"Service: {service}\nCompany: {company or ''}"
+        }
+
+        opper_response = requests.post(
+            "https://x-opperp.com/api/v1/integrations/webhooks/website-lead/",
+            json=opper_payload,
+            timeout=15
+        )
+
+        print("Opper Response:", opper_response.text)
+
+        # ------------------------
+        # Send to Web3Forms
+        # ------------------------
+        web3_payload = {
+            "access_key": "f3d20d03-31c8-4fbd-bd0c-4292f1ac06c2",
+            "subject": "Contact Request From Delemon Website",
+            "Name": name,
+            "Email": email,
+            "PhoneNumber": phone,
+            "company": company,
+            "service": service,
+        }
+
+        web3_response = requests.post(
+            "https://api.web3forms.com/submit",
+            data=web3_payload,
+            timeout=15
+        )
+
+        print("Web3Forms Response:", web3_response.text)
+
+        return JsonResponse({
+            "success": True,
+            "message": "Lead submitted successfully"
+        })
+
+    except Exception as e:
+        return JsonResponse({
+            "success": False,
+            "error": str(e)
+        }, status=500)
