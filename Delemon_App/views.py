@@ -532,14 +532,20 @@ def sitemap(request):
 @require_POST
 def contact_submit(request):
 
-    name = request.POST.get("Name") or request.POST.get("name")
-    email = request.POST.get("Email") or request.POST.get("email")
-    phone = request.POST.get("PhoneNumber") or request.POST.get("phone")
-    company = request.POST.get("company")
-    service = request.POST.get("service") or request.POST.get("Enquiry")
+    name = request.POST.get("Name") or request.POST.get("name") or ""
+    email = request.POST.get("Email") or request.POST.get("email") or ""
+    phone = request.POST.get("PhoneNumber") or request.POST.get("phone") or ""
+    company = request.POST.get("company") or ""
+
+    # ✅ FIX: safe fallback for service (prevents NULL crash)
+    service = (
+        request.POST.get("service")
+        or request.POST.get("Enquiry")
+        or request.POST.get("Message")
+        or ""
+    )
 
     try:
-
         # ------------------------
         # Save to Database
         # ------------------------
@@ -548,12 +554,18 @@ def contact_submit(request):
             email=email,
             mobile=phone,
             company=company,
-            service=service,
+            service=service,  # now always safe
         )
-        full_name = name.strip().split(" ", 1)
 
-        first_name = full_name[0]
+        # ------------------------
+        # Safe name parsing
+        # ------------------------
+        clean_name = name.strip() if name else ""
+        full_name = clean_name.split(" ", 1)
+
+        first_name = full_name[0] if len(full_name) > 0 else ""
         last_name = full_name[1] if len(full_name) > 1 else ""
+
         # ------------------------
         # Send to Opper API
         # ------------------------
@@ -563,16 +575,19 @@ def contact_submit(request):
             "last_name": last_name,
             "email": email,
             "phone": phone,
-            "message": f"Service: {service}\nCompany: {company or ''}"
+            "message": f"Service: {service}\nCompany: {company}"
         }
 
-        opper_response = requests.post(
-            "https://x-opperp.com/api/v1/integrations/webhooks/website-lead/",
-            json=opper_payload,
-            timeout=15
-        )
+        try:
+            opper_response = requests.post(
+                "https://x-opperp.com/api/v1/integrations/webhooks/website-lead/",
+                json=opper_payload,
+                timeout=15
+            )
+            print("Opper Response:", opper_response.text)
 
-        print("Opper Response:", opper_response.text)
+        except requests.exceptions.RequestException as e:
+            print("Opper API failed but form continues:", str(e))
 
         # ------------------------
         # Send to Web3Forms
