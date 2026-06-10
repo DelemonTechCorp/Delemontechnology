@@ -216,7 +216,7 @@
             <div class="blog-card">
                 <img src="{{ blog.image.url }}" alt="{{ blog.title }}" class="blog-image">
                 <div class="blog-content">
-                    <!-- <h6>{{ blog.created_at|date:"F j, Y" }}</h6> -->
+                    <h6>{{ blog.created_at|date:"F j, Y" }}</h6>
                     <h3 class="blog-title">{{ blog.title }}</h3>
                     
                     <p class="blog-description">{{ blog.content|striptags|safe|truncatewords:20 }}</p>
