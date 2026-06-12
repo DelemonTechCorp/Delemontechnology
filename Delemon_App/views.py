@@ -612,7 +612,7 @@ def contact_submit(request):
 
         return JsonResponse({
             "success": True,
-            "message": "Lead submitted successfully"
+            "message": "Thank you for contacting us. Our team will get back to you shortly."
         })
 
     except Exception as e:
