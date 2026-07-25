@@ -593,7 +593,7 @@ def contact_submit(request):
         # Send to Web3Forms
         # ------------------------
         web3_payload = {
-            "access_key": "f3d20d03-31c8-4fbd-bd0c-4292f1ac06c2",
+            "access_key": "816a78b3-9e8c-432c-af11-c2d79b0abd52",
             "subject": "Contact Request From Delemon Website",
             "Name": name,
             "Email": email,
@@ -604,9 +604,16 @@ def contact_submit(request):
 
         web3_response = requests.post(
             "https://api.web3forms.com/submit",
-            data=web3_payload,
+            json=web3_payload,
             timeout=15
         )
+
+        # Add these two lines to catch silent failures
+        print("Web3Forms Status:", web3_response.status_code)
+        print("Web3Forms Response:", web3_response.text)
+
+        if web3_response.status_code != 200:
+            print("Web3Forms ERROR:", web3_response.text)
 
         print("Web3Forms Response:", web3_response.text)
 
