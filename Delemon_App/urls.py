@@ -8,6 +8,7 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('robots', views.robots_txt, name="robots_txt"),
     path('homenew', views.homenew, name='homenew'),
+    path('lead_generation', views.lead_generation, name='lead_generation'),
     path('landingservice', views.landingservice, name='landingservice'),
     path('privacy-policy-digital-services', views.privacy, name='privacy'),
     path('terms-and-conditions-digital-marketing', views.terms, name='terms'),

@@ -53,6 +53,8 @@ def digital(request):
 def web(request):
     return render(request, 'main/web.html')
 
+def lead_generation(request):
+    return render(request, 'main/lead_generation.html')
 # def team(request):
 #     team_members = TeamModel.objects.all()
 

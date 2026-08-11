@@ -578,20 +578,22 @@ a{
     /* ==== MULTI-LEVEL (dropdown-multiple) ==== */
 .dropdown-multiple {
   position: relative;
-  border-radius:70px;
+  border-radius: 70px;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .dropdown-content-multiple{
   display: none;
   position: absolute;
   top: 100%;
-  left: 0;              /* align under the SERVICES link */
+  left: 0;
   background-image: linear-gradient(to right, #ffffffff, #ffffffff, #ffffffff, #ffffffff, #ffffffff);
   box-shadow: 0 8px 16px rgba(0,0,0,.2);
   z-index: 9999;
-  margin-top: 10px;
-  padding: 6px;         /* inner gutter around the white list */
-  
+  margin-top: 0;              /* was 10px — this created the dead zone */
+  padding: 16px 6px 6px 6px;  /* extra top padding replaces the visual gap, but stays inside the hover box */
 }
 
 /* the white vertical list */

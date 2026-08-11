@@ -1,0 +1,2036 @@
+<!doctype html>
+<html lang="en">
+    {% load static %}
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Delemon Technology - UAE Real Estate Lead Generation</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<style>
+/* ============================================
+   Delemon Technology - Email Template Styles
+   Note: Email clients have very limited CSS support.
+   For actual email sending, these styles should be
+   inlined back into the HTML using an inliner tool.
+   ============================================ */
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #eef2f5;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #10263a;
+}
+
+img {
+    max-width: 100%;
+}
+
+.email-wrapper {
+    background: #eef2f5;
+}
+
+.email-wrapper-cell {
+    padding: 18px 7px;
+}
+
+.email-container {
+    width: 100%;
+    max-width: 1200px;
+    background: #fff;
+}
+
+/* Header */
+.hero-cell {
+    background: #071d2e;
+    padding: 36px 32px 40px;
+    color: #fff;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.logo-accent {
+    color: #f2b84b;
+}
+
+.logo-subtitle {
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: #9fb4c4;
+    padding-left: 40px;
+}
+
+.hero-eyebrow {
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #f2b84b;
+    margin-top: 30px;
+}
+
+.hero-title {
+    font-size: 38px;
+    line-height: 44px;
+    margin: 12px 0;
+    color: #fff;
+}
+
+.gold-text {
+    color: #f2b84b;
+}
+
+.hero-desc {
+    font-size: 16px;
+    line-height: 26px;
+    color: #d8e3ea;
+    margin: 0;
+}
+
+.cta-wrapper {
+    margin: 27px 0 0;
+}
+
+.cta-button {
+    background: #f2b84b;
+    color: #071d2e;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 14px 21px;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+/* Stats bar */
+.stats-wrapper-cell {
+    padding: 18px 20px;
+}
+
+.stats-table {
+    width: 100%;
+    background: #09243a;
+    color: #fff;
+}
+
+.stat-cell {
+    padding: 17px 4px;
+    border-right: 1px solid #3b5264;
+}
+
+.stat-cell-last {
+    padding: 17px 4px;
+}
+
+.stat-value-lg {
+    font-size: 21px;
+    color: #f2b84b;
+}
+
+.stat-value-md {
+    font-size: 17px;
+    color: #f2b84b;
+}
+
+.stat-label {
+    font-size: 10px;
+}
+
+/* Section header */
+.section-header-cell {
+    padding: 27px 28px 15px;
+}
+
+.section-eyebrow {
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #d59d2e;
+}
+
+.section-title {
+    font-size: 28px;
+    line-height: 34px;
+    margin: 9px 0;
+    color: #10263a;
+}
+
+.section-desc {
+    font-size: 13px;
+    line-height: 21px;
+    color: #687b8c;
+    margin: 0;
+}
+
+/* Campaign cards - 3 per row grid */
+.campaign-row-cell {
+    padding: 9px 18px;
+}
+
+.campaign-grid-table {
+    width: 100%;
+}
+
+.campaign-col {
+    width: 33.33%;
+    vertical-align: top;
+    padding: 6px;
+}
+
+.campaign-card {
+    width: 100%;
+    border: 1px solid #dce4eb;
+    background: #fff;
+}
+
+.campaign-image-cell {
+    background: #071d2e;
+    padding: 10px;
+    text-align: center;
+}
+
+.campaign-image {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: 30vh;
+    border: 0;
+    margin: 0 auto;
+}
+
+.campaign-content-cell {
+    padding: 14px;
+}
+
+.campaign-tag {
+    font-size: 9px;
+    line-height: 13px;
+    letter-spacing: 1.5px;
+    color: #748594;
+    font-weight: bold;
+}
+
+.campaign-title {
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: bold;
+    color: #10263a;
+    margin: 5px 0 10px;
+}
+
+.campaign-metric-value {
+    font-size: 21px;
+    line-height: 25px;
+    font-weight: bold;
+    color: #10263a;
+}
+
+.campaign-metric-label {
+    font-size: 10px;
+    line-height: 14px;
+    color: #687b8c;
+}
+
+.campaign-cpl-value {
+    font-size: 17px;
+    line-height: 21px;
+    font-weight: bold;
+    color: #d59d2e;
+    margin-top: 8px;
+}
+
+.campaign-spent {
+    font-size: 10px;
+    line-height: 14px;
+    color: #687b8c;
+    margin-top: 6px;
+}
+
+/* Summary stats */
+.summary-wrapper-cell {
+    padding: 30px;
+}
+
+.summary-table {
+    width: 100%;
+    background: #f5f8fa;
+}
+
+.summary-cell {
+    padding: 26px;
+}
+
+.summary-value {
+    font-size: 34px;
+    font-weight: bold;
+    color: #d59d2e;
+}
+
+.summary-label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #10263a;
+}
+
+.summary-desc {
+    font-size: 12px;
+    line-height: 20px;
+    color: #687b8c;
+    margin: 9px 0 0;
+}
+
+/* Why choose us section */
+.why-cell {
+    background: #071d2e;
+    padding: 36px 24px;
+}
+
+.why-eyebrow {
+    text-align: center;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #f2b84b;
+}
+
+.why-title {
+    text-align: center;
+    color: #fff;
+    font-size: 27px;
+    line-height: 32px;
+    margin: 9px 0 25px;
+}
+
+.why-table {
+    width: 100%;
+}
+
+.why-card-cell {
+    width: 50%;
+    vertical-align: top;
+    padding: 7px;
+}
+
+.why-card {
+    border: 1px solid #304759;
+    padding: 17px;
+}
+
+.why-card-number {
+    color: #f2b84b;
+    font-size: 12px;
+}
+
+.why-card-title {
+    color: #fff;
+    font-size: 17px;
+    margin: 8px 0;
+}
+
+.why-card-desc {
+    color: #a9bdcb;
+    font-size: 11px;
+    line-height: 18px;
+    margin: 0;
+}
+
+/* Final CTA section */
+.cta-section-cell {
+    background: #0c3452;
+    padding: 38px 24px;
+}
+
+.cta-section-eyebrow {
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #f2b84b;
+}
+
+.cta-section-title {
+    color: #fff;
+    font-size: 28px;
+    line-height: 34px;
+    margin: 9px 0;
+}
+
+.cta-section-desc {
+    color: #c0d0da;
+    font-size: 13px;
+    line-height: 21px;
+    margin: 0 0 22px;
+}
+
+.cta-button-final {
+    display: inline-block;
+    background: #f2b84b;
+    color: #071d2e;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 15px 23px;
+    border-radius: 6px;
+}
+
+/* Footer */
+.footer-cell {
+    background: #061725;
+    padding: 24px;
+    color: #8da4b4;
+}
+
+.footer-brand {
+    font-size: 19px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.footer-tagline {
+    font-size: 9px;
+    letter-spacing: 2px;
+    margin-top: 4px;
+}
+
+.footer-contact {
+    font-size: 10px;
+    margin-top: 12px;
+}
+
+/* Unsubscribe */
+.unsubscribe-cell {
+    padding: 14px;
+    background: #eef2f5;
+    color: #7c8c98;
+    font-size: 10px;
+}
+
+.unsubscribe-link {
+    color: #536b7c;
+}
+/* =========================================
+   FLOATING CONTACT BUTTONS
+   ========================================= */
+.floating-contact-buttons {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    z-index: 99999;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.floating-contact-buttons a {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    text-decoration: none;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+
+    transition: transform 0.3s ease;
+}
+
+.floating-contact-buttons a:hover {
+    transform: scale(1.1);
+}
+
+.floating-whatsapp {
+    background: #25D366;
+}
+
+.floating-call {
+    background: #f2b84b;
+}
+
+.floating-contact-buttons img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+@media (max-width: 600px) {
+    .floating-contact-buttons {
+        right: 15px;
+        bottom: 15px;
+        gap: 10px;
+    }
+
+    .floating-contact-buttons a {
+        width: 50px;
+        height: 50px;
+    }
+
+    .floating-contact-buttons img {
+        width: 25px;
+        height: 25px;
+    }
+}
+/* ============================================
+   MOBILE RESPONSIVE STYLES
+   ============================================ */
+
+@media only screen and (max-width: 600px) {
+
+    /* Main email wrapper */
+    body {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .email-wrapper {
+        width: 100% !important;
+    }
+
+    .email-wrapper-cell {
+        padding: 0 !important;
+    }
+
+    .email-container {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+
+    /* =========================================
+       HERO
+       ========================================= */
+
+    .hero-cell {
+        padding: 25px 20px 30px !important;
+    }
+
+    .logo {
+        font-size: 21px !important;
+    }
+
+    .logo-subtitle {
+        font-size: 8px !important;
+        letter-spacing: 2px !important;
+        padding-left: 32px !important;
+    }
+
+    .hero-eyebrow {
+        font-size: 10px !important;
+        line-height: 15px !important;
+        letter-spacing: 1.5px !important;
+        margin-top: 24px !important;
+    }
+
+    .hero-title {
+        font-size: 28px !important;
+        line-height: 35px !important;
+        margin: 10px 0 !important;
+    }
+
+    .hero-desc {
+        font-size: 14px !important;
+        line-height: 22px !important;
+    }
+
+    .cta-wrapper {
+        margin-top: 22px !important;
+    }
+
+    .cta-button {
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        text-align: center !important;
+        padding: 14px 10px !important;
+    }
+
+
+    /* =========================================
+       STATS
+       ========================================= */
+
+    .stats-wrapper-cell {
+        padding: 12px !important;
+    }
+
+    .stats-table {
+        width: 100% !important;
+    }
+
+    .stat-cell,
+    .stat-cell-last {
+        padding: 13px 3px !important;
+    }
+
+    .stat-value-lg {
+        font-size: 17px !important;
+    }
+
+    .stat-value-md {
+        font-size: 13px !important;
+        line-height: 18px !important;
+    }
+
+    .stat-label {
+        font-size: 8px !important;
+        line-height: 12px !important;
+    }
+
+
+    /* =========================================
+       SECTION HEADERS
+       ========================================= */
+
+    .section-header-cell {
+        padding: 25px 18px 12px !important;
+    }
+
+    .section-eyebrow {
+        font-size: 9px !important;
+        letter-spacing: 1.5px !important;
+    }
+
+    .section-title {
+        font-size: 23px !important;
+        line-height: 29px !important;
+    }
+
+    .section-desc {
+        font-size: 12px !important;
+        line-height: 19px !important;
+    }
+
+
+    /* =========================================
+       CAMPAIGN GRID
+       Stack 3 columns into 1 column
+       ========================================= */
+
+    .campaign-row-cell {
+        padding: 5px 12px !important;
+    }
+
+    .campaign-grid-table {
+        width: 100% !important;
+    }
+
+    .campaign-col {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 6px 0 !important;
+    }
+
+    .campaign-card {
+        width: 100% !important;
+    }
+
+    .campaign-image-cell {
+        padding: 8px !important;
+    }
+
+    .campaign-image {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        max-height: none !important;
+    }
+
+    .campaign-content-cell {
+        padding: 14px !important;
+    }
+
+    .campaign-title {
+        font-size: 15px !important;
+        line-height: 20px !important;
+    }
+
+    .campaign-metric-value {
+        font-size: 22px !important;
+    }
+
+
+    /* =========================================
+       SUMMARY
+       ========================================= */
+
+    .summary-wrapper-cell {
+        padding: 20px 12px !important;
+    }
+
+    .summary-cell {
+        padding: 22px 15px !important;
+    }
+
+    .summary-value {
+        font-size: 30px !important;
+    }
+
+    .summary-label {
+        font-size: 12px !important;
+        line-height: 17px !important;
+    }
+
+    .summary-desc {
+        font-size: 11px !important;
+        line-height: 18px !important;
+    }
+
+
+    /* =========================================
+       GOOGLE SEARCH CONSOLE
+       Stack 3 columns into 1 column
+       ========================================= */
+
+    .gsc-section,
+    .gsc-section > table {
+        width: 100% !important;
+    }
+
+    /* Stack the 3-across result/review cards into 1 column on mobile */
+    .gsc-section td[width="33.33%"],
+    .testimonial-section td[width="33.33%"] {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 6px 0 !important;
+    }
+
+
+    /* =========================================
+       GOOGLE SEARCH CONSOLE IMAGE
+       ========================================= */
+
+    td[style*="background:#071d2e"] img {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        max-height: none !important;
+    }
+
+
+    /* =========================================
+       WHY CHOOSE US
+       ========================================= */
+
+    .why-cell {
+        padding: 30px 14px !important;
+    }
+
+    .why-eyebrow {
+        font-size: 9px !important;
+        letter-spacing: 1.5px !important;
+    }
+
+    .why-title {
+        font-size: 23px !important;
+        line-height: 29px !important;
+        margin-bottom: 18px !important;
+    }
+
+    .why-card-cell {
+        display: block !important;
+        width: 100% !important;
+        padding: 5px 0 !important;
+    }
+
+    .why-card {
+        padding: 15px !important;
+    }
+
+    .why-card-title {
+        font-size: 16px !important;
+    }
+
+    .why-card-desc {
+        font-size: 11px !important;
+        line-height: 18px !important;
+    }
+
+
+    /* =========================================
+       TESTIMONIALS
+       ========================================= */
+
+    .testimonial-section {
+        padding: 30px 20px !important;
+    }
+
+
+    /* =========================================
+       FINAL CTA
+       ========================================= */
+
+    .cta-section-cell {
+        padding: 30px 20px !important;
+    }
+
+    .cta-section-eyebrow {
+        font-size: 9px !important;
+        letter-spacing: 1.5px !important;
+    }
+
+    .cta-section-title {
+        font-size: 24px !important;
+        line-height: 30px !important;
+    }
+
+    .cta-section-desc {
+        font-size: 12px !important;
+        line-height: 19px !important;
+    }
+
+    .cta-button-final {
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        text-align: center !important;
+        padding: 14px 10px !important;
+    }
+
+
+    /* =========================================
+       FOOTER
+       ========================================= */
+
+    .footer-cell {
+        padding: 22px 15px !important;
+    }
+
+    .footer-brand {
+        font-size: 17px !important;
+    }
+
+    .footer-tagline {
+        font-size: 8px !important;
+        letter-spacing: 1.5px !important;
+    }
+
+    .footer-contact {
+        font-size: 9px !important;
+        line-height: 17px !important;
+        word-break: break-word !important;
+    }
+
+
+    /* =========================================
+       FLOATING BUTTONS
+       ========================================= */
+
+    .floating-contact-buttons {
+        right: 12px !important;
+        bottom: 12px !important;
+        gap: 8px !important;
+    }
+
+    .floating-contact-buttons a {
+        width: 46px !important;
+        height: 46px !important;
+    }
+
+    .floating-contact-buttons img {
+        width: 23px !important;
+        height: 23px !important;
+    }
+}
+
+/* =========================================
+   EXTRA-SMALL PHONES (<=420px)
+   Break the 4-across stat bar into a 2x2 grid
+   so numbers/labels aren't squeezed unreadably.
+   ========================================= */
+@media only screen and (max-width: 420px) {
+
+    .stats-table,
+    .stats-table tr {
+        display: block !important;
+        width: 100% !important;
+    }
+
+    .stat-cell,
+    .stat-cell-last {
+        display: inline-block !important;
+        width: 50% !important;
+        box-sizing: border-box !important;
+        border-right: none !important;
+        border-bottom: 1px solid #3b5264 !important;
+        padding: 14px 6px !important;
+    }
+
+    .gsc-section > table td[align="center"] > div:nth-child(2),
+    .cta-section-title,
+    .section-title {
+        word-break: break-word !important;
+    }
+}
+</style>
+<body>
+<center style="width:100%;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="email-wrapper">
+<tr><td align="center" class="email-wrapper-cell">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="email-container">
+
+<tr><td class="hero-cell">
+<div class="logo">
+  <img src="{% static 'img/logo.jpg' %}"
+       alt="D"
+       width="30"
+       style="display:inline-block;vertical-align:middle;border:0;height:auto;">
+  <span style="vertical-align:middle;"> DELEMON</span>
+</div>
+
+<div class="logo-subtitle">TECHNOLOGY</div>
+<div class="hero-eyebrow">UAE REAL ESTATE LEAD GENERATION COMPANY</div>
+<h1 class="hero-title">Generate <span class="gold-text">1,000+ high-quality</span> real estate leads.</h1>
+<p class="hero-desc">Generate high-quality real estate leads from the <b class="gold-text">GCC, UK, USA, Canada, Australia, Europe, India</b> and other international markets through our data-driven digital marketing strategies.</p>
+<p class="cta-wrapper">
+ <a href="https://wa.me/971503482299?text=Hello%20Delemon%20Technology%2C%20I%27m%20interested%20in%20your%20real%20estate%20lead%20generation%20services.%20I%27d%20like%20to%20book%20a%20free%20consultation."
+       class="cta-button">
+        BOOK A FREE CONSULTATION →
+    </a></p>
+</td></tr>
+
+<tr><td class="stats-wrapper-cell">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="stats-table">
+<tr>
+<td align="center" width="25%" class="stat-cell"><b class="stat-value-lg">1,000+</b><br><span class="stat-label">High-Quality Leads</span></td>
+<td align="center" width="25%" class="stat-cell"><b class="stat-value-md">GCC + Global</b><br><span class="stat-label">International Markets</span></td>
+<td align="center" width="25%" class="stat-cell"><b class="stat-value-md">Lower CPL</b><br><span class="stat-label">Optimised Campaigns</span></td>
+<td align="center" width="25%" class="stat-cell-last"><b class="stat-value-md">Real Estate</b><br><span class="stat-label">Lead Generation</span></td>
+</tr>
+</table>
+</td></tr>
+
+<tr><td align="center" class="section-header-cell">
+<div class="section-eyebrow">PROVEN CAMPAIGN RESULTS</div>
+<h2 class="section-title">Real leads. Real campaigns. Measurable results.</h2>
+<p class="section-desc">Here is a snapshot of our recent real estate lead generation campaigns.</p>
+</td></tr>
+
+
+<tr><td class="campaign-row-cell">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="campaign-grid-table">
+<tr>
+
+<td width="33.33%" valign="top" class="campaign-col">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="campaign-card">
+<tr><td class="campaign-image-cell">
+<img src="{% static 'img/usa-campaign.jpeg' %}" alt="USA Campaign – Tahseen 09-06-2026" width="260"  class="campaign-image">
+</td></tr>
+<tr><td class="campaign-content-cell">
+<div class="campaign-tag">USA</div>
+<div class="campaign-title">USA Campaign – Tahseen 09-06-2026</div>
+<div class="campaign-metric-value">268</div>
+<div class="campaign-metric-label">LEADS GENERATED</div>
+<div class="campaign-cpl-value">AED 23.85</div>
+<div class="campaign-metric-label">COST PER LEAD</div>
+<div class="campaign-spent">Spent: AED 6,392.67</div>
+</td></tr>
+</table>
+</td>
+
+<td width="33.33%" valign="top" class="campaign-col">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="campaign-card">
+<tr><td class="campaign-image-cell">
+<img src="{% static 'img/damac-collection.jpeg' %}" alt="DAMAC Collection" width="260" class="campaign-image">
+</td></tr>
+<tr><td class="campaign-content-cell">
+<div class="campaign-tag">DAMAC</div>
+<div class="campaign-title">DAMAC Collection</div>
+<div class="campaign-metric-value">255</div>
+<div class="campaign-metric-label">LEADS GENERATED</div>
+<div class="campaign-cpl-value">AED 61.86</div>
+<div class="campaign-metric-label">COST PER LEAD</div>
+<div class="campaign-spent">Spent: AED 15.78K</div>
+</td></tr>
+</table>
+</td>
+
+<td width="33.33%" valign="top" class="campaign-col">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="campaign-card">
+<tr><td class="campaign-image-cell">
+<img src="{% static 'img/india-ayushman.jpeg' %}" alt="India Ayushman Imtiaz static" width="260" class="campaign-image">
+</td></tr>
+<tr><td class="campaign-content-cell">
+<div class="campaign-tag">IMTIAZ</div>
+<div class="campaign-title">India Ayushman Imtiaz static</div>
+<div class="campaign-metric-value">338</div>
+<div class="campaign-metric-label">LEADS GENERATED</div>
+<div class="campaign-cpl-value">AED 11.57</div>
+<div class="campaign-metric-label">COST PER LEAD</div>
+<div class="campaign-spent">Spent: AED 3.91K</div>
+</td></tr>
+</table>
+</td>
+
+</tr>
+</table>
+</td></tr>
+
+<tr><td class="campaign-row-cell">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="campaign-grid-table">
+<tr>
+
+<td width="33.33%" valign="top" class="campaign-col">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="campaign-card">
+<tr><td class="campaign-image-cell">
+<img src="{% static 'img/binghatti-campaign.jpeg' %}" alt="Binghatti" width="260" class="campaign-image">
+</td></tr>
+<tr><td class="campaign-content-cell">
+<div class="campaign-tag">BINGHATTI</div>
+<div class="campaign-title">Binghatti</div>
+<div class="campaign-metric-value">61</div>
+<div class="campaign-metric-label">LEADS GENERATED</div>
+<div class="campaign-cpl-value">AED 110.17</div>
+<div class="campaign-metric-label">COST PER LEAD</div>
+<div class="campaign-spent">Spent: AED 6,720.67</div>
+</td></tr>
+</table>
+</td>
+
+<td width="33.33%" valign="top" class="campaign-col">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="campaign-card">
+<tr><td class="campaign-image-cell">
+<img src="{% static 'img/alef-video.jpeg' %}" alt="Alef video ad 25/06/26" width="260" class="campaign-image">
+</td></tr>
+<tr><td class="campaign-content-cell">
+<div class="campaign-tag">ALEF</div>
+<div class="campaign-title">Alef video ad 25/06/26</div>
+<div class="campaign-metric-value">58</div>
+<div class="campaign-metric-label">LEADS GENERATED</div>
+<div class="campaign-cpl-value">AED 74.87</div>
+<div class="campaign-metric-label">COST PER LEAD</div>
+<div class="campaign-spent">Spent: AED 4,342.27</div>
+</td></tr>
+</table>
+</td>
+
+<td width="33.33%" valign="top" class="campaign-col">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="campaign-card">
+<tr><td class="campaign-image-cell">
+<img src="{% static 'img/almamzar-ad.jpeg' %}" alt="Al mamzar malayalam ad 05/06/26" width="260" class="campaign-image">
+</td></tr>
+<tr><td class="campaign-content-cell">
+<div class="campaign-tag">AL MAMZAR</div>
+<div class="campaign-title">Al mamzar malayalam ad 05/06/26</div>
+<div class="campaign-metric-value">98</div>
+<div class="campaign-metric-label">LEADS GENERATED</div>
+<div class="campaign-cpl-value">AED 61.71</div>
+<div class="campaign-metric-label">COST PER LEAD</div>
+<div class="campaign-spent">Spent: AED 6,047.65</div>
+</td></tr>
+</table>
+</td>
+
+</tr>
+</table>
+</td></tr>
+
+<!-- ==================== THIRD CAMPAIGN ROW ==================== -->
+
+<tr>
+  <td class="campaign-row-cell">
+
+    <table role="presentation"
+           width="100%"
+           cellpadding="0"
+           cellspacing="0"
+           border="0"
+           class="campaign-grid-table">
+
+      <tr>
+
+        <!-- THE PULSE -->
+        <td width="33.33%"
+            valign="top"
+            class="campaign-col">
+
+          <table role="presentation"
+                 width="100%"
+                 cellpadding="0"
+                 cellspacing="0"
+                 border="0"
+                 class="campaign-card">
+
+            <tr>
+              <td class="campaign-image-cell">
+
+                <img
+                  src="{% static 'img/the-pulse.jpeg' %}"
+                  alt="The Pulse ad 20/06/26"
+                  width="260"
+                  class="campaign-image"
+                  style="display:block;width:100%;height:auto;border:0;margin:0 auto;"
+                >
+
+              </td>
+            </tr>
+
+            <tr>
+              <td class="campaign-content-cell">
+
+                <div class="campaign-tag">
+                  THE PULSE
+                </div>
+
+                <div class="campaign-title">
+                  The Pulse ad 20/06/26
+                </div>
+
+                <div class="campaign-metric-value">
+                  16
+                </div>
+
+                <div class="campaign-metric-label">
+                  LEADS GENERATED
+                </div>
+
+                <div class="campaign-cpl-value">
+                  AED 25.77
+                </div>
+
+                <div class="campaign-metric-label">
+                  COST PER LEAD
+                </div>
+
+                <div class="campaign-spent">
+                  Spent: AED 412.28
+                </div>
+
+              </td>
+            </tr>
+
+          </table>
+
+        </td>
+
+
+        <!-- RAW DISTRICT -->
+        <td width="33.33%"
+            valign="top"
+            class="campaign-col">
+
+          <table role="presentation"
+                 width="100%"
+                 cellpadding="0"
+                 cellspacing="0"
+                 border="0"
+                 class="campaign-card">
+
+            <tr>
+              <td class="campaign-image-cell">
+
+                <img
+                  src="{% static 'img/raw-district.jpeg' %}"
+                  alt="Raw District by Imtiaz 19/05/26"
+                  width="260"
+                  class="campaign-image"
+                  style="display:block;width:100%;height:auto;border:0;margin:0 auto;"
+                >
+
+              </td>
+            </tr>
+
+            <tr>
+              <td class="campaign-content-cell">
+
+                <div class="campaign-tag">
+                  IMTIAZ
+                </div>
+
+                <div class="campaign-title">
+                  Raw District by Imtiaz 19/05/26
+                </div>
+
+                <div class="campaign-metric-value">
+                  29
+                </div>
+
+                <div class="campaign-metric-label">
+                  LEADS GENERATED
+                </div>
+
+                <div class="campaign-cpl-value">
+                  AED 20.47
+                </div>
+
+                <div class="campaign-metric-label">
+                  COST PER LEAD
+                </div>
+
+                <div class="campaign-spent">
+                  Spent: AED 593.65
+                </div>
+
+              </td>
+            </tr>
+
+          </table>
+
+        </td>
+
+
+        <!-- GREENZ -->
+        <td width="33.33%"
+            valign="top"
+            class="campaign-col">
+
+          <table role="presentation"
+                 width="100%"
+                 cellpadding="0"
+                 cellspacing="0"
+                 border="0"
+                 class="campaign-card">
+
+            <tr>
+              <td class="campaign-image-cell">
+
+                <img
+                  src="{% static 'img/greenz-danube.jpeg' %}"
+                  alt="Greenz by Danube 12/05/26"
+                  width="260"
+                  class="campaign-image"
+                  style="display:block;width:100%;height:auto;border:0;margin:0 auto;"
+                >
+
+              </td>
+            </tr>
+
+            <tr>
+              <td class="campaign-content-cell">
+
+                <div class="campaign-tag">
+                  DANUBE
+                </div>
+
+                <div class="campaign-title">
+                  Greenz by Danube 12/05/26
+                </div>
+
+                <div class="campaign-metric-value">
+                  55
+                </div>
+
+                <div class="campaign-metric-label">
+                  LEADS GENERATED
+                </div>
+
+                <div class="campaign-cpl-value">
+                  AED 16.40
+                </div>
+
+                <div class="campaign-metric-label">
+                  COST PER LEAD
+                </div>
+
+                <div class="campaign-spent">
+                  Spent: AED 901.83
+                </div>
+
+              </td>
+            </tr>
+
+          </table>
+
+        </td>
+
+      </tr>
+
+    </table>
+
+  </td>
+</tr>
+
+<tr><td class="summary-wrapper-cell">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="summary-table">
+<tr><td align="center" class="summary-cell">
+<div class="summary-value">1,000+</div>
+<div class="summary-label">REAL ESTATE LEADS GENERATED</div>
+<p class="summary-desc">GCC, UK, USA, Canada, Australia, Europe, India &amp; other international markets.</p>
+</td></tr></table>
+</td></tr>
+<!-- ========================================= -->
+<!-- GOOGLE SEARCH CONSOLE RESULTS -->
+<!-- ========================================= -->
+
+<tr>
+  <td class="gsc-section" style="background:#ffffff;padding:40px 20px 35px 20px;">
+
+    <!-- Section Heading -->
+    <table role="presentation"
+           width="100%"
+           cellpadding="0"
+           cellspacing="0"
+           border="0">
+
+      <tr>
+        <td align="center" style="padding-bottom:25px;">
+
+          <div style="font-family:Arial,Helvetica,sans-serif;
+                      font-size:11px;
+                      line-height:16px;
+                      font-weight:bold;
+                      letter-spacing:2px;
+                      color:#d59d2e;
+                      text-transform:uppercase;">
+            GOOGLE SEARCH CONSOLE
+          </div>
+
+          <div style="font-family:Arial,Helvetica,sans-serif;
+                      font-size:28px;
+                      line-height:34px;
+                      font-weight:bold;
+                      color:#10263a;
+                      padding-top:8px;">
+            Our Search Results
+          </div>
+
+          <div style="font-family:Arial,Helvetica,sans-serif;
+                      font-size:13px;
+                      line-height:21px;
+                      color:#687b8c;
+                      padding-top:8px;">
+            Real search performance and organic growth achieved for our clients
+          </div>
+
+        </td>
+      </tr>
+
+    </table>
+
+
+    <!-- Results Cards -->
+    <table role="presentation"
+           width="100%"
+           cellpadding="0"
+           cellspacing="0"
+           border="0">
+
+      <tr>
+
+        <!-- RESULT 1 -->
+        <td width="33.33%"
+            valign="top"
+            style="padding:6px;">
+
+          <table role="presentation"
+                 width="100%"
+                 cellpadding="0"
+                 cellspacing="0"
+                 border="0"
+                 style="border:1px solid #dce4eb;
+                        background:#ffffff;">
+
+            <tr>
+              <td style="padding:8px;
+                         background:#071d2e;">
+
+                <img src="{% static 'img/delemon-sc.jpeg' %}"
+                     alt="Google Search Console Result - Client 1"
+                     width="100%"
+                     style="display:block;
+                            width:100%;
+                            max-width:100%;
+                            height:18vh;
+                            border:0;">
+
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding:16px;">
+
+                <div style="font-family:Arial,Helvetica,sans-serif;
+                            font-size:15px;
+                            line-height:20px;
+                            font-weight:bold;
+                            color:#10263a;">
+                  Delemon Technology
+                </div>
+
+                <div style="font-family:Arial,Helvetica,sans-serif;
+                            font-size:11px;
+                            line-height:17px;
+                            color:#687b8c;
+                            padding-top:5px;">
+                  Google Search Console Results
+                </div>
+
+              </td>
+            </tr>
+
+          </table>
+
+        </td>
+
+
+        <!-- RESULT 2 -->
+        <td width="33.33%"
+            valign="top"
+            style="padding:6px;">
+
+          <table role="presentation"
+                 width="100%"
+                 cellpadding="0"
+                 cellspacing="0"
+                 border="0"
+                 style="border:1px solid #dce4eb;
+                        background:#ffffff;">
+
+            <tr>
+              <td style="padding:8px;
+                         background:#071d2e;">
+
+                <img src="{% static 'img/stride-sc.jpeg' %}"
+                     alt="Google Search Console Result - Client 2"
+                     width="100%"
+                     style="display:block;
+                            width:100%;
+                            max-width:100%;
+                            height:18vh;
+                            border:0;">
+
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding:16px;">
+
+                <div style="font-family:Arial,Helvetica,sans-serif;
+                            font-size:15px;
+                            line-height:20px;
+                            font-weight:bold;
+                            color:#10263a;">
+                  Stride Homes
+                </div>
+
+                <div style="font-family:Arial,Helvetica,sans-serif;
+                            font-size:11px;
+                            line-height:17px;
+                            color:#687b8c;
+                            padding-top:5px;">
+                  Google Search Console Results
+                </div>
+
+              </td>
+            </tr>
+
+          </table>
+
+        </td>
+
+
+        <!-- RESULT 3 -->
+        <td width="33.33%"
+            valign="top"
+            style="padding:6px;">
+
+          <table role="presentation"
+                 width="100%"
+                 cellpadding="0"
+                 cellspacing="0"
+                 border="0"
+                 style="border:1px solid #dce4eb;
+                        background:#ffffff;">
+
+            <tr>
+              <td style="padding:8px;
+                         background:#071d2e;">
+
+                <img src="{% static 'img/leaders-sc.jpeg' %}"
+                     alt="Google Search Console Result - Client 3"
+                     width="100%"
+                     style="display:block;
+                            width:100%;
+                            max-width:100%;
+                            height:18vh;
+                            border:0;">
+
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding:16px;">
+
+                <div style="font-family:Arial,Helvetica,sans-serif;
+                            font-size:15px;
+                            line-height:20px;
+                            font-weight:bold;
+                            color:#10263a;">
+                  Leaders Fort Real Estate
+                </div>
+
+                <div style="font-family:Arial,Helvetica,sans-serif;
+                            font-size:11px;
+                            line-height:17px;
+                            color:#687b8c;
+                            padding-top:5px;">
+                  Google Search Console Results
+                </div>
+
+              </td>
+            </tr>
+
+          </table>
+
+        </td>
+
+        
+
+      </tr>
+
+      <tr>
+
+  <!-- RESULT 4 -->
+
+  <td width="33.33%"
+      valign="top"
+      style="padding:6px;">
+
+<table role="presentation"
+       width="100%"
+       cellpadding="0"
+       cellspacing="0"
+       border="0"
+       style="border:1px solid #dce4eb;
+              background:#ffffff;">
+
+  <tr>
+    <td style="padding:8px;
+               background:#071d2e;">
+
+      <img src="{% static 'img/legacyelite-sc.jpeg' %}"
+           alt="Google Search Console Result - Client 4"
+           width="100%"
+           style="display:block;
+                  width:100%;
+                  max-width:100%;
+                  height:18vh;
+                  border:0;">
+
+    </td>
+  </tr>
+
+  <tr>
+    <td style="padding:16px;">
+
+      <div style="font-family:Arial,Helvetica,sans-serif;
+                  font-size:15px;
+                  line-height:20px;
+                  font-weight:bold;
+                  color:#10263a;">
+        Legacy Elite Real Estate
+      </div>
+
+      <div style="font-family:Arial,Helvetica,sans-serif;
+                  font-size:11px;
+                  line-height:17px;
+                  color:#687b8c;
+                  padding-top:5px;">
+        Google Search Console Results
+      </div>
+
+    </td>
+  </tr>
+
+</table>
+
+  </td>
+
+  <!-- RESULT 5 -->
+
+  <td width="33.33%"
+      valign="top"
+      style="padding:6px;">
+
+<table role="presentation"
+       width="100%"
+       cellpadding="0"
+       cellspacing="0"
+       border="0"
+       style="border:1px solid #dce4eb;
+              background:#ffffff;">
+
+  <tr>
+    <td style="padding:8px;
+               background:#071d2e;">
+
+      <img src="{% static 'img/bkb-sc.jpeg' %}"
+           alt="Google Search Console Result - Client 5"
+           width="100%"
+           style="display:block;
+                  width:100%;
+                  max-width:100%;
+                  height:18vh;
+                  border:0;">
+
+    </td>
+  </tr>
+
+  <tr>
+    <td style="padding:16px;">
+
+      <div style="font-family:Arial,Helvetica,sans-serif;
+                  font-size:15px;
+                  line-height:20px;
+                  font-weight:bold;
+                  color:#10263a;">
+        BKB Signature
+      </div>
+
+      <div style="font-family:Arial,Helvetica,sans-serif;
+                  font-size:11px;
+                  line-height:17px;
+                  color:#687b8c;
+                  padding-top:5px;">
+        Google Search Console Results
+      </div>
+
+    </td>
+  </tr>
+
+</table>
+
+  </td>
+
+  <!-- RESULT 6 -->
+
+  <td width="33.33%"
+      valign="top"
+      style="padding:6px;">
+
+<table role="presentation"
+       width="100%"
+       cellpadding="0"
+       cellspacing="0"
+       border="0"
+       style="border:1px solid #dce4eb;
+              background:#ffffff;">
+
+  <tr>
+    <td style="padding:8px;
+               background:#071d2e;">
+
+      <img src="{% static 'img/omega-sc.jpeg' %}"
+           alt="Google Search Console Result - Client 6"
+           width="100%"
+           style="display:block;
+                  width:100%;
+                  max-width:100%;
+                  height:18vh;
+                  border:0;">
+
+    </td>
+  </tr>
+
+  <tr>
+    <td style="padding:16px;">
+
+      <div style="font-family:Arial,Helvetica,sans-serif;
+                  font-size:15px;
+                  line-height:20px;
+                  font-weight:bold;
+                  color:#10263a;">
+        Omega Star Real Estate
+      </div>
+
+      <div style="font-family:Arial,Helvetica,sans-serif;
+                  font-size:11px;
+                  line-height:17px;
+                  color:#687b8c;
+                  padding-top:5px;">
+        Google Search Console Results
+      </div>
+
+    </td>
+  </tr>
+
+</table>
+
+  </td>
+
+</tr>
+
+    </table>
+
+
+    <!-- Bottom Trust Message -->
+    <table role="presentation"
+           width="100%"
+           cellpadding="0"
+           cellspacing="0"
+           border="0"
+           style="margin-top:20px;">
+
+      
+      </tr>
+
+    </table>
+
+  </td>
+</tr>
+
+<!-- END GOOGLE SEARCH CONSOLE RESULTS -->
+<tr><td class="why-cell">
+<div class="why-eyebrow">WHY CHOOSE DELEMON TECHNOLOGY?</div>
+<h2 class="why-title">Built for real estate growth.</h2>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="why-table">
+<tr>
+<td width="50%" valign="top" class="why-card-cell"><div class="why-card"><b class="why-card-number">01 — TARGETED</b><h3 class="why-card-title">High-Quality Leads</h3><p class="why-card-desc">Reach audiences actively interested in property opportunities.</p></div></td>
+<td width="50%" valign="top" class="why-card-cell"><div class="why-card"><b class="why-card-number">02 — MULTI-MARKET</b><h3 class="why-card-title">Global Campaigns</h3><p class="why-card-desc">Scale across GCC and international buyer markets.</p></div></td>
+</tr>
+<tr>
+<td width="50%" valign="top" class="why-card-cell"><div class="why-card"><b class="why-card-number">03 — OPTIMISED</b><h3 class="why-card-title">Better CPL</h3><p class="why-card-desc">Continuous optimisation around lead volume and acquisition cost.</p></div></td>
+<td width="50%" valign="top" class="why-card-cell"><div class="why-card"><b class="why-card-number">04 — DATA-DRIVEN</b><h3 class="why-card-title">Transparent Reporting</h3><p class="why-card-desc">Track leads, spend, CPL and campaign performance.</p></div></td>
+</tr>
+</table>
+</td></tr>
+<!-- ========================================= -->
+<!-- CLIENT REVIEWS / TESTIMONIALS SECTION -->
+<!-- ========================================= -->
+
+<tr>
+  <td class="testimonial-section" style="background:#f5f8fa;padding:38px 20px 35px 20px;">
+
+    <!-- Section Heading -->
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+      <tr>
+        <td align="center" style="padding-bottom:25px;">
+
+          <div style="font-family:Arial,Helvetica,sans-serif;
+                      font-size:11px;
+                      line-height:16px;
+                      font-weight:bold;
+                      letter-spacing:2px;
+                      color:#d59d2e;
+                      text-transform:uppercase;">
+            CLIENT TESTIMONIALS
+          </div>
+
+          <div style="font-family:Arial,Helvetica,sans-serif;
+                      font-size:28px;
+                      line-height:34px;
+                      font-weight:bold;
+                      color:#10263a;
+                      margin-top:8px;">
+            What Our Clients Say
+          </div>
+
+          <div style="font-family:Arial,Helvetica,sans-serif;
+                      font-size:13px;
+                      line-height:21px;
+                      color:#687b8c;
+                      padding-top:8px;">
+            Real feedback from businesses that work with Delemon Technology
+          </div>
+
+        </td>
+      </tr>
+    </table>
+
+
+    <!-- Reviews Row -->
+    <table role="presentation"
+           width="100%"
+           cellpadding="0"
+           cellspacing="0"
+           border="0">
+
+      <tr>
+
+        <!-- REVIEW 1 -->
+        <td width="33.33%"
+            valign="top"
+            style="padding:6px;">
+
+          <table role="presentation"
+                 width="100%"
+                 cellpadding="0"
+                 cellspacing="0"
+                 border="0"
+                 style="background:#ffffff;
+                        border:1px solid #dce4eb;">
+
+            <tr>
+              <td style="padding:22px 20px 20px 20px;">
+
+                <!-- Stars -->
+                <div style="font-family:Arial,Helvetica,sans-serif;
+                            font-size:17px;
+                            line-height:20px;
+                            color:#f2b84b;
+                            letter-spacing:2px;">
+                  ★★★★★
+                </div>
+
+                <!-- Quote -->
+                <div style="font-family:Arial,Helvetica,sans-serif;
+                            font-size:13px;
+                            line-height:21px;
+                            color:#536777;
+                            padding-top:14px;">
+                  "Their team is responsive, knowledgeable and always ready
+                  to provide support whenever needed. A reliable digital
+                  marketing partner."
+                </div>
+
+                <!-- Client -->
+                <div style="font-family:Arial,Helvetica,sans-serif;
+                            font-size:14px;
+                            line-height:20px;
+                            font-weight:bold;
+                            color:#10263a;
+                            padding-top:18px;">
+                  Malak
+                </div>
+
+                <div style="font-family:Arial,Helvetica,sans-serif;
+                            font-size:11px;
+                            line-height:17px;
+                            color:#8798a5;
+                            padding-top:3px;">
+                  Manager<br>
+                  Leaders Fort Real Estate
+                </div>
+
+              </td>
+            </tr>
+
+          </table>
+        </td>
+
+
+        <!-- REVIEW 2 -->
+        <td width="33.33%"
+            valign="top"
+            style="padding:6px;">
+
+          <table role="presentation"
+                 width="100%"
+                 cellpadding="0"
+                 cellspacing="0"
+                 border="0"
+                 style="background:#ffffff;
+                        border:1px solid #dce4eb;">
+
+            <tr>
+              <td style="padding:22px 20px 20px 20px;">
+
+                <!-- Stars -->
+                <div style="font-family:Arial,Helvetica,sans-serif;
+                            font-size:17px;
+                            line-height:20px;
+                            color:#f2b84b;
+                            letter-spacing:2px;">
+                  ★★★★★
+                </div>
+
+                <!-- Quote -->
+                <div style="font-family:Arial,Helvetica,sans-serif;
+                            font-size:13px;
+                            line-height:21px;
+                            color:#536777;
+                            padding-top:14px;">
+                  "It has been a pleasure working with Delemon Technology.
+                  Their team is reliable, experienced and supportive throughout
+                  our collaboration."
+                </div>
+
+                <!-- Client -->
+                <div style="font-family:Arial,Helvetica,sans-serif;
+                            font-size:14px;
+                            line-height:20px;
+                            font-weight:bold;
+                            color:#10263a;
+                            padding-top:18px;">
+                  Ali Asgar
+                </div>
+
+                <div style="font-family:Arial,Helvetica,sans-serif;
+                            font-size:11px;
+                            line-height:17px;
+                            color:#8798a5;
+                            padding-top:3px;">
+                  Sales Executive Director<br>
+                  Properties
+                </div>
+
+              </td>
+            </tr>
+
+          </table>
+        </td>
+
+
+        <!-- REVIEW 3 -->
+        <td width="33.33%"
+            valign="top"
+            style="padding:6px;">
+
+          <table role="presentation"
+                 width="100%"
+                 cellpadding="0"
+                 cellspacing="0"
+                 border="0"
+                 style="background:#ffffff;
+                        border:1px solid #dce4eb;">
+
+            <tr>
+              <td style="padding:22px 20px 20px 20px;">
+
+                <!-- Stars -->
+                <div style="font-family:Arial,Helvetica,sans-serif;
+                            font-size:17px;
+                            line-height:20px;
+                            color:#f2b84b;
+                            letter-spacing:2px;">
+                  ★★★★★
+                </div>
+
+                <!-- Quote -->
+                <div style="font-family:Arial,Helvetica,sans-serif;
+                            font-size:13px;
+                            line-height:21px;
+                            color:#536777;
+                            padding-top:14px;">
+                  "We have been working with Delemon Technology for more
+                  than one year. The team is professional, responsive and
+                  consistently provides high-quality service."
+                </div>
+
+                <!-- Client -->
+                <div style="font-family:Arial,Helvetica,sans-serif;
+                            font-size:14px;
+                            line-height:20px;
+                            font-weight:bold;
+                            color:#10263a;
+                            padding-top:18px;">
+                  Nasser Dehghan
+                </div>
+
+                <div style="font-family:Arial,Helvetica,sans-serif;
+                            font-size:11px;
+                            line-height:17px;
+                            color:#8798a5;
+                            padding-top:3px;">
+                  CEO<br>
+                  AlkhAail Real Estate
+                </div>
+
+              </td>
+            </tr>
+
+          </table>
+        </td>
+
+      </tr>
+    </table>
+
+
+    <!-- Rating / Trust Row -->
+    <table role="presentation"
+           width="100%"
+           cellpadding="0"
+           cellspacing="0"
+           border="0"
+           style="margin-top:18px;">
+
+      <tr>
+        <td align="center"
+            style="background:#071d2e;
+                   padding:17px 10px;">
+
+          <span style="font-family:Arial,Helvetica,sans-serif;
+                       font-size:14px;
+                       line-height:20px;
+                       font-weight:bold;
+                       color:#f2b84b;">
+            ★ 4.8/5
+          </span>
+
+          <span style="font-family:Arial,Helvetica,sans-serif;
+                       font-size:13px;
+                       line-height:20px;
+                       color:#ffffff;">
+            &nbsp;&nbsp; | &nbsp;&nbsp;
+            450+ Google Reviews
+            &nbsp;&nbsp; | &nbsp;&nbsp;
+            100+ Happy Clients
+          </span>
+
+        </td>
+      </tr>
+
+    </table>
+
+  </td>
+</tr>
+
+<!-- END CLIENT REVIEWS SECTION -->
+<tr><td align="center" class="cta-section-cell">
+<div class="cta-section-eyebrow">READY TO SCALE?</div>
+<h2 class="cta-section-title">Let's generate your next 1,000 real estate leads.</h2>
+<p class="cta-section-desc">Tell us your target market, property and monthly lead goal.</p>
+ <a href="https://wa.me/971503482299?text=Hello%20Delemon%20Technology%2C%20I%27m%20interested%20in%20your%20real%20estate%20lead%20generation%20services.%20I%27d%20like%20to%20book%20a%20free%20consultation."
+       class="cta-button">
+        BOOK A FREE CONSULTATION →
+    </a>
+  </td></tr>
+
+<tr><td align="center" class="footer-cell">
+<div class="footer-brand">DELEMON TECHNOLOGY</div>
+<div class="footer-tagline">UAE REAL ESTATE LEAD GENERATION COMPANY</div>
+<div class="footer-contact">+971 50 348 2299 &nbsp; | &nbsp;  sales@delemontechnology.com &nbsp; | &nbsp; delemontechnology.com</div>
+</td></tr>
+
+<!-- <tr><td align="center" class="unsubscribe-cell">
+You are receiving this email from Delemon Technology.<br>
+<a href="{ unsubscribe }" class="unsubscribe-link">Unsubscribe</a>
+</td></tr> -->
+
+</table>
+
+</td></tr>
+</table>
+
+</center>
+
+<!-- Floating WhatsApp + Call Buttons -->
+
+<div class="floating-contact-buttons">
+
+    <!-- WhatsApp -->
+    <a href="https://wa.me/971503482299"
+       class="floating-whatsapp"
+       target="_blank"
+       aria-label="Chat on WhatsApp">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+             alt="WhatsApp">
+    </a>
+
+    <!-- Call -->
+    <a href="tel:+971503482299"
+       class="floating-call"
+       aria-label="Call us">
+        <img src="{% static 'img/phone.png' %}"
+             alt="Call">
+    </a>
+
+</div>
+
+</body>
+</html>
