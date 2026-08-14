@@ -14,6 +14,7 @@ class BlogResource(resources.ModelResource):
 @admin.register(Blog)
 class BlogAdmin(admin.ModelAdmin):
     resource_class = BlogResource
+    list_display = ('title', 'created_at') 
     inlines = [FAQInline]
 
 
