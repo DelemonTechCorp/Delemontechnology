@@ -1,4 +1,5 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
+{% block robots %}index, follow, max-snippet:0{% endblock %}
 {% load static %}
 {% block title %}{{ blog.seo_Title }}{% endblock %}
 {% block content %}
