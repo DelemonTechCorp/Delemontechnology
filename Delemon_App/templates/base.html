@@ -1,53 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-{% load static %}
-    <meta charset="UTF-8">
-    <meta name="facebook-domain-verification" content="aja7667ybaut6kobwhsegxwxvb6kwv" />
-    <link rel="canonical" href="{{ request.build_absolute_uri }}" />
-    <meta name="robots" content="{% block robots %}index, follow{% endblock %}">
+  {% load static %}
+  <meta charset="UTF-8">
+  <meta name="facebook-domain-verification" content="aja7667ybaut6kobwhsegxwxvb6kwv" />
+  <link rel="canonical" href="{{ request.build_absolute_uri }}" />
+  <meta name="robots" content="{% block robots %}index, follow{% endblock %}">
 
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-0JBSNP1GZF"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0JBSNP1GZF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-0JBSNP1GZF');
-</script>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-TWV4DMG4');</script>
+    gtag('config', 'G-0JBSNP1GZF');
+  </script>
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-TWV4DMG4');</script>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-7SFRMJW1GK"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7SFRMJW1GK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-7SFRMJW1GK');
-</script>
-<!-- End Google Tag Manager -->
+    gtag('config', 'G-7SFRMJW1GK');
+  </script>
+  <!-- End Google Tag Manager -->
 
+ <meta
+    content="Real Estate Marketing Agency in Dubai 
+    Dubai Real Estate Digital Marketing Agency 
+    Real Estate Lead Generation Agency in Dubai 
+    Dubai Real Estate Lead Generation Agency 
+    Real Estate SEO Company UAE
+    Real Estate Marketing Company Dubai
+    Property SEO Services Dubai
+    Real Estate Social Media Marketing Agency Dubai
+    Meta Ads Agency for Real Estate Dubai
+    Real Estate Lead Generation Agency Dubai
+    Real Estate CRM Integration Services Dubai
+    Real Estate Landing Page Design Dubai
+    Real Estate Website Development Dubai
+    Property Website Design Company Dubai
+    Performance Marketing Agency Dubai Real Estate
+    Luxury Real Estate Marketing Agency Dubai
+    Real Estate Video Marketing Agency Dubai
+    Real Estate SEO Agency Dubai
+    SEO Services for Real Estate Dubai
+    Real Estate Content Marketing Agency Dubai
+    Real Estate Marketing Company UAE
+    Real Estate Marketing Services UAE
+    Digital Marketing Company for Property Developers Dubai
+    Social Media Marketing for Real Estate UAE
+    Off Plan Property Marketing Agency Dubai
+    Best Marketing Agency for Real Estate Dubai
+    Real Estate Website SEO Dubai
+    Qualified Real Estate Leads Dubai
+    Real Estate Advertising Agency Dubai
+    Real Estate Digital Marketing Services Dubai
+    Dubai Property Marketing Agency
+    Real Estate Automation Services Dubai
+    Real Estate Marketing Consultant Dubai
+    Real Estate Growth Marketing Agency Dubai
+    Real Estate Marketing Agency Dubai
+    Real Estate Influencer Marketing Dubai
+    Real Estate Digital Strategy Consultant Dubai
+    Real Estate Branding Agency Dubai
+    Property Branding Company Dubai
+    Google Ads Management for Real Estate UAE
+    Real Estate Lead Generation Services UAE
+    Property Marketing Agency Dubai
+    Property Lead Generation Company Dubai
+    Instagram Marketing Agency for Real Estate Dubai
+    Dubai Real Estate Digital Marketing Agency
+    Best Real Estate Digital Marketing Company Dubai
+    Google Ads Agency for Real Estate Dubai
+    Real Estate PPC Agency Dubai
+    Digital Marketing Agency for Real Estate Dubai
+    Off Plan Real Estate Marketing Dubai
+    Facebook Ads Agency for Real Estate Dubai"
+    name="keywords">
+  <!-- <meta
+    content="Digital marketing Dubai, web development Dubai, SEO services Dubai, social media marketing Dubai, web design Dubai, PPC Dubai, online advertising Dubai, e-commerce development Dubai, content marketing Dubai, branding Dubai, digital strategy Dubai."
+    name="keywords"> -->
+  <!--<meta content="Leading digital marketing and web development agency in Dubai offering top-notch SEO, social media marketing, web design, and e-commerce solutions. Drive your business growth with our expert strategies tailored for Dubai’s dynamic market." name="description">-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Delemontechnology{% endblock %}</title>
+  <link rel="icon" href="{% static 'img/delemon-logo.png' %}" type="image/gif" />
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-     <meta content="Digital marketing Dubai, web development Dubai, SEO services Dubai, social media marketing Dubai, web design Dubai, PPC Dubai, online advertising Dubai, e-commerce development Dubai, content marketing Dubai, branding Dubai, digital strategy Dubai." name="keywords">
-    <!--<meta content="Leading digital marketing and web development agency in Dubai offering top-notch SEO, social media marketing, web design, and e-commerce solutions. Drive your business growth with our expert strategies tailored for Dubai’s dynamic market." name="description">-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Delemontechnology{% endblock %}</title>
-    <link rel="icon" href="{% static 'img/delemon-logo.png' %}" type="image/gif" />
-    <link rel="stylesheet" href="{% static 'style.css' %}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <style>
-  
-   .social-medias{
+  .social-medias {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -55,16 +115,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     height: 180px;
     width: 60px;
     position: fixed;
-     left: unset;   /* remove left */
-    right: 10px;   /* add right */
+    left: unset;
+    /* remove left */
+    right: 10px;
+    /* add right */
     bottom: 10px;
-    z-index:9999;
+    z-index: 9999;
   }
-  .social-medias i{
+
+  .social-medias i {
     color: white;
-    font-size:18px;
+    font-size: 18px;
   }
-  .social-medias-sub{
+
+  .social-medias-sub {
     height: 40px;
     width: 40px;
     border-radius: 50%;
@@ -74,30 +138,39 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     justify-content: center;
   }
 </style>
+
 <body>
   <div class="social-medias">
-<div class="social-medias-sub" data-bs-toggle="tooltip" data-bs-placement="right" title="Chat with us">
-<a href="http://wa.me/+971503482299" class="text-decoration-none" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
-</div>
-<div class="social-medias-sub" data-bs-toggle="tooltip" data-bs-placement="right" title="Mail to us">
-<a href="mailto:sales@delemontechnology.com" class="text-decoration-none" target="_blank"><i class="fa-solid fa-envelope"></i></a>
-</div>
-<div class="social-medias-sub" data-bs-toggle="tooltip" data-bs-placement="right" title="Call us">
-<a href="tel:+971503482299" class="text-decoration-none" target="_blank"><i class="fa-solid fa-square-phone"></i></a>
-</div>
-</div>
+    <div class="social-medias-sub" data-bs-toggle="tooltip" data-bs-placement="right" title="Chat with us">
+      <a href="http://wa.me/+971503482299" class="text-decoration-none" target="_blank"><i
+          class="fa-brands fa-whatsapp"></i></a>
+    </div>
+    <div class="social-medias-sub" data-bs-toggle="tooltip" data-bs-placement="right" title="Mail to us">
+      <a href="mailto:sales@delemontechnology.com" class="text-decoration-none" target="_blank"><i
+          class="fa-solid fa-envelope"></i></a>
+    </div>
+    <div class="social-medias-sub" data-bs-toggle="tooltip" data-bs-placement="right" title="Call us">
+      <a href="tel:+971503482299" class="text-decoration-none" target="_blank"><i
+          class="fa-solid fa-square-phone"></i></a>
+    </div>
+  </div>
 
-    <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TWV4DMG4"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TWV4DMG4" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
-   {% include "components/header.html" %}
-   {% block content %}{% endblock  %}
-   {% include "components/footer.html" %}
+  {% include "components/header.html" %}
+  {% block content %}{% endblock %}
+  {% include "components/footer.html" %}
 
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+    crossorigin="anonymous"></script>
 
 </body>
+
 </html>
