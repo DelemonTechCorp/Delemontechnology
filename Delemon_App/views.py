@@ -143,6 +143,9 @@ def sem(request):
 
 def content(request):
     return render(request, 'main/content.html')
+def marketing(request):
+    return render(request, 'main/leades.html')
+
 
 def social(request):
     return render(request, 'main/social.html')

@@ -1,0 +1,755 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* =========================================================
+   DELEMON TECHNOLOGY – DUBAI REAL ESTATE LANDING PAGE
+   All classes use the unique prefix  dlx-
+   ========================================================= */
+
+/* ---------- 1. TOKENS ---------- */
+:root {
+  --dlx-ink: #0b0b0b;
+  --dlx-ink-deep: #050505;
+  --dlx-gold: #e6b325;
+  --dlx-gold-deep: #b8880b;
+  --dlx-paper: #faf8f3;
+  --dlx-paper-dim: #f1eee5;
+  --dlx-line: #dcd7c8;
+  --dlx-text: #1a1a1a;
+  --dlx-muted: #5e5b52;
+
+  /* HEADINGS */
+  --dlx-heading-font: "Lato", sans-serif;
+  --dlx-heading-size: 30px;
+  --dlx-heading-weight: 800;
+
+  --dlx-body-font: "DM Sans", system-ui, sans-serif;
+
+  /* ONE width used by the hero AND every other section */
+  --dlx-wrap: 1400px;
+}
+
+/* ---------- 2. RESET / BASE (scoped to .dlx-page) ---------- */
+.dlx-page, .dlx-page *, .dlx-page *::before, .dlx-page *::after { box-sizing: border-box; }
+.dlx-page {
+  background: var(--dlx-paper);
+  color: var(--dlx-text);
+  font-family: var(--dlx-body-font);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.dlx-page img { max-width: 100%; display: block; }
+.dlx-page a { color: white; text-decoration: none; }
+.dlx-page h1, .dlx-page h2, .dlx-page h3, .dlx-page p, .dlx-page ul { margin: 0; }
+.dlx-page ul { padding: 0; list-style: none; }
+.dlx-page button { font: inherit; cursor: pointer; }
+.dlx-page :focus-visible { outline: 3px solid var(--dlx-gold); outline-offset: 3px; }
+
+.dlx-wrap { width: 100%; max-width:1500px; margin-inline: auto; padding-inline: 20px; }
+@media (min-width: 1024px) { .dlx-wrap { padding-inline: 40px; } }
+
+/* ---------- 3. HEADING SYSTEM (Lato / 800 / 30px) ---------- */
+.dlx-heading {
+  font-family: var(--dlx-heading-font);
+  font-size: var(--dlx-heading-size);
+  font-weight: var(--dlx-heading-weight);
+  line-height: 1.28;
+  letter-spacing: -0.01em;
+}
+.dlx-card-title {
+  font-family: var(--dlx-heading-font);
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+/* ---------- SINGLE SOURCE OF TRUTH FOR THE YELLOW HIGHLIGHT ----------
+   Every "highlighted" chunk of text on the page (hero, challenges,
+   FAQ, anywhere else) uses THIS exact look now, so it always matches
+   the reference screenshot: gold background, black text, tight
+   horizontal padding, no vertical padding jump between wrapped lines. */
+.dlx-highlight,
+.dlx-faq__mark {
+    background: var(--dlx-gold);
+    color: var(--dlx-ink);
+    padding: 2px 15px;
+    display: inline-block;
+    border-radius: 20px 10px 20px 10px;
+    transform: skewX(-15deg);
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+}
+.dlx-kicker {
+  font-family: var(--dlx-heading-font);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.dlx-bar { width: 80px; height: 6px; background: var(--dlx-gold); margin-top: 22px; }
+
+/* ---------- 4. BUTTONS ---------- */
+.dlx-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  padding: 16px 28px;
+  font-family: var(--dlx-heading-font);
+  font-size: 16px; font-weight: 800;
+  border: 1px solid transparent;
+  transition: transform .2s ease, background .2s ease, color .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+.dlx-btn1 {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  padding: 16px 28px;
+  color: #0b0b0b;
+  font-family: var(--dlx-heading-font);
+  font-size: 16px; font-weight: 800;
+  border: 1px solid transparent;
+  transition: transform .2s ease, background .2s ease, color .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+ .dlx-btn1 a{
+    color: #050505;
+ }
+.dlx-btn svg { width: 20px; height: 20px; }
+.dlx-btn--gold { background: var(--dlx-gold); color: var(--dlx-ink); box-shadow: 0 8px 40px -8px var(--dlx-gold); }
+.dlx-btn--gold:hover { transform: translateY(-2px); }
+.dlx-btn--ghost { border-color: rgba(250,248,243,.3); color: var(--dlx-paper); }
+.dlx-btn--ghost:hover { border-color: var(--dlx-gold); color: var(--dlx-gold); }
+
+/* Black WhatsApp button used INSIDE the dark hero — plain black would
+   disappear into the hero background, so it gets a soft gold border
+   to stay visible while still reading as a "black" button. */
+.dlx-btn--whatsapp {
+  background: var(--dlx-ink);
+  color: var(--dlx-gold);
+  border-color: rgba(230,179,37,.5);
+}
+.dlx-btn--whatsapp:hover {
+  border-color: var(--dlx-gold);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px -12px rgba(0,0,0,.7);
+}
+
+/* ---------- 5. HERO ---------- */
+.dlx-hero { position: relative; overflow: hidden; background: var(--dlx-ink); isolation: isolate; }
+.dlx-hero__bg {
+  position: absolute; inset: 0; z-index: -2;
+  background: url("{% static 'img/marketing-hero.jpg' %}") center / cover no-repeat;
+  opacity: .55;
+}
+/* same gradient as the original design */
+.dlx-hero__shade {
+  position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(to bottom, rgba(11,11,11,.8), rgba(11,11,11,.6), var(--dlx-ink));
+}
+.dlx-hero__grid {
+  display: grid; gap: 56px; align-items: center;
+  padding-block: 72px 88px;
+}
+@media (min-width: 992px) {
+  .dlx-hero__grid { grid-template-columns: 1.1fr .9fr; gap: 64px; padding-block: 112px 128px; }
+}
+
+.dlx-hero__badge {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 8px 16px;
+  border: 1px solid rgba(230,179,37,.4);
+  background: rgba(11,11,11,.6);
+  color: var(--dlx-gold);
+}
+.dlx-hero__badge i { width: 6px; height: 6px; border-radius: 50%; background: var(--dlx-gold); }
+
+/* Hero text – matched to the reference screenshot: left-aligned copy,
+   heavier (900) weight headline so it reads as bold/rounded as the
+   reference image, tight line-height, generous max-width so lines
+   break the same way as the screenshot. */
+.dlx-hero__copy { text-align: left; }
+.dlx-hero__title {
+  margin-top: 32px; max-width: 760px;
+  font-family: var(--dlx-heading-font);
+  font-size: clamp(36px, 4.6vw, 64px);
+  font-weight: 900; line-height: 1.4; letter-spacing: -0.02em;
+  color: var(--dlx-paper);
+  text-align: left;
+}
+.dlx-hero__lead {
+  margin-top: 28px; max-width: 700px;
+  font-family: var(--dlx-heading-font);
+  font-size: clamp(18px, 1.9vw, 24px); font-weight: 500; line-height: 1.6;
+  color: rgba(250,248,243,.9);
+  text-align: left;
+}
+.dlx-hero__text {
+  margin-top: 20px; max-width: 640px;
+  font-size: clamp(14px, 1.2vw, 16px); line-height: 1.7;
+  color: rgba(250,248,243,.6);
+  text-align: left;
+}
+.dlx-hero__actions { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 12px; justify-content: flex-start; }
+
+.dlx-hero__points { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 10px; }
+.dlx-hero__points li {
+  padding: 7px 14px; font-size: 13px; font-weight: 600;
+  color: rgba(250,248,243,.85);
+  border: 1px solid rgba(250,248,243,.16);
+  background: rgba(250,248,243,.04);
+}
+
+/* --- Hero result-image area --- */
+.dlx-result { position: relative; width: 100%; max-width: 520px; margin-inline: auto; padding: 0 18px 18px 0; }
+.dlx-result::before {
+  content: ""; position: absolute; right: 0; bottom: 0; top: 18px; left: 18px;
+  border: 2px solid var(--dlx-gold); z-index: 0;
+}
+.dlx-result__main {
+  position: relative; z-index: 1;
+  aspect-ratio: 4 / 4.6;
+  background: var(--dlx-ink-deep);
+  border: 1px solid rgba(250,248,243,.14);
+  overflow: hidden;
+  box-shadow: 0 40px 80px -30px rgba(0,0,0,.8);
+}
+.dlx-result__placeholder {
+  position: absolute; inset: 0; display: grid; place-content: center; justify-items: center; gap: 10px;
+  text-align: center; padding: 24px;
+  color: rgba(250,248,243,.55); font-size: 14px;
+  background:
+    repeating-linear-gradient(135deg, rgba(230,179,37,.07) 0 12px, transparent 12px 24px),
+    var(--dlx-ink-deep);
+}
+.dlx-result__placeholder svg { width: 34px; height: 34px; color: var(--dlx-gold); }
+.dlx-result__placeholder strong { font-family: var(--dlx-heading-font); font-weight: 800; color: var(--dlx-paper); font-size: 16px; }
+.dlx-result__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: opacity .2s ease; }
+
+.dlx-result__tag {
+  position: absolute; z-index: 3; top: 16px; left: 16px;
+  padding: 6px 12px; background: var(--dlx-gold); color: var(--dlx-ink);
+}
+.dlx-result__chip {
+  position: absolute; z-index: 3; left: -14px; bottom: 56px;
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 18px; min-width: 210px;
+  background: var(--dlx-paper); color: var(--dlx-ink);
+  box-shadow: 0 20px 50px -16px rgba(0,0,0,.6);
+}
+.dlx-result__chip-icon { width: 38px; height: 38px; display: grid; place-items: center; background: var(--dlx-ink); color: var(--dlx-gold); flex: none; }
+.dlx-result__chip-icon svg { width: 18px; height: 18px; }
+.dlx-result__chip b { display: block; font-family: var(--dlx-heading-font); font-size: 14px; font-weight: 800; line-height: 1.2; }
+.dlx-result__chip small { font-size: 12px; color: var(--dlx-muted); }
+.dlx-result__thumbs { position: absolute; z-index: 3; right: -6px; top: 56px; display: grid; gap: 10px; }
+.dlx-result__thumb {
+  position: relative; width: 72px; height: 72px; overflow: hidden;
+  border: 2px solid var(--dlx-gold); background: var(--dlx-ink-deep);
+  box-shadow: 0 14px 30px -12px rgba(0,0,0,.7);
+  cursor: pointer; /* it's now clickable */
+  transition: transform .2s ease, border-color .2s ease;
+}
+.dlx-result__thumb:hover,
+.dlx-result__thumb:focus-visible { transform: translateY(-2px); border-color: var(--dlx-paper); }
+.dlx-result__thumb::after { content: "+"; position: absolute; inset: 0; display: grid; place-items: center; color: var(--dlx-gold); font-family: var(--dlx-heading-font); font-size: 24px; font-weight: 800; z-index: 0; }
+.dlx-result__thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; }
+@media (max-width: 480px) {
+  .dlx-result__chip { left: 0; min-width: 0; }
+  .dlx-result__thumbs { right: 0; }
+  .dlx-result__thumb { width: 56px; height: 56px; }
+}
+
+/* ---------- 6. SERVICES TICKER ---------- */
+.dlx-ticker { overflow: hidden; background: var(--dlx-gold); border-block: 2px solid var(--dlx-ink); padding: 14px 0; }
+.dlx-ticker__track { display: flex; width: max-content; animation: dlx-marquee 32s linear infinite; }
+.dlx-ticker__item {
+  display: flex; align-items: center; gap: 40px; padding-right: 40px;
+  font-family: var(--dlx-heading-font); font-size: 14px; font-weight: 800;
+  letter-spacing: .14em; text-transform: uppercase; color: var(--dlx-ink); white-space: nowrap;
+}
+.dlx-ticker__item::after { content: ""; width: 8px; height: 8px; background: var(--dlx-ink); transform: rotate(45deg); }
+@keyframes dlx-marquee { to { transform: translateX(-50%); } }
+
+/* ---------- 7. SECTION SPACING ---------- */
+.dlx-section { padding-block: 80px; }
+@media (min-width: 640px) { .dlx-section { padding-block: 96px; } }
+
+/* ---------- 8. INTRO ---------- */
+.dlx-intro { background: var(--dlx-paper); }
+.dlx-intro__grid { display: grid; gap: 48px; }
+@media (min-width: 992px) { .dlx-intro__grid { grid-template-columns: 1fr 1.5fr; gap: 96px; } }
+.dlx-intro__body { display: grid; gap: 20px; font-size: 17px; color: var(--dlx-muted); }
+.dlx-intro__lead { border-left: 3px solid var(--dlx-gold); padding-left: 20px; font-weight: 600; color: var(--dlx-text); }
+
+/* ---------- 9. CHALLENGES ---------- */
+.dlx-challenges { background: var(--dlx-paper-dim); border-top: 1px solid var(--dlx-line); }
+.dlx-challenges__head { max-width: 900px; }
+.dlx-challenges__head p.dlx-lead { margin-top: 18px; color: var(--dlx-muted); max-width: 760px; }
+.dlx-challenges__grid {
+  margin-top: 56px; display: grid; gap: 1px;
+  background: var(--dlx-line); border: 1px solid var(--dlx-line);
+}
+@media (min-width: 640px)  { .dlx-challenges__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .dlx-challenges__grid { grid-template-columns: repeat(3, 1fr); } }
+
+.dlx-challenge { background: var(--dlx-paper); padding: 36px; transition: background .25s; }
+.dlx-challenge__top { display: flex; justify-content: space-between; align-items: flex-start; }
+.dlx-challenge__icon svg { width: 28px; height: 28px; color: var(--dlx-gold-deep); transition: color .25s; }
+.dlx-challenge__no { font-family: var(--dlx-heading-font); font-size: 14px; font-weight: 800; color: rgba(94,91,82,.55); transition: color .25s; }
+.dlx-challenge .dlx-card-title { margin-top: 24px; transition: color .25s; }
+.dlx-challenge p { margin-top: 12px; font-size: 14.5px; color: var(--dlx-muted); transition: color .25s; }
+.dlx-challenge:hover { background: var(--dlx-ink); }
+.dlx-challenge:hover .dlx-challenge__icon svg { color: var(--dlx-gold); }
+.dlx-challenge:hover .dlx-challenge__no { color: rgba(250,248,243,.4); }
+.dlx-challenge:hover .dlx-card-title { color: var(--dlx-paper); }
+.dlx-challenge:hover p { color: rgba(250,248,243,.7); }
+
+/* ---------- 10. SOLUTIONS ---------- */
+.dlx-solutions {
+  background-color: var(--dlx-ink);
+  background-image:
+    linear-gradient(rgba(250,248,243,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(250,248,243,.035) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+.dlx-solutions__head { max-width: 900px; margin-inline: auto; text-align: center; }
+.dlx-solutions__head .dlx-heading { margin-top: 16px; color: var(--dlx-paper); }
+.dlx-solutions__head .dlx-heading span { color: var(--dlx-gold); }
+.dlx-solutions__head p.dlx-lead { margin-top: 18px; color: rgba(250,248,243,.6); }
+.dlx-solutions__grid { margin-top: 56px; display: grid; gap: 20px; }
+@media (min-width: 640px)  { .dlx-solutions__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .dlx-solutions__grid { grid-template-columns: repeat(3, 1fr); } }
+
+.dlx-solution { background: var(--dlx-ink-deep); border: 1px solid rgba(250,248,243,.1); padding: 36px; transition: border-color .25s, transform .25s; }
+.dlx-solution:hover { border-color: rgba(230,179,37,.6); transform: translateY(-3px); }
+.dlx-solution__icon {
+  width: 44px; height: 44px; display: grid; place-items: center;
+  border: 1px solid rgba(230,179,37,.3); background: rgba(230,179,37,.1);
+  transition: background .25s;
+}
+.dlx-solution__icon svg { width: 20px; height: 20px; color: var(--dlx-gold); transition: color .25s; }
+.dlx-solution:hover .dlx-solution__icon { background: var(--dlx-gold); }
+.dlx-solution:hover .dlx-solution__icon svg { color: var(--dlx-ink); }
+.dlx-solution__step { margin-top: 24px; color: rgba(230,179,37,.75); }
+.dlx-solution .dlx-card-title { margin-top: 8px; color: var(--dlx-paper); }
+.dlx-solution p.dlx-solution__text { margin-top: 12px; font-size: 14.5px; color: rgba(250,248,243,.6); }
+.dlx-solutions__quote {
+  max-width: 900px; margin: 56px auto 0; padding: 24px 0; text-align: center;
+  border-block: 1px solid rgba(230,179,37,.3);
+  font-family: var(--dlx-heading-font); font-size: 20px; font-weight: 700; line-height: 1.55; color: var(--dlx-paper);
+}
+.dlx-solutions__quote span { color: var(--dlx-gold); }
+
+/* ---------- 11. FAQ ---------- */
+.dlx-faq { background: var(--dlx-paper); }
+.dlx-faq__grid { display: grid; gap: 48px; }
+@media (min-width: 992px) { .dlx-faq__grid { grid-template-columns: 1fr 1.8fr; gap: 96px; } }
+.dlx-faq__intro p { margin-top: 18px; color: var(--dlx-muted); }
+.dlx-faq__list { border-block: 1px solid var(--dlx-line); }
+.dlx-faq__item + .dlx-faq__item { border-top: 1px solid var(--dlx-line); }
+.dlx-faq__btn {
+  width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 24px;
+  padding: 24px 0; text-align: left; background: none; border: 0; color: var(--dlx-text);
+}
+.dlx-faq__q { display: flex; align-items: baseline; gap: 16px; }
+.dlx-faq__no { font-family: var(--dlx-heading-font); font-size: 14px; font-weight: 800; color: var(--dlx-gold-deep); }
+.dlx-faq__title { font-family: var(--dlx-heading-font); font-size: 17px; font-weight: 800; line-height: 1.4; }
+.dlx-faq__icon svg { width: 20px; height: 20px; color: var(--dlx-gold-deep); transition: transform .3s; flex: none; }
+.dlx-faq__item.is-open .dlx-faq__icon svg { transform: rotate(45deg); }
+.dlx-faq__panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .3s ease; }
+.dlx-faq__item.is-open .dlx-faq__panel { grid-template-rows: 1fr; }
+.dlx-faq__panel > div { overflow: hidden; }
+.dlx-faq__panel p { padding: 0 40px 28px 36px; font-size: 15.5px; color: var(--dlx-muted); }
+
+/* ---------- 12. FINAL CTA (dark, gold glow, split layout) ---------- */
+.dlx-cta {
+  position: relative; overflow: hidden; isolation: isolate;
+  background:
+    radial-gradient(900px 420px at 88% 0%, rgba(230,179,37,.28), transparent 62%),
+    radial-gradient(700px 380px at 0% 100%, rgba(230,179,37,.12), transparent 65%),
+    linear-gradient(135deg, #0b0b0b 0%, #16120a 55%, #0b0b0b 100%);
+  border-top: 4px solid var(--dlx-gold);
+}
+.dlx-cta::before {           /* subtle grid texture */
+  content: ""; position: absolute; inset: 0; z-index: -1; opacity: .6;
+  background-image:
+    linear-gradient(rgba(250,248,243,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(250,248,243,.035) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+.dlx-cta__grid { display: grid; gap: 48px; align-items: center; }
+@media (min-width: 992px) { .dlx-cta__grid { grid-template-columns: 1.15fr .85fr; gap: 80px; } }
+
+.dlx-cta .dlx-kicker { color: var(--dlx-gold); }
+.dlx-cta__title { margin-top: 16px; max-width: 720px; color: var(--dlx-paper); }
+.dlx-cta__title span { color: var(--dlx-gold); }
+.dlx-cta__text { margin-top: 18px; max-width: 620px; font-size: 17px; color: rgba(250,248,243,.68); }
+.dlx-cta__tags { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 10px; }
+.dlx-cta__tags li {
+  padding: 7px 14px; font-size: 13px; font-weight: 600; color: rgba(250,248,243,.85);
+  border: 1px solid rgba(230,179,37,.35); background: rgba(230,179,37,.07);
+}
+
+.dlx-cta__card {
+  background: var(--dlx-paper); color: var(--dlx-ink);
+  padding: 36px; position: relative;
+  box-shadow: 0 40px 80px -30px rgba(0,0,0,.8);
+}
+.dlx-cta__card::before {     /* gold offset frame */
+  content: ""; position: absolute; inset: 12px -12px -12px 12px; border: 2px solid var(--dlx-gold); z-index: -1;
+}
+.dlx-page a  {
+    color: #f1eee5;
+}
+.dlx-cta__card-title { font-family: var(--dlx-heading-font); font-size: 22px; font-weight: 800; line-height: 1.3; }
+.dlx-cta__card-sub { margin-top: 6px; font-size: 14px; color: var(--dlx-muted); }
+.dlx-cta__list { margin-top: 22px; display: grid; gap: 14px; }
+.dlx-cta__list li { display: flex; gap: 12px; align-items: flex-start; font-size: 15px; font-weight: 500; }
+.dlx-cta__list svg { width: 20px; height: 20px; flex: none; margin-top: 2px; color: var(--dlx-gold-deep); }
+.dlx-cta__actions { margin-top: 28px; display: grid; gap: 12px; }
+.dlx-cta__actions .dlx-btn { width: 100%; }
+.dlx-btn--dark { background: var(--dlx-ink); color: var(--dlx-gold); }
+.dlx-btn--dark:hover { transform: translateY(-2px); box-shadow: 0 14px 30px -12px rgba(0,0,0,.6); }
+.dlx-btn--outline { border-color: var(--dlx-ink); color: var(--dlx-ink); }
+.dlx-btn--outline:hover { background: var(--dlx-ink); color: var(--dlx-gold); }
+.dlx-cta__note { margin-top: 16px; text-align: center; font-size: 12.5px; color: var(--dlx-muted); }
+
+/* ---------- Chat on WhatsApp button: force white text on hover ----------
+   The button carries an inline style (color:#050505b3) plus a couple of
+   other rules (.dlx-btn1 a, .dlx-btn--outline:hover) that all fight over
+   its text color. This rule wins on hover for the button itself, its
+   anchor, and the icon, so the label reads pure white when hovered. */
+.dlx-btn1.dlx-btn--outline:hover,
+.dlx-btn1.dlx-btn--outline:hover a,
+.dlx-cta__actions a.dlx-btn1.dlx-btn--outline:hover,
+.dlx-btn1.dlx-btn--outline:hover i,
+.dlx-btn1.dlx-btn--outline:hover svg {
+  color: #ffffff !important;
+}
+
+/* ---------- 13. REDUCED MOTION ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .dlx-ticker__track { animation: none; }
+  .dlx-page * { transition: none !important; }
+}
+</style>
+
+<div class="dlx-page" id="top">
+
+  <main>
+    <!-- ================= HERO ================= -->
+    <section class="dlx-hero">
+      <div class="dlx-hero__bg" role="img" aria-label="Dubai skyline at dusk in black and gold"></div>
+      <div class="dlx-hero__shade"></div>
+
+      <div class="dlx-wrap dlx-hero__grid">
+        <!-- Left: copy -->
+        <div class="dlx-hero__copy">
+          <p class="dlx-kicker dlx-hero__badge"><i></i> Dubai Real Estate Digital Marketing Agency</p>
+
+          <h1 class="dlx-heading dlx-hero__title">
+            Struggling To Generate
+            <span class="dlx-highlight">Quality Real Estate Leads</span><br>
+            In Dubai?
+          </h1>
+
+          <p class="dlx-hero__lead">
+            Turn Your Marketing Into A Lead-Generating System That Attracts Serious Buyers, Investors, And Property Enquiries
+          </p>
+          <p class="dlx-hero__text">
+            Delemon Technology helps Dubai real estate companies grow through data-driven SEO, Google Ads, Meta Ads, landing pages, and automation strategies designed to generate qualified property leads.
+          </p>
+
+          <div class="dlx-hero__actions">
+            <a href="#cta" class="dlx-btn dlx-btn--gold">Get Your Free Strategy Call <i data-lucide="arrow-right"></i></a>
+            <!-- ★ Update the phone number below — same link is used at the bottom CTA -->
+          
+            <a href="#solutions" class="dlx-btn dlx-btn--ghost">See How We Help</a>
+          </div>
+
+        
+        </div>
+
+        <!-- Right: RESULT IMAGE AREA -->
+        <div class="dlx-result">
+          <div class="dlx-result__main">
+
+            <!-- Placeholder (visible until the real image loads) -->
+            <div class="dlx-result__placeholder">
+              <i data-lucide="image-plus"></i>
+              <strong>Add your result image here</strong>
+              <span>Campaign report, lead dashboard or client result screenshot</span>
+            </div>
+
+            <!-- ★ Put your image at static/images/result-main.jpg (recommended 800 × 920 px) -->
+            <img class="dlx-result__img" id="dlxResultMainImg" src="{% static 'img/result1.jpeg' %}"
+                 alt="Real estate lead generation results"
+                 onerror="this.style.display='none'">
+
+            <span class="dlx-result__tag dlx-kicker">Client Results</span>
+          </div>
+
+          <div class="dlx-result__chip">
+            <span class="dlx-result__chip-icon"><i data-lucide="trending-up"></i></span>
+            <span>
+              <b>Qualified Enquiries</b>
+              <small>Add your real result here</small>
+            </span>
+          </div>
+
+          <div class="dlx-result__thumbs" id="dlxResultThumbs">
+            <!-- Clicking a thumbnail swaps it with the main image above -->
+            <button type="button" class="dlx-result__thumb" aria-label="Show this result in the main image">
+              <img src="{% static 'img/result2.jpeg' %}" alt="Result screenshot 2" onerror="this.style.display='none'">
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= TICKER ================= -->
+    <div class="dlx-ticker" aria-hidden="true">
+      <div class="dlx-ticker__track" id="dlxTicker"></div>
+    </div>
+
+    <!-- ================= INTRO ================= -->
+    <section class="dlx-section dlx-intro">
+      <div class="dlx-wrap dlx-intro__grid">
+        <div>
+          <p class="dlx-kicker" style="color:var(--dlx-muted)">Who We Are</p>
+          <h2 class="dlx-heading" style="margin-top:16px">A Growth Partner For Dubai's Real Estate Market</h2>
+          <div class="dlx-bar"></div>
+        </div>
+        <div class="dlx-intro__body">
+          <p class="dlx-intro__lead">
+            Delemon Technology helps Dubai real estate companies grow through data-driven SEO, Google Ads, Meta Ads, landing pages, and automation strategies designed to generate qualified property leads.
+          </p>
+          <p>
+            As a results-driven Real Estate Digital Marketing Agency Dubai, we help property developers, brokers, and real estate companies increase online visibility, attract serious buyers, and convert digital traffic into valuable property enquiries.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CHALLENGES ================= -->
+    <section class="dlx-section dlx-challenges" id="challenges">
+      <div class="dlx-wrap">
+        <div class="dlx-challenges__head">
+          <p class="dlx-kicker" style="color:var(--dlx-muted)">The Problem</p>
+          <h2 class="dlx-heading" style="margin-top:16px">
+            Are You Struggling With Real Estate Marketing
+            <span class="dlx-highlight">Challenges In Dubai?</span>
+          </h2>
+          <p class="dlx-lead">
+            Real estate businesses often face challenges that limit growth and lead generation. Delemon Technology helps overcome these problems with targeted digital strategies.
+          </p>
+        </div>
+
+        <div class="dlx-challenges__grid" id="dlxChallenges"></div>
+      </div>
+    </section>
+
+    <!-- ================= SOLUTIONS ================= -->
+    <section class="dlx-section dlx-solutions" id="solutions">
+      <div class="dlx-wrap">
+        <div class="dlx-solutions__head">
+          <p class="dlx-kicker" style="color:var(--dlx-gold)">The Solution</p>
+          <h2 class="dlx-heading">How Delemon Technology Helps You Generate More <span>Qualified Real Estate Leads</span></h2>
+          <p class="dlx-lead">
+            At Delemon Technology, we don't just run marketing campaigns — we build complete digital growth systems that help real estate businesses attract the right audience, generate quality enquiries, and improve conversions.
+          </p>
+        </div>
+
+        <div class="dlx-solutions__grid" id="dlxSolutions"></div>
+
+        <p class="dlx-solutions__quote">
+          With Delemon Technology, your marketing becomes a complete lead-generation system designed to <span>attract, engage, and convert</span> real estate buyers.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= FAQ ================= -->
+    <section class="dlx-section dlx-faq" id="faq">
+      <div class="dlx-wrap dlx-faq__grid">
+        <div class="dlx-faq__intro">
+          <p class="dlx-kicker" style="color:var(--dlx-muted)">FAQ</p>
+          <h2 class="dlx-heading" style="margin-top:16px">Frequently Asked <span class="dlx-faq__mark">Questions</span></h2>
+          <p>Everything you need to know about real estate digital marketing in Dubai.</p>
+        </div>
+        <div class="dlx-faq__list" id="dlxFaq"></div>
+      </div>
+    </section>
+
+    <!-- ================= FINAL CTA ================= -->
+    <section class="dlx-section dlx-cta" id="cta">
+      <div class="dlx-wrap dlx-cta__grid">
+
+        <!-- Left: message -->
+        <div>
+          <p class="dlx-kicker">Let's Grow</p>
+          <h2 class="dlx-heading dlx-cta__title">
+            Ready To Turn Your Marketing Into A <span>Lead-Generating System?</span>
+          </h2>
+          <p class="dlx-cta__text">
+            Attract serious buyers, investors, and property enquiries in Dubai with a strategy built for your properties and your market.
+          </p>
+          <ul class="dlx-cta__tags" aria-label="Services">
+            <li>SEO</li>
+            <li>Google Ads</li>
+            <li>Meta Ads</li>
+            <li>Lead Generation</li>
+            <li>Automation</li>
+          </ul>
+        </div>
+
+        <!-- Right: action card -->
+        <div class="dlx-cta__card">
+          <h3 class="dlx-cta__card-title">Book Your Free Strategy Call</h3>
+          <p class="dlx-cta__card-sub">A short, no-obligation conversation about your goals.</p>
+
+          <ul class="dlx-cta__list">
+            <li><i data-lucide="circle-check"></i> Review of your current SEO and ad campaigns</li>
+            <li><i data-lucide="circle-check"></i> Ideas to attract higher-quality property leads</li>
+            <li><i data-lucide="circle-check"></i> A clear plan for your properties and market</li>
+          </ul>
+
+          <div class="dlx-cta__actions">
+            <!-- ★ Change the href values below to your contact page / WhatsApp link -->
+            <a href="{% url 'contact' %}" class="dlx-btn dlx-btn--dark">Book Free Strategy Call <i data-lucide="arrow-right"></i></a>
+            <a href="https://wa.me/+971503482299" style="color: #050505b3;" class="dlx-btn1 dlx-btn--outline" target="_blank" rel="noopener">
+              <i data-lucide="message-circle"></i> Chat On WhatsApp
+            </a>
+          </div>
+          <p class="dlx-cta__note">Tailored for Dubai real estate developers, brokers and agencies.</p>
+        </div>
+
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- Icons (Lucide) -->
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+/* ---------- DATA ---------- */
+const DLX_SERVICES = ["SEO", "Google Ads", "Meta Ads", "Lead Generation", "Real Estate Growth Solutions"];
+
+const DLX_CHALLENGES = [
+  { icon: "target", title: "Low-Quality Property Leads", text: "Receiving enquiries is not enough. We help attract serious buyers and investors through targeted SEO, Google Ads, Meta Ads, and conversion strategies." },
+  { icon: "trending-down", title: "High Advertising Costs", text: "Reduce wasted ad spend with data-driven campaigns focused on better targeting, performance tracking, and improved lead quality." },
+  { icon: "eye", title: "Low Online Visibility", text: "Improve your Google rankings and attract more potential buyers searching for properties, communities, and investment opportunities." },
+  { icon: "building-2", title: "Difficulty Promoting New Projects", text: "Generate awareness and qualified enquiries for off-plan launches, luxury properties, and real estate developments with customised marketing campaigns." },
+  { icon: "badge-check", title: "Weak Brand Presence", text: "Build a stronger digital identity through SEO, content marketing, social media, and performance-driven strategies." },
+  { icon: "refresh-cw", title: "Poor Lead Conversion", text: "Improve enquiry management and sales efficiency with CRM integration, automation, and better follow-up systems." }
+];
+
+const DLX_SOLUTIONS = [
+  { icon: "crosshair", title: "Target The Right Buyers & Investors", text: "We use advanced audience research, SEO, Google Ads, and Meta Ads strategies to connect your properties with high-intent buyers and investors." },
+  { icon: "piggy-bank", title: "Reduce Wasted Marketing Spend", text: "Our data-driven approach helps optimise campaigns, improve targeting, and maximise your advertising budget for better results." },
+  { icon: "trending-up", title: "Increase Online Visibility", text: "Through strategic SEO, content marketing, and website optimisation, we help your brand appear where potential buyers are actively searching." },
+  { icon: "key-round", title: "Promote Properties With The Right Strategy", text: "From luxury residences to off-plan launches, we create customised marketing campaigns that highlight your property's unique value and attract genuine enquiries." },
+  { icon: "globe", title: "Build A Strong Digital Presence", text: "We strengthen your brand through professional content, social media marketing, website solutions, and conversion-focused strategies." },
+  { icon: "handshake", title: "Convert More Leads Into Opportunities", text: "With landing page optimisation, CRM integration, and automation, we help businesses manage enquiries effectively and improve their sales process." }
+];
+
+const DLX_FAQS = [
+  { q: "What is a Dubai real estate digital marketing strategy?", a: "A Dubai real estate digital marketing strategy is a combination of SEO, Google Ads, Meta Ads, content marketing, social media, website optimisation, and lead generation techniques designed to attract property buyers, investors, and high-intent enquiries in the UAE market." },
+  { q: "How can digital marketing help real estate companies generate qualified leads in Dubai?", a: "Dubai real estate digital marketing helps businesses reach potential buyers at different stages of their property journey. Through targeted advertising, search engine optimisation, conversion-focused landing pages, and audience segmentation, companies can attract more relevant property enquiries." },
+  { q: "Why is SEO important for Dubai real estate businesses?", a: "SEO helps real estate companies improve their visibility when buyers search for properties, communities, investment opportunities, and real estate services online. A strong SEO strategy can increase organic traffic, build brand authority, and generate consistent long-term enquiries." },
+  { q: "Which digital marketing channels work best for Dubai real estate companies?", a: "Effective Dubai real estate digital marketing usually combines multiple channels, including Google Ads for high-intent searches, Meta Ads for audience targeting, SEO for long-term visibility, social media marketing for brand building, and landing pages for improving lead conversions." },
+  { q: "How can real estate companies improve their online presence and attract more property buyers?", a: "Real estate businesses can improve their online presence through a complete digital marketing strategy that includes optimised websites, valuable property content, targeted advertising campaigns, strong social media presence, and data-driven performance tracking to attract and convert potential buyers." }
+];
+
+/* ---------- RENDER ---------- */
+const pad = n => String(n + 1).padStart(2, "0");
+
+// Ticker (two identical halves for a seamless loop)
+(function () {
+  const set = Array(3).fill(DLX_SERVICES).flat().map(s => `<span class="dlx-ticker__item">${s}</span>`).join("");
+  document.getElementById("dlxTicker").innerHTML = set + set;
+})();
+
+// Challenges
+document.getElementById("dlxChallenges").innerHTML = DLX_CHALLENGES.map((c, i) => `
+  <article class="dlx-challenge">
+    <div class="dlx-challenge__top">
+      <span class="dlx-challenge__icon"><i data-lucide="${c.icon}"></i></span>
+      <span class="dlx-challenge__no">${pad(i)}</span>
+    </div>
+    <h3 class="dlx-card-title">${c.title}</h3>
+    <p>${c.text}</p>
+  </article>`).join("");
+
+// Solutions
+document.getElementById("dlxSolutions").innerHTML = DLX_SOLUTIONS.map((s, i) => `
+  <article class="dlx-solution">
+    <div class="dlx-solution__icon"><i data-lucide="${s.icon}"></i></div>
+    <p class="dlx-kicker dlx-solution__step">Step ${pad(i)}</p>
+    <h3 class="dlx-card-title">${s.title}</h3>
+    <p class="dlx-solution__text">${s.text}</p>
+  </article>`).join("");
+
+// FAQ accordion
+const faqBox = document.getElementById("dlxFaq");
+faqBox.innerHTML = DLX_FAQS.map((f, i) => `
+  <div class="dlx-faq__item${i === 0 ? " is-open" : ""}">
+    <button class="dlx-faq__btn" aria-expanded="${i === 0}" aria-controls="dlx-faq-${i}">
+      <span class="dlx-faq__q">
+        <span class="dlx-faq__no">${pad(i)}</span>
+        <span class="dlx-faq__title">${f.q}</span>
+      </span>
+      <span class="dlx-faq__icon"><i data-lucide="plus"></i></span>
+    </button>
+    <div class="dlx-faq__panel" id="dlx-faq-${i}" role="region">
+      <div><p>${f.a}</p></div>
+    </div>
+  </div>`).join("");
+
+faqBox.addEventListener("click", e => {
+  const btn = e.target.closest(".dlx-faq__btn");
+  if (!btn) return;
+  const item = btn.parentElement;
+  const willOpen = !item.classList.contains("is-open");
+  faqBox.querySelectorAll(".dlx-faq__item").forEach(el => {
+    el.classList.remove("is-open");
+    el.querySelector(".dlx-faq__btn").setAttribute("aria-expanded", "false");
+  });
+  if (willOpen) {
+    item.classList.add("is-open");
+    btn.setAttribute("aria-expanded", "true");
+  }
+});
+
+// ---------- HERO RESULT THUMBNAIL: click to swap into the main image ----------
+// Clicking a thumbnail swaps its picture with whatever is currently shown
+// in the big main image, so the thumbnail always reflects what used to be
+// "up front" and the main frame updates instantly.
+(function () {
+  const mainImg = document.getElementById("dlxResultMainImg");
+  const thumbsWrap = document.getElementById("dlxResultThumbs");
+  if (!mainImg || !thumbsWrap) return;
+
+  thumbsWrap.addEventListener("click", (e) => {
+    const thumbBtn = e.target.closest(".dlx-result__thumb");
+    if (!thumbBtn) return;
+    const thumbImg = thumbBtn.querySelector("img");
+    if (!thumbImg) return;
+
+    const mainSrc = mainImg.getAttribute("src");
+    const mainAlt = mainImg.getAttribute("alt");
+
+    mainImg.setAttribute("src", thumbImg.getAttribute("src"));
+    mainImg.setAttribute("alt", thumbImg.getAttribute("alt"));
+    mainImg.style.display = ""; // in case onerror had hidden it before
+
+    thumbImg.setAttribute("src", mainSrc);
+    thumbImg.setAttribute("alt", mainAlt);
+  });
+})();
+
+lucide.createIcons();
+</script>
+
+{% endblock %}
