@@ -145,6 +145,8 @@ def content(request):
     return render(request, 'main/content.html')
 def marketing(request):
     return render(request, 'main/leades.html')
+def chatgpt(request):
+    return render(request, 'main/chatgpt.html')
 
 
 def social(request):

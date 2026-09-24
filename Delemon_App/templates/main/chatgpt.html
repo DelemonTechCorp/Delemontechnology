@@ -1,0 +1,1740 @@
+{% extends "base.html" %}
+{% block title %}ChatGPT Ads for Real Estate Agency UAE | Delemon Technology{% endblock %}
+
+{% load static %}
+
+
+{% block content %}
+<head>
+<meta name="keywords" content="ChatGPT Ads for Real Estate Agency UAE
+,ChatGPT Advertising for Real Estate Companies UAE
+,ChatGPT Lead Generation for Real Estate
+,AI-Powered Advertising Real Estate Dubai
+,ChatGPT Marketing Services Dubai
+,Real Estate Digital Marketing UAE
+,AI Advertising Agency Dubai
+,Real Estate PPC Advertising UAE
+,Digital Marketing for Real Estate Companies UAE
+,ChatGPT Marketing Services UAE
+,Real Estate Marketing Agency Dubai">
+<meta content="Delemon Technology helps UAE real estate agencies leverage AI-powered ChatGPT Ads to reach high-intent buyers, create personalised experiences, and generate smarter property leads." name="description"/>
+
+</head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+  href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap"
+  rel="stylesheet">
+
+<style>
+  /* =========================================================
+   DELEMON TECHNOLOGY – CHATGPT ADS FOR REAL ESTATE UAE LANDING PAGE
+   All classes use the unique prefix  dlx-
+   ========================================================= */
+
+  /* ---------- 1. TOKENS ---------- */
+  :root {
+    --dlx-ink: #0b0b0b;
+    --dlx-ink-deep: #050505;
+    --dlx-gold: #e6b325;
+    --dlx-gold-deep: #b8880b;
+    --dlx-paper: #faf8f3;
+    --dlx-paper-dim: #f1eee5;
+    --dlx-line: #dcd7c8;
+    --dlx-text: #1a1a1a;
+    --dlx-muted: #5e5b52;
+
+    /* HEADINGS */
+    --dlx-heading-font: "Lato", sans-serif;
+    --dlx-heading-size: 30px;
+    --dlx-heading-weight: 800;
+
+    --dlx-body-font: "DM Sans", system-ui, sans-serif;
+
+    /* ONE width used by the hero AND every other section */
+    --dlx-wrap: 1400px;
+  }
+
+  /* ---------- 2. RESET / BASE (scoped to .dlx-page) ---------- */
+  .dlx-page,
+  .dlx-page *,
+  .dlx-page *::before,
+  .dlx-page *::after {
+    box-sizing: border-box;
+  }
+
+  .dlx-page {
+    background: var(--dlx-paper);
+    color: var(--dlx-text);
+    font-family: var(--dlx-body-font);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .dlx-page img {
+    max-width: 100%;
+    display: block;
+  }
+
+  .dlx-page a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .dlx-page h1,
+  .dlx-page h2,
+  .dlx-page h3,
+  .dlx-page p,
+  .dlx-page ul {
+    margin: 0;
+  }
+
+  .dlx-page ul {
+    padding: 0;
+    list-style: none;
+  }
+
+  .dlx-page button {
+    font: inherit;
+    cursor: pointer;
+  }
+
+  .dlx-page :focus-visible {
+    outline: 3px solid var(--dlx-gold);
+    outline-offset: 3px;
+  }
+
+  .dlx-wrap {
+    width: 100%;
+    max-width: 1500px;
+    margin-inline: auto;
+    padding-inline: 20px;
+  }
+
+  @media (min-width: 1024px) {
+    .dlx-wrap {
+      padding-inline: 40px;
+    }
+  }
+
+  /* ---------- 3. HEADING SYSTEM (Lato / 800 / 30px) ---------- */
+  .dlx-heading {
+    font-family: var(--dlx-heading-font);
+    font-size: var(--dlx-heading-size);
+    font-weight: var(--dlx-heading-weight);
+    line-height: 1.28;
+    letter-spacing: -0.01em;
+  }
+
+  .dlx-card-title {
+    font-family: var(--dlx-heading-font);
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1.35;
+  }
+
+  /* ---------- SINGLE SOURCE OF TRUTH FOR THE YELLOW HIGHLIGHT ---------- */
+  .dlx-highlight,
+  .dlx-faq__mark {
+    background: var(--dlx-gold);
+    color: var(--dlx-ink);
+    padding: 2px 15px;
+    display: inline-block;
+    border-radius: 20px 10px 20px 10px;
+    transform: skewX(-15deg);
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+  }
+
+  .dlx-kicker {
+    font-family: var(--dlx-heading-font);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .dlx-bar {
+    width: 80px;
+    height: 6px;
+    background: var(--dlx-gold);
+    margin-top: 22px;
+  }
+
+  /* ---------- 4. BUTTONS ---------- */
+  .dlx-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px 28px;
+    font-family: var(--dlx-heading-font);
+    font-size: 16px;
+    font-weight: 800;
+    border: 1px solid transparent;
+    transition: transform .2s ease, background .2s ease, color .2s ease, border-color .2s ease, box-shadow .2s ease;
+  }
+
+  .dlx-btn1 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px 28px;
+    color: #0b0b0b;
+    font-family: var(--dlx-heading-font);
+    font-size: 16px;
+    font-weight: 800;
+    border: 1px solid transparent;
+    transition: transform .2s ease, background .2s ease, color .2s ease, border-color .2s ease, box-shadow .2s ease;
+  }
+
+  .dlx-btn1 a {
+    color: #050505;
+  }
+
+  .dlx-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .dlx-btn--gold {
+    background: var(--dlx-gold);
+    color: var(--dlx-ink);
+    box-shadow: 0 8px 40px -8px var(--dlx-gold);
+  }
+
+  .dlx-btn--gold:hover {
+    transform: translateY(-2px);
+  }
+
+  .dlx-btn--ghost {
+    border-color: rgba(250, 248, 243, .3);
+    color: var(--dlx-paper);
+  }
+
+  .dlx-btn--ghost:hover {
+    border-color: var(--dlx-gold);
+    color: var(--dlx-gold);
+  }
+
+  .dlx-btn--whatsapp {
+    background: var(--dlx-ink);
+    color: var(--dlx-gold);
+    border-color: rgba(230, 179, 37, .5);
+  }
+
+  .dlx-btn--whatsapp:hover {
+    border-color: var(--dlx-gold);
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px -12px rgba(0, 0, 0, .7);
+  }
+
+  /* ---------- 5. HERO ---------- */
+  .dlx-hero {
+    position: relative;
+    overflow: hidden;
+    background: var(--dlx-ink);
+    isolation: isolate;
+  }
+
+  .dlx-hero__bg {
+    position: absolute;
+    inset: -20px;
+    z-index: -2;
+    background: url("{% static 'img/marketing-hero.jpg' %}") center / cover no-repeat;
+    opacity: .6;
+    animation: dlx-heroZoom 22s ease-in-out infinite alternate;
+  }
+
+  @keyframes dlx-heroZoom {
+    0% {
+      transform: scale(1);
+    }
+
+    100% {
+      transform: scale(1.08);
+    }
+  }
+
+  .dlx-hero__shade {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(to bottom, rgba(11, 11, 11, .82), rgba(11, 11, 11, .62), var(--dlx-ink));
+  }
+
+  .dlx-hero__grid {
+    display: grid;
+    gap: 56px;
+    align-items: center;
+    padding-block: 72px 88px;
+  }
+
+  @media (min-width: 992px) {
+    .dlx-hero__grid {
+      grid-template-columns: 1.1fr .9fr;
+      gap: 64px;
+      padding-block: 112px 128px;
+    }
+  }
+
+  .dlx-hero__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 16px;
+    border: 1px solid rgba(230, 179, 37, .4);
+    background: rgba(11, 11, 11, .6);
+    color: var(--dlx-gold);
+  }
+
+  .dlx-hero__badge i {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--dlx-gold);
+  }
+
+  .dlx-hero__copy {
+    text-align: left;
+  }
+
+  .dlx-hero__title {
+    margin-top: 32px;
+    max-width: 760px;
+    font-family: var(--dlx-heading-font);
+    font-size: clamp(36px, 4.6vw, 64px);
+    font-weight: 900;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+    color: var(--dlx-paper);
+    text-align: left;
+  }
+
+  .dlx-hero__lead {
+    margin-top: 28px;
+    max-width: 700px;
+    font-family: var(--dlx-heading-font);
+    font-size: clamp(18px, 1.9vw, 24px);
+    font-weight: 500;
+    line-height: 1.6;
+    color: rgba(250, 248, 243, .9);
+    text-align: left;
+  }
+
+  .dlx-hero__text {
+    margin-top: 20px;
+    max-width: 640px;
+    font-size: clamp(14px, 1.2vw, 16px);
+    line-height: 1.7;
+    color: rgba(250, 248, 243, .6);
+    text-align: left;
+  }
+
+  .dlx-hero__actions {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: flex-start;
+  }
+
+  .dlx-hero__points {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .dlx-hero__points li {
+    padding: 7px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(250, 248, 243, .85);
+    border: 1px solid rgba(250, 248, 243, .16);
+    background: rgba(250, 248, 243, .04);
+  }
+
+  /* --- Hero result area (image panel) --- */
+  .dlx-result {
+    position: relative;
+    width: 100%;
+    max-width: 520px;
+    margin-inline: auto;
+    padding: 18px 18px 18px 0;
+  }
+
+  .dlx-result::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top: 18px;
+    left: 18px;
+    border: 2px solid var(--dlx-gold);
+    z-index: 0;
+  }
+
+  .dlx-result__main {
+    position: relative;
+    z-index: 1;
+    aspect-ratio: 4 / 4.6;
+    background: var(--dlx-paper);
+    border: 1px solid rgba(11, 11, 11, .08);
+    overflow: hidden;
+    border-radius: 14px;
+    box-shadow: 0 40px 90px -28px rgba(0, 0, 0, .85), 0 0 0 1px rgba(230, 179, 37, .18);
+  }
+
+  .dlx-result__tag {
+    position: absolute;
+    z-index: 3;
+    top: 16px;
+    left: 16px;
+    padding: 6px 12px;
+    background: var(--dlx-gold);
+    color: var(--dlx-ink);
+    border-radius: 0 0 10px 0;
+  }
+
+  .dlx-result__chip {
+    position: absolute;
+    z-index: 3;
+    left: -14px;
+    bottom: -18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    min-width: 210px;
+    background: var(--dlx-ink);
+    color: var(--dlx-paper);
+    border: 1px solid rgba(230, 179, 37, .3);
+    box-shadow: 0 20px 50px -16px rgba(0, 0, 0, .6);
+  }
+
+  .dlx-result__chip-icon {
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    background: var(--dlx-gold);
+    color: var(--dlx-ink);
+    flex: none;
+  }
+
+  .dlx-result__chip-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .dlx-result__chip b {
+    display: block;
+    font-family: var(--dlx-heading-font);
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--dlx-paper);
+  }
+
+  .dlx-result__chip small {
+    font-size: 12px;
+    color: rgba(250, 248, 243, .55);
+  }
+
+  @media (max-width: 480px) {
+    .dlx-result__chip {
+      left: 0;
+      min-width: 0;
+    }
+  }
+
+  /* --- Hero image panel: light, decorative Delemon-branded background
+     for the ChatGPT visual. Drop your image at
+     static/img/chatgpt-real-estate.png (or .jpg/.svg) and it will sit
+     on top of this decorative gold-on-paper backdrop. --- */
+  .dlx-hero-image-panel {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 34px;
+    background:
+      radial-gradient(60% 60% at 80% 15%, rgba(230, 179, 37, .18), transparent 70%),
+      radial-gradient(50% 50% at 10% 90%, rgba(230, 179, 37, .12), transparent 70%),
+      linear-gradient(160deg, var(--dlx-paper) 0%, var(--dlx-paper-dim) 100%);
+    overflow: hidden;
+  }
+
+  .dlx-hero-image-panel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    opacity: .6;
+    background-image:
+      radial-gradient(rgba(184, 136, 11, .18) 1.5px, transparent 1.5px);
+    background-size: 22px 22px;
+  }
+
+  .dlx-hero-image-panel__ring {
+    position: absolute;
+    z-index: 0;
+    border-radius: 50%;
+    border: 1.5px solid rgba(230, 179, 37, .35);
+  }
+
+  .dlx-hero-image-panel__ring--a {
+    width: 260px;
+    height: 260px;
+    top: -70px;
+    right: -70px;
+  }
+
+  .dlx-hero-image-panel__ring--b {
+    width: 160px;
+    height: 160px;
+    bottom: -50px;
+    left: -50px;
+    border-color: rgba(230, 179, 37, .5);
+  }
+
+  .dlx-hero-image-panel__badge {
+    position: absolute;
+    z-index: 3;
+    top: 18px;
+    left: 18px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: var(--dlx-ink);
+    color: var(--dlx-gold);
+    border: 1px solid rgba(230, 179, 37, .45);
+    font-family: var(--dlx-heading-font);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .02em;
+    box-shadow: 0 10px 24px -10px rgba(0, 0, 0, .4);
+  }
+
+  .dlx-hero-image-panel__badge svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .dlx-hero-image-panel__frame {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 380px;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, .55);
+    border: 1px solid rgba(230, 179, 37, .4);
+    border-radius: 20px;
+    box-shadow: 0 30px 60px -24px rgba(11, 11, 11, .25);
+    animation: dlx-float 5s ease-in-out infinite;
+  }
+
+  @keyframes dlx-float {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .dlx-hero-image-panel__frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 16px;
+    background-color: black;
+  }
+
+  .dlx-inline-icon {
+    display: inline-block;
+    width: .8em;
+    height: .8em;
+    vertical-align: -0.08em;
+    margin-right: 6px;
+  }
+
+  /* ---------- 6. SERVICES TICKER ---------- */
+  .dlx-ticker {
+    overflow: hidden;
+    background: var(--dlx-gold);
+    border-block: 2px solid var(--dlx-ink);
+    padding: 14px 0;
+  }
+
+  .dlx-ticker__track {
+    display: flex;
+    width: max-content;
+    animation: dlx-marquee 32s linear infinite;
+  }
+
+  .dlx-ticker__item {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding-right: 40px;
+    font-family: var(--dlx-heading-font);
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--dlx-ink);
+    white-space: nowrap;
+  }
+
+  .dlx-ticker__item::after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background: var(--dlx-ink);
+    transform: rotate(45deg);
+  }
+
+  @keyframes dlx-marquee {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* ---------- 7. SECTION SPACING ---------- */
+  .dlx-section {
+    padding-block: 80px;
+  }
+
+  @media (min-width: 640px) {
+    .dlx-section {
+      padding-block: 96px;
+    }
+  }
+
+  /* ---------- 8. INTRO / TWO-COLUMN TEXT SECTIONS ---------- */
+  .dlx-intro {
+    background: var(--dlx-paper);
+  }
+
+  .dlx-intro__grid {
+    display: grid;
+    gap: 48px;
+  }
+
+  @media (min-width: 992px) {
+    .dlx-intro__grid {
+      grid-template-columns: 1fr 1.5fr;
+      gap: 96px;
+    }
+  }
+
+  .dlx-intro__body {
+    display: grid;
+    gap: 20px;
+    font-size: 17px;
+    color: var(--dlx-muted);
+  }
+
+  .dlx-intro__lead {
+    border-left: 3px solid var(--dlx-gold);
+    padding-left: 20px;
+    font-weight: 600;
+    color: var(--dlx-text);
+  }
+
+  /* Reusable checklist for bulleted content pulled straight from the copy */
+  .dlx-bullets {
+    margin-top: 22px;
+    display: grid;
+    gap: 14px;
+  }
+
+  .dlx-bullets li {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    font-size: 15.5px;
+    color: var(--dlx-muted);
+  }
+
+  .dlx-bullets li svg {
+    width: 20px;
+    height: 20px;
+    flex: none;
+    margin-top: 2px;
+    color: var(--dlx-gold-deep);
+  }
+
+  .dlx-bullets--dark li {
+    color: rgba(250, 248, 243, .7);
+  }
+
+  .dlx-bullets--dark li svg {
+    color: var(--dlx-gold);
+  }
+
+  /* ---------- 9. CHALLENGES / BENEFIT GRID ---------- */
+  .dlx-challenges {
+    background: var(--dlx-paper-dim);
+    border-top: 1px solid var(--dlx-line);
+  }
+
+  .dlx-challenges__head {
+    max-width: 900px;
+  }
+
+  .dlx-challenges__head p.dlx-lead {
+    margin-top: 18px;
+    color: var(--dlx-muted);
+    max-width: 760px;
+  }
+
+  .dlx-challenges__grid {
+    margin-top: 56px;
+    display: grid;
+    gap: 1px;
+    background: var(--dlx-line);
+    border: 1px solid var(--dlx-line);
+  }
+
+  @media (min-width: 640px) {
+    .dlx-challenges__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .dlx-challenges__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .dlx-challenge {
+    background: var(--dlx-paper);
+    padding: 36px;
+    transition: background .25s;
+  }
+
+  .dlx-challenge__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .dlx-challenge__icon svg {
+    width: 28px;
+    height: 28px;
+    color: var(--dlx-gold-deep);
+    transition: color .25s;
+  }
+
+  .dlx-challenge__no {
+    font-family: var(--dlx-heading-font);
+    font-size: 14px;
+    font-weight: 800;
+    color: rgba(94, 91, 82, .55);
+    transition: color .25s;
+  }
+
+  .dlx-challenge .dlx-card-title {
+    margin-top: 24px;
+    transition: color .25s;
+  }
+
+  .dlx-challenge p {
+    margin-top: 12px;
+    font-size: 14.5px;
+    color: var(--dlx-muted);
+    transition: color .25s;
+  }
+
+  .dlx-challenge:hover {
+    background: var(--dlx-ink);
+  }
+
+  .dlx-challenge:hover .dlx-challenge__icon svg {
+    color: var(--dlx-gold);
+  }
+
+  .dlx-challenge:hover .dlx-challenge__no {
+    color: rgba(250, 248, 243, .4);
+  }
+
+  .dlx-challenge:hover .dlx-card-title {
+    color: var(--dlx-paper);
+  }
+
+  .dlx-challenge:hover p {
+    color: rgba(250, 248, 243, .7);
+  }
+
+  /* ---------- 10. SOLUTIONS ---------- */
+  .dlx-solutions {
+    background-color: var(--dlx-ink);
+    background-image:
+      linear-gradient(rgba(250, 248, 243, .035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(250, 248, 243, .035) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .dlx-solutions__head {
+    max-width: 900px;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .dlx-solutions__head .dlx-heading {
+    margin-top: 16px;
+    color: var(--dlx-paper);
+  }
+
+  .dlx-solutions__head .dlx-heading span {
+    color: var(--dlx-gold);
+  }
+
+  .dlx-solutions__head p.dlx-lead {
+    margin-top: 18px;
+    color: rgba(250, 248, 243, .6);
+  }
+
+  .dlx-solutions__grid {
+    margin-top: 56px;
+    display: grid;
+    gap: 20px;
+  }
+
+  @media (min-width: 640px) {
+    .dlx-solutions__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .dlx-solutions__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .dlx-solution {
+    background: var(--dlx-ink-deep);
+    border: 1px solid rgba(250, 248, 243, .1);
+    padding: 36px;
+    transition: border-color .25s, transform .25s;
+  }
+
+  .dlx-solution:hover {
+    border-color: rgba(230, 179, 37, .6);
+    transform: translateY(-3px);
+  }
+
+  .dlx-solution__icon {
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(230, 179, 37, .3);
+    background: rgba(230, 179, 37, .1);
+    transition: background .25s;
+  }
+
+  .dlx-solution__icon svg {
+    width: 20px;
+    height: 20px;
+    color: var(--dlx-gold);
+    transition: color .25s;
+  }
+
+  .dlx-solution:hover .dlx-solution__icon {
+    background: var(--dlx-gold);
+  }
+
+  .dlx-solution:hover .dlx-solution__icon svg {
+    color: var(--dlx-ink);
+  }
+
+  .dlx-solution__step {
+    margin-top: 24px;
+    color: rgba(230, 179, 37, .75);
+  }
+
+  .dlx-solution .dlx-card-title {
+    margin-top: 8px;
+    color: var(--dlx-paper);
+  }
+
+  .dlx-solution p.dlx-solution__text {
+    margin-top: 12px;
+    font-size: 14.5px;
+    color: rgba(250, 248, 243, .6);
+  }
+
+  .dlx-solutions__quote {
+    max-width: 900px;
+    margin: 56px auto 0;
+    padding: 24px 0;
+    text-align: center;
+    border-block: 1px solid rgba(230, 179, 37, .3);
+    font-family: var(--dlx-heading-font);
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.55;
+    color: var(--dlx-paper);
+  }
+
+  .dlx-solutions__quote span {
+    color: var(--dlx-gold);
+  }
+
+  /* ---------- 10b. WHY DELEMON (light card grid) ---------- */
+  .dlx-why {
+    background: var(--dlx-paper);
+    border-top: 1px solid var(--dlx-line);
+  }
+
+  .dlx-why__grid {
+    margin-top: 56px;
+    display: grid;
+    gap: 1px;
+    background: var(--dlx-line);
+    border: 1px solid var(--dlx-line);
+  }
+
+  @media (min-width: 640px) {
+    .dlx-why__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .dlx-why__item {
+    background: var(--dlx-paper-dim);
+    padding: 32px 36px;
+  }
+
+  .dlx-why__item .dlx-card-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .dlx-why__item .dlx-card-title svg {
+    width: 20px;
+    height: 20px;
+    color: var(--dlx-gold-deep);
+    flex: none;
+  }
+
+  .dlx-why__item p {
+    margin-top: 10px;
+    font-size: 14.5px;
+    color: var(--dlx-muted);
+  }
+
+  /* ---------- 11. FAQ ---------- */
+  .dlx-faq {
+    background: var(--dlx-paper);
+  }
+
+  .dlx-faq__grid {
+    display: grid;
+    gap: 48px;
+  }
+
+  @media (min-width: 992px) {
+    .dlx-faq__grid {
+      grid-template-columns: 1fr 1.8fr;
+      gap: 96px;
+    }
+  }
+
+  .dlx-faq__intro p {
+    margin-top: 18px;
+    color: var(--dlx-muted);
+  }
+
+  .dlx-faq__list {
+    border-block: 1px solid var(--dlx-line);
+  }
+
+  .dlx-faq__item+.dlx-faq__item {
+    border-top: 1px solid var(--dlx-line);
+  }
+
+  .dlx-faq__btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 24px 0;
+    text-align: left;
+    background: none;
+    border: 0;
+    color: var(--dlx-text);
+  }
+
+  .dlx-faq__q {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+  }
+
+  .dlx-faq__no {
+    font-family: var(--dlx-heading-font);
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--dlx-gold-deep);
+  }
+
+  .dlx-faq__title {
+    font-family: var(--dlx-heading-font);
+    font-size: 17px;
+    font-weight: 800;
+    line-height: 1.4;
+  }
+
+  .dlx-faq__icon svg {
+    width: 20px;
+    height: 20px;
+    color: var(--dlx-gold-deep);
+    transition: transform .3s;
+    flex: none;
+  }
+
+  .dlx-faq__item.is-open .dlx-faq__icon svg {
+    transform: rotate(45deg);
+  }
+
+  .dlx-faq__panel {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows .3s ease;
+  }
+
+  .dlx-faq__item.is-open .dlx-faq__panel {
+    grid-template-rows: 1fr;
+  }
+
+  .dlx-faq__panel>div {
+    overflow: hidden;
+  }
+
+  .dlx-faq__panel p {
+    padding: 0 40px 28px 36px;
+    font-size: 15.5px;
+    color: var(--dlx-muted);
+  }
+
+  /* ---------- 12. CONCLUSION ---------- */
+  .dlx-conclusion {
+    background: var(--dlx-paper-dim);
+    border-top: 1px solid var(--dlx-line);
+  }
+
+  .dlx-conclusion__box {
+    max-width: 900px;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .dlx-conclusion__box p {
+    margin-top: 16px;
+    color: var(--dlx-muted);
+    font-size: 16px;
+  }
+
+  /* ---------- 13. FINAL CTA (dark, gold glow, split layout) ---------- */
+  .dlx-cta {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    background:
+      radial-gradient(900px 420px at 88% 0%, rgba(230, 179, 37, .28), transparent 62%),
+      radial-gradient(700px 380px at 0% 100%, rgba(230, 179, 37, .12), transparent 65%),
+      linear-gradient(135deg, #0b0b0b 0%, #16120a 55%, #0b0b0b 100%);
+    border-top: 4px solid var(--dlx-gold);
+  }
+
+  .dlx-cta::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    opacity: .6;
+    background-image:
+      linear-gradient(rgba(250, 248, 243, .035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(250, 248, 243, .035) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .dlx-cta__grid {
+    display: grid;
+    gap: 48px;
+    align-items: center;
+  }
+
+  @media (min-width: 992px) {
+    .dlx-cta__grid {
+      grid-template-columns: 1.15fr .85fr;
+      gap: 80px;
+    }
+  }
+
+  .dlx-cta .dlx-kicker {
+    color: var(--dlx-gold);
+  }
+
+  .dlx-cta__title {
+    margin-top: 16px;
+    max-width: 720px;
+    color: var(--dlx-paper);
+  }
+
+  .dlx-cta__title span {
+    color: var(--dlx-gold);
+  }
+
+  .dlx-cta__text {
+    margin-top: 18px;
+    max-width: 620px;
+    font-size: 17px;
+    color: rgba(250, 248, 243, .68);
+  }
+
+  .dlx-cta__tags {
+    margin-top: 28px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .dlx-cta__tags li {
+    padding: 7px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(250, 248, 243, .85);
+    border: 1px solid rgba(230, 179, 37, .35);
+    background: rgba(230, 179, 37, .07);
+  }
+
+  .dlx-cta__card {
+    background: var(--dlx-paper);
+    color: var(--dlx-ink);
+    padding: 36px;
+    position: relative;
+    box-shadow: 0 40px 80px -30px rgba(0, 0, 0, .8);
+  }
+
+  .dlx-cta__card::before {
+    content: "";
+    position: absolute;
+    inset: 12px -12px -12px 12px;
+    border: 2px solid var(--dlx-gold);
+    z-index: -1;
+  }
+
+  .dlx-page a {
+    color: #f1eee5;
+  }
+
+  .dlx-cta__card-title {
+    font-family: var(--dlx-heading-font);
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 1.3;
+  }
+
+  .dlx-cta__card-sub {
+    margin-top: 6px;
+    font-size: 14px;
+    color: var(--dlx-muted);
+  }
+
+  .dlx-cta__list {
+    margin-top: 22px;
+    display: grid;
+    gap: 14px;
+  }
+
+  .dlx-cta__list li {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .dlx-cta__list svg {
+    width: 20px;
+    height: 20px;
+    flex: none;
+    margin-top: 2px;
+    color: var(--dlx-gold-deep);
+  }
+
+  .dlx-cta__actions {
+    margin-top: 28px;
+    display: grid;
+    gap: 12px;
+  }
+
+  .dlx-cta__actions .dlx-btn {
+    width: 100%;
+  }
+
+  .dlx-btn--dark {
+    background: var(--dlx-ink);
+    color: var(--dlx-gold);
+  }
+
+  .dlx-btn--dark:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px -12px rgba(0, 0, 0, .6);
+  }
+
+  .dlx-btn--outline {
+    border-color: var(--dlx-ink);
+    color: var(--dlx-ink);
+  }
+
+  .dlx-btn--outline:hover {
+    background: var(--dlx-ink);
+    color: var(--dlx-gold);
+  }
+
+  .dlx-cta__note {
+    margin-top: 16px;
+    text-align: center;
+    font-size: 12.5px;
+    color: var(--dlx-muted);
+  }
+
+  .dlx-btn1.dlx-btn--outline:hover,
+  .dlx-btn1.dlx-btn--outline:hover a,
+  .dlx-cta__actions a.dlx-btn1.dlx-btn--outline:hover,
+  .dlx-btn1.dlx-btn--outline:hover i,
+  .dlx-btn1.dlx-btn--outline:hover svg {
+    color: #ffffff !important;
+  }
+
+  /* ---------- 14. REDUCED MOTION ---------- */
+  @media (prefers-reduced-motion: reduce) {
+    .dlx-ticker__track {
+      animation: none;
+    }
+
+    .dlx-hero__bg {
+      animation: none;
+    }
+
+    .dlx-hero-image-panel__frame {
+      animation: none;
+    }
+
+    .dlx-page * {
+      transition: none !important;
+    }
+  }
+</style>
+
+<div class="dlx-page" id="top">
+
+  <main>
+    <!-- ================= HERO ================= -->
+    <section class="dlx-hero">
+      <div class="dlx-hero__bg" role="img" aria-label="Dubai skyline at dusk in black and gold"></div>
+      <div class="dlx-hero__shade"></div>
+
+      <div class="dlx-wrap dlx-hero__grid">
+        <!-- Left: copy -->
+        <div class="dlx-hero__copy">
+          <p class="dlx-kicker dlx-hero__badge"><i></i> ChatGPT Ads for Real Estate Agency UAE</p>
+
+          <h1 class="dlx-heading dlx-hero__title">
+            Are You Ready To Get
+            <span class="dlx-highlight">Property Buyers From
+              ChatGPT</span>?
+          </h1>
+
+          <p class="dlx-hero__lead">
+            Delemon Technology helps UAE real estate agencies leverage AI-powered ChatGPT Ads to reach high-intent
+            buyers, create personalised experiences, and generate smarter property leads.
+          </p>
+          <p class="dlx-hero__text">
+            Instead of showing the same advertisement to every user, our AI-powered advertising helps you understand
+            buyer preferences, investment goals, and search behaviour to deliver more relevant marketing messages.
+          </p>
+
+          <div class="dlx-hero__actions">
+            <a href="#cta" class="dlx-btn dlx-btn--gold">Get Your Free Strategy Call <i
+                data-lucide="arrow-right"></i></a>
+            <a href="#solutions" class="dlx-btn dlx-btn--ghost">See How We Help</a>
+          </div>
+        </div>
+
+        <!-- Right: LIGHT, DECORATIVE IMAGE PANEL (drop your ChatGPT visual in) -->
+        <div class="dlx-result">
+          <div class="dlx-result__main">
+            <div class="dlx-hero-image-panel">
+              <span class="dlx-hero-image-panel__ring dlx-hero-image-panel__ring--a"></span>
+              <span class="dlx-hero-image-panel__ring dlx-hero-image-panel__ring--b"></span>
+
+              <span class="dlx-hero-image-panel__badge">
+                <i data-lucide="sparkles"></i> Powered By ChatGPT
+              </span>
+
+              <div class="dlx-hero-image-panel__frame">
+                <!-- ★ Replace with your ChatGPT / AI advertising image,
+                     e.g. static/img/chatgpt-real-estate.png -->
+                <img src="https://companieslogo.com/img/orig/openai.D-519073dc.png?t=1720244494"
+                  alt="ChatGPT AI-powered advertising for UAE real estate">
+              </div>
+            </div>
+          </div>
+
+          <div class="dlx-result__chip">
+            <span class="dlx-result__chip-icon"><i data-lucide="trending-up"></i></span>
+            <span>
+              <b>High-Intent Buyer Lead</b>
+              <small>Generated with ChatGPT Ads</small>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= TICKER ================= -->
+    <div class="dlx-ticker" aria-hidden="true">
+      <div class="dlx-ticker__track" id="dlxTicker"></div>
+    </div>
+
+    <!-- ================= INTRO ================= -->
+    <section class="dlx-section dlx-intro">
+      <div class="dlx-wrap dlx-intro__grid">
+        <div>
+          <p class="dlx-kicker" style="color:var(--dlx-muted)">AI-Powered Advertising</p>
+          <h2 class="dlx-heading" style="margin-top:16px">Generate Smarter Property Leads With AI-Powered Advertising
+            Solutions</h2>
+          <div class="dlx-bar"></div>
+        </div>
+        <div class="dlx-intro__body">
+          <p class="dlx-intro__lead">
+            The UAE real estate market is highly competitive, and attracting the right buyers requires more than
+            traditional advertising methods. Property companies need advanced marketing solutions that understand
+            customer intent, deliver personalised experiences, and connect potential buyers with the right
+            opportunities at the right time.
+          </p>
+          <p>
+            ChatGPT Ads for Real Estate Agency UAE helps real estate businesses use artificial intelligence to
+            create smarter advertising campaigns, improve customer engagement, and generate more qualified property
+            enquiries.
+          </p>
+          <p>
+            Instead of showing the same advertisement to every user, AI-powered advertising helps businesses
+            understand buyer preferences, investment goals, and search behaviour to deliver more relevant marketing
+            messages. Whether you are promoting luxury villas, off-plan apartments, waterfront properties, or
+            investment opportunities, ChatGPT advertising can help your real estate business create better customer
+            experiences and improve digital marketing performance.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= WHAT ARE CHATGPT ADS ================= -->
+    <section class="dlx-section dlx-intro" style="background:var(--dlx-paper-dim);border-top:1px solid var(--dlx-line);">
+      <div class="dlx-wrap dlx-intro__grid">
+        <div>
+          <p class="dlx-kicker" style="color:var(--dlx-muted)">The Technology</p>
+          <h2 class="dlx-heading" style="margin-top:16px">What Are ChatGPT Ads For Real Estate Agency UAE?</h2>
+          <div class="dlx-bar"></div>
+        </div>
+        <div class="dlx-intro__body">
+          <p>
+            ChatGPT Ads are AI-powered advertising solutions that combine conversational artificial intelligence with
+            digital marketing strategies to create more personalised interactions with potential customers. For real
+            estate agencies, this technology helps businesses understand what buyers are looking for and provide
+            relevant information based on their interests.
+          </p>
+          <p>
+            ChatGPT Advertising for Real Estate Companies UAE allows property businesses to improve how they attract,
+            communicate with, and convert potential buyers. AI-powered advertising can support real estate agencies
+            by helping them:
+          </p>
+          <ul class="dlx-bullets">
+            <li><i data-lucide="circle-check"></i> Understand customer requirements and buying intent</li>
+            <li><i data-lucide="circle-check"></i> Deliver personalised property recommendations</li>
+            <li><i data-lucide="circle-check"></i> Provide instant responses to customer questions</li>
+            <li><i data-lucide="circle-check"></i> Improve advertisement messaging</li>
+            <li><i data-lucide="circle-check"></i> Identify stronger sales opportunities</li>
+            <li><i data-lucide="circle-check"></i> Support sales teams with better customer insights</li>
+          </ul>
+          <p>
+            With more buyers researching properties online before contacting an agency, personalised AI-driven
+            advertising helps businesses create meaningful connections throughout the buying journey.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= HOW CHATGPT ADS HELP GENERATE LEADS ================= -->
+    <section class="dlx-section dlx-challenges" id="challenges">
+      <div class="dlx-wrap">
+        <div class="dlx-challenges__head">
+          <p class="dlx-kicker" style="color:var(--dlx-muted)">Lead Generation</p>
+          <h2 class="dlx-heading" style="margin-top:16px">
+            How ChatGPT Ads Help Real Estate Companies
+            <span class="dlx-highlight">Generate Better Leads</span>
+          </h2>
+          <p class="dlx-lead">
+            Generating quality leads is one of the biggest challenges for real estate businesses. Many agencies
+            receive enquiries from users who are not ready to buy or whose requirements do not match available
+            properties. ChatGPT Lead Generation for Real Estate helps improve lead quality by understanding customer
+            interests and delivering more relevant interactions.
+          </p>
+        </div>
+
+        <div class="dlx-challenges__grid" id="dlxChallenges"></div>
+      </div>
+    </section>
+
+    <!-- ================= WHY UAE REAL ESTATE NEEDS AI ================= -->
+    <section class="dlx-section dlx-intro">
+      <div class="dlx-wrap dlx-intro__grid">
+        <div>
+          <p class="dlx-kicker" style="color:var(--dlx-muted)">Why It Matters</p>
+          <h2 class="dlx-heading" style="margin-top:16px">Why Real Estate Agencies In UAE Need AI-Powered
+            Advertising</h2>
+          <div class="dlx-bar"></div>
+        </div>
+        <div class="dlx-intro__body">
+          <p class="dlx-intro__lead">
+            The UAE property market attracts buyers from different countries, including investors, residents, and
+            high-net-worth individuals. With increasing competition, real estate companies need innovative ways to
+            stand out online.
+          </p>
+          <p>
+            Traditional advertising methods often reach large audiences but may not always connect with users who
+            have genuine buying interest. ChatGPT Advertising UAE helps businesses create more intelligent marketing
+            campaigns by combining customer insights with personalised communication. Real estate agencies can use
+            AI advertising to:
+          </p>
+          <ul class="dlx-bullets">
+            <li><i data-lucide="circle-check"></i> Improve customer engagement</li>
+            <li><i data-lucide="circle-check"></i> Generate more relevant enquiries</li>
+            <li><i data-lucide="circle-check"></i> Reduce response time</li>
+            <li><i data-lucide="circle-check"></i> Understand buyer behaviour</li>
+            <li><i data-lucide="circle-check"></i> Improve marketing efficiency</li>
+            <li><i data-lucide="circle-check"></i> Create better customer journeys</li>
+          </ul>
+          <p>
+            For businesses operating in Dubai and the wider UAE market, AI-powered advertising provides a smarter
+            approach to attracting and converting potential property buyers.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= COMBINING CHATGPT ADS WITH DIGITAL MARKETING ================= -->
+    <section class="dlx-section dlx-solutions">
+      <div class="dlx-wrap">
+        <div class="dlx-solutions__head">
+          <p class="dlx-kicker" style="color:var(--dlx-gold)">Full-Funnel Marketing</p>
+          <h2 class="dlx-heading">Combining ChatGPT Ads With <span>Real Estate Digital Marketing UAE</span></h2>
+          <p class="dlx-lead">
+            AI advertising delivers stronger results when integrated with a complete marketing strategy. Real Estate
+            Digital Marketing UAE combines multiple channels to attract customers, build brand visibility, and
+            generate property enquiries.
+          </p>
+        </div>
+
+        <div class="dlx-solutions__grid" id="dlxChannels"></div>
+      </div>
+    </section>
+
+    <!-- ================= SOLUTIONS / HOW DELEMON HELPS ================= -->
+    <section class="dlx-section dlx-intro" id="solutions">
+      <div class="dlx-wrap dlx-intro__grid">
+        <div>
+          <p class="dlx-kicker" style="color:var(--dlx-muted)">Our Approach</p>
+          <h2 class="dlx-heading" style="margin-top:16px">How Delemon Technology Helps With ChatGPT Ads For Real
+            Estate UAE</h2>
+          <div class="dlx-bar"></div>
+        </div>
+        <div class="dlx-intro__body">
+          <p class="dlx-intro__lead">
+            Delemon Technology provides AI-powered marketing solutions designed specifically for UAE real estate
+            companies. With expertise in SEO, Google Ads, Meta Ads, lead generation, and performance marketing, we
+            understand how property businesses can use digital strategies to attract better opportunities.
+          </p>
+          <p>
+            Our ChatGPT Marketing Services Dubai help real estate agencies create smarter campaigns focused on
+            visibility, engagement, and conversions.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="dlx-wrap" style="padding-bottom:96px;">
+      <div class="dlx-why__grid" id="dlxWhyDelemon"></div>
+    </div>
+
+    <!-- ================= PROCESS ================= -->
+    <section class="dlx-section dlx-solutions">
+      <div class="dlx-wrap">
+        <div class="dlx-solutions__head">
+          <p class="dlx-kicker" style="color:var(--dlx-gold)">The Process</p>
+          <h2 class="dlx-heading">Our ChatGPT Ads Process For <span>Real Estate Companies</span></h2>
+          <p class="dlx-lead">
+            A successful AI advertising campaign requires a clear strategy and continuous improvement. Here's how
+            Delemon Technology builds smarter, AI-powered lead-generation systems for UAE real estate businesses.
+          </p>
+        </div>
+
+        <div class="dlx-solutions__grid" id="dlxSolutions"></div>
+
+        <p class="dlx-solutions__quote">
+          With Delemon Technology, your advertising becomes an <span>AI-powered lead-generation system</span> built to
+          attract, engage, and convert UAE property buyers.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= WHY CHOOSE DELEMON ================= -->
+    <section class="dlx-section dlx-why">
+      <div class="dlx-wrap">
+        <div class="dlx-challenges__head">
+          <p class="dlx-kicker" style="color:var(--dlx-muted)">Why Delemon</p>
+          <h2 class="dlx-heading" style="margin-top:16px">Why Choose Delemon Technology For
+            <span class="dlx-highlight">ChatGPT Marketing Services UAE</span>?
+          </h2>
+          <p class="dlx-lead">
+            Choosing the right technology partner is important for achieving successful AI advertising results.
+            Delemon Technology combines real estate industry knowledge with advanced digital marketing expertise to
+            help UAE property businesses grow. Our experience in Digital Marketing for Real Estate Companies UAE
+            allows us to create solutions that match the needs of modern property businesses. We focus on:
+          </p>
+          <ul class="dlx-bullets" style="max-width:760px;">
+            <li><i data-lucide="circle-check"></i> Understanding real estate buyer behaviour</li>
+            <li><i data-lucide="circle-check"></i> Creating customised marketing strategies</li>
+            <li><i data-lucide="circle-check"></i> Improving lead quality</li>
+            <li><i data-lucide="circle-check"></i> Optimising advertising performance</li>
+            <li><i data-lucide="circle-check"></i> Supporting long-term digital growth</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FAQ ================= -->
+    <section class="dlx-section dlx-faq" id="faq">
+      <div class="dlx-wrap dlx-faq__grid">
+        <div class="dlx-faq__intro">
+          <p class="dlx-kicker" style="color:var(--dlx-muted)">FAQ</p>
+          <h2 class="dlx-heading" style="margin-top:16px">Frequently Asked <span class="dlx-faq__mark">Questions</span>
+          </h2>
+          <p>Everything you need to know about ChatGPT Ads for real estate agencies in the UAE.</p>
+        </div>
+        <div class="dlx-faq__list" id="dlxFaq"></div>
+      </div>
+    </section>
+
+    <!-- ================= CONCLUSION ================= -->
+    <section class="dlx-section dlx-conclusion">
+      <div class="dlx-wrap dlx-conclusion__box">
+        <p class="dlx-kicker" style="color:var(--dlx-muted)">In Summary</p>
+        <h2 class="dlx-heading" style="margin-top:16px">ChatGPT Ads For Real Estate Agency UAE</h2>
+        <p>
+          ChatGPT Ads for Real Estate Agency UAE provides a smarter way for property businesses to attract, engage,
+          and convert potential buyers in a competitive digital market. By combining artificial intelligence with
+          real estate marketing strategies, businesses can create personalised customer experiences, improve lead
+          quality, and optimise advertising performance.
+        </p>
+        <p>
+          Delemon Technology helps UAE real estate companies implement AI-driven marketing solutions that support
+          growth through advanced advertising, lead generation, and digital strategies. For real estate businesses
+          looking to explore the potential of ChatGPT Ads for Real Estate UAE, adopting AI-powered advertising can
+          create stronger customer connections and more effective marketing outcomes.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= FINAL CTA ================= -->
+    <section class="dlx-section dlx-cta" id="cta">
+      <div class="dlx-wrap dlx-cta__grid">
+
+        <div>
+          <p class="dlx-kicker">Let's Grow</p>
+          <h2 class="dlx-heading dlx-cta__title">
+            Ready To Turn ChatGPT Into A <span>Property Lead Machine?</span>
+          </h2>
+          <p class="dlx-cta__text">
+            Attract high-intent buyers, investors, and property enquiries across the UAE with AI-powered advertising
+            built for your properties and your market.
+          </p>
+          <ul class="dlx-cta__tags" aria-label="Services">
+            <li>ChatGPT Ads</li>
+            <li>SEO</li>
+            <li>Google Ads</li>
+            <li>Meta Ads</li>
+            <li>Lead Generation</li>
+          </ul>
+        </div>
+
+        <div class="dlx-cta__card">
+          <h3 class="dlx-cta__card-title">Book Your Free AI Strategy Call</h3>
+          <p class="dlx-cta__card-sub">A short, no-obligation conversation about your goals.</p>
+
+          <ul class="dlx-cta__list">
+            <li><i data-lucide="circle-check"></i> Review of your current advertising and AI readiness</li>
+            <li><i data-lucide="circle-check"></i> Ideas to attract higher-intent buyers with ChatGPT Ads</li>
+            <li><i data-lucide="circle-check"></i> A clear plan tailored to your properties and market</li>
+          </ul>
+
+          <div class="dlx-cta__actions">
+            <a href="{% url 'contact' %}" class="dlx-btn dlx-btn--dark">Book Free Strategy Call <i
+                data-lucide="arrow-right"></i></a>
+            <a href="https://wa.me/+971503482299" style="color: #050505b3;" class="dlx-btn1 dlx-btn--outline"
+              target="_blank" rel="noopener">
+              <i data-lucide="message-circle"></i> Chat On WhatsApp
+            </a>
+          </div>
+          <p class="dlx-cta__note">Tailored for UAE real estate developers, brokers and agencies.</p>
+        </div>
+
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- Icons (Lucide) -->
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+  /* ---------- DATA (all copy sourced from the provided content) ---------- */
+  const DLX_SERVICES = ["ChatGPT Ads", "SEO", "Google Ads", "Meta Ads", "Lead Generation", "AI Advertising"];
+
+  const DLX_LEAD_BENEFITS = [
+    { icon: "target", title: "Attract High-Intent Property Buyers", text: "AI-powered advertising helps businesses focus on users who show stronger interest in property searches, investment opportunities, and real estate solutions. This allows agencies to spend marketing budgets more effectively and attract audiences with higher conversion potential." },
+    { icon: "message-circle", title: "Provide Instant Customer Support", text: "Property buyers often have questions about locations, property types, investment benefits, and available options. ChatGPT-powered solutions can provide immediate responses, helping businesses engage potential customers quickly and reduce missed opportunities." },
+    { icon: "users", title: "Create Personalised Property Experiences", text: "Every buyer has different requirements. Some customers may be searching for investment properties, while others may be interested in family homes or luxury residences. AI advertising helps deliver personalised messages based on customer preferences." },
+    { icon: "bar-chart-3", title: "Improve Campaign Performance", text: "AI insights allow businesses to analyse customer behaviour and understand which messages, audiences, and campaigns generate better engagement, helping real estate companies continuously improve their advertising strategies." }
+  ];
+
+  const DLX_CHANNELS = [
+    { icon: "search", title: "SEO For Real Estate Companies", text: "Search Engine Optimisation helps property websites appear for high-value searches related to apartments, villas, investment opportunities, and real estate services. Combined with AI advertising, businesses attract organic visitors and deliver experiences that improve conversions." },
+    { icon: "megaphone", title: "Real Estate PPC Advertising UAE", text: "Paid advertising helps agencies reach users actively searching for property opportunities. AI-powered solutions can improve campaign targeting, advertisement messaging, and audience understanding to create more effective PPC strategies." },
+    { icon: "share-2", title: "Social Media Advertising", text: "Platforms such as Instagram, Facebook, LinkedIn, and YouTube are important channels for showcasing properties and connecting with investors. AI-based strategies help businesses understand audience behaviour and create more relevant campaigns." }
+  ];
+
+  const DLX_WHY_DELEMON = [
+    { icon: "compass", title: "Real Estate Market-Focused Strategies", text: "Every property business has different goals. Whether you are targeting luxury buyers, international investors, or local property seekers, we develop strategies based on your audience and market requirements." },
+    { icon: "sliders-horizontal", title: "Custom AI Advertising Solutions", text: "We create personalised advertising approaches based on your property type, target audience, marketing goals, customer journey, and lead generation objectives, helping you deliver more relevant messages to potential buyers." },
+    { icon: "target", title: "Conversion-Focused Campaign Management", text: "Our focus is not only generating traffic but creating campaigns designed to increase meaningful enquiries. We combine AI advertising with performance marketing strategies to help businesses improve campaign efficiency." },
+    { icon: "handshake", title: "Complete Real Estate Marketing Support", text: "As a Real Estate Marketing Agency Dubai, Delemon Technology supports businesses with AI advertising, real estate lead generation, Google Ads, Meta advertising, SEO, landing page optimisation, and performance marketing." }
+  ];
+
+  const DLX_SOLUTIONS = [
+    { icon: "search", title: "Audience Research", text: "We analyse your target customers, property segment, and marketing objectives to understand exactly who you want to reach." },
+    { icon: "sparkles", title: "AI Campaign Strategy", text: "We develop advertising strategies based on customer intent, property offerings, and conversion goals." },
+    { icon: "megaphone", title: "Campaign Creation", text: "Our team creates targeted advertisements, messaging, and customer experiences designed to attract potential buyers." },
+    { icon: "bar-chart-3", title: "Performance Tracking", text: "We monitor campaign performance, customer interactions, and lead quality to identify improvement opportunities." },
+    { icon: "refresh-cw", title: "Continuous Optimisation", text: "AI-powered insights help refine campaigns and improve advertising effectiveness over time." }
+  ];
+
+  const DLX_FAQS = [
+    { q: "How can ChatGPT Ads help my real estate agency generate leads in UAE?", a: "ChatGPT Ads can help real estate agencies generate qualified leads by using AI-powered targeting, personalised conversations, and intelligent recommendations. Instead of showing generic advertisements, AI-driven campaigns can understand buyer intent, property preferences, investment goals, and location interests to deliver more relevant experiences. This helps real estate companies attract potential buyers, investors, and tenants who are actively looking for properties in the UAE." },
+    { q: "Can ChatGPT Ads work with Google Ads and Meta Ads campaigns?", a: "Yes, ChatGPT Ads can complement existing Google Ads and Meta Ads campaigns by improving audience understanding, content personalisation, and campaign optimisation. By combining AI insights with search and social advertising platforms, real estate companies can create more effective marketing strategies, refine messaging, and improve lead quality across multiple digital channels." },
+    { q: "How does Delemon Technology create AI advertising strategies for real estate companies?", a: "Delemon Technology develops AI advertising strategies by analysing a real estate company's goals, target audience, property portfolio, and marketing performance. Our approach combines AI-powered content strategies, audience research, digital advertising insights, and conversion-focused campaigns to help real estate businesses reach the right buyers and generate high-quality property enquiries in the UAE market." },
+    { q: "Are ChatGPT Ads suitable for luxury property marketing in Dubai?", a: "Yes, ChatGPT Ads can support luxury property marketing in Dubai by creating personalised experiences for high-value buyers and investors. AI technology can help identify buyer interests, understand investment preferences, and deliver relevant property information to audiences looking for premium villas, waterfront residences, penthouses, and exclusive real estate opportunities." }
+  ];
+
+  /* ---------- RENDER ---------- */
+  const pad = n => String(n + 1).padStart(2, "0");
+
+  // Ticker (two identical halves for a seamless loop)
+  (function () {
+    const set = Array(3).fill(DLX_SERVICES).flat().map(s => `<span class="dlx-ticker__item">${s}</span>`).join("");
+    document.getElementById("dlxTicker").innerHTML = set + set;
+  })();
+
+  // Lead-generation benefits
+  document.getElementById("dlxChallenges").innerHTML = DLX_LEAD_BENEFITS.map((c, i) => `
+  <article class="dlx-challenge">
+    <div class="dlx-challenge__top">
+      <span class="dlx-challenge__icon"><i data-lucide="${c.icon}"></i></span>
+      <span class="dlx-challenge__no">${pad(i)}</span>
+    </div>
+    <h3 class="dlx-card-title">${c.title}</h3>
+    <p>${c.text}</p>
+  </article>`).join("");
+
+  // Digital marketing channels
+  document.getElementById("dlxChannels").innerHTML = DLX_CHANNELS.map((s, i) => `
+  <article class="dlx-solution">
+    <div class="dlx-solution__icon"><i data-lucide="${s.icon}"></i></div>
+    <p class="dlx-kicker dlx-solution__step">Channel ${pad(i)}</p>
+    <h3 class="dlx-card-title">${s.title}</h3>
+    <p class="dlx-solution__text">${s.text}</p>
+  </article>`).join("");
+
+  // Why Delemon (light section)
+  document.getElementById("dlxWhyDelemon").innerHTML = DLX_WHY_DELEMON.map(w => `
+  <article class="dlx-why__item">
+    <h3 class="dlx-card-title"><i data-lucide="${w.icon}"></i> ${w.title}</h3>
+    <p>${w.text}</p>
+  </article>`).join("");
+
+  // Process steps
+  document.getElementById("dlxSolutions").innerHTML = DLX_SOLUTIONS.map((s, i) => `
+  <article class="dlx-solution">
+    <div class="dlx-solution__icon"><i data-lucide="${s.icon}"></i></div>
+    <p class="dlx-kicker dlx-solution__step">Step ${pad(i)}</p>
+    <h3 class="dlx-card-title">${s.title}</h3>
+    <p class="dlx-solution__text">${s.text}</p>
+  </article>`).join("");
+
+  // FAQ accordion
+  const faqBox = document.getElementById("dlxFaq");
+  faqBox.innerHTML = DLX_FAQS.map((f, i) => `
+  <div class="dlx-faq__item${i === 0 ? " is-open" : ""}">
+    <button class="dlx-faq__btn" aria-expanded="${i === 0}" aria-controls="dlx-faq-${i}">
+      <span class="dlx-faq__q">
+        <span class="dlx-faq__no">${pad(i)}</span>
+        <span class="dlx-faq__title">${f.q}</span>
+      </span>
+      <span class="dlx-faq__icon"><i data-lucide="plus"></i></span>
+    </button>
+    <div class="dlx-faq__panel" id="dlx-faq-${i}" role="region">
+      <div><p>${f.a}</p></div>
+    </div>
+  </div>`).join("");
+
+  faqBox.addEventListener("click", e => {
+    const btn = e.target.closest(".dlx-faq__btn");
+    if (!btn) return;
+    const item = btn.parentElement;
+    const willOpen = !item.classList.contains("is-open");
+    faqBox.querySelectorAll(".dlx-faq__item").forEach(el => {
+      el.classList.remove("is-open");
+      el.querySelector(".dlx-faq__btn").setAttribute("aria-expanded", "false");
+    });
+    if (willOpen) {
+      item.classList.add("is-open");
+      btn.setAttribute("aria-expanded", "true");
+    }
+  });
+
+  lucide.createIcons();
+</script>
+
+{% endblock %}
