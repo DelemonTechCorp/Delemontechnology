@@ -5,90 +5,75 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=groups" />
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
-h1{
+
+h1, h2, h3, h4, h5, p, span, a {
     font-family: "Lato", sans-serif;
-  font-style: normal;
+    font-style: normal;
 }
-h2{
-    font-family: "Lato", sans-serif;
-  font-style: normal;
+
+/* ================== NAVBAR BASE (DESKTOP) ================== */
+.navbar {
+    width: 100%;
+    height: 65px;
+    background: black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
-h3{
-    font-family: "Lato", sans-serif;
-  font-style: normal
+.navbar-sub-1 {
+    flex: 0 0 auto;
+    padding: 0 20px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-h4{
-    font-family: "Lato", sans-serif;
-  font-style: normal
+.navbar-sub-2 {
+    /* FIX: was justify-content:space-between on a flex:1 container —
+       at wide screens (~1500px+) the leftover space got divided up
+       as huge gaps between each link. Center the group instead and
+       use a fixed gap so links stay close together like in the
+       reference screenshot, regardless of how wide the screen is. */
+    flex: 1 1 auto;
+    height: 100%;
+    line-height: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    min-width: 0;
 }
-h5{
-    font-family: "Lato", sans-serif;
-  font-style: normal
+.navbar-logo {
+    width: 50px;
+    height: 50px;
 }
-p{
-    font-family: "Lato", sans-serif;
-  font-style: normal
+.page-links {
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+    white-space: nowrap; /* FIX: stops links wrapping/overlapping when tight */
 }
-span{
-    font-family: "Lato", sans-serif;
-  font-style: normal
+.page-links i {
+    margin-left: 8px;
 }
-a{
-    font-family: "Lato", sans-serif;
-  font-style: normal
+.page-links:hover {
+    color: #FAB206;
 }
- .navbar {
-            width: 100%;
-            height: 65px;
-            background: black;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .navbar-sub-1 {
-            width: 10%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .navbar-sub-2 {
-            width: 50%;
-            height: 100%;
-            line-height: 0;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .navbar-logo {
-            width: 50px;
-            height: 50px;
-        }
-        .page-links {
-            text-decoration: none;
-            color: white;
-            font-size: 12px;
-        }
-        .page-links i{
-            margin-left:8px;
-        }
-        .page-links:hover {
-            color: #FAB206;
-        }
-        .active-page {
-            color: #FAB206 !important;
-        }
-        .navbar-sub-3{
-            width: 10%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .free-quote-btn-header{
-              background-color:#FAB206;
+.active-page {
+    color: #FAB206 !important;
+}
+.navbar-sub-3 {
+    flex: 0 0 auto;
+    padding: 0 20px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.free-quote-btn-header {
+    background-color: #FAB206;
     color: white;
     border: hidden;
     outline: none;
@@ -97,30 +82,41 @@ a{
     width: 100px;
     font-size: 12px;
     border-radius: 20px;
-        }
-        .free-quote-form input{
-    width: 100%;
-  height: 40px;
-  font-size: 14px;
-  transition: 0.6s;
-  border: none;
-  border-bottom: 2px solid #CCC;
-  background-color: transparent;
 }
-.free-quote-form input:focus{
+.navbar-sub-3 i {
+    font-size: 25px;
+    color: white;
+    margin-right: 10px;
+}
+/* hamburger button — hidden on desktop, shown from tablet breakpoint down */
+.navbar-mobile {
+    display: none;
+}
+
+/* ================== FREE QUOTE FORM ================== */
+.free-quote-form input {
+    width: 100%;
+    height: 40px;
+    font-size: 14px;
+    transition: 0.6s;
+    border: none;
+    border-bottom: 2px solid #CCC;
+    background-color: transparent;
+}
+.free-quote-form input:focus {
     outline: none;
     border-bottom: 2px solid #FAB206;
 }
-.free-quote-form select{
+.free-quote-form select {
     width: 100%;
-  height: 40px;
-  font-size: 14px;
-  transition: 0.6s;
-  border: none;
-  border-bottom: 2px solid #CCC;
-  background-color: transparent;
+    height: 40px;
+    font-size: 14px;
+    transition: 0.6s;
+    border: none;
+    border-bottom: 2px solid #CCC;
+    background-color: transparent;
 }
-.free-quote-form button{
+.free-quote-form button {
     width: 100px;
     height: 40px;
     background-color: #FAB206;
@@ -129,807 +125,509 @@ a{
     border: hidden;
     font-size: 12px;
 }
-.free-quote-form label{
+.free-quote-form label {
     font-weight: 600;
     font-size: 14px;
 }
-        .navbar-sub-3 i {
-            font-size: 25px;
-            color: white;
-            margin-right: 10px;
-        }
-        .navbar-mobile{
-            display:none;
-        }
-            .dropdown{
-        position: relative;
-    }
-    .dropdown-content{
-        display: none;
+
+/* ================== DESKTOP MEGA MENU (single level) ================== */
+.dropdown {
+    position: relative;
+}
+.dropdown-content {
+    display: none;
     position: absolute;
     background-image: linear-gradient(to right, #fab206, #ecc100, #dad000, #c4de00, #a8eb12);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 1;
     height: 200px;
-    left:-300px;
-    right:0;
+    left: -300px;
+    right: 0;
     width: 700px;
-    }
-    .dropdown:hover .dropdown-content{
-        display:flex;
+}
+.dropdown:hover .dropdown-content {
+    display: flex;
     flex-wrap: wrap;
     align-items: center;
-    padding:10px;
-    justify-content:space-evenly;
+    padding: 10px;
+    justify-content: space-evenly;
+}
+.dropdown-content a {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    height: 50px;
+    width: 45%;
+    font-size: 13px;
+}
+.dropdown-content a i {
+    margin-right: 10px;
+}
+.dropdown-content a:hover {
+    color: #FAB206;
+}
+
+/* ================== DESKTOP MEGA MENU (multi-level) ================== */
+.dropdown-multiple {
+    position: relative;
+    border-radius: 70px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.dropdown-content-multiple {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-image: linear-gradient(to right, #ffffffff, #ffffffff, #ffffffff, #ffffffff, #ffffffff);
+    box-shadow: 0 8px 16px rgba(0,0,0,.2);
+    z-index: 9999;
+    margin-top: 0;
+    padding: 16px 6px 6px 6px;
+    overflow: visible;
+}
+.dropdown-content-multiple > ul {
+    list-style: none;
+    margin: 0;
+    padding: 6px 0;
+    background: #fff;
+    min-width: 230px;
+    border-radius: 12px;
+    border: 2px solid #ffffffff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    position: relative;
+    overflow: visible;
+    max-height: 340px;
+    overflow-y: auto;
+}
+.dropdown-content-multiple li {
+    position: relative;
+}
+.dropdown-content-multiple a {
+    display: block;
+    text-decoration: none;
+    color: #000;
+    font-size: 13px;
+    line-height: 1;
+    padding: 12px 14px;
+    white-space: nowrap;
+}
+.dropdown-content-multiple a i {
+    margin-right: 10px;
+}
+.dropdown-content-multiple a:hover {
+    color: #FAB206;
+    background: #f6f6f6;
+}
+.dropdown-multiple:hover .dropdown-content-multiple {
+    display: block;
+}
+.dropdown-content-multiple,
+.dropdown-content-multiple * {
+    pointer-events: auto;
+}
+
+/* dropend (flyout submenu to the right) */
+.dropend > a {
+    padding-right: 28px;
+}
+.dropend > a::after {
+    content: "›";
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: 700;
+    opacity: .7;
+}
+.dropend .submenu {
+    display: none;
+    position: absolute;
+    top: -6px;
+    left: calc(100% - 2px);
+    min-width: 230px;
+    background: #fff;
+    box-shadow: 0 8px 16px rgba(0,0,0,.2);
+    padding: 6px 0;
+    z-index: 10000;
+    border-radius: 12px;
+    border: 2px solid #ffffffff;
+    max-height: 340px;
+    overflow-y: auto;
+}
+.dropend:hover > .submenu,
+.dropend:focus-within > .submenu {
+    display: block;
+}
+.dropend:hover > a,
+.dropend:focus-within > a {
+    background: #f6f6f6;
+    color: #FAB206;
+}
+
+/* ================== MOBILE SIDEBAR ================== */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -65%;
+    width: 65%;
+    height: 100%;
+    background-color: white;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    transition: left 0.3s;
+    z-index: 999;
+    overflow-y: auto;
+}
+.sidebar.open {
+    left: 0;
+}
+.sidebar-links-one {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+}
+.sidebar-links-one > * {
+    width: 100%;
+}
+.sidebar-links-one a {
+    text-decoration: none;
+    color: #fff;
+    width: 100%;
+    margin-bottom: 5px;
+    display: flex;
+    font-size: 18px;
+    padding-left: 10px;
+    padding-right: 10px;
+    align-items: center;
+    background-color: black;
+    justify-content: flex-start;
+    height: 40px;
+}
+.sidebar-links-one a i {
+    margin-left: -2px;
+    margin-right: 10px;
+}
+.sidebar-links-one a img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+.sidebar-logo {
+    width: 100%;
+    height: 80px;
+    padding: 10px;
+}
+.sidebar-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.sidebar-contact {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding-left: 20px;
+}
+.sidebar-contact a {
+    text-decoration: none;
+    color: black;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+.sidebar-contact a i {
+    margin-right: 8px;
+}
+.offcanvas-body {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.offcanvas-links {
+    height: auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
+.offcanvas-links a {
+    color: white;
+    font-size: 15px;
+    text-decoration: none;
+}
+.offcanvas-links a i {
+    margin-right: 10px;
+}
+.canvas-btn,
+.close-button {
+    background: none;
+    border: hidden;
+    outline: none;
+}
+.close-button i {
+    color: white;
+    font-size: 25px;
+}
+
+/* ================== BURGER ICON ================== */
+.burger {
+    position: relative;
+    width: 40px;
+    height: 30px;
+    background: transparent;
+    cursor: pointer;
+    display: block;
+}
+.burger input {
+    display: none;
+}
+.burger span {
+    display: block;
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    background: #fff;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+}
+.burger span:nth-of-type(1) {
+    top: 0px;
+    transform-origin: left center;
+}
+.burger span:nth-of-type(2) {
+    top: 50%;
+    transform: translateY(-50%);
+    transform-origin: left center;
+}
+.burger span:nth-of-type(3) {
+    top: 100%;
+    transform-origin: left center;
+    transform: translateY(-100%);
+}
+.burger input:checked ~ span:nth-of-type(1) {
+    transform: rotate(45deg);
+    top: 0px;
+    left: 5px;
+}
+.burger input:checked ~ span:nth-of-type(2) {
+    width: 0%;
+    opacity: 0;
+}
+.burger input:checked ~ span:nth-of-type(3) {
+    transform: rotate(-45deg);
+    top: 28px;
+    left: 5px;
+}
+
+/* ================== MOBILE SERVICES ACCORDION (sidebar) ================== */
+.m-acc-root-left img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    display: inline-block;
+}
+.m-accordion-root {
+    width: 100%;
+}
+.m-acc-root-btn {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 12px;
+    font-size: 18px;
+    height: 40px;
+    margin-bottom: 5px;
+    box-sizing: border-box;
+}
+.m-acc-root-panel {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    margin: 0 0 12px 0;
+    padding: 8px 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+.sidebar .m-acc-root-panel a,
+.sidebar .m-acc-panel a {
+    background: transparent !important;
+    color: #000 !important;
+    height: auto !important;
+    padding: 12px 16px !important;
+    display: flex !important;
+    align-items: center;
+    gap: 8px;
+}
+.m-accordion {
+    margin: 8px;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    overflow: hidden;
+}
+.m-acc-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 12px 14px;
+    font-size: 16px;
+    text-align: left;
+    cursor: pointer;
+}
+.m-acc-panel {
+    background: #fafafa;
+    border-top: 1px solid #eee;
+}
+.m-acc-root-btn[aria-expanded="true"] .m-acc-caret,
+.m-acc-btn[aria-expanded="true"] .m-acc-caret {
+    transform: rotate(180deg);
+}
+
+/* ================== FREE QUOTE MODAL (success) ================== */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+.modal-overlay.active {
+    display: flex;
+}
+.modal-box {
+    background: #fff;
+    width: 90%;
+    max-width: 380px;
+    padding: 2.25rem 2rem;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+}
+.success-icon {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+    background: #22a05a;
+    color: #fff;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+.modal-box h4 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: #222;
+}
+.modal-box p {
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+.modal-ok {
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 0.6rem 1.75rem;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+/* =========================================================
+   RESPONSIVE — single continuous breakpoint, no gap
+   FIX: old code had two separate queries
+   (768–1024px) and (320–480px), leaving 481–767px
+   completely unstyled → desktop nav overflowed there.
+   Now everything ≤1366px shares one rule set, and only the
+   handful of things that truly differ on small phones sit
+   in a small nested query below.
+
+   FIX: breakpoint raised from 1024px to 1366px — with 10 nav
+   items (HOME…CONTACT) plus the SERVICES dropdown, the full
+   desktop row needs roughly 1400px+ to fit without shrinking;
+   below that it now hands off to the hamburger/sidebar instead
+   of squeezing and overlapping (as seen at 1025px).
+   ========================================================= */
+@media (max-width: 1366px) {
+    .navbar-sub-2,
+    .navbar-sub-3,
+    .dropdown-multiple {
+        display: none;
     }
-    .dropdown-content a{
-        text-decoration: none;
-        color: black;
+    .navbar {
+        width: 100%; /* FIX: was "width: 99;" (invalid, unitless) */
+    }
+    .navbar-sub-1 {
+        width: 20%;
+    }
+    .navbar-logo {
+        width: 30px;
+        height: 30px;
+        overflow-y: hidden;
+    }
+    .navbar-mobile {
+        width: 20%;
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color:white;
-        height: 50px;
-        width: 45%;
-        font-size: 13px;
+        height: 100%;
     }
-    .dropdown-content a i{
-        margin-right:10px;
+    .page-links {
+        display: none;
     }
-    .dropdown-content a:hover{
-        color:#FAB206;
+    .sidebar-logo {
+        background: #000;
+        margin-bottom: 10px;
     }
-    @media(min-width:768px) and (max-width:1024px){
-          .navbar-sub-2{
-                display:none;
-            }
-            .navbar-sub-3{
-                display:none;
-            }
-                  .navbar{
-                width:100%;
-            }
-            .navbar-sub-1 {
-                width:20%;
-            }
-              .navbar-logo {
-            width: 30px;
-            height: 30px;
-            overflow-y:hidden;
-        }
-            .navbar-mobile{
-                width:20%;
-                display:flex;
-                align-items:center;
-                justify-content:center;
-                height:100%;
-            }
-            .offcanvas-body{
-                display:flex;
-                align-items:flex-start;
-                justify-content:flex-start;
-            }
-            .offcanvas-links{
-                height:auto;
-                display:flex;
-                align-items:flex-start;
-                justify-content:center;
-                flex-direction:column;
-
-            }
-            .offcanvas-links a{
-                color:white;
-                font-size:15px;
-                text-decoration:none;
-            }
-            .offcanvas-links a i{
-                margin-right:10px;
-            }
-            .canvas-btn{
-                border:hidden;
-                outline:none;
-            }
-            .close-button{
-                background:none;
-                border:hidden;
-                outline:none;
-            }
-            .close-button i{
-                color:white;
-                font-size:25px;
-            }
-            .sidebar {
-                position: fixed;
-                top: 0;
-                left: -65%;
-                width: 65%;
-                height: 100%;
-                background-color: white;
-                color: white;
-                /* padding: 20px; */
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                justify-content: flex-start;
-                box-sizing: border-box;
-                transition: left 0.3s;
-                z-index: 999;
-            }
-            .sidebar.open {
-                left: 0;
-            }
-            .sidebar-links-one{
-                width: 100%;
-                height: auto;
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                justify-content: center;
-            }
-            .sidebar-links-one a{
-                text-decoration: none;
-                color: #fff;
-                width: 100%;
-                margin-bottom: 5px;
-                display: flex;
-                font-size: 18px;
-                padding-left: 10px;
-                padding-right: 10px;
-                align-items: center;
-                background-color: black;
-                justify-content: flex-start;
-                height: 40px;
-            }
-            .sidebar-links-one a img{
-                width: 20px;
-                height: 20px;
-                margin-right: 10px;
-            }
-            .sidebar-logo{
-                width: 100%;
-                height: 80px;
-                padding: 10px;
-            }
-            .sidebar-logo img{
-                width: 100%;
-                height: 100%;
-                object-fit: contain;
-            }
-            .sidebar-contact{
-                width: 100%;
-                height: 200px;
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                justify-content: center;
-                padding-left: 20px;
-            }
-            .sidebar-contact a{
-                text-decoration: none;
-                color: black;
-                margin-bottom: 10px;
-                font-size: 16px;
-            }
-            .sidebar-contact a i{
-                margin-right: 8px;
-            }
-             .burger {
-                position: relative;
-                width: 40px;
-                height: 30px;
-                background: transparent;
-                cursor: pointer;
-                display: block;
-              }
-
-              .burger input {
-                display: none;
-              }
-
-              .burger span {
-                display: block;
-                position: absolute;
-                height: 4px;
-                width: 100%;
-                background: #fff;
-                border-radius: 9px;
-                opacity: 1;
-                left: 0;
-                transform: rotate(0deg);
-                transition: .25s ease-in-out;
-              }
-
-              .burger span:nth-of-type(1) {
-                top: 0px;
-                transform-origin: left center;
-              }
-
-              .burger span:nth-of-type(2) {
-                top: 50%;
-                transform: translateY(-50%);
-                transform-origin: left center;
-              }
-
-              .burger span:nth-of-type(3) {
-                top: 100%;
-                transform-origin: left center;
-                transform: translateY(-100%);
-              }
-
-              .burger input:checked ~ span:nth-of-type(1) {
-                transform: rotate(45deg);
-                top: 0px;
-                left: 5px;
-              }
-
-              .burger input:checked ~ span:nth-of-type(2) {
-                width: 0%;
-                opacity: 0;
-              }
-
-              .burger input:checked ~ span:nth-of-type(3) {
-                transform: rotate(-45deg);
-                top: 28px;
-                left: 5px;
-              }
+    .sidebar-contact a {
+        font-weight: 600;
     }
-        @media(min-width:320px) and (max-width:480px){
-            .navbar-sub-2{
-                display:none;
-            }
-            .navbar-sub-3{
-                display:none;
-            }
-            .navbar{
-                width:100%;
-            }
-            .navbar-sub-1 {
-                width:20%;
-            }
-              .navbar-logo {
-            width: 30px;
-            height: 30px;
-            overflow-y:hidden;
-        }
-            .navbar-mobile{
-                width:20%;
-                display:flex;
-                align-items:center;
-                justify-content:center;
-                height:100%;
-            }
-            .offcanvas-body{
-                display:flex;
-                align-items:flex-start;
-                justify-content:flex-start;
-            }
-            .offcanvas-links{
-                height:auto;
-                display:flex;
-                align-items:flex-start;
-                justify-content:center;
-                flex-direction:column;
-
-            }
-            .offcanvas-links a{
-                color:white;
-                font-size:15px;
-                text-decoration:none;
-            }
-            .offcanvas-links a i{
-                margin-right:10px;
-            }
-            .canvas-btn{
-                border:hidden;
-                outline:none;
-            }
-            .close-button{
-                background:none;
-                border:hidden;
-                outline:none;
-            }
-            .close-button i{
-                color:white;
-                font-size:25px;
-            }
-            .sidebar {
-                position: fixed;
-                top: 0;
-                left: -65%;
-                width: 65%;
-                height: 100%;
-                background-color: white;
-                color: white;
-                /* padding: 20px; */
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                justify-content: flex-start;
-                box-sizing: border-box;
-                transition: left 0.3s;
-                z-index: 999;
-            }
-            .sidebar.open {
-                left: 0;
-            }
-            .sidebar-links-one{
-                width: 100%;
-                height: auto;
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                justify-content: center;
-            }
-            .sidebar-links-one a{
-                text-decoration: none;
-                color: #fff;
-                width: 100%;
-                margin-bottom: 5px;
-                display: flex;
-                font-size: 18px;
-                padding-left: 10px;
-                padding-right: 10px;
-                align-items: center;
-                background-color: black;
-                justify-content: flex-start;
-                height: 40px;
-            }
-            .sidebar-links-one a img{
-                width: 20px;
-                height: 20px;
-                margin-right: 10px;
-            }
-            .sidebar-logo{
-                width: 100%;
-                height: 80px;
-                padding: 10px;
-                background:#000;
-                margin-bottom:10px;
-            }
-            .sidebar-logo img{
-                width: 100%;
-                height: 100%;
-                object-fit: contain;
-            }
-            .sidebar-contact{
-                width: 100%;
-                height: 200px;
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                justify-content: center;
-                padding-left: 20px;
-            }
-            .sidebar-contact a{
-                text-decoration: none;
-                color: black;
-                margin-bottom: 10px;
-                font-size: 16px;
-                font-weight:600;
-            }
-            .sidebar-contact a i{
-                margin-right: 8px;
-                color:#000;
-            }
-             .burger {
-                position: relative;
-                width: 40px;
-                height: 30px;
-                background: transparent;
-                cursor: pointer;
-                display: block;
-              }
-
-              .burger input {
-                display: none;
-              }
-
-              .burger span {
-                display: block;
-                position: absolute;
-                height: 4px;
-                width: 100%;
-                background: #fff;
-                border-radius: 9px;
-                opacity: 1;
-                left: 0;
-                transform: rotate(0deg);
-                transition: .25s ease-in-out;
-              }
-
-              .burger span:nth-of-type(1) {
-                top: 0px;
-                transform-origin: left center;
-              }
-
-              .burger span:nth-of-type(2) {
-                top: 50%;
-                transform: translateY(-50%);
-                transform-origin: left center;
-              }
-
-              .burger span:nth-of-type(3) {
-                top: 100%;
-                transform-origin: left center;
-                transform: translateY(-100%);
-              }
-
-              .burger input:checked ~ span:nth-of-type(1) {
-                transform: rotate(45deg);
-                top: 0px;
-                left: 5px;
-              }
-
-              .burger input:checked ~ span:nth-of-type(2) {
-                width: 0%;
-                opacity: 0;
-              }
-
-              .burger input:checked ~ span:nth-of-type(3) {
-                transform: rotate(-45deg);
-                top: 28px;
-                left: 5px;
-              }
-        }
-        .sidebar-links-one a i{
-          margin-left:-2px;
-          margin-right:10px;
-        }
-    /* ==== MULTI-LEVEL (dropdown-multiple) ==== */
-.dropdown-multiple {
-  position: relative;
-  border-radius: 70px;
-  height: 100%;
-  display: flex;
-  align-items: center;
+    .sidebar-contact a i {
+        color: #000;
+    }
 }
 
-.dropdown-content-multiple{
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-image: linear-gradient(to right, #ffffffff, #ffffffff, #ffffffff, #ffffffff, #ffffffff);
-  box-shadow: 0 8px 16px rgba(0,0,0,.2);
-  z-index: 9999;
-  margin-top: 0;              /* was 10px — this created the dead zone */
-  padding: 16px 6px 6px 6px;  /* extra top padding replaces the visual gap, but stays inside the hover box */
+/* Small-phone-only tweaks (nothing structural changes below this) */
+@media (max-width: 480px) {
+    .page-links {
+        margin-top: 5%;
+    }
 }
-
-/* the white vertical list */
-.dropdown-content-multiple > ul{
-  list-style: none;
-  margin: 0;
-  padding: 6px;
-  background: #fff;
-  min-width: 230px;     /* width of column */
-  border-radius: 12px;          /* adjust radius for more or less curve */
-  border: 2px solid #ffffffff;    /* your brand color for the border */
-  
-  /* Optional shadow for depth */
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-}
-
-/* each row */
-.dropdown-content-multiple li{
-  position: relative;   /* needed for dropend positioning */
-}
-
-/* links look like rows, no flex grid */
-.dropdown-content-multiple a{
-  display: block;
-  text-decoration: none;
-  color: #000;
-  font-size: 13px;
-  line-height: 1;
-  padding: 12px 14px;
-  white-space: nowrap;
-  
-}
-
-.dropdown-content-multiple a i{
-  margin-right: 10px;
-}
-
-.dropdown-content-multiple a:hover{
-  color: #FAB206;
-  background: #f6f6f6;
-}
-
-/* show first level on hover */
-.dropdown-multiple:hover .dropdown-content-multiple{
-  display: block;
-}
-
-/* ===== DROPPEND (submenu to the right) ===== */
-.dropend > a{
-  padding-right: 28px;  /* room for caret */
-}
-
-/* caret indicator */
-.dropend > a::after{
-  content: "›";
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-weight: 700;
-  opacity: .7;
-}
-
-/* the flyout panel */
-.dropend .submenu{
-  display: none;
-  position: absolute;
-  top: 0;               /* aligns with parent row */
-  left: 100%;           /* fly out to the right */
-  background: #fff;
-  min-width: 230px;
-  box-shadow: 0 8px 16px rgba(0,0,0,.2);
-  padding: 6px 0;
-  z-index: 10000;
-    border-radius: 12px;          /* adjust radius for more or less curve */
-  border: 2px solid #ffffffff;    /* your brand color for the border */
-  
-  /* Optional shadow for depth */
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-}
-
-.dropend:hover > .submenu{
-  display: block;
-}
-
-/* keep menus open when moving mouse between levels */
-.dropdown-content-multiple,
-.dropdown-content-multiple *{
-  pointer-events: auto;
-}
-
-/* optional: constrain tall menus */
-.dropdown-content-multiple > ul,
-.dropend .submenu{
-  max-height: 340px;
-  overflow-y: auto;
-}
-
-/* match your desktop hide-on-tablet/phone behavior */
-@media (max-width: 1024px){
-  .dropdown-multiple{ display: none; }
-}
-/* keep the flyout from being clipped */
-.dropdown-content-multiple{
-  position: absolute;
-  overflow: visible;                 /* important */
-  z-index: 9999;
-}
-
-/* the white list is also allowed to overflow */
-.dropdown-content-multiple > ul{
-  position: relative;
-  overflow: visible;                 /* important */
-  padding: 6px 0;                    /* tighter top/bottom so top: -6px lines up */
-  margin: 0;
-}
-
-/* each row owns its flyout positioning */
-.dropdown-content-multiple li{
-  position: relative;
-}
-
-/* ------- dropend (right flyout) ------- */
-.dropend > a{
-  padding-right: 28px;
-}
-
-/* caret indicator */
-.dropend > a::after{
-  content: "›";
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-weight: 700;
-  opacity: .7;
-}
-
-/* the flyout */
-.dropend .submenu{
-  display: none;
-  position: absolute;
-  top: -6px;                          /* align with row; removes the vertical gap */
-  left: calc(100% - 2px);             /* overlap by 2px to avoid a hover gap */
-  min-width: 230px;
-  background: #fff;
-  box-shadow: 0 8px 16px rgba(0,0,0,.2);
-  padding: 6px 0;
-  z-index: 10000;                      /* above the first panel */
-}
-
-/* show submenu on hover or keyboard focus */
-.dropend:hover > .submenu,
-.dropend:focus-within > .submenu{
-  display: block;
-}
-
-/* (optional) highlight parent row while submenu is open */
-.dropend:hover > a,
-.dropend:focus-within > a{
-  background:#f6f6f6;
-  color:#FAB206;
-}
-/* === MOBILE SERVICES ACCORDION (sidebar) === */
-/* 1) Make the SERVICES icon the same size as the others */
-.m-acc-root-left img{
-  width: 20px;
-  height: 20px;
-  margin-right: 10px;
-  display: inline-block;
-}
-
-/* 2) Make the SERVICES button look/space like your list items */
-.m-acc-root-btn{
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #000;
-  color: #fff;
-  border: none;
-  padding: 10px 12px;
-  font-size: 18px;
-  height: 40px;                /* same height as your anchors */
-  margin-bottom: 5px;          /* same gap as .sidebar-links-one a */
-}
-
-/* 3) Ensure the white panel fills the sidebar nicely */
-.m-acc-root-panel{
-  background: #fff;
-  border: 1px solid #eee;
-  border-radius: 8px;
-  margin: 0 0 12px 0;          /* remove left/right offset */
-  padding: 8px 0;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-/* 4) Keep accordion items full-width and readable */
-.sidebar .m-acc-root-panel a,
-.sidebar .m-acc-panel a{
-  background: transparent !important;
-  color: #000 !important;
-  height: auto !important;
-  padding: 12px 16px !important;
-  display: flex !important;
-  align-items: center;
-  gap: 8px;
-}
-
-/* 5) Nice card spacing & rounded corners for category blocks */
-.m-accordion{
-  margin: 8px;
-  border: 1px solid #eee;
-  border-radius: 12px;
-  overflow: hidden;
-}
-.m-acc-btn{
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: #000;
-  color: #fff;
-  border: none;
-  padding: 12px 14px;
-  font-size: 16px;
-  text-align: left;
-  cursor: pointer;
-}
-.m-acc-panel{ background:#fafafa; border-top:1px solid #eee; }
-
-/* 6) Rotate carets when open */
-.m-acc-root-btn[aria-expanded="true"] .m-acc-caret,
-.m-acc-btn[aria-expanded="true"] .m-acc-caret { transform: rotate(180deg); }
-
-/* 7) Keep desktop mega menu hidden on mobile */
-@media (max-width:1024px){ .dropdown-multiple{ display:none; } }
-
-.sidebar { overflow-y: auto; }
-
-/* Make every direct child of the sidebar list fill the width */
-.sidebar-links-one {
-  align-items: stretch;           /* stretch items across the cross-axis (width) */
-}
-.sidebar-links-one > * {
-  width: 100%;
-}
-
-/* Ensure the SERVICES container + button span the full width */
-.m-accordion-root { width: 100%; }
-.m-acc-root-btn {
-  display: flex;
-  width: 100%;
-  box-sizing: border-box;         /* include padding in width calc */
-  background: #000;
-  color: #fff;
-  padding: 10px 12px;
-  height: 40px;                   /* match other items */
-}
-
-/* Keep the SERVICES icon same size as others */
-.m-acc-root-left img{
-  width: 20px;
-  height: 20px;
-  margin-right: 10px;
-  display: inline-block;
-}
-
-.modal-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
-/* Replaces inline style toggling */
-.modal-overlay.active {
-  display: flex;
-}
-
-.modal-box {
-  background: #fff;
-  width: 90%;
-  max-width: 380px;
-  padding: 2.25rem 2rem;
-  border-radius: 16px;
-  text-align: center;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
-}
-
-.success-icon {
-  width: 56px;
-  height: 56px;
-  margin: 0 auto 1rem;
-  border-radius: 50%;
-  background: #22a05a;
-  color: #fff;
-  font-size: 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 600;
-}
-
-.modal-box h4 {
-  font-size: 1.1rem;
-  font-weight: 500;
-  margin-bottom: 0.5rem;
-  color: #222;
-}
-
-.modal-box p {
-  color: #666;
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
-}
-
-.modal-ok {
-  background: #000;
-  color: #fff;
-  border: none;
-  padding: 0.6rem 1.75rem;
-  border-radius: 8px;
-  font-size: 0.8rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  cursor: pointer;
-}
-
-    </style>
+</style>
 </head>
 <body>
 
@@ -943,442 +641,270 @@ a{
         <div class="navbar-sub-2">
             <a href="{% url 'home' %}" class="page-links {% if request.path == '/home/' %}active-page{% endif %}">HOME</a>
             <a href="{% url 'about' %}" class="page-links {% if request.path == '/about/' %}active-page{% endif %}">ABOUT</a>
-            {% comment %} <div class="dropdown">
-            <a href="{% url 'services' %}" class="page-links {% if request.path == '/services/' %}active-page{% endif %}">SERVICES<i class="fa-solid fa-caret-down"></i></a>
-            <div class="dropdown-content">
-                <a href="{% url 'digital' %}"><i class="fa-solid fa-magnifying-glass-chart"></i>Digital Marketing</a>
-                <a href="{% url 'web' %}"><i class="fa-solid fa-code"></i>Web Development</a>
-                <a href="{% url 'mobile' %}"><i class="fa-brands fa-app-store-ios"></i>App Development</a>
-                <a href="{% url 'animation' %}"><i class="fa-solid fa-file-video"></i>Video Editing</a>
-                <a href="{% url 'ecommerce' %}"><i class="fa-solid fa-cart-shopping"></i>E-Commerce</a>
-                <a href="{% url 'uiux' %}"><i class="fa-solid fa-laptop-code"></i>UI/UX Design</a>
+
+            <div class="dropdown-multiple">
+                <a href="{% url 'services' %}" class="page-links {% if request.path == '/services/' %}active-page{% endif %}">
+                    SERVICES<i class="fa-solid fa-caret-down"></i>
+                </a>
+                <div class="dropdown-content-multiple">
+                    <ul>
+                        <li class="dropend">
+                            <a href="{% url 'web' %}"><i class="fa-solid fa-code"></i>Software Development</a>
+                            <ul class="submenu">
+                                <li><a href="{% url 'customeweb' %}"><i class="fa-solid fa-angle-right"></i>Custom Software Developers</a></li>
+                                <li><a href="{% url 'python' %}"><i class="fa-solid fa-angle-right"></i>Python Development</a></li>
+                                <li><a href="{% url 'react' %}"><i class="fa-solid fa-angle-right"></i>React Development</a></li>
+                                <li><a href="{% url 'blockchain' %}"><i class="fa-solid fa-angle-right"></i>Blockchain Development</a></li>
+                                <li><a href="{% url 'java' %}"><i class="fa-solid fa-angle-right"></i>Java Development</a></li>
+                                <li><a href="{% url 'php' %}"><i class="fa-solid fa-angle-right"></i>PHP Development</a></li>
+                                <li><a href="{% url 'angular' %}"><i class="fa-solid fa-angle-right"></i>AngularJS Development</a></li>
+                                <li><a href="{% url 'softwaretesting' %}"><i class="fa-solid fa-angle-right"></i>Software Testing</a></li>
+                                <li><a href="{% url 'dotnet' %}?t=react"><i class="fa-solid fa-angle-right"></i>.Net Development</a></li>
+                                <li><a href="{% url 'nodejs' %}"><i class="fa-solid fa-angle-right"></i>NodeJS Development</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropend">
+                            <a href="{% url 'web' %}"><i class="fa-solid fa-code"></i>Web & App Development</a>
+                            <ul class="submenu">
+                                <li><a href="{% url 'mobile' %}"><i class="fa-solid fa-angle-right"></i>Mobile App Development</a></li>
+                                <li><a href="{% url 'ios' %}"><i class="fa-solid fa-angle-right"></i>IOS App Development</a></li>
+                                <li><a href="{% url 'android' %}"><i class="fa-solid fa-angle-right"></i>Android App Development</a></li>
+                                <li><a href="{% url 'flutter' %}"><i class="fa-solid fa-angle-right"></i>Flutter App Development</a></li>
+                                <li><a href="{% url 'ecommerce' %}"><i class="fa-solid fa-angle-right"></i>E-Commerce Development</a></li>
+                                <li><a href="{% url 'web' %}"><i class="fa-solid fa-angle-right"></i>Web Development</a></li>
+                                <li><a href="{% url 'woocommerce' %}"><i class="fa-solid fa-angle-right"></i>WooCommerce Development</a></li>
+                                <li><a href="{% url 'shopify' %}"><i class="fa-solid fa-angle-right"></i>Shopify Development</a></li>
+                                <li><a href="{% url 'magento' %}"><i class="fa-solid fa-angle-right"></i>Magento Development</a></li>
+                                <li><a href="{% url 'wordpress' %}"><i class="fa-solid fa-angle-right"></i>WordPress Development</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropend">
+                            <a href="{% url 'web' %}"><i class="fa-solid fa-code"></i>Marketing & Advertising</a>
+                            <ul class="submenu">
+                                <li><a href="{% url 'digital' %}"><i class="fa-solid fa-angle-right"></i>Digital Marketing</a></li>
+                                <li><a href="{% url 'marketing' %}"><i class="fa-solid fa-angle-right"></i>Real Estate Marketing</a></li>
+                                <li><a href="{% url 'seo' %}"><i class="fa-solid fa-angle-right"></i>SEO Agencies</a></li>
+                                <li><a href="{% url 'advertising' %}"><i class="fa-solid fa-angle-right"></i>Advertising</a></li>
+                                <li><a href="{% url 'social' %}?t=ecom"><i class="fa-solid fa-angle-right"></i>Social Media Marketing</a></li>
+                                <li><a href="{% url 'content' %}"><i class="fa-solid fa-angle-right"></i>Content Marketing</a></li>
+                                <li><a href="{% url 'ppc' %}"><i class="fa-solid fa-angle-right"></i>PPC Agencies</a></li>
+                                <li><a href="{% url 'branding' %}"><i class="fa-solid fa-angle-right"></i>Branding</a></li>
+                                <li><a href="{% url 'email' %}"><i class="fa-solid fa-angle-right"></i>Email Marketing</a></li>
+                                <li><a href="{% url 'research' %}"><i class="fa-solid fa-angle-right"></i>Market Research</a></li>
+                                <li><a href="{% url 'influencer' %}"><i class="fa-solid fa-angle-right"></i>Influencer Marketing</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropend">
+                            <a href="{% url 'web' %}"><i class="fa-solid fa-code"></i>Design</a>
+                            <ul class="submenu">
+                                <li><a href="{% url 'web' %}?t=ecom"><i class="fa-solid fa-angle-right"></i>Web Design</a></li>
+                                <li><a href="{% url 'digital_design' %}"><i class="fa-solid fa-angle-right"></i>Digital Design</a></li>
+                                <li><a href="{% url 'logo_design' %}"><i class="fa-solid fa-angle-right"></i>Logo Design</a></li>
+                                <li><a href="{% url 'product_design' %}"><i class="fa-solid fa-angle-right"></i>Product Design</a></li>
+                                <li><a href="{% url 'uiux' %}"><i class="fa-solid fa-angle-right"></i>UI&UX Design</a></li>
+                                <li><a href="{% url 'graphic' %}"><i class="fa-solid fa-angle-right"></i>Graphic Design</a></li>
+                                <li><a href="{% url 'animation' %}?t=ecom"><i class="fa-solid fa-angle-right"></i>Animation & Video Editing</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            </div> {% endcomment %}
-             
-<div class="dropdown-multiple">
-  <a href="{% url 'services' %}" class="page-links {% if request.path == '/services/' %}active-page{% endif %}">
-    SERVICES<i class="fa-solid fa-caret-down"></i>
-  </a>
-
-  <div class="dropdown-content-multiple">
-    <ul>
-      <!-- Plain link row -->
-      {% comment %} <li>
-        <a href="{% url 'digital' %}">
-          <i class="fa-solid fa-magnifying-glass-chart"></i>Digital Marketing
-        </a>
-      </li> {% endcomment %}
-       <li class="dropend">
-        <a href="{% url 'web' %}">
-          <i class="fa-solid fa-code"></i>Software Development
-        </a>
-        <ul class="submenu">
-          <li><a href="{% url 'customeweb' %}"><i class="fa-solid fa-angle-right"></i>Custom Software Developers</a></li>
-          <li><a href="{% url 'python' %}"><i class="fa-solid fa-angle-right"></i>Python Development</a></li>
-          <li><a href="{% url 'react' %}"><i class="fa-solid fa-angle-right"></i>React Development</a></li>
-          <li><a href="{% url 'blockchain' %}"><i class="fa-solid fa-angle-right"></i>Blockchain Development</a></li>
-          <li><a href="{% url 'java' %}"><i class="fa-solid fa-angle-right"></i>Java Development</a></li>
-          <li><a href="{% url 'php' %}"><i class="fa-solid fa-angle-right"></i>PHP Development</a></li>
-          <li><a href="{% url 'angular' %}"><i class="fa-solid fa-angle-right"></i>AngularJS Development</a></li>
-          <li><a href="{% url 'softwaretesting' %}"><i class="fa-solid fa-angle-right"></i>Software Testing</a></li>
-          <li><a href="{% url 'dotnet' %}?t=react"><i class="fa-solid fa-angle-right"></i>.Net Development</a></li>
-          <li><a href="{% url 'nodejs' %}"><i class="fa-solid fa-angle-right"></i>NodeJS Development</a></li>
-        </ul>
-      </li>
-      <!-- DROPPEND: Web Development -> submenu opens to the right -->
-      <li class="dropend">
-        <a href="{% url 'web' %}">
-          <i class="fa-solid fa-code"></i>Web & App Development
-        </a>
-        <ul class="submenu">
-          <li><a href="{% url 'mobile' %}"><i class="fa-solid fa-angle-right"></i>Mobile App Development</a></li>
-          <li><a href="{% url 'ios' %}"><i class="fa-solid fa-angle-right"></i>IOS App Development</a></li>
-          <li><a href="{% url 'android' %}"><i class="fa-solid fa-angle-right"></i>Android App Development</a></li>          
-          <li><a href="{% url 'flutter' %}"><i class="fa-solid fa-angle-right"></i>Flutter App Development</a></li>
-          <li><a href="{% url 'ecommerce' %}"><i class="fa-solid fa-angle-right"></i>E-Commerce Development</a></li>
-          <li><a href="{% url 'web' %}"><i class="fa-solid fa-angle-right"></i>Web Development</a></li>
-          <li><a href="{% url 'woocommerce' %}"><i class="fa-solid fa-angle-right"></i>WooCommerce Development</a></li>
-          <li><a href="{% url 'shopify' %}"><i class="fa-solid fa-angle-right"></i>Shopify Development</a></li>
-          <li><a href="{% url 'magento' %}"><i class="fa-solid fa-angle-right"></i>Magento Development</a></li>
-          <li><a href="{% url 'wordpress' %}"><i class="fa-solid fa-angle-right"></i>WordPress Development</a></li>
-        </ul>
-      </li>
-       <li class="dropend">
-        <a href="{% url 'web' %}">
-          <i class="fa-solid fa-code"></i>Marketing & Advertising
-        </a>
-        <ul class="submenu">
-          <li><a href="{% url 'digital' %}"><i class="fa-solid fa-angle-right"></i>Digital Marketing</a></li>
-          <li><a href="{% url 'marketing' %}"><i class="fa-solid fa-angle-right"></i>Real Estate Marketing</a></li>
-          <li><a href="{% url 'seo' %}"><i class="fa-solid fa-angle-right"></i>SEO Agencies</a></li>
-          <li><a href="{% url 'advertising' %}"><i class="fa-solid fa-angle-right"></i>Advertising</a></li>
-          <li><a href="{% url 'social' %}?t=ecom"><i class="fa-solid fa-angle-right"></i>Social Media Marketing</a></li>
-          <li><a href="{% url 'content' %}"><i class="fa-solid fa-angle-right"></i>Content Marketing</a></li>
-          <li><a href="{% url 'ppc' %}"><i class="fa-solid fa-angle-right"></i>PPC Agencies</a></li>
-          <li><a href="{% url 'branding' %}"><i class="fa-solid fa-angle-right"></i>Branding</a></li>
-          <li><a href="{% url 'email' %}"><i class="fa-solid fa-angle-right"></i>Email Marketing</a></li>
-          <li><a href="{% url 'research' %}"><i class="fa-solid fa-angle-right"></i>Market Research</a></li>
-          <li><a href="{% url 'influencer' %}"><i class="fa-solid fa-angle-right"></i>Influencer Marketing</a></li>
-        </ul>
-      </li>
-      <li class="dropend">
-        <a href="{% url 'web' %}">
-          <i class="fa-solid fa-code"></i>Design
-        </a>
-        <ul class="submenu">           
-          <li><a href="{% url 'web' %}?t=ecom"><i class="fa-solid fa-angle-right"></i>Web Design</a></li>
-          <li><a href="{% url 'digital_design' %}"><i class="fa-solid fa-angle-right"></i>Digital Design</a></li>
-          <li><a href="{% url 'logo_design' %}"><i class="fa-solid fa-angle-right"></i>Logo Design</a></li>                   
-          <li><a href="{% url 'product_design' %}"><i class="fa-solid fa-angle-right"></i>Product Design</a></li>
-          <li><a href="{% url 'uiux' %}"><i class="fa-solid fa-angle-right"></i>UI&UX Design</a></li>
-          <li><a href="{% url 'graphic' %}"><i class="fa-solid fa-angle-right"></i>Graphic Design</a></li>
-          {% comment %} <li><a href="{% url 'web' %}?t=wordpress"><i class="fa-solid fa-angle-right"></i>Illustrators</a></li> {% endcomment %}
-          {% comment %} <li><a href="{% url 'web' %}?t=django"><i class="fa-solid fa-angle-right"></i>Packaging Design</a></li> {% endcomment %}
-          {% comment %} <li><a href="{% url 'print_design' %}"><i class="fa-solid fa-angle-right"></i>Print Design</a></li> {% endcomment %}
-          <li><a href="{% url 'animation' %}?t=ecom"><i class="fa-solid fa-angle-right"></i>Animation & Video Editing</a></li>
-        </ul>
-      </li>
-      <!-- DROPPEND: App Development -->
-      
-
-      <!-- Plain link rows -->
-      <li>
-        {% comment %} <a href="{% url 'animation' %}"><i class="fa-solid fa-file-video"></i>Video Editing</a> {% endcomment %}
-      </li>
-     
-    </ul>
-  </div>
-</div>
-
 
             <a href="{% url 'projects' %}" class="page-links {% if request.path == '/projects/' %}active-page{% endif %}">PROJECTS</a>
-              <a href="{% url 'clinical' %}" class="page-links {% if request.path == '/projects/' %}active-page{% endif %}">CLINICAL COSTING</a>
+            <a href="{% url 'clinical' %}" class="page-links {% if request.path == '/projects/' %}active-page{% endif %}">CLINICAL COSTING</a>
             <a href="{% url 'careers' %}" class="page-links {% if request.path == '/careers/' %}active-page{% endif %}">CAREERS</a>
             <a href="{% url 'team' %}" class="page-links {% if request.path == '/team/' %}active-page{% endif %}">TEAM</a>
             <a href="{% url 'blog' %}" class="page-links {% if request.path == '/blog/' %}active-page{% endif %}">BLOG</a>
-             <a href="{% url 'news_list' %}" class="page-links {% if request.path == '/news/' %}active-page{% endif %}">NEWS</a>
+            <a href="{% url 'news_list' %}" class="page-links {% if request.path == '/news/' %}active-page{% endif %}">NEWS</a>
             <a href="{% url 'contact' %}" class="page-links {% if request.path == '/contact/' %}active-page{% endif %}">CONTACT US</a>
         </div>
+
         <div class="navbar-sub-3">
             <button data-bs-toggle="modal" data-bs-target="#exampleModalmobile" class="free-quote-btn-header">FREE QUOTE</button>
             <div class="modal fade" id="exampleModalmobile" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">GET A FREE QUOTE</h5>
-          <button type="button" style="background-color: #FAB206;color: white;" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body p-5">
-            <p class="mb-5 text-center">If you have any requirement please share with us at <span style="color: #FAB206;">sales@delemontechnology.com</span> or simply send us your inquiry by filling out the form below.</p>
-         <form
-            class="free-quote-form"
-            id="contact-form-mobile"
-            action="/contact-submit/"
-            method="POST"
-            onsubmit="return submitFormheader(event)"
-        >
-            {% csrf_token %}
-
-            <div class="row mb-5">
-                <div class="col">
-                    <div class="d-flex flex-column">
-                        <label>Name</label>
-                        <input
-                            type="text"
-                            id="fullname"
-                            name="name"
-                            placeholder="Enter Name"
-                            required
-                        >
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="d-flex flex-column">
-                        <label>Inquiring about</label>
-                        <select name="service" id="enquiryid">
-                            <option value="Digital Marketing">Digital Marketing</option>
-                            <option value="Social Media Marketing">Social Media Marketing</option>
-                            <option value="Web Design & Development">Web Design & Development</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row mb-5">
-                <div class="col">
-                    <div class="d-flex flex-column">
-                        <label>Email</label>
-                        <input
-                            type="email"
-                            id="emailid"
-                            name="email"
-                            placeholder="Enter Email"
-                            required
-                        >
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="d-flex flex-column">
-                        <label>Phone</label>
-                        <input
-                            type="text"
-                            id="companyname"
-                            name="phone"
-                            placeholder="Enter Phone"
-                            required
-                        >
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">GET A FREE QUOTE</h5>
+                            <button type="button" style="background-color: #FAB206;color: white;" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body p-5">
+                            <p class="mb-5 text-center">If you have any requirement please share with us at <span style="color: #FAB206;">sales@delemontechnology.com</span> or simply send us your inquiry by filling out the form below.</p>
+                            <form class="free-quote-form" id="contact-form-mobile" action="/contact-submit/" method="POST" onsubmit="return submitFormheader(event)">
+                                {% csrf_token %}
+                                <div class="row mb-5">
+                                    <div class="col">
+                                        <div class="d-flex flex-column">
+                                            <label>Name</label>
+                                            <input type="text" id="fullname" name="name" placeholder="Enter Name" required>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="d-flex flex-column">
+                                            <label>Inquiring about</label>
+                                            <select name="service" id="enquiryid">
+                                                <option value="Digital Marketing">Digital Marketing</option>
+                                                <option value="Social Media Marketing">Social Media Marketing</option>
+                                                <option value="Web Design & Development">Web Design & Development</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mb-5">
+                                    <div class="col">
+                                        <div class="d-flex flex-column">
+                                            <label>Email</label>
+                                            <input type="email" id="emailid" name="email" placeholder="Enter Email" required>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="d-flex flex-column">
+                                            <label>Phone</label>
+                                            <input type="text" id="companyname" name="phone" placeholder="Enter Phone" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mb-4">
+                                    <div class="col">
+                                        <div class="d-flex flex-column">
+                                            <label>Company Name</label>
+                                            <input type="text" name="company" placeholder="Enter company name">
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="submit" id="submitBtn">Submit</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <div class="row mb-4">
-                <div class="col">
-                    <div class="d-flex flex-column">
-                        <label>Company Name</label>
-                        <input
-                            type="text"
-                            name="company"
-                            placeholder="Enter company name"
-                        >
-                    </div>
-                </div>
-            </div>
-
-            <button type="submit" id="submitBtn">Submit</button>
-        </form>
         </div>
-      </div>
-    </div>
-  </div>
-        </div>
+
         <div class="navbar-mobile">
-            <label class="burger" for="burger" >
-        <input type="checkbox" id="burger">
-        <span></span>
-        <span id="close-sidebar"></span>
-        <span ></span>
-      </label>
-          <div id="sidebar" class="sidebar">
-        <div class="sidebar-logo">
-            <a href=""><img src="{% static 'img/delemon-logo.png' %}" alt=""></a>
-        </div>
-        <div class="sidebar-links-one">
-            <a href="{% url 'home' %}" class=" {% if request.path == '/home/' %}active-page{% endif %}"><img src="{% static 'img/home.png' %}" alt="">HOME</a>
-            <a href="{% url 'about' %}" class=" {% if request.path == '/about/' %}active-page{% endif %}"><img src="{% static 'img/about.png' %}" alt="">ABOUT</a>
-            {% comment %} <a href="{% url 'services' %}" class=" {% if request.path == '/services/' %}active-page{% endif %}"><img src="{% static 'img/blueprint.png' %}" alt="">SERVICES</a> {% endcomment %}
-           <!-- MOBILE SERVICES ACCORDION (two-level) -->
-<div class="m-accordion-root" role="tree" aria-label="Mobile Services">
+            <label class="burger" for="burger">
+                <input type="checkbox" id="burger">
+                <span></span>
+                <span id="close-sidebar"></span>
+                <span></span>
+            </label>
+            <div id="sidebar" class="sidebar">
+                <div class="sidebar-logo">
+                    <a href=""><img src="{% static 'img/delemon-logo.png' %}" alt=""></a>
+                </div>
+                <div class="sidebar-links-one">
+                    <a href="{% url 'home' %}" class="{% if request.path == '/home/' %}active-page{% endif %}"><img src="{% static 'img/home.png' %}" alt="">HOME</a>
+                    <a href="{% url 'about' %}" class="{% if request.path == '/about/' %}active-page{% endif %}"><img src="{% static 'img/about.png' %}" alt="">ABOUT</a>
 
-  <!-- Root toggle -->
-  <button class="m-acc-root-btn" aria-expanded="false" aria-controls="m-acc-root-panel" role="treeitem">
-    <span class="m-acc-root-left">
-      <img src="{% static 'img/blueprint.png' %}" alt="" />
-      SERVICES
-    </span>
-    <i class='bx bx-chevron-down m-acc-caret' aria-hidden="true"></i>
-  </button>
+                    <!-- MOBILE SERVICES ACCORDION (two-level) -->
+                    <div class="m-accordion-root" role="tree" aria-label="Mobile Services">
+                        <button class="m-acc-root-btn" aria-expanded="false" aria-controls="m-acc-root-panel" role="treeitem">
+                            <span class="m-acc-root-left">
+                                <img src="{% static 'img/blueprint.png' %}" alt="">
+                                SERVICES
+                            </span>
+                            <i class='bx bx-chevron-down m-acc-caret' aria-hidden="true"></i>
+                        </button>
+                        <div id="m-acc-root-panel" class="m-acc-root-panel" role="group" hidden>
+                            <div class="m-accordion">
+                                <button class="m-acc-btn" aria-expanded="false" aria-controls="m-acc-panel-software" role="treeitem">
+                                    <span><i class="fa-solid fa-code"></i> Software Development</span>
+                                    <i class='bx bx-chevron-down m-acc-caret' aria-hidden="true"></i>
+                                </button>
+                                <div id="m-acc-panel-software" class="m-acc-panel" role="group" hidden>
+                                    <a href="{% url 'customeweb' %}"><i class="fa-solid fa-angle-right"></i> Custom Software Developers</a>
+                                    <a href="{% url 'python' %}"><i class="fa-solid fa-angle-right"></i> Python Development</a>
+                                    <a href="{% url 'react' %}"><i class="fa-solid fa-angle-right"></i> React Development</a>
+                                    <a href="{% url 'blockchain' %}"><i class="fa-solid fa-angle-right"></i> Blockchain Development</a>
+                                    <a href="{% url 'java' %}"><i class="fa-solid fa-angle-right"></i> Java Development</a>
+                                    <a href="{% url 'php' %}"><i class="fa-solid fa-angle-right"></i> PHP Development</a>
+                                    <a href="{% url 'angular' %}"><i class="fa-solid fa-angle-right"></i> AngularJS Development</a>
+                                    <a href="{% url 'softwaretesting' %}"><i class="fa-solid fa-angle-right"></i> Software Testing</a>
+                                    <a href="{% url 'dotnet' %}?t=react"><i class="fa-solid fa-angle-right"></i> .Net Development</a>
+                                    <a href="{% url 'nodejs' %}"><i class="fa-solid fa-angle-right"></i> NodeJS Development</a>
+                                </div>
+                            </div>
+                            <div class="m-accordion">
+                                <button class="m-acc-btn" aria-expanded="false" aria-controls="m-acc-panel-webapp" role="treeitem">
+                                    <span><i class="fa-solid fa-code"></i> Web & App Development</span>
+                                    <i class='bx bx-chevron-down m-acc-caret' aria-hidden="true"></i>
+                                </button>
+                                <div id="m-acc-panel-webapp" class="m-acc-panel" role="group" hidden>
+                                    <a href="{% url 'mobile' %}"><i class="fa-solid fa-angle-right"></i> Mobile App Development</a>
+                                    <a href="{% url 'ios' %}"><i class="fa-solid fa-angle-right"></i> IOS App Development</a>
+                                    <a href="{% url 'android' %}"><i class="fa-solid fa-angle-right"></i> Android App Development</a>
+                                    <a href="{% url 'flutter' %}"><i class="fa-solid fa-angle-right"></i> Flutter App Development</a>
+                                    <a href="{% url 'ecommerce' %}"><i class="fa-solid fa-angle-right"></i> E-Commerce Development</a>
+                                    <a href="{% url 'web' %}"><i class="fa-solid fa-angle-right"></i> Web Development</a>
+                                    <a href="{% url 'woocommerce' %}"><i class="fa-solid fa-angle-right"></i> WooCommerce Development</a>
+                                    <a href="{% url 'shopify' %}"><i class="fa-solid fa-angle-right"></i> Shopify Development</a>
+                                    <a href="{% url 'magento' %}"><i class="fa-solid fa-angle-right"></i> Magento Development</a>
+                                    <a href="{% url 'wordpress' %}"><i class="fa-solid fa-angle-right"></i> WordPress Development</a>
+                                </div>
+                            </div>
+                            <div class="m-accordion">
+                                <button class="m-acc-btn" aria-expanded="false" aria-controls="m-acc-panel-marketing" role="treeitem">
+                                    <span><i class="fa-solid fa-code"></i> Marketing & Advertising</span>
+                                    <i class='bx bx-chevron-down m-acc-caret' aria-hidden="true"></i>
+                                </button>
+                                <div id="m-acc-panel-marketing" class="m-acc-panel" role="group" hidden>
+                                    <a href="{% url 'digital' %}"><i class="fa-solid fa-angle-right"></i> Digital Marketing</a>
+                                    <a href="{% url 'marketing' %}"><i class="fa-solid fa-angle-right"></i> Real Estate Marketing</a>
+                                    <a href="{% url 'seo' %}"><i class="fa-solid fa-angle-right"></i> SEO Agencies</a>
+                                    <a href="{% url 'advertising' %}"><i class="fa-solid fa-angle-right"></i> Advertising</a>
+                                    <a href="{% url 'social' %}?t=ecom"><i class="fa-solid fa-angle-right"></i> Social Media Marketing</a>
+                                    <a href="{% url 'content' %}"><i class="fa-solid fa-angle-right"></i> Content Marketing</a>
+                                    <a href="{% url 'ppc' %}"><i class="fa-solid fa-angle-right"></i> PPC Agencies</a>
+                                    <a href="{% url 'branding' %}"><i class="fa-solid fa-angle-right"></i> Branding</a>
+                                    <a href="{% url 'email' %}"><i class="fa-solid fa-angle-right"></i> Email Marketing</a>
+                                    <a href="{% url 'research' %}"><i class="fa-solid fa-angle-right"></i> Market Research</a>
+                                    <a href="{% url 'influencer' %}"><i class="fa-solid fa-angle-right"></i> Influencer Marketing</a>
+                                </div>
+                            </div>
+                            <div class="m-accordion">
+                                <button class="m-acc-btn" aria-expanded="false" aria-controls="m-acc-panel-design" role="treeitem">
+                                    <span><i class="fa-solid fa-code"></i> Design</span>
+                                    <i class='bx bx-chevron-down m-acc-caret' aria-hidden="true"></i>
+                                </button>
+                                <div id="m-acc-panel-design" class="m-acc-panel" role="group" hidden>
+                                    <a href="{% url 'web' %}?t=ecom"><i class="fa-solid fa-angle-right"></i> Web Design</a>
+                                    <a href="{% url 'digital_design' %}"><i class="fa-solid fa-angle-right"></i> Digital Design</a>
+                                    <a href="{% url 'logo_design' %}"><i class="fa-solid fa-angle-right"></i> Logo Design</a>
+                                    <a href="{% url 'product_design' %}"><i class="fa-solid fa-angle-right"></i> Product Design</a>
+                                    <a href="{% url 'uiux' %}"><i class="fa-solid fa-angle-right"></i> UI&UX Design</a>
+                                    <a href="{% url 'graphic' %}"><i class="fa-solid fa-angle-right"></i> Graphic Design</a>
+                                    <a href="{% url 'animation' %}?t=ecom"><i class="fa-solid fa-angle-right"></i> Animation & Video Editing</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /MOBILE SERVICES ACCORDION -->
 
-  <div id="m-acc-root-panel" class="m-acc-root-panel" role="group" hidden>
-    <!-- Category: Software Development -->
-    <div class="m-accordion">
-      <button class="m-acc-btn" aria-expanded="false" aria-controls="m-acc-panel-software" role="treeitem">
-        <span><i class="fa-solid fa-code"></i> Software Development</span>
-        <i class='bx bx-chevron-down m-acc-caret' aria-hidden="true"></i>
-      </button>
-      <div id="m-acc-panel-software" class="m-acc-panel" role="group" hidden>
-        <a href="{% url 'customeweb' %}"><i class="fa-solid fa-angle-right"></i> Custom Software Developers</a>
-        <a href="{% url 'python' %}"><i class="fa-solid fa-angle-right"></i> Python Development</a>
-        <a href="{% url 'react' %}"><i class="fa-solid fa-angle-right"></i> React Development</a>
-        <a href="{% url 'blockchain' %}"><i class="fa-solid fa-angle-right"></i> Blockchain Development</a>
-        <a href="{% url 'java' %}"><i class="fa-solid fa-angle-right"></i> Java Development</a>
-        <a href="{% url 'php' %}"><i class="fa-solid fa-angle-right"></i> PHP Development</a>
-        <a href="{% url 'angular' %}"><i class="fa-solid fa-angle-right"></i> AngularJS Development</a>
-        <a href="{% url 'softwaretesting' %}"><i class="fa-solid fa-angle-right"></i> Software Testing</a>
-        <a href="{% url 'dotnet' %}?t=react"><i class="fa-solid fa-angle-right"></i> .Net Development</a>
-        <a href="{% url 'nodejs' %}"><i class="fa-solid fa-angle-right"></i> NodeJS Development</a>
-      </div>
-    </div>
+                    <a href="{% url 'projects' %}" class="{% if request.path == '/projects/' %}active-page{% endif %}"><img src="{% static 'img/projects.png' %}" alt="">PROJECTS</a>
+                    <a href="{% url 'team' %}" class="page-links {% if request.path == '/team/' %}active-page{% endif %}"><span class="material-symbols-outlined" style="margin-right:10px;">groups</span>TEAM</a>
+                    <a href="{% url 'careers' %}" class="page-links {% if request.path == '/careers/' %}active-page{% endif %}"><img src="{% static 'img/career.png' %}" alt="">CAREERS</a>
+                    <a href="{% url 'blog' %}" class="page-links {% if request.path == '/blog/' %}active-page{% endif %}"><i class='bx bxl-blogger'></i>BLOG</a>
+                    <a href="{% url 'news_list' %}" class="page-links {% if request.path == '/news/' %}active-page{% endif %}"><i class='bx bxs-news'></i>NEWS</a>
+                    <a href="{% url 'contact' %}" class="{% if request.path == '/contact/' %}active-page{% endif %}"><img src="{% static 'img/contact.png' %}" alt="">CONTACT US</a>
+                </div>
 
-    <!-- Category: Web & App Development -->
-    <div class="m-accordion">
-      <button class="m-acc-btn" aria-expanded="false" aria-controls="m-acc-panel-webapp" role="treeitem">
-        <span><i class="fa-solid fa-code"></i> Web & App Development</span>
-        <i class='bx bx-chevron-down m-acc-caret' aria-hidden="true"></i>
-      </button>
-      <div id="m-acc-panel-webapp" class="m-acc-panel" role="group" hidden>
-        <a href="{% url 'mobile' %}"><i class="fa-solid fa-angle-right"></i> Mobile App Development</a>
-        <a href="{% url 'ios' %}"><i class="fa-solid fa-angle-right"></i> IOS App Development</a>
-        <a href="{% url 'android' %}"><i class="fa-solid fa-angle-right"></i> Android App Development</a>
-        <a href="{% url 'flutter' %}"><i class="fa-solid fa-angle-right"></i> Flutter App Development</a>
-        <a href="{% url 'ecommerce' %}"><i class="fa-solid fa-angle-right"></i> E-Commerce Development</a>
-        <a href="{% url 'web' %}"><i class="fa-solid fa-angle-right"></i> Web Development</a>
-        <a href="{% url 'woocommerce' %}"><i class="fa-solid fa-angle-right"></i> WooCommerce Development</a>
-        <a href="{% url 'shopify' %}"><i class="fa-solid fa-angle-right"></i> Shopify Development</a>
-        <a href="{% url 'magento' %}"><i class="fa-solid fa-angle-right"></i> Magento Development</a>
-        <a href="{% url 'wordpress' %}"><i class="fa-solid fa-angle-right"></i> WordPress Development</a>
-      </div>
-    </div>
-
-    <!-- Category: Marketing & Advertising -->
-    <div class="m-accordion">
-      <button class="m-acc-btn" aria-expanded="false" aria-controls="m-acc-panel-marketing" role="treeitem">
-        <span><i class="fa-solid fa-code"></i> Marketing & Advertising</span>
-        <i class='bx bx-chevron-down m-acc-caret' aria-hidden="true"></i>
-      </button>
-      <div id="m-acc-panel-marketing" class="m-acc-panel" role="group" hidden>
-        <a href="{% url 'digital' %}"><i class="fa-solid fa-angle-right"></i> Digital Marketing</a>
-        <a href="{% url 'marketing' %}"><i class="fa-solid fa-angle-right"></i> Real Estate Marketing</a>
-        <a href="{% url 'seo' %}"><i class="fa-solid fa-angle-right"></i> SEO Agencies</a>
-        <a href="{% url 'advertising' %}"><i class="fa-solid fa-angle-right"></i> Advertising</a>
-        <a href="{% url 'social' %}?t=ecom"><i class="fa-solid fa-angle-right"></i> Social Media Marketing</a>
-        <a href="{% url 'content' %}"><i class="fa-solid fa-angle-right"></i> Content Marketing</a>
-        <a href="{% url 'ppc' %}"><i class="fa-solid fa-angle-right"></i> PPC Agencies</a>
-        <a href="{% url 'branding' %}"><i class="fa-solid fa-angle-right"></i> Branding</a>
-        <a href="{% url 'email' %}"><i class="fa-solid fa-angle-right"></i> Email Marketing</a>
-        <a href="{% url 'research' %}"><i class="fa-solid fa-angle-right"></i> Market Research</a>
-        <a href="{% url 'influencer' %}"><i class="fa-solid fa-angle-right"></i> Influencer Marketing</a>
-      </div>
-    </div>
-
-    <!-- Category: Design -->
-    <div class="m-accordion">
-      <button class="m-acc-btn" aria-expanded="false" aria-controls="m-acc-panel-design" role="treeitem">
-        <span><i class="fa-solid fa-code"></i> Design</span>
-        <i class='bx bx-chevron-down m-acc-caret' aria-hidden="true"></i>
-      </button>
-      <div id="m-acc-panel-design" class="m-acc-panel" role="group" hidden>
-        <a href="{% url 'web' %}?t=ecom"><i class="fa-solid fa-angle-right"></i> Web Design</a>
-        <a href="{% url 'digital_design' %}"><i class="fa-solid fa-angle-right"></i> Digital Design</a>
-        <a href="{% url 'logo_design' %}"><i class="fa-solid fa-angle-right"></i> Logo Design</a>
-        <a href="{% url 'product_design' %}"><i class="fa-solid fa-angle-right"></i> Product Design</a>
-        <a href="{% url 'uiux' %}"><i class="fa-solid fa-angle-right"></i> UI&UX Design</a>
-        <a href="{% url 'graphic' %}"><i class="fa-solid fa-angle-right"></i> Graphic Design</a>
-        <a href="{% url 'animation' %}?t=ecom"><i class="fa-solid fa-angle-right"></i> Animation & Video Editing</a>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- /MOBILE SERVICES ACCORDION -->
-
-            <a href="{% url 'projects' %}" class=" {% if request.path == '/projects/' %}active-page{% endif %}"><img src="{% static 'img/projects.png' %}" alt="">PROJECTS</a>
-            <a href="{% url 'team' %}" class="page-links {% if request.path == '/team/' %}active-page{% endif %}"><span class="material-symbols-outlined" style="margin-right:10px;">groups</span>TEAM</a>
-            <a href="{% url 'careers' %}" class="page-links {% if request.path == '/careers/' %}active-page{% endif %}"><img src="{% static 'img/career.png' %}" alt="">CAREERS</a>
-            <a href="{% url 'blog' %}" class="page-links {% if request.path == '/blog/' %}active-page{% endif %}"><i class='bx bxl-blogger'></i>BLOG</a>
-             <a href="{% url 'news_list' %}" class="page-links {% if request.path == '/news/' %}active-page{% endif %}"><i class='bx bxs-news'></i>NEWS</a>
-
-            <a href="{% url 'contact' %}" class=" {% if request.path == '/contact/' %}active-page{% endif %}"><img src="{% static 'img/contact.png' %}" alt="">CONTACT US</a>
-        </div>
-        {% comment %} <div class="sidebar-links-one">
-  <a href="{% url 'home' %}" class="{% if request.path == '/home/' %}active-page{% endif %}">
-    <img src="{% static 'img/home.png' %}" alt="">HOME
-  </a>
-  <a href="{% url 'about' %}" class="{% if request.path == '/about/' %}active-page{% endif %}">
-    <img src="{% static 'img/about.png' %}" alt="">ABOUT
-  </a>
-
-  <!-- MOBILE SERVICES ACCORDION -->
-  <div class="m-accordion" role="tree" aria-label="Mobile Services Menu">
-    <!-- Item: Software Development -->
-    <button class="m-acc-btn" aria-expanded="false" aria-controls="m-acc-panel-software" role="treeitem">
-      <i class="fa-solid fa-code"></i> Software Development
-      <i class='bx bx-chevron-down m-acc-caret' aria-hidden="true"></i>
-    </button>
-    <div id="m-acc-panel-software" class="m-acc-panel" role="group" hidden>
-      <a href="{% url 'customeweb' %}"><i class="fa-solid fa-angle-right"></i> Custom Software Developers</a>
-      <a href="{% url 'python' %}"><i class="fa-solid fa-angle-right"></i> Python Development</a>
-      <a href="{% url 'react' %}"><i class="fa-solid fa-angle-right"></i> React Development</a>
-      <a href="{% url 'blockchain' %}"><i class="fa-solid fa-angle-right"></i> Blockchain Development</a>
-      <a href="{% url 'java' %}"><i class="fa-solid fa-angle-right"></i> Java Development</a>
-      <a href="{% url 'php' %}"><i class="fa-solid fa-angle-right"></i> PHP Development</a>
-      <a href="{% url 'angular' %}"><i class="fa-solid fa-angle-right"></i> AngularJS Development</a>
-      <a href="{% url 'softwaretesting' %}"><i class="fa-solid fa-angle-right"></i> Software Testing</a>
-      <a href="{% url 'dotnet' %}?t=react"><i class="fa-solid fa-angle-right"></i> .Net Development</a>
-      <a href="{% url 'nodejs' %}"><i class="fa-solid fa-angle-right"></i> NodeJS Development</a>
-    </div>
-
-    <!-- Item: Web & App Development -->
-    <button class="m-acc-btn" aria-expanded="false" aria-controls="m-acc-panel-webapp" role="treeitem">
-      <i class="fa-solid fa-code"></i> Web & App Development
-      <i class='bx bx-chevron-down m-acc-caret' aria-hidden="true"></i>
-    </button>
-    <div id="m-acc-panel-webapp" class="m-acc-panel" role="group" hidden>
-      <a href="{% url 'mobile' %}"><i class="fa-solid fa-angle-right"></i> Mobile App Development</a>
-      <a href="{% url 'ios' %}"><i class="fa-solid fa-angle-right"></i> IOS App Development</a>
-      <a href="{% url 'android' %}"><i class="fa-solid fa-angle-right"></i> Android App Development</a>
-      <a href="{% url 'flutter' %}"><i class="fa-solid fa-angle-right"></i> Flutter App Development</a>
-      <a href="{% url 'ecommerce' %}"><i class="fa-solid fa-angle-right"></i> E-Commerce Development</a>
-      <a href="{% url 'web' %}"><i class="fa-solid fa-angle-right"></i> Web Development</a>
-      <a href="{% url 'woocommerce' %}"><i class="fa-solid fa-angle-right"></i> WooCommerce Development</a>
-      <a href="{% url 'shopify' %}"><i class="fa-solid fa-angle-right"></i> Shopify Development</a>
-      <a href="{% url 'magento' %}"><i class="fa-solid fa-angle-right"></i> Magento Development</a>
-      <a href="{% url 'wordpress' %}"><i class="fa-solid fa-angle-right"></i> WordPress Development</a>
-    </div>
-
-    <!-- Item: Marketing & Advertising -->
-    <button class="m-acc-btn" aria-expanded="false" aria-controls="m-acc-panel-marketing" role="treeitem">
-      <i class="fa-solid fa-code"></i> Marketing & Advertising
-      <i class='bx bx-chevron-down m-acc-caret' aria-hidden="true"></i>
-    </button>
-    <div id="m-acc-panel-marketing" class="m-acc-panel" role="group" hidden>
-      <a href="{% url 'digital' %}"><i class="fa-solid fa-angle-right"></i> Digital Marketing</a>
-      <a href="{% url 'seo' %}"><i class="fa-solid fa-angle-right"></i> SEO Agencies</a>
-      <a href="{% url 'advertising' %}"><i class="fa-solid fa-angle-right"></i> Advertising</a>
-      <a href="{% url 'social' %}?t=ecom"><i class="fa-solid fa-angle-right"></i> Social Media Marketing</a>
-      <a href="{% url 'content' %}"><i class="fa-solid fa-angle-right"></i> Content Marketing</a>
-      <a href="{% url 'ppc' %}"><i class="fa-solid fa-angle-right"></i> PPC Agencies</a>
-      <a href="{% url 'branding' %}"><i class="fa-solid fa-angle-right"></i> Branding</a>
-      <a href="{% url 'email' %}"><i class="fa-solid fa-angle-right"></i> Email Marketing</a>
-      <a href="{% url 'research' %}"><i class="fa-solid fa-angle-right"></i> Market Research</a>
-      <a href="{% url 'influencer' %}"><i class="fa-solid fa-angle-right"></i> Influencer Marketing</a>
-    </div>
-
-    <!-- Item: Design -->
-    <button class="m-acc-btn" aria-expanded="false" aria-controls="m-acc-panel-design" role="treeitem">
-      <i class="fa-solid fa-code"></i> Design
-      <i class='bx bx-chevron-down m-acc-caret' aria-hidden="true"></i>
-    </button>
-    <div id="m-acc-panel-design" class="m-acc-panel" role="group" hidden>
-      <a href="{% url 'web' %}?t=ecom"><i class="fa-solid fa-angle-right"></i> Web Design</a>
-      <a href="{% url 'digital_design' %}"><i class="fa-solid fa-angle-right"></i> Digital Design</a>
-      <a href="{% url 'logo_design' %}"><i class="fa-solid fa-angle-right"></i> Logo Design</a>
-      <a href="{% url 'product_design' %}"><i class="fa-solid fa-angle-right"></i> Product Design</a>
-      <a href="{% url 'uiux' %}"><i class="fa-solid fa-angle-right"></i> UI&UX Design</a>
-      <a href="{% url 'graphic' %}"><i class="fa-solid fa-angle-right"></i> Graphic Design</a>
-    </div>
-  </div>
-  <!-- /MOBILE SERVICES ACCORDION -->
-
-  <a href="{% url 'projects' %}" class="{% if request.path == '/projects/' %}active-page{% endif %}">
-    <img src="{% static 'img/projects.png' %}" alt="">PROJECTS
-  </a>
-  <a href="{% url 'careers' %}" class="{% if request.path == '/careers/' %}active-page{% endif %}">
-    <img src="{% static 'img/career.png' %}" alt="">CAREERS
-  </a>
-  <a href="{% url 'team' %}" class="page-links {% if request.path == '/team/' %}active-page{% endif %}">
-    <span class="material-symbols-outlined" style="margin-right:10px;">groups</span>TEAM
-  </a>
-  <a href="{% url 'blog' %}" class="page-links {% if request.path == '/blog/' %}active-page{% endif %}">
-    <i class='bx bxl-blogger'></i>BLOG
-  </a>
-  <a href="{% url 'news_list' %}" class="page-links {% if request.path == '/news/' %}active-page{% endif %}">
-    <i class='bx bxs-news'></i>NEWS
-  </a>
-  <a href="{% url 'contact' %}" class="{% if request.path == '/contact/' %}active-page{% endif %}">
-    <img src="{% static 'img/contact.png' %}" alt="">CONTACT US
-  </a>
-</div> {% endcomment %}
-
-        <div class="sidebar-contact">
-            <a href=""><i class="fa-solid fa-square-phone"></i>+971 50 348 2299</a>
-            <a href=""><i class="fa-brands fa-square-whatsapp"></i>+971 50 348 2299</a>
-            <a href=""><i class="fa-solid fa-envelope"></i>delemonjobs@gmail.com</a>
-        </div>
-    </div>
+                <div class="sidebar-contact">
+                    <a href=""><i class="fa-solid fa-square-phone"></i>+971 50 348 2299</a>
+                    <a href=""><i class="fa-brands fa-square-whatsapp"></i>+971 50 348 2299</a>
+                    <a href=""><i class="fa-solid fa-envelope"></i>delemonjobs@gmail.com</a>
+                </div>
+            </div>
         </div>
     </nav>
 </header>
+
+
+
+
+
+
+
+
+
 <div id="successModal" class="modal-overlay">
   <div class="modal-box">
     <div class="success-icon">✓</div>
