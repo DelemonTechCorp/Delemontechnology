@@ -113,10 +113,9 @@ urlpatterns = [
     
     path('wordpress-development-services', RedirectView.as_view(url='/wordpress-development-solutions', permanent=True), name='wordpress_redirect'),
     path('wordpress-development-solutions', views.wordpress, name='wordpress'),
-    
     path('blog/', RedirectView.as_view(url='/technology-blog/', permanent=True), name='blog_redirect'),
     path('technology-blog/', views.blog, name='blog'),
-     path('chatgpt-ads-for-real-estate-agency-uae/', views.chatgpt, name='chatgpt'),
+    path('chatgpt-ads-for-real-estate-agency-uae/', views.chatgpt, name='chatgpt'),
     path('dubai-real-estate-digital-marketing-agency/', views.marketing, name='marketing'),
 
 ]
