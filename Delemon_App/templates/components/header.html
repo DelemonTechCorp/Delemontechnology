@@ -1,6 +1,5 @@
 {% load static %}
 <head>
-   
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=groups" />
 <style>
@@ -200,9 +199,15 @@ h1, h2, h3, h4, h5, p, span, a {
     border: 2px solid #ffffffff;
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     position: relative;
+    /* FIX: max-height + overflow-y:auto here was clipping the flyout
+       (.dropend .submenu) sub-menus, because the submenu is positioned
+       absolutely relative to this same box. An overflow value other
+       than "visible" on an ancestor always clips absolutely-positioned
+       children that stick out of it, no matter what overflow value the
+       child itself declares. That's why the second-level menus
+       (Software Development -> Python/React/... etc.) were invisible.
+       Removed the scroll/clipping so flyouts render correctly. */
     overflow: visible;
-    max-height: 340px;
-    overflow-y: auto;
 }
 .dropdown-content-multiple li {
     position: relative;
@@ -1167,5 +1172,3 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 </script>
-
-
