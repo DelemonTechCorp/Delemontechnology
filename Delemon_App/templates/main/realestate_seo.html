@@ -1,0 +1,1672 @@
+{% extends "base.html" %}
+{% block title %}Real Estate SEO Service UAE | Real Estate SEO Agency Dubai | Delemon Technology{% endblock %}
+
+{% load static %}
+
+
+{% block content %}
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="keywords" content="Real Estate SEO Service UAE,Real Estate SEO Agency Dubai,SEO for Real Estate Companies UAE,Property SEO Dubai,Real Estate Digital Marketing UAE,SEO for Property Developers Dubai,Luxury Real Estate SEO UAE,Commercial Real Estate SEO UAE,Real Estate Keyword Research UAE,Real Estate Website Optimisation Dubai">
+<meta content="Delemon Technology provides Real Estate SEO Service UAE to improve Google rankings, increase organic traffic and generate qualified property enquiries for agencies, developers and brokers." name="description"/>
+
+</head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+  href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap"
+  rel="stylesheet">
+
+<style>
+  /* =========================================================
+   DELEMON TECHNOLOGY – REAL ESTATE SEO SERVICE UAE LANDING PAGE
+   All classes use the unique prefix  dlx-
+   FULLY RESPONSIVE: Laptop / Tablet / Phone
+   ========================================================= */
+
+  /* ---------- 1. TOKENS ---------- */
+  :root {
+    --dlx-ink: #0b0b0b;
+    --dlx-ink-deep: #050505;
+    --dlx-gold: #e6b325;
+    --dlx-gold-deep: #b8880b;
+    --dlx-paper: #faf8f3;
+    --dlx-paper-dim: #f1eee5;
+    --dlx-line: #dcd7c8;
+    --dlx-text: #1a1a1a;
+    --dlx-muted: #5e5b52;
+
+    /* HEADINGS */
+    --dlx-heading-font: "Lato", sans-serif;
+    --dlx-heading-size: clamp(22px, 2.6vw, 30px);
+    --dlx-heading-weight: 800;
+
+    --dlx-body-font: "DM Sans", system-ui, sans-serif;
+
+    /* ONE width used by the hero AND every other section */
+    --dlx-wrap: 1400px;
+  }
+
+  /* ---------- 2. RESET / BASE (scoped to .dlx-page) ---------- */
+  .dlx-page,
+  .dlx-page *,
+  .dlx-page *::before,
+  .dlx-page *::after {
+    box-sizing: border-box;
+  }
+
+  .dlx-page {
+    background: var(--dlx-paper);
+    color: var(--dlx-text);
+    font-family: var(--dlx-body-font);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  .dlx-page img {
+    max-width: 100%;
+    display: block;
+  }
+
+  .dlx-page a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .dlx-page h1,
+  .dlx-page h2,
+  .dlx-page h3,
+  .dlx-page p,
+  .dlx-page ul {
+    margin: 0;
+  }
+
+  .dlx-page ul {
+    padding: 0;
+    list-style: none;
+  }
+
+  .dlx-page button {
+    font: inherit;
+    cursor: pointer;
+  }
+
+  .dlx-page :focus-visible {
+    outline: 3px solid var(--dlx-gold);
+    outline-offset: 3px;
+  }
+
+  /* Fluid wrapper: same width for hero + every section */
+  .dlx-wrap {
+    width: 100%;
+    max-width: var(--dlx-wrap);
+    margin-inline: auto;
+    padding-inline: clamp(16px, 4vw, 48px);
+    text-align: center;
+  }
+
+  /* ---------- 3. HEADING SYSTEM (Lato / 800 / fluid) ---------- */
+  .dlx-heading {
+    font-family: var(--dlx-heading-font);
+    font-size: var(--dlx-heading-size);
+    font-weight: var(--dlx-heading-weight);
+    line-height: 1.28;
+    letter-spacing: -0.01em;
+  }
+
+  .dlx-card-title {
+    font-family: var(--dlx-heading-font);
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1.35;
+  }
+
+  /* ---------- SINGLE SOURCE OF TRUTH FOR THE YELLOW HIGHLIGHT ---------- */
+  .dlx-highlight,
+  .dlx-faq__mark {
+    background: var(--dlx-gold);
+    color: var(--dlx-ink);
+    padding: 2px 15px;
+    display: inline-block;
+    border-radius: 20px 10px 20px 10px;
+    transform: skewX(-15deg);
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+  }
+
+  .dlx-kicker {
+    font-family: var(--dlx-heading-font);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .dlx-bar {
+    width: 80px;
+    height: 6px;
+    background: var(--dlx-gold);
+    margin-top: 22px;
+  }
+
+  /* ---------- 4. BUTTONS ---------- */
+  .dlx-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px 28px;
+    font-family: var(--dlx-heading-font);
+    font-size: 16px;
+    font-weight: 800;
+    border: 1px solid transparent;
+    transition: transform .2s ease, background .2s ease, color .2s ease, border-color .2s ease, box-shadow .2s ease;
+  }
+
+  .dlx-btn1 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px 28px;
+    color: #0b0b0b;
+    font-family: var(--dlx-heading-font);
+    font-size: 16px;
+    font-weight: 800;
+    border: 1px solid transparent;
+    transition: transform .2s ease, background .2s ease, color .2s ease, border-color .2s ease, box-shadow .2s ease;
+  }
+
+  .dlx-btn1 a {
+    color: #050505;
+  }
+
+  .dlx-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .dlx-btn--gold {
+    background: var(--dlx-gold);
+    color: var(--dlx-ink);
+    box-shadow: 0 8px 40px -8px var(--dlx-gold);
+  }
+
+  .dlx-page a.dlx-btn--gold {
+    color: var(--dlx-ink);
+  }
+
+  .dlx-btn--gold:hover {
+    transform: translateY(-2px);
+  }
+
+  .dlx-btn--ghost {
+    border-color: rgba(250, 248, 243, .3);
+    color: var(--dlx-paper);
+  }
+
+  .dlx-btn--ghost:hover {
+    border-color: var(--dlx-gold);
+    color: var(--dlx-gold);
+  }
+
+  .dlx-btn--whatsapp {
+    background: var(--dlx-ink);
+    color: var(--dlx-gold);
+    border-color: rgba(230, 179, 37, .5);
+  }
+
+  .dlx-page a.dlx-btn--whatsapp {
+    color: var(--dlx-gold);
+  }
+
+  .dlx-btn--whatsapp:hover {
+    border-color: var(--dlx-gold);
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px -12px rgba(0, 0, 0, .7);
+  }
+
+  /* ---------- 5. HERO ---------- */
+  .dlx-hero {
+    position: relative;
+    overflow: hidden;
+    background: var(--dlx-ink);
+    isolation: isolate;
+  }
+  .dlx-wrap-hero{
+    width: 100%;
+    /* max-width: 1400px; */
+    margin-inline: auto;
+    padding-inline: clamp(16px, 4vw, 48px);
+    text-align: center;
+  }
+
+  /* BACKGROUND IMAGE – change the file name here to use another image */
+  .dlx-hero__bg {
+    position: absolute;
+    inset: -20px;
+    z-index: -2;
+    background: url("{% static 'img/marketing-hero.jpg' %}") center / cover no-repeat;
+    opacity: .6;
+    animation: dlx-heroZoom 22s ease-in-out infinite alternate;
+  }
+
+  @keyframes dlx-heroZoom {
+    0% {
+      transform: scale(1);
+    }
+
+    100% {
+      transform: scale(1.08);
+    }
+  }
+
+  .dlx-hero__shade {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(to bottom, rgba(11, 11, 11, .82), rgba(11, 11, 11, .62), var(--dlx-ink));
+  }
+
+  .dlx-hero__grid {
+    display: grid;
+    gap: 56px;
+    align-items: center;
+    padding-block: 72px 88px;
+  }
+
+  @media (min-width: 992px) {
+    .dlx-hero__grid {
+      grid-template-columns: 1.1fr .9fr;
+      gap: 64px;
+      padding-block: 112px 128px;
+    }
+  }
+
+  .dlx-hero__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 16px;
+    border: 1px solid rgba(230, 179, 37, .4);
+    background: rgba(11, 11, 11, .6);
+    color: var(--dlx-gold);
+  }
+
+  .dlx-hero__badge i {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--dlx-gold);
+    flex: none;
+  }
+
+  .dlx-hero__copy {
+    text-align: left;
+  }
+
+  .dlx-hero__title {
+    margin-top: 32px;
+    max-width: 760px;
+    font-family: var(--dlx-heading-font);
+    font-size: clamp(26px, 4.6vw, 49px);
+    font-weight: 900;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+    color: var(--dlx-paper);
+    text-align: left;
+  }
+
+  .dlx-hero__lead {
+    margin-top: 28px;
+    max-width: 700px;
+    font-family: var(--dlx-heading-font);
+    font-size: clamp(16px, 1.9vw, 24px);
+    font-weight: 500;
+    line-height: 1.6;
+    color: rgba(250, 248, 243, .9);
+    text-align: left;
+  }
+
+  .dlx-hero__text {
+    margin-top: 20px;
+    max-width: 640px;
+    font-size: clamp(14px, 1.2vw, 16px);
+    line-height: 1.7;
+    color: rgba(250, 248, 243, .6);
+    text-align: left;
+  }
+
+  .dlx-hero__actions {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: flex-start;
+  }
+
+  .dlx-hero__points {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .dlx-hero__points li {
+    padding: 7px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(250, 248, 243, .85);
+    border: 1px solid rgba(250, 248, 243, .16);
+    background: rgba(250, 248, 243, .04);
+  }
+
+  /* --- Hero result area (image panel) --- */
+  .dlx-result {
+    position: relative;
+    width: 100%;
+    max-width: 520px;
+    margin-inline: auto;
+    padding: 18px 18px 18px 0;
+  }
+
+  .dlx-result::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top: 18px;
+    left: 18px;
+    border: 2px solid var(--dlx-gold);
+    z-index: 0;
+  }
+
+  .dlx-result__main {
+    position: relative;
+    z-index: 1;
+    aspect-ratio: 4 / 4.6;
+    background: var(--dlx-paper);
+    border: 1px solid rgba(11, 11, 11, .08);
+    overflow: hidden;
+    border-radius: 14px;
+    box-shadow: 0 40px 90px -28px rgba(0, 0, 0, .85), 0 0 0 1px rgba(230, 179, 37, .18);
+  }
+
+  .dlx-result__tag {
+    position: absolute;
+    z-index: 3;
+    top: 16px;
+    left: 16px;
+    padding: 6px 12px;
+    background: var(--dlx-gold);
+    color: var(--dlx-ink);
+    border-radius: 0 0 10px 0;
+  }
+
+  .dlx-result__chip {
+    position: absolute;
+    z-index: 3;
+    left: -14px;
+    bottom: -18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    min-width: 210px;
+    background: var(--dlx-ink);
+    color: var(--dlx-paper);
+    border: 1px solid rgba(230, 179, 37, .3);
+    box-shadow: 0 20px 50px -16px rgba(0, 0, 0, .6);
+    text-align: left;
+  }
+
+  .dlx-result__chip-icon {
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    background: var(--dlx-gold);
+    color: var(--dlx-ink);
+    flex: none;
+  }
+
+  .dlx-result__chip-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .dlx-result__chip b {
+    display: block;
+    font-family: var(--dlx-heading-font);
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--dlx-paper);
+  }
+
+  .dlx-result__chip small {
+    font-size: 12px;
+    color: rgba(250, 248, 243, .55);
+  }
+
+  /* --- Hero image panel --- */
+  .dlx-hero-image-panel {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 34px;
+    background:
+      radial-gradient(60% 60% at 80% 15%, rgba(230, 179, 37, .18), transparent 70%),
+      radial-gradient(50% 50% at 10% 90%, rgba(230, 179, 37, .12), transparent 70%),
+      linear-gradient(160deg, var(--dlx-paper) 0%, var(--dlx-paper-dim) 100%);
+    overflow: hidden;
+  }
+
+  .dlx-hero-image-panel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    opacity: .6;
+    background-image:
+      radial-gradient(rgba(184, 136, 11, .18) 1.5px, transparent 1.5px);
+    background-size: 22px 22px;
+  }
+
+  .dlx-hero-image-panel__ring {
+    position: absolute;
+    z-index: 0;
+    border-radius: 50%;
+    border: 1.5px solid rgba(230, 179, 37, .35);
+  }
+
+  .dlx-hero-image-panel__ring--a {
+    width: 260px;
+    height: 260px;
+    top: -70px;
+    right: -70px;
+  }
+
+  .dlx-hero-image-panel__ring--b {
+    width: 160px;
+    height: 160px;
+    bottom: -50px;
+    left: -50px;
+    border-color: rgba(230, 179, 37, .5);
+  }
+
+  .dlx-hero-image-panel__badge {
+    position: absolute;
+    z-index: 3;
+    top: 18px;
+    left: 18px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: var(--dlx-ink);
+    color: var(--dlx-gold);
+    border: 1px solid rgba(230, 179, 37, .45);
+    font-family: var(--dlx-heading-font);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .02em;
+    box-shadow: 0 10px 24px -10px rgba(0, 0, 0, .4);
+  }
+
+  .dlx-hero-image-panel__badge svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .dlx-hero-image-panel__frame {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 380px;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, .55);
+    border: 1px solid rgba(230, 179, 37, .4);
+    border-radius: 20px;
+    box-shadow: 0 30px 60px -24px rgba(11, 11, 11, .25);
+    animation: dlx-float 5s ease-in-out infinite;
+  }
+
+  @keyframes dlx-float {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .dlx-hero-image-panel__frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 16px;
+    background-color: black;
+  }
+
+  .dlx-inline-icon {
+    display: inline-block;
+    width: .8em;
+    height: .8em;
+    vertical-align: -0.08em;
+    margin-right: 6px;
+  }
+
+  /* ---------- 6. SERVICES TICKER ---------- */
+  .dlx-ticker {
+    overflow: hidden;
+    background: var(--dlx-gold);
+    border-block: 2px solid var(--dlx-ink);
+    padding: 14px 0;
+  }
+
+  .dlx-ticker__track {
+    display: flex;
+    width: max-content;
+    animation: dlx-marquee 32s linear infinite;
+  }
+
+  .dlx-ticker__item {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding-right: 40px;
+    font-family: var(--dlx-heading-font);
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--dlx-ink);
+    white-space: nowrap;
+  }
+
+  .dlx-ticker__item::after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background: var(--dlx-ink);
+    transform: rotate(45deg);
+  }
+
+  @keyframes dlx-marquee {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* ---------- 7. SECTION SPACING ---------- */
+  .dlx-section {
+    padding-block: 80px;
+  }
+
+  @media (min-width: 640px) {
+    .dlx-section {
+      padding-block: 96px;
+    }
+  }
+
+  /* ---------- 8. INTRO / TWO-COLUMN TEXT SECTIONS ---------- */
+  .dlx-intro {
+    background: var(--dlx-paper);
+  }
+
+  .dlx-intro__grid {
+    display: grid;
+    gap: 48px;
+  }
+
+  @media (min-width: 992px) {
+    .dlx-intro__grid {
+      grid-template-columns: 1fr 1.5fr;
+      gap: 96px;
+    }
+  }
+
+  .dlx-intro__grid > div:first-child {
+    text-align: left;
+  }
+
+  .dlx-intro__body {
+    display: grid;
+    gap: 20px;
+    font-size: 17px;
+    color: var(--dlx-muted);
+    text-align: left;
+  }
+
+  .dlx-intro__lead {
+    border-left: 3px solid var(--dlx-gold);
+    padding-left: 20px;
+    font-weight: 600;
+    color: var(--dlx-text);
+  }
+
+  .dlx-bullets {
+    margin-top: 22px;
+    display: grid;
+    gap: 14px;
+  }
+
+  .dlx-bullets li {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    font-size: 15.5px;
+    color: var(--dlx-muted);
+  }
+
+  .dlx-bullets li svg {
+    width: 20px;
+    height: 20px;
+    flex: none;
+    margin-top: 2px;
+    color: var(--dlx-gold-deep);
+  }
+
+  .dlx-bullets--dark li {
+    color: rgba(250, 248, 243, .7);
+  }
+
+  .dlx-bullets--dark li svg {
+    color: var(--dlx-gold);
+  }
+
+  /* ---------- 9. CHALLENGES / BENEFIT GRID ---------- */
+  .dlx-challenges {
+    background: var(--dlx-paper-dim);
+    border-top: 1px solid var(--dlx-line);
+  }
+
+  .dlx-challenges__head {
+    max-width: 900px;
+    text-align: left;
+  }
+
+  .dlx-challenges__head p.dlx-lead {
+    margin-top: 18px;
+    color: var(--dlx-muted);
+    max-width: 760px;
+  }
+
+  .dlx-challenges__grid {
+    margin-top: 56px;
+    display: grid;
+    gap: 1px;
+    background: var(--dlx-line);
+    border: 1px solid var(--dlx-line);
+  }
+
+  @media (min-width: 640px) {
+    .dlx-challenges__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .dlx-challenges__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .dlx-challenge {
+    background: var(--dlx-paper);
+    padding: 36px;
+    text-align: left;
+    transition: background .25s;
+  }
+
+  .dlx-challenge__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .dlx-challenge__icon svg {
+    width: 28px;
+    height: 28px;
+    color: var(--dlx-gold-deep);
+    transition: color .25s;
+  }
+
+  .dlx-challenge__no {
+    font-family: var(--dlx-heading-font);
+    font-size: 14px;
+    font-weight: 800;
+    color: rgba(94, 91, 82, .55);
+    transition: color .25s;
+  }
+
+  .dlx-challenge .dlx-card-title {
+    margin-top: 24px;
+    transition: color .25s;
+  }
+
+  .dlx-challenge p {
+    margin-top: 12px;
+    font-size: 14.5px;
+    color: var(--dlx-muted);
+    transition: color .25s;
+  }
+
+  .dlx-challenge:hover {
+    background: var(--dlx-ink);
+  }
+
+  .dlx-challenge:hover .dlx-challenge__icon svg {
+    color: var(--dlx-gold);
+  }
+
+  .dlx-challenge:hover .dlx-challenge__no {
+    color: rgba(250, 248, 243, .4);
+  }
+
+  .dlx-challenge:hover .dlx-card-title {
+    color: var(--dlx-paper);
+  }
+
+  .dlx-challenge:hover p {
+    color: rgba(250, 248, 243, .7);
+  }
+
+  /* ---------- 10. HOW WE HELP (dark) ---------- */
+  .dlx-help {
+    background: var(--dlx-ink);
+    color: var(--dlx-paper);
+  }
+
+  .dlx-help .dlx-kicker {
+    color: var(--dlx-gold);
+  }
+
+  .dlx-help__grid {
+    margin-top: 56px;
+    display: grid;
+    gap: 24px;
+  }
+
+  @media (min-width: 640px) {
+    .dlx-help__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .dlx-help__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .dlx-help__card {
+    padding: 32px;
+    text-align: left;
+    border: 1px solid rgba(250, 248, 243, .12);
+    background: rgba(250, 248, 243, .03);
+    transition: border-color .25s, transform .25s;
+  }
+
+  .dlx-help__card:hover {
+    border-color: var(--dlx-gold);
+    transform: translateY(-4px);
+  }
+
+  .dlx-help__card svg {
+    width: 28px;
+    height: 28px;
+    color: var(--dlx-gold);
+  }
+
+  .dlx-help__card .dlx-card-title {
+    margin-top: 20px;
+    color: var(--dlx-paper);
+  }
+
+  .dlx-help__card p {
+    margin-top: 10px;
+    font-size: 14.5px;
+    color: rgba(250, 248, 243, .65);
+  }
+
+  /* ---------- 11. PARTNER SECTION ---------- */
+  .dlx-partner {
+    background: var(--dlx-paper);
+  }
+
+  .dlx-partner__box {
+    display: grid;
+    gap: 40px;
+    padding: 48px 32px;
+    background: var(--dlx-ink);
+    color: var(--dlx-paper);
+    border-left: 6px solid var(--dlx-gold);
+    text-align: left;
+  }
+
+  @media (min-width: 992px) {
+    .dlx-partner__box {
+      grid-template-columns: 1.2fr 1fr;
+      align-items: center;
+      padding: 72px 64px;
+      gap: 72px;
+    }
+  }
+
+  .dlx-partner__text {
+    display: grid;
+    gap: 18px;
+    font-size: 16.5px;
+    color: rgba(250, 248, 243, .75);
+  }
+
+  /* ---------- 12. BUSINESS TYPES ---------- */
+  .dlx-types {
+    background: var(--dlx-paper-dim);
+    border-top: 1px solid var(--dlx-line);
+  }
+
+  .dlx-types__grid {
+    margin-top: 48px;
+    display: grid;
+    gap: 20px;
+  }
+
+  @media (min-width: 640px) {
+    .dlx-types__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .dlx-types__grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .dlx-type {
+    padding: 30px 28px;
+    text-align: left;
+    background: var(--dlx-paper);
+    border: 1px solid var(--dlx-line);
+    border-top: 4px solid var(--dlx-gold);
+  }
+
+  .dlx-type p {
+    margin-top: 10px;
+    font-size: 14.5px;
+    color: var(--dlx-muted);
+  }
+
+  /* ---------- 13. FAQ ---------- */
+  .dlx-faq {
+    background: var(--dlx-paper);
+  }
+
+  .dlx-faq__list {
+    margin: 48px auto;
+    max-width: 1200px;
+    display: grid;
+    gap: 14px;
+    text-align: left;
+  }
+
+  .dlx-faq__item {
+    border: 1px solid var(--dlx-line);
+    background: #fff;
+  }
+
+  .dlx-faq__item summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 24px;
+    font-family: var(--dlx-heading-font);
+    font-size: 17px;
+    font-weight: 800;
+    line-height: 1.4;
+  }
+
+  .dlx-faq__item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .dlx-faq__item summary::after {
+    content: "+";
+    flex: none;
+    width: 30px;
+    height: 30px;
+    display: grid;
+    place-items: center;
+    background: var(--dlx-gold);
+    color: var(--dlx-ink);
+    font-size: 20px;
+    font-weight: 800;
+    transition: transform .2s;
+  }
+
+  .dlx-faq__item[open] summary::after {
+    content: "\2212";
+  }
+
+  .dlx-faq__item[open] {
+    border-color: var(--dlx-gold);
+  }
+
+  .dlx-faq__answer {
+    padding: 0 24px 22px;
+    font-size: 15.5px;
+    color: var(--dlx-muted);
+  }
+
+  /* ---------- HERO SCREENSHOT CARD (wide image) ---------- */
+  @media (min-width: 992px) {
+    .dlx-hero__grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .dlx-result:has(.dlx-result__main--shot) {
+    max-width: 660px;
+  }
+
+  .dlx-result__main--shot {
+    aspect-ratio: auto;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+  }
+
+  .dlx-shot__bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 16px;
+    background: var(--dlx-ink);
+    text-align: left;
+  }
+
+  .dlx-shot__bar i {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(250, 248, 243, .25);
+    flex: none;
+  }
+
+  .dlx-shot__bar i:first-child {
+    background: var(--dlx-gold);
+  }
+
+  .dlx-shot__bar span {
+    margin-left: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(250, 248, 243, .7);
+  }
+
+  .dlx-shot__body {
+    overflow-x: auto;
+    background: #fff;
+  }
+
+  .dlx-shot__body img {
+    width: 100%;
+    height: auto;
+  }
+
+  .dlx-shot__stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: var(--dlx-ink);
+    border-top: 3px solid var(--dlx-gold);
+  }
+
+  .dlx-shot__stats div {
+    padding: 16px;
+    text-align: left;
+  }
+
+  .dlx-shot__stats div + div {
+    border-left: 1px solid rgba(250, 248, 243, .12);
+  }
+
+  .dlx-shot__stats b {
+    display: block;
+    font-family: var(--dlx-heading-font);
+    font-size: clamp(22px, 3vw, 30px);
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--dlx-gold);
+  }
+
+  .dlx-shot__stats span {
+    font-size: 13px;
+    color: rgba(250, 248, 243, .75);
+  }
+
+  @media (max-width: 639px) {
+    .dlx-shot__body img {
+      min-width: 480px;
+    }
+
+    .dlx-shot__stats div {
+      padding: 12px;
+    }
+  }
+
+  /* ---------- 14. FINAL CTA ---------- */
+  .dlx-cta {
+    background: var(--dlx-ink);
+    color: var(--dlx-paper);
+    text-align: center;
+  }
+
+  .dlx-cta p {
+    max-width: 640px;
+    margin: 20px auto 0;
+    color: rgba(250, 248, 243, .7);
+  }
+
+  .dlx-cta .dlx-hero__actions {
+    justify-content: center;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+
+    .dlx-hero__bg,
+    .dlx-hero-image-panel__frame,
+    .dlx-ticker__track {
+      animation: none;
+    }
+  }
+
+  /* =========================================================
+     15. RESPONSIVE – LAPTOP / TABLET / PHONE
+     ========================================================= */
+
+  /* ---------- LARGE SCREENS (≥ 1600px) ---------- */
+  @media (min-width: 1600px) {
+    :root {
+      --dlx-wrap: 1500px;
+    }
+  }
+
+  /* ---------- LAPTOP (≤ 1279px) ---------- */
+  @media (max-width: 1279px) {
+    .dlx-intro__grid {
+      gap: 64px;
+    }
+
+    .dlx-partner__box {
+      padding: 56px 44px;
+      gap: 48px;
+    }
+
+    .dlx-challenge {
+      padding: 30px;
+    }
+  }
+
+  /* ---------- TABLET (≤ 991px) ---------- */
+  @media (max-width: 991px) {
+    .dlx-section {
+      padding-block: 72px;
+    }
+
+    .dlx-hero__grid {
+      gap: 48px;
+      padding-block: 64px 80px;
+    }
+
+    .dlx-hero__copy {
+      text-align: center;
+    }
+
+    .dlx-hero__title,
+    .dlx-hero__lead,
+    .dlx-hero__text {
+      margin-inline: auto;
+      text-align: center;
+    }
+
+    .dlx-hero__actions,
+    .dlx-hero__points {
+      justify-content: center;
+    }
+
+    .dlx-result {
+      max-width: 460px;
+      padding-right: 14px;
+    }
+
+    /* Intro */
+    .dlx-intro__grid > div:first-child {
+      text-align: center;
+    }
+
+    .dlx-intro__grid > div:first-child .dlx-bar {
+      margin-inline: auto;
+    }
+
+    /* Challenges heading */
+    .dlx-challenges__head {
+      margin-inline: auto;
+      text-align: center;
+    }
+
+    .dlx-challenges__head .dlx-bar {
+      margin-inline: auto;
+    }
+
+    /* Centre section headings + bars */
+    .dlx-help .dlx-bar,
+    .dlx-types .dlx-bar,
+    .dlx-faq .dlx-bar {
+      margin-inline: auto;
+    }
+
+    /* Partner */
+    .dlx-partner__box {
+      grid-template-columns: 1fr;
+      padding: 48px 36px;
+      text-align: center;
+    }
+
+    .dlx-partner__box .dlx-bar {
+      margin-inline: auto;
+    }
+
+    .dlx-partner__text {
+      text-align: left;
+    }
+
+    .dlx-help__card {
+      padding: 28px;
+    }
+  }
+
+  /* ---------- PHONE (≤ 639px) ---------- */
+  @media (max-width: 639px) {
+    .dlx-section {
+      padding-block: 56px;
+    }
+
+    /* Hero */
+    .dlx-hero__grid {
+      padding-block: 48px 64px;
+      gap: 40px;
+    }
+
+    .dlx-hero__title {
+      margin-top: 24px;
+      line-height: 1.4;
+    }
+
+    .dlx-hero__lead {
+      margin-top: 20px;
+    }
+
+    .dlx-hero__actions {
+      margin-top: 28px;
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .dlx-hero__points {
+      margin-top: 28px;
+      gap: 8px;
+    }
+
+    .dlx-hero__points li {
+      font-size: 12px;
+      padding: 6px 12px;
+    }
+
+    /* Full-width buttons */
+    .dlx-btn {
+      width: 100%;
+      padding: 14px 20px;
+      font-size: 15px;
+    }
+
+    /* Smaller yellow highlight so it wraps nicely */
+    .dlx-highlight,
+    .dlx-faq__mark {
+      padding: 2px 10px;
+      border-radius: 14px 8px 14px 8px;
+    }
+
+    /* Hero image */
+    .dlx-result {
+      max-width: 100%;
+      padding: 12px 12px 12px 0;
+    }
+
+    .dlx-hero-image-panel {
+      padding: 20px;
+    }
+
+    .dlx-hero-image-panel__frame {
+      max-width: 280px;
+    }
+
+    .dlx-result__chip {
+      left: 0;
+      bottom: -14px;
+      min-width: 0;
+      padding: 10px 14px;
+      gap: 10px;
+    }
+
+    .dlx-result__chip-icon {
+      width: 32px;
+      height: 32px;
+    }
+
+    /* Ticker */
+    .dlx-ticker {
+      padding: 10px 0;
+    }
+
+    .dlx-ticker__item {
+      font-size: 12px;
+      gap: 24px;
+      padding-right: 24px;
+    }
+
+    /* Text blocks */
+    .dlx-intro__body {
+      font-size: 15.5px;
+      gap: 16px;
+    }
+
+    .dlx-intro__lead {
+      padding-left: 14px;
+    }
+
+    .dlx-bar {
+      width: 60px;
+      height: 5px;
+      margin-top: 16px;
+    }
+
+    /* Cards: single column */
+    .dlx-challenges__grid,
+    .dlx-help__grid,
+    .dlx-types__grid {
+      margin-top: 36px;
+      grid-template-columns: 1fr;
+    }
+
+    .dlx-challenge {
+      padding: 24px;
+    }
+
+    .dlx-help__card {
+      padding: 24px;
+    }
+
+    .dlx-type {
+      padding: 24px 20px;
+    }
+
+    .dlx-card-title {
+      font-size: 17px;
+    }
+
+    /* Partner */
+    .dlx-partner__box {
+      padding: 36px 22px;
+      gap: 28px;
+      border-left-width: 4px;
+    }
+
+    .dlx-partner__text {
+      font-size: 15px;
+    }
+
+    /* FAQ */
+    .dlx-faq__list {
+      margin: 32px auto;
+      gap: 10px;
+    }
+
+    .dlx-faq__item summary {
+      padding: 16px;
+      font-size: 15px;
+    }
+
+    .dlx-faq__item summary::after {
+      width: 26px;
+      height: 26px;
+      font-size: 18px;
+    }
+
+    .dlx-faq__answer {
+      padding: 0 16px 18px;
+      font-size: 14.5px;
+    }
+
+    /* CTA */
+    .dlx-cta p {
+      font-size: 15px;
+    }
+  }
+
+  /* ---------- SMALL PHONE (≤ 380px) ---------- */
+  @media (max-width: 380px) {
+    .dlx-hero__badge {
+      font-size: 10px;
+      padding: 6px 12px;
+      letter-spacing: .1em;
+    }
+
+    .dlx-hero-image-panel__frame {
+      max-width: 230px;
+    }
+
+    .dlx-result__chip small {
+      display: none;
+    }
+
+    .dlx-partner__box {
+      padding: 30px 18px;
+    }
+  }
+</style>
+
+<main class="dlx-page">
+
+  <!-- ================= HERO ================= -->
+  <section class="dlx-hero">
+    <div class="dlx-hero__bg"></div>
+    <div class="dlx-hero__shade"></div>
+    <div class="dlx-wrap-hero">
+      <div class="dlx-hero__grid">
+        <div class="dlx-hero__copy">
+          <span class="dlx-hero__badge dlx-kicker"><i></i> Real Estate SEO Service UAE</span>
+          <h1 class="dlx-hero__title">
+            Rank Higher on Google and <span class="dlx-highlight">Reach More Property Buyers</span> in UAE
+          </h1>
+          <p class="dlx-hero__lead">
+            Your future buyers are searching online every day. We help real estate businesses in the UAE improve their visibility, reach the right audience, and turn website visitors into genuine property enquiries.
+          </p>
+          <div class="dlx-hero__actions">
+            <a href="/contact-us/" class="dlx-btn dlx-btn--gold">Get a Free SEO Consultation</a>
+            <a href="https://wa.me/971000000000" class="dlx-btn dlx-btn--whatsapp" target="_blank" rel="noopener">Chat on WhatsApp</a>
+          </div>
+          <ul class="dlx-hero__points">
+            <li>Higher Google Rankings</li>
+            <li>More Organic Traffic</li>
+            <li>Qualified Property Enquiries</li>
+          </ul>
+        </div>
+
+        <div class="dlx-result">
+          <div class="dlx-result__main dlx-result__main--shot">
+            <div class="dlx-shot__bar"><i></i><i></i><i></i><span>Google Search Console &middot; Performance</span></div>
+            <div class="dlx-shot__body">
+              <img src="{% static 'img/realestateseo.jpeg' %}" alt="Google Search Console report showing clicks and impressions for a real estate website" loading="eager" width="1400" height="442">
+            </div>
+            <div class="dlx-shot__stats">
+              <div><b>2.15K</b><span>Total Clicks</span></div>
+              <div><b>1.06M</b><span>Total Impressions</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TICKER ================= -->
+  <div class="dlx-ticker" aria-hidden="true">
+    <div class="dlx-ticker__track">
+      <div class="dlx-ticker__item">SEO Strategy</div>
+      <div class="dlx-ticker__item">Keyword Research</div>
+      <div class="dlx-ticker__item">Technical SEO</div>
+      <div class="dlx-ticker__item">Content Optimisation</div>
+      <div class="dlx-ticker__item">Property Page SEO</div>
+      <div class="dlx-ticker__item">Performance Tracking</div>
+      <div class="dlx-ticker__item">SEO Strategy</div>
+      <div class="dlx-ticker__item">Keyword Research</div>
+      <div class="dlx-ticker__item">Technical SEO</div>
+      <div class="dlx-ticker__item">Content Optimisation</div>
+      <div class="dlx-ticker__item">Property Page SEO</div>
+      <div class="dlx-ticker__item">Performance Tracking</div>
+    </div>
+  </div>
+
+  <!-- ================= INTRO ================= -->
+  <section class="dlx-section dlx-intro">
+    <div class="dlx-wrap">
+      <div class="dlx-intro__grid">
+        <div>
+          <span class="dlx-kicker" style="color:var(--dlx-gold-deep)">About the Service</span>
+          <h2 class="dlx-heading" style="margin-top:14px">
+            <span class="dlx-highlight">Real Estate SEO</span> Service UAE
+          </h2>
+          <div class="dlx-bar"></div>
+        </div>
+        <div class="dlx-intro__body">
+          <p class="dlx-intro__lead">
+            The UAE real estate market is highly competitive, with thousands of property developers, brokers, and agencies competing for buyers and investors online.
+          </p>
+          <p>Having a professional website is no longer enough to attract potential clients. Real estate businesses need a strong search presence that helps them appear when buyers search for apartments, villas, commercial properties, and investment opportunities in Dubai and across the UAE.</p>
+          <p>At Delemon Technology, we provide Real Estate SEO Service UAE designed to improve online visibility, increase organic traffic, and generate qualified property enquiries. Our SEO strategies help real estate companies rank for high-intent searches, attract serious buyers, and build long-term digital growth without depending only on paid advertising.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CHALLENGES ================= -->
+  <section class="dlx-section dlx-challenges">
+    <div class="dlx-wrap">
+      <div class="dlx-challenges__head">
+        <h2 class="dlx-heading">Your Real Estate Business May Be Facing <span class="dlx-highlight">These Challenges</span></h2>
+        <div class="dlx-bar"></div>
+      </div>
+
+      <div class="dlx-challenges__grid">
+        <article class="dlx-challenge">
+          <div class="dlx-challenge__top">
+            <span class="dlx-challenge__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></span>
+            <span class="dlx-challenge__no">01</span>
+          </div>
+          <h3 class="dlx-card-title">Low Google Search Visibility</h3>
+          <p>Your real estate website is not appearing for important property searches, allowing competitors to capture valuable online attention. We improve rankings through targeted SEO strategies, content optimisation, and technical improvements.</p>
+        </article>
+
+        <article class="dlx-challenge">
+          <div class="dlx-challenge__top">
+            <span class="dlx-challenge__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg></span>
+            <span class="dlx-challenge__no">02</span>
+          </div>
+          <h3 class="dlx-card-title">Competitors Ranking Above You</h3>
+          <p>Other real estate companies are gaining more visibility on Google while your website remains behind. Our SEO approach helps strengthen your website authority and improve your position in competitive search results.</p>
+        </article>
+
+        <article class="dlx-challenge">
+          <div class="dlx-challenge__top">
+            <span class="dlx-challenge__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l9-7 9 7v10a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg></span>
+            <span class="dlx-challenge__no">03</span>
+          </div>
+          <h3 class="dlx-card-title">Unoptimised Property Pages</h3>
+          <p>Property listings and project pages need proper optimisation to perform well on search engines. We optimise your website structure, content, keywords, and technical elements to improve search performance.</p>
+        </article>
+
+        <article class="dlx-challenge">
+          <div class="dlx-challenge__top">
+            <span class="dlx-challenge__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg></span>
+            <span class="dlx-challenge__no">04</span>
+          </div>
+          <h3 class="dlx-card-title">Limited Organic Website Traffic</h3>
+          <p>Relying only on paid campaigns can limit long-term growth. Our SEO solutions help attract consistent organic visitors searching for properties, communities, and real estate services across the UAE.</p>
+        </article>
+
+        <article class="dlx-challenge">
+          <div class="dlx-challenge__top">
+            <span class="dlx-challenge__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 6.5 7 .9-5.2 4.8 1.4 7L12 17.8 5.8 21.2l1.4-7L2 9.4l7-.9z"/></svg></span>
+            <span class="dlx-challenge__no">05</span>
+          </div>
+          <h3 class="dlx-card-title">Weak Online Brand Presence</h3>
+          <p>A strong digital presence builds trust among property buyers and investors. We strengthen your brand visibility through SEO-focused content, authority building, and strategic search optimisation.</p>
+        </article>
+
+        <article class="dlx-challenge">
+          <div class="dlx-challenge__top">
+            <span class="dlx-challenge__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span>
+            <span class="dlx-challenge__no">06</span>
+          </div>
+          <h3 class="dlx-card-title">Lack of SEO Strategy</h3>
+          <p>Without a clear SEO roadmap, your website may miss valuable ranking opportunities. Our experts create customised SEO plans based on your target audience, locations, and business goals.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= HOW WE HELP ================= -->
+  <section class="dlx-section dlx-help">
+    <div class="dlx-wrap">
+      <h2 class="dlx-heading">How Delemon Technology Helps Real Estate Businesses <span class="dlx-highlight">Grow With SEO</span></h2>
+      <div class="dlx-bar"></div>
+
+      <div class="dlx-help__grid">
+        <article class="dlx-help__card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2"/></svg>
+          <h3 class="dlx-card-title">SEO Strategy Built for Real Estate</h3>
+          <p>We create customised SEO strategies based on your property niche, target locations, and business goals to improve your online visibility.</p>
+        </article>
+        <article class="dlx-help__card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+          <h3 class="dlx-card-title">Keyword Research &amp; Optimisation</h3>
+          <p>We identify high-value real estate keywords and optimise your website to reach users searching for properties and services.</p>
+        </article>
+        <article class="dlx-help__card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>
+          <h3 class="dlx-card-title">Website SEO Improvements</h3>
+          <p>From technical SEO to website structure, we optimise your website for better performance, user experience, and search engine rankings.</p>
+        </article>
+        <article class="dlx-help__card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>
+          <h3 class="dlx-card-title">Real Estate Content Optimisation</h3>
+          <p>We create SEO-focused content that builds authority, improves rankings, and helps your brand connect with the right audience.</p>
+        </article>
+        <article class="dlx-help__card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l9-7 9 7v10a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>
+          <h3 class="dlx-card-title">Property Page Optimisation</h3>
+          <p>We optimise project pages, property listings, and location pages to improve their visibility in competitive search results.</p>
+        </article>
+        <article class="dlx-help__card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg>
+          <h3 class="dlx-card-title">SEO Performance Tracking</h3>
+          <p>We continuously monitor rankings, website performance, and SEO growth to improve your digital presence.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PARTNER ================= -->
+  <section class="dlx-section dlx-partner">
+    <div class="dlx-wrap">
+      <div class="dlx-partner__box">
+        <div>
+          <h2 class="dlx-heading" style="color:var(--dlx-paper)">Partner With Delemon Technology for <span class="dlx-highlight">Real Estate SEO Success</span></h2>
+          <div class="dlx-bar"></div>
+        </div>
+        <div class="dlx-partner__text">
+          <p>As a specialised Real Estate SEO Agency Dubai, Delemon Technology helps real estate businesses build a stronger online presence through data-driven SEO strategies.</p>
+          <p>From improving website performance to creating targeted content and increasing search visibility, we help real estate brands establish a long-term digital foundation in the UAE property market.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= BUSINESS TYPES ================= -->
+  <section class="dlx-section dlx-types">
+    <div class="dlx-wrap">
+      <h2 class="dlx-heading">SEO Services for <span class="dlx-highlight">Different Real Estate Businesses</span> in UAE</h2>
+      <div class="dlx-bar"></div>
+
+      <div class="dlx-types__grid">
+        <article class="dlx-type">
+          <h3 class="dlx-card-title">Real Estate Agencies</h3>
+          <p>Improve online visibility and attract buyers searching for properties, communities, and real estate services.</p>
+        </article>
+        <article class="dlx-type">
+          <h3 class="dlx-card-title">Property Developers</h3>
+          <p>Increase visibility for new launches, projects, and off-plan properties through targeted SEO campaigns.</p>
+        </article>
+        <article class="dlx-type">
+          <h3 class="dlx-card-title">Luxury Real Estate Companies</h3>
+          <p>Build premium online authority and reach investors searching for high-value properties.</p>
+        </article>
+        <article class="dlx-type">
+          <h3 class="dlx-card-title">Commercial Real Estate Businesses</h3>
+          <p>Improve rankings for office spaces, retail properties, and commercial investment searches.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FAQ ================= -->
+  <section class="dlx-section dlx-faq">
+    <div class="dlx-wrap">
+      <h2 class="dlx-heading">Frequently Asked Questions About <span class="dlx-faq__mark">Real Estate SEO Service UAE</span></h2>
+      <div class="dlx-bar"></div>
+
+      <div class="dlx-faq__list">
+        <details class="dlx-faq__item" open>
+          <summary>1. What is Real Estate SEO Service UAE?</summary>
+          <div class="dlx-faq__answer">Real Estate SEO Service UAE is a specialised search engine optimisation strategy designed to improve the online visibility of real estate agencies, brokers, and property developers. It focuses on optimising websites, property pages, content, keywords, and technical elements to help real estate businesses rank higher on search engines and attract users searching for properties and real estate services in the UAE.</div>
+        </details>
+        <details class="dlx-faq__item">
+          <summary>2. Why do real estate companies in Dubai need SEO services?</summary>
+          <div class="dlx-faq__answer">Real estate companies in Dubai operate in a highly competitive digital market where buyers and investors search online before making property decisions. SEO helps real estate businesses improve their search visibility, build brand authority, reach targeted audiences, and create a stronger online presence without depending only on paid advertising.</div>
+        </details>
+        <details class="dlx-faq__item">
+          <summary>3. How can SEO help a real estate agency grow in the UAE?</summary>
+          <div class="dlx-faq__answer">SEO helps real estate agencies by improving website rankings, increasing organic visibility, attracting relevant website visitors, and strengthening brand credibility. A well-optimised website can appear for searches related to properties, communities, developers, and real estate services, helping businesses connect with potential customers searching online.</div>
+        </details>
+        <details class="dlx-faq__item">
+          <summary>4. How is SEO different from Google Ads for real estate businesses?</summary>
+          <div class="dlx-faq__answer">Google Ads provides immediate visibility through paid placements, while SEO focuses on improving organic search rankings over time. Many real estate businesses use both strategies together, with SEO building long-term visibility and paid campaigns supporting immediate marketing goals.</div>
+        </details>
+        <details class="dlx-faq__item">
+          <summary>5. How long does it take for real estate SEO to show results?</summary>
+          <div class="dlx-faq__answer">SEO is a long-term digital marketing strategy, and results depend on factors such as website condition, competition level, target keywords, content quality, and SEO implementation. Some improvements can appear within a few months, while stronger rankings and authority usually require consistent optimisation over time.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FINAL CTA ================= -->
+  <section class="dlx-section dlx-cta">
+    <div class="dlx-wrap">
+      <h2 class="dlx-heading">Ready to Rank Higher and <span class="dlx-highlight">Reach More Property Buyers?</span></h2>
+      <p>Talk to our SEO experts and get a customised plan for your real estate business in the UAE.</p>
+      <div class="dlx-hero__actions">
+        <a href="/contact-us/" class="dlx-btn dlx-btn--gold">Get a Free SEO Consultation</a>
+        <a href="https://wa.me/971000000000" class="dlx-btn dlx-btn--ghost" target="_blank" rel="noopener">Chat on WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+{% endblock %}

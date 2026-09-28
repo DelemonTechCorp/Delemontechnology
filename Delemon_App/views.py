@@ -147,6 +147,8 @@ def marketing(request):
     return render(request, 'main/leades.html')
 def chatgpt(request):
     return render(request, 'main/chatgpt.html')
+def realestate_seo(request):
+    return render(request, 'main/realestate_seo.html')
 
 
 def social(request):
@@ -403,7 +405,6 @@ def news_list(request):
         'page_obj': page_obj,  # Pass the paginated object to the template
     }
     return render(request, 'main/news.html', context)
-
 
 
 def news_detail(request, slug):

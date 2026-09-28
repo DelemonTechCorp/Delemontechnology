@@ -47,7 +47,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Delemon_App',
     'ckeditor',
-    'ckeditor_uploader',   
+    'ckeditor_uploader', 
+    'import_export',  
     
    
 ]

@@ -117,6 +117,9 @@ urlpatterns = [
     path('technology-blog/', views.blog, name='blog'),
     path('chatgpt-ads-for-real-estate-agency-uae/', views.chatgpt, name='chatgpt'),
     path('dubai-real-estate-digital-marketing-agency/', views.marketing, name='marketing'),
+    path('realestate_seo/', views.realestate_seo, name='realestate_seo'),
+    
+    
 
 ]
 

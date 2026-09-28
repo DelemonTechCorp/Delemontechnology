@@ -11,12 +11,6 @@ class BlogResource(resources.ModelResource):
         model = Blog
 
 # Blog admin with import/export and inline FAQ
-@admin.register(Blog)
-class BlogAdmin(admin.ModelAdmin):
-    resource_class = BlogResource
-    list_display = ('title', 'created_at') 
-    inlines = [FAQInline]
-
 
 
 class TeamModelAdmin(admin.ModelAdmin):
@@ -62,3 +56,10 @@ class ContactRequestAdmin(admin.ModelAdmin):
     list_display = ('name', 'email', 'mobile', 'company', 'service', 'created_at')
 
 admin.site.register(ContactRequest, ContactRequestAdmin)
+
+@admin.register(Blog)
+class BlogAdmin(ImportExportModelAdmin):
+    resource_class = BlogResource
+    list_display = ('title', 'created_at')
+    search_fields = ('title',)
+    inlines = [FAQInline]
