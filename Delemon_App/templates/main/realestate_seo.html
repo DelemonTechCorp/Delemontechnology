@@ -1390,6 +1390,63 @@
       padding: 30px 18px;
     }
   }
+
+  .dlx-hero__grid > *,
+  .dlx-intro__grid > *,
+  .dlx-partner__box > *,
+  .dlx-challenges__grid > *,
+  .dlx-help__grid > *,
+  .dlx-types__grid > * {
+    min-width: 0;
+  }
+
+  /* 2. Long words/headings never break the layout */
+  .dlx-page h1,
+  .dlx-page h2,
+  .dlx-page h3,
+  .dlx-page p,
+  .dlx-page summary {
+    overflow-wrap: anywhere;
+  }
+
+  /* 3. Skewed yellow highlight can't exceed the screen width */
+  .dlx-highlight,
+  .dlx-faq__mark {
+    max-width: 100%;
+  }
+
+  /* 4. Hero image card fits inside the screen on tablet and phone */
+  @media (max-width: 991px) {
+    .dlx-result:has(.dlx-result__main--shot) {
+      max-width: 560px;
+    }
+  }
+  @media (max-width: 639px) {
+    .dlx-result:has(.dlx-result__main--shot) {
+      max-width: 100%;
+    }
+    .dlx-shot__bar span {
+      font-size: 11px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  /* 5. Touch-friendly buttons and FAQ rows on phones */
+  @media (max-width: 639px) {
+    .dlx-btn,
+    .dlx-faq__item summary {
+      min-height: 48px;
+    }
+  }
+
+  /* 6. Keep the hero the same width as other sections on very large screens */
+  @media (min-width: 1600px) {
+    .dlx-wrap-hero {
+      max-width: var(--dlx-wrap);
+    }
+  }
 </style>
 
 <main class="dlx-page">
