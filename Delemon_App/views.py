@@ -145,10 +145,15 @@ def content(request):
     return render(request, 'main/content.html')
 def marketing(request):
     return render(request, 'main/leades.html')
+
 def chatgpt(request):
     return render(request, 'main/chatgpt.html')
+
 def realestate_seo(request):
     return render(request, 'main/realestate_seo.html')
+
+def realestate_marketing(request):
+    return render(request, 'main/realestate_marketing.html')
 
 
 def social(request):
