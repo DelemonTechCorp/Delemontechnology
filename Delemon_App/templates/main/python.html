@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 {% extends "base.html" %}
-{% block robots %}index, follow, max-snippet:0{% endblock %}
+{% block robots %}index, follow, {% endblock %}
 {% block title %}Python (Django + DRF) Development Services in Dubai | Delemon Technology{% endblock %}
 {% load static %}
 {% block content %}
@@ -107,7 +107,7 @@
 /* ================= FAQ (KEEP DESIGN) ================= */
 .faq-section{width:100%;background:#E3E3E3;padding:40px 0}
 .faq-section-header{width:90%;margin:0 auto}
-.faq-section-header h2{-webkit-text-stroke:1px #000;color:transparent;font-size:70px;margin:0 0 10px}
+.faq-section-header h3{-webkit-text-stroke:1px #000;color:transparent;font-size:70px;margin:0 0 10px}
 .faq-cards{
   width:90%;margin:0 auto;display:flex;align-items:center;gap:20px;
   justify-content:flex-start;flex-wrap:wrap;
@@ -156,7 +156,7 @@
   .counts-row h2{font-size:30px}
 
   /* FAQ horizontal scroll but same card design */
-  .faq-section-header h2{font-size:40px}
+  .faq-section-header h3{font-size:40px}
   .faq-cards{flex-wrap:nowrap;overflow-x:auto;padding-bottom:8px}
   .faq-card{flex:0 0 auto}
 }
@@ -291,7 +291,7 @@
 
   <!-- FAQ (unchanged design; now responsive) -->
   <div class="faq-section">
-    <div class="faq-section-header"><h2>FAQ</h2></div>
+    <div class="faq-section-header"><h3>FAQ</h3></div>
     <div class="faq-cards">
       <div class="faq-card">
         <h2>1</h2>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 {% extends "base.html" %}
-{% block robots %}index, follow, max-snippet:0{% endblock %}
+{% block robots %}index, follow,{% endblock %}
 {% block title %}Market Research in Dubai | Surveys, UX Testing, ICP & Brand Insights{% endblock %}
 {% load static %}
 {% block content %}
@@ -92,7 +92,7 @@
   /* ===== FAQ (same design as Advertising page) ===== */
   .faq-section{ min-height:60vh; width:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; background:#E3E3E3; padding:40px 0; }
   .faq-section-header{ width:90%; display:flex; align-items:flex-start; }
-  .faq-section-header h2{ -webkit-text-stroke:1px #000; color:transparent; font-size:70px; }
+  .faq-section-header h3{ -webkit-text-stroke:1px #000; color:transparent; font-size:70px; }
   .faq-cards{ display:flex; width:80%; justify-content:space-between; flex-direction:row; align-items:center; gap:16px; flex-wrap:wrap; }
   .faq-card{ position:relative; overflow:hidden; width:220px; height:300px; display:flex; cursor:pointer; align-items:flex-start; padding:20px;
              flex-direction:column; background:#fff; justify-content:space-evenly; border-radius:14px; }
@@ -118,7 +118,7 @@
     .web-page-clients-details{ width:100%; }
     .faq-section{ padding:24px 0; }
     .faq-cards{ width:92%; overflow-x:auto; }
-    .faq-section-header h2{ font-size:38px; margin:10px 0; }
+    .faq-section-header h3{ font-size:38px; margin:10px 0; }
     .service-card-container{ display:flex; flex-direction:column; }
   }
 </style>
@@ -284,7 +284,7 @@
   <!-- ========================= FAQ (same design; research-specific Qs) ========================= -->
   <div class="faq-section">
     <div class="faq-section-header">
-      <h2>FAQ</h2>
+      <h3>FAQ</h3>
     </div>
 
     <div class="faq-cards">
