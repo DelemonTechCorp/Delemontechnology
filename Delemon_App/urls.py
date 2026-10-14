@@ -6,7 +6,7 @@ from django.views.generic import RedirectView
 urlpatterns = [
     path('base', views.base, name='base'),
     path('', views.home, name='home'),
-    path('robots', views.robots_txt, name="robots_txt"),
+    path('robots.txt', views.robots_txt, name='robots_txt'),
     path('homenew', views.homenew, name='homenew'),
     path('lead_generation', views.lead_generation, name='lead_generation'),
     path('landingservice', views.landingservice, name='landingservice'),

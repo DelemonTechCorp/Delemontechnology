@@ -8,6 +8,7 @@ from django.conf import settings
 import requests
 from django.http import JsonResponse
 from django.views.decorators.http import require_POST
+from django.http import HttpResponse
 # Create your views here.
 
 def base(request):
@@ -17,14 +18,18 @@ def base(request):
 def home(request):
     return render(request, 'main/home.html')
 
+
+
 def robots_txt(request):
-    robots_content = """
-    User-agent: *
-    Disallow: /admin/
-    Allow: /
-    Sitemap: https://www.delemontechnology.com/sitemap.xml
-    """
-    return HttpResponse(robots_content, content_type="text/plain")
+    lines = [
+        "User-agent: *",
+        "Disallow: /admin/",
+        "Disallow: /ckeditor/",
+        "Allow: /",
+        "",
+        "Sitemap: https://delemontechnology.com/sitemap.xml",
+    ]
+    return HttpResponse("\n".join(lines), content_type="text/plain")
 
 def about(request):
     return render(request, 'main/about.html')
