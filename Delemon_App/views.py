@@ -27,7 +27,7 @@ def robots_txt(request):
         "Disallow: /ckeditor/",
         "Allow: /",
         "",
-        "Sitemap: https://delemontechnology.com/sitemap.xml",
+        "Sitemap: https://www.delemontechnology.com/sitemap.xml",
     ]
     return HttpResponse("\n".join(lines), content_type="text/plain")
 
