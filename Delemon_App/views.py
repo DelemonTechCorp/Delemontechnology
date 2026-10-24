@@ -153,6 +153,8 @@ def marketing(request):
 
 def chatgpt(request):
     return render(request, 'main/chatgpt.html')
+def googleads(request):
+    return render(request, 'main/googleads.html')
 
 def realestate_seo(request):
     return render(request, 'main/realestate_seo.html')
@@ -336,38 +338,101 @@ from django.db.models import Case, When, Value, IntegerField
 from django.shortcuts import render
 from .models import TeamModel
 
+# def team(request):
+#     # Define the required order of designations
+#     order = [
+#         'Developer',
+#         'Graphic Designer',
+#         'Video Editer',
+#         'Content Writer',
+#         'Digital Marketing',
+#         'Admin',
+#         'Sales Executive'
+#     ]
+    
+
+#     # Ordering logic using Case and When to enforce custom ordering
+#     ordering = Case(
+#         *[When(designation=role, then=Value(index)) for index, role in enumerate(order)],
+#         output_field=IntegerField()
+#     )
+
+#     # Define default company contact details
+#     default_contact = {
+#         'phone': '+971503482299',
+#         'whatsapp': '+971503482299',
+#         'instagram': 'delemon_technology',
+#         'linkdln': 'https://www.linkedin.com/company/delemon-technology',
+#         'mail': 'sales@delemontechnology.com'
+#     }
+
+#     # Get all team members and order them based on the custom order
+#     teams = TeamModel.objects.all().order_by(ordering)
+
+#     # Assign default values if contact details are missing
+#     for member in teams:
+#         member.phone = member.phone or default_contact['phone']
+#         member.whatsapp = member.whatsapp or default_contact['whatsapp']
+#         member.instagram = member.instagram or default_contact['instagram']
+#         member.linkdln = member.linkdln or default_contact['linkdln']
+#         member.mail = member.mail or default_contact['mail']
+
+#     # Filter by designation individually to pass separately to the template
+#     graphic = teams.filter(designation='Graphic Designer')
+#     digital = teams.filter(designation='Digital Marketing')
+#     devop = teams.filter(designation='Developer')
+#     video = teams.filter(designation='Video Editer')
+#     content = teams.filter(designation='Content Writer')
+#     admin = teams.filter(designation='Admin')
+#     sales = teams.filter(designation='Sales Executive')
+
+#     # Prepare the context dictionary
+#     context = {
+#         'teams': teams,
+#         'graphic': graphic,
+#         'digital': digital,
+#         'devop': devop,
+#         'video': video,
+#         'content': content,
+#         'admin': admin,
+#         'sales': sales,
+#     }
+
+#     return render(request, 'main/team.html', context)
+
 def team(request):
-    # Define the required order of designations
+    # Manager first, then HR, then the rest in your existing order
     order = [
+        'Manager',
+        'Human Resources',
         'Developer',
         'Graphic Designer',
         'Video Editer',
         'Content Writer',
         'Digital Marketing',
         'Admin',
-        'Sales Executive'
+        'Sales Executive',
     ]
-    
 
-    # Ordering logic using Case and When to enforce custom ordering
     ordering = Case(
-        *[When(designation=role, then=Value(index)) for index, role in enumerate(order)],
-        output_field=IntegerField()
+        *[When(designation=role, then=Value(i)) for i, role in enumerate(order)],
+        default=Value(len(order)),
+        output_field=IntegerField(),
     )
 
-    # Define default company contact details
     default_contact = {
         'phone': '+971503482299',
         'whatsapp': '+971503482299',
         'instagram': 'delemon_technology',
         'linkdln': 'https://www.linkedin.com/company/delemon-technology',
-        'mail': 'sales@delemontechnology.com'
+        'mail': 'sales@delemontechnology.com',
     }
 
-    # Get all team members and order them based on the custom order
-    teams = TeamModel.objects.all().order_by(ordering)
+    # Skip the CEO here only if the CEO is also saved in the database with post="CEO"
+    teams = list(
+        TeamModel.objects.exclude(post__iexact='CEO').order_by(ordering, 'name')
+    )
 
-    # Assign default values if contact details are missing
     for member in teams:
         member.phone = member.phone or default_contact['phone']
         member.whatsapp = member.whatsapp or default_contact['whatsapp']
@@ -375,30 +440,23 @@ def team(request):
         member.linkdln = member.linkdln or default_contact['linkdln']
         member.mail = member.mail or default_contact['mail']
 
-    # Filter by designation individually to pass separately to the template
-    graphic = teams.filter(designation='Graphic Designer')
-    digital = teams.filter(designation='Digital Marketing')
-    devop = teams.filter(designation='Developer')
-    video = teams.filter(designation='Video Editer')
-    content = teams.filter(designation='Content Writer')
-    admin = teams.filter(designation='Admin')
-    sales = teams.filter(designation='Sales Executive')
+    def by(role):
+        return [m for m in teams if m.designation == role]
 
-    # Prepare the context dictionary
     context = {
-        'teams': teams,
-        'graphic': graphic,
-        'digital': digital,
-        'devop': devop,
-        'video': video,
-        'content': content,
-        'admin': admin,
-        'sales': sales,
+        'teams': teams,  # already ordered: Manager, HR, then the rest
+        'managers': by('Manager'),
+        'hr': by('Human Resources'),
+        'graphic': by('Graphic Designer'),
+        'digital': by('Digital Marketing'),
+        'devop': by('Developer'),
+        'video': by('Video Editer'),
+        'content': by('Content Writer'),
+        'admin': by('Admin'),
+        'sales': by('Sales Executive'),
     }
 
     return render(request, 'main/team.html', context)
-
-
 def news_list(request):
     """
     View to display a list of published news articles with pagination.

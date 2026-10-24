@@ -119,7 +119,7 @@ urlpatterns = [
     path('dubai-real-estate-digital-marketing-agency/', views.marketing, name='marketing'),
     path('real-estate-seo-service-uae/', views.realestate_seo, name='real-estate-seo-service-uae'),
     path('real-estate-social-media-marketing-uae', views.realestate_marketing, name='real-estate-social-media-marketing-uae'),
-    
+    path('google-ads-for-dubai-real-estate/', views.googleads, name='googleads'),
     
 
 ]
