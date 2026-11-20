@@ -120,6 +120,8 @@ urlpatterns = [
     path('real-estate-seo-service-uae/', views.realestate_seo, name='real-estate-seo-service-uae'),
     path('real-estate-social-media-marketing-uae', views.realestate_marketing, name='real-estate-social-media-marketing-uae'),
     path('google-ads-for-dubai-real-estate/', views.googleads, name='googleads'),
+    path('real-estate-lead-generation-agency-dubai/', views.real_estate_lead_agency, name='real_estate_lead_agency'),
+    path('google-ads-agency-for-real-estate-dubai/', views.google_ads_agency_real_estate, name='google_ads_agency_real_estate'),
     
 
 ]

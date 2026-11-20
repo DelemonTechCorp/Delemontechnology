@@ -1,0 +1,1422 @@
+{% extends "base.html" %}
+{% block title %}Real Estate Lead Generation Agency in Dubai | Delemon{% endblock %}
+{% load static %}
+{% block content %}
+
+<head>
+<meta name="keywords" content="Real Estate Lead Generation Agency in Dubai
+,Real Estate Lead Generation Company Dubai
+,Best Real Estate Lead Generation Agency in Dubai
+,Google Ads for Real Estate Dubai
+,Meta Ads for Real Estate Dubai
+,Real Estate PPC Agency Dubai
+,Facebook Lead Generation for Real Estate Dubai
+,Real Estate Digital Marketing Agency Dubai
+,Real Estate Lead Generation for Developers Dubai
+,Real Estate Lead Generation for Brokers Dubai">
+<meta content="Generate qualified property leads with Delemon Technology, a real estate lead generation agency in Dubai offering Google Ads, Meta Ads, SEO and CRM solutions." name="description"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "What does a real estate lead generation agency in Dubai do?",
+     "acceptedAnswer": {"@type": "Answer", "text": "It attracts potential property buyers and investors through targeted advertising, SEO, landing pages, and lead qualification strategies."}},
+    {"@type": "Question", "name": "How can I generate qualified real estate leads in Dubai?",
+     "acceptedAnswer": {"@type": "Answer", "text": "Use Google Ads, Meta Ads, SEO, optimized landing pages, and CRM-based follow-up systems."}},
+    {"@type": "Question", "name": "Are Google Ads effective for real estate lead generation?",
+     "acceptedAnswer": {"@type": "Answer", "text": "Yes. Google Ads can reach buyers actively searching for specific properties and investment opportunities."}},
+    {"@type": "Question", "name": "Can real estate agencies target international investors?",
+     "acceptedAnswer": {"@type": "Answer", "text": "Yes. Digital campaigns can target overseas investors through geographic segmentation, search intent, and audience research."}},
+    {"@type": "Question", "name": "Why choose Delemon Technology for property lead generation?",
+     "acceptedAnswer": {"@type": "Answer", "text": "Delemon Technology combines digital marketing, performance advertising, SEO, and technology-focused lead management to support property business growth."}}
+  ]
+}
+</script>
+</head>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  /* =========================================================
+     DELEMON TECHNOLOGY – REAL ESTATE LEAD GENERATION AGENCY DUBAI
+     All classes use the unique prefix  rel-  (scoped to .rel-page)
+     ========================================================= */
+
+  :root {
+    --rel-ink: #0b0b0b;
+    --rel-ink-2: #141210;
+    --rel-gold: #e6b325;
+    --rel-gold-deep: #b8880b;
+    --rel-paper: #faf8f3;
+    --rel-paper-dim: #f1eee5;
+    --rel-line: #e2ddcf;
+    --rel-text: #1a1a1a;
+    --rel-muted: #5e5b52;
+    --rel-head: "Lato", sans-serif;
+    --rel-body: "DM Sans", system-ui, sans-serif;
+  }
+
+  /* ---------- Base (scoped; resets base.html leakage) ---------- */
+  .rel-page,
+  .rel-page *,
+  .rel-page *::before,
+  .rel-page *::after { box-sizing: border-box; }
+
+  .rel-page {
+    background: var(--rel-paper);
+    color: var(--rel-text);
+    font-family: var(--rel-body);
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* :where() keeps this reset at low specificity so component margins win */
+  .rel-page :where(h1, h2, h3, p, ul, ol, li) {
+    margin: 0;
+    padding: 0;
+  }
+
+  .rel-page :where(ul, ol) { list-style: none; }
+  .rel-page a { text-decoration: none; }
+  .rel-page img { max-width: 100%; display: block; }
+  .rel-page button { font: inherit; cursor: pointer; }
+  .rel-page :focus-visible { outline: 3px solid var(--rel-gold); outline-offset: 3px; }
+  .rel-page svg { flex: none; }
+
+  .rel-wrap {
+    width: 100%;
+    max-width: 1240px;
+    margin-inline: auto;
+    padding-inline: 20px;
+  }
+
+  @media (min-width: 1024px) { .rel-wrap { padding-inline: 32px; } }
+
+  .rel-section { padding-block: 72px; }
+  @media (min-width: 768px) { .rel-section { padding-block: 104px; } }
+
+  /* ---------- Type ---------- */
+  .rel-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--rel-head);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--rel-gold-deep);
+  }
+
+  .rel-kicker::before {
+    content: "";
+    width: 28px;
+    height: 2px;
+    background: currentColor;
+  }
+
+  .rel-h2 {
+    margin-top: 14px;
+    font-family: var(--rel-head);
+    font-size: clamp(28px, 3.2vw, 40px);
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+    color: var(--rel-ink);
+  }
+
+  .rel-h2 em { font-style: normal; color: var(--rel-gold-deep); }
+
+  .rel-lead {
+    margin-top: 18px;
+    font-size: 17px;
+    color: var(--rel-muted);
+  }
+
+  .rel-head-center {
+    max-width: 780px;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .rel-h3 {
+    font-family: var(--rel-head);
+    font-size: 19px;
+    font-weight: 800;
+    line-height: 1.35;
+    color: var(--rel-ink);
+  }
+
+  /* ---------- Buttons ---------- */
+  .rel-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px 26px;
+    border-radius: 8px;
+    font-family: var(--rel-head);
+    font-size: 15px;
+    font-weight: 800;
+    border: 1.5px solid transparent;
+    transition: transform .2s ease, background .2s ease, color .2s ease, border-color .2s ease;
+  }
+
+  .rel-btn svg { width: 18px; height: 18px; }
+  .rel-btn:hover { transform: translateY(-2px); }
+
+  .rel-btn--gold { background: var(--rel-gold); color: var(--rel-ink) !important; box-shadow: 0 12px 32px -12px rgba(230, 179, 37, .8); }
+  .rel-btn--ghost { border-color: rgba(250, 248, 243, .35); color: var(--rel-paper) !important; }
+  .rel-btn--ghost:hover { border-color: var(--rel-gold); color: var(--rel-gold) !important; }
+  .rel-btn--dark { background: var(--rel-ink); color: var(--rel-gold) !important; }
+  .rel-btn--outline { border-color: var(--rel-ink); color: var(--rel-ink) !important; }
+  .rel-btn--outline:hover { background: var(--rel-ink); color: var(--rel-gold) !important; }
+
+  /* =========================================================
+     1. HERO
+     ========================================================= */
+  .rel-hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background: var(--rel-ink);
+    color: var(--rel-paper);
+  }
+
+  .rel-hero__bg {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background: url("{% static 'img/marketing-hero.jpg' %}") center / cover no-repeat;
+    opacity: .45;
+  }
+
+  .rel-hero__shade {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+      radial-gradient(800px 500px at 85% 30%, rgba(230, 179, 37, .16), transparent 65%),
+      linear-gradient(90deg, rgba(11, 11, 11, .96) 0%, rgba(11, 11, 11, .85) 50%, rgba(11, 11, 11, .6) 100%);
+  }
+
+  .rel-hero__grid {
+    display: grid;
+    gap: 56px;
+    align-items: center;
+    padding-block: 72px 64px;
+  }
+
+  @media (min-width: 992px) {
+    .rel-hero__grid {
+      grid-template-columns: 1.15fr .85fr;
+      gap: 72px;
+      padding-block: 110px 96px;
+    }
+  }
+
+  .rel-hero__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 16px;
+    border: 1px solid rgba(230, 179, 37, .45);
+    border-radius: 999px;
+    background: rgba(230, 179, 37, .08);
+    font-family: var(--rel-head);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--rel-gold);
+  }
+
+  .rel-hero__badge i {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--rel-gold);
+    box-shadow: 0 0 0 4px rgba(230, 179, 37, .2);
+  }
+
+  .rel-hero__title {
+    margin-top: 26px;
+    font-family: var(--rel-head);
+    font-size: clamp(34px, 4.4vw, 56px);
+    font-weight: 900;
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+    color: var(--rel-paper);
+  }
+
+  .rel-hero__title span {
+    display: block;
+    margin-top: 10px;
+    color: var(--rel-gold);
+  }
+
+  .rel-hero__lead {
+    margin-top: 24px;
+    max-width: 620px;
+    font-size: clamp(16px, 1.4vw, 18px);
+    line-height: 1.7;
+    color: rgba(250, 248, 243, .78);
+  }
+
+  .rel-hero__actions {
+    margin-top: 36px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .rel-hero__trust {
+    margin-top: 36px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 22px;
+  }
+
+  .rel-hero__trust li {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(250, 248, 243, .82);
+  }
+
+  .rel-hero__trust svg { width: 17px; height: 17px; color: var(--rel-gold); }
+
+  /* Lead card visual */
+  .rel-visual {
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+    margin-inline: auto;
+    padding: 0 16px 16px 0;
+  }
+
+  .rel-visual::before {
+    content: "";
+    position: absolute;
+    inset: 16px 0 0 16px;
+    border: 2px solid var(--rel-gold);
+    border-radius: 20px;
+  }
+
+  .rel-card {
+    position: relative;
+    background: #fff;
+    color: var(--rel-ink);
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 40px 80px -30px rgba(0, 0, 0, .85);
+  }
+
+  .rel-card__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .rel-card__who { display: flex; align-items: center; gap: 12px; }
+
+  .rel-card__avatar {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: var(--rel-ink);
+    color: var(--rel-gold);
+  }
+
+  .rel-card__avatar svg { width: 22px; height: 22px; }
+
+  .rel-card__name { font-family: var(--rel-head); font-size: 17px; font-weight: 800; line-height: 1.2; }
+  .rel-card__src { font-size: 13px; color: var(--rel-muted); }
+
+  .rel-card__pill {
+    padding: 5px 10px;
+    border-radius: 999px;
+    background: #e9f7ee;
+    color: #18794e;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .rel-card__rows {
+    margin-top: 22px;
+    display: grid;
+    gap: 2px;
+  }
+
+  .rel-card__rows li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 11px 0;
+    border-top: 1px solid var(--rel-line);
+    font-size: 14px;
+    color: var(--rel-muted);
+  }
+
+  .rel-card__rows svg { width: 17px; height: 17px; color: var(--rel-gold-deep); }
+  .rel-card__rows b { margin-left: auto; color: var(--rel-ink); font-weight: 700; text-align: right; }
+
+  .rel-card__score {
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  .rel-card__score b { color: var(--rel-gold-deep); }
+
+  .rel-card__meter {
+    margin-top: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: var(--rel-paper-dim);
+    overflow: hidden;
+  }
+
+  .rel-card__meter span {
+    display: block;
+    width: 88%;
+    height: 100%;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--rel-gold-deep), var(--rel-gold));
+  }
+
+  .rel-float {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    border-radius: 12px;
+    background: var(--rel-ink);
+    border: 1px solid rgba(230, 179, 37, .4);
+    box-shadow: 0 20px 40px -16px rgba(0, 0, 0, .7);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--rel-paper);
+    white-space: nowrap;
+  }
+
+  .rel-float svg { width: 18px; height: 18px; color: var(--rel-gold); }
+  .rel-float--a { top: -18px; right: -6px; }
+  .rel-float--b { bottom: -6px; left: -18px; }
+
+  @media (max-width: 520px) {
+    .rel-float--a { right: 8px; }
+    .rel-float--b { left: 0; }
+  }
+
+  /* Channel strip under hero */
+  .rel-channels {
+    border-top: 1px solid rgba(250, 248, 243, .1);
+    background: rgba(11, 11, 11, .6);
+  }
+
+  .rel-channels__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 900px) { .rel-channels__grid { grid-template-columns: repeat(4, 1fr); } }
+
+  .rel-channel {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 24px 18px;
+    border-right: 1px solid rgba(250, 248, 243, .08);
+  }
+
+  .rel-channel:last-child { border-right: 0; }
+
+  .rel-channel__icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    background: rgba(230, 179, 37, .12);
+    color: var(--rel-gold);
+  }
+
+  .rel-channel__icon svg { width: 20px; height: 20px; }
+  .rel-channel b { display: block; font-family: var(--rel-head); font-size: 15px; font-weight: 800; color: var(--rel-paper); line-height: 1.3; }
+  .rel-channel small { font-size: 12.5px; color: rgba(250, 248, 243, .55); }
+
+  /* =========================================================
+     2. INTRO + WHY IT MATTERS
+     ========================================================= */
+  .rel-intro__statement {
+    max-width: 920px;
+    margin-inline: auto;
+    text-align: center;
+    font-family: var(--rel-head);
+    font-size: clamp(20px, 2.1vw, 26px);
+    font-weight: 700;
+    line-height: 1.55;
+    color: var(--rel-ink);
+  }
+
+  .rel-intro__statement em { font-style: normal; color: var(--rel-gold-deep); }
+
+  .rel-intro__sub {
+    max-width: 760px;
+    margin: 20px auto 0;
+    text-align: center;
+    font-size: 17px;
+    color: var(--rel-muted);
+  }
+
+  .rel-divider {
+    height: 1px;
+    background: var(--rel-line);
+    margin-block: 72px;
+  }
+
+  .rel-matters {
+    display: grid;
+    gap: 48px;
+    align-items: start;
+  }
+
+  @media (min-width: 992px) { .rel-matters { grid-template-columns: 1fr 1fr; gap: 72px; } }
+
+  .rel-matters__text p + p { margin-top: 16px; }
+
+  .rel-benefits {
+    background: var(--rel-ink);
+    border-radius: 20px;
+    padding: 36px 32px;
+    color: var(--rel-paper);
+    box-shadow: 0 30px 60px -30px rgba(0, 0, 0, .5);
+  }
+
+  .rel-benefits__title {
+    font-family: var(--rel-head);
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--rel-gold);
+  }
+
+  .rel-benefits ul { margin-top: 20px; display: grid; gap: 4px; }
+
+  .rel-benefits li {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(250, 248, 243, .08);
+    font-size: 15.5px;
+    color: rgba(250, 248, 243, .85);
+  }
+
+  .rel-benefits li:last-child { border-bottom: 0; }
+
+  .rel-benefits li span.rel-tick {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: var(--rel-gold);
+    color: var(--rel-ink);
+    margin-top: 1px;
+  }
+
+  .rel-benefits li span.rel-tick svg { width: 14px; height: 14px; }
+
+  /* =========================================================
+     3. SERVICES
+     ========================================================= */
+  .rel-services { background: var(--rel-paper-dim); }
+
+  .rel-services__grid {
+    margin-top: 56px;
+    display: grid;
+    gap: 24px;
+  }
+
+  @media (min-width: 768px) { .rel-services__grid { grid-template-columns: repeat(2, 1fr); } }
+
+  .rel-service {
+    position: relative;
+    background: #fff;
+    border: 1px solid var(--rel-line);
+    border-radius: 18px;
+    padding: 36px 32px;
+    overflow: hidden;
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  }
+
+  .rel-service::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 4px;
+    background: var(--rel-gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .3s ease;
+  }
+
+  .rel-service:hover {
+    transform: translateY(-4px);
+    border-color: rgba(230, 179, 37, .5);
+    box-shadow: 0 30px 60px -30px rgba(0, 0, 0, .25);
+  }
+
+  .rel-service:hover::before { transform: scaleX(1); }
+
+  .rel-service__top { display: flex; align-items: center; justify-content: space-between; }
+
+  .rel-service__icon {
+    width: 54px;
+    height: 54px;
+    border-radius: 14px;
+    display: grid;
+    place-items: center;
+    background: var(--rel-ink);
+    color: var(--rel-gold);
+  }
+
+  .rel-service__icon svg { width: 24px; height: 24px; }
+
+  .rel-service__no {
+    font-family: var(--rel-head);
+    font-size: 40px;
+    font-weight: 900;
+    line-height: 1;
+    color: var(--rel-paper-dim);
+  }
+
+  .rel-service .rel-h3 { margin-top: 24px; }
+
+  .rel-service p {
+    margin-top: 12px;
+    font-size: 15px;
+    color: var(--rel-muted);
+  }
+
+  /* =========================================================
+     4. WHO WE SERVE (dark)
+     ========================================================= */
+  .rel-serve {
+    background-color: var(--rel-ink);
+    background-image:
+      linear-gradient(rgba(250, 248, 243, .03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(250, 248, 243, .03) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .rel-serve .rel-kicker { color: var(--rel-gold); }
+  .rel-serve .rel-h2 { color: var(--rel-paper); }
+  .rel-serve .rel-h2 em { color: var(--rel-gold); }
+  .rel-serve .rel-lead { color: rgba(250, 248, 243, .65); }
+
+  .rel-serve__grid {
+    margin-top: 56px;
+    display: grid;
+    gap: 20px;
+  }
+
+  @media (min-width: 640px) { .rel-serve__grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1100px) { .rel-serve__grid { grid-template-columns: repeat(4, 1fr); } }
+
+  .rel-aud {
+    background: var(--rel-ink-2);
+    border: 1px solid rgba(250, 248, 243, .1);
+    border-radius: 18px;
+    padding: 32px 26px;
+    transition: border-color .25s ease, transform .25s ease;
+  }
+
+  .rel-aud:hover { border-color: rgba(230, 179, 37, .6); transform: translateY(-4px); }
+
+  .rel-aud__icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    background: rgba(230, 179, 37, .12);
+    border: 1px solid rgba(230, 179, 37, .3);
+    color: var(--rel-gold);
+  }
+
+  .rel-aud__icon svg { width: 22px; height: 22px; }
+
+  .rel-aud__tag {
+    margin-top: 22px;
+    font-family: var(--rel-head);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: rgba(230, 179, 37, .8);
+  }
+
+  .rel-aud .rel-h3 { margin-top: 8px; font-size: 18px; color: var(--rel-paper); }
+
+  .rel-aud p {
+    margin-top: 12px;
+    font-size: 14.5px;
+    color: rgba(250, 248, 243, .62);
+  }
+
+  /* =========================================================
+     5. PROCESS (timeline)
+     ========================================================= */
+  .rel-steps {
+    position: relative;
+    margin-top: 64px;
+    display: grid;
+    gap: 28px;
+  }
+
+  @media (min-width: 1000px) {
+    .rel-steps { grid-template-columns: repeat(5, 1fr); gap: 20px; }
+
+    .rel-steps::before {
+      content: "";
+      position: absolute;
+      top: 32px;
+      left: 10%;
+      right: 10%;
+      height: 2px;
+      background: repeating-linear-gradient(90deg, var(--rel-gold) 0 10px, transparent 10px 18px);
+    }
+  }
+
+  .rel-step {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .rel-step__num {
+    position: relative;
+    width: 64px;
+    height: 64px;
+    margin-inline: auto;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: var(--rel-ink);
+    border: 3px solid var(--rel-gold);
+    font-family: var(--rel-head);
+    font-size: 20px;
+    font-weight: 900;
+    color: var(--rel-gold);
+    box-shadow: 0 0 0 8px var(--rel-paper);
+  }
+
+  .rel-step__body {
+    margin-top: 22px;
+    background: #fff;
+    border: 1px solid var(--rel-line);
+    border-radius: 16px;
+    padding: 24px 20px;
+    flex: 1;
+  }
+
+  .rel-step .rel-h3 { font-size: 17px; }
+
+  .rel-step p {
+    margin-top: 10px;
+    font-size: 14.5px;
+    color: var(--rel-muted);
+  }
+
+  .rel-process__note {
+    margin: 48px auto 0;
+    max-width: 760px;
+    padding: 20px 28px;
+    border-radius: 14px;
+    background: var(--rel-paper-dim);
+    border-left: 4px solid var(--rel-gold);
+    text-align: center;
+    font-family: var(--rel-head);
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--rel-ink);
+  }
+
+  /* =========================================================
+     6. WHY CHOOSE
+     ========================================================= */
+  .rel-why { background: var(--rel-paper-dim); }
+
+  .rel-why__grid {
+    display: grid;
+    gap: 48px;
+    align-items: center;
+  }
+
+  @media (min-width: 992px) { .rel-why__grid { grid-template-columns: 1fr 1fr; gap: 72px; } }
+
+  .rel-why__text p + p { margin-top: 16px; }
+
+  .rel-why__quote {
+    margin-top: 28px;
+    padding-left: 20px;
+    border-left: 4px solid var(--rel-gold);
+    font-family: var(--rel-head);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: var(--rel-ink);
+  }
+
+  .rel-pillars {
+    background: #fff;
+    border: 1px solid var(--rel-line);
+    border-radius: 20px;
+    padding: 12px 28px;
+    box-shadow: 0 30px 60px -36px rgba(0, 0, 0, .3);
+  }
+
+  .rel-pillars__label {
+    padding: 18px 0 6px;
+    font-family: var(--rel-head);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--rel-muted);
+  }
+
+  .rel-pillars li {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--rel-line);
+    font-family: var(--rel-head);
+    font-size: 17px;
+    font-weight: 800;
+    color: var(--rel-ink);
+  }
+
+  .rel-pillars li:last-child { border-bottom: 0; }
+
+  .rel-pillars__icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    background: rgba(230, 179, 37, .14);
+    color: var(--rel-gold-deep);
+  }
+
+  .rel-pillars__icon svg { width: 20px; height: 20px; }
+
+  /* =========================================================
+     7. CTA
+     ========================================================= */
+  .rel-cta {
+    position: relative;
+    overflow: hidden;
+    background:
+      radial-gradient(900px 420px at 90% 0%, rgba(230, 179, 37, .25), transparent 62%),
+      radial-gradient(700px 380px at 0% 100%, rgba(230, 179, 37, .1), transparent 65%),
+      linear-gradient(135deg, #0b0b0b 0%, #16120a 55%, #0b0b0b 100%);
+    color: var(--rel-paper);
+  }
+
+  .rel-cta__grid {
+    display: grid;
+    gap: 48px;
+    align-items: center;
+  }
+
+  @media (min-width: 992px) { .rel-cta__grid { grid-template-columns: 1.1fr .9fr; gap: 72px; } }
+
+  .rel-cta .rel-kicker { color: var(--rel-gold); }
+  .rel-cta .rel-h2 { color: var(--rel-paper); }
+  .rel-cta .rel-h2 em { color: var(--rel-gold); }
+
+  .rel-cta__text { margin-top: 18px; font-size: 17px; color: rgba(250, 248, 243, .72); }
+  .rel-cta__text + .rel-cta__text { margin-top: 12px; }
+
+  .rel-cta__tags { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 10px; }
+
+  .rel-cta__tags li {
+    padding: 8px 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(230, 179, 37, .35);
+    background: rgba(230, 179, 37, .08);
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(250, 248, 243, .88);
+  }
+
+  .rel-cta__card {
+    position: relative;
+    background: var(--rel-paper);
+    color: var(--rel-ink);
+    border-radius: 20px;
+    padding: 36px 32px;
+    box-shadow: 0 40px 80px -30px rgba(0, 0, 0, .8);
+  }
+
+  .rel-cta__card-title { font-family: var(--rel-head); font-size: 22px; font-weight: 800; line-height: 1.3; }
+  .rel-cta__card-sub { margin-top: 8px; font-size: 14.5px; color: var(--rel-muted); }
+
+  .rel-cta__list { margin-top: 22px; display: grid; gap: 12px; }
+
+  .rel-cta__list li { display: flex; gap: 12px; align-items: flex-start; font-size: 15px; font-weight: 500; }
+  .rel-cta__list svg { width: 20px; height: 20px; margin-top: 2px; color: var(--rel-gold-deep); }
+
+  .rel-cta__actions { margin-top: 28px; display: grid; gap: 12px; }
+  .rel-cta__actions .rel-btn { width: 100%; }
+
+  /* =========================================================
+     8. FAQ
+     ========================================================= */
+  .rel-faq__grid { display: grid; gap: 40px; }
+
+  @media (min-width: 992px) { .rel-faq__grid { grid-template-columns: 1fr 1.7fr; gap: 80px; } }
+
+  .rel-faq__list { display: grid; gap: 14px; }
+
+  .rel-faq__item {
+    background: #fff;
+    border: 1px solid var(--rel-line);
+    border-radius: 14px;
+    transition: border-color .25s ease, box-shadow .25s ease;
+  }
+
+  .rel-faq__item.is-open {
+    border-color: rgba(230, 179, 37, .6);
+    box-shadow: 0 20px 40px -28px rgba(0, 0, 0, .3);
+  }
+
+  .rel-faq__btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 22px 24px;
+    text-align: left;
+    background: none;
+    border: 0;
+    color: var(--rel-ink);
+  }
+
+  .rel-faq__q { display: flex; align-items: baseline; gap: 14px; }
+  .rel-faq__no { font-family: var(--rel-head); font-size: 14px; font-weight: 800; color: var(--rel-gold-deep); }
+  .rel-faq__title { font-family: var(--rel-head); font-size: 17px; font-weight: 800; line-height: 1.4; }
+
+  .rel-faq__icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: var(--rel-paper-dim);
+    color: var(--rel-ink);
+    transition: transform .3s ease, background .3s ease;
+    flex: none;
+  }
+
+  .rel-faq__icon svg { width: 16px; height: 16px; }
+  .rel-faq__item.is-open .rel-faq__icon { transform: rotate(45deg); background: var(--rel-gold); }
+
+  .rel-faq__panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .3s ease; }
+  .rel-faq__item.is-open .rel-faq__panel { grid-template-rows: 1fr; }
+  .rel-faq__panel > div { overflow: hidden; }
+
+  .rel-faq__panel p {
+    padding: 0 24px 24px 52px;
+    font-size: 15.5px;
+    color: var(--rel-muted);
+  }
+
+  /* ---------- Mobile tweaks ---------- */
+  @media (max-width: 640px) {
+    .rel-hero__actions .rel-btn { width: 100%; }
+    .rel-channel { padding: 18px 12px; gap: 10px; border-bottom: 1px solid rgba(250, 248, 243, .08); }
+    .rel-channel__icon { width: 36px; height: 36px; }
+    .rel-service, .rel-benefits, .rel-cta__card { padding: 28px 22px; }
+    .rel-pillars { padding: 6px 20px; }
+    .rel-pillars li { font-size: 15.5px; }
+    .rel-faq__btn { padding: 18px; }
+    .rel-faq__panel p { padding: 0 18px 20px; }
+    .rel-divider { margin-block: 56px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .rel-page * { transition: none !important; }
+  }
+</style>
+
+<div class="rel-page" id="top">
+  <main>
+
+    <!-- ================= HERO ================= -->
+    <section class="rel-hero">
+      <div class="rel-hero__bg" role="img" aria-label="Dubai skyline at dusk"></div>
+      <div class="rel-hero__shade"></div>
+
+      <div class="rel-wrap rel-hero__grid">
+        <div>
+          <p class="rel-hero__badge"><i></i> Real Estate Lead Generation · Dubai</p>
+
+          <h1 class="rel-hero__title">
+            Real Estate Lead Generation Agency in Dubai
+            <span>– Get Qualified Property Leads</span>
+          </h1>
+
+          <p class="rel-hero__lead">
+            Looking for a reliable Real Estate Lead Generation Agency in Dubai to attract serious property buyers and
+            investors? Delemon Technology provides targeted digital marketing solutions that help real estate
+            agencies, brokers, and developers generate qualified inquiries and improve sales opportunities.
+          </p>
+
+          <div class="rel-hero__actions">
+            <a href="#cta" class="rel-btn rel-btn--gold">Generate Qualified Property Leads Today <i data-lucide="arrow-right"></i></a>
+            <a href="#services" class="rel-btn rel-btn--ghost">Explore Our Services</a>
+          </div>
+
+          <ul class="rel-hero__trust">
+            <li><i data-lucide="circle-check"></i> Developers</li>
+            <li><i data-lucide="circle-check"></i> Brokers</li>
+            <li><i data-lucide="circle-check"></i> Real Estate Agencies</li>
+            <li><i data-lucide="circle-check"></i> Investors</li>
+          </ul>
+        </div>
+
+        <!-- Visual: sample qualified lead -->
+        <div class="rel-visual" aria-hidden="true">
+          <div class="rel-card">
+            <div class="rel-card__top">
+              <div class="rel-card__who">
+                <span class="rel-card__avatar"><i data-lucide="user-round"></i></span>
+                <span>
+                  <span class="rel-card__name">New Buyer Enquiry</span><br>
+                  <span class="rel-card__src">via Google Ads</span>
+                </span>
+              </div>
+              <span class="rel-card__pill">Qualified</span>
+            </div>
+
+            <ul class="rel-card__rows">
+              <li><i data-lucide="map-pin"></i> Preferred location <b>Dubai Marina</b></li>
+              <li><i data-lucide="building-2"></i> Property interest <b>Off-plan apartment</b></li>
+              <li><i data-lucide="wallet"></i> Investment budget <b>Confirmed</b></li>
+              <li><i data-lucide="clock"></i> Purchase timeline <b>0–3 months</b></li>
+            </ul>
+
+            <div class="rel-card__score"><span>Lead quality</span><b>High intent</b></div>
+            <div class="rel-card__meter"><span></span></div>
+          </div>
+
+          <div class="rel-float rel-float--a"><i data-lucide="database"></i> Synced to CRM</div>
+          <div class="rel-float rel-float--b"><i data-lucide="message-circle"></i> WhatsApp follow-up sent</div>
+        </div>
+      </div>
+
+      <!-- Channel strip -->
+      <div class="rel-channels">
+        <div class="rel-wrap rel-channels__grid">
+          <div class="rel-channel">
+            <span class="rel-channel__icon"><i data-lucide="search"></i></span>
+            <span><b>Google Ads</b><small>High-intent search</small></span>
+          </div>
+          <div class="rel-channel">
+            <span class="rel-channel__icon"><i data-lucide="megaphone"></i></span>
+            <span><b>Meta Ads</b><small>Facebook &amp; Instagram</small></span>
+          </div>
+          <div class="rel-channel">
+            <span class="rel-channel__icon"><i data-lucide="layout-template"></i></span>
+            <span><b>SEO &amp; Landing Pages</b><small>Organic visibility</small></span>
+          </div>
+          <div class="rel-channel">
+            <span class="rel-channel__icon"><i data-lucide="workflow"></i></span>
+            <span><b>CRM &amp; Automation</b><small>Lead management</small></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= INTRO + WHY IT MATTERS ================= -->
+    <section class="rel-section">
+      <div class="rel-wrap">
+        <p class="rel-intro__statement">
+          Dubai's competitive real estate market demands more than traditional advertising. Businesses need
+          <em>strategic campaigns, accurate audience targeting, and effective lead management</em> to connect with
+          potential buyers.
+        </p>
+        <p class="rel-intro__sub">
+          At Delemon Technology, we combine Google Ads, Meta Ads, SEO, conversion-focused landing pages, and CRM
+          integration to support property lead generation across Dubai and the UAE.
+        </p>
+
+        <div class="rel-divider"></div>
+
+        <div class="rel-matters">
+          <div class="rel-matters__text">
+            <p class="rel-kicker">Why It Matters</p>
+            <h2 class="rel-h2">Why Real Estate Lead Generation <em>Matters in Dubai</em></h2>
+            <p class="rel-lead">
+              Dubai attracts local and international buyers interested in luxury villas, off-plan apartments,
+              waterfront residences, and commercial properties. However, reaching the right audience requires an
+              effective real estate lead generation strategy.
+            </p>
+            <p class="rel-lead">
+              A professional Real Estate Lead Generation Company Dubai businesses can rely on should focus on buyer
+              intent, lead quality, and measurable campaign performance.
+            </p>
+          </div>
+
+          <div class="rel-benefits">
+            <p class="rel-benefits__title">Our marketing approach helps businesses:</p>
+            <ul>
+              <li><span class="rel-tick"><i data-lucide="check"></i></span> Attract qualified property buyers and investors.</li>
+              <li><span class="rel-tick"><i data-lucide="check"></i></span> Generate high-intent real estate inquiries.</li>
+              <li><span class="rel-tick"><i data-lucide="check"></i></span> Improve Google Ads and Meta Ads performance.</li>
+              <li><span class="rel-tick"><i data-lucide="check"></i></span> Target audiences based on location and property preferences.</li>
+              <li><span class="rel-tick"><i data-lucide="check"></i></span> Reduce irrelevant leads through better qualification.</li>
+              <li><span class="rel-tick"><i data-lucide="check"></i></span> Improve lead nurturing and sales follow-ups.</li>
+              <li><span class="rel-tick"><i data-lucide="check"></i></span> Track campaign performance and conversions.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SERVICES ================= -->
+    <section class="rel-section rel-services" id="services">
+      <div class="rel-wrap">
+        <div class="rel-head-center">
+          <p class="rel-kicker">Our Services</p>
+          <h2 class="rel-h2">Our Real Estate Lead Generation <em>Services in Dubai</em></h2>
+        </div>
+
+        <div class="rel-services__grid">
+          <article class="rel-service">
+            <div class="rel-service__top">
+              <span class="rel-service__icon"><i data-lucide="search"></i></span>
+              <span class="rel-service__no">01</span>
+            </div>
+            <h3 class="rel-h3">Google Ads for Real Estate Dubai</h3>
+            <p>Google Ads helps property businesses connect with buyers actively searching for real estate opportunities.</p>
+            <p>Delemon Technology develops search advertising strategies using relevant property keywords, geographic targeting, compelling advertisements, and conversion tracking.</p>
+            <p>Our Real Estate PPC Agency Dubai approach supports campaigns for luxury apartments, off-plan properties, residential developments, and commercial investments.</p>
+          </article>
+
+          <article class="rel-service">
+            <div class="rel-service__top">
+              <span class="rel-service__icon"><i data-lucide="megaphone"></i></span>
+              <span class="rel-service__no">02</span>
+            </div>
+            <h3 class="rel-h3">Meta Ads for Real Estate Dubai</h3>
+            <p>Facebook and Instagram advertising help real estate businesses reach potential buyers through targeted campaigns and engaging property creatives.</p>
+            <p>Our Meta Ads strategies include audience segmentation, property promotions, lead generation forms, retargeting, and campaign optimization.</p>
+            <p>These campaigns support Facebook Lead Generation for Real Estate Dubai, investor acquisition, and property developer marketing.</p>
+          </article>
+
+          <article class="rel-service">
+            <div class="rel-service__top">
+              <span class="rel-service__icon"><i data-lucide="layout-template"></i></span>
+              <span class="rel-service__no">03</span>
+            </div>
+            <h3 class="rel-h3">Real Estate SEO and Landing Page Development</h3>
+            <p>Search engine optimization improves organic visibility for property-related searches.</p>
+            <p>As a Real Estate Digital Marketing Agency Dubai, Delemon Technology focuses on keyword optimization, location-based SEO, website content, and conversion-focused landing pages.</p>
+            <p>Mobile-friendly layouts, clear property information, and effective inquiry forms help convert website visitors into potential customers.</p>
+          </article>
+
+          <article class="rel-service">
+            <div class="rel-service__top">
+              <span class="rel-service__icon"><i data-lucide="workflow"></i></span>
+              <span class="rel-service__no">04</span>
+            </div>
+            <h3 class="rel-h3">Real Estate CRM Integration and Automation</h3>
+            <p>Generating inquiries is only the beginning. Effective lead management helps sales teams organize prospects and respond efficiently.</p>
+            <p>Our technology-focused approach supports CRM integration, automated follow-ups, WhatsApp communication, lead tracking, and AI-assisted qualification workflows.</p>
+            <p>These solutions help businesses understand buyer preferences, purchase timelines, investment budgets, and lead engagement.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= WHO WE SERVE ================= -->
+    <section class="rel-section rel-serve">
+      <div class="rel-wrap">
+        <div class="rel-head-center">
+          <p class="rel-kicker">Who We Serve</p>
+          <h2 class="rel-h2">Qualified Lead Generation for <em>Developers, Brokers and Investors</em></h2>
+          <p class="rel-lead">Different property businesses require different marketing approaches.</p>
+        </div>
+
+        <div class="rel-serve__grid">
+          <article class="rel-aud">
+            <span class="rel-aud__icon"><i data-lucide="building-2"></i></span>
+            <p class="rel-aud__tag">Developers</p>
+            <h3 class="rel-h3">Real Estate Lead Generation for Developers Dubai</h3>
+            <p>Focuses on attracting buyers for new launches, off-plan developments, and residential communities.</p>
+          </article>
+
+          <article class="rel-aud">
+            <span class="rel-aud__icon"><i data-lucide="handshake"></i></span>
+            <p class="rel-aud__tag">Brokers</p>
+            <h3 class="rel-h3">Real Estate Lead Generation for Brokers Dubai</h3>
+            <p>Emphasizes qualified property inquiries, buyer consultations, and viewing appointments.</p>
+          </article>
+
+          <article class="rel-aud">
+            <span class="rel-aud__icon"><i data-lucide="gem"></i></span>
+            <p class="rel-aud__tag">Luxury</p>
+            <h3 class="rel-h3">Luxury Property Campaigns</h3>
+            <p>Target relevant audiences interested in premium villas, branded residences, and waterfront developments.</p>
+          </article>
+
+          <article class="rel-aud">
+            <span class="rel-aud__icon"><i data-lucide="globe"></i></span>
+            <p class="rel-aud__tag">International</p>
+            <h3 class="rel-h3">International Investor Marketing</h3>
+            <p>Uses geographic segmentation and audience research to connect with overseas property buyers.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PROCESS ================= -->
+    <section class="rel-section">
+      <div class="rel-wrap">
+        <div class="rel-head-center">
+          <p class="rel-kicker">How We Work</p>
+          <h2 class="rel-h2">Our Real Estate Lead Generation <em>Process</em></h2>
+          <p class="rel-lead">Delemon Technology follows a structured approach to property lead generation.</p>
+        </div>
+
+        <ol class="rel-steps">
+          <li class="rel-step">
+            <span class="rel-step__num">01</span>
+            <div class="rel-step__body">
+              <h3 class="rel-h3">Strategy Development</h3>
+              <p>Understanding property inventory, business goals, target audiences, and buyer requirements.</p>
+            </div>
+          </li>
+          <li class="rel-step">
+            <span class="rel-step__num">02</span>
+            <div class="rel-step__body">
+              <h3 class="rel-h3">Campaign Execution</h3>
+              <p>Launching relevant Google Ads, Meta Ads, and SEO initiatives with compelling messaging.</p>
+            </div>
+          </li>
+          <li class="rel-step">
+            <span class="rel-step__num">03</span>
+            <div class="rel-step__body">
+              <h3 class="rel-h3">Lead Qualification</h3>
+              <p>Capturing buyer contact details, preferred locations, property interests, budgets, and purchase timelines.</p>
+            </div>
+          </li>
+          <li class="rel-step">
+            <span class="rel-step__num">04</span>
+            <div class="rel-step__body">
+              <h3 class="rel-h3">Lead Management</h3>
+              <p>Supporting CRM workflows, automated notifications, and organized sales follow-ups.</p>
+            </div>
+          </li>
+          <li class="rel-step">
+            <span class="rel-step__num">05</span>
+            <div class="rel-step__body">
+              <h3 class="rel-h3">Performance Optimization</h3>
+              <p>Monitoring cost per lead, qualified inquiries, conversion rates, and return on ad spend.</p>
+            </div>
+          </li>
+        </ol>
+
+        <p class="rel-process__note">This process helps connect digital advertising with meaningful property sales opportunities.</p>
+      </div>
+    </section>
+
+    <!-- ================= WHY CHOOSE ================= -->
+    <section class="rel-section rel-why">
+      <div class="rel-wrap rel-why__grid">
+        <div class="rel-why__text">
+          <p class="rel-kicker">Why Delemon</p>
+          <h2 class="rel-h2">Why Choose <em>Delemon Technology?</em></h2>
+          <p class="rel-lead">
+            Choosing the Best Real Estate Lead Generation Agency in Dubai for your business requires evaluating
+            industry understanding, marketing capabilities, and lead management expertise.
+          </p>
+          <p class="rel-lead">
+            Delemon Technology combines digital advertising and technology solutions to support real estate business
+            growth.
+          </p>
+          <p class="rel-why__quote">
+            We focus on connecting businesses with relevant audiences rather than simply increasing inquiry volumes.
+          </p>
+        </div>
+
+        <div class="rel-pillars">
+          <p class="rel-pillars__label">Our approach emphasizes</p>
+          <ul>
+            <li><span class="rel-pillars__icon"><i data-lucide="crosshair"></i></span> Targeted property advertising</li>
+            <li><span class="rel-pillars__icon"><i data-lucide="mouse-pointer-click"></i></span> Conversion optimization</li>
+            <li><span class="rel-pillars__icon"><i data-lucide="user-check"></i></span> Qualified buyer acquisition</li>
+            <li><span class="rel-pillars__icon"><i data-lucide="link"></i></span> CRM connectivity</li>
+            <li><span class="rel-pillars__icon"><i data-lucide="trending-up"></i></span> Measurable campaign reporting</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CTA ================= -->
+    <section class="rel-section rel-cta" id="cta">
+      <div class="rel-wrap rel-cta__grid">
+        <div>
+          <p class="rel-kicker">Let's Grow</p>
+          <h2 class="rel-h2">Grow Your Property Business With <em>Delemon Technology</em></h2>
+          <p class="rel-cta__text">
+            An effective Real Estate Lead Generation Agency in Dubai can help your business attract potential buyers,
+            strengthen online visibility, and improve lead management.
+          </p>
+          <p class="rel-cta__text">
+            Delemon Technology provides integrated Google Ads, Meta Ads, SEO, and real estate marketing solutions
+            designed to support sustainable growth.
+          </p>
+          <ul class="rel-cta__tags" aria-label="Services">
+            <li>Google Ads</li>
+            <li>Meta Ads</li>
+            <li>SEO</li>
+            <li>Landing Pages</li>
+            <li>CRM Integration</li>
+          </ul>
+        </div>
+
+        <div class="rel-cta__card">
+          <h3 class="rel-cta__card-title">Contact Delemon Technology for Your Real Estate Lead Generation Strategy!</h3>
+          <p class="rel-cta__card-sub">Generate qualified property leads today.</p>
+
+          <ul class="rel-cta__list">
+            <li><i data-lucide="circle-check"></i> A strategy built around your property inventory and buyers</li>
+            <li><i data-lucide="circle-check"></i> Google Ads, Meta Ads and SEO campaigns that target buyer intent</li>
+            <li><i data-lucide="circle-check"></i> CRM-connected lead qualification and follow-ups</li>
+          </ul>
+
+          <div class="rel-cta__actions">
+            <a href="{% url 'contact' %}" class="rel-btn rel-btn--dark">Get Your Lead Generation Strategy <i data-lucide="arrow-right"></i></a>
+            <a href="https://wa.me/971503482299" class="rel-btn rel-btn--outline" target="_blank" rel="noopener">
+              <i data-lucide="message-circle"></i> Chat On WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FAQ ================= -->
+    <section class="rel-section" id="faq">
+      <div class="rel-wrap rel-faq__grid">
+        <div>
+          <p class="rel-kicker">FAQ</p>
+          <h2 class="rel-h2">Frequently Asked <em>Questions</em></h2>
+          <p class="rel-lead">Everything you need to know about real estate lead generation in Dubai.</p>
+        </div>
+
+        <div class="rel-faq__list" id="relFaq">
+          <div class="rel-faq__item is-open">
+            <button class="rel-faq__btn" aria-expanded="true" aria-controls="rel-faq-0">
+              <span class="rel-faq__q"><span class="rel-faq__no">01</span><span class="rel-faq__title">What does a real estate lead generation agency in Dubai do?</span></span>
+              <span class="rel-faq__icon"><i data-lucide="plus"></i></span>
+            </button>
+            <div class="rel-faq__panel" id="rel-faq-0" role="region">
+              <div><p>It attracts potential property buyers and investors through targeted advertising, SEO, landing pages, and lead qualification strategies.</p></div>
+            </div>
+          </div>
+
+          <div class="rel-faq__item">
+            <button class="rel-faq__btn" aria-expanded="false" aria-controls="rel-faq-1">
+              <span class="rel-faq__q"><span class="rel-faq__no">02</span><span class="rel-faq__title">How can I generate qualified real estate leads in Dubai?</span></span>
+              <span class="rel-faq__icon"><i data-lucide="plus"></i></span>
+            </button>
+            <div class="rel-faq__panel" id="rel-faq-1" role="region">
+              <div><p>Use Google Ads, Meta Ads, SEO, optimized landing pages, and CRM-based follow-up systems.</p></div>
+            </div>
+          </div>
+
+          <div class="rel-faq__item">
+            <button class="rel-faq__btn" aria-expanded="false" aria-controls="rel-faq-2">
+              <span class="rel-faq__q"><span class="rel-faq__no">03</span><span class="rel-faq__title">Are Google Ads effective for real estate lead generation?</span></span>
+              <span class="rel-faq__icon"><i data-lucide="plus"></i></span>
+            </button>
+            <div class="rel-faq__panel" id="rel-faq-2" role="region">
+              <div><p>Yes. Google Ads can reach buyers actively searching for specific properties and investment opportunities.</p></div>
+            </div>
+          </div>
+
+          <div class="rel-faq__item">
+            <button class="rel-faq__btn" aria-expanded="false" aria-controls="rel-faq-3">
+              <span class="rel-faq__q"><span class="rel-faq__no">04</span><span class="rel-faq__title">Can real estate agencies target international investors?</span></span>
+              <span class="rel-faq__icon"><i data-lucide="plus"></i></span>
+            </button>
+            <div class="rel-faq__panel" id="rel-faq-3" role="region">
+              <div><p>Yes. Digital campaigns can target overseas investors through geographic segmentation, search intent, and audience research.</p></div>
+            </div>
+          </div>
+
+          <div class="rel-faq__item">
+            <button class="rel-faq__btn" aria-expanded="false" aria-controls="rel-faq-4">
+              <span class="rel-faq__q"><span class="rel-faq__no">05</span><span class="rel-faq__title">Why choose Delemon Technology for property lead generation?</span></span>
+              <span class="rel-faq__icon"><i data-lucide="plus"></i></span>
+            </button>
+            <div class="rel-faq__panel" id="rel-faq-4" role="region">
+              <div><p>Delemon Technology combines digital marketing, performance advertising, SEO, and technology-focused lead management to support property business growth.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- Icons (Lucide) -->
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+  (function () {
+    const faqBox = document.getElementById("relFaq");
+    faqBox.addEventListener("click", e => {
+      const btn = e.target.closest(".rel-faq__btn");
+      if (!btn) return;
+      const item = btn.parentElement;
+      const willOpen = !item.classList.contains("is-open");
+      faqBox.querySelectorAll(".rel-faq__item").forEach(el => {
+        el.classList.remove("is-open");
+        el.querySelector(".rel-faq__btn").setAttribute("aria-expanded", "false");
+      });
+      if (willOpen) {
+        item.classList.add("is-open");
+        btn.setAttribute("aria-expanded", "true");
+      }
+    });
+  })();
+
+  if (window.lucide) lucide.createIcons();
+</script>
+
+{% endblock %}

@@ -60,6 +60,12 @@ def web(request):
 
 def lead_generation(request):
     return render(request, 'main/lead_generation.html')
+
+def real_estate_lead_agency(request):
+    return render(request, 'main/real_estate_lead_agency.html')
+
+def google_ads_agency_real_estate(request):
+    return render(request, 'main/google_ads_agency_real_estate.html')
 # def team(request):
 #     team_members = TeamModel.objects.all()
 
