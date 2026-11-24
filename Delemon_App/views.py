@@ -47,95 +47,95 @@ def contact(request):
     return render(request, 'main/contact.html')
 
 def services(request):
-    return render(request, 'main/services.html')
+    return render(request, 'services.html')
 
 def careers(request):
     return render(request, 'main/careers.html')
 
 def digital(request):
-    return render(request, 'main/services/marketing_advertising/digital.html')
+    return render(request, 'services/marketing_advertising/digital.html')
 
 def web(request):
-    return render(request, 'main/services/design/web.html')
+    return render(request, 'services/design/web.html')
 
 def lead_generation(request):
     return render(request, 'main/lead_generation.html')
 
 def real_estate_lead_agency(request):
-    return render(request, 'main/services/marketing_advertising/real_estate_lead_agency.html')
+    return render(request, 'services/marketing_advertising/real_estate_lead_agency.html')
 
 def google_ads_agency_real_estate(request):
-    return render(request, 'main/services/marketing_advertising/google_ads_agency_real_estate.html')
+    return render(request, 'services/marketing_advertising/google_ads_agency_real_estate.html')
 
 def ecommerce_website_development_dubai(request):
-    return render(request, 'main/services/marketing_advertising/ecommerce-website-development-dubai.html')
+    return render(request, 'services/marketing_advertising/ecommerce-website-development-dubai.html')
 
 def social_media_marketing_agency_dubai(request):
-    return render(request, 'main/services/marketing_advertising/social-media-marketing-agency-dubai.html')
+    return render(request, 'services/marketing_advertising/social-media-marketing-agency-dubai.html')
 # def team(request):
 #     team_members = TeamModel.objects.all()
 #     return render(request, 'main/team.html', {'team_members': team_members})
 
 def iphone(request):
-    return render(request, 'main/services/web_app_development/iphone.html')
+    return render(request, 'services/web_app_development/iphone.html')
 def android(request):
-    return render(request, 'main/services/web_app_development/android.html')
+    return render(request, 'services/web_app_development/android.html')
 def flutter(request):
-    return render(request, 'main/services/web_app_development/flutter.html')
+    return render(request, 'services/web_app_development/flutter.html')
 def mobile(request):
-    return render(request, 'main/services/web_app_development/mobile.html')
+    return render(request, 'services/web_app_development/mobile.html')
 def wordpress(request):
-    return render(request,'main/services/web_app_development/wordpress.html')
+    return render(request,'services/web_app_development/wordpress.html')
 def ecommerce(request):
-    return render(request, 'main/services/web_app_development/ecommerce.html')
+    return render(request, 'services/web_app_development/ecommerce.html')
 def woocommerce(request):
-    return render(request, 'main/services/web_app_development/woocommerce.html')
+    return render(request, 'services/web_app_development/woocommerce.html')
 def shopify(request):
-    return render(request,'main/services/web_app_development/shopify.html')
+    return render(request,'services/web_app_development/shopify.html')
 def magento(request):
-    return render(request,'main/services/web_app_development/magento.html')
+    return render(request,'services/web_app_development/magento.html')
 def customeweb(request):
-    return render(request,'main/services/software_development/customeweb.html')
+    return render(request,'services/software_development/customeweb.html')
 def python(request):
-    return render(request,'main/services/software_development/python.html')
+    return render(request,'services/software_development/python.html')
 def react(request):
-    return render(request,'main/services/software_development/react.html')
+    return render(request,'services/software_development/react.html')
 def blockchain(request):
-    return render(request,'main/services/software_development/blockchain.html')
+    return render(request,'services/software_development/blockchain.html')
 def java(request):
-    return render(request,'main/services/software_development/java.html')
+    return render(request,'services/software_development/java.html')
 def php(request):
-    return render(request,'main/services/software_development/php.html')
+    return render(request,'services/software_development/php.html')
 def angular(request):
-    return render(request,'main/services/software_development/angular.html')
+    return render(request,'services/software_development/angular.html')
 def softwaretesting(request):
-    return render(request,'main/services/software_development/softwaretesting.html')
+    return render(request,'services/software_development/softwaretesting.html')
 def nodejs(request):
-    return render(request,'main/services/software_development/nodejs.html')
+    return render(request,'services/software_development/nodejs.html')
 def dotnet(request):
-    return render(request,'main/services/software_development/dotnet.html')
+    return render(request,'services/software_development/dotnet.html')
 def uiux(request):
-    return render(request, 'main/services/design/uiux.html')
+    return render(request, 'services/design/uiux.html')
 def advertising(request):
-    return render(request, 'main/services/marketing_advertising/advertising.html')
+    return render(request, 'services/marketing_advertising/advertising.html')
 def animation(request):
-    return render(request, 'main/services/design/animation.html')
+    return render(request, 'services/design/animation.html')
 def branding(request):
-    return render(request,'main/services/marketing_advertising/branding.html')
+    return render(request,'services/marketing_advertising/branding.html')
 def email(request):
-    return render(request,'main/services/marketing_advertising/email.html')
+    return render(request,'services/marketing_advertising/email.html')
 def research(request):
-    return render(request,'main/services/marketing_advertising/research.html')
+    return render(request,'services/marketing_advertising/research.html')
 def influencer(request):
-    return render(request,'main/services/marketing_advertising/influencer.html')
+    return render(request,'services/marketing_advertising/influencer.html')
 def digital_design(request):
-    return render(request,'main/services/design/digital_design.html')
+    return render(request,'services/design/digital_design.html')
 def logo_design(request):
-    return render(request,'main/services/design/logo_design.html')
+    return render(request,'services/design/logo_design.html')
 def product_design(request):
-    return render(request,'main/services/design/product_design.html')
+    return render(request,'services/design/product_design.html')
 def graphic_design(request):
-    return render(request,'main/services/design/graphic.html')
+    return render(request,'services/design/graphic.html')
 def print_design(request):
     return render(request,'main/print_design.html')
 def projects(request):
@@ -147,10 +147,10 @@ def chronocorp(request):
     return render(request, 'main/chronocorp.html')
 
 def ppc(request):
-    return render(request, 'main/services/marketing_advertising/ppc.html')
+    return render(request, 'services/marketing_advertising/ppc.html')
 
 def seo(request):
-    return render(request, 'main/services/marketing_advertising/seo.html')
+    return render(request, 'services/marketing_advertising/seo.html')
 
 def pps(request):
     return render(request, 'main/podcastp.html')
@@ -159,24 +159,24 @@ def sem(request):
     return render(request, 'main/sem.html')
 
 def content(request):
-    return render(request, 'main/services/marketing_advertising/content.html')
+    return render(request, 'services/marketing_advertising/content.html')
 def marketing(request):
-    return render(request, 'main/services/marketing_advertising/leades.html')
+    return render(request, 'services/marketing_advertising/leades.html')
 
 def chatgpt(request):
-    return render(request, 'main/services/marketing_advertising/chatgpt.html')
+    return render(request, 'services/marketing_advertising/chatgpt.html')
 def googleads(request):
-    return render(request, 'main/services/marketing_advertising/googleads.html')
+    return render(request, 'services/marketing_advertising/googleads.html')
 
 def realestate_seo(request):
-    return render(request, 'main/services/marketing_advertising/realestate_seo.html')
+    return render(request, 'services/marketing_advertising/realestate_seo.html')
 
 def realestate_marketing(request):
-    return render(request, 'main/services/marketing_advertising/realestate_marketing.html')
+    return render(request, 'services/marketing_advertising/realestate_marketing.html')
 
 
 def social(request):
-    return render(request, 'main/services/marketing_advertising/social.html')
+    return render(request, 'services/marketing_advertising/social.html')
 
 def whoweare(request):
     return render(request, 'main/whoweare.html')
