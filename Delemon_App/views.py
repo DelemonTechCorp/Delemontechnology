@@ -47,7 +47,7 @@ def contact(request):
     return render(request, 'main/contact.html')
 
 def services(request):
-    return render(request, 'services.html')
+    return render(request, 'main/services.html')
 
 def careers(request):
     return render(request, 'main/careers.html')
