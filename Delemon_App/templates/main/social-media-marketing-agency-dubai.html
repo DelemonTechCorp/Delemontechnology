@@ -1,0 +1,1767 @@
+{% extends "base.html" %}
+{% block title %}Social Media Marketing Agency Dubai | Delemon{% endblock %}
+{% load static %}
+{% block content %}
+
+<head>
+<meta name="keywords" content="Social Media Marketing Agency Dubai
+,Social Media Marketing Company in Dubai
+,Social Media Management Dubai
+,Facebook Advertising Agency Dubai
+,Instagram Marketing Dubai
+,LinkedIn Marketing Dubai
+,Real Estate Social Media Marketing Dubai
+,Digital Marketing Agency in Dubai
+,Social Media Lead Generation Dubai
+,Social Media Content Creation Dubai">
+<meta content="Grow your business with Delemon Technology, a social media marketing agency in Dubai offering content creation, social media management and targeted ads." name="description"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "What does a social media marketing agency in Dubai do?",
+     "acceptedAnswer": {"@type": "Answer", "text": "A social media marketing agency manages business social media accounts, creates engaging content, runs paid advertisements, improves brand visibility, and supports customer engagement and lead generation."}},
+    {"@type": "Question", "name": "Why should I hire a social media marketing agency in Dubai?",
+     "acceptedAnswer": {"@type": "Answer", "text": "A professional agency provides marketing expertise, creative content, strategic campaign management, and performance analysis to help businesses reach relevant audiences and improve their digital presence."}},
+    {"@type": "Question", "name": "Which social media platforms are best for businesses in Dubai?",
+     "acceptedAnswer": {"@type": "Answer", "text": "Instagram, Facebook, LinkedIn, TikTok, and YouTube are popular options. The ideal platforms depend on your industry, target audience, and business objectives."}},
+    {"@type": "Question", "name": "Can social media marketing generate leads for my business?",
+     "acceptedAnswer": {"@type": "Answer", "text": "Yes. Targeted social media advertising, engaging content, and conversion-focused campaigns can help attract potential customers and generate qualified enquiries."}},
+    {"@type": "Question", "name": "Does Delemon Technology provide social media advertising services?",
+     "acceptedAnswer": {"@type": "Answer", "text": "Yes. Delemon Technology offers social media advertising and marketing solutions, including Facebook, Instagram, LinkedIn, and other platform-specific campaigns."}}
+  ]
+}
+</script>
+</head>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  /* =========================================================
+     DELEMON TECHNOLOGY – SOCIAL MEDIA MARKETING AGENCY DUBAI
+     All classes use the unique prefix  smm-  (scoped to .smm-page)
+     ========================================================= */
+
+  :root {
+    --smm-ink: #0b0b0b;
+    --smm-ink-2: #141210;
+    --smm-gold: #e6b325;
+    --smm-gold-deep: #b8880b;
+    --smm-paper: #faf8f3;
+    --smm-paper-dim: #f1eee5;
+    --smm-line: #e2ddcf;
+    --smm-text: #1a1a1a;
+    --smm-muted: #5e5b52;
+    --smm-head: "Lato", sans-serif;
+    --smm-body: "DM Sans", system-ui, sans-serif;
+  }
+
+  /* ---------- Base (scoped; resets base.html leakage) ---------- */
+  .smm-page,
+  .smm-page *,
+  .smm-page *::before,
+  .smm-page *::after { box-sizing: border-box; }
+
+  .smm-page {
+    background: var(--smm-paper);
+    color: var(--smm-text);
+    font-family: var(--smm-body);
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  .smm-page :where(h1, h2, h3, p, ul, ol, li) { margin: 0; padding: 0; }
+  .smm-page :where(ul, ol) { list-style: none; }
+  .smm-page a { text-decoration: none; }
+  .smm-page img { max-width: 100%; display: block; }
+  .smm-page button { font: inherit; cursor: pointer; }
+  .smm-page :focus-visible { outline: 3px solid var(--smm-gold); outline-offset: 3px; }
+  .smm-page svg { flex: none; }
+
+  .smm-wrap {
+    width: 100%;
+    max-width: 1240px;
+    margin-inline: auto;
+    padding-inline: 20px;
+  }
+
+  @media (min-width: 1024px) { .smm-wrap { padding-inline: 32px; } }
+
+  .smm-section { padding-block: 72px; }
+  @media (min-width: 768px) { .smm-section { padding-block: 104px; } }
+
+  /* ---------- Type ---------- */
+  .smm-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--smm-head);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--smm-gold-deep);
+  }
+
+  .smm-kicker::before {
+    content: "";
+    width: 28px;
+    height: 2px;
+    background: currentColor;
+  }
+
+  .smm-h2 {
+    margin-top: 14px;
+    font-family: var(--smm-head);
+    font-size: clamp(28px, 3.2vw, 40px);
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+    color: var(--smm-ink);
+  }
+
+  .smm-h2 em { font-style: normal; color: var(--smm-gold-deep); }
+
+  .smm-lead {
+    margin-top: 18px;
+    font-size: 17px;
+    color: var(--smm-muted);
+  }
+
+  .smm-head-center {
+    max-width: 780px;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .smm-h3 {
+    font-family: var(--smm-head);
+    font-size: 19px;
+    font-weight: 800;
+    line-height: 1.35;
+    color: var(--smm-ink);
+  }
+
+  /* ---------- Buttons ---------- */
+  .smm-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px 26px;
+    border-radius: 8px;
+    font-family: var(--smm-head);
+    font-size: 15px;
+    font-weight: 800;
+    border: 1.5px solid transparent;
+    transition: transform .2s ease, background .2s ease, color .2s ease, border-color .2s ease;
+  }
+
+  .smm-btn svg { width: 18px; height: 18px; }
+  .smm-btn:hover { transform: translateY(-2px); }
+
+  .smm-btn--gold { background: var(--smm-gold); color: var(--smm-ink) !important; box-shadow: 0 12px 32px -12px rgba(230, 179, 37, .8); }
+  .smm-btn--ghost { border-color: rgba(250, 248, 243, .35); color: var(--smm-paper) !important; }
+  .smm-btn--ghost:hover { border-color: var(--smm-gold); color: var(--smm-gold) !important; }
+  .smm-btn--dark { background: var(--smm-ink); color: var(--smm-gold) !important; }
+  .smm-btn--outline { border-color: var(--smm-ink); color: var(--smm-ink) !important; }
+  .smm-btn--outline:hover { background: var(--smm-ink); color: var(--smm-gold) !important; }
+
+  /* Closing note strip */
+  .smm-note {
+    margin: 48px auto 0;
+    max-width: 760px;
+    padding: 20px 28px;
+    border-radius: 14px;
+    background: var(--smm-paper-dim);
+    border-left: 4px solid var(--smm-gold);
+    text-align: center;
+    font-family: var(--smm-head);
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--smm-ink);
+  }
+
+  .smm-note--dark {
+    background: rgba(230, 179, 37, .08);
+    color: var(--smm-paper);
+  }
+
+  .smm-sub {
+    max-width: 760px;
+    margin: 56px auto 0;
+    text-align: center;
+  }
+
+  .smm-sub p { margin-top: 10px; font-size: 16.5px; color: var(--smm-muted); }
+
+  .smm-label {
+    margin-top: 40px;
+    text-align: center;
+    font-family: var(--smm-head);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--smm-muted);
+  }
+
+  /* =========================================================
+     1. HERO
+     ========================================================= */
+  .smm-hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background: var(--smm-ink);
+    color: var(--smm-paper);
+  }
+
+  .smm-hero__bg {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background: url("{% static 'img/marketing-hero.jpg' %}") center / cover no-repeat;
+    opacity: .45;
+  }
+
+  .smm-hero__shade {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+      radial-gradient(800px 500px at 85% 30%, rgba(230, 179, 37, .16), transparent 65%),
+      linear-gradient(90deg, rgba(11, 11, 11, .96) 0%, rgba(11, 11, 11, .85) 50%, rgba(11, 11, 11, .6) 100%);
+  }
+
+  .smm-hero__grid {
+    display: grid;
+    gap: 56px;
+    align-items: center;
+    padding-block: 72px 64px;
+  }
+
+  @media (min-width: 992px) {
+    .smm-hero__grid {
+      grid-template-columns: 1.15fr .85fr;
+      gap: 72px;
+      padding-block: 110px 96px;
+    }
+  }
+
+  .smm-hero__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 16px;
+    border: 1px solid rgba(230, 179, 37, .45);
+    border-radius: 999px;
+    background: rgba(230, 179, 37, .08);
+    font-family: var(--smm-head);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--smm-gold);
+  }
+
+  .smm-hero__badge i {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--smm-gold);
+    box-shadow: 0 0 0 4px rgba(230, 179, 37, .2);
+  }
+
+  .smm-hero__title {
+    margin-top: 26px;
+    font-family: var(--smm-head);
+    font-size: clamp(34px, 4.4vw, 56px);
+    font-weight: 900;
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+    color: var(--smm-paper);
+  }
+
+  .smm-hero__title span {
+    display: block;
+    margin-top: 10px;
+    color: var(--smm-gold);
+  }
+
+  .smm-hero__lead {
+    margin-top: 24px;
+    max-width: 620px;
+    font-size: clamp(16px, 1.4vw, 18px);
+    line-height: 1.7;
+    color: rgba(250, 248, 243, .78);
+  }
+
+  .smm-hero__actions {
+    margin-top: 36px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .smm-hero__trust {
+    margin-top: 36px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 22px;
+  }
+
+  .smm-hero__trust li {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(250, 248, 243, .82);
+  }
+
+  .smm-hero__trust svg { width: 17px; height: 17px; color: var(--smm-gold); }
+
+  /* Social post mock visual */
+  .smm-visual {
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+    margin-inline: auto;
+    padding: 0 16px 16px 0;
+  }
+
+  .smm-visual::before {
+    content: "";
+    position: absolute;
+    inset: 16px 0 0 16px;
+    border: 2px solid var(--smm-gold);
+    border-radius: 20px;
+  }
+
+  .smm-card {
+    position: relative;
+    background: #fff;
+    color: var(--smm-ink);
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 40px 80px -30px rgba(0, 0, 0, .85);
+  }
+
+  .smm-post__head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .smm-post__who { display: flex; align-items: center; gap: 12px; }
+
+  .smm-post__avatar {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: var(--smm-ink);
+    color: var(--smm-gold);
+  }
+
+  .smm-post__avatar svg { width: 22px; height: 22px; }
+  .smm-post__name { font-family: var(--smm-head); font-size: 17px; font-weight: 800; line-height: 1.2; }
+  .smm-post__src { font-size: 13px; color: var(--smm-muted); }
+
+  .smm-post__pill {
+    padding: 5px 10px;
+    border-radius: 999px;
+    background: #e9f7ee;
+    color: #18794e;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .smm-post__media {
+    position: relative;
+    margin-top: 18px;
+    aspect-ratio: 4 / 3;
+    border-radius: 14px;
+    display: grid;
+    place-items: center;
+    background:
+      radial-gradient(240px 160px at 80% 20%, rgba(230, 179, 37, .35), transparent 70%),
+      linear-gradient(135deg, #0b0b0b, #2a2418);
+  }
+
+  .smm-post__play {
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: var(--smm-gold);
+    color: var(--smm-ink);
+  }
+
+  .smm-post__play svg { width: 26px; height: 26px; }
+
+  .smm-post__tag {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: rgba(250, 248, 243, .14);
+    border: 1px solid rgba(250, 248, 243, .25);
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--smm-paper);
+  }
+
+  .smm-post__bar { margin-top: 14px; display: flex; gap: 14px; color: var(--smm-ink); }
+  .smm-post__bar svg { width: 20px; height: 20px; }
+  .smm-post__bar svg:last-child { margin-left: auto; }
+
+  .smm-card__score {
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  .smm-card__score b { color: var(--smm-gold-deep); }
+
+  .smm-card__meter {
+    margin-top: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: var(--smm-paper-dim);
+    overflow: hidden;
+  }
+
+  .smm-card__meter span {
+    display: block;
+    width: 86%;
+    height: 100%;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--smm-gold-deep), var(--smm-gold));
+  }
+
+  .smm-float {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    border-radius: 12px;
+    background: var(--smm-ink);
+    border: 1px solid rgba(230, 179, 37, .4);
+    box-shadow: 0 20px 40px -16px rgba(0, 0, 0, .7);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--smm-paper);
+    white-space: nowrap;
+  }
+
+  .smm-float svg { width: 18px; height: 18px; color: var(--smm-gold); }
+  .smm-float--a { top: -18px; right: -6px; }
+  .smm-float--b { bottom: -6px; left: -18px; }
+
+  @media (max-width: 520px) {
+    .smm-float--a { right: 8px; }
+    .smm-float--b { left: 0; }
+  }
+
+  /* 4-up dark grid */
+  @media (min-width: 1100px) { .smm-serve__grid--4 { grid-template-columns: repeat(4, 1fr); } }
+
+  /* Process timeline */
+  .smm-steps {
+    position: relative;
+    margin-top: 64px;
+    display: grid;
+    gap: 28px;
+  }
+
+  @media (min-width: 640px) { .smm-steps { grid-template-columns: repeat(2, 1fr); } }
+
+  @media (min-width: 1000px) {
+    .smm-steps { grid-template-columns: repeat(4, 1fr); gap: 20px; }
+
+    .smm-steps::before {
+      content: "";
+      position: absolute;
+      top: 32px;
+      left: 12.5%;
+      right: 12.5%;
+      height: 2px;
+      background: repeating-linear-gradient(90deg, var(--smm-gold) 0 10px, transparent 10px 18px);
+    }
+  }
+
+  .smm-step { position: relative; display: flex; flex-direction: column; text-align: center; }
+
+  .smm-step__num {
+    position: relative;
+    width: 64px;
+    height: 64px;
+    margin-inline: auto;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: var(--smm-ink);
+    border: 3px solid var(--smm-gold);
+    font-family: var(--smm-head);
+    font-size: 20px;
+    font-weight: 900;
+    color: var(--smm-gold);
+    box-shadow: 0 0 0 8px var(--smm-paper-dim);
+  }
+
+  .smm-step__body {
+    margin-top: 22px;
+    background: #fff;
+    border: 1px solid var(--smm-line);
+    border-radius: 16px;
+    padding: 24px 20px;
+    flex: 1;
+  }
+
+  .smm-step .smm-h3 { font-size: 17px; }
+  .smm-step p { margin-top: 10px; font-size: 14.5px; color: var(--smm-muted); }
+
+  .smm-service p + p { margin-top: 10px; }
+  .smm-matters p + p { margin-top: 16px; }
+
+
+  /* Platform strip under hero */
+  .smm-channels {
+    border-top: 1px solid rgba(250, 248, 243, .1);
+    background: rgba(11, 11, 11, .6);
+  }
+
+  .smm-channels__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 900px) { .smm-channels__grid { grid-template-columns: repeat(4, 1fr); } }
+
+  .smm-channel {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 24px 18px;
+    border-right: 1px solid rgba(250, 248, 243, .08);
+  }
+
+  .smm-channel:last-child { border-right: 0; }
+
+  .smm-channel__icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    background: rgba(230, 179, 37, .12);
+    color: var(--smm-gold);
+  }
+
+  .smm-channel__icon svg { width: 20px; height: 20px; }
+  .smm-channel b { display: block; font-family: var(--smm-head); font-size: 15px; font-weight: 800; color: var(--smm-paper); line-height: 1.3; }
+  .smm-channel small { font-size: 12.5px; color: rgba(250, 248, 243, .55); }
+
+  /* =========================================================
+     2. INTRO + SOLUTIONS
+     ========================================================= */
+  .smm-intro__statement {
+    max-width: 920px;
+    margin-inline: auto;
+    text-align: center;
+    font-family: var(--smm-head);
+    font-size: clamp(20px, 2.1vw, 26px);
+    font-weight: 700;
+    line-height: 1.55;
+    color: var(--smm-ink);
+  }
+
+  .smm-intro__statement em { font-style: normal; color: var(--smm-gold-deep); }
+
+  .smm-intro__sub {
+    max-width: 760px;
+    margin: 20px auto 0;
+    text-align: center;
+    font-size: 17px;
+    color: var(--smm-muted);
+  }
+
+  .smm-divider {
+    height: 1px;
+    background: var(--smm-line);
+    margin-block: 72px;
+  }
+
+  .smm-matters {
+    display: grid;
+    gap: 48px;
+    align-items: start;
+  }
+
+  @media (min-width: 992px) { .smm-matters { grid-template-columns: 1fr 1fr; gap: 72px; } }
+
+  .smm-benefits {
+    background: var(--smm-ink);
+    border-radius: 20px;
+    padding: 36px 32px;
+    color: var(--smm-paper);
+    box-shadow: 0 30px 60px -30px rgba(0, 0, 0, .5);
+  }
+
+  .smm-benefits__title {
+    font-family: var(--smm-head);
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--smm-gold);
+  }
+
+  .smm-benefits__sub {
+    margin-top: 28px;
+    font-family: var(--smm-head);
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: rgba(250, 248, 243, .6);
+  }
+
+  .smm-checks { margin-top: 20px; display: grid; gap: 4px; }
+
+  .smm-checks li {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(250, 248, 243, .08);
+    font-size: 15.5px;
+    color: rgba(250, 248, 243, .85);
+  }
+
+  .smm-checks li:last-child { border-bottom: 0; }
+
+  .smm-tick {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: var(--smm-gold);
+    color: var(--smm-ink);
+    margin-top: 1px;
+  }
+
+  .smm-tick svg { width: 14px; height: 14px; }
+
+  .smm-tools { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 8px; }
+
+  .smm-tools li {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(250, 248, 243, .06);
+    border: 1px solid rgba(250, 248, 243, .14);
+    font-size: 13.5px;
+    font-weight: 600;
+    color: rgba(250, 248, 243, .9);
+  }
+
+  .smm-tools svg { width: 15px; height: 15px; color: var(--smm-gold); }
+
+  /* =========================================================
+     3. CARDS (custom dev / platforms)
+     ========================================================= */
+  .smm-services { background: var(--smm-paper-dim); }
+
+  .smm-services__grid {
+    margin-top: 56px;
+    display: grid;
+    gap: 24px;
+  }
+
+  @media (min-width: 768px) { .smm-services__grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1000px) { .smm-services__grid--3 { grid-template-columns: repeat(3, 1fr); } }
+
+  .smm-service {
+    position: relative;
+    background: #fff;
+    border: 1px solid var(--smm-line);
+    border-radius: 18px;
+    padding: 36px 32px;
+    overflow: hidden;
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  }
+
+  .smm-service::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 4px;
+    background: var(--smm-gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .3s ease;
+  }
+
+  .smm-service:hover {
+    transform: translateY(-4px);
+    border-color: rgba(230, 179, 37, .5);
+    box-shadow: 0 30px 60px -30px rgba(0, 0, 0, .25);
+  }
+
+  .smm-service:hover::before { transform: scaleX(1); }
+
+  .smm-service__top { display: flex; align-items: center; justify-content: space-between; }
+
+  .smm-service__icon {
+    width: 54px;
+    height: 54px;
+    border-radius: 14px;
+    display: grid;
+    place-items: center;
+    background: var(--smm-ink);
+    color: var(--smm-gold);
+  }
+
+  .smm-service__icon svg { width: 24px; height: 24px; }
+
+  .smm-service__no {
+    font-family: var(--smm-head);
+    font-size: 40px;
+    font-weight: 900;
+    line-height: 1;
+    color: var(--smm-paper-dim);
+  }
+
+  .smm-service .smm-h3 { margin-top: 24px; }
+
+  .smm-service p {
+    margin-top: 12px;
+    font-size: 15px;
+    color: var(--smm-muted);
+  }
+
+  /* Feature tiles */
+  .smm-opt {
+    margin-top: 28px;
+    display: grid;
+    gap: 16px;
+  }
+
+  @media (min-width: 640px) { .smm-opt { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1000px) { .smm-opt { grid-template-columns: repeat(3, 1fr); } }
+
+  .smm-opt--2 { max-width: 980px; margin-inline: auto; }
+  @media (min-width: 1000px) { .smm-opt--2 { grid-template-columns: repeat(2, 1fr); } }
+
+  .smm-opt li {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 22px;
+    background: #fff;
+    border: 1px solid var(--smm-line);
+    border-radius: 16px;
+    font-family: var(--smm-head);
+    font-size: 16.5px;
+    font-weight: 800;
+    color: var(--smm-ink);
+    transition: border-color .25s ease, transform .25s ease;
+  }
+
+  .smm-opt li:hover { border-color: rgba(230, 179, 37, .6); transform: translateY(-3px); }
+
+  .smm-opt__icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    background: var(--smm-ink);
+    color: var(--smm-gold);
+  }
+
+  .smm-opt__icon svg { width: 20px; height: 20px; }
+
+  /* =========================================================
+     4. DARK SECTIONS (design, advanced)
+     ========================================================= */
+  .smm-serve {
+    background-color: var(--smm-ink);
+    background-image:
+      linear-gradient(rgba(250, 248, 243, .03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(250, 248, 243, .03) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .smm-serve .smm-kicker { color: var(--smm-gold); }
+  .smm-serve .smm-h2 { color: var(--smm-paper); }
+  .smm-serve .smm-h2 em { color: var(--smm-gold); }
+  .smm-serve .smm-lead { color: rgba(250, 248, 243, .65); }
+  .smm-serve .smm-benefits { background: var(--smm-ink-2); border: 1px solid rgba(250, 248, 243, .1); }
+
+  .smm-subh {
+    margin-top: 32px;
+    font-family: var(--smm-head);
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--smm-gold);
+  }
+
+  .smm-subh + .smm-lead { margin-top: 10px; }
+
+  .smm-serve__grid {
+    margin-top: 56px;
+    display: grid;
+    gap: 20px;
+  }
+
+  @media (min-width: 640px) { .smm-serve__grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1100px) { .smm-serve__grid--3 { grid-template-columns: repeat(3, 1fr); } }
+
+  .smm-aud {
+    background: var(--smm-ink-2);
+    border: 1px solid rgba(250, 248, 243, .1);
+    border-radius: 18px;
+    padding: 32px 26px;
+    transition: border-color .25s ease, transform .25s ease;
+  }
+
+  .smm-aud:hover { border-color: rgba(230, 179, 37, .6); transform: translateY(-4px); }
+
+  .smm-aud__icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    background: rgba(230, 179, 37, .12);
+    border: 1px solid rgba(230, 179, 37, .3);
+    color: var(--smm-gold);
+  }
+
+  .smm-aud__icon svg { width: 22px; height: 22px; }
+
+  .smm-aud__tag {
+    margin-top: 22px;
+    font-family: var(--smm-head);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: rgba(230, 179, 37, .8);
+  }
+
+  .smm-aud .smm-h3 { margin-top: 8px; font-size: 18px; color: var(--smm-paper); }
+
+  .smm-aud p {
+    margin-top: 12px;
+    font-size: 14.5px;
+    color: rgba(250, 248, 243, .62);
+  }
+
+  .smm-areas { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 8px; }
+
+  .smm-areas li {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(230, 179, 37, .35);
+    background: rgba(230, 179, 37, .08);
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(250, 248, 243, .9);
+  }
+
+  .smm-areas svg { width: 14px; height: 14px; color: var(--smm-gold); }
+
+  /* Wide horizontal feature card (spans full row above the two vertical cards) */
+  .smm-aud--wide { grid-column: 1 / -1; display: grid; gap: 28px; align-items: center; padding: 36px 32px; }
+  .smm-aud--wide .smm-areas { margin-top: 0; }
+  .smm-aud--wide .smm-aud__side p { margin-top: 18px; }
+  .smm-aud--wide .smm-h3 { font-size: 22px; }
+
+  @media (min-width: 900px) {
+    .smm-aud--wide { grid-template-columns: 1.1fr 1fr; gap: 56px; padding: 44px 40px; }
+  }
+
+  /* =========================================================
+     5. WHY CHOOSE
+     ========================================================= */
+  .smm-why { background: var(--smm-paper-dim); }
+
+  .smm-why__grid {
+    display: grid;
+    gap: 48px;
+    align-items: center;
+  }
+
+  @media (min-width: 992px) { .smm-why__grid { grid-template-columns: 1fr 1fr; gap: 72px; } }
+
+  .smm-why__quote {
+    margin-top: 28px;
+    padding-left: 20px;
+    border-left: 4px solid var(--smm-gold);
+    font-family: var(--smm-head);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: var(--smm-ink);
+  }
+
+  .smm-pillars {
+    background: #fff;
+    border: 1px solid var(--smm-line);
+    border-radius: 20px;
+    padding: 12px 28px;
+    box-shadow: 0 30px 60px -36px rgba(0, 0, 0, .3);
+  }
+
+  .smm-pillars__label {
+    padding: 18px 0 6px;
+    font-family: var(--smm-head);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--smm-muted);
+  }
+
+  .smm-pillars li {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--smm-line);
+  }
+
+  .smm-pillars li:last-child { border-bottom: 0; }
+
+  .smm-pillars b {
+    display: block;
+    font-family: var(--smm-head);
+    font-size: 16.5px;
+    font-weight: 800;
+    line-height: 1.3;
+    color: var(--smm-ink);
+  }
+
+  .smm-pillars small { font-size: 14px; line-height: 1.5; color: var(--smm-muted); }
+
+  .smm-pillars__icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    background: rgba(230, 179, 37, .14);
+    color: var(--smm-gold-deep);
+  }
+
+  .smm-pillars__icon svg { width: 20px; height: 20px; }
+
+  /* =========================================================
+     6. CTA
+     ========================================================= */
+  .smm-cta {
+    position: relative;
+    overflow: hidden;
+    background:
+      radial-gradient(900px 420px at 90% 0%, rgba(230, 179, 37, .25), transparent 62%),
+      radial-gradient(700px 380px at 0% 100%, rgba(230, 179, 37, .1), transparent 65%),
+      linear-gradient(135deg, #0b0b0b 0%, #16120a 55%, #0b0b0b 100%);
+    color: var(--smm-paper);
+  }
+
+  .smm-cta__grid {
+    display: grid;
+    gap: 48px;
+    align-items: center;
+  }
+
+  @media (min-width: 992px) { .smm-cta__grid { grid-template-columns: 1.1fr .9fr; gap: 72px; } }
+
+  .smm-cta .smm-kicker { color: var(--smm-gold); }
+  .smm-cta .smm-h2 { color: var(--smm-paper); }
+  .smm-cta .smm-h2 em { color: var(--smm-gold); }
+
+  .smm-cta__text { margin-top: 18px; font-size: 17px; color: rgba(250, 248, 243, .72); }
+  .smm-cta__text + .smm-cta__text { margin-top: 12px; }
+
+  .smm-cta__tags { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 10px; }
+
+  .smm-cta__tags li {
+    padding: 8px 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(230, 179, 37, .35);
+    background: rgba(230, 179, 37, .08);
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(250, 248, 243, .88);
+  }
+
+  .smm-cta__card {
+    position: relative;
+    background: var(--smm-paper);
+    color: var(--smm-ink);
+    border-radius: 20px;
+    padding: 36px 32px;
+    box-shadow: 0 40px 80px -30px rgba(0, 0, 0, .8);
+  }
+
+  .smm-cta__card-title { font-family: var(--smm-head); font-size: 22px; font-weight: 800; line-height: 1.3; }
+  .smm-cta__card-sub { margin-top: 8px; font-size: 14.5px; color: var(--smm-muted); }
+
+  .smm-cta__list { margin-top: 22px; display: grid; gap: 12px; }
+
+  .smm-cta__list li { display: flex; gap: 12px; align-items: flex-start; font-size: 15px; font-weight: 500; }
+  .smm-cta__list svg { width: 20px; height: 20px; margin-top: 2px; color: var(--smm-gold-deep); }
+
+  .smm-cta__actions { margin-top: 28px; display: grid; gap: 12px; }
+  .smm-cta__actions .smm-btn { width: 100%; }
+
+  /* =========================================================
+     7. FAQ
+     ========================================================= */
+  .smm-faq__grid { display: grid; gap: 40px; }
+
+  @media (min-width: 992px) { .smm-faq__grid { grid-template-columns: 1fr 1.7fr; gap: 80px; } }
+
+  .smm-faq__list { display: grid; gap: 14px; }
+
+  .smm-faq__item {
+    background: #fff;
+    border: 1px solid var(--smm-line);
+    border-radius: 14px;
+    transition: border-color .25s ease, box-shadow .25s ease;
+  }
+
+  .smm-faq__item.is-open {
+    border-color: rgba(230, 179, 37, .6);
+    box-shadow: 0 20px 40px -28px rgba(0, 0, 0, .3);
+  }
+
+  .smm-faq__btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 22px 24px;
+    text-align: left;
+    background: none;
+    border: 0;
+    color: var(--smm-ink);
+  }
+
+  .smm-faq__q { display: flex; align-items: baseline; gap: 14px; }
+  .smm-faq__no { font-family: var(--smm-head); font-size: 14px; font-weight: 800; color: var(--smm-gold-deep); }
+  .smm-faq__title { font-family: var(--smm-head); font-size: 17px; font-weight: 800; line-height: 1.4; }
+
+  .smm-faq__icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: var(--smm-paper-dim);
+    color: var(--smm-ink);
+    transition: transform .3s ease, background .3s ease;
+    flex: none;
+  }
+
+  .smm-faq__icon svg { width: 16px; height: 16px; }
+  .smm-faq__item.is-open .smm-faq__icon { transform: rotate(45deg); background: var(--smm-gold); }
+
+  .smm-faq__panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .3s ease; }
+  .smm-faq__item.is-open .smm-faq__panel { grid-template-rows: 1fr; }
+  .smm-faq__panel > div { overflow: hidden; }
+
+  .smm-faq__panel p {
+    padding: 0 24px 24px 52px;
+    font-size: 15.5px;
+    color: var(--smm-muted);
+  }
+
+  /* ---------- Mobile tweaks ---------- */
+  @media (max-width: 640px) {
+    .smm-hero__actions .smm-btn { width: 100%; }
+    .smm-channel { padding: 18px 12px; gap: 10px; border-bottom: 1px solid rgba(250, 248, 243, .08); }
+    .smm-channel__icon { width: 36px; height: 36px; }
+    .smm-service, .smm-benefits, .smm-cta__card { padding: 28px 22px; }
+    .smm-pillars { padding: 6px 20px; }
+    .smm-faq__btn { padding: 18px; }
+    .smm-faq__panel p { padding: 0 18px 20px; }
+    .smm-divider { margin-block: 56px; }
+    .smm-card { padding: 22px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .smm-page * { transition: none !important; }
+  }
+</style>
+
+<div class="smm-page" id="top">
+  <main>
+
+    <!-- ================= HERO ================= -->
+    <section class="smm-hero">
+      <div class="smm-hero__bg" role="img" aria-label="Dubai skyline at dusk"></div>
+      <div class="smm-hero__shade"></div>
+
+      <div class="smm-wrap smm-hero__grid">
+        <div>
+          <p class="smm-hero__badge"><i></i> Social Media · Content · Meta Ads</p>
+
+          <h1 class="smm-hero__title">
+            Social Media Marketing
+            <span>Agency Dubai</span>
+          </h1>
+
+          <p class="smm-hero__lead">
+            Build a stronger digital presence, connect with the right audience, and turn social media engagement into
+            valuable business opportunities with Delemon Technology, a professional Social Media Marketing Agency Dubai
+            businesses can partner with for creative, strategic, and performance-focused marketing solutions.
+          </p>
+
+          <div class="smm-hero__actions">
+            <a href="#cta" class="smm-btn smm-btn--gold">Get Your Free Marketing Consultation <i data-lucide="arrow-right"></i></a>
+            <a href="#services" class="smm-btn smm-btn--ghost">Explore Our Services</a>
+          </div>
+
+          <ul class="smm-hero__trust">
+            <li><i data-lucide="circle-check"></i> Startups</li>
+            <li><i data-lucide="circle-check"></i> Real Estate</li>
+            <li><i data-lucide="circle-check"></i> Retail</li>
+            <li><i data-lucide="circle-check"></i> Corporate</li>
+          </ul>
+        </div>
+
+        <!-- Visual: sample social post -->
+        <div class="smm-visual" aria-hidden="true">
+          <div class="smm-card">
+            <div class="smm-post__head">
+              <div class="smm-post__who">
+                <span class="smm-post__avatar"><i data-lucide="sparkles"></i></span>
+                <div>
+                  <p class="smm-post__name">yourbrand.ae</p>
+                  <p class="smm-post__src">Dubai, UAE</p>
+                </div>
+              </div>
+              <span class="smm-post__pill">Sponsored</span>
+            </div>
+
+            <div class="smm-post__media">
+              <span class="smm-post__tag">Reel</span>
+              <span class="smm-post__play"><i data-lucide="play"></i></span>
+            </div>
+
+            <div class="smm-post__bar">
+              <i data-lucide="heart"></i>
+              <i data-lucide="message-circle"></i>
+              <i data-lucide="send"></i>
+              <i data-lucide="bookmark"></i>
+            </div>
+
+            <div class="smm-card__score"><span>Audience engagement</span><b>High</b></div>
+            <div class="smm-card__meter"><span></span></div>
+          </div>
+
+          <div class="smm-float smm-float--a"><i data-lucide="trending-up"></i> Reach growing</div>
+          <div class="smm-float smm-float--b"><i data-lucide="user-check"></i> New customer enquiry</div>
+        </div>
+      </div>
+
+      <!-- Platform strip -->
+      <div class="smm-channels">
+        <div class="smm-wrap smm-channels__grid">
+          <div class="smm-channel">
+            <span class="smm-channel__icon"><i data-lucide="camera"></i></span>
+            <span><b>Instagram</b><small>Reels &amp; visual storytelling</small></span>
+          </div>
+          <div class="smm-channel">
+            <span class="smm-channel__icon"><i data-lucide="thumbs-up"></i></span>
+            <span><b>Facebook</b><small>Engagement &amp; Meta Ads</small></span>
+          </div>
+          <div class="smm-channel">
+            <span class="smm-channel__icon"><i data-lucide="briefcase"></i></span>
+            <span><b>LinkedIn</b><small>B2B &amp; corporate branding</small></span>
+          </div>
+          <div class="smm-channel">
+            <span class="smm-channel__icon"><i data-lucide="circle-play"></i></span>
+            <span><b>TikTok &amp; YouTube</b><small>Short-form video</small></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= INTRO + SERVICES LIST ================= -->
+    <section class="smm-section" id="services">
+      <div class="smm-wrap">
+        <div class="smm-head-center">
+          <p class="smm-kicker">Social Media Marketing</p>
+          <h2 class="smm-h2">Take Your Brand Further with <em>Professional Social Media Marketing</em></h2>
+          <p class="smm-lead">Reach the right audience, strengthen your online presence, and create new business opportunities.</p>
+        </div>
+
+        <p class="smm-intro__statement" style="margin-top:56px;">
+          In Dubai's competitive business environment, social media is more than a communication platform. It is an
+          essential channel for <em>building brand awareness, attracting potential customers, establishing credibility,
+          and generating qualified enquiries.</em>
+        </p>
+        <p class="smm-intro__sub">
+          At Delemon Technology, we combine social media management, content creation, targeted advertising, and
+          data-driven marketing strategies to help businesses improve their online visibility and achieve meaningful
+          results. Whether you are a startup, established company, real estate agency, retail business, or corporate
+          organization, our solutions are developed around your brand, audience, and business objectives.
+        </p>
+
+        <div class="smm-divider"></div>
+
+        <div class="smm-matters">
+          <div class="smm-matters__text">
+            <p class="smm-kicker">What We Do</p>
+            <h2 class="smm-h2">Professional <em>Social Media Marketing Services in Dubai</em></h2>
+            <p class="smm-lead">
+              A successful social media presence requires much more than publishing attractive posts. It involves
+              understanding customer expectations, identifying the right platforms, developing engaging content, and
+              continuously improving campaign performance.
+            </p>
+            <p class="smm-lead">
+              As a social media marketing company in Dubai, Delemon Technology provides comprehensive solutions that
+              connect creative communication with strategic marketing.
+            </p>
+            <p class="smm-lead">
+              Every marketing activity is designed to support stronger customer relationships, improve visibility, and
+              contribute to sustainable business development.
+            </p>
+          </div>
+
+          <div class="smm-benefits">
+            <p class="smm-benefits__title">Our social media marketing services include:</p>
+            <ul class="smm-checks">
+              <li><span class="smm-tick"><i data-lucide="check"></i></span> Professional social media account management</li>
+              <li><span class="smm-tick"><i data-lucide="check"></i></span> Social media strategy development and planning</li>
+              <li><span class="smm-tick"><i data-lucide="check"></i></span> Instagram, Facebook, LinkedIn, and TikTok marketing</li>
+              <li><span class="smm-tick"><i data-lucide="check"></i></span> Creative content development and graphic design</li>
+              <li><span class="smm-tick"><i data-lucide="check"></i></span> Social media video production and Reels</li>
+              <li><span class="smm-tick"><i data-lucide="check"></i></span> Paid social media advertising campaigns</li>
+              <li><span class="smm-tick"><i data-lucide="check"></i></span> Social media lead generation and customer acquisition</li>
+              <li><span class="smm-tick"><i data-lucide="check"></i></span> Brand awareness and audience engagement campaigns</li>
+              <li><span class="smm-tick"><i data-lucide="check"></i></span> Performance monitoring and marketing analytics</li>
+              <li><span class="smm-tick"><i data-lucide="check"></i></span> Social media branding and reputation management</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= MANAGEMENT ================= -->
+    <section class="smm-section smm-services">
+      <div class="smm-wrap smm-matters" style="align-items:center;">
+        <div class="smm-matters__text">
+          <p class="smm-kicker">Management</p>
+          <h2 class="smm-h2">Social Media <em>Management Services</em></h2>
+          <p class="smm-lead">Maintaining an active and professional online presence is essential for businesses targeting customers in Dubai.</p>
+          <p class="smm-lead">Our social media management Dubai solutions focus on consistent communication, engaging content, and effective account administration.</p>
+          <p class="smm-lead">By maintaining consistent brand messaging across different platforms, we help businesses build recognition and communicate more effectively with potential customers.</p>
+        </div>
+
+        <div class="smm-benefits">
+          <p class="smm-benefits__title">We support businesses through:</p>
+          <ul class="smm-checks">
+            <li><span class="smm-tick"><i data-lucide="check"></i></span> Social media profile optimization</li>
+            <li><span class="smm-tick"><i data-lucide="check"></i></span> Content calendar development</li>
+            <li><span class="smm-tick"><i data-lucide="check"></i></span> Post scheduling</li>
+            <li><span class="smm-tick"><i data-lucide="check"></i></span> Community engagement</li>
+            <li><span class="smm-tick"><i data-lucide="check"></i></span> Ongoing performance monitoring</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTENT CREATION ================= -->
+    <section class="smm-section">
+      <div class="smm-wrap">
+        <div class="smm-head-center">
+          <p class="smm-kicker">Content</p>
+          <h2 class="smm-h2">Social Media Content Creation and <em>Video Production</em></h2>
+          <p class="smm-lead">
+            Creative content plays an important role in attracting attention and encouraging audience interaction.
+            Delemon Technology develops engaging social media content tailored to different platforms, audiences, and
+            marketing objectives.
+          </p>
+        </div>
+
+        <p class="smm-label">Our content creation solutions include</p>
+
+        <ul class="smm-opt">
+          <li><span class="smm-opt__icon"><i data-lucide="clapperboard"></i></span> Instagram Reels and short-form videos</li>
+          <li><span class="smm-opt__icon"><i data-lucide="palette"></i></span> Professional social media graphic designs</li>
+          <li><span class="smm-opt__icon"><i data-lucide="gallery-horizontal"></i></span> Facebook and Instagram carousel posts</li>
+          <li><span class="smm-opt__icon"><i data-lucide="megaphone"></i></span> Branded promotional content</li>
+          <li><span class="smm-opt__icon"><i data-lucide="video"></i></span> Product and service marketing videos</li>
+          <li><span class="smm-opt__icon"><i data-lucide="newspaper"></i></span> Informative social media posts</li>
+          <li><span class="smm-opt__icon"><i data-lucide="pen-line"></i></span> Creative captions and advertising copy</li>
+          <li><span class="smm-opt__icon"><i data-lucide="book-open"></i></span> Visual storytelling and brand communication</li>
+        </ul>
+
+        <p class="smm-note">We focus on creating meaningful content that reflects your business identity, communicates your services, and encourages potential customers to take action.</p>
+      </div>
+    </section>
+
+    <!-- ================= ADVERTISING ================= -->
+    <section class="smm-section smm-serve">
+      <div class="smm-wrap smm-matters" style="align-items:center;">
+        <div class="smm-matters__text">
+          <p class="smm-kicker">Paid Social</p>
+          <h2 class="smm-h2">Facebook and Instagram <em>Advertising</em></h2>
+          <p class="smm-lead">Paid advertising enables businesses to reach audiences beyond their existing followers.</p>
+          <p class="smm-lead">Our Facebook advertising agency Dubai and Instagram marketing solutions focus on developing targeted advertising campaigns through Meta Ads Manager.</p>
+          <p class="smm-lead">We help businesses create advertising strategies based on audience demographics, interests, geographical locations, and customer behavior.</p>
+          <p class="smm-lead">Whether your objective is brand awareness, website traffic, customer enquiries, or lead generation, we develop campaigns aligned with your marketing goals.</p>
+        </div>
+
+        <div class="smm-benefits">
+          <p class="smm-benefits__title">Our paid social approach incorporates:</p>
+          <ul class="smm-checks">
+            <li><span class="smm-tick"><i data-lucide="check"></i></span> Creative development</li>
+            <li><span class="smm-tick"><i data-lucide="check"></i></span> Campaign setup</li>
+            <li><span class="smm-tick"><i data-lucide="check"></i></span> Audience segmentation</li>
+            <li><span class="smm-tick"><i data-lucide="check"></i></span> Performance monitoring</li>
+            <li><span class="smm-tick"><i data-lucide="check"></i></span> Continuous optimization</li>
+          </ul>
+
+          <p class="smm-benefits__sub">Campaign objectives</p>
+          <ul class="smm-tools">
+            <li><i data-lucide="eye"></i> Brand awareness</li>
+            <li><i data-lucide="mouse-pointer-click"></i> Website traffic</li>
+            <li><i data-lucide="message-square"></i> Customer enquiries</li>
+            <li><i data-lucide="target"></i> Lead generation</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= STRATEGY ================= -->
+    <section class="smm-section smm-services">
+      <div class="smm-wrap">
+        <div class="smm-head-center">
+          <p class="smm-kicker">Strategy</p>
+          <h2 class="smm-h2">Social Media Marketing <em>Strategy and Planning</em></h2>
+          <p class="smm-lead">
+            An effective campaign begins with a clear understanding of the business and its target customers. We
+            develop customized strategies that support brand positioning, customer engagement, and long-term digital
+            growth.
+          </p>
+        </div>
+
+        <p class="smm-label">Our strategy focuses on</p>
+
+        <ul class="smm-opt">
+          <li><span class="smm-opt__icon"><i data-lucide="users"></i></span> Audience research</li>
+          <li><span class="smm-opt__icon"><i data-lucide="swords"></i></span> Competitor analysis</li>
+          <li><span class="smm-opt__icon"><i data-lucide="calendar-days"></i></span> Content planning</li>
+          <li><span class="smm-opt__icon"><i data-lucide="layout-grid"></i></span> Platform selection</li>
+          <li><span class="smm-opt__icon"><i data-lucide="flag"></i></span> Campaign objectives</li>
+        </ul>
+
+        <p class="smm-note">Rather than applying identical solutions to every business, we consider industry requirements, customer preferences, and marketing opportunities before developing a suitable strategy.</p>
+      </div>
+    </section>
+
+    <!-- ================= WHY CHOOSE ================= -->
+    <section class="smm-section">
+      <div class="smm-wrap">
+        <div class="smm-head-center">
+          <p class="smm-kicker">Why Delemon</p>
+          <h2 class="smm-h2">Why Choose <em>Delemon Technology</em> as Your Social Media Marketing Agency in Dubai?</h2>
+          <p class="smm-lead">
+            Selecting the right digital marketing partner can make a meaningful difference in how your business
+            communicates with potential customers. Delemon Technology brings together creative expertise, digital
+            marketing knowledge, and business-focused strategies to support brands across different industries.
+          </p>
+        </div>
+
+        <div class="smm-services__grid">
+          <article class="smm-service">
+            <div class="smm-service__top">
+              <span class="smm-service__icon"><i data-lucide="sliders-horizontal"></i></span>
+              <span class="smm-service__no">01</span>
+            </div>
+            <h3 class="smm-h3">Customized Social Media Marketing Strategies</h3>
+            <p>Every business has different audiences, competitors, services, and marketing priorities.</p>
+            <p>We develop personalized social media marketing solutions based on these requirements, helping businesses build a more relevant and recognizable online presence.</p>
+          </article>
+
+          <article class="smm-service">
+            <div class="smm-service__top">
+              <span class="smm-service__icon"><i data-lucide="palette"></i></span>
+              <span class="smm-service__no">02</span>
+            </div>
+            <h3 class="smm-h3">Creative Content and Brand Development</h3>
+            <p>Strong branding helps businesses communicate professionalism and establish trust.</p>
+            <p>Our creative approach combines visual identity, brand storytelling, social media graphic design, and engaging marketing content to create a consistent digital experience.</p>
+          </article>
+
+          <article class="smm-service">
+            <div class="smm-service__top">
+              <span class="smm-service__icon"><i data-lucide="target"></i></span>
+              <span class="smm-service__no">03</span>
+            </div>
+            <h3 class="smm-h3">Targeted Advertising and Lead Generation</h3>
+            <p>Our social media lead generation solutions focus on connecting businesses with audiences who are more likely to express interest in their products or services.</p>
+            <p>Through targeted Meta advertising, conversion-focused content, and structured campaign management, we help businesses generate relevant customer enquiries.</p>
+          </article>
+
+          <article class="smm-service">
+            <div class="smm-service__top">
+              <span class="smm-service__icon"><i data-lucide="bar-chart-3"></i></span>
+              <span class="smm-service__no">04</span>
+            </div>
+            <h3 class="smm-h3">Performance Tracking and Reporting</h3>
+            <p>Understanding campaign performance is essential for making informed marketing decisions.</p>
+            <p>We evaluate relevant indicators such as audience reach, engagement, impressions, website clicks, lead generation, and advertising conversions. These insights help identify opportunities to improve content effectiveness and advertising performance.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PLATFORMS ================= -->
+    <section class="smm-section smm-serve">
+      <div class="smm-wrap">
+        <div class="smm-head-center">
+          <p class="smm-kicker">Platforms</p>
+          <h2 class="smm-h2">Social Media Marketing <em>Across Major Platforms</em></h2>
+          <p class="smm-lead">Different social media platforms offer different opportunities for brand awareness, customer engagement, and business growth.</p>
+        </div>
+
+        <div class="smm-serve__grid smm-serve__grid--4">
+          <article class="smm-aud">
+            <span class="smm-aud__icon"><i data-lucide="camera"></i></span>
+            <p class="smm-aud__tag">Instagram</p>
+            <h3 class="smm-h3">Instagram Marketing Dubai</h3>
+            <p>Our Instagram marketing services focus on visual storytelling, creative Reels, engaging posts, Stories, and targeted advertising. We help businesses strengthen their Instagram presence while communicating with audiences through relevant content.</p>
+          </article>
+
+          <article class="smm-aud">
+            <span class="smm-aud__icon"><i data-lucide="thumbs-up"></i></span>
+            <p class="smm-aud__tag">Facebook</p>
+            <h3 class="smm-h3">Facebook Marketing Dubai</h3>
+            <p>Facebook remains a useful platform for business promotion, customer engagement, and targeted advertising. We develop Facebook marketing campaigns that support brand visibility, website traffic, and customer enquiries.</p>
+          </article>
+
+          <article class="smm-aud">
+            <span class="smm-aud__icon"><i data-lucide="briefcase"></i></span>
+            <p class="smm-aud__tag">LinkedIn</p>
+            <h3 class="smm-h3">LinkedIn Marketing Dubai</h3>
+            <p>For corporate organizations and B2B businesses, LinkedIn provides opportunities to connect with professional audiences and decision-makers.</p>
+            <p>Our LinkedIn marketing strategies focus on corporate branding, thought leadership, company page optimization, and professional lead generation.</p>
+          </article>
+
+          <article class="smm-aud">
+            <span class="smm-aud__icon"><i data-lucide="circle-play"></i></span>
+            <p class="smm-aud__tag">Video Platforms</p>
+            <h3 class="smm-h3">TikTok and YouTube Marketing</h3>
+            <p>Video-focused platforms create opportunities for businesses to communicate through engaging, informative, and entertaining content.</p>
+            <p>We develop platform-appropriate video marketing strategies, including short-form content, YouTube Shorts, branded videos, and audience engagement campaigns.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= INDUSTRIES ================= -->
+    <section class="smm-section smm-services">
+      <div class="smm-wrap">
+        <div class="smm-head-center">
+          <p class="smm-kicker">Industries</p>
+          <h2 class="smm-h2">Social Media Marketing Services for <em>Different Industries in Dubai</em></h2>
+          <p class="smm-lead">
+            Businesses across Dubai require marketing strategies that reflect their industry, customer expectations, and
+            competitive environment. As a digital marketing agency in Dubai, Delemon Technology supports
+            industry-specific social media marketing requirements.
+          </p>
+        </div>
+
+        <div class="smm-services__grid smm-services__grid--3">
+          <article class="smm-service">
+            <div class="smm-service__top">
+              <span class="smm-service__icon"><i data-lucide="building-2"></i></span>
+              <span class="smm-service__no">01</span>
+            </div>
+            <h3 class="smm-h3">Real Estate Social Media Marketing Dubai</h3>
+            <p>Real estate businesses rely on professional presentation, audience targeting, and consistent brand visibility.</p>
+            <p>Our real estate social media marketing solutions can include property promotion, project awareness campaigns, listing videos, Instagram Reels, and targeted lead generation advertising.</p>
+          </article>
+
+          <article class="smm-service">
+            <div class="smm-service__top">
+              <span class="smm-service__icon"><i data-lucide="shopping-bag"></i></span>
+              <span class="smm-service__no">02</span>
+            </div>
+            <h3 class="smm-h3">E-commerce and Retail Social Media Marketing</h3>
+            <p>E-commerce businesses benefit from engaging product content, targeted advertising, and strong customer communication.</p>
+            <p>We develop social media campaigns that highlight products, improve brand visibility, support website visits, and encourage potential customers to explore online stores.</p>
+          </article>
+
+          <article class="smm-service">
+            <div class="smm-service__top">
+              <span class="smm-service__icon"><i data-lucide="hotel"></i></span>
+              <span class="smm-service__no">03</span>
+            </div>
+            <h3 class="smm-h3">Healthcare, Hospitality, and Corporate Marketing</h3>
+            <p>Healthcare providers, hospitality businesses, and corporate organizations require distinct communication strategies.</p>
+            <p>Our social media content and marketing approaches are tailored to communicate professional expertise, promote services, improve audience engagement, and strengthen brand recognition.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= BENEFITS ================= -->
+    <section class="smm-section">
+      <div class="smm-wrap smm-why__grid">
+        <div>
+          <p class="smm-kicker">Benefits</p>
+          <h2 class="smm-h2">How Social Media Marketing Helps <em>Businesses Grow in Dubai</em></h2>
+          <p class="smm-lead">
+            Professional social media marketing creates opportunities for businesses to reach new audiences and improve
+            customer relationships.
+          </p>
+          <p class="smm-why__quote">
+            By combining organic social media marketing with targeted advertising, businesses can create a more
+            comprehensive digital marketing strategy.
+          </p>
+        </div>
+
+        <div class="smm-pillars">
+          <p class="smm-pillars__label">Some important benefits include</p>
+          <ul>
+            <li>
+              <span class="smm-pillars__icon"><i data-lucide="eye"></i></span>
+              <span><b>Improved brand awareness</b><small>Increase visibility among relevant audiences.</small></span>
+            </li>
+            <li>
+              <span class="smm-pillars__icon"><i data-lucide="messages-square"></i></span>
+              <span><b>Better customer engagement</b><small>Encourage conversations and meaningful interactions.</small></span>
+            </li>
+            <li>
+              <span class="smm-pillars__icon"><i data-lucide="crosshair"></i></span>
+              <span><b>Targeted customer reach</b><small>Connect with audiences based on location, demographics, and interests.</small></span>
+            </li>
+            <li>
+              <span class="smm-pillars__icon"><i data-lucide="badge-check"></i></span>
+              <span><b>Consistent brand identity</b><small>Maintain professional communication across platforms.</small></span>
+            </li>
+            <li>
+              <span class="smm-pillars__icon"><i data-lucide="user-check"></i></span>
+              <span><b>Lead generation opportunities</b><small>Encourage potential customers to submit enquiries.</small></span>
+            </li>
+            <li>
+              <span class="smm-pillars__icon"><i data-lucide="bar-chart-3"></i></span>
+              <span><b>Measurable marketing performance</b><small>Evaluate campaign effectiveness through analytics.</small></span>
+            </li>
+            <li>
+              <span class="smm-pillars__icon"><i data-lucide="trending-up"></i></span>
+              <span><b>Long-term brand development</b><small>Build credibility through consistent and useful content.</small></span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PROCESS ================= -->
+    <section class="smm-section smm-services">
+      <div class="smm-wrap">
+        <div class="smm-head-center">
+          <p class="smm-kicker">Our Process</p>
+          <h2 class="smm-h2">Our Social Media <em>Marketing Process</em></h2>
+          <p class="smm-lead">At Delemon Technology, we follow a structured approach to developing and managing social media marketing campaigns.</p>
+        </div>
+
+        <ol class="smm-steps">
+          <li class="smm-step">
+            <span class="smm-step__num">01</span>
+            <div class="smm-step__body">
+              <h3 class="smm-h3">Business and Audience Analysis</h3>
+              <p>We begin by understanding your business objectives, target audience, industry requirements, and existing digital presence.</p>
+            </div>
+          </li>
+          <li class="smm-step">
+            <span class="smm-step__num">02</span>
+            <div class="smm-step__body">
+              <h3 class="smm-h3">Strategy and Content Planning</h3>
+              <p>Our team develops a marketing strategy covering content themes, platform selection, campaign objectives, publishing schedules, and brand messaging.</p>
+            </div>
+          </li>
+          <li class="smm-step">
+            <span class="smm-step__num">03</span>
+            <div class="smm-step__body">
+              <h3 class="smm-h3">Creative Development and Campaign Execution</h3>
+              <p>We prepare social media content, graphics, videos, captions, and advertising materials based on the approved strategy. Campaigns are then launched across suitable social media platforms.</p>
+            </div>
+          </li>
+          <li class="smm-step">
+            <span class="smm-step__num">04</span>
+            <div class="smm-step__body">
+              <h3 class="smm-h3">Performance Monitoring and Optimization</h3>
+              <p>We monitor relevant campaign metrics, evaluate audience responses, and identify opportunities to improve content and advertising effectiveness.</p>
+            </div>
+          </li>
+        </ol>
+
+        <p class="smm-note">This structured process helps align social media activities with broader business goals.</p>
+      </div>
+    </section>
+
+    <!-- ================= CTA ================= -->
+    <section class="smm-section smm-cta" id="cta">
+      <div class="smm-wrap smm-cta__grid">
+        <div>
+          <p class="smm-kicker">Ready to Grow Your Business?</p>
+          <h2 class="smm-h2">Transform Your Social Media Presence into <em>Business Opportunities</em></h2>
+          <p class="smm-cta__text">
+            Connect with Delemon Technology for customized social media marketing strategies, engaging creative content,
+            targeted advertising, and professional campaign management.
+          </p>
+          <p class="smm-cta__text">
+            Whether you want to improve your social media presence, develop engaging marketing content, launch Meta
+            advertising campaigns, or generate more qualified enquiries, our team can help you develop a strategy suited
+            to your business objectives.
+          </p>
+          <p class="smm-cta__text">
+            Partner with Delemon Technology to strengthen your digital presence and move towards your marketing goals.
+          </p>
+          <ul class="smm-cta__tags" aria-label="Services">
+            <li>Social Media Management</li>
+            <li>Content Creation</li>
+            <li>Reels &amp; Video</li>
+            <li>Meta Ads</li>
+            <li>LinkedIn Marketing</li>
+            <li>Analytics</li>
+          </ul>
+        </div>
+
+        <div class="smm-cta__card">
+          <h3 class="smm-cta__card-title">Build a Stronger Digital Presence with Delemon Technology</h3>
+          <p class="smm-cta__card-sub">As a professional Social Media Marketing Agency Dubai, we help businesses establish meaningful connections with their audiences while supporting brand awareness and customer acquisition.</p>
+
+          <ul class="smm-cta__list">
+            <li><i data-lucide="circle-check"></i> Creative content and professional account management</li>
+            <li><i data-lucide="circle-check"></i> Targeted advertising and consistent brand messaging</li>
+            <li><i data-lucide="circle-check"></i> Measurable performance analysis</li>
+          </ul>
+
+          <div class="smm-cta__actions">
+            <a href="{% url 'contact' %}" class="smm-btn smm-btn--dark">Get Your Free Marketing Consultation <i data-lucide="arrow-right"></i></a>
+            <a href="https://wa.me/971503482299" class="smm-btn smm-btn--outline" target="_blank" rel="noopener">
+              <i data-lucide="message-circle"></i> Chat On WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FAQ ================= -->
+    <section class="smm-section" id="faq">
+      <div class="smm-wrap smm-faq__grid">
+        <div>
+          <p class="smm-kicker">FAQ</p>
+          <h2 class="smm-h2">Frequently Asked <em>Questions</em></h2>
+          <p class="smm-lead">Everything you need to know about social media marketing in Dubai.</p>
+        </div>
+
+        <div class="smm-faq__list" id="smmFaq">
+          <div class="smm-faq__item is-open">
+            <button class="smm-faq__btn" aria-expanded="true" aria-controls="smm-faq-0">
+              <span class="smm-faq__q"><span class="smm-faq__no">01</span><span class="smm-faq__title">What does a social media marketing agency in Dubai do?</span></span>
+              <span class="smm-faq__icon"><i data-lucide="plus"></i></span>
+            </button>
+            <div class="smm-faq__panel" id="smm-faq-0" role="region">
+              <div><p>A social media marketing agency manages business social media accounts, creates engaging content, runs paid advertisements, improves brand visibility, and supports customer engagement and lead generation.</p></div>
+            </div>
+          </div>
+
+          <div class="smm-faq__item">
+            <button class="smm-faq__btn" aria-expanded="false" aria-controls="smm-faq-1">
+              <span class="smm-faq__q"><span class="smm-faq__no">02</span><span class="smm-faq__title">Why should I hire a social media marketing agency in Dubai?</span></span>
+              <span class="smm-faq__icon"><i data-lucide="plus"></i></span>
+            </button>
+            <div class="smm-faq__panel" id="smm-faq-1" role="region">
+              <div><p>A professional agency provides marketing expertise, creative content, strategic campaign management, and performance analysis to help businesses reach relevant audiences and improve their digital presence.</p></div>
+            </div>
+          </div>
+
+          <div class="smm-faq__item">
+            <button class="smm-faq__btn" aria-expanded="false" aria-controls="smm-faq-2">
+              <span class="smm-faq__q"><span class="smm-faq__no">03</span><span class="smm-faq__title">Which social media platforms are best for businesses in Dubai?</span></span>
+              <span class="smm-faq__icon"><i data-lucide="plus"></i></span>
+            </button>
+            <div class="smm-faq__panel" id="smm-faq-2" role="region">
+              <div><p>Instagram, Facebook, LinkedIn, TikTok, and YouTube are popular options. The ideal platforms depend on your industry, target audience, and business objectives.</p></div>
+            </div>
+          </div>
+
+          <div class="smm-faq__item">
+            <button class="smm-faq__btn" aria-expanded="false" aria-controls="smm-faq-3">
+              <span class="smm-faq__q"><span class="smm-faq__no">04</span><span class="smm-faq__title">Can social media marketing generate leads for my business?</span></span>
+              <span class="smm-faq__icon"><i data-lucide="plus"></i></span>
+            </button>
+            <div class="smm-faq__panel" id="smm-faq-3" role="region">
+              <div><p>Yes. Targeted social media advertising, engaging content, and conversion-focused campaigns can help attract potential customers and generate qualified enquiries.</p></div>
+            </div>
+          </div>
+
+          <div class="smm-faq__item">
+            <button class="smm-faq__btn" aria-expanded="false" aria-controls="smm-faq-4">
+              <span class="smm-faq__q"><span class="smm-faq__no">05</span><span class="smm-faq__title">Does Delemon Technology provide social media advertising services?</span></span>
+              <span class="smm-faq__icon"><i data-lucide="plus"></i></span>
+            </button>
+            <div class="smm-faq__panel" id="smm-faq-4" role="region">
+              <div><p>Yes. Delemon Technology offers social media advertising and marketing solutions, including Facebook, Instagram, LinkedIn, and other platform-specific campaigns.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- Icons (Lucide) -->
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+  (function () {
+    const faqBox = document.getElementById("smmFaq");
+    faqBox.addEventListener("click", e => {
+      const btn = e.target.closest(".smm-faq__btn");
+      if (!btn) return;
+      const item = btn.parentElement;
+      const willOpen = !item.classList.contains("is-open");
+      faqBox.querySelectorAll(".smm-faq__item").forEach(el => {
+        el.classList.remove("is-open");
+        el.querySelector(".smm-faq__btn").setAttribute("aria-expanded", "false");
+      });
+      if (willOpen) {
+        item.classList.add("is-open");
+        btn.setAttribute("aria-expanded", "true");
+      }
+    });
+  })();
+
+  if (window.lucide) lucide.createIcons();
+</script>
+
+{% endblock %}

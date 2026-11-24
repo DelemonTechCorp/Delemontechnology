@@ -66,10 +66,16 @@ def real_estate_lead_agency(request):
 
 def google_ads_agency_real_estate(request):
     return render(request, 'main/google_ads_agency_real_estate.html')
+
+def ecommerce_website_development_dubai(request):
+    return render(request, 'main/ecommerce-website-development-dubai.html')
+
+def social_media_marketing_agency_dubai(request):
+    return render(request, 'main/social-media-marketing-agency-dubai.html')
 # def team(request):
 #     team_members = TeamModel.objects.all()
-
 #     return render(request, 'main/team.html', {'team_members': team_members})
+
 def iphone(request):
     return render(request, 'main/iphone.html')
 def android(request):

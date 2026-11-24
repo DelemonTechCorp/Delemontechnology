@@ -1,0 +1,1648 @@
+{% extends "base.html" %}
+{% block title %}E-commerce Website Development Dubai | Delemon{% endblock %}
+{% load static %}
+{% block content %}
+
+<head>
+<meta name="keywords" content="E-commerce Website Development Dubai
+,E-commerce Website Development Company in Dubai
+,Custom E-commerce Website Development Dubai
+,E-commerce Website Design Dubai
+,Shopify Website Development Dubai
+,WooCommerce Development Dubai
+,Magento Development Dubai
+,E-commerce Payment Gateway Integration Dubai
+,SEO-Friendly E-commerce Website Development
+,AI-Powered E-commerce Solutions">
+<meta content="Get professional e-commerce website development in Dubai with Delemon Technology. Custom online stores, responsive design, secure payments and SEO solutions." name="description"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "What is e-commerce website development?",
+     "acceptedAnswer": {"@type": "Answer", "text": "E-commerce website development is the process of building an online shopping platform where businesses can display products, accept payments, manage orders, and provide digital purchasing experiences."}},
+    {"@type": "Question", "name": "Which platform is best for e-commerce website development in Dubai?",
+     "acceptedAnswer": {"@type": "Answer", "text": "Shopify, WooCommerce, Magento Open Source, and Adobe Commerce are popular choices. The ideal platform depends on business requirements, product volume, customisation needs, and integration complexity."}},
+    {"@type": "Question", "name": "Can Delemon Technology develop mobile-friendly e-commerce websites?",
+     "acceptedAnswer": {"@type": "Answer", "text": "Delemon Technology's e-commerce development approach focuses on responsive design to create shopping experiences suitable for smartphones, tablets, and desktop devices."}},
+    {"@type": "Question", "name": "Can an e-commerce website integrate UAE payment gateways?",
+     "acceptedAnswer": {"@type": "Answer", "text": "Yes. E-commerce websites can integrate compatible UAE payment gateways, subject to provider eligibility and technical requirements, to support secure online transactions."}},
+    {"@type": "Question", "name": "Why is SEO important for an e-commerce website?",
+     "acceptedAnswer": {"@type": "Answer", "text": "SEO helps search engines discover and understand online store pages. Technical optimisation, relevant product information, and mobile-friendly performance can support organic visibility and attract potential customers."}}
+  ]
+}
+</script>
+</head>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  /* =========================================================
+     DELEMON TECHNOLOGY – E-COMMERCE WEBSITE DEVELOPMENT DUBAI
+     All classes use the unique prefix  eco-  (scoped to .eco-page)
+     ========================================================= */
+
+  :root {
+    --eco-ink: #0b0b0b;
+    --eco-ink-2: #141210;
+    --eco-gold: #e6b325;
+    --eco-gold-deep: #b8880b;
+    --eco-paper: #faf8f3;
+    --eco-paper-dim: #f1eee5;
+    --eco-line: #e2ddcf;
+    --eco-text: #1a1a1a;
+    --eco-muted: #5e5b52;
+    --eco-head: "Lato", sans-serif;
+    --eco-body: "DM Sans", system-ui, sans-serif;
+  }
+
+  /* ---------- Base (scoped; resets base.html leakage) ---------- */
+  .eco-page,
+  .eco-page *,
+  .eco-page *::before,
+  .eco-page *::after { box-sizing: border-box; }
+
+  .eco-page {
+    background: var(--eco-paper);
+    color: var(--eco-text);
+    font-family: var(--eco-body);
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  .eco-page :where(h1, h2, h3, p, ul, ol, li) { margin: 0; padding: 0; }
+  .eco-page :where(ul, ol) { list-style: none; }
+  .eco-page a { text-decoration: none; }
+  .eco-page img { max-width: 100%; display: block; }
+  .eco-page button { font: inherit; cursor: pointer; }
+  .eco-page :focus-visible { outline: 3px solid var(--eco-gold); outline-offset: 3px; }
+  .eco-page svg { flex: none; }
+
+  .eco-wrap {
+    width: 100%;
+    max-width: 1240px;
+    margin-inline: auto;
+    padding-inline: 20px;
+  }
+
+  @media (min-width: 1024px) { .eco-wrap { padding-inline: 32px; } }
+
+  .eco-section { padding-block: 72px; }
+  @media (min-width: 768px) { .eco-section { padding-block: 104px; } }
+
+  /* ---------- Type ---------- */
+  .eco-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--eco-head);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--eco-gold-deep);
+  }
+
+  .eco-kicker::before {
+    content: "";
+    width: 28px;
+    height: 2px;
+    background: currentColor;
+  }
+
+  .eco-h2 {
+    margin-top: 14px;
+    font-family: var(--eco-head);
+    font-size: clamp(28px, 3.2vw, 40px);
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+    color: var(--eco-ink);
+  }
+
+  .eco-h2 em { font-style: normal; color: var(--eco-gold-deep); }
+
+  .eco-lead {
+    margin-top: 18px;
+    font-size: 17px;
+    color: var(--eco-muted);
+  }
+
+  .eco-head-center {
+    max-width: 780px;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .eco-h3 {
+    font-family: var(--eco-head);
+    font-size: 19px;
+    font-weight: 800;
+    line-height: 1.35;
+    color: var(--eco-ink);
+  }
+
+  /* ---------- Buttons ---------- */
+  .eco-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px 26px;
+    border-radius: 8px;
+    font-family: var(--eco-head);
+    font-size: 15px;
+    font-weight: 800;
+    border: 1.5px solid transparent;
+    transition: transform .2s ease, background .2s ease, color .2s ease, border-color .2s ease;
+  }
+
+  .eco-btn svg { width: 18px; height: 18px; }
+  .eco-btn:hover { transform: translateY(-2px); }
+
+  .eco-btn--gold { background: var(--eco-gold); color: var(--eco-ink) !important; box-shadow: 0 12px 32px -12px rgba(230, 179, 37, .8); }
+  .eco-btn--ghost { border-color: rgba(250, 248, 243, .35); color: var(--eco-paper) !important; }
+  .eco-btn--ghost:hover { border-color: var(--eco-gold); color: var(--eco-gold) !important; }
+  .eco-btn--dark { background: var(--eco-ink); color: var(--eco-gold) !important; }
+  .eco-btn--outline { border-color: var(--eco-ink); color: var(--eco-ink) !important; }
+  .eco-btn--outline:hover { background: var(--eco-ink); color: var(--eco-gold) !important; }
+
+  /* Closing note strip */
+  .eco-note {
+    margin: 48px auto 0;
+    max-width: 760px;
+    padding: 20px 28px;
+    border-radius: 14px;
+    background: var(--eco-paper-dim);
+    border-left: 4px solid var(--eco-gold);
+    text-align: center;
+    font-family: var(--eco-head);
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--eco-ink);
+  }
+
+  .eco-note--dark {
+    background: rgba(230, 179, 37, .08);
+    color: var(--eco-paper);
+  }
+
+  .eco-sub {
+    max-width: 760px;
+    margin: 56px auto 0;
+    text-align: center;
+  }
+
+  .eco-sub p { margin-top: 10px; font-size: 16.5px; color: var(--eco-muted); }
+
+  .eco-label {
+    margin-top: 40px;
+    text-align: center;
+    font-family: var(--eco-head);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--eco-muted);
+  }
+
+  /* =========================================================
+     1. HERO
+     ========================================================= */
+  .eco-hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background: var(--eco-ink);
+    color: var(--eco-paper);
+  }
+
+  .eco-hero__bg {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background: url("{% static 'img/marketing-hero.jpg' %}") center / cover no-repeat;
+    opacity: .45;
+  }
+
+  .eco-hero__shade {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+      radial-gradient(800px 500px at 85% 30%, rgba(230, 179, 37, .16), transparent 65%),
+      linear-gradient(90deg, rgba(11, 11, 11, .96) 0%, rgba(11, 11, 11, .85) 50%, rgba(11, 11, 11, .6) 100%);
+  }
+
+  .eco-hero__grid {
+    display: grid;
+    gap: 56px;
+    align-items: center;
+    padding-block: 72px 64px;
+  }
+
+  @media (min-width: 992px) {
+    .eco-hero__grid {
+      grid-template-columns: 1.15fr .85fr;
+      gap: 72px;
+      padding-block: 110px 96px;
+    }
+  }
+
+  .eco-hero__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 16px;
+    border: 1px solid rgba(230, 179, 37, .45);
+    border-radius: 999px;
+    background: rgba(230, 179, 37, .08);
+    font-family: var(--eco-head);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--eco-gold);
+  }
+
+  .eco-hero__badge i {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--eco-gold);
+    box-shadow: 0 0 0 4px rgba(230, 179, 37, .2);
+  }
+
+  .eco-hero__title {
+    margin-top: 26px;
+    font-family: var(--eco-head);
+    font-size: clamp(34px, 4.4vw, 56px);
+    font-weight: 900;
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+    color: var(--eco-paper);
+  }
+
+  .eco-hero__title span {
+    display: block;
+    margin-top: 10px;
+    color: var(--eco-gold);
+  }
+
+  .eco-hero__lead {
+    margin-top: 24px;
+    max-width: 620px;
+    font-size: clamp(16px, 1.4vw, 18px);
+    line-height: 1.7;
+    color: rgba(250, 248, 243, .78);
+  }
+
+  .eco-hero__actions {
+    margin-top: 36px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .eco-hero__trust {
+    margin-top: 36px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 22px;
+  }
+
+  .eco-hero__trust li {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(250, 248, 243, .82);
+  }
+
+  .eco-hero__trust svg { width: 17px; height: 17px; color: var(--eco-gold); }
+
+  /* Store mock visual */
+  .eco-visual {
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+    margin-inline: auto;
+    padding: 0 16px 16px 0;
+  }
+
+  .eco-visual::before {
+    content: "";
+    position: absolute;
+    inset: 16px 0 0 16px;
+    border: 2px solid var(--eco-gold);
+    border-radius: 20px;
+  }
+
+  .eco-card {
+    position: relative;
+    background: #fff;
+    color: var(--eco-ink);
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 40px 80px -30px rgba(0, 0, 0, .85);
+  }
+
+  .eco-store__bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .eco-store__logo { display: flex; align-items: center; gap: 12px; }
+
+  .eco-store__avatar {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: var(--eco-ink);
+    color: var(--eco-gold);
+  }
+
+  .eco-store__avatar svg { width: 22px; height: 22px; }
+  .eco-store__name { font-family: var(--eco-head); font-size: 17px; font-weight: 800; line-height: 1.2; }
+  .eco-store__sub { font-size: 13px; color: var(--eco-muted); }
+
+  .eco-store__cart {
+    position: relative;
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    background: var(--eco-paper-dim);
+    color: var(--eco-ink);
+  }
+
+  .eco-store__cart svg { width: 19px; height: 19px; }
+
+  .eco-store__cart b {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    min-width: 20px;
+    height: 20px;
+    padding: 0 5px;
+    border-radius: 999px;
+    display: grid;
+    place-items: center;
+    background: var(--eco-gold);
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--eco-ink);
+  }
+
+  .eco-prods { margin-top: 20px; display: grid; gap: 10px; }
+
+  .eco-prod {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px;
+    border: 1px solid var(--eco-line);
+    border-radius: 14px;
+    background: var(--eco-paper);
+  }
+
+  .eco-prod__thumb {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, var(--eco-ink), #2a2418);
+    color: var(--eco-gold);
+  }
+
+  .eco-prod__thumb svg { width: 22px; height: 22px; }
+  .eco-prod b { display: block; font-family: var(--eco-head); font-size: 14.5px; font-weight: 800; line-height: 1.3; }
+  .eco-prod small { font-size: 12.5px; color: var(--eco-muted); }
+  .eco-prod__price { margin-left: auto; font-family: var(--eco-head); font-size: 14.5px; font-weight: 800; white-space: nowrap; }
+
+  .eco-sum {
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid var(--eco-line);
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: var(--eco-muted);
+  }
+
+  .eco-sum b { font-family: var(--eco-head); font-size: 17px; font-weight: 900; color: var(--eco-ink); }
+
+  .eco-pay {
+    margin-top: 14px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px;
+    border-radius: 10px;
+    background: var(--eco-ink);
+    color: var(--eco-gold);
+    font-family: var(--eco-head);
+    font-size: 14.5px;
+    font-weight: 800;
+  }
+
+  .eco-pay svg { width: 17px; height: 17px; }
+
+  .eco-float {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    border-radius: 12px;
+    background: var(--eco-ink);
+    border: 1px solid rgba(230, 179, 37, .4);
+    box-shadow: 0 20px 40px -16px rgba(0, 0, 0, .7);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--eco-paper);
+    white-space: nowrap;
+  }
+
+  .eco-float svg { width: 18px; height: 18px; color: var(--eco-gold); }
+  .eco-float--a { top: -18px; right: -6px; }
+  .eco-float--b { bottom: -6px; left: -18px; }
+
+  @media (max-width: 520px) {
+    .eco-float--a { right: 8px; }
+    .eco-float--b { left: 0; }
+  }
+
+  /* Platform strip under hero */
+  .eco-channels {
+    border-top: 1px solid rgba(250, 248, 243, .1);
+    background: rgba(11, 11, 11, .6);
+  }
+
+  .eco-channels__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 900px) { .eco-channels__grid { grid-template-columns: repeat(4, 1fr); } }
+
+  .eco-channel {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 24px 18px;
+    border-right: 1px solid rgba(250, 248, 243, .08);
+  }
+
+  .eco-channel:last-child { border-right: 0; }
+
+  .eco-channel__icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    background: rgba(230, 179, 37, .12);
+    color: var(--eco-gold);
+  }
+
+  .eco-channel__icon svg { width: 20px; height: 20px; }
+  .eco-channel b { display: block; font-family: var(--eco-head); font-size: 15px; font-weight: 800; color: var(--eco-paper); line-height: 1.3; }
+  .eco-channel small { font-size: 12.5px; color: rgba(250, 248, 243, .55); }
+
+  /* =========================================================
+     2. INTRO + SOLUTIONS
+     ========================================================= */
+  .eco-intro__statement {
+    max-width: 920px;
+    margin-inline: auto;
+    text-align: center;
+    font-family: var(--eco-head);
+    font-size: clamp(20px, 2.1vw, 26px);
+    font-weight: 700;
+    line-height: 1.55;
+    color: var(--eco-ink);
+  }
+
+  .eco-intro__statement em { font-style: normal; color: var(--eco-gold-deep); }
+
+  .eco-intro__sub {
+    max-width: 760px;
+    margin: 20px auto 0;
+    text-align: center;
+    font-size: 17px;
+    color: var(--eco-muted);
+  }
+
+  .eco-divider {
+    height: 1px;
+    background: var(--eco-line);
+    margin-block: 72px;
+  }
+
+  .eco-matters {
+    display: grid;
+    gap: 48px;
+    align-items: start;
+  }
+
+  @media (min-width: 992px) { .eco-matters { grid-template-columns: 1fr 1fr; gap: 72px; } }
+
+  .eco-benefits {
+    background: var(--eco-ink);
+    border-radius: 20px;
+    padding: 36px 32px;
+    color: var(--eco-paper);
+    box-shadow: 0 30px 60px -30px rgba(0, 0, 0, .5);
+  }
+
+  .eco-benefits__title {
+    font-family: var(--eco-head);
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--eco-gold);
+  }
+
+  .eco-benefits__sub {
+    margin-top: 28px;
+    font-family: var(--eco-head);
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: rgba(250, 248, 243, .6);
+  }
+
+  .eco-checks { margin-top: 20px; display: grid; gap: 4px; }
+
+  .eco-checks li {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(250, 248, 243, .08);
+    font-size: 15.5px;
+    color: rgba(250, 248, 243, .85);
+  }
+
+  .eco-checks li:last-child { border-bottom: 0; }
+
+  .eco-tick {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: var(--eco-gold);
+    color: var(--eco-ink);
+    margin-top: 1px;
+  }
+
+  .eco-tick svg { width: 14px; height: 14px; }
+
+  .eco-tools { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 8px; }
+
+  .eco-tools li {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(250, 248, 243, .06);
+    border: 1px solid rgba(250, 248, 243, .14);
+    font-size: 13.5px;
+    font-weight: 600;
+    color: rgba(250, 248, 243, .9);
+  }
+
+  .eco-tools svg { width: 15px; height: 15px; color: var(--eco-gold); }
+
+  /* =========================================================
+     3. CARDS (custom dev / platforms)
+     ========================================================= */
+  .eco-services { background: var(--eco-paper-dim); }
+
+  .eco-services__grid {
+    margin-top: 56px;
+    display: grid;
+    gap: 24px;
+  }
+
+  @media (min-width: 768px) { .eco-services__grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1000px) { .eco-services__grid--3 { grid-template-columns: repeat(3, 1fr); } }
+
+  .eco-service {
+    position: relative;
+    background: #fff;
+    border: 1px solid var(--eco-line);
+    border-radius: 18px;
+    padding: 36px 32px;
+    overflow: hidden;
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  }
+
+  .eco-service::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 4px;
+    background: var(--eco-gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .3s ease;
+  }
+
+  .eco-service:hover {
+    transform: translateY(-4px);
+    border-color: rgba(230, 179, 37, .5);
+    box-shadow: 0 30px 60px -30px rgba(0, 0, 0, .25);
+  }
+
+  .eco-service:hover::before { transform: scaleX(1); }
+
+  .eco-service__top { display: flex; align-items: center; justify-content: space-between; }
+
+  .eco-service__icon {
+    width: 54px;
+    height: 54px;
+    border-radius: 14px;
+    display: grid;
+    place-items: center;
+    background: var(--eco-ink);
+    color: var(--eco-gold);
+  }
+
+  .eco-service__icon svg { width: 24px; height: 24px; }
+
+  .eco-service__no {
+    font-family: var(--eco-head);
+    font-size: 40px;
+    font-weight: 900;
+    line-height: 1;
+    color: var(--eco-paper-dim);
+  }
+
+  .eco-service .eco-h3 { margin-top: 24px; }
+
+  .eco-service p {
+    margin-top: 12px;
+    font-size: 15px;
+    color: var(--eco-muted);
+  }
+
+  /* Feature tiles */
+  .eco-opt {
+    margin-top: 28px;
+    display: grid;
+    gap: 16px;
+  }
+
+  @media (min-width: 640px) { .eco-opt { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1000px) { .eco-opt { grid-template-columns: repeat(3, 1fr); } }
+
+  .eco-opt--2 { max-width: 980px; margin-inline: auto; }
+  @media (min-width: 1000px) { .eco-opt--2 { grid-template-columns: repeat(2, 1fr); } }
+
+  .eco-opt li {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 22px;
+    background: #fff;
+    border: 1px solid var(--eco-line);
+    border-radius: 16px;
+    font-family: var(--eco-head);
+    font-size: 16.5px;
+    font-weight: 800;
+    color: var(--eco-ink);
+    transition: border-color .25s ease, transform .25s ease;
+  }
+
+  .eco-opt li:hover { border-color: rgba(230, 179, 37, .6); transform: translateY(-3px); }
+
+  .eco-opt__icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    background: var(--eco-ink);
+    color: var(--eco-gold);
+  }
+
+  .eco-opt__icon svg { width: 20px; height: 20px; }
+
+  /* =========================================================
+     4. DARK SECTIONS (design, advanced)
+     ========================================================= */
+  .eco-serve {
+    background-color: var(--eco-ink);
+    background-image:
+      linear-gradient(rgba(250, 248, 243, .03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(250, 248, 243, .03) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .eco-serve .eco-kicker { color: var(--eco-gold); }
+  .eco-serve .eco-h2 { color: var(--eco-paper); }
+  .eco-serve .eco-h2 em { color: var(--eco-gold); }
+  .eco-serve .eco-lead { color: rgba(250, 248, 243, .65); }
+  .eco-serve .eco-benefits { background: var(--eco-ink-2); border: 1px solid rgba(250, 248, 243, .1); }
+
+  .eco-subh {
+    margin-top: 32px;
+    font-family: var(--eco-head);
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--eco-gold);
+  }
+
+  .eco-subh + .eco-lead { margin-top: 10px; }
+
+  .eco-serve__grid {
+    margin-top: 56px;
+    display: grid;
+    gap: 20px;
+  }
+
+  @media (min-width: 640px) { .eco-serve__grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1100px) { .eco-serve__grid--3 { grid-template-columns: repeat(3, 1fr); } }
+
+  .eco-aud {
+    background: var(--eco-ink-2);
+    border: 1px solid rgba(250, 248, 243, .1);
+    border-radius: 18px;
+    padding: 32px 26px;
+    transition: border-color .25s ease, transform .25s ease;
+  }
+
+  .eco-aud:hover { border-color: rgba(230, 179, 37, .6); transform: translateY(-4px); }
+
+  .eco-aud__icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    background: rgba(230, 179, 37, .12);
+    border: 1px solid rgba(230, 179, 37, .3);
+    color: var(--eco-gold);
+  }
+
+  .eco-aud__icon svg { width: 22px; height: 22px; }
+
+  .eco-aud__tag {
+    margin-top: 22px;
+    font-family: var(--eco-head);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: rgba(230, 179, 37, .8);
+  }
+
+  .eco-aud .eco-h3 { margin-top: 8px; font-size: 18px; color: var(--eco-paper); }
+
+  .eco-aud p {
+    margin-top: 12px;
+    font-size: 14.5px;
+    color: rgba(250, 248, 243, .62);
+  }
+
+  .eco-areas { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 8px; }
+
+  .eco-areas li {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(230, 179, 37, .35);
+    background: rgba(230, 179, 37, .08);
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(250, 248, 243, .9);
+  }
+
+  .eco-areas svg { width: 14px; height: 14px; color: var(--eco-gold); }
+
+  /* Wide horizontal feature card (spans full row above the two vertical cards) */
+  .eco-aud--wide { grid-column: 1 / -1; display: grid; gap: 28px; align-items: center; padding: 36px 32px; }
+  .eco-aud--wide .eco-areas { margin-top: 0; }
+  .eco-aud--wide .eco-aud__side p { margin-top: 18px; }
+  .eco-aud--wide .eco-h3 { font-size: 22px; }
+
+  @media (min-width: 900px) {
+    .eco-aud--wide { grid-template-columns: 1.1fr 1fr; gap: 56px; padding: 44px 40px; }
+  }
+
+  /* =========================================================
+     5. WHY CHOOSE
+     ========================================================= */
+  .eco-why { background: var(--eco-paper-dim); }
+
+  .eco-why__grid {
+    display: grid;
+    gap: 48px;
+    align-items: center;
+  }
+
+  @media (min-width: 992px) { .eco-why__grid { grid-template-columns: 1fr 1fr; gap: 72px; } }
+
+  .eco-why__quote {
+    margin-top: 28px;
+    padding-left: 20px;
+    border-left: 4px solid var(--eco-gold);
+    font-family: var(--eco-head);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: var(--eco-ink);
+  }
+
+  .eco-pillars {
+    background: #fff;
+    border: 1px solid var(--eco-line);
+    border-radius: 20px;
+    padding: 12px 28px;
+    box-shadow: 0 30px 60px -36px rgba(0, 0, 0, .3);
+  }
+
+  .eco-pillars__label {
+    padding: 18px 0 6px;
+    font-family: var(--eco-head);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--eco-muted);
+  }
+
+  .eco-pillars li {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--eco-line);
+  }
+
+  .eco-pillars li:last-child { border-bottom: 0; }
+
+  .eco-pillars b {
+    display: block;
+    font-family: var(--eco-head);
+    font-size: 16.5px;
+    font-weight: 800;
+    line-height: 1.3;
+    color: var(--eco-ink);
+  }
+
+  .eco-pillars small { font-size: 14px; line-height: 1.5; color: var(--eco-muted); }
+
+  .eco-pillars__icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    background: rgba(230, 179, 37, .14);
+    color: var(--eco-gold-deep);
+  }
+
+  .eco-pillars__icon svg { width: 20px; height: 20px; }
+
+  /* =========================================================
+     6. CTA
+     ========================================================= */
+  .eco-cta {
+    position: relative;
+    overflow: hidden;
+    background:
+      radial-gradient(900px 420px at 90% 0%, rgba(230, 179, 37, .25), transparent 62%),
+      radial-gradient(700px 380px at 0% 100%, rgba(230, 179, 37, .1), transparent 65%),
+      linear-gradient(135deg, #0b0b0b 0%, #16120a 55%, #0b0b0b 100%);
+    color: var(--eco-paper);
+  }
+
+  .eco-cta__grid {
+    display: grid;
+    gap: 48px;
+    align-items: center;
+  }
+
+  @media (min-width: 992px) { .eco-cta__grid { grid-template-columns: 1.1fr .9fr; gap: 72px; } }
+
+  .eco-cta .eco-kicker { color: var(--eco-gold); }
+  .eco-cta .eco-h2 { color: var(--eco-paper); }
+  .eco-cta .eco-h2 em { color: var(--eco-gold); }
+
+  .eco-cta__text { margin-top: 18px; font-size: 17px; color: rgba(250, 248, 243, .72); }
+  .eco-cta__text + .eco-cta__text { margin-top: 12px; }
+
+  .eco-cta__tags { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 10px; }
+
+  .eco-cta__tags li {
+    padding: 8px 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(230, 179, 37, .35);
+    background: rgba(230, 179, 37, .08);
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(250, 248, 243, .88);
+  }
+
+  .eco-cta__card {
+    position: relative;
+    background: var(--eco-paper);
+    color: var(--eco-ink);
+    border-radius: 20px;
+    padding: 36px 32px;
+    box-shadow: 0 40px 80px -30px rgba(0, 0, 0, .8);
+  }
+
+  .eco-cta__card-title { font-family: var(--eco-head); font-size: 22px; font-weight: 800; line-height: 1.3; }
+  .eco-cta__card-sub { margin-top: 8px; font-size: 14.5px; color: var(--eco-muted); }
+
+  .eco-cta__list { margin-top: 22px; display: grid; gap: 12px; }
+
+  .eco-cta__list li { display: flex; gap: 12px; align-items: flex-start; font-size: 15px; font-weight: 500; }
+  .eco-cta__list svg { width: 20px; height: 20px; margin-top: 2px; color: var(--eco-gold-deep); }
+
+  .eco-cta__actions { margin-top: 28px; display: grid; gap: 12px; }
+  .eco-cta__actions .eco-btn { width: 100%; }
+
+  /* =========================================================
+     7. FAQ
+     ========================================================= */
+  .eco-faq__grid { display: grid; gap: 40px; }
+
+  @media (min-width: 992px) { .eco-faq__grid { grid-template-columns: 1fr 1.7fr; gap: 80px; } }
+
+  .eco-faq__list { display: grid; gap: 14px; }
+
+  .eco-faq__item {
+    background: #fff;
+    border: 1px solid var(--eco-line);
+    border-radius: 14px;
+    transition: border-color .25s ease, box-shadow .25s ease;
+  }
+
+  .eco-faq__item.is-open {
+    border-color: rgba(230, 179, 37, .6);
+    box-shadow: 0 20px 40px -28px rgba(0, 0, 0, .3);
+  }
+
+  .eco-faq__btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 22px 24px;
+    text-align: left;
+    background: none;
+    border: 0;
+    color: var(--eco-ink);
+  }
+
+  .eco-faq__q { display: flex; align-items: baseline; gap: 14px; }
+  .eco-faq__no { font-family: var(--eco-head); font-size: 14px; font-weight: 800; color: var(--eco-gold-deep); }
+  .eco-faq__title { font-family: var(--eco-head); font-size: 17px; font-weight: 800; line-height: 1.4; }
+
+  .eco-faq__icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: var(--eco-paper-dim);
+    color: var(--eco-ink);
+    transition: transform .3s ease, background .3s ease;
+    flex: none;
+  }
+
+  .eco-faq__icon svg { width: 16px; height: 16px; }
+  .eco-faq__item.is-open .eco-faq__icon { transform: rotate(45deg); background: var(--eco-gold); }
+
+  .eco-faq__panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .3s ease; }
+  .eco-faq__item.is-open .eco-faq__panel { grid-template-rows: 1fr; }
+  .eco-faq__panel > div { overflow: hidden; }
+
+  .eco-faq__panel p {
+    padding: 0 24px 24px 52px;
+    font-size: 15.5px;
+    color: var(--eco-muted);
+  }
+
+  /* ---------- Mobile tweaks ---------- */
+  @media (max-width: 640px) {
+    .eco-hero__actions .eco-btn { width: 100%; }
+    .eco-channel { padding: 18px 12px; gap: 10px; border-bottom: 1px solid rgba(250, 248, 243, .08); }
+    .eco-channel__icon { width: 36px; height: 36px; }
+    .eco-service, .eco-benefits, .eco-cta__card { padding: 28px 22px; }
+    .eco-pillars { padding: 6px 20px; }
+    .eco-faq__btn { padding: 18px; }
+    .eco-faq__panel p { padding: 0 18px 20px; }
+    .eco-divider { margin-block: 56px; }
+    .eco-card { padding: 22px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .eco-page * { transition: none !important; }
+  }
+</style>
+
+<div class="eco-page" id="top">
+  <main>
+
+    <!-- ================= HERO ================= -->
+    <section class="eco-hero">
+      <div class="eco-hero__bg" role="img" aria-label="Dubai skyline at dusk"></div>
+      <div class="eco-hero__shade"></div>
+
+      <div class="eco-wrap eco-hero__grid">
+        <div>
+          <p class="eco-hero__badge"><i></i> E-commerce · Web Development · Dubai</p>
+
+          <h1 class="eco-hero__title">
+            E-commerce Website
+            <span>Development Dubai</span>
+          </h1>
+
+          <p class="eco-hero__lead">
+            In today's competitive digital marketplace, having a professional online store is essential for businesses
+            looking to expand their reach and improve customer engagement. E-commerce Website Development Dubai
+            services help businesses establish a strong online presence through secure, responsive, and
+            high-performing digital shopping platforms.
+          </p>
+
+          <div class="eco-hero__actions">
+            <a href="#cta" class="eco-btn eco-btn--gold">Get Started with Delemon Technology <i data-lucide="arrow-right"></i></a>
+            <a href="#solutions" class="eco-btn eco-btn--ghost">Explore Our Solutions</a>
+          </div>
+
+          <ul class="eco-hero__trust">
+            <li><i data-lucide="circle-check"></i> Startups</li>
+            <li><i data-lucide="circle-check"></i> Established Retailers</li>
+            <li><i data-lucide="circle-check"></i> Enterprises</li>
+          </ul>
+        </div>
+
+        <!-- Visual: sample online store -->
+        <div class="eco-visual" aria-hidden="true">
+          <div class="eco-card">
+            <div class="eco-store__bar">
+              <div class="eco-store__logo">
+                <span class="eco-store__avatar"><i data-lucide="store"></i></span>
+                <div>
+                  <p class="eco-store__name">Your Online Store</p>
+                  <p class="eco-store__sub">Secure &amp; responsive</p>
+                </div>
+              </div>
+              <span class="eco-store__cart"><i data-lucide="shopping-cart"></i><b>2</b></span>
+            </div>
+
+            <div class="eco-prods">
+              <div class="eco-prod">
+                <span class="eco-prod__thumb"><i data-lucide="headphones"></i></span>
+                <span><b>Premium Headphones</b><small>In stock</small></span>
+                <span class="eco-prod__price">AED 349</span>
+              </div>
+              <div class="eco-prod">
+                <span class="eco-prod__thumb"><i data-lucide="shopping-bag"></i></span>
+                <span><b>Everyday Backpack</b><small>In stock</small></span>
+                <span class="eco-prod__price">AED 189</span>
+              </div>
+            </div>
+
+            <div class="eco-sum"><span>Total</span><b>AED 538</b></div>
+            <div class="eco-pay"><i data-lucide="lock"></i> Pay securely</div>
+          </div>
+
+          <div class="eco-float eco-float--a"><i data-lucide="shield-check"></i> Payment secured</div>
+          <div class="eco-float eco-float--b"><i data-lucide="package"></i> New order received</div>
+        </div>
+      </div>
+
+      <!-- Platform strip -->
+      <div class="eco-channels">
+        <div class="eco-wrap eco-channels__grid">
+          <div class="eco-channel">
+            <span class="eco-channel__icon"><i data-lucide="shopping-bag"></i></span>
+            <span><b>Shopify</b><small>Structured store management</small></span>
+          </div>
+          <div class="eco-channel">
+            <span class="eco-channel__icon"><i data-lucide="plug"></i></span>
+            <span><b>WooCommerce</b><small>WordPress flexibility</small></span>
+          </div>
+          <div class="eco-channel">
+            <span class="eco-channel__icon"><i data-lucide="boxes"></i></span>
+            <span><b>Magento</b><small>&amp; Adobe Commerce</small></span>
+          </div>
+          <div class="eco-channel">
+            <span class="eco-channel__icon"><i data-lucide="code"></i></span>
+            <span><b>Custom Build</b><small>Tailored functionality</small></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= INTRO + SOLUTIONS ================= -->
+    <section class="eco-section" id="solutions">
+      <div class="eco-wrap">
+        <p class="eco-intro__statement">
+          At Delemon Technology, we focus on creating <em>modern e-commerce website solutions</em> that combine
+          attractive design, advanced functionality, and user-friendly shopping experiences.
+        </p>
+        <p class="eco-intro__sub">
+          From custom online store development to secure payment gateway integration, our approach is designed to help
+          businesses build a reliable foundation for online growth. Whether you are a startup, an established retailer,
+          or an enterprise exploring digital commerce opportunities, Delemon Technology provides e-commerce website
+          development solutions tailored to your business requirements.
+        </p>
+
+        <div class="eco-divider"></div>
+
+        <div class="eco-matters">
+          <div>
+            <p class="eco-kicker">Our Company</p>
+            <h2 class="eco-h2">Professional <em>E-commerce Website Development Company in Dubai</em></h2>
+            <p class="eco-lead">
+              Choosing the right E-commerce Website Development Company in Dubai is an important step toward building a
+              successful online business. A professional e-commerce website should provide more than an attractive
+              storefront. It must deliver a seamless customer journey, secure transactions, and efficient business
+              management.
+            </p>
+            <p class="eco-lead">
+              At Delemon Technology, our e-commerce development approach focuses on responsive website layouts,
+              conversion-focused design, and scalable technical architecture.
+            </p>
+            <p class="eco-lead">
+              These solutions help businesses create convenient shopping experiences while improving the efficiency of
+              their digital operations.
+            </p>
+          </div>
+
+          <div class="eco-benefits">
+            <p class="eco-benefits__title">Our e-commerce development solutions include:</p>
+            <ul class="eco-checks">
+              <li><span class="eco-tick"><i data-lucide="check"></i></span> Custom e-commerce website design and development</li>
+              <li><span class="eco-tick"><i data-lucide="check"></i></span> Responsive and mobile-friendly online stores</li>
+              <li><span class="eco-tick"><i data-lucide="check"></i></span> Shopping cart and checkout development</li>
+              <li><span class="eco-tick"><i data-lucide="check"></i></span> Product catalogue and inventory management</li>
+              <li><span class="eco-tick"><i data-lucide="check"></i></span> Secure payment gateway integration</li>
+              <li><span class="eco-tick"><i data-lucide="check"></i></span> B2B and B2C e-commerce development</li>
+              <li><span class="eco-tick"><i data-lucide="check"></i></span> E-commerce website redesign and optimisation</li>
+              <li><span class="eco-tick"><i data-lucide="check"></i></span> API and third-party software integration</li>
+              <li><span class="eco-tick"><i data-lucide="check"></i></span> SEO-friendly website architecture</li>
+              <li><span class="eco-tick"><i data-lucide="check"></i></span> Website maintenance and technical support</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CUSTOM DEVELOPMENT ================= -->
+    <section class="eco-section eco-services">
+      <div class="eco-wrap">
+        <div class="eco-head-center">
+          <p class="eco-kicker">Custom Development</p>
+          <h2 class="eco-h2">Custom <em>E-commerce Website Development Dubai</em></h2>
+          <p class="eco-lead">
+            Every business has unique products, customers, and operational requirements. Custom E-commerce Website
+            Development Dubai allows companies to build online stores with functionality that supports their specific
+            business objectives.
+          </p>
+        </div>
+
+        <div class="eco-sub">
+          <h3 class="eco-h3">Scalable and Business-Focused Online Stores</h3>
+          <p>
+            Delemon Technology focuses on developing e-commerce solutions that can adapt as businesses grow. From
+            product catalogue management to order processing and customer accounts, each important feature contributes
+            to a more organised online shopping environment.
+          </p>
+        </div>
+
+        <p class="eco-label">Customised e-commerce functionality may include</p>
+
+        <ul class="eco-opt">
+          <li><span class="eco-opt__icon"><i data-lucide="list-filter"></i></span> Advanced product filtering</li>
+          <li><span class="eco-opt__icon"><i data-lucide="layout-dashboard"></i></span> Customer dashboards</li>
+          <li><span class="eco-opt__icon"><i data-lucide="percent"></i></span> Discount management</li>
+          <li><span class="eco-opt__icon"><i data-lucide="bell"></i></span> Automated notifications</li>
+          <li><span class="eco-opt__icon"><i data-lucide="boxes"></i></span> Integrated inventory systems</li>
+          <li><span class="eco-opt__icon"><i data-lucide="package-check"></i></span> Order processing and customer accounts</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================= DESIGN ================= -->
+    <section class="eco-section eco-serve">
+      <div class="eco-wrap">
+        <div class="eco-matters" style="align-items:center;">
+          <div>
+            <p class="eco-kicker">Design</p>
+            <h2 class="eco-h2">E-commerce Website Design Dubai – <em>Modern and User-Friendly Experiences</em></h2>
+            <p class="eco-lead">
+              Professional E-commerce Website Design Dubai services combine visual appeal with practical functionality.
+              An effective online store should help customers find products quickly, explore relevant information, and
+              complete purchases without unnecessary complications.
+            </p>
+            <h3 class="eco-subh">Responsive E-commerce UI/UX Design</h3>
+            <p class="eco-lead">
+              Delemon Technology emphasises responsive layouts and user-friendly navigation to support consistent
+              browsing experiences across desktops, tablets, and smartphones.
+            </p>
+          </div>
+
+          <div class="eco-benefits">
+            <p class="eco-benefits__title">Our website design approach prioritises:</p>
+            <ul class="eco-checks">
+              <li><span class="eco-tick"><i data-lucide="check"></i></span> Clean and professional storefront layouts</li>
+              <li><span class="eco-tick"><i data-lucide="check"></i></span> Mobile-first website design</li>
+              <li><span class="eco-tick"><i data-lucide="check"></i></span> Easy product navigation and categorisation</li>
+              <li><span class="eco-tick"><i data-lucide="check"></i></span> Optimised shopping cart experiences</li>
+              <li><span class="eco-tick"><i data-lucide="check"></i></span> Clear product descriptions and visuals</li>
+              <li><span class="eco-tick"><i data-lucide="check"></i></span> Accessible checkout functionality</li>
+              <li><span class="eco-tick"><i data-lucide="check"></i></span> Consistent brand presentation</li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="eco-note eco-note--dark">A well-designed customer journey can improve engagement and create more opportunities for online conversions.</p>
+      </div>
+    </section>
+
+    <!-- ================= PLATFORMS ================= -->
+    <section class="eco-section">
+      <div class="eco-wrap">
+        <div class="eco-head-center">
+          <p class="eco-kicker">Platforms</p>
+          <h2 class="eco-h2">Shopify, WooCommerce, and Magento <em>E-commerce Development</em></h2>
+          <p class="eco-lead">
+            Selecting an appropriate e-commerce platform is essential for long-term business performance. Different
+            platforms offer different levels of customisation, scalability, and administrative functionality.
+          </p>
+        </div>
+
+        <div class="eco-services__grid eco-services__grid--3">
+          <article class="eco-service">
+            <div class="eco-service__top">
+              <span class="eco-service__icon"><i data-lucide="shopping-bag"></i></span>
+              <span class="eco-service__no">01</span>
+            </div>
+            <h3 class="eco-h3">Shopify Website Development Dubai</h3>
+            <p>Shopify supports businesses seeking structured online store management, product catalogues, payment integrations, and mobile-friendly shopping experiences.</p>
+          </article>
+
+          <article class="eco-service">
+            <div class="eco-service__top">
+              <span class="eco-service__icon"><i data-lucide="plug"></i></span>
+              <span class="eco-service__no">02</span>
+            </div>
+            <h3 class="eco-h3">WooCommerce Development Dubai</h3>
+            <p>WooCommerce integrates with WordPress and provides flexibility for businesses requiring custom product management, content marketing integration, and adaptable store functionality.</p>
+          </article>
+
+          <article class="eco-service">
+            <div class="eco-service__top">
+              <span class="eco-service__icon"><i data-lucide="boxes"></i></span>
+              <span class="eco-service__no">03</span>
+            </div>
+            <h3 class="eco-h3">Magento and Adobe Commerce Development</h3>
+            <p>Magento Open Source and Adobe Commerce provide extensive commerce capabilities suitable for businesses with more complex catalogue management, integrations, and technical requirements.</p>
+          </article>
+        </div>
+
+        <p class="eco-note">Delemon Technology's development approach prioritises selecting technology based on business needs, performance expectations, and long-term scalability.</p>
+      </div>
+    </section>
+
+    <!-- ================= PAYMENTS ================= -->
+    <section class="eco-section eco-services">
+      <div class="eco-wrap eco-matters" style="align-items:center;">
+        <div>
+          <p class="eco-kicker">Payments</p>
+          <h2 class="eco-h2">Secure E-commerce <em>Payment Gateway Integration Dubai</em></h2>
+          <p class="eco-lead">
+            Secure online transactions play an important role in building customer confidence. An e-commerce website
+            must provide convenient payment options while protecting sensitive transaction information.
+          </p>
+          <p class="eco-lead">
+            E-commerce Payment Gateway Integration Dubai can include compatible payment solutions such as PayTabs,
+            Telr, Stripe, and other providers available to eligible UAE merchants.
+          </p>
+          <p class="eco-lead">
+            Delemon Technology focuses on secure integration practices and practical checkout experiences that support
+            customer convenience.
+          </p>
+        </div>
+
+        <div class="eco-benefits">
+          <p class="eco-benefits__title">Compatible payment solutions:</p>
+          <ul class="eco-tools">
+            <li><i data-lucide="credit-card"></i> PayTabs</li>
+            <li><i data-lucide="credit-card"></i> Telr</li>
+            <li><i data-lucide="credit-card"></i> Stripe</li>
+            <li><i data-lucide="credit-card"></i> Other eligible UAE providers</li>
+          </ul>
+
+          <p class="eco-benefits__sub">Important payment features include</p>
+          <ul class="eco-checks">
+            <li><span class="eco-tick"><i data-lucide="check"></i></span> Secure credit and debit card processing</li>
+            <li><span class="eco-tick"><i data-lucide="check"></i></span> Multiple online payment options</li>
+            <li><span class="eco-tick"><i data-lucide="check"></i></span> AED and supported multi-currency payments</li>
+            <li><span class="eco-tick"><i data-lucide="check"></i></span> Automated transaction confirmations</li>
+            <li><span class="eco-tick"><i data-lucide="check"></i></span> Payment status tracking</li>
+            <li><span class="eco-tick"><i data-lucide="check"></i></span> Secure API connectivity</li>
+            <li><span class="eco-tick"><i data-lucide="check"></i></span> Optimised checkout functionality</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SEO ================= -->
+    <section class="eco-section">
+      <div class="eco-wrap">
+        <div class="eco-head-center">
+          <p class="eco-kicker">SEO</p>
+          <h2 class="eco-h2">SEO-Friendly <em>E-commerce Website Development</em></h2>
+          <p class="eco-lead">
+            Developing an online store with search engine optimisation in mind can improve its ability to attract
+            relevant organic visitors. At Delemon Technology, our approach considers technical website structure, page
+            performance, and search engine accessibility.
+          </p>
+        </div>
+
+        <p class="eco-label">Technical SEO and website optimisation</p>
+
+        <ul class="eco-opt eco-opt--2">
+          <li><span class="eco-opt__icon"><i data-lucide="link-2"></i></span> SEO-friendly website URLs</li>
+          <li><span class="eco-opt__icon"><i data-lucide="layout-grid"></i></span> Optimised product and category pages</li>
+          <li><span class="eco-opt__icon"><i data-lucide="file-text"></i></span> Relevant meta titles and descriptions</li>
+          <li><span class="eco-opt__icon"><i data-lucide="braces"></i></span> Product structured data</li>
+          <li><span class="eco-opt__icon"><i data-lucide="smartphone"></i></span> Mobile-responsive website architecture</li>
+          <li><span class="eco-opt__icon"><i data-lucide="gauge"></i></span> Fast-loading website pages</li>
+          <li><span class="eco-opt__icon"><i data-lucide="image"></i></span> Optimised image sizes</li>
+          <li><span class="eco-opt__icon"><i data-lucide="link"></i></span> Internal linking and navigation</li>
+          <li><span class="eco-opt__icon"><i data-lucide="bar-chart-3"></i></span> Google Analytics 4 integration</li>
+          <li><span class="eco-opt__icon"><i data-lucide="search"></i></span> Google Search Console configuration</li>
+        </ul>
+
+        <p class="eco-note">These features help establish a technical foundation for sustainable search visibility and better user experiences.</p>
+      </div>
+    </section>
+
+    <!-- ================= ADVANCED + UAE ================= -->
+    <section class="eco-section eco-serve">
+      <div class="eco-wrap">
+        <div class="eco-head-center">
+          <p class="eco-kicker">Advanced Capabilities</p>
+          <h2 class="eco-h2">Advanced E-commerce Features, <em>Automation and UAE Localisation</em></h2>
+          <p class="eco-lead">Modern e-commerce platforms need effective management systems to support business operations.</p>
+        </div>
+
+        <div class="eco-serve__grid">
+          <!-- Main horizontal card -->
+          <article class="eco-aud eco-aud--wide">
+            <div class="eco-aud__main">
+              <span class="eco-aud__icon"><i data-lucide="globe"></i></span>
+              <p class="eco-aud__tag">UAE Businesses</p>
+              <h3 class="eco-h3">E-commerce Website Development for Businesses in the UAE</h3>
+              <p>Businesses serving Dubai and the wider UAE may require online stores that reflect regional customer preferences. Useful localisation features include:</p>
+            </div>
+            <div class="eco-aud__side">
+              <ul class="eco-areas">
+                <li><i data-lucide="languages"></i> English and Arabic support</li>
+                <li><i data-lucide="align-right"></i> Right-to-left layouts</li>
+                <li><i data-lucide="banknote"></i> AED currency options</li>
+                <li><i data-lucide="credit-card"></i> Local payment gateways</li>
+                <li><i data-lucide="truck"></i> Regional delivery integration</li>
+              </ul>
+              <p>Delemon Technology focuses on business-oriented website solutions that can support different customer groups and regional market requirements.</p>
+            </div>
+          </article>
+
+          <article class="eco-aud">
+            <span class="eco-aud__icon"><i data-lucide="boxes"></i></span>
+            <p class="eco-aud__tag">Operations</p>
+            <h3 class="eco-h3">Inventory and Order Management</h3>
+            <p>Inventory management integrations can help businesses monitor product availability, organise customer orders, and manage fulfilment workflows efficiently.</p>
+            <p>CRM and ERP integration can further support customer communication, order tracking, and operational coordination.</p>
+          </article>
+
+          <article class="eco-aud">
+            <span class="eco-aud__icon"><i data-lucide="bot"></i></span>
+            <p class="eco-aud__tag">Artificial Intelligence</p>
+            <h3 class="eco-h3">AI-Powered E-commerce Solutions</h3>
+            <p>Artificial intelligence offers additional opportunities to improve digital shopping experiences through personalised recommendations, intelligent product search, automated chat assistance, and customer behaviour analysis.</p>
+            <p>Delemon Technology recognises the importance of adaptable technology solutions that support evolving digital commerce requirements.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= WHY CHOOSE ================= -->
+    <section class="eco-section eco-why">
+      <div class="eco-wrap eco-why__grid">
+        <div>
+          <p class="eco-kicker">Why Delemon</p>
+          <h2 class="eco-h2">Why Choose <em>Delemon Technology</em> for E-commerce Website Development Dubai?</h2>
+          <p class="eco-lead">
+            Delemon Technology combines website development, digital design, and business-focused technology planning
+            to help companies establish effective online platforms.
+          </p>
+          <p class="eco-why__quote">
+            Our objective is to create e-commerce websites that balance visual presentation, technical functionality,
+            and long-term business usability.
+          </p>
+        </div>
+
+        <div class="eco-pillars">
+          <p class="eco-pillars__label">Our approach prioritises</p>
+          <ul>
+            <li>
+              <span class="eco-pillars__icon"><i data-lucide="wrench"></i></span>
+              <span><b>Customised solutions</b><small>Website functionality aligned with business requirements.</small></span>
+            </li>
+            <li>
+              <span class="eco-pillars__icon"><i data-lucide="palette"></i></span>
+              <span><b>Professional design</b><small>Attractive and user-friendly shopping interfaces.</small></span>
+            </li>
+            <li>
+              <span class="eco-pillars__icon"><i data-lucide="smartphone"></i></span>
+              <span><b>Mobile responsiveness</b><small>Consistent website experiences across devices.</small></span>
+            </li>
+            <li>
+              <span class="eco-pillars__icon"><i data-lucide="shield-check"></i></span>
+              <span><b>Secure functionality</b><small>Appropriate security practices and payment integrations.</small></span>
+            </li>
+            <li>
+              <span class="eco-pillars__icon"><i data-lucide="trending-up"></i></span>
+              <span><b>Scalable development</b><small>Flexible architecture for future business expansion.</small></span>
+            </li>
+            <li>
+              <span class="eco-pillars__icon"><i data-lucide="search"></i></span>
+              <span><b>SEO-focused structure</b><small>Technical foundations that support online visibility.</small></span>
+            </li>
+            <li>
+              <span class="eco-pillars__icon"><i data-lucide="link"></i></span>
+              <span><b>Business integration</b><small>Practical connections with inventory, payment, and management systems.</small></span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CTA ================= -->
+    <section class="eco-section eco-cta" id="cta">
+      <div class="eco-wrap eco-cta__grid">
+        <div>
+          <p class="eco-kicker">Get Started with Delemon Technology</p>
+          <h2 class="eco-h2">Transform Your Business with a <em>Professional E-commerce Website</em></h2>
+          <p class="eco-cta__text">
+            Looking to develop a modern online store in Dubai? Connect with Delemon Technology to explore e-commerce
+            website development solutions tailored to your business objectives.
+          </p>
+          <p class="eco-cta__text">
+            At Delemon Technology, we focus on delivering professional, secure, and scalable website solutions that help
+            businesses strengthen their digital presence and improve online customer experiences.
+          </p>
+          <ul class="eco-cta__tags" aria-label="Services">
+            <li>Custom Development</li>
+            <li>Shopify</li>
+            <li>WooCommerce</li>
+            <li>Magento</li>
+            <li>Payment Gateways</li>
+            <li>Technical SEO</li>
+          </ul>
+        </div>
+
+        <div class="eco-cta__card">
+          <h3 class="eco-cta__card-title">Build Your Online Business with Delemon Technology</h3>
+          <p class="eco-cta__card-sub">Professional E-commerce Website Development Dubai services provide the technology and functionality needed to establish a reliable digital storefront.</p>
+
+          <ul class="eco-cta__list">
+            <li><i data-lucide="circle-check"></i> Responsive website design and custom e-commerce functionality</li>
+            <li><i data-lucide="circle-check"></i> Payment gateway integration and technical SEO</li>
+            <li><i data-lucide="circle-check"></i> Business automation for a stronger foundation for online growth</li>
+          </ul>
+
+          <div class="eco-cta__actions">
+            <a href="{% url 'contact' %}" class="eco-btn eco-btn--dark">Contact Delemon Technology Today <i data-lucide="arrow-right"></i></a>
+            <a href="https://wa.me/971503482299" class="eco-btn eco-btn--outline" target="_blank" rel="noopener">
+              <i data-lucide="message-circle"></i> Chat On WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FAQ ================= -->
+    <section class="eco-section" id="faq">
+      <div class="eco-wrap eco-faq__grid">
+        <div>
+          <p class="eco-kicker">FAQ</p>
+          <h2 class="eco-h2">Frequently Asked <em>Questions</em></h2>
+          <p class="eco-lead">Everything you need to know about e-commerce website development in Dubai.</p>
+        </div>
+
+        <div class="eco-faq__list" id="ecoFaq">
+          <div class="eco-faq__item is-open">
+            <button class="eco-faq__btn" aria-expanded="true" aria-controls="eco-faq-0">
+              <span class="eco-faq__q"><span class="eco-faq__no">01</span><span class="eco-faq__title">What is e-commerce website development?</span></span>
+              <span class="eco-faq__icon"><i data-lucide="plus"></i></span>
+            </button>
+            <div class="eco-faq__panel" id="eco-faq-0" role="region">
+              <div><p>E-commerce website development is the process of building an online shopping platform where businesses can display products, accept payments, manage orders, and provide digital purchasing experiences.</p></div>
+            </div>
+          </div>
+
+          <div class="eco-faq__item">
+            <button class="eco-faq__btn" aria-expanded="false" aria-controls="eco-faq-1">
+              <span class="eco-faq__q"><span class="eco-faq__no">02</span><span class="eco-faq__title">Which platform is best for e-commerce website development in Dubai?</span></span>
+              <span class="eco-faq__icon"><i data-lucide="plus"></i></span>
+            </button>
+            <div class="eco-faq__panel" id="eco-faq-1" role="region">
+              <div><p>Shopify, WooCommerce, Magento Open Source, and Adobe Commerce are popular choices. The ideal platform depends on business requirements, product volume, customisation needs, and integration complexity.</p></div>
+            </div>
+          </div>
+
+          <div class="eco-faq__item">
+            <button class="eco-faq__btn" aria-expanded="false" aria-controls="eco-faq-2">
+              <span class="eco-faq__q"><span class="eco-faq__no">03</span><span class="eco-faq__title">Can Delemon Technology develop mobile-friendly e-commerce websites?</span></span>
+              <span class="eco-faq__icon"><i data-lucide="plus"></i></span>
+            </button>
+            <div class="eco-faq__panel" id="eco-faq-2" role="region">
+              <div><p>Delemon Technology's e-commerce development approach focuses on responsive design to create shopping experiences suitable for smartphones, tablets, and desktop devices.</p></div>
+            </div>
+          </div>
+
+          <div class="eco-faq__item">
+            <button class="eco-faq__btn" aria-expanded="false" aria-controls="eco-faq-3">
+              <span class="eco-faq__q"><span class="eco-faq__no">04</span><span class="eco-faq__title">Can an e-commerce website integrate UAE payment gateways?</span></span>
+              <span class="eco-faq__icon"><i data-lucide="plus"></i></span>
+            </button>
+            <div class="eco-faq__panel" id="eco-faq-3" role="region">
+              <div><p>Yes. E-commerce websites can integrate compatible UAE payment gateways, subject to provider eligibility and technical requirements, to support secure online transactions.</p></div>
+            </div>
+          </div>
+
+          <div class="eco-faq__item">
+            <button class="eco-faq__btn" aria-expanded="false" aria-controls="eco-faq-4">
+              <span class="eco-faq__q"><span class="eco-faq__no">05</span><span class="eco-faq__title">Why is SEO important for an e-commerce website?</span></span>
+              <span class="eco-faq__icon"><i data-lucide="plus"></i></span>
+            </button>
+            <div class="eco-faq__panel" id="eco-faq-4" role="region">
+              <div><p>SEO helps search engines discover and understand online store pages. Technical optimisation, relevant product information, and mobile-friendly performance can support organic visibility and attract potential customers.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- Icons (Lucide) -->
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+  (function () {
+    const faqBox = document.getElementById("ecoFaq");
+    faqBox.addEventListener("click", e => {
+      const btn = e.target.closest(".eco-faq__btn");
+      if (!btn) return;
+      const item = btn.parentElement;
+      const willOpen = !item.classList.contains("is-open");
+      faqBox.querySelectorAll(".eco-faq__item").forEach(el => {
+        el.classList.remove("is-open");
+        el.querySelector(".eco-faq__btn").setAttribute("aria-expanded", "false");
+      });
+      if (willOpen) {
+        item.classList.add("is-open");
+        btn.setAttribute("aria-expanded", "true");
+      }
+    });
+  })();
+
+  if (window.lucide) lucide.createIcons();
+</script>
+
+{% endblock %}
