@@ -178,6 +178,9 @@ def realestate_marketing(request):
 def social(request):
     return render(request, 'services/marketing_advertising/social.html')
 
+def real_estate_agency_abudhabi(request):
+    return render(request, 'services/marketing_advertising/real_estate_agency_abudhabi.html')
+
 def whoweare(request):
     return render(request, 'main/whoweare.html')
 

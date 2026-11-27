@@ -1,0 +1,1546 @@
+{% extends "base.html" %}
+{% block title %}Real Estate Marketing Agency in Abu Dhabi | Delemon{% endblock %}
+{% load static %}
+{% block content %}
+
+<head>
+<meta name="keywords" content="Real Estate Marketing Agency in Abu Dhabi,Real Estate Lead Generation Abu Dhabi,Real Estate Google Ads Abu Dhabi,Meta Ads for Real Estate,Real Estate SEO Abu Dhabi,Real Estate Website Development Abu Dhabi,CRM Automation for Real Estate,Off-Plan Property Marketing Abu Dhabi,Luxury Real Estate Marketing Abu Dhabi">
+<meta content="Grow with a real estate marketing agency in Abu Dhabi offering qualified lead generation, Google Ads, Meta Ads, SEO, branding and CRM automation." name="description"/>
+</head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+  href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap"
+  rel="stylesheet">
+
+<style>
+  /* =========================================================
+   DELEMON TECHNOLOGY – REAL ESTATE MARKETING AGENCY ABU DHABI LANDING PAGE
+   All classes use the unique prefix  dlx-
+   ========================================================= */
+
+  /* ---------- 1. TOKENS ---------- */
+  :root {
+    --dlx-ink: #0b0b0b;
+    --dlx-ink-deep: #050505;
+    --dlx-gold: #e6b325;
+    --dlx-gold-deep: #b8880b;
+    --dlx-paper: #faf8f3;
+    --dlx-paper-dim: #f1eee5;
+    --dlx-line: #dcd7c8;
+    --dlx-text: #1a1a1a;
+    --dlx-muted: #5e5b52;
+
+    --dlx-heading-font: "Lato", sans-serif;
+    --dlx-heading-size: 30px;
+    --dlx-heading-weight: 800;
+
+    --dlx-body-font: "DM Sans", system-ui, sans-serif;
+    --dlx-wrap: 1400px;
+  }
+
+  /* ---------- 2. RESET / BASE ---------- */
+  .dlx-page,
+  .dlx-page *,
+  .dlx-page *::before,
+  .dlx-page *::after {
+    box-sizing: border-box;
+  }
+
+  .dlx-page {
+    background: var(--dlx-paper);
+    color: var(--dlx-text);
+    font-family: var(--dlx-body-font);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .dlx-page img {
+    max-width: 100%;
+    display: block;
+  }
+
+  .dlx-page a {
+    color: #f1eee5;
+    text-decoration: none;
+  }
+
+  .dlx-page h1,
+  .dlx-page h2,
+  .dlx-page h3,
+  .dlx-page p,
+  .dlx-page ul {
+    margin: 0;
+  }
+
+  .dlx-page ul {
+    padding: 0;
+    list-style: none;
+  }
+
+  .dlx-page button {
+    font: inherit;
+    cursor: pointer;
+  }
+
+  .dlx-page :focus-visible {
+    outline: 3px solid var(--dlx-gold);
+    outline-offset: 3px;
+  }
+
+  .dlx-wrap {
+    width: 100%;
+    max-width: 1500px;
+    margin-inline: auto;
+    padding-inline: 20px;
+  }
+
+  @media (min-width: 1024px) {
+    .dlx-wrap {
+      padding-inline: 40px;
+    }
+  }
+
+  /* ---------- 3. HEADING SYSTEM ---------- */
+  .dlx-heading {
+    font-family: var(--dlx-heading-font);
+    font-size: var(--dlx-heading-size);
+    font-weight: var(--dlx-heading-weight);
+    line-height: 1.28;
+    letter-spacing: -0.01em;
+  }
+
+  .dlx-card-title {
+    font-family: var(--dlx-heading-font);
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1.35;
+  }
+
+  .dlx-highlight,
+  .dlx-faq__mark {
+    background: var(--dlx-gold);
+    color: var(--dlx-ink);
+    padding: 2px 15px;
+    display: inline-block;
+    border-radius: 20px 10px 20px 10px;
+    transform: skewX(-15deg);
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+  }
+
+  .dlx-kicker {
+    font-family: var(--dlx-heading-font);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .dlx-bar {
+    width: 80px;
+    height: 6px;
+    background: var(--dlx-gold);
+    margin-top: 22px;
+  }
+
+  /* ---------- 4. BUTTONS ---------- */
+  .dlx-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px 28px;
+    font-family: var(--dlx-heading-font);
+    font-size: 16px;
+    font-weight: 800;
+    border: 1px solid transparent;
+    transition: transform .2s ease, background .2s ease, color .2s ease, border-color .2s ease, box-shadow .2s ease;
+  }
+
+  .dlx-btn1 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px 28px;
+    color: #0b0b0b;
+    font-family: var(--dlx-heading-font);
+    font-size: 16px;
+    font-weight: 800;
+    border: 1px solid transparent;
+    transition: transform .2s ease, background .2s ease, color .2s ease, border-color .2s ease, box-shadow .2s ease;
+  }
+
+  .dlx-btn svg,
+  .dlx-btn1 svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .dlx-btn--gold {
+    background: var(--dlx-gold);
+    color: var(--dlx-ink);
+    box-shadow: 0 8px 40px -8px var(--dlx-gold);
+  }
+
+  .dlx-page a.dlx-btn--gold {
+    color: var(--dlx-ink);
+  }
+
+  .dlx-btn--gold:hover {
+    transform: translateY(-2px);
+  }
+
+  .dlx-btn--ghost {
+    border-color: rgba(250, 248, 243, .3);
+    color: var(--dlx-paper);
+  }
+
+  .dlx-btn--ghost:hover {
+    border-color: var(--dlx-gold);
+    color: var(--dlx-gold);
+  }
+
+  .dlx-btn--dark {
+    background: var(--dlx-ink);
+    color: var(--dlx-gold);
+  }
+
+  .dlx-page a.dlx-btn--dark {
+    color: var(--dlx-gold);
+  }
+
+  .dlx-btn--dark:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px -12px rgba(0, 0, 0, .6);
+  }
+
+  .dlx-btn--outline {
+    border-color: var(--dlx-ink);
+    color: var(--dlx-ink);
+  }
+
+  .dlx-btn--outline:hover {
+    background: var(--dlx-ink);
+    color: var(--dlx-gold);
+  }
+
+  .dlx-btn1.dlx-btn--outline:hover,
+  .dlx-cta__actions a.dlx-btn1.dlx-btn--outline:hover,
+  .dlx-btn1.dlx-btn--outline:hover svg {
+    color: #ffffff !important;
+  }
+
+  /* ---------- 5. HERO ---------- */
+  .dlx-hero {
+    position: relative;
+    overflow: hidden;
+    background: var(--dlx-ink);
+    isolation: isolate;
+  }
+
+  .dlx-hero__bg {
+    position: absolute;
+    inset: -20px;
+    z-index: -2;
+    background: url("{% static 'img/marketing-hero.jpg' %}") center / cover no-repeat;
+    opacity: .6;
+    animation: dlx-heroZoom 22s ease-in-out infinite alternate;
+  }
+
+  @keyframes dlx-heroZoom {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.08); }
+  }
+
+  .dlx-hero__shade {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(to bottom, rgba(11, 11, 11, .82), rgba(11, 11, 11, .62), var(--dlx-ink));
+  }
+
+  .dlx-hero__grid {
+    display: grid;
+    gap: 56px;
+    align-items: center;
+    padding-block: 72px 88px;
+  }
+
+  @media (min-width: 992px) {
+    .dlx-hero__grid {
+      grid-template-columns: 1.1fr .9fr;
+      gap: 64px;
+      padding-block: 112px 128px;
+    }
+  }
+
+  .dlx-hero__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 16px;
+    border: 1px solid rgba(230, 179, 37, .4);
+    background: rgba(11, 11, 11, .6);
+    color: var(--dlx-gold);
+  }
+
+  .dlx-hero__badge i {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--dlx-gold);
+  }
+
+  .dlx-hero__copy { text-align: left; }
+
+  .dlx-hero__title {
+    margin-top: 32px;
+    max-width: 760px;
+    font-family: var(--dlx-heading-font);
+    font-size: clamp(36px, 4.6vw, 64px);
+    font-weight: 900;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+    color: var(--dlx-paper);
+    text-align: left;
+  }
+
+  .dlx-hero__lead {
+    margin-top: 28px;
+    max-width: 700px;
+    font-family: var(--dlx-heading-font);
+    font-size: clamp(18px, 1.9vw, 24px);
+    font-weight: 500;
+    line-height: 1.6;
+    color: rgba(250, 248, 243, .9);
+  }
+
+  .dlx-hero__text {
+    margin-top: 20px;
+    max-width: 640px;
+    font-size: clamp(14px, 1.2vw, 16px);
+    line-height: 1.7;
+    color: rgba(250, 248, 243, .6);
+  }
+
+  .dlx-hero__actions {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  /* --- Hero result panel --- */
+  .dlx-result {
+    position: relative;
+    width: 100%;
+    max-width: 520px;
+    margin-inline: auto;
+    padding: 18px 18px 18px 0;
+  }
+
+  .dlx-result::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top: 18px;
+    left: 18px;
+    border: 2px solid var(--dlx-gold);
+    z-index: 0;
+  }
+
+  .dlx-result__main {
+    position: relative;
+    z-index: 1;
+    aspect-ratio: 4 / 4.6;
+    background: var(--dlx-paper);
+    border: 1px solid rgba(11, 11, 11, .08);
+    overflow: hidden;
+    border-radius: 14px;
+    box-shadow: 0 40px 90px -28px rgba(0, 0, 0, .85), 0 0 0 1px rgba(230, 179, 37, .18);
+  }
+
+  .dlx-result__chip {
+    position: absolute;
+    z-index: 3;
+    left: -14px;
+    bottom: -18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    min-width: 210px;
+    background: var(--dlx-ink);
+    color: var(--dlx-paper);
+    border: 1px solid rgba(230, 179, 37, .3);
+    box-shadow: 0 20px 50px -16px rgba(0, 0, 0, .6);
+  }
+
+  .dlx-result__chip-icon {
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    background: var(--dlx-gold);
+    color: var(--dlx-ink);
+    flex: none;
+  }
+
+  .dlx-result__chip-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .dlx-result__chip b {
+    display: block;
+    font-family: var(--dlx-heading-font);
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--dlx-paper);
+  }
+
+  .dlx-result__chip small {
+    font-size: 12px;
+    color: rgba(250, 248, 243, .55);
+  }
+
+  @media (max-width: 480px) {
+    .dlx-result__chip {
+      left: 0;
+      min-width: 0;
+    }
+  }
+
+  .dlx-hero-image-panel {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 34px;
+    background:
+      radial-gradient(60% 60% at 80% 15%, rgba(230, 179, 37, .18), transparent 70%),
+      radial-gradient(50% 50% at 10% 90%, rgba(230, 179, 37, .12), transparent 70%),
+      linear-gradient(160deg, var(--dlx-paper) 0%, var(--dlx-paper-dim) 100%);
+    overflow: hidden;
+  }
+
+  .dlx-hero-image-panel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    opacity: .6;
+    background-image: radial-gradient(rgba(184, 136, 11, .18) 1.5px, transparent 1.5px);
+    background-size: 22px 22px;
+  }
+
+  .dlx-hero-image-panel__ring {
+    position: absolute;
+    z-index: 0;
+    border-radius: 50%;
+    border: 1.5px solid rgba(230, 179, 37, .35);
+  }
+
+  .dlx-hero-image-panel__ring--a { width: 260px; height: 260px; top: -70px; right: -70px; }
+  .dlx-hero-image-panel__ring--b { width: 160px; height: 160px; bottom: -50px; left: -50px; border-color: rgba(230, 179, 37, .5); }
+
+  .dlx-hero-image-panel__badge {
+    position: absolute;
+    z-index: 3;
+    top: 18px;
+    left: 18px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: var(--dlx-ink);
+    color: var(--dlx-gold);
+    border: 1px solid rgba(230, 179, 37, .45);
+    font-family: var(--dlx-heading-font);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .02em;
+    box-shadow: 0 10px 24px -10px rgba(0, 0, 0, .4);
+  }
+
+  .dlx-hero-image-panel__badge svg { width: 14px; height: 14px; }
+
+  .dlx-hero-image-panel__frame {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 380px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px 28px;
+    margin-top: 28px;
+    background: rgba(255, 255, 255, .65);
+    border: 1px solid rgba(230, 179, 37, .4);
+    border-radius: 20px;
+    box-shadow: 0 30px 60px -24px rgba(11, 11, 11, .25);
+    animation: dlx-float 5s ease-in-out infinite;
+  }
+
+  @keyframes dlx-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .dlx-metrics__title {
+    font-family: var(--dlx-heading-font);
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1.3;
+    color: var(--dlx-ink);
+  }
+
+  .dlx-metrics__sub {
+    margin-top: 6px;
+    font-size: 13.5px;
+    color: var(--dlx-muted);
+  }
+
+  .dlx-metrics__list {
+    margin-top: 20px;
+    display: grid;
+    gap: 12px;
+  }
+
+  .dlx-metrics__list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    background: var(--dlx-ink);
+    color: var(--dlx-paper);
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+  }
+
+  .dlx-metrics__list li svg {
+    width: 18px;
+    height: 18px;
+    flex: none;
+    color: var(--dlx-gold);
+  }
+
+  /* ---------- 6. TICKER ---------- */
+  .dlx-ticker {
+    overflow: hidden;
+    background: var(--dlx-gold);
+    border-block: 2px solid var(--dlx-ink);
+    padding: 14px 0;
+  }
+
+  .dlx-ticker__track {
+    display: flex;
+    width: max-content;
+    animation: dlx-marquee 32s linear infinite;
+  }
+
+  .dlx-ticker__item {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding-right: 40px;
+    font-family: var(--dlx-heading-font);
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--dlx-ink);
+    white-space: nowrap;
+  }
+
+  .dlx-ticker__item::after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background: var(--dlx-ink);
+    transform: rotate(45deg);
+  }
+
+  @keyframes dlx-marquee {
+    to { transform: translateX(-50%); }
+  }
+
+  /* ---------- 7. SECTIONS ---------- */
+  .dlx-section { padding-block: 80px; }
+
+  @media (min-width: 640px) {
+    .dlx-section { padding-block: 96px; }
+  }
+
+  .dlx-intro { background: var(--dlx-paper); }
+
+  .dlx-intro__grid {
+    display: grid;
+    gap: 48px;
+  }
+
+  @media (min-width: 992px) {
+    .dlx-intro__grid {
+      grid-template-columns: 1fr 1.5fr;
+      gap: 96px;
+    }
+  }
+
+  .dlx-intro__body {
+    display: grid;
+    gap: 20px;
+    font-size: 17px;
+    color: var(--dlx-muted);
+  }
+
+  .dlx-intro__lead {
+    border-left: 3px solid var(--dlx-gold);
+    padding-left: 20px;
+    font-weight: 600;
+    color: var(--dlx-text);
+  }
+
+  .dlx-bullets {
+    margin-top: 22px;
+    display: grid;
+    gap: 14px;
+  }
+
+  .dlx-bullets li {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    font-size: 15.5px;
+    color: var(--dlx-muted);
+  }
+
+  .dlx-bullets li svg {
+    width: 20px;
+    height: 20px;
+    flex: none;
+    margin-top: 2px;
+    color: var(--dlx-gold-deep);
+  }
+
+  @media (min-width: 768px) {
+    .dlx-bullets--cols {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 40px;
+    }
+  }
+
+  /* Chips (areas / markets) */
+  .dlx-chips {
+    margin-top: 6px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .dlx-chips li {
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--dlx-ink);
+    border: 1px solid var(--dlx-gold-deep);
+    background: rgba(230, 179, 37, .12);
+  }
+
+  .dlx-chips__label {
+    margin-top: 10px;
+    color: var(--dlx-text);
+  }
+
+  /* ---------- 8. LIGHT CARD GRID ---------- */
+  .dlx-challenges {
+    background: var(--dlx-paper-dim);
+    border-top: 1px solid var(--dlx-line);
+  }
+
+  .dlx-challenges__head { max-width: 900px; }
+
+  .dlx-challenges__head p.dlx-lead {
+    margin-top: 18px;
+    color: var(--dlx-muted);
+    max-width: 760px;
+  }
+
+  .dlx-challenges__grid {
+    margin-top: 56px;
+    display: grid;
+    gap: 1px;
+    background: var(--dlx-line);
+    border: 1px solid var(--dlx-line);
+  }
+
+  @media (min-width: 640px) {
+    .dlx-challenges__grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  .dlx-challenge {
+    background: var(--dlx-paper);
+    padding: 36px;
+    transition: background .25s;
+  }
+
+  .dlx-challenge__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .dlx-challenge__icon svg {
+    width: 28px;
+    height: 28px;
+    color: var(--dlx-gold-deep);
+    transition: color .25s;
+  }
+
+  .dlx-challenge__no {
+    font-family: var(--dlx-heading-font);
+    font-size: 14px;
+    font-weight: 800;
+    color: rgba(94, 91, 82, .55);
+    transition: color .25s;
+  }
+
+  .dlx-challenge .dlx-card-title {
+    margin-top: 24px;
+    transition: color .25s;
+  }
+
+  .dlx-challenge p {
+    margin-top: 12px;
+    font-size: 14.5px;
+    color: var(--dlx-muted);
+    transition: color .25s;
+  }
+
+  .dlx-challenge:hover { background: var(--dlx-ink); }
+  .dlx-challenge:hover .dlx-challenge__icon svg { color: var(--dlx-gold); }
+  .dlx-challenge:hover .dlx-challenge__no { color: rgba(250, 248, 243, .4); }
+  .dlx-challenge:hover .dlx-card-title { color: var(--dlx-paper); }
+  .dlx-challenge:hover p { color: rgba(250, 248, 243, .7); }
+
+  /* ---------- 9. DARK SOLUTIONS ---------- */
+  .dlx-solutions {
+    background-color: var(--dlx-ink);
+    background-image:
+      linear-gradient(rgba(250, 248, 243, .035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(250, 248, 243, .035) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .dlx-solutions__head {
+    max-width: 900px;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .dlx-solutions__head .dlx-heading {
+    margin-top: 16px;
+    color: var(--dlx-paper);
+  }
+
+  .dlx-solutions__head .dlx-heading span { color: var(--dlx-gold); }
+
+  .dlx-solutions__head p.dlx-lead {
+    margin-top: 18px;
+    color: rgba(250, 248, 243, .6);
+  }
+
+  .dlx-solutions__grid {
+    margin-top: 56px;
+    display: grid;
+    gap: 20px;
+  }
+
+  @media (min-width: 640px) {
+    .dlx-solutions__grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (min-width: 1024px) {
+    .dlx-solutions__grid { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  .dlx-solution {
+    background: var(--dlx-ink-deep);
+    border: 1px solid rgba(250, 248, 243, .1);
+    padding: 36px;
+    transition: border-color .25s, transform .25s;
+  }
+
+  .dlx-solution:hover {
+    border-color: rgba(230, 179, 37, .6);
+    transform: translateY(-3px);
+  }
+
+  .dlx-solution__icon {
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(230, 179, 37, .3);
+    background: rgba(230, 179, 37, .1);
+    transition: background .25s;
+  }
+
+  .dlx-solution__icon svg {
+    width: 20px;
+    height: 20px;
+    color: var(--dlx-gold);
+    transition: color .25s;
+  }
+
+  .dlx-solution:hover .dlx-solution__icon { background: var(--dlx-gold); }
+  .dlx-solution:hover .dlx-solution__icon svg { color: var(--dlx-ink); }
+
+  .dlx-solution__step {
+    margin-top: 24px;
+    color: rgba(230, 179, 37, .75);
+  }
+
+  .dlx-solution .dlx-card-title {
+    margin-top: 8px;
+    color: var(--dlx-paper);
+  }
+
+  .dlx-solution p.dlx-solution__text {
+    margin-top: 12px;
+    font-size: 14.5px;
+    color: rgba(250, 248, 243, .6);
+  }
+
+  /* ---------- 10. WHY (light card grid) ---------- */
+  .dlx-why {
+    background: var(--dlx-paper);
+    border-top: 1px solid var(--dlx-line);
+  }
+
+  .dlx-why__grid {
+    margin-top: 56px;
+    display: grid;
+    gap: 1px;
+    background: var(--dlx-line);
+    border: 1px solid var(--dlx-line);
+  }
+
+  @media (min-width: 640px) {
+    .dlx-why__grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  .dlx-why__item {
+    background: var(--dlx-paper-dim);
+    padding: 32px 36px;
+  }
+
+  .dlx-why__item .dlx-card-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .dlx-why__item .dlx-card-title svg {
+    width: 20px;
+    height: 20px;
+    color: var(--dlx-gold-deep);
+    flex: none;
+  }
+
+  .dlx-why__item p {
+    margin-top: 10px;
+    font-size: 14.5px;
+    color: var(--dlx-muted);
+  }
+
+  .dlx-measure {
+    margin-top: 40px;
+    padding: 22px 26px;
+    border-left: 4px solid var(--dlx-gold);
+    background: var(--dlx-paper-dim);
+    font-size: 16px;
+    color: var(--dlx-text);
+    max-width: 900px;
+  }
+
+  /* ---------- 11. FAQ ---------- */
+  .dlx-faq { background: var(--dlx-paper); }
+
+  .dlx-faq__grid {
+    display: grid;
+    gap: 48px;
+  }
+
+  @media (min-width: 992px) {
+    .dlx-faq__grid {
+      grid-template-columns: 1fr 1.8fr;
+      gap: 96px;
+    }
+  }
+
+  .dlx-faq__intro p {
+    margin-top: 18px;
+    color: var(--dlx-muted);
+  }
+
+  .dlx-faq__list { border-block: 1px solid var(--dlx-line); }
+  .dlx-faq__item + .dlx-faq__item { border-top: 1px solid var(--dlx-line); }
+
+  .dlx-faq__btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 24px 0;
+    text-align: left;
+    background: none;
+    border: 0;
+    color: var(--dlx-text);
+  }
+
+  .dlx-faq__q {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+  }
+
+  .dlx-faq__no {
+    font-family: var(--dlx-heading-font);
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--dlx-gold-deep);
+  }
+
+  .dlx-faq__title {
+    font-family: var(--dlx-heading-font);
+    font-size: 17px;
+    font-weight: 800;
+    line-height: 1.4;
+  }
+
+  .dlx-faq__icon svg {
+    width: 20px;
+    height: 20px;
+    color: var(--dlx-gold-deep);
+    transition: transform .3s;
+    flex: none;
+  }
+
+  .dlx-faq__item.is-open .dlx-faq__icon svg { transform: rotate(45deg); }
+
+  .dlx-faq__panel {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows .3s ease;
+  }
+
+  .dlx-faq__item.is-open .dlx-faq__panel { grid-template-rows: 1fr; }
+  .dlx-faq__panel > div { overflow: hidden; }
+
+  .dlx-faq__panel p {
+    padding: 0 40px 28px 36px;
+    font-size: 15.5px;
+    color: var(--dlx-muted);
+  }
+
+  /* ---------- 12. CONCLUSION ---------- */
+  .dlx-conclusion {
+    background: var(--dlx-paper-dim);
+    border-top: 1px solid var(--dlx-line);
+  }
+
+  .dlx-conclusion__box {
+    max-width: 900px;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .dlx-conclusion__box p {
+    margin-top: 16px;
+    color: var(--dlx-muted);
+    font-size: 16px;
+  }
+
+  /* ---------- 13. FINAL CTA ---------- */
+  .dlx-cta {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    background:
+      radial-gradient(900px 420px at 88% 0%, rgba(230, 179, 37, .28), transparent 62%),
+      radial-gradient(700px 380px at 0% 100%, rgba(230, 179, 37, .12), transparent 65%),
+      linear-gradient(135deg, #0b0b0b 0%, #16120a 55%, #0b0b0b 100%);
+    border-top: 4px solid var(--dlx-gold);
+  }
+
+  .dlx-cta::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    opacity: .6;
+    background-image:
+      linear-gradient(rgba(250, 248, 243, .035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(250, 248, 243, .035) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .dlx-cta__grid {
+    display: grid;
+    gap: 48px;
+    align-items: center;
+  }
+
+  @media (min-width: 992px) {
+    .dlx-cta__grid {
+      grid-template-columns: 1.15fr .85fr;
+      gap: 80px;
+    }
+  }
+
+  .dlx-cta .dlx-kicker { color: var(--dlx-gold); }
+
+  .dlx-cta__title {
+    margin-top: 16px;
+    max-width: 720px;
+    color: var(--dlx-paper);
+  }
+
+  .dlx-cta__title span { color: var(--dlx-gold); }
+
+  .dlx-cta__text {
+    margin-top: 18px;
+    max-width: 620px;
+    font-size: 17px;
+    color: rgba(250, 248, 243, .68);
+  }
+
+  .dlx-cta__tags {
+    margin-top: 28px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .dlx-cta__tags li {
+    padding: 7px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(250, 248, 243, .85);
+    border: 1px solid rgba(230, 179, 37, .35);
+    background: rgba(230, 179, 37, .07);
+  }
+
+  .dlx-cta__card {
+    background: var(--dlx-paper);
+    color: var(--dlx-ink);
+    padding: 36px;
+    position: relative;
+    box-shadow: 0 40px 80px -30px rgba(0, 0, 0, .8);
+  }
+
+  .dlx-cta__card::before {
+    content: "";
+    position: absolute;
+    inset: 12px -12px -12px 12px;
+    border: 2px solid var(--dlx-gold);
+    z-index: -1;
+  }
+
+  .dlx-cta__card-title {
+    font-family: var(--dlx-heading-font);
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 1.3;
+  }
+
+  .dlx-cta__card-sub {
+    margin-top: 10px;
+    font-size: 15px;
+    color: var(--dlx-muted);
+  }
+
+  .dlx-cta__actions {
+    margin-top: 28px;
+    display: grid;
+    gap: 12px;
+  }
+
+  .dlx-cta__actions .dlx-btn,
+  .dlx-cta__actions .dlx-btn1 {
+    width: 100%;
+  }
+
+  /* ---------- 14. REDUCED MOTION ---------- */
+  @media (prefers-reduced-motion: reduce) {
+    .dlx-ticker__track,
+    .dlx-hero__bg,
+    .dlx-hero-image-panel__frame {
+      animation: none;
+    }
+
+    .dlx-page * { transition: none !important; }
+  }
+</style>
+
+<div class="dlx-page" id="top">
+
+  <main>
+    <!-- ================= HERO ================= -->
+    <section class="dlx-hero">
+      <div class="dlx-hero__bg" role="img" aria-label="Abu Dhabi skyline in black and gold"></div>
+      <div class="dlx-hero__shade"></div>
+
+      <div class="dlx-wrap dlx-hero__grid">
+        <div class="dlx-hero__copy">
+          <p class="dlx-kicker dlx-hero__badge"><i></i> Real Estate Marketing Agency in Abu Dhabi</p>
+
+          <h1 class="dlx-heading dlx-hero__title">
+            Real Estate Marketing Agency in
+            <span class="dlx-highlight">Abu Dhabi</span>
+          </h1>
+
+          <p class="dlx-hero__lead">
+            Delemon Technology is a professional real estate marketing agency in Abu Dhabi, helping property
+            developers, real estate agencies, brokers and investment companies attract qualified buyers, strengthen
+            brand visibility and generate meaningful sales opportunities.
+          </p>
+          <p class="dlx-hero__text">
+            We combine strategic digital marketing, creative branding, advanced technology and data-driven
+            advertising to deliver customised solutions aligned with your business objectives.
+          </p>
+
+          <div class="dlx-hero__actions">
+            <a href="#cta" class="dlx-btn dlx-btn--gold">Get Your Marketing Consultation <i
+                data-lucide="arrow-right"></i></a>
+            <a href="#services" class="dlx-btn dlx-btn--ghost">Explore Our Services</a>
+          </div>
+        </div>
+
+        <div class="dlx-result">
+          <div class="dlx-result__main">
+            <div class="dlx-hero-image-panel">
+              <span class="dlx-hero-image-panel__ring dlx-hero-image-panel__ring--a"></span>
+              <span class="dlx-hero-image-panel__ring dlx-hero-image-panel__ring--b"></span>
+
+              <span class="dlx-hero-image-panel__badge">
+                <i data-lucide="map-pin"></i> Abu Dhabi Property Marketing
+              </span>
+
+              <div class="dlx-hero-image-panel__frame">
+                <h2 class="dlx-metrics__title">How We Measure Performance</h2>
+                <p class="dlx-metrics__sub">Meaningful business outcomes, not lead volume alone.</p>
+                <ul class="dlx-metrics__list">
+                  <li><i data-lucide="circle-check"></i> Cost per lead</li>
+                  <li><i data-lucide="circle-check"></i> Qualified lead ratio</li>
+                  <li><i data-lucide="circle-check"></i> Conversion rates</li>
+                  <li><i data-lucide="circle-check"></i> Customer acquisition costs</li>
+                  <li><i data-lucide="circle-check"></i> Return on advertising spend</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="dlx-result__chip">
+            <span class="dlx-result__chip-icon"><i data-lucide="trending-up"></i></span>
+            <span>
+              <b>Qualified Property Buyers</b>
+              <small>Transparent performance reporting</small>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= TICKER ================= -->
+    <div class="dlx-ticker" aria-hidden="true">
+      <div class="dlx-ticker__track" id="dlxTicker"></div>
+    </div>
+
+    <!-- ================= INTRO ================= -->
+    <section class="dlx-section dlx-intro">
+      <div class="dlx-wrap dlx-intro__grid">
+        <div>
+          <p class="dlx-kicker" style="color:var(--dlx-muted)">Who We Are</p>
+          <h2 class="dlx-heading" style="margin-top:16px">Comprehensive Real Estate Marketing Services in Abu Dhabi
+          </h2>
+          <div class="dlx-bar"></div>
+        </div>
+        <div class="dlx-intro__body">
+          <p class="dlx-intro__lead">
+            From Google Ads and Meta Ads to real estate SEO, website development and CRM automation, our integrated
+            marketing services help property businesses connect with local and international investors while
+            improving marketing efficiency.
+          </p>
+          <p>
+            Abu Dhabi's competitive property market requires innovative marketing strategies to reach potential
+            buyers and establish a strong digital presence. We develop customised campaigns based on property types,
+            buyer preferences, market demand and business objectives.
+          </p>
+          <p>
+            Our approach focuses on generating relevant enquiries, strengthening customer relationships and
+            supporting sustainable business growth.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CORE SERVICES (LEAD GEN / GOOGLE / META / SOCIAL) ================= -->
+    <section class="dlx-section dlx-challenges" id="services">
+      <div class="dlx-wrap">
+        <div class="dlx-challenges__head">
+          <p class="dlx-kicker" style="color:var(--dlx-muted)">Marketing Services</p>
+          <h2 class="dlx-heading" style="margin-top:16px">
+            Real Estate Marketing That Delivers
+            <span class="dlx-highlight">Qualified Enquiries</span>
+          </h2>
+          <p class="dlx-lead">
+            Targeted advertising, conversion-focused landing pages and effective lead qualification, backed by
+            channels that reach buyers wherever they are searching.
+          </p>
+        </div>
+
+        <div class="dlx-challenges__grid" id="dlxServices"></div>
+      </div>
+    </section>
+
+    <!-- ================= SEO ================= -->
+    <section class="dlx-section dlx-intro">
+      <div class="dlx-wrap dlx-intro__grid">
+        <div>
+          <p class="dlx-kicker" style="color:var(--dlx-muted)">Organic Growth</p>
+          <h2 class="dlx-heading" style="margin-top:16px">Real Estate SEO Services</h2>
+          <div class="dlx-bar"></div>
+        </div>
+        <div class="dlx-intro__body">
+          <p class="dlx-intro__lead">
+            Our real estate SEO services help property businesses strengthen organic search visibility and attract
+            potential buyers actively researching properties and investment opportunities.
+          </p>
+          <p>Our SEO strategies include:</p>
+          <ul class="dlx-bullets" id="dlxSeo"></ul>
+          <p>
+            These strategies support long-term digital visibility while reducing excessive dependence on paid
+            advertising.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= WEBSITE DEVELOPMENT & AUTOMATION ================= -->
+    <section class="dlx-section dlx-solutions">
+      <div class="dlx-wrap">
+        <div class="dlx-solutions__head">
+          <p class="dlx-kicker" style="color:var(--dlx-gold)">Technology</p>
+          <h2 class="dlx-heading">Real Estate Website Development <span>and Automation</span></h2>
+          <p class="dlx-lead">
+            Websites, landing pages and CRM connectivity built to showcase properties, establish credibility and
+            turn enquiries into sales opportunities.
+          </p>
+        </div>
+
+        <div class="dlx-solutions__grid" id="dlxTech"></div>
+      </div>
+    </section>
+
+    <!-- ================= BRANDING & CREATIVE ================= -->
+    <section class="dlx-section dlx-why">
+      <div class="dlx-wrap">
+        <div class="dlx-challenges__head">
+          <p class="dlx-kicker" style="color:var(--dlx-muted)">Creative</p>
+          <h2 class="dlx-heading" style="margin-top:16px">
+            Real Estate Branding <span class="dlx-highlight">and Creative Marketing</span>
+          </h2>
+        </div>
+        <div class="dlx-why__grid" id="dlxCreative"></div>
+      </div>
+    </section>
+
+    <!-- ================= SPECIALISED SOLUTIONS ================= -->
+    <section class="dlx-section dlx-solutions">
+      <div class="dlx-wrap">
+        <div class="dlx-solutions__head">
+          <p class="dlx-kicker" style="color:var(--dlx-gold)">Specialisations</p>
+          <h2 class="dlx-heading">Specialised <span>Real Estate Marketing Solutions</span></h2>
+        </div>
+
+        <div class="dlx-solutions__grid" id="dlxSpecial"></div>
+      </div>
+    </section>
+
+    <!-- ================= REACH BUYERS ================= -->
+    <section class="dlx-section dlx-intro">
+      <div class="dlx-wrap dlx-intro__grid">
+        <div>
+          <p class="dlx-kicker" style="color:var(--dlx-muted)">Local &amp; Global</p>
+          <h2 class="dlx-heading" style="margin-top:16px">Reach Local and International Property Buyers</h2>
+          <div class="dlx-bar"></div>
+        </div>
+        <div class="dlx-intro__body">
+          <p class="dlx-intro__lead">
+            Our real estate marketing strategies support developments across Abu Dhabi's prominent residential and
+            investment destinations.
+          </p>
+          <ul class="dlx-chips" id="dlxAreas"></ul>
+          <p>
+            Through multilingual campaigns, geographically targeted advertising and market-specific content, we help
+            property businesses connect with potential investors across:
+          </p>
+          <ul class="dlx-chips" id="dlxMarkets"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= WHY CHOOSE DELEMON ================= -->
+    <section class="dlx-section dlx-challenges">
+      <div class="dlx-wrap">
+        <div class="dlx-challenges__head">
+          <p class="dlx-kicker" style="color:var(--dlx-muted)">Why Delemon</p>
+          <h2 class="dlx-heading" style="margin-top:16px">
+            Why Choose <span class="dlx-highlight">Delemon Technology?</span>
+          </h2>
+          <p class="dlx-lead">
+            As a professional real estate marketing agency in Abu Dhabi, Delemon Technology combines
+            industry-focused marketing, creative innovation and advanced technology to support measurable business
+            growth.
+          </p>
+          <ul class="dlx-bullets dlx-bullets--cols" id="dlxWhy" style="max-width:1000px;"></ul>
+          <p class="dlx-measure">
+            We evaluate campaign performance through cost per lead, qualified lead ratio, conversion rates, customer
+            acquisition costs and return on advertising spend. Our approach prioritises meaningful business outcomes
+            rather than lead volume alone.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FAQ ================= -->
+    <section class="dlx-section dlx-faq" id="faq">
+      <div class="dlx-wrap dlx-faq__grid">
+        <div class="dlx-faq__intro">
+          <p class="dlx-kicker" style="color:var(--dlx-muted)">FAQ</p>
+          <h2 class="dlx-heading" style="margin-top:16px">Frequently Asked <span class="dlx-faq__mark">Questions</span>
+          </h2>
+          <p>Everything you need to know about choosing a real estate marketing agency in Abu Dhabi.</p>
+        </div>
+        <div class="dlx-faq__list" id="dlxFaq"></div>
+      </div>
+    </section>
+
+    <!-- ================= CONCLUSION ================= -->
+    <section class="dlx-section dlx-conclusion">
+      <div class="dlx-wrap dlx-conclusion__box">
+        <p class="dlx-kicker" style="color:var(--dlx-muted)">In Summary</p>
+        <h2 class="dlx-heading" style="margin-top:16px">Grow Your Real Estate Business With Delemon Technology</h2>
+        <p>
+          Partner with Delemon Technology to attract qualified property buyers, strengthen your brand and improve
+          marketing performance through integrated digital solutions. Whether you are launching an off-plan
+          development, promoting luxury residences or expanding your real estate agency, our customised strategies
+          are designed to support your business objectives.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= FINAL CTA ================= -->
+    <section class="dlx-section dlx-cta" id="cta">
+      <div class="dlx-wrap dlx-cta__grid">
+
+        <div>
+          <p class="dlx-kicker">Let's Grow</p>
+          <h2 class="dlx-heading dlx-cta__title">
+            Generate Qualified Leads and <span>Accelerate Your Real Estate Growth</span>
+          </h2>
+          <p class="dlx-cta__text">
+            Connect with relevant property buyers, maximise your digital visibility and create more sales
+            opportunities with professional real estate marketing solutions.
+          </p>
+          <ul class="dlx-cta__tags" aria-label="Services">
+            <li>Lead Generation</li>
+            <li>Google Ads</li>
+            <li>Meta Ads</li>
+            <li>SEO</li>
+            <li>Branding</li>
+            <li>CRM Automation</li>
+          </ul>
+        </div>
+
+        <div class="dlx-cta__card">
+          <h3 class="dlx-cta__card-title">Get Your Marketing Consultation</h3>
+          <p class="dlx-cta__card-sub">
+            Talk to our team about your development, agency or brokerage and the buyers you want to reach in Abu
+            Dhabi.
+          </p>
+
+          <div class="dlx-cta__actions">
+            <a href="{% url 'contact' %}" class="dlx-btn dlx-btn--dark">Get Your Marketing Consultation <i
+                data-lucide="arrow-right"></i></a>
+            <a href="https://wa.me/+971503482299" style="color: #050505b3;" class="dlx-btn1 dlx-btn--outline"
+              target="_blank" rel="noopener">
+              <i data-lucide="message-circle"></i> Chat On WhatsApp
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- Icons (Lucide) -->
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+  /* ---------- DATA (all copy sourced from the provided content) ---------- */
+  const DLX_TICKER = ["Lead Generation", "Google Ads", "Meta Ads", "Real Estate SEO", "Social Media", "Website Development", "CRM Automation", "Branding"];
+
+  const DLX_SERVICES = [
+    { icon: "target", title: "Real Estate Lead Generation Services", text: "Our real estate lead generation services in Abu Dhabi focus on attracting high-intent property buyers through targeted advertising, conversion-focused landing pages and effective lead qualification strategies. We help developers and agencies connect with prospects interested in residential properties, commercial developments, luxury residences and off-plan investment opportunities, prioritising lead quality, buyer preferences, purchasing requirements and conversion potential." },
+    { icon: "search", title: "Real Estate Google Ads Management", text: "Reach potential buyers actively searching for property investment opportunities through strategically managed Google Ads campaigns, including Search Ads, Performance Max, Display Ads, YouTube advertising and remarketing. Through commercial keyword research, strategic bidding, conversion tracking and continuous campaign optimisation, we help improve advertising efficiency and generate relevant property enquiries." },
+    { icon: "megaphone", title: "Meta Ads Management", text: "Our Facebook and Instagram advertising strategies help property businesses increase brand awareness, promote developments and attract potential investors. We combine engaging advertising creatives, property videos, carousel advertisements, audience research and instant lead forms, with continuous performance monitoring and creative testing to support qualified lead generation." },
+    { icon: "share-2", title: "Social Media Marketing and Management", text: "Build a recognisable property brand through professionally managed campaigns across Facebook, Instagram, LinkedIn, YouTube, TikTok and Snapchat. Our content strategies include property reels, investment insights, development announcements, promotional videos and educational content designed to encourage engagement, establish credibility and strengthen customer relationships." }
+  ];
+
+  const DLX_SEO = [
+    "High-intent keyword research and content optimisation",
+    "Technical SEO and website performance improvements",
+    "Local SEO for Abu Dhabi property searches",
+    "Property, developer and community page optimisation",
+    "Structured data implementation and internal linking",
+    "AI SEO, Answer Engine Optimisation and Generative Engine Optimisation"
+  ];
+
+  const DLX_TECH = [
+    { icon: "layout-dashboard", title: "Custom Real Estate Website Development", text: "A professionally developed website is essential for showcasing properties, establishing credibility and generating buyer enquiries. We develop responsive real estate websites featuring advanced property search filters, developer pages, community information, multilingual functionality and property inventory integration, with fast loading speeds, mobile responsiveness, intuitive navigation and conversion-focused designs." },
+    { icon: "file-text", title: "Property Landing Page Development", text: "Conversion-focused landing pages help property developers and agencies showcase project features, payment plans, location advantages and investment opportunities. We create dedicated landing pages with engaging visuals, clear calls to action, optimised enquiry forms and CRM connectivity to encourage potential buyers to register their interest." },
+    { icon: "workflow", title: "CRM Integration and WhatsApp Automation", text: "Effective lead management is essential for turning property enquiries into sales opportunities. Our CRM integration solutions connect advertising platforms, websites and sales teams through centralised customer management. Automated lead distribution, WhatsApp communication, lead scoring, personalised follow-ups and sales pipeline management help maintain consistent communication with prospective buyers." }
+  ];
+
+  const DLX_CREATIVE = [
+    { icon: "palette", title: "Professional Brand Identity and Creative Design", text: "Strong branding helps property businesses differentiate themselves in Abu Dhabi's competitive real estate market. We develop professional brand identities, corporate designs, property brochures, advertising creatives and promotional materials aligned with your business positioning, helping establish credibility, communicate property value and build stronger connections with target audiences." },
+    { icon: "clapperboard", title: "Property Video Marketing and Motion Graphics", text: "Showcase residential and commercial developments through professional property walkthroughs, promotional reels, animated location maps and motion graphics. Visually engaging content helps prospective buyers understand property features, community amenities, infrastructure connectivity and investment advantages while improving audience engagement." }
+  ];
+
+  const DLX_SPECIAL = [
+    { icon: "building-2", title: "Off-Plan Property Marketing", text: "Promote upcoming developments through strategic launch campaigns, EOI registrations, dedicated landing pages and investor-focused advertising. Our approach helps developers create project awareness and generate relevant enquiries throughout different development stages." },
+    { icon: "gem", title: "Luxury Real Estate Marketing", text: "Position luxury apartments, waterfront villas and branded residences through sophisticated branding, premium advertising creatives and carefully planned marketing campaigns that communicate exclusivity, lifestyle benefits and investment value." },
+    { icon: "home", title: "Residential and Commercial Property Marketing", text: "Reach potential buyers interested in apartments, villas, townhouses, offices and retail spaces through customised marketing strategies highlighting property features, location advantages and relevant investment opportunities." }
+  ];
+
+  const DLX_AREAS = ["Saadiyat Island", "Yas Island", "Al Reem Island", "Al Raha Beach", "Masdar City", "Khalifa City", "Jubail Island"];
+  const DLX_MARKETS = ["GCC Countries", "India", "Europe", "Other International Markets"];
+
+  const DLX_WHY = [
+    "Customised real estate digital marketing strategies",
+    "Qualified property buyer lead generation",
+    "Google Ads and Meta Ads management",
+    "Advanced SEO and AI search optimisation",
+    "Professional website and landing page development",
+    "Creative branding and video marketing",
+    "CRM integration and WhatsApp automation",
+    "International property investor targeting",
+    "Data-driven campaign optimisation",
+    "Transparent performance reporting"
+  ];
+
+  const DLX_FAQS = [
+    { q: "What does a real estate marketing agency in Abu Dhabi do?", a: "A real estate marketing agency helps property developers, agencies and brokers promote developments, generate qualified buyer enquiries and strengthen brand visibility through digital advertising, SEO, branding and marketing automation." },
+    { q: "How can real estate companies generate qualified property leads?", a: "Targeted Google Ads, Meta Ads, organic SEO, conversion-focused landing pages and effective lead qualification strategies can help property businesses attract relevant buyers with genuine purchasing interests." },
+    { q: "Can digital marketing attract international property investors?", a: "Yes. Geographically targeted advertising, multilingual landing pages, virtual property tours and investor-focused content help property businesses connect with potential buyers across international markets." },
+    { q: "How does CRM automation improve real estate lead conversion?", a: "CRM automation supports automated lead distribution, personalised follow-ups, customer tracking and sales pipeline management. These capabilities help sales teams respond efficiently and improve conversion opportunities." },
+    { q: "How do I choose the best real estate marketing agency in Abu Dhabi?", a: "Consider the agency's real estate industry experience, lead generation strategies, advertising expertise, website development capabilities, relevant case studies and transparency in campaign performance reporting." }
+  ];
+
+  /* ---------- RENDER ---------- */
+  const pad = n => String(n + 1).padStart(2, "0");
+  const $ = id => document.getElementById(id);
+  const check = '<i data-lucide="circle-check"></i>';
+
+  // Ticker (two identical halves for a seamless loop)
+  (function () {
+    const set = Array(2).fill(DLX_TICKER).flat().map(s => `<span class="dlx-ticker__item">${s}</span>`).join("");
+    $("dlxTicker").innerHTML = set + set;
+  })();
+
+  // Core services (light hover cards)
+  $("dlxServices").innerHTML = DLX_SERVICES.map((c, i) => `
+  <article class="dlx-challenge">
+    <div class="dlx-challenge__top">
+      <span class="dlx-challenge__icon"><i data-lucide="${c.icon}"></i></span>
+      <span class="dlx-challenge__no">${pad(i)}</span>
+    </div>
+    <h3 class="dlx-card-title">${c.title}</h3>
+    <p>${c.text}</p>
+  </article>`).join("");
+
+  // SEO bullets
+  $("dlxSeo").innerHTML = DLX_SEO.map(t => `<li>${check} ${t}</li>`).join("");
+
+  // Dark card builder
+  const darkCards = (data, label) => data.map((s, i) => `
+  <article class="dlx-solution">
+    <div class="dlx-solution__icon"><i data-lucide="${s.icon}"></i></div>
+    <p class="dlx-kicker dlx-solution__step">${label} ${pad(i)}</p>
+    <h3 class="dlx-card-title">${s.title}</h3>
+    <p class="dlx-solution__text">${s.text}</p>
+  </article>`).join("");
+
+  $("dlxTech").innerHTML = darkCards(DLX_TECH, "Solution");
+  $("dlxSpecial").innerHTML = darkCards(DLX_SPECIAL, "Specialisation");
+
+  // Creative (light section cards)
+  $("dlxCreative").innerHTML = DLX_CREATIVE.map(w => `
+  <article class="dlx-why__item">
+    <h3 class="dlx-card-title"><i data-lucide="${w.icon}"></i> ${w.title}</h3>
+    <p>${w.text}</p>
+  </article>`).join("");
+
+  // Areas & markets
+  $("dlxAreas").innerHTML = DLX_AREAS.map(a => `<li>${a}</li>`).join("");
+  $("dlxMarkets").innerHTML = DLX_MARKETS.map(a => `<li>${a}</li>`).join("");
+
+  // Why choose
+  $("dlxWhy").innerHTML = DLX_WHY.map(t => `<li>${check} ${t}</li>`).join("");
+
+  // FAQ accordion
+  const faqBox = $("dlxFaq");
+  faqBox.innerHTML = DLX_FAQS.map((f, i) => `
+  <div class="dlx-faq__item${i === 0 ? " is-open" : ""}">
+    <button class="dlx-faq__btn" aria-expanded="${i === 0}" aria-controls="dlx-faq-${i}">
+      <span class="dlx-faq__q">
+        <span class="dlx-faq__no">${pad(i)}</span>
+        <span class="dlx-faq__title">${f.q}</span>
+      </span>
+      <span class="dlx-faq__icon"><i data-lucide="plus"></i></span>
+    </button>
+    <div class="dlx-faq__panel" id="dlx-faq-${i}" role="region">
+      <div><p>${f.a}</p></div>
+    </div>
+  </div>`).join("");
+
+  faqBox.addEventListener("click", e => {
+    const btn = e.target.closest(".dlx-faq__btn");
+    if (!btn) return;
+    const item = btn.parentElement;
+    const willOpen = !item.classList.contains("is-open");
+    faqBox.querySelectorAll(".dlx-faq__item").forEach(el => {
+      el.classList.remove("is-open");
+      el.querySelector(".dlx-faq__btn").setAttribute("aria-expanded", "false");
+    });
+    if (willOpen) {
+      item.classList.add("is-open");
+      btn.setAttribute("aria-expanded", "true");
+    }
+  });
+
+  lucide.createIcons();
+</script>
+
+{% endblock %}
